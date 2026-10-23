@@ -5454,25 +5454,156 @@ static void DrawTypeIcon(u8 type, int x, int y)
         DrawSprite(sRes.typeTiles + type * 8 * 32, 4, 2, x, y, sRes.typePal[sTypeIconPal[type]].c);
 }
 
+/* The summary's lower screen is drawn on the native 320x240 grid. These
+ * stepped outlines, diagonal label fields and highlights are geometry, not
+ * a scaled screenshot or a skin texture. */
+static void SummaryShape(int x, int y, int w, int h, u16 colour)
+{
+    FillRect(x + 2, y, w - 4, h, colour);
+    FillRect(x + 1, y + 1, w - 2, h - 2, colour);
+    FillRect(x, y + 2, w, h - 4, colour);
+}
+
+static void DrawSummaryPanel(int x, int y, int w, int h, int labelWidth)
+{
+    SummaryShape(x + 1, y + 2, w, h, PackRgb(0, 83, 68));
+    SummaryShape(x, y, w, h, PackRgb(0, 57, 53));
+    SummaryShape(x + 1, y + 1, w - 2, h - 2, PackRgb(0, 127, 93));
+    SummaryShape(x + 2, y + 2, w - 4, h - 4, PackRgb(77, 226, 174));
+    PartyGradient(x + 3, y + 3, w - 6, h - 6,
+                  (Rgb){223, 250, 242}, (Rgb){211, 244, 233});
+    if (labelWidth)
+        for (int row = 3; row < h - 3; ++row)
+            FillRect(x + 3, y + row, labelWidth - 8 * (row - 3) / (h - 6), 1,
+                     PackRgb(184, 240, 219));
+    FillRect(x + 4, y + 3, w - 8, 1, PackRgb(246, 255, 251));
+    FillRect(x + 3, y + 4, 1, h - 8, PackRgb(214, 255, 236));
+    FillRect(x + 4, y + h - 3, w - 8, 1, PackRgb(10, 170, 116));
+}
+
+/* Centre by the capitals' actual pixel band; keep long nicknames and item
+ * names inside their own field without fractional font scaling. */
+static void DrawSummaryLabel(const u8 *text, int x, int y, int w, int h, bool8 right, u16 colour)
+{
+    const Font *font = StrWidth(&sNormal, text) <= w ? &sNormal : &sSmall;
+    int top, bottom, clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+    int width = StrWidth(font, text);
+
+    CapRows(font, &top, &bottom);
+    if (sClipX0 < x + sOX) sClipX0 = x + sOX;
+    if (sClipX1 > x + sOX + w) sClipX1 = x + sOX + w;
+    if (sClipY0 < y) sClipY0 = y;
+    if (sClipY1 > y + h) sClipY1 = y + h;
+    DrawStr(font, text, right ? x + w - width : x,
+            y + (h - bottom + top) / 2 - top, colour, PackRgb(244, 255, 249));
+    RestoreClip(clip);
+}
+
+static void DrawSummaryTab(int x, int w, const u8 *label, bool8 selected, bool8 disabled)
+{
+    if (!selected)
+        DrawSummaryPanel(x, 40, w, 28, 0);
+    else
+    {
+        SummaryShape(x + 1, 42, w, 28, PackRgb(0, 80, 64));
+        SummaryShape(x, 40, w, 28, PackRgb(0, 58, 51));
+        SummaryShape(x + 2, 42, w - 4, 24, PackRgb(250, 255, 250));
+        SummaryShape(x + 4, 44, w - 8, 20, PackRgb(0, 198, 108));
+        for (int row = 0; row < 18; ++row)
+            FillRect(x + 5, 45 + row, w - 10, 1,
+                     row % 3 ? PackRgb(0, 196, 107) : PackRgb(19, 219, 132));
+    }
+    const Font *font = StrWidth(&sNormal, label) < w - 12 ? &sNormal : &sSmall;
+    DrawStrIn(font, label, x + 4, x + w - 4, 43, 65,
+              selected ? PackRgb(255, 255, 248) : disabled ? PackRgb(146, 156, 151) : PackRgb(78, 80, 80),
+              selected ? PackRgb(0, 101, 67) : PackRgb(244, 255, 249));
+}
+
+static void DrawSummaryHeader(const ViewState *s)
+{
+    const CtrSummaryView *view = &s->summary;
+    u16 ink = PackRgb(78, 80, 80);
+
+    SummaryShape(4, 7, 312, 28, PackRgb(0, 56, 51));
+    SummaryShape(5, 8, 310, 26, PackRgb(59, 46, 86));
+    PartyGradient(6, 9, 308, 24, (Rgb){215, 146, 255}, (Rgb){188, 104, 235});
+    for (int row = 0; row < 22; ++row)
+    {
+        int end = 142 + row * 8 / 21;
+        FillRect(12, 10 + row, end - 12, 1,
+                 PackRgb(244 - row / 2, 219 - row / 2, 253));
+    }
+    FillRect(13, 10, 128, 2, PackRgb(255, 245, 255));
+    FillRect(8, 10, 2, 3, PackRgb(237, 210, 255));
+    FillRect(10, 12, 2, 4, PackRgb(250, 235, 255));
+    DrawSummaryLabel(view->species ? view->nickname : Ascii("POKEMON"), 17, 13, 58, 16, FALSE, ink);
+    if (view->species && !view->egg)
+    {
+        u8 level[20];
+        StringCopy(level, Ascii("Lv. "));
+        StringAppend(level, Number(view->level, 3, STR_CONV_MODE_LEFT_ALIGN));
+        DrawSummaryLabel(level, 77, 15, 54, 14, FALSE, PackRgb(44, 24, 247));
+    }
+    /* The INFO page remains visible above; its first page light stays on. */
+    for (int dot = 0; dot < 4; ++dot)
+    {
+        static const u8 widths[8] = {3, 5, 7, 8, 8, 7, 5, 3};
+        for (int row = 0; row < 8; ++row)
+            FillRect(157 + dot * 16 - widths[row] / 2, 17 + row, widths[row], 1,
+                     dot == 0 ? PackRgb(255, 255, 250) : PackRgb(83, 56, 83));
+    }
+    for (int action = 0; action < 3; ++action)
+    {
+        int x = 219 + action * 31;
+        u16 edge = PackRgb(40, 42, 70);
+        SummaryShape(x, 10, 29, 22, edge);
+        SummaryShape(x + 1, 11, 27, 20, PackRgb(147, 151, 174));
+        PartyGradient(x + 2, 12, 25, 18, (Rgb){250, 250, 255}, (Rgb){238, 241, 249});
+        PartyBevel(x + 2, 12, 25, 18, PackRgb(255, 255, 255), PackRgb(186, 193, 211));
+        if (s->pressed == (action == 0 ? HIT_SUMMARY_PREVIOUS : action == 1 ? HIT_SUMMARY_NEXT : HIT_SUMMARY_CLOSE))
+            ShadeRect(x + 2, 12, 25, 18);
+        if (action == 2)
+            DrawStrIn(&sNormal, Ascii("B"), x + 2, x + 27, 13, 29, ink, PackRgb(255, 255, 255));
+        else
+        {
+            int direction = action ? 1 : -1, tip = x + (action ? 19 : 9);
+            FillRect(action ? x + 9 : x + 14, 19, 7, 4, ink);
+            for (int col = 0; col < 5; ++col)
+                FillRect(tip - direction * col, 20 - col, 1, 2 + 2 * col, ink);
+        }
+        if (view->ready)
+            AddHit(x, 10, 29, 22, action == 0 ? HIT_SUMMARY_PREVIOUS : action == 1 ? HIT_SUMMARY_NEXT : HIT_SUMMARY_CLOSE);
+    }
+}
+
 static void DrawSummaryStats(const CtrSummaryView *view)
 {
     static const u8 order[] = {STAT_HP, STAT_ATK, STAT_DEF, STAT_SPATK, STAT_SPDEF, STAT_SPEED};
     const u8 *labels[] = {gText_HP4, gText_Attack3, gText_Defense3, gText_SpAtk4, gText_SpDef4, gText_Speed2};
     u8 text[48];
 
-    DrawMenuBezel(6, 72, 308, 24, FALSE, FALSE);
-    DrawStr(&sSmall, gText_Item, 13, 78, TXT_DARK, TXT_LIGHT);
-    DrawStr(&sSmall, view->item == ITEM_NONE ? gText_None : GetItemName(view->item), 63, 78, TXT_BLUE, TXT_LIGHT);
-    StringCopy(text, Ascii(CTR_TEXT("RIBBONS ", "CINTAS ", "RUBANS ", "FIOCCHI ")));
-    StringAppend(text, Number(view->ribbons, 2, STR_CONV_MODE_LEFT_ALIGN));
-    DrawStrRight(&sSmall, text, 306, 78, TXT_DARK, TXT_LIGHT);
+    u16 ink = PackRgb(78, 80, 80);
+
+    /* A single green housing surrounds the item, six symmetric stat fields
+     * and experience panel, as on the reference's Emerald lower screen. */
+    SummaryShape(4, 74, 312, 161, PackRgb(0, 57, 53));
+    SummaryShape(6, 76, 308, 157, PackRgb(53, 222, 153));
+    FillRect(8, 78, 304, 153, PackRgb(51, 213, 146));
+    FillRect(313, 79, 1, 151, PackRgb(135, 248, 184));
+    DrawSummaryPanel(7, 77, 306, 24, 51);
+    DrawSummaryLabel(gText_Item, 15, 80, 44, 18, FALSE, ink);
+    DrawSummaryLabel(view->item == ITEM_NONE ? gText_None : GetItemName(view->item),
+                     70, 80, 151, 18, FALSE, PackRgb(44, 24, 247));
+    FillRect(230, 83, 1, 13, PackRgb(151, 232, 204));
+    DrawSummaryLabel(Ascii(CTR_TEXT("RIBBONS", "CINTAS", "RUBANS", "FIOCCHI")), 241, 80, 48, 18, FALSE, ink);
+    DrawSummaryLabel(Number(view->ribbons, 3, STR_CONV_MODE_LEFT_ALIGN), 292, 80, 12, 18, TRUE, ink);
     for (int i = 0; i < 6; ++i)
     {
-        int x = i < 3 ? 6 : 164, y = 100 + (i % 3) * 31;
+        int x = i < 3 ? 10 : 163, y = 108 + (i % 3) * 29;
         int stat = order[i];
 
-        DrawMenuBezel(x, y, 150, 28, FALSE, FALSE);
-        DrawStr(&sSmall, labels[i], x + 7, y + 7, TXT_DARK, TXT_LIGHT);
+        DrawSummaryPanel(x, y, 147, 25, 65);
+        DrawSummaryLabel(labels[i], x + 7, y + 3, 64, 19, FALSE, ink);
         if (view->statsMode)
             StringCopy(text, Number(view->statsMode == 1 ? view->ivs[stat] : view->evs[stat], 3, STR_CONV_MODE_LEFT_ALIGN));
         else if (stat == STAT_HP)
@@ -5483,19 +5614,21 @@ static void DrawSummaryStats(const CtrSummaryView *view)
         }
         else
             StringCopy(text, Number(view->stats[stat], 3, STR_CONV_MODE_LEFT_ALIGN));
-        DrawStrRight(&sNormal, text, x + 142, y + 5, TXT_DARK, TXT_LIGHT);
+        DrawSummaryLabel(text, x + 74, y + 3, 65, 19, TRUE, ink);
     }
-    DrawMenuBezel(6, 195, 308, 39, FALSE, FALSE);
-    DrawStr(&sSmall, gText_ExpPoints, 13, 200, TXT_DARK, TXT_LIGHT);
-    DrawStrRight(&sSmall, Number(view->exp, 7, STR_CONV_MODE_LEFT_ALIGN), 151, 200, TXT_DARK, TXT_LIGHT);
-    DrawStr(&sSmall, gText_NextLv, 166, 200, TXT_DARK, TXT_LIGHT);
-    DrawStrRight(&sSmall, Number(view->nextExp, 7, STR_CONV_MODE_LEFT_ALIGN), 306, 200, TXT_DARK, TXT_LIGHT);
-    FillRect(13, 221, 294, 6, PackRgb(28, 89, 91));
+    DrawSummaryPanel(9, 196, 302, 35, 0);
+    DrawSummaryLabel(gText_ExpPoints, 16, 200, 85, 16, FALSE, ink);
+    DrawSummaryLabel(Number(view->exp, 7, STR_CONV_MODE_LEFT_ALIGN), 101, 200, 50, 16, TRUE, ink);
+    FillRect(160, 201, 1, 13, PackRgb(151, 232, 204));
+    DrawSummaryLabel(gText_NextLv, 170, 200, 82, 16, FALSE, ink);
+    DrawSummaryLabel(Number(view->nextExp, 7, STR_CONV_MODE_LEFT_ALIGN), 254, 200, 49, 16, TRUE, ink);
+    FillRect(17, 218, 286, 8, PackRgb(18, 95, 101));
+    FillRect(18, 219, 284, 6, PackRgb(31, 91, 91));
     unsigned span = view->expEnd - view->expStart;
     unsigned done = view->exp > view->expStart ? view->exp - view->expStart : 0;
     if (done > span) done = span;
-    FillRect(14, 222, span ? 292u * done / span : view->level == MAX_LEVEL ? 292 : 0,
-             4, PackRgb(69, 165, 255));
+    PartyGradient(18, 219, span ? 284u * done / span : view->level == MAX_LEVEL ? 284 : 0,
+                  6, (Rgb){55, 181, 255}, (Rgb){37, 157, 237});
 }
 
 static void DrawSummaryMoves(const CtrSummaryView *view)
@@ -5506,10 +5639,12 @@ static void DrawSummaryMoves(const CtrSummaryView *view)
     for (int row = 0; row < MAX_MON_MOVES; ++row)
     {
         u16 move = view->moves[row];
-        int y = 72 + row * 26;
+        int y = 76 + row * 26;
         bool8 selected = row == view->cursor && move != MOVE_NONE;
 
-        DrawMenuBezel(6, y, 308, 24, selected, move == MOVE_NONE);
+        DrawSummaryPanel(7, y, 306, 24, 0);
+        if (selected)
+            PartyGradient(10, y + 4, 300, 16, (Rgb){20, 206, 113}, (Rgb){0, 176, 94});
         if (move != MOVE_NONE)
         {
             if (contest)
@@ -5530,11 +5665,11 @@ static void DrawSummaryMoves(const CtrSummaryView *view)
                          selected ? TXT_WHITE : TXT_DARK, selected ? sLook.chosenShadow : TXT_LIGHT);
             if (view->swapFrom == row)
                 DrawRing(7, y + 1, 306, 22, 0);
-            AddHit(6, y, 308, 24, HIT_ROW + row);
+            AddHit(7, y, 306, 24, HIT_ROW + row);
         }
     }
     u16 move = view->moves[view->cursor];
-    DrawMenuBezel(6, 178, 308, 57, FALSE, FALSE);
+    DrawSummaryPanel(7, 182, 306, 53, 0);
     if (move != MOVE_NONE)
     {
         const u8 *description;
@@ -5552,18 +5687,18 @@ static void DrawSummaryMoves(const CtrSummaryView *view)
                      gBattleMoves[move].power, gBattleMoves[move].accuracy);
             description = gMoveDescriptionPointers[move - 1];
         }
-        DrawStr(&sSmall, Ascii(details), 13, 181, TXT_BLUE, TXT_LIGHT);
+        DrawStr(&sSmall, Ascii(details), 14, 186, TXT_BLUE, TXT_LIGHT);
         if (!view->locked)
         {
-            DrawPlate(231, 180, 79, 17, &sLook.plate, 0, FALSE);
+            DrawSummaryPanel(231, 185, 77, 17, 0);
             DrawStrIn(&sSmall, Ascii(view->swapFrom != 0xFF ? CTR_TEXT("CONFIRM", "CONFIRMAR", "VALIDER", "CONFERMA")
                                                        : CTR_TEXT("SWITCH", "CAMBIAR", "DÉPLACER", "SCAMBIA")),
-                      232, 309, 182, 195, TXT_DARK, TXT_LIGHT);
-            AddHit(231, 180, 79, 17, HIT_SUMMARY_SWAP);
+                      233, 306, 187, 200, TXT_DARK, TXT_LIGHT);
+            AddHit(231, 185, 77, 17, HIT_SUMMARY_SWAP);
         }
         int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
-        sClipX0 = 12; sClipX1 = 308; sClipY0 = 196; sClipY1 = 234;
-        DrawStr(&sSmall, description, 13, 195, TXT_DARK, TXT_LIGHT);
+        sClipX0 = 13; sClipX1 = 307; sClipY0 = 203; sClipY1 = 232;
+        DrawStr(&sSmall, description, 14, 202, TXT_DARK, TXT_LIGHT);
         RestoreClip(clip);
     }
 }
@@ -5571,42 +5706,25 @@ static void DrawSummaryMoves(const CtrSummaryView *view)
 static void DrawDualSummary(const ViewState *s)
 {
     const CtrSummaryView *view = &s->summary;
-    static const u8 previous[] = {CHAR_LEFT_ARROW, EOS}, next[] = {CHAR_RIGHT_ARROW, EOS};
     const u8 *tabs[3] = {
         Ascii(view->statsMode == 1 ? "IV" : view->statsMode == 2 ? "EV" : CTR_TEXT("STATS", "DATOS", "STATS", "STATISTICHE")),
         Ascii(CTR_TEXT("MOVES", "MOVIMIENTOS", "CAPACITÉS", "MOSSE")),
         Ascii(CTR_TEXT("CONTEST", "CONCURSO", "CONCOURS", "MOSSE GRAZIA"))};
 
     for (int y = 0; y < H; ++y)
-        FillRect(0, y, W, 1, (y & 3) < 2 ? PackRgb(28, 209, 111) : PackRgb(0, 178, 86));
-    DrawMenuBezel(6, 5, 308, 26, FALSE, FALSE);
-    int end = DrawStr(&sNormal, view->species ? view->nickname : Ascii("POKEMON"), 13, 10, TXT_DARK, TXT_LIGHT);
-    if (view->species && !view->egg)
-    {
-        DrawStr(&sSmall, Ascii("Lv."), end + 10, 12, TXT_BLUE, TXT_LIGHT);
-        DrawStr(&sSmall, Number(view->level, 3, STR_CONV_MODE_LEFT_ALIGN), end + 29, 12, TXT_BLUE, TXT_LIGHT);
-    }
-    for (int action = 0; action < 3; ++action)
-    {
-        int x = 226 + 29 * action;
-        DrawPlate(x, 8, 26, 20, &sLook.plate, 0, FALSE);
-        DrawStrIn(&sSmall, action == 0 ? previous : action == 1 ? next : Ascii("B"), x, x + 26, 9, 27, TXT_DARK, TXT_LIGHT);
-        if (view->ready)
-            AddHit(x, 8, 26, 20, action == 0 ? HIT_SUMMARY_PREVIOUS : action == 1 ? HIT_SUMMARY_NEXT : HIT_SUMMARY_CLOSE);
-    }
+        FillRect(0, y, W, 1, y % 4 < 2 ? PackRgb(0, 211, 119) : PackRgb(0, 183, 100));
+    DrawSummaryHeader(s);
     for (int tab = 0; tab < 3; ++tab)
     {
-        int x = 6 + tab * 104;
-        DrawMenuBezel(x, 36, 100, 30, view->tab == tab && !view->egg, view->egg);
-        DrawStrIn(&sSmall, tabs[tab], x + 4, x + 96, 40, 62,
-                  view->tab == tab && !view->egg ? TXT_WHITE : TXT_DARK,
-                  view->tab == tab && !view->egg ? sLook.chosenShadow : TXT_LIGHT);
+        static const int positions[] = {5, 119, 218}, widths[] = {110, 95, 97};
+        int x = positions[tab], w = widths[tab];
+        DrawSummaryTab(x, w, tabs[tab], view->tab == tab && !view->egg, view->egg);
         if (view->ready && !view->egg)
-            AddHit(x, 36, 100, 30, HIT_SUMMARY_TAB + tab);
+            AddHit(x, 40, w, 28, HIT_SUMMARY_TAB + tab);
     }
     if (!view->ready || view->egg)
     {
-        DrawMenuBezel(6, 72, 308, 163, FALSE, FALSE);
+        DrawSummaryPanel(7, 76, 306, 158, 0);
         DrawStrIn(&sSmall, Ascii(view->egg ? CTR_TEXT("No stats or moves for an Egg.", "Un Huevo no tiene datos de combate.", "Les stats d'un Oeuf sont masquées.", "Statistiche e mosse non visibili per le UOVA.")
                                          : CTR_TEXT("Loading...", "Cargando...", "Chargement...", "Caricamento...")),
                   12, 308, 120, 160, TXT_DARK, TXT_LIGHT);

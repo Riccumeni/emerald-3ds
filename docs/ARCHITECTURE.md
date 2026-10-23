@@ -103,7 +103,11 @@ the top screen. The native RGB565 canvas uses the original fonts, coloured
 memo text and animated portrait, uploaded with nearest filtering at 1:1.
 The game's INFO page remains selected internally. `3ds_summary_ui.h` exposes profile data, a snapshot and queued
 commands to three native bottom-screen tabs: stats, battle moves and contest
-moves. The original summary task handles Pokémon selection, IV/EV modes and
+moves. The lower screen draws its purple name/level header, page lights,
+navigation buttons, white outlined active tab and mint statistic panels with
+stepped bevels directly at 320x240. Diagonal label fields, ribbon/experience
+separators and the blue experience gauge are native geometry, with no skin
+images or scaled text. The original summary task handles Pokémon selection, IV/EV modes and
 move swaps, including PP bonuses. The top eye buffers are saved in RAM and
 restored when returning to the party or PC. The move-forgetting selector
 retains the original bottom-screen summary and touch handling. The bag is the game's own as well
