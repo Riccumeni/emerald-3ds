@@ -59,6 +59,7 @@
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
+#include "battle_interface.h"
 #include "battle_main.h"
 #include "battle_message.h"
 #include "contest_util.h"
@@ -633,12 +634,12 @@ static void LoadResources(void)
 static bool8 sIconBudget;
 static u32 sIconClock;
 
-/* Mon icons, the first of their two 32x32 frames: the SAVE view's party. */
+/* Both 32x32 animation frames; the SAVE view still uses the first one. */
 static struct
 {
     u16 key;
     u32 age;
-    u8 tiles[512];
+    u8 tiles[1024];
 } sMonIcons[PARTY_SIZE];
 
 static const u8 *MonIcon(u16 iconSpecies, bool8 deoxysForm)
@@ -660,11 +661,11 @@ static const u8 *MonIcon(u16 iconSpecies, bool8 deoxysForm)
     if (iconSpecies >= SPECIES_EGG + 28 || iconSpecies == SPECIES_NONE || !sIconBudget)
         return NULL;
     sIconBudget = FALSE;
-    src = Port_ResolveAssetPointer(gMonIconTable[iconSpecies]);
+    src = Port_ResolveAssetPointer(GetMonIconTiles(iconSpecies, deoxysForm));
     if (!src)
         return NULL;
-    /* Deoxys keeps its alternate form in the same file, 0x400 in. */
-    memcpy(sMonIcons[victim].tiles, src + (deoxysForm ? 0x400 : 0), 512);
+    /* Resolve the alternate Deoxys form through the game's asset helper. */
+    memcpy(sMonIcons[victim].tiles, src, sizeof(sMonIcons[victim].tiles));
     sMonIcons[victim].key = key;
     sMonIcons[victim].age = ++sIconClock;
     return sMonIcons[victim].tiles;
@@ -2323,6 +2324,8 @@ typedef struct
     u16 iconSpecies;
     u8 deoxys, isEgg, level, gender, ailment, fainted;
     u16 hp, maxHp, heldItem;
+    u8 iconFrame;
+    s8 iconYOffset;
     u8 nick[POKEMON_NAME_LENGTH + 2];
 } MonView;
 
@@ -3119,6 +3122,21 @@ static void SnapshotParty(ViewState *s)
         view->ailment = GetMonAilment(mon);
         GetMonData(mon, MON_DATA_NICKNAME, view->nick);
         view->gender = GetMonGender(mon);
+        if (s->mode == MODE_PARTY_MENU && view->maxHp)
+        {
+            /* pokemon_icon.c: two frames held for 6/8/14/22 ticks,
+             * plus one tick to advance and a jump command at loop end. */
+            static const u8 durations[] = {7, 9, 15, 23, 30};
+            u8 level = GetHPBarLevel(view->hp, view->maxHp);
+            u8 speed = level == HP_BAR_FULL ? 0 : level == HP_BAR_GREEN ? 1
+                     : level == HP_BAR_YELLOW ? 2 : level == HP_BAR_RED ? 3 : 4;
+            u8 duration = durations[speed];
+            u32 phase = sFrames % (2 * duration + 1);
+
+            view->iconFrame = view->hp ? phase >= duration : 0;
+            if (view->hp && s->partyCursor == i)
+                view->iconYOffset = phase >= duration ? 1 : -3;
+        }
     }
     CopyText(s->text, sizeof(s->text), gStringVar4);
 }
@@ -4193,7 +4211,8 @@ static void DrawPartyCard(const ViewState *s, int slot)
         u8 pal = gMonIconPaletteIndices[mon->iconSpecies];
 
         if (icon && pal < 3)
-            DrawSprite(icon, 4, 4, x + 5, y + 6, sRes.monIconPal[pal].c);
+            DrawSprite(icon + mon->iconFrame * 512, 4, 4, x + 5,
+                       y + 6 + mon->iconYOffset, sRes.monIconPal[pal].c);
     }
     {
         int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
@@ -4203,9 +4222,9 @@ static void DrawPartyCard(const ViewState *s, int slot)
         sClipX0 = clip[0]; sClipY0 = clip[1]; sClipX1 = clip[2]; sClipY1 = clip[3];
     }
     if (mon->gender == MON_MALE)
-        DrawStr(&sSmall, Ascii("M"), x + PARTY_CARD_W - 16, y + 4, PackRgb(91, 179, 255), dark);
+        DrawStr(&sSmall, gText_MaleSymbol, x + PARTY_CARD_W - 16, y + 4, PackRgb(91, 179, 255), dark);
     else if (mon->gender == MON_FEMALE)
-        DrawStr(&sSmall, Ascii("F"), x + PARTY_CARD_W - 16, y + 4, PackRgb(255, 123, 175), dark);
+        DrawStr(&sSmall, gText_FemaleSymbol, x + PARTY_CARD_W - 16, y + 4, PackRgb(255, 123, 175), dark);
 
     DrawStr(&sSmall, Ascii(CTR_TEXT("Lv.", "Nv.", "Niv.", "Lv.")), x + 42, y + 28, white, dark);
     DrawStr(&sSmall, Number(mon->level, 2, STR_CONV_MODE_RIGHT_ALIGN), x + 62, y + 28, white, dark);
@@ -6286,6 +6305,28 @@ static bool8 DirtyRect(const ViewState *now, const ViewState *shown, Rect *r)
 {
     static ViewState probe;
     bool8 battle = now->mode >= MODE_BATTLE_INFO;
+
+    if (now->mode == MODE_PARTY_MENU && shown->mode == MODE_PARTY_MENU)
+    {
+        probe = *now;
+        for (int i = 0; i < PARTY_SIZE; ++i)
+        {
+            probe.party[i].iconFrame = shown->party[i].iconFrame;
+            probe.party[i].iconYOffset = shown->party[i].iconYOffset;
+        }
+        if (memcmp(&probe, shown, sizeof(probe)) != 0)
+            return FALSE;
+        RectInit(r);
+        for (int i = 0; i < PARTY_SIZE; ++i)
+            if (now->party[i].iconFrame != shown->party[i].iconFrame
+             || now->party[i].iconYOffset != shown->party[i].iconYOffset)
+            {
+                int x = PARTY_CARD_X(i & 1), y = PARTY_CARD_Y(i >> 1);
+
+                RectAdd(r, x + 5, y + 3, x + 37, y + 39);
+            }
+        return r->x0 < r->x1 && r->y0 < r->y1;
+    }
 
     if (now->mode == MODE_FIELD && shown->mode == MODE_FIELD
      && now->screen == SCR_MAP && shown->screen == SCR_MAP)
