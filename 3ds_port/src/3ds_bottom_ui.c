@@ -4185,24 +4185,49 @@ static void DrawSave(const ViewState *s)
 #define PARTY_CARD_W 148
 #define PARTY_CARD_H 44
 
+/* Pixel bevels and restrained gradients shared by the roster and actions. */
+static void PartyGradient(int x, int y, int w, int h, Rgb top, Rgb bottom)
+{
+    for (int row = 0; row < h; ++row)
+    {
+        int den = h > 1 ? h - 1 : 1;
+        u16 colour = PackRgb(top.r + (bottom.r - top.r) * row / den,
+                            top.g + (bottom.g - top.g) * row / den,
+                            top.b + (bottom.b - top.b) * row / den);
+
+        FillRect(x, y + row, w, 1, colour);
+    }
+}
+
+static void PartyBevel(int x, int y, int w, int h, u16 light, u16 shade)
+{
+    FillRect(x, y, w, 1, light);
+    FillRect(x, y, 1, h, light);
+    FillRect(x + 1, y + h - 1, w - 1, 1, shade);
+    FillRect(x + w - 1, y + 1, 1, h - 1, shade);
+}
+
 static void DrawPartyCard(const ViewState *s, int slot)
 {
     const MonView *mon = &s->party[slot];
     int x = PARTY_CARD_X(slot & 1), y = PARTY_CARD_Y(slot >> 1);
     bool8 selected = s->partyCursor == slot;
-    u16 edge = PackRgb(11, 85, 92);
-    u16 body = selected ? PackRgb(28, 210, 75) : PackRgb(0, 130, 65);
-    u16 hi = selected ? PackRgb(129, 247, 138) : PackRgb(33, 170, 92);
-    u16 sh = PackRgb(0, 89, 74);
-    u16 white = PackRgb(255, 255, 255), dark = PackRgb(35, 48, 49);
+    u16 edge = PackRgb(0, 65, 68);
+    u16 hi = selected ? PackRgb(106, 255, 133) : PackRgb(41, 205, 114);
+    u16 white = PackRgb(255, 255, 255), dark = PackRgb(15, 43, 48);
+    Rgb top = mon->species ? (selected ? (Rgb){0, 219, 67} : (Rgb){0, 158, 81}) : (Rgb){43, 178, 187};
+    Rgb bottom = mon->species ? (selected ? (Rgb){0, 194, 73} : (Rgb){0, 135, 74}) : (Rgb){42, 163, 177};
 
     FillRect(x, y, PARTY_CARD_W, PARTY_CARD_H, edge);
-    FillRect(x + 2, y + 2, PARTY_CARD_W - 4, PARTY_CARD_H - 4,
-             mon->species ? body : PackRgb(67, 172, 181));
-    FillRect(x + 3, y + 3, PARTY_CARD_W - 6, 1, mon->species ? hi : PackRgb(107, 205, 207));
+    PartyGradient(x + 2, y + 2, PARTY_CARD_W - 4, PARTY_CARD_H - 4, top, bottom);
+    PartyBevel(x + 2, y + 2, PARTY_CARD_W - 4, PARTY_CARD_H - 4,
+               mon->species ? hi : PackRgb(100, 219, 220),
+               mon->species ? PackRgb(0, 106, 71) : PackRgb(24, 126, 139));
+    FillRect(x + 3, y + 3, 1, PARTY_CARD_H - 6,
+             mon->species ? PackRgb(36, 229, 105) : PackRgb(75, 199, 207));
     if (!mon->species)
     {
-        FillRect(x + 2, y + 21, PARTY_CARD_W - 4, 1, PackRgb(105, 202, 204));
+        FillRect(x + 4, y + 21, PARTY_CARD_W - 8, 1, PackRgb(97, 211, 213));
         return;
     }
 
@@ -4236,14 +4261,19 @@ static void DrawPartyCard(const ViewState *s, int slot)
 
     {
         int barX = x + 42, barY = y + 21, barW = PARTY_CARD_W - 50;
-        int fill = mon->maxHp ? (barW * mon->hp) / mon->maxHp : 0;
-        u16 color = mon->maxHp && (u32)mon->hp * 2 < mon->maxHp ? PackRgb(239, 64, 57)
-                  : mon->maxHp && (u32)mon->hp * 2 < (u32)mon->maxHp * 3 ? PackRgb(246, 186, 55)
-                  : PackRgb(67, 229, 77);
+        int fill = mon->maxHp ? ((barW - 2) * mon->hp) / mon->maxHp : 0;
+        bool8 low = mon->maxHp && (u32)mon->hp * 2 < mon->maxHp;
 
-        FillRect(barX, barY, barW, 5, sh);
-        if (fill > 2)
-            FillRect(barX + 1, barY + 1, fill - 2, 3, color);
+        FillRect(barX, barY, barW, 6, PackRgb(0, 63, 59));
+        FillRect(barX + 1, barY + 1, barW - 2, 4, PackRgb(0, 80, 75));
+        for (int px = 0; px < fill; ++px)
+        {
+            int den = fill > 1 ? fill - 1 : 1;
+
+            FillRect(barX + 1 + px, barY + 1, 1, 4,
+                     low ? PackRgb(255, 122 - 49 * px / den, 100 - 19 * px / den)
+                         : PackRgb(255, 241 - 54 * px / den, 0 + 145 * px / den));
+        }
     }
     if (mon->ailment != AILMENT_NONE)
         DrawStr(&sSmall, Ascii("!"), x + 33, y + 7, PackRgb(255, 221, 90), dark);
@@ -4253,15 +4283,17 @@ static void DrawPartyCard(const ViewState *s, int slot)
 
 static void DrawPartyRoster(const ViewState *s)
 {
-    u16 bg = PackRgb(108, 205, 207), bgLight = PackRgb(146, 227, 225);
     int lines = StrLines(s->text);
 
-    FillRect(0, 0, W, H, bg);
-    FillRect(0, 0, W, 3, bgLight);
+    FillRect(0, 0, W, H, PackRgb(65, 199, 197));
     for (int i = 0; i < PARTY_SIZE; ++i)
         DrawPartyCard(s, i);
 
-    DrawWindowFrame(s->frame, 8, 159, 38, 9, TXT_WHITE);
+    FillRect(4, 158, W - 8, 78, PackRgb(7, 54, 66));
+    FillRect(6, 160, W - 12, 74, PackRgb(102, 88, 133));
+    PartyBevel(6, 160, W - 12, 74, PackRgb(154, 157, 191), PackRgb(63, 59, 93));
+    FillRect(10, 164, W - 20, 66, PackRgb(250, 249, 252));
+    PartyBevel(10, 164, W - 20, 66, PackRgb(255, 255, 255), PackRgb(219, 210, 227));
     if (s->text[0] != EOS)
     {
         int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
@@ -4277,25 +4309,41 @@ static void DrawPartyRoster(const ViewState *s)
             18, lines > 1 ? 211 : 205, TXT_BLUE, TXT_LBLUE);
 }
 
+/* Keep both first-row cards visible above the action list. */
+#define PARTY_ACTION_X PARTY_CARD_X(1)
+#define PARTY_ACTION_Y PARTY_CARD_Y(1)
+#define PARTY_ACTION_W PARTY_CARD_W
+#define PARTY_ACTION_STEP 24
+#define PARTY_ACTION_H 22
+
 /* The native party task still owns the operations.  This is only its
  * presentation: a large Emerald-coloured action list over the roster. */
 static void DrawPartyActions(const ViewState *s)
 {
-    int x = 166, y = 8;
+    int x = PARTY_ACTION_X;
+
+    /* Clear the two lower right-hand slots beneath the popup. */
+    FillRect(x - 1, PARTY_ACTION_Y - 1, PARTY_ACTION_W + 2, 99, PackRgb(65, 199, 197));
 
     for (int i = 0; i < s->partyActionCount; ++i)
     {
+        int y = PARTY_ACTION_Y + i * PARTY_ACTION_STEP;
         bool8 selected = s->partyActionCursor == i;
-        u16 border = selected ? PackRgb(226, 70, 40) : PackRgb(30, 77, 58);
-        u16 face = selected ? PackRgb(255, 237, 112) : PackRgb(249, 185, 49);
-        u16 light = selected ? PackRgb(255, 250, 190) : PackRgb(255, 219, 109);
+        u16 light = selected ? PackRgb(255, 255, 186) : PackRgb(255, 227, 100);
 
-        FillRect(x, y + i * 39, 146, 34, border);
-        FillRect(x + 3, y + 3 + i * 39, 140, 28, face);
-        FillRect(x + 5, y + 5 + i * 39, 136, 2, light);
+        FillRect(x, y, PARTY_ACTION_W, PARTY_ACTION_H, PackRgb(0, 60, 64));
+        FillRect(x + 2, y + 2, PARTY_ACTION_W - 4, PARTY_ACTION_H - 4,
+                 selected ? PackRgb(250, 56, 24) : PackRgb(185, 123, 0));
+        PartyGradient(x + 4, y + 4, PARTY_ACTION_W - 8, PARTY_ACTION_H - 8,
+                      selected ? (Rgb){255, 246, 126} : (Rgb){255, 193, 38},
+                      selected ? (Rgb){255, 235, 99} : (Rgb){255, 181, 14});
+        PartyBevel(x + 4, y + 4, PARTY_ACTION_W - 8, PARTY_ACTION_H - 8,
+                   light, selected ? PackRgb(255, 208, 52) : PackRgb(228, 149, 0));
         if (selected)
-            DrawStr(&sNormal, Ascii(">"), x + 10, y + 10 + i * 39, TXT_DARK, TXT_LIGHT);
-        DrawStr(&sNormal, s->partyActionText[i], x + 27, y + 10 + i * 39, TXT_DARK, TXT_LIGHT);
+            for (int row = 0; row < 9; ++row)
+                FillRect(x + 10, y + 7 + row, 5 - abs(row - 4), 1, PackRgb(25, 49, 63));
+        DrawStrCentered(&sNormal, s->partyActionText[i], x + PARTY_ACTION_W / 2 + 4,
+                      y + 4, PackRgb(27, 49, 65), PackRgb(255, 250, 209));
     }
 }
 
@@ -4328,11 +4376,12 @@ static void TapPartySlot(int slot)
 
 static int PartyActionAt(int x, int y)
 {
-    if (x < 166 || x >= 312 || y < 8 || y >= 164)
+    if (x < PARTY_ACTION_X || x >= PARTY_ACTION_X + PARTY_ACTION_W
+     || y < PARTY_ACTION_Y || y >= PARTY_ACTION_Y + 4 * PARTY_ACTION_STEP)
         return -1;
-    if ((y - 8) % 39 >= 34)
+    if ((y - PARTY_ACTION_Y) % PARTY_ACTION_STEP >= PARTY_ACTION_H)
         return -1;
-    return (y - 8) / 39;
+    return (y - PARTY_ACTION_Y) / PARTY_ACTION_STEP;
 }
 
 /*
