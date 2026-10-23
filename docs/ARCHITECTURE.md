@@ -91,7 +91,16 @@ The bottom screen replaces the START menu (`3ds_bottom_ui.c`,
 and options. Actions that need the game's own logic (switching a Pokémon,
 giving an item, field moves) run the original menu hidden while the top screen
 holds its last frame, driven by injected key presses; what that menu shows is
-read back and drawn as buttons. The PokéNav is the game's own, run as it is:
+read back and drawn as buttons. The symmetric party cards use native stepped
+bevels, a white/orange selection border and a striped turquoise backdrop.
+All six taller slots draw a recessed Poké Ball watermark geometrically, with
+one etched line in empty slots and live bouncing icons, held-item badges and
+HP gauges in occupied slots. A compact mint message well sits beside a native
+purple B/return button; tapping it injects B into the original party task.
+The message well joins the game's line breaks with spaces and uses a single
+vertically centred line, choosing between the normal and small native fonts.
+Card taps, action rows and animation dirty rectangles share the new layout.
+The PokéNav is the game's own, run as it is:
 its screens are composed as a centred GBA screen and drawn into the 240x240
 area left of the column instead of the top screen, laid out for its 240 lines
 (the header on the top edge, the help bar on the bottom edge, the rest in the

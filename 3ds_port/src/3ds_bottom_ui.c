@@ -2365,7 +2365,7 @@ typedef struct
     u16 registered;
     u8 run;
     /* Party menu state, read-only from the game's existing menu. */
-    u8 partyCursor, partyNative, partyActionCursor, partyActionCount;
+    u8 partyCursor, partyNative, partyChoosePrompt, partyActionCursor, partyActionCount;
     u8 partyActionText[4][32];
     u8 dexNative;
     CtrDexList dexList;
@@ -3173,6 +3173,7 @@ static void SnapshotParty(ViewState *s)
     s->partyCursor = gPartyMenu.action == PARTY_ACTION_SWITCH || gPartyMenu.action == PARTY_ACTION_SOFTBOILED
                    ? gPartyMenu.slotId2 : gPartyMenu.slotId;
     s->partyNative = FuncIsActiveTask(Task_HandleChooseMonInput);
+    s->partyChoosePrompt = s->partyNative && gPartyMenu.action == PARTY_ACTION_CHOOSE_MON;
     s->partyActionCursor = Menu_GetCursorPos();
     s->partyActionCount = CtrParty_ActionCount();
     if (s->partyActionCount > ARRAY_COUNT(s->partyActionText))
@@ -4411,10 +4412,18 @@ static void DrawFullSave(const ViewState *s)
 /* Native party roster                                                     */
 /* ------------------------------------------------------------------------ */
 
-#define PARTY_CARD_X(c) (8 + (c) * 156)
-#define PARTY_CARD_Y(r) (7 + (r) * 49)
-#define PARTY_CARD_W 148
-#define PARTY_CARD_H 44
+#define PARTY_CARD_X(c) (6 + (c) * 156)
+#define PARTY_CARD_Y(r) (21 + (r) * 58)
+#define PARTY_CARD_W 152
+#define PARTY_CARD_H 52
+#define PARTY_MESSAGE_X 6
+#define PARTY_MESSAGE_Y 198
+#define PARTY_MESSAGE_W 258
+#define PARTY_MESSAGE_H 30
+#define PARTY_BACK_X 271
+#define PARTY_BACK_Y PARTY_MESSAGE_Y
+#define PARTY_BACK_W 43
+#define PARTY_BACK_H PARTY_MESSAGE_H
 
 /* Pixel bevels and restrained gradients shared by the roster and actions. */
 static void PartyGradient(int x, int y, int w, int h, Rgb top, Rgb bottom)
@@ -4438,60 +4447,108 @@ static void PartyBevel(int x, int y, int w, int h, u16 light, u16 shade)
     FillRect(x + w - 1, y + 1, 1, h - 1, shade);
 }
 
+/* Stepped corners and bevels on the native pixel grid. The selection sits
+ * outside the card, so every party slot keeps the same size and alignment. */
+static void PartyCardShape(int x, int y, int w, int h, u16 colour)
+{
+    FillRect(x + 4, y, w - 8, h, colour);
+    FillRect(x + 2, y + 1, w - 4, h - 2, colour);
+    FillRect(x + 1, y + 2, w - 2, h - 4, colour);
+    FillRect(x, y + 4, w, h - 8, colour);
+}
+
+static void DrawPartyBackdrop(int x, int y, int w, int h)
+{
+    for (int row = y; row < y + h; ++row)
+        FillRect(x, row, w, 1, row % 4 == 3 ? PackRgb(77, 208, 192) : PackRgb(41, 173, 158));
+}
+
+static void DrawPartyWatermark(int x, int y, u16 ink)
+{
+    /* A recessed Poké Ball watermark, cut into two halves around its ring. */
+    for (int dy = -13; dy <= 13; ++dy)
+        for (int dx = -13; dx <= 13; ++dx)
+        {
+            int distance = dx * dx + dy * dy;
+            if ((distance <= 169 && distance > 36 && abs(dy) > 1)
+             || (distance <= 36 && distance > 16))
+                Put(x + dx, y + dy, ink);
+        }
+}
+
 static void DrawPartyCard(const ViewState *s, int slot)
 {
     const MonView *mon = &s->party[slot];
     int x = PARTY_CARD_X(slot & 1), y = PARTY_CARD_Y(slot >> 1);
     bool8 selected = s->partyCursor == slot;
-    u16 edge = PackRgb(0, 65, 68);
-    u16 hi = selected ? PackRgb(106, 255, 133) : PackRgb(41, 205, 114);
+    u16 edge = PackRgb(0, 61, 62);
+    u16 hi = mon->species ? PackRgb(104, 255, 151) : PackRgb(109, 226, 235);
     u16 white = PackRgb(255, 255, 255), dark = PackRgb(15, 43, 48);
-    Rgb top = mon->species ? (selected ? (Rgb){0, 219, 67} : (Rgb){0, 158, 81}) : (Rgb){43, 178, 187};
-    Rgb bottom = mon->species ? (selected ? (Rgb){0, 194, 73} : (Rgb){0, 135, 74}) : (Rgb){42, 163, 177};
+    Rgb top = mon->species ? (selected ? (Rgb){1, 164, 80} : (Rgb){1, 188, 81}) : (Rgb){41, 177, 191};
+    Rgb bottom = mon->species ? (selected ? (Rgb){1, 147, 76} : (Rgb){1, 185, 80}) : (Rgb){41, 174, 189};
 
-    FillRect(x, y, PARTY_CARD_W, PARTY_CARD_H, edge);
-    PartyGradient(x + 2, y + 2, PARTY_CARD_W - 4, PARTY_CARD_H - 4, top, bottom);
-    PartyBevel(x + 2, y + 2, PARTY_CARD_W - 4, PARTY_CARD_H - 4,
-               mon->species ? hi : PackRgb(100, 219, 220),
-               mon->species ? PackRgb(0, 106, 71) : PackRgb(24, 126, 139));
-    FillRect(x + 3, y + 3, 1, PARTY_CARD_H - 6,
-             mon->species ? PackRgb(36, 229, 105) : PackRgb(75, 199, 207));
+    PartyCardShape(x + 1, y + 2, PARTY_CARD_W, PARTY_CARD_H, PackRgb(0, 103, 91));
+    if (selected && mon->species)
+    {
+        PartyCardShape(x - 2, y - 2, PARTY_CARD_W + 4, PARTY_CARD_H + 4, PackRgb(211, 69, 4));
+        PartyCardShape(x - 1, y - 1, PARTY_CARD_W + 2, PARTY_CARD_H + 2, PackRgb(255, 250, 242));
+    }
+    PartyCardShape(x, y, PARTY_CARD_W, PARTY_CARD_H,
+                   selected && mon->species ? PackRgb(255, 255, 249) : edge);
+    PartyCardShape(x + 1, y + 1, PARTY_CARD_W - 2, PARTY_CARD_H - 2,
+                   selected && mon->species ? PackRgb(255, 255, 249)
+                   : mon->species ? PackRgb(0, 140, 80) : PackRgb(20, 126, 144));
+    PartyCardShape(x + 2, y + 2, PARTY_CARD_W - 4, PARTY_CARD_H - 4,
+                   selected && mon->species ? edge : hi);
+    PartyCardShape(x + 3, y + 3, PARTY_CARD_W - 6, PARTY_CARD_H - 6,
+                   mon->species ? PackRgb(0, 167, 91) : PackRgb(37, 180, 199));
+    PartyGradient(x + 5, y + 5, PARTY_CARD_W - 10, PARTY_CARD_H - 10, top, bottom);
+    FillRect(x + 6, y + 4, PARTY_CARD_W - 12, 1, hi);
+    FillRect(x + 4, y + 6, 1, PARTY_CARD_H - 12, hi);
+    FillRect(x + PARTY_CARD_W - 5, y + 6, 1, PARTY_CARD_H - 14,
+             mon->species ? PackRgb(46, 219, 120) : PackRgb(71, 196, 212));
+    FillRect(x + 6, y + PARTY_CARD_H - 5, PARTY_CARD_W - 12, 1,
+             mon->species ? PackRgb(0, 180, 92) : PackRgb(27, 162, 181));
+    DrawPartyWatermark(x + 17, y + 20,
+                      !mon->species ? PackRgb(29, 150, 167)
+                      : selected ? PackRgb(0, 124, 65) : PackRgb(0, 157, 69));
     if (!mon->species)
     {
-        FillRect(x + 4, y + 21, PARTY_CARD_W - 8, 1, PackRgb(97, 211, 213));
+        FillRect(x + 33, y + 27, PARTY_CARD_W - 39, 1, PackRgb(92, 207, 212));
         return;
     }
 
+    /* Keep the live icon and its bounce over the recessed native watermark. */
     {
         const u8 *icon = MonIcon(mon->iconSpecies, mon->deoxys);
         u8 pal = gMonIconPaletteIndices[mon->iconSpecies];
 
         if (icon && pal < 3)
-            DrawSprite(icon + mon->iconFrame * 512, 4, 4, x + 5,
-                       y + 6 + mon->iconYOffset, sRes.monIconPal[pal].c);
+            DrawSprite(icon + mon->iconFrame * 512, 4, 4, x + 8,
+                       y + 12 + mon->iconYOffset, sRes.monIconPal[pal].c);
     }
     {
         int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
 
-        sClipX0 = x + 42; sClipX1 = x + PARTY_CARD_W - 20; sClipY0 = y + 3; sClipY1 = y + 20;
-        DrawStr(&sNormal, mon->nick, x + 42, y + 4, white, dark);
+        sClipX0 = x + 42; sClipX1 = x + PARTY_CARD_W - 20; sClipY0 = y + 7; sClipY1 = y + 25;
+        DrawStr(&sNormal, mon->nick, x + 42, y + 9, white, dark);
         sClipX0 = clip[0]; sClipY0 = clip[1]; sClipX1 = clip[2]; sClipY1 = clip[3];
     }
     if (mon->gender == MON_MALE)
-        DrawStr(&sSmall, gText_MaleSymbol, x + PARTY_CARD_W - 16, y + 4, PackRgb(91, 179, 255), dark);
+        DrawStr(&sNormal, gText_MaleSymbol, x + PARTY_CARD_W - 16, y + 9, PackRgb(69, 171, 255), dark);
     else if (mon->gender == MON_FEMALE)
-        DrawStr(&sSmall, gText_FemaleSymbol, x + PARTY_CARD_W - 16, y + 4, PackRgb(255, 123, 175), dark);
+        DrawStr(&sNormal, gText_FemaleSymbol, x + PARTY_CARD_W - 16, y + 9, PackRgb(255, 105, 151), dark);
 
-    DrawStr(&sSmall, Ascii(CTR_TEXT("Lv.", "Nv.", "Niv.", "Lv.")), x + 42, y + 28, white, dark);
-    DrawStr(&sSmall, Number(mon->level, 2, STR_CONV_MODE_RIGHT_ALIGN), x + 62, y + 28, white, dark);
-    DrawStrRight(&sSmall, Number(mon->hp, 3, STR_CONV_MODE_RIGHT_ALIGN), x + PARTY_CARD_W - 46, y + 28,
+    DrawStr(&sNormal, Ascii(CTR_TEXT("Lv.", "Nv.", "Niv.", "Lv.")), x + 42, y + 34, white, dark);
+    DrawStr(&sNormal, Number(mon->level, 3, STR_CONV_MODE_LEFT_ALIGN), x + 65, y + 34, white, dark);
+    DrawStrRight(&sNormal, Number(mon->hp, 3, STR_CONV_MODE_RIGHT_ALIGN), x + PARTY_CARD_W - 46, y + 34,
                  white, dark);
-    DrawStr(&sSmall, Ascii("/"), x + PARTY_CARD_W - 43, y + 28, white, dark);
-    DrawStrRight(&sSmall, Number(mon->maxHp, 3, STR_CONV_MODE_RIGHT_ALIGN), x + PARTY_CARD_W - 7, y + 28,
+    DrawStr(&sNormal, Ascii("/"), x + PARTY_CARD_W - 43, y + 34, white, dark);
+    DrawStrRight(&sNormal, Number(mon->maxHp, 3, STR_CONV_MODE_RIGHT_ALIGN), x + PARTY_CARD_W - 7, y + 34,
                  white, dark);
 
     {
-        int barX = x + 42, barY = y + 21, barW = PARTY_CARD_W - 50;
+        int barX = x + 42, barY = y + 26, barW = PARTY_CARD_W - 50;
         int fill = mon->maxHp ? ((barW - 2) * mon->hp) / mon->maxHp : 0;
         bool8 low = mon->maxHp && (u32)mon->hp * 2 < mon->maxHp;
 
@@ -4507,45 +4564,125 @@ static void DrawPartyCard(const ViewState *s, int slot)
         }
     }
     if (mon->ailment != AILMENT_NONE)
-        DrawStr(&sSmall, Ascii("!"), x + 33, y + 7, PackRgb(255, 221, 90), dark);
+        DrawStr(&sSmall, Ascii("!"), x + 35, y + 14, PackRgb(255, 221, 90), dark);
     if (mon->heldItem != ITEM_NONE)
-        DrawHeldItemBadge(mon->heldItem, x + 27, y + 27);
+        DrawHeldItemBadge(mon->heldItem, x + 30, y + 35);
+}
+
+static bool8 PartyBackAt(int x, int y)
+{
+    return x >= PARTY_BACK_X && x < PARTY_BACK_X + PARTY_BACK_W
+        && y >= PARTY_BACK_Y && y < PARTY_BACK_Y + PARTY_BACK_H;
+}
+
+/* The original dialog inserts line/page breaks for the GBA text window.
+ * Join those words for the wider native well, preserving extra glyphs. */
+static void CopyPartyMessageLine(u8 *dst, unsigned capacity, const u8 *src)
+{
+    unsigned length = 0;
+    u16 previous = CHAR_SPACE;
+
+    for (u16 glyph; (glyph = NextGlyph(&src)) != 0xFFFF;)
+    {
+        if (glyph == 0xFFFE)
+            glyph = CHAR_SPACE;
+        if (glyph == CHAR_SPACE && previous == CHAR_SPACE)
+            continue;
+        if (length + (glyph >= 0x100 ? 2 : 1) >= capacity)
+            break;
+        if (glyph >= 0x100)
+            dst[length++] = CHAR_EXTRA_SYMBOL;
+        dst[length++] = (u8)glyph;
+        previous = glyph;
+    }
+    if (length && previous == CHAR_SPACE)
+        --length;
+    dst[length] = EOS;
+}
+
+static void DrawPartyMessage(const ViewState *s)
+{
+    int x = PARTY_MESSAGE_X, y = PARTY_MESSAGE_Y, w = PARTY_MESSAGE_W, h = PARTY_MESSAGE_H;
+    const u8 *message = !s->partyChoosePrompt && s->text[0] != EOS ? s->text
+                      : Ascii(CTR_TEXT("Choose a POKéMON.", "Elige un POKéMON.", "Choisissez un POKéMON.", "Scegli un POKéMON."));
+    u8 line[sizeof(s->text)];
+    int top, bottom;
+    int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+
+    CopyPartyMessageLine(line, sizeof(line), message);
+    const Font *font = StrWidth(&sNormal, line) <= w - 22 ? &sNormal : &sSmall;
+
+    PartyCardShape(x + 1, y + 1, w, h, PackRgb(0, 84, 76));
+    PartyCardShape(x, y, w, h, PackRgb(5, 51, 48));
+    PartyCardShape(x + 1, y + 1, w - 2, h - 2, PackRgb(58, 143, 121));
+    PartyCardShape(x + 2, y + 2, w - 4, h - 4, PackRgb(160, 228, 206));
+    PartyCardShape(x + 3, y + 3, w - 6, h - 6, PackRgb(239, 250, 246));
+    PartyGradient(x + 5, y + 4, w - 10, h - 8, (Rgb){243, 252, 248}, (Rgb){231, 246, 242});
+    for (int corner = 0; corner < 4; ++corner)
+    {
+        int cx = x + (corner & 1 ? w - 5 : 3), cy = y + (corner & 2 ? h - 5 : 3);
+        FillRect(cx, cy, 2, 2, PackRgb(229, 231, 153));
+    }
+
+    /* Use the whole well as one line; retain native glyphs and centre the
+     * text vertically, including item receipt and switching messages. */
+    CapRows(font, &top, &bottom);
+    sClipX0 = x + 10; sClipX1 = x + w - 8; sClipY0 = y + 3; sClipY1 = y + h - 3;
+    DrawStr(font, line, x + 11, y + (h - bottom + top) / 2 - top,
+            PackRgb(78, 82, 82), PackRgb(189, 211, 208));
+    RestoreClip(clip);
+}
+
+static void DrawPartyBackButton(const ViewState *s)
+{
+    int x = PARTY_BACK_X, y = PARTY_BACK_Y, w = PARTY_BACK_W, h = PARTY_BACK_H;
+    u16 dark = PackRgb(49, 43, 66), white = PackRgb(255, 248, 235);
+
+    PartyCardShape(x + 1, y + 1, w, h, PackRgb(0, 87, 78));
+    PartyCardShape(x, y, w, h, PackRgb(7, 48, 48));
+    PartyCardShape(x + 1, y + 1, w - 2, h - 2, PackRgb(57, 48, 79));
+    PartyCardShape(x + 2, y + 2, w - 4, h - 4, PackRgb(163, 151, 184));
+    PartyGradient(x + 4, y + 4, w - 8, h - 8, (Rgb){135, 119, 158}, (Rgb){105, 88, 132});
+    FillRect(x + 5, y + 3, w - 10, 1, PackRgb(188, 180, 208));
+    FillRect(x + 5, y + h - 4, w - 10, 1, PackRgb(78, 65, 105));
+    if (s->pressed == HIT_CANCEL)
+        ShadeRect(x + 3, y + 3, w - 6, h - 6);
+
+    /* B in a cream disk beside a return arrow: every stroke is native. */
+    for (int dy = -8; dy <= 8; ++dy)
+        for (int dx = -8; dx <= 8; ++dx)
+        {
+            int distance = dx * dx + dy * dy;
+            if (distance <= 64)
+                Put(x + 13 + dx, y + 15 + dy, distance > 44 ? dark : white);
+        }
+    DrawStrIn(&sNormal, Ascii("B"), x + 7, x + 20, y + 9, y + 22, dark, white);
+    for (int col = 0; col <= 6; ++col)
+        FillRect(x + 21 + col, y + 14 - col, 1, 3 + 2 * col, dark);
+    FillRect(x + 27, y + 11, 11, 12, dark);
+    for (int col = 1; col <= 5; ++col)
+        FillRect(x + 21 + col, y + 15 - col, 1, 1 + 2 * col, white);
+    FillRect(x + 27, y + 12, 9, 5, white);
+    FillRect(x + 32, y + 16, 4, 6, white);
 }
 
 static void DrawPartyRoster(const ViewState *s)
 {
-    int lines = StrLines(s->text);
 
-    FillRect(0, 0, W, H, PackRgb(65, 199, 197));
+    DrawPartyBackdrop(0, 0, W, H);
     for (int i = 0; i < PARTY_SIZE; ++i)
         DrawPartyCard(s, i);
 
-    FillRect(4, 158, W - 8, 78, PackRgb(7, 54, 66));
-    FillRect(6, 160, W - 12, 74, PackRgb(102, 88, 133));
-    PartyBevel(6, 160, W - 12, 74, PackRgb(154, 157, 191), PackRgb(63, 59, 93));
-    FillRect(10, 164, W - 20, 66, PackRgb(250, 249, 252));
-    PartyBevel(10, 164, W - 20, 66, PackRgb(255, 255, 255), PackRgb(219, 210, 227));
-    if (s->text[0] != EOS)
-    {
-        int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
-
-        sClipX0 = 18; sClipX1 = 302; sClipY0 = 172; sClipY1 = 205;
-        DrawStr(&sNormal, s->text, 18, 174, TXT_DARK, TXT_LIGHT);
-        sClipX0 = clip[0]; sClipY0 = clip[1]; sClipX1 = clip[2]; sClipY1 = clip[3];
-    }
-    else
-        DrawStr(&sNormal, Ascii(CTR_TEXT("Choose a Pokémon", "Elige un Pokémon", "Choisissez un Pokémon", "Scegli un Pokémon")),
-                18, 174, TXT_DARK, TXT_LIGHT);
-    DrawStr(&sSmall, Ascii(CTR_TEXT("A: Choose     B: Back", "A: Elegir     B: Atrás", "A: Choisir     B: Retour", "A: Scegli     B: Indietro")),
-            18, lines > 1 ? 211 : 205, TXT_BLUE, TXT_LBLUE);
+    DrawPartyMessage(s);
+    DrawPartyBackButton(s);
 }
 
 /* Keep both first-row cards visible above the action list. */
 #define PARTY_ACTION_X PARTY_CARD_X(1)
 #define PARTY_ACTION_Y PARTY_CARD_Y(1)
 #define PARTY_ACTION_W PARTY_CARD_W
-#define PARTY_ACTION_STEP 24
-#define PARTY_ACTION_H 22
+#define PARTY_ACTION_STEP 27
+#define PARTY_ACTION_H 25
 
 /* The native party task still owns the operations.  This is only its
  * presentation: a large Emerald-coloured action list over the roster. */
@@ -4554,7 +4691,7 @@ static void DrawPartyActions(const ViewState *s)
     int x = PARTY_ACTION_X;
 
     /* Clear the two lower right-hand slots beneath the popup. */
-    FillRect(x - 1, PARTY_ACTION_Y - 1, PARTY_ACTION_W + 2, 99, PackRgb(65, 199, 197));
+    DrawPartyBackdrop(x - 3, PARTY_ACTION_Y - 3, PARTY_ACTION_W + 6, 116);
 
     for (int i = 0; i < s->partyActionCount; ++i)
     {
@@ -7576,7 +7713,7 @@ static bool8 DirtyRect(const ViewState *now, const ViewState *shown, Rect *r)
             {
                 int x = PARTY_CARD_X(i & 1), y = PARTY_CARD_Y(i >> 1);
 
-                RectAdd(r, x + 5, y + 3, x + 37, y + 39);
+                RectAdd(r, x + 8, y + 9, x + 40, y + 45);
             }
         return r->x0 < r->x1 && r->y0 < r->y1;
     }
@@ -8659,7 +8796,9 @@ static u8 ProcessTouch(u8 mode)
             sTouch.active = FALSE;
             if (sTouch.dragged)
                 return HIT_NONE;
-            if (!sState.partyNative)
+            if (PartyBackAt(sTouch.lastX, sTouch.lastY))
+                PressOnce(B_BUTTON);
+            else if (!sState.partyNative)
             {
                 slot = PartyActionAt(sTouch.lastX, sTouch.lastY);
                 if (slot >= 0 && slot < sState.partyActionCount)
@@ -8674,11 +8813,12 @@ static u8 ProcessTouch(u8 mode)
                 slot = PartyCardAt(sTouch.lastX, sTouch.lastY);
                 if (slot >= 0 && sState.party[slot].species != SPECIES_NONE)
                     TapPartySlot(slot);
-                else if (sTouch.lastY >= 159)
+                else if (sTouch.lastX >= PARTY_MESSAGE_X && sTouch.lastX < PARTY_MESSAGE_X + PARTY_MESSAGE_W
+                      && sTouch.lastY >= PARTY_MESSAGE_Y && sTouch.lastY < PARTY_MESSAGE_Y + PARTY_MESSAGE_H)
                     PressOnce(A_BUTTON);
             }
         }
-        return HIT_NONE;
+        return sTouch.active && PartyBackAt(sTouch.lastX, sTouch.lastY) ? HIT_CANCEL : HIT_NONE;
     }
     /* The shop's BUY screen: its picture in the middle of the whole screen,
      * the touch in pixels of it, as it goes (drags scroll its list). */
