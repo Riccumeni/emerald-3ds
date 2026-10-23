@@ -725,6 +725,31 @@ static void DrawItemIcon(u16 item, int x, int y)
         DrawSprite(sItemIcons[slot].tiles, 3, 3, x, y, sItemIcons[slot].pal.c);
 }
 
+/* Item art is 24x24.  Party cards use this compact 12x12 badge next to the
+ * Pokémon sprite so it does not obscure the HP and level data. */
+static void DrawHeldItemBadge(u16 item, int x, int y)
+{
+    int slot = ItemIcon(item);
+
+    if (slot < 0)
+        return;
+    for (int py = 0; py < 12; ++py)
+    {
+        int sy = py * 2;
+
+        for (int px = 0; px < 12; ++px)
+        {
+            int sx = px * 2;
+            int tile = (sy / 8) * 3 + sx / 8;
+            const u8 *row = sItemIcons[slot].tiles + tile * 32 + (sy & 7) * 4;
+            u8 color = (row[(sx & 7) >> 1] >> (((sx & 7) & 1) * 4)) & 15;
+
+            if (color)
+                Put(x + px, y + py, sItemIcons[slot].pal.c[color]);
+        }
+    }
+}
+
 /* ------------------------------------------------------------------------ */
 /* Battle art                                                               */
 /* ------------------------------------------------------------------------ */
@@ -2297,7 +2322,7 @@ typedef struct
     u16 species;      /* SPECIES_NONE: empty slot */
     u16 iconSpecies;
     u8 deoxys, isEgg, level, gender, ailment, fainted;
-    u16 hp, maxHp;
+    u16 hp, maxHp, heldItem;
     u8 nick[POKEMON_NAME_LENGTH + 2];
 } MonView;
 
@@ -3090,6 +3115,7 @@ static void SnapshotParty(ViewState *s)
         view->level = GetMonData(mon, MON_DATA_LEVEL);
         view->hp = GetMonData(mon, MON_DATA_HP);
         view->maxHp = GetMonData(mon, MON_DATA_MAX_HP);
+        view->heldItem = GetMonData(mon, MON_DATA_HELD_ITEM);
         view->ailment = GetMonAilment(mon);
         GetMonData(mon, MON_DATA_NICKNAME, view->nick);
         view->gender = GetMonGender(mon);
@@ -3309,7 +3335,11 @@ static bool8 Prefetch(const ViewState *s)
     sIconBudget = TRUE;
     for (int i = 0; i < PARTY_SIZE && sIconBudget; ++i)
         if (s->party[i].species)
+        {
             MonIcon(s->party[i].iconSpecies, s->party[i].deoxys);
+            if (sIconBudget && s->party[i].heldItem != ITEM_NONE)
+                ItemIcon(s->party[i].heldItem);
+        }
     if (sIconBudget && s->registered != ITEM_NONE && s->mode < MODE_BATTLE_INFO)
         ItemIcon(s->registered);
     if (sIconBudget && s->mode == MODE_BATTLE_ACTION && s->quickBall != ITEM_NONE)
@@ -4198,6 +4228,8 @@ static void DrawPartyCard(const ViewState *s, int slot)
     }
     if (mon->ailment != AILMENT_NONE)
         DrawStr(&sSmall, Ascii("!"), x + 33, y + 7, PackRgb(255, 221, 90), dark);
+    if (mon->heldItem != ITEM_NONE)
+        DrawHeldItemBadge(mon->heldItem, x + 27, y + 27);
 }
 
 static void DrawPartyRoster(const ViewState *s)
