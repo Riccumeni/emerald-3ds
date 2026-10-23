@@ -2355,6 +2355,7 @@ typedef struct
     /* The OPTIONS page on show (CTR_EXTRAS_*) and the values of its extras,
      * in table order. */
     u8 optPage, optSub;
+    u16 optScroll, optScrollMax;
     u16 extras[24];
     /* The column's Y and RUN: the registered item; bit 0 running is the
      * default, bit 1 the player has the shoes. */
@@ -2376,6 +2377,17 @@ typedef struct
     struct ChooseMoveStruct moves4;
     u8 text[256];
 } ViewState;
+
+static bool8 MainMenuShown(const ViewState *s)
+{
+    return s->mode == MODE_FIELD && !s->inBattle
+        && (s->screen == SCR_MAP || s->screen == SCR_CARD || s->screen == SCR_OPTION);
+}
+
+static bool8 FullSaveShown(const ViewState *s)
+{
+    return s->mode == MODE_FIELD && !s->inBattle && s->screen == SCR_SAVE;
+}
 
 /* Which of the game's bag is on show. */
 enum { BAG_VIEW_NONE, BAG_VIEW_SECTION, BAG_VIEW_WHOLE };
@@ -2434,7 +2446,14 @@ static bool8 ExtraLive(const CtrExtra *extra, bool8 voxel)
 static u8 sOptPage;
 /* The screen of the tab on show (CTR_EXTRAS_SCREEN). */
 static u8 sOptSub;
+static u16 sOptScroll;
 #define CELLS_PER_PAGE 12
+#define OPT_VIEW_X 9
+#define OPT_VIEW_Y 40
+#define OPT_VIEW_W 187
+#define OPT_VIEW_H 156
+#define OPT_NATIVE_CELL_H 36
+#define OPT_NATIVE_STEP 40
 
 static bool8 OptionPages(void)
 {
@@ -2484,6 +2503,48 @@ static const CtrExtra *PageExtra(unsigned page, unsigned row)
         if (gCtrExtras[i].page == screen && n++ == row)
             return &gCtrExtras[i];
     return NULL;
+}
+
+static bool8 NativeOptionExists(int row)
+{
+    return FixedOptions() ? OptionExists(row) : PageExtra(sOptPage, row) != NULL;
+}
+
+static int NativeOptionTop(int row)
+{
+    int position = 0;
+
+    for (int i = 0; i < row; ++i)
+        if (NativeOptionExists(i))
+            position += OPT_NATIVE_STEP;
+    return position;
+}
+
+static int OptionsScrollMax(void)
+{
+    int count = 0;
+
+    for (int row = 0; row < (FixedOptions() ? OPTION_ROWS : CELLS_PER_PAGE); ++row)
+        if (NativeOptionExists(row))
+            ++count;
+    int height = count ? (count - 1) * OPT_NATIVE_STEP + OPT_NATIVE_CELL_H : 0;
+    return height > OPT_VIEW_H ? height - OPT_VIEW_H : 0;
+}
+
+static void ScrollOptions(int position)
+{
+    int limit = OptionsScrollMax();
+
+    sOptScroll = position < 0 ? 0 : position > limit ? limit : position;
+}
+
+static void RevealOption(int row)
+{
+    int y = NativeOptionTop(row);
+    if (y < sOptScroll)
+        ScrollOptions(y);
+    else if (y + OPT_NATIVE_CELL_H > sOptScroll + OPT_VIEW_H)
+        ScrollOptions(y + OPT_NATIVE_CELL_H - OPT_VIEW_H);
 }
 
 /* What a cell shows, for the redraw to notice a change: its value, or for
@@ -2544,6 +2605,8 @@ enum
     HIT_QUICK_BALL_PREV,
     HIT_QUICK_BALL_NEXT,
     HIT_MAP = 0x90,
+    HIT_OPT_SCROLL_UP,
+    HIT_OPT_SCROLL_DOWN,
     HIT_OPTION = 0xC0,     /* + option row; +HIT_OPTION_BACK for the left arrow */
     HIT_PAGE = 0xE0,       /* + OPTIONS page tab */
 };
@@ -2641,7 +2704,7 @@ static u8 CurrentMode(void)
         return MODE_OFF;
     if (CtrPokenav_IsOpen())
         return MODE_POKENAV;
-    if (CtrPokedex_IsOpen())
+    if (CtrPokedex_ListShown() || CtrPokedex_IsOpen())
         return MODE_POKEDEX;
     /* Before the boxes: the bag can be opened from them, whole screen too. */
     if (gMain.callback2 == CB2_BagMenuRun && gBagMenu)
@@ -3312,6 +3375,9 @@ static void Snapshot(ViewState *s, u8 mode, u8 pressed)
             ReadOptionValues(s->options);
             s->optPage = sOptPage;
             s->optSub = sOptSub;
+            ScrollOptions(sOptScroll);
+            s->optScroll = sOptScroll;
+            s->optScrollMax = OptionsScrollMax();
             for (unsigned row = 0; !FixedOptions() && row < ARRAY_COUNT(s->extras); ++row)
             {
                 const CtrExtra *extra = PageExtra(sOptPage, row);
@@ -4005,6 +4071,92 @@ static void DrawTrainerCard(const ViewState *s)
         }
 }
 
+/* Reflow the card for the menu viewport. Text, portrait and badge tiles are
+ * drawn directly at one screen pixel per source pixel; shrinking the old
+ * 240-wide composition erased columns in the glyphs and badge outlines. */
+static void DrawNativeTrainerCard(const ViewState *s)
+{
+    Pal pals[5];
+    u8 text[40];
+    u8 stars = s->stars > 4 ? 4 : s->stars;
+    u16 ink = TXT_DARK, shadow = TXT_LIGHT;
+
+    CardPals(pals, stars, s->gender);
+    for (int y = 40; y < 196; ++y)
+        FillRect(9, y, 187, 1, pals[1].c[(y & 3) < 2 ? 12 : 13]);
+
+    /* Rounded frame, native horizontal stripes and the original palette
+     * for the player's card rank. */
+    FillRect(15, 47, 175, 145, pals[0].c[5]);
+    FillRect(12, 50, 181, 139, pals[0].c[5]);
+    FillRect(16, 49, 173, 141, pals[0].c[3]);
+    FillRect(14, 51, 177, 137, pals[0].c[3]);
+    FillRect(17, 51, 171, 137, pals[0].c[1]);
+    FillRect(16, 53, 173, 133, pals[0].c[1]);
+    for (int y = 54; y < 185; ++y)
+    {
+        u16 colour = y < 68 || y >= 146 ? pals[0].c[(y & 3) < 2 ? 9 : 10]
+                                              : pals[0].c[(y & 3) < 2 ? 1 : 2];
+        FillRect(17, y, 171, 1, colour);
+    }
+
+    FillRect(18, 53, 93, 13, pals[0].c[13]);
+    DrawStrIn(&sSmall, Ascii(CTR_TEXT("TRAINER CARD", "FICHA ENTREN.", "CARTE DRES.", "SCHEDA ALLEN.")),
+              18, 111, 53, 66, ink, shadow);
+    StringCopy(StringCopy(text, gText_TrainerCardIDNo), Number(s->id, 5, STR_CONV_MODE_LEADING_ZEROS));
+    DrawStrIn(&sSmall, text, 113, 187, 53, 67, ink, shadow);
+
+    StringCopy(StringCopy(text, gText_TrainerCardName), s->name);
+    DrawStr(&sNormal, text, 19, 72, ink, shadow);
+    FillRect(19, 90, 104, 1, pals[0].c[4]);
+
+    DrawStr(&sNormal, gText_TrainerCardMoney, 19, 92, ink, shadow);
+    text[0] = CHAR_CURRENCY;
+    StringCopy(text + 1, Number(s->money, 6, STR_CONV_MODE_LEFT_ALIGN));
+    DrawStrRight(&sNormal, text, 123, 92, ink, shadow);
+    if (s->hasDex)
+    {
+        DrawStr(&sNormal, gText_TrainerCardPokedex, 19, 110, ink, shadow);
+        DrawStrRight(&sNormal, Number(s->dex, 3, STR_CONV_MODE_LEFT_ALIGN), 123, 110, ink, shadow);
+    }
+    DrawStr(&sNormal, gText_TrainerCardTime, 19, 128, ink, shadow);
+    StringCopy(text, Number(s->hours, 3, STR_CONV_MODE_LEFT_ALIGN));
+    StringAppend(text, gText_Colon2);
+    StringAppend(text, Number(s->minutes, 2, STR_CONV_MODE_LEADING_ZEROS));
+    DrawStrRight(&sNormal, text, 123, 128, ink, shadow);
+
+    /* The full 64x64 trainer sprite and 16x16 badges retain every pixel. */
+    for (int y = -28; y <= 28; ++y)
+        for (int x = -28; x <= 28; ++x)
+            if (x * x + y * y <= 28 * 28)
+                Put(159 + x, 112 + y, y >= -2 && y <= 2 ? pals[0].c[1] : pals[0].c[10]);
+    if (sRes.trainerPic[s->gender])
+        DrawSprite(sRes.trainerPic[s->gender], 8, 8, 128, 80, sRes.trainerPicPal[s->gender].c);
+    if (sRes.cardTiles)
+        for (int i = 0; i < stars; ++i)
+            DrawMapEntry(sRes.cardTiles, sRes.cardTileCount, 0x4000 | 143, 144 + i * 9, 71, pals);
+
+    DrawStrIn(&sSmall, Ascii(CTR_TEXT("BADGES", "MEDALLAS", "BADGES", "MEDAGLIE")),
+              19, 110, 148, 162, pals[0].c[1], pals[0].c[12]);
+    for (int i = 0; i < NUM_BADGES; ++i)
+    {
+        int x = 19 + i * 21, y = 166;
+
+        FillRect(x, y, 18, 18, pals[0].c[1]);
+        FillRect(x + 1, y + 1, 16, 16, pals[0].c[9]);
+        if ((s->badges & (1 << i)) && sRes.badgeTiles)
+        {
+            DrawTile(sRes.badgeTiles + (2 * i) * 32, x + 1, y + 1, sRes.badgePal.c, FALSE, FALSE);
+            DrawTile(sRes.badgeTiles + (2 * i + 1) * 32, x + 9, y + 1, sRes.badgePal.c, FALSE, FALSE);
+            DrawTile(sRes.badgeTiles + (2 * i + 16) * 32, x + 1, y + 9, sRes.badgePal.c, FALSE, FALSE);
+            DrawTile(sRes.badgeTiles + (2 * i + 17) * 32, x + 9, y + 9, sRes.badgePal.c, FALSE, FALSE);
+        }
+        else
+            DrawStrIn(&sSmall, Number(i + 1, 1, STR_CONV_MODE_LEFT_ALIGN), x + 1, x + 17, y + 1, y + 17,
+                      pals[0].c[1], pals[0].c[12]);
+    }
+}
+
 /* ------------------------------------------------------------------------ */
 /* Drawing: save, options, PokéNav                                          */
 /* ------------------------------------------------------------------------ */
@@ -4214,6 +4366,28 @@ static void DrawSave(const ViewState *s)
      * file rather than being cut. */
     DrawWindowFrame(s->frame, SAVE_MSG_X, SAVE_MSG_Y, CW / 8 - 2, ht, TXT_WHITE);
     DrawStr(&sNormal, s->text, SAVE_MSG_X + 4, SAVE_MSG_Y + 1 + (ht * 8 - 2 - lines * 16) / 2, TXT_DARK, TXT_LIGHT);
+}
+
+/* A dedicated modal: the save information stays centred at its native
+ * size, while the message and confirmation buttons use the full screen. */
+static void DrawFullSave(const ViewState *s)
+{
+    int lines = StrLines(s->text), ht = lines * 2 > 4 ? lines * 2 : 4;
+
+    CopyCache(CACHE_WIDE);
+    sOX = (W - CW) / 2;
+    DrawSaveFile(s);
+    sOX = 0;
+    if (s->saveStep == SAVE_DONE)
+        DrawSavePlate(88, 144, Ascii("OK"), TRUE, s->pressed == HIT_OK, TRUE, HIT_OK);
+    else
+    {
+        DrawSavePlate(8, 148, gText_Yes, TRUE, s->pressed == HIT_YES, s->canSave, HIT_YES);
+        DrawSavePlate(164, 148, gText_No, FALSE, s->pressed == HIT_NO, TRUE, HIT_NO);
+    }
+    DrawWindowFrame(s->frame, SAVE_MSG_X, SAVE_MSG_Y, W / 8 - 2, ht, TXT_WHITE);
+    DrawStr(&sNormal, s->text, SAVE_MSG_X + 4, SAVE_MSG_Y + 1 + (ht * 8 - 2 - lines * 16) / 2,
+            TXT_DARK, TXT_LIGHT);
 }
 
 /* ------------------------------------------------------------------------ */
@@ -4487,6 +4661,213 @@ static void DrawNativePokedex(const ViewState *s)
         FillRect(303, y, 7, 13, PackRgb(0, 68, 49));
         PartyBevel(303, y, 7, 13, PackRgb(6, 106, 64), ink);
     }
+}
+
+static const Hit sMainMenuButtons[] = {
+    {202, 21, 57, 45, HIT_COLUMN + SCR_MAP},
+    {260, 21, 57, 45, HIT_COLUMN + SCR_POKEMON},
+    {202, 68, 57, 45, HIT_COLUMN + SCR_BAG},
+    {260, 68, 57, 45, HIT_COLUMN + SCR_CARD},
+    {202, 115, 57, 43, HIT_COLUMN + SCR_POKEDEX},
+    {260, 115, 57, 43, HIT_COLUMN + SCR_POKENAV},
+    {202, 160, 57, 38, HIT_COLUMN + SCR_SAVE},
+    {260, 160, 57, 38, HIT_COLUMN + SCR_OPTION},
+    {224, 203, 43, 29, HIT_COLUMN + COL_Y},
+    {270, 203, 44, 29, HIT_COLUMN + COL_RUN},
+};
+
+static void MenuMint(int x, int y, int w, int h)
+{
+    PartyGradient(x, y, w, h, (Rgb){223, 246, 237}, (Rgb){198, 234, 218});
+    for (int row = 2; row < h; row += 3)
+        FillRect(x, y + row, w, 1, PackRgb(214, 241, 230));
+}
+
+/* Pixel-aligned Emerald frames and scanlines, rather than a resized image
+ * of the entire menu. The contents are painted at their native size. */
+static void DrawMenuBezel(int x, int y, int w, int h, bool8 selected, bool8 disabled)
+{
+    u16 edge = PackRgb(0, 58, 52), rim = PackRgb(0, 111, 81);
+    u16 light = disabled ? PackRgb(220, 224, 225) : PackRgb(167, 248, 218);
+
+    FillRect(x + 2, y, w - 4, h, edge);
+    FillRect(x, y + 2, w, h - 4, edge);
+    FillRect(x + 2, y + 1, w - 4, h - 2, rim);
+    FillRect(x + 1, y + 3, w - 2, h - 6, rim);
+    if (selected)
+    {
+        PartyGradient(x + 3, y + 3, w - 6, h - 6, (Rgb){28, 213, 111}, (Rgb){9, 177, 96});
+        for (int row = 5; row < h - 3; row += 3)
+            FillRect(x + 3, y + row, w - 6, 1, PackRgb(53, 218, 131));
+    }
+    else if (disabled)
+        PartyGradient(x + 3, y + 3, w - 6, h - 6, (Rgb){210, 214, 214}, (Rgb){177, 184, 186});
+    else
+        MenuMint(x + 3, y + 3, w - 6, h - 6);
+    FillRect(x + 3, y + 2, w - 6, 1, light);
+    FillRect(x + 2, y + 3, 1, h - 6, light);
+    FillRect(x + 3, y + h - 3, w - 6, 1, PackRgb(47, 151, 112));
+    FillRect(x + w - 3, y + 3, 1, h - 6, PackRgb(47, 151, 112));
+}
+
+static void DrawMainMenuBackground(void)
+{
+    for (int y = 0; y < H; ++y)
+        FillRect(0, y, W, 1, (y & 3) < 2 ? PackRgb(28, 209, 111) : PackRgb(0, 178, 86));
+    DrawMenuBezel(4, 13, 196, 21, FALSE, FALSE);
+    DrawMenuBezel(4, 35, 196, 165, FALSE, FALSE);
+    DrawMenuBezel(6, 202, 213, 31, FALSE, FALSE);
+}
+
+static void DrawMenuSelection(const Hit *button)
+{
+    for (int corner = 0; corner < 4; ++corner)
+    {
+        int dx = corner & 1 ? -1 : 1, dy = corner & 2 ? -1 : 1;
+        int x = corner & 1 ? button->x + button->w - 4 : button->x + 3;
+        int y = corner & 2 ? button->y + button->h - 4 : button->y + 3;
+        u16 white = PackRgb(255, 255, 244), red = PackRgb(255, 93, 62);
+
+        for (int length = 0; length < 7; ++length)
+            for (int thick = 0; thick < 3; ++thick)
+            {
+                Put(x + length * dx, y + thick * dy, white);
+                Put(x + thick * dx, y + length * dy, white);
+            }
+        for (int length = 1; length < 6; ++length)
+        {
+            Put(x + length * dx, y + dy, red);
+            Put(x + dx, y + length * dy, red);
+        }
+    }
+}
+
+static void DrawMainMenuButton(const ViewState *s, unsigned i)
+{
+    const Hit *button = &sMainMenuButtons[i];
+    bool8 available = i < SCR_COUNT ? ((s->enabled >> i) & 1)
+                     : i == COL_Y ? s->registered != ITEM_NONE : (s->run & 2) != 0;
+    bool8 selected = i < SCR_COUNT ? s->screen == i : i == COL_RUN && (s->run & 1);
+    bool8 pressed = s->pressed == button->id;
+    int x = button->x, y = button->y, w = button->w, h = button->h;
+    int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+
+    DrawMenuBezel(x, y, w, h, selected && available, !available && i != COL_Y);
+    if (sClipX0 < x + sOX + 3) sClipX0 = x + sOX + 3;
+    if (sClipX1 > x + sOX + w - 3) sClipX1 = x + sOX + w - 3;
+    if (sClipY0 < y + 3) sClipY0 = y + 3;
+    if (sClipY1 > y + h - 3) sClipY1 = y + h - 3;
+    if (i < SCR_COUNT)
+    {
+        const u8 *labels[SCR_COUNT] = {
+            Ascii(CTR_TEXT("MAP", "MAPA", "CARTE", "MAPPA")), gText_MenuPokemon, gText_MenuBag, s->name,
+            gText_MenuPokedex, gText_MenuPokenav, gText_MenuSave, gText_MenuOption};
+        const Icon *icon = &sRes.column[i];
+        const Font *font = h < 40 || StrWidth(&sNormal, labels[i]) > w - 8 ? &sSmall : &sNormal;
+        int labelHeight = font == &sSmall ? 9 : 12;
+        int labelY = y + h - labelHeight - 3;
+        int iconTop = y + 4, iconBottom = labelY - 1;
+        u16 grey[16];
+        const u16 *pal = icon->pal.c;
+
+        if (!available)
+        {
+            for (int colour = 0; colour < 16; ++colour)
+            {
+                Rgb rgb = RgbOf(pal[colour]);
+                int shade = 100 + (rgb.r * 3 + rgb.g * 6 + rgb.b) / 20;
+                grey[colour] = PackRgb(shade, shade, shade);
+            }
+            pal = grey;
+        }
+        if (icon->tiles)
+            DrawSpriteCentred(icon->tiles, icon->size, icon->size, 2 * x + w,
+                              iconTop + iconBottom, pal);
+        DrawStrIn(font, labels[i], x + 3, x + w - 3, labelY, y + h - 3,
+                  !available ? sLook.offText : selected ? TXT_WHITE : TXT_DARK,
+                  !available ? sLook.offShadow : selected ? sLook.chosenShadow : TXT_LIGHT);
+    }
+    else if (i == COL_Y)
+    {
+        if (s->registered != ITEM_NONE)
+        {
+            int slot = ItemIcon(s->registered);
+            if (slot >= 0)
+                DrawSpriteCentred(sItemIcons[slot].tiles, 3, 3, 2 * x + w + 6, 2 * y + h + 2,
+                                  sItemIcons[slot].pal.c);
+        }
+        DrawSprite(sArtBadgeY, 2, 2, x + 3, y + 3, sLook.art.c);
+    }
+    else
+    {
+        DrawSpriteCentred(selected ? sArtShoeOn : sArtShoeOff, 3, 3, 2 * x + w, 2 * y + h, sLook.art.c);
+        if (!available)
+            ShadeRect(x + 3, y + 3, w - 6, h - 6);
+    }
+    RestoreClip(clip);
+    if (pressed)
+        ShadeRect(x + 3, y + 3, w - 6, h - 6);
+    if (selected && available && i < SCR_COUNT)
+        DrawMenuSelection(button);
+    if (s->focus == i || (i == COL_RUN && selected))
+        DrawRing(x + 1, y + 1, w - 2, h - 2, s->blink);
+    if (available)
+        AddHit(x, y, w, h, button->id);
+}
+
+static void DrawMainMenuPanel(const ViewState *s);
+
+static void DrawMainMenu(const ViewState *s)
+{
+    static u16 map[W * H];
+    u16 *destination = sDst;
+    int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+    u16 ink = PackRgb(35, 52, 75);
+    char time[8];
+    u8 place[32];
+
+    DrawMainMenuBackground();
+
+    /* Reuse the real map and marks, then fit them inside the reference bezel. */
+    if (s->screen == SCR_MAP)
+    {
+        if (sCache[CACHE_MAP])
+        {
+            memcpy(map, sCache[CACHE_MAP], sizeof(map));
+            sDst = map;
+            sClipX0 = sClipY0 = 0; sClipX1 = W; sClipY1 = H;
+            DrawMapMarks(s);
+            sDst = destination;
+            RestoreClip(clip);
+            for (int x = 0; x < 187; ++x)
+                for (int y = 0; y < 156; ++y)
+                {
+                    int sx = MAP_WIN_X0 + x * (MAP_WIN_X1 - MAP_WIN_X0) / 187;
+                    int sy = MAP_WIN_Y0 + y * (MAP_WIN_Y1 - MAP_WIN_Y0) / 156;
+                    Put(9 + x, 40 + y, map[sx * H + H - 1 - sy]);
+                }
+        }
+        AddHit(9, 40, 187, 156, HIT_MAP);
+        MenuMint(9, 17, 186, 13);
+        if (s->clockValid)
+            snprintf(time, sizeof(time), "%02u:%02u", s->clockMinute / 60u, s->clockMinute % 60u);
+        else
+            strcpy(time, "--:--");
+        DrawStr(&sNormal, Ascii(time), 23, 16, ink, PackRgb(177, 206, 205));
+
+        MenuMint(10, 206, 204, 22);
+        u8 section = s->pickMapsec != MAPSEC_NONE ? s->pickMapsec : s->mapsec;
+        if (section != MAPSEC_NONE)
+        {
+            GetMapName(place, section, 0);
+            DrawStrIn(&sNormal, place, 12, 212, 207, 228, ink, PackRgb(181, 209, 209));
+        }
+    }
+    else
+        DrawMainMenuPanel(s);
+
+    for (unsigned i = 0; i < ARRAY_COUNT(sMainMenuButtons); ++i)
+        DrawMainMenuButton(s, i);
 }
 
 static int PartyCardAt(int x, int y)
@@ -4858,6 +5239,159 @@ static void DrawOptions(const ViewState *s)
     for (int row = 0; row < OPTION_ROWS; ++row)
         if (OptionExists(row))
             DrawOptionCell(s, row, names[row], voxel);
+}
+
+static void DrawNativeOptionTabs(const ViewState *s)
+{
+    static const char *const names[CTR_EXTRAS_PAGES] = {
+        CTR_TEXT("OPTIONS", "AJUSTES", "RÉGLAGES", "OPZIONI"),
+        CTR_TEXT("EXTRAS", "MEJORAS", "AMÉLIOR.", "MIGLIORIE"),
+        CTR_TEXT("CHEATS", "TRUCOS", "TRICHE", "TRUCCHI")};
+    u8 pages[CTR_EXTRAS_PAGES], count = 0;
+
+    for (unsigned page = 0; page < CTR_EXTRAS_PAGES; ++page)
+        if (page == CTR_EXTRAS_OPTIONS || CtrExtras_PageUsed(page))
+            pages[count++] = page;
+    for (unsigned i = 0; i < count; ++i)
+    {
+        int x = 9 + i * 186 / count, right = 9 + (i + 1) * 186 / count - 2;
+        bool8 chosen = s->optPage == pages[i], pressed = s->pressed == HIT_PAGE + pages[i];
+        bool8 multiple = chosen && PageSubs(pages[i]) > 1;
+        int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+
+        DrawPlate(x, 16, right - x, 18, chosen ? &sLook.chosen : &sLook.plate, 0, pressed);
+        if (sClipX0 < x + sOX + 1) sClipX0 = x + sOX + 1;
+        if (sClipX1 > right + sOX - 1) sClipX1 = right + sOX - 1;
+        DrawStrIn(&sSmall, Ascii(names[pages[i]]), x + 1, right - 1, 17, multiple ? 25 : 33,
+                  chosen ? TXT_WHITE : TXT_DARK, chosen ? sLook.chosenShadow : TXT_LIGHT);
+        if (multiple)
+        {
+            char page[12];
+            snprintf(page, sizeof(page), "%u/%u", s->optSub + 1, PageSubs(pages[i]));
+            DrawStrIn(&sSmall, Ascii(page), x + 1, right - 1, 25, 33, TXT_WHITE, sLook.chosenShadow);
+        }
+        RestoreClip(clip);
+        AddHit(x, 16, right - x, 18, HIT_PAGE + pages[i]);
+    }
+}
+
+/* Only the visible slice of a row can receive taps. */
+static void AddNativeOptionHit(int x, int y, int width, u8 id)
+{
+    int top = y > OPT_VIEW_Y ? y : OPT_VIEW_Y;
+    int bottom = y + OPT_NATIVE_CELL_H < OPT_VIEW_Y + OPT_VIEW_H
+               ? y + OPT_NATIVE_CELL_H : OPT_VIEW_Y + OPT_VIEW_H;
+
+    if (top < bottom)
+        AddHit(x, top, width, bottom - top, id);
+}
+
+static void DrawNativeOptionRow(const ViewState *s, int row, int y, const u8 *name,
+                                const u8 *value, bool8 live, bool8 arrows, bool8 frame)
+{
+    const int x = OPT_VIEW_X + 3, width = OPT_VIEW_W - 6;
+    static const u8 left[] = {CHAR_LEFT_ARROW, EOS}, right[] = {CHAR_RIGHT_ARROW, EOS};
+    bool8 pressed = live && (s->pressed == HIT_OPTION + row || s->pressed == HIT_OPTION + HIT_OPTION_BACK + row);
+    u16 fg = !live ? sLook.offText : pressed ? TXT_WHITE : TXT_DARK;
+    u16 sh = !live ? sLook.offShadow : pressed ? sLook.chosenShadow : TXT_LIGHT;
+    u16 valueFg = !live ? sLook.offText : pressed ? TXT_WHITE : TXT_RED;
+    u16 valueSh = !live ? sLook.offShadow : pressed ? sLook.chosenShadow : TXT_LRED;
+
+    if (frame)
+    {
+        DrawWindowFrame(s->options[OPT_FRAME], x + 8, y + 8, 20, 2, pressed ? sLook.chosen.f : TXT_WHITE);
+        DrawStrIn(&sSmall, name, x + 8, x + 76, y + 8, y + 24, fg, sh);
+        DrawStrIn(&sSmall, value, x + 92, x + 158, y + 8, y + 24, valueFg, valueSh);
+        DrawStrIn(&sSmall, left, x + 78, x + 90, y + 8, y + 24, fg, sh);
+        DrawStrIn(&sSmall, right, x + 158, x + 170, y + 8, y + 24, fg, sh);
+    }
+    else
+    {
+        DrawPlate(x, y, width, OPT_NATIVE_CELL_H, !live ? &sLook.off : pressed ? &sLook.chosen : &sLook.plate,
+                  0, pressed);
+        DrawStrIn(&sSmall, name, x + 4, x + width - 4, y + 3, y + 16, fg, sh);
+        DrawStrIn(&sNormal, value, x + 20, x + width - 20, y + 18, y + 33, valueFg, valueSh);
+        if (arrows)
+        {
+            DrawStrIn(&sNormal, left, x + 5, x + 18, y + 18, y + 33, fg, sh);
+            DrawStrIn(&sNormal, right, x + width - 18, x + width - 5, y + 18, y + 33, fg, sh);
+        }
+    }
+    if (s->optFocus == row)
+        DrawRing(x, y, width, OPT_NATIVE_CELL_H, s->blink);
+    if (live)
+    {
+        if (arrows)
+            AddNativeOptionHit(x, y, width / 2, HIT_OPTION + HIT_OPTION_BACK + row);
+        AddNativeOptionHit(x + (arrows ? width / 2 : 0), y,
+                           arrows ? width - width / 2 : width, HIT_OPTION + row);
+    }
+}
+
+/* Native pixel rendering in one wide column: nothing is reduced from the
+ * old two-column canvas. Tabs and footer remain fixed while rows scroll. */
+static void DrawNativeOptions(const ViewState *s)
+{
+    int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+    bool8 fixed = s->optPage == CTR_EXTRAS_OPTIONS && s->optSub == 0;
+    bool8 voxel = OPTION_SHOWN > OPT_VOXEL && s->options[OPT_VOXEL];
+    const u8 *names[OPTION_ROWS];
+    int position = 0;
+
+    DrawNativeOptionTabs(s);
+    MenuMint(OPT_VIEW_X, OPT_VIEW_Y, OPT_VIEW_W, OPT_VIEW_H);
+    if (fixed)
+        OptionNames(names);
+    if (sClipX0 < OPT_VIEW_X + sOX) sClipX0 = OPT_VIEW_X + sOX;
+    if (sClipX1 > OPT_VIEW_X + sOX + OPT_VIEW_W) sClipX1 = OPT_VIEW_X + sOX + OPT_VIEW_W;
+    if (sClipY0 < OPT_VIEW_Y) sClipY0 = OPT_VIEW_Y;
+    if (sClipY1 > OPT_VIEW_Y + OPT_VIEW_H) sClipY1 = OPT_VIEW_Y + OPT_VIEW_H;
+    for (int row = 0; row < (fixed ? OPTION_ROWS : CELLS_PER_PAGE); ++row)
+    {
+        const CtrExtra *extra = fixed ? NULL : PageExtra(s->optPage, row);
+        if (fixed ? !OptionExists(row) : extra == NULL)
+            continue;
+        int y = OPT_VIEW_Y + position - s->optScroll;
+        position += OPT_NATIVE_STEP;
+        if (y >= OPT_VIEW_Y + OPT_VIEW_H || y + OPT_NATIVE_CELL_H <= OPT_VIEW_Y)
+            continue;
+        if (fixed)
+            DrawNativeOptionRow(s, row, y, names[row], OptionValue(row, s->options[row]),
+                                OptionLive(row, voxel), TRUE, row == OPT_FRAME);
+        else
+        {
+            const char *value = extra->values ? extra->values[extra->count ? s->extras[row] : 0] : "";
+            DrawNativeOptionRow(s, row, y, Ascii(extra->name), extra->text ? extra->text() : Ascii(value),
+                                ExtraLive(extra, voxel), extra->count != 0 || extra->step != NULL, FALSE);
+        }
+    }
+    RestoreClip(clip);
+    for (int direction = 0; direction < 2; ++direction)
+    {
+        int x = 12 + direction * 100;
+        bool8 available = direction ? s->optScroll < s->optScrollMax : s->optScroll > 0;
+        const u8 arrow[] = {direction ? CHAR_DOWN_ARROW : CHAR_UP_ARROW, EOS};
+
+        DrawPlate(x, 207, 94, 20, available ? &sLook.plate : &sLook.off, 0, FALSE);
+        DrawStrIn(&sSmall, arrow, x, x + 94, 208, 226, available ? TXT_DARK : sLook.offText, TXT_LIGHT);
+        if (available)
+            AddHit(x, 207, 94, 20, direction ? HIT_OPT_SCROLL_DOWN : HIT_OPT_SCROLL_UP);
+    }
+}
+
+static void DrawMainMenuPanel(const ViewState *s)
+{
+    MenuMint(9, 17, 186, 13);
+    MenuMint(10, 206, 204, 22);
+    if (s->screen == SCR_CARD)
+    {
+        DrawNativeTrainerCard(s);
+        DrawStrIn(&sSmall, Ascii(CTR_TEXT("TRAINER CARD", "FICHA ENTRENADOR", "CARTE DRESSEUR", "SCHEDA ALLENATORE")),
+                  9, 195, 17, 30, TXT_DARK, TXT_LIGHT);
+        DrawStrIn(&sNormal, s->name, 12, 212, 207, 228, TXT_DARK, TXT_LIGHT);
+    }
+    else
+        DrawNativeOptions(s);
 }
 
 /* ------------------------------------------------------------------------ */
@@ -6278,6 +6812,14 @@ static void Render(const ViewState *s)
         if (s->title)
             DrawTitleCredit();
     }
+    else if (MainMenuShown(s))
+    {
+        DrawMainMenu(s);
+    }
+    else if (FullSaveShown(s))
+    {
+        DrawFullSave(s);
+    }
     else if (s->dexNative)
     {
         DrawNativePokedex(s);
@@ -6501,6 +7043,9 @@ static bool8 DirtyRect(const ViewState *now, const ViewState *shown, Rect *r)
     static ViewState probe;
     bool8 battle = now->mode >= MODE_BATTLE_INFO;
 
+    if (MainMenuShown(now) || MainMenuShown(shown) || FullSaveShown(now) || FullSaveShown(shown))
+        return FALSE;
+
     if (now->mode == MODE_PARTY_MENU && shown->mode == MODE_PARTY_MENU)
     {
         probe = *now;
@@ -6607,6 +7152,9 @@ static bool8 FocusDirtyRect(const ViewState *now, const ViewState *shown, Rect *
 {
     static ViewState probe;
     u8 focus[2] = {now->focus, shown->focus}, opt[2] = {now->optFocus, shown->optFocus};
+
+    if (MainMenuShown(now) || MainMenuShown(shown) || FullSaveShown(now) || FullSaveShown(shown))
+        return FALSE;
 
     probe = *now;
     probe.focus = shown->focus;
@@ -7152,6 +7700,8 @@ static struct
     s16 startX, startY, lastX, lastY;
     u8 pressed;
     bool8 bag;   /* on the game's bag or Pokédex, which take it themselves */
+    bool8 optionsDrag;
+    s16 scrollStart;
 } sTouch;
 
 /* The save, done here as start_menu.c's SaveDoSaveCallback does it. */
@@ -7198,6 +7748,7 @@ static void ShowOptionSub(u8 page, u8 sub)
         return;
     sOptPage = page;
     sOptSub = sub;
+    sOptScroll = 0;
     sOptFocus = FixedOptions() ? OPT_TEXT_SPEED : 0;
     PlaySE(SE_SELECT);
 }
@@ -7450,7 +8001,13 @@ static void Activate(u8 id, u8 mode)
     {
     case SCR_MAP:
         if (id == HIT_MAP)
-            PickMapCell(sTouch.lastX, sTouch.lastY);
+        {
+            if (MainMenuShown(&sShown))
+                PickMapCell(MAP_WIN_X0 + (sTouch.lastX - 9) * (MAP_WIN_X1 - MAP_WIN_X0) / 187,
+                            MAP_WIN_Y0 + (sTouch.lastY - 40) * (MAP_WIN_Y1 - MAP_WIN_Y0) / 156);
+            else
+                PickMapCell(sTouch.lastX, sTouch.lastY);
+        }
         break;
     case SCR_SAVE:
         if (id == HIT_YES && FieldIdle())
@@ -7471,7 +8028,9 @@ static void Activate(u8 id, u8 mode)
         }
         break;
     case SCR_OPTION:
-        if (id >= HIT_PAGE && id < HIT_PAGE + CTR_EXTRAS_PAGES)
+        if (id == HIT_OPT_SCROLL_UP || id == HIT_OPT_SCROLL_DOWN)
+            ScrollOptions(sOptScroll + (id == HIT_OPT_SCROLL_UP ? -OPT_NATIVE_STEP : OPT_NATIVE_STEP));
+        else if (id >= HIT_PAGE && id < HIT_PAGE + CTR_EXTRAS_PAGES)
             ShowOptionPage(id - HIT_PAGE);
         else if (id >= HIT_OPTION && id < HIT_OPTION + 2 * HIT_OPTION_BACK)
             ActivateOption(id);
@@ -7652,6 +8211,8 @@ static u8 ProcessTouch(u8 mode)
         }
         return HIT_NONE;
     }
+    /* Dragging an option scrolls the list and suppresses changing its
+     * value on release. There is no separate scrollbar hit area. */
     if (in->touchDown)
     {
         sTouch.active = TRUE;
@@ -7659,6 +8220,10 @@ static u8 ProcessTouch(u8 mode)
         sTouch.startX = sTouch.lastX = in->touchX;
         sTouch.startY = sTouch.lastY = in->touchY;
         sTouch.pressed = HitTest(in->touchX, in->touchY);
+        sTouch.optionsDrag = mode == MODE_FIELD && sShown.screen == SCR_OPTION
+                          && in->touchX >= OPT_VIEW_X && in->touchX < OPT_VIEW_X + OPT_VIEW_W
+                          && in->touchY >= OPT_VIEW_Y && in->touchY < OPT_VIEW_Y + OPT_VIEW_H;
+        sTouch.scrollStart = sOptScroll;
     }
     else if (in->touchActive && sTouch.active)
     {
@@ -7668,6 +8233,8 @@ static u8 ProcessTouch(u8 mode)
         sTouch.lastY = in->touchY;
         if (!sTouch.dragged && (dy > 8 || dy < -8 || dx > 8 || dx < -8))
             sTouch.dragged = TRUE;
+        if (sTouch.optionsDrag && sTouch.dragged)
+            ScrollOptions(sTouch.scrollStart - dy);
     }
     else if (in->touchUp && sTouch.active)
     {
@@ -7861,6 +8428,8 @@ static void ChooseColumnItem(u8 mode, u8 item)
         sInside = item == SCR_OPTION ? INSIDE_OPTIONS : INSIDE_SAVE;
         if (item == SCR_OPTION && FixedOptions() && !OptionLive(sOptFocus, CtrSettings_Voxel()))
             sOptFocus = OPT_TEXT_SPEED;
+        if (item == SCR_OPTION)
+            RevealOption(sOptFocus);
     }
 }
 
@@ -7873,9 +8442,15 @@ static void OptionKeys(u16 down)
         PlaySE(SE_SELECT);
     }
     else if (down & DPAD_UP)
+    {
         MoveFocus(&sOptFocus, OptionStep(sOptFocus, -1));
+        RevealOption(sOptFocus);
+    }
     else if (down & DPAD_DOWN)
+    {
         MoveFocus(&sOptFocus, OptionStep(sOptFocus, 1));
+        RevealOption(sOptFocus);
+    }
     else if (down & (L_BUTTON | R_BUTTON))
     {
         int dir = (down & R_BUTTON) ? 1 : -1;
@@ -7928,6 +8503,13 @@ static void ProcessKeys(u8 mode)
 
     if (sSwallow && !(in->held & CTR_KEY_GAME) && !(in->physicalHeld & (CTR_KEY_X | CTR_KEY_Y)))
         sSwallow = FALSE;
+    if (mode == MODE_FIELD && sScreen == SCR_SAVE && !gMain.inBattle)
+    {
+        sFocus = FOCUS_NONE;
+        sInside = INSIDE_SAVE;
+        SaveKeys(mode, down);
+        return;
+    }
     if (!ColumnShown(mode))
     {
         if (sFocus != FOCUS_NONE || sInside != INSIDE_NONE)
@@ -7970,6 +8552,24 @@ static void ProcessKeys(u8 mode)
     {
         LeaveFocus();
         PlaySE(SE_SELECT);
+    }
+    else if (MainMenuShown(&sShown) && (down & (DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT)))
+    {
+        int next = sFocus;
+        int step = down & DPAD_UP ? -2 : down & DPAD_DOWN ? 2 : 0;
+
+        if (step)
+        {
+            next += step;
+            while (next >= 0 && next <= COL_RUN && !ColumnItemAvailable(next))
+                next += step;
+        }
+        else if ((down & DPAD_LEFT) && (next & 1))
+            --next;
+        else if ((down & DPAD_RIGHT) && !(next & 1))
+            ++next;
+        if (next >= 0 && next <= COL_RUN && ColumnItemAvailable(next))
+            MoveFocus(&sFocus, next);
     }
     else if (down & DPAD_UP)
         MoveFocus(&sFocus, ColumnStep(sFocus, -1));
@@ -8031,6 +8631,9 @@ void CtrBottom_KeepWorld(void)
 static bool8 MapCursorOnlyMoved(const ViewState *now, const ViewState *shown)
 {
     ViewState moved;
+
+    if (MainMenuShown(now) || MainMenuShown(shown))
+        return FALSE;
 
     if (now->screen != SCR_MAP || now->mode == MODE_OFF || now->mode >= MODE_BATTLE_INFO
      || now->inBattle || now->bagView == BAG_VIEW_WHOLE
@@ -8252,6 +8855,7 @@ void CtrBottom_SoftReset(void)
     sScreen = SCR_MAP;
     sOptPage = CTR_EXTRAS_OPTIONS;
     sOptSub = 0;
+    sOptScroll = 0;
     sOptFocus = OPT_TEXT_SPEED;
     sPickMapsec = MAPSEC_NONE;
     sSaveStep = SAVE_ASK;

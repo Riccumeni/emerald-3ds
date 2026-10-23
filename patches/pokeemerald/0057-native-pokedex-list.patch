@@ -1,15 +1,18 @@
 diff --git a/src/pokedex.c b/src/pokedex.c
 --- a/src/pokedex.c
 +++ b/src/pokedex.c
-@@ -5873,3 +5873,45 @@
+@@ -5873,3 +5873,48 @@
 +#include "3ds_pokedex_ui.h"
 +
 +bool CtrPokedex_ListShown(void)
 +{
++    /* The native skin owns the screen from the first initialization frame,
++     * including the game's fade-in. Its palette does not fade this canvas. */
++    if (gMain.callback2 == CB2_OpenPokedex)
++        return true;
 +    return CtrPokedex_IsOpen() && !sPokedexView->menuIsOpen
 +        && sPokedexView->menuY == 0
-+        && (sPokedexView->currentPage == PAGE_MAIN || sPokedexView->currentPage == PAGE_SEARCH_RESULTS)
-+        && !gPaletteFade.active;
++        && (sPokedexView->currentPage == PAGE_MAIN || sPokedexView->currentPage == PAGE_SEARCH_RESULTS);
 +}
 +
 +void CtrPokedex_ReadList(CtrDexList *view)
@@ -18,7 +21,7 @@ diff --git a/src/pokedex.c b/src/pokedex.c
 +    int first;
 +
 +    memset(view, 0, sizeof(*view));
-+    if (!CtrPokedex_ListShown())
++    if (!CtrPokedex_ListShown() || sPokedexView == NULL || gMain.callback2 == CB2_OpenPokedex)
 +        return;
 +    view->selected = sPokedexView->selectedPokemon;
 +    view->count = sPokedexView->pokemonListCount;
