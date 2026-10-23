@@ -1,0 +1,312 @@
+diff --git a/src/pokemon_summary_screen.c b/src/pokemon_summary_screen.c
+--- a/src/pokemon_summary_screen.c
++++ b/src/pokemon_summary_screen.c
+@@ -1,6 +1,8 @@
+ #include "global.h"
+ #ifdef PLATFORM_3DS
+ #include "3ds_extras.h" // optional settings (OPTIONS pages)
++#include "3ds_summary_ui.h"
++static void CtrSummary_HandleDual(u8 taskId);
+ #endif
+ #include "main.h"
+ #include "battle.h"
+@@ -1151,6 +1153,9 @@
+ // code
+ void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, void (*callback)(void))
+ {
++#ifdef PLATFORM_3DS
++    CtrSummary_ResetDual();
++#endif
+     sMonSummaryScreen = AllocZeroed(sizeof(*sMonSummaryScreen));
+     sMonSummaryScreen->mode = mode;
+     sMonSummaryScreen->monList.mons = mons;
+@@ -1807,6 +1812,7 @@
+ {
+     FreeAllWindowBuffers();
+     Free(sMonSummaryScreen);
++    sMonSummaryScreen = NULL;
+ }
+ 
+ static void BeginCloseSummaryScreen(u8 taskId)
+@@ -2026,6 +2032,11 @@
+     if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE && !gPaletteFade.active)
+     {
+ #ifdef PLATFORM_3DS
++        if (CtrSummary_DualShown())
++        {
++            CtrSummary_HandleDual(taskId);
++            return;
++        }
+         if (CtrSummary_TouchInput(taskId))
+             return;
+ #endif
+@@ -4828,3 +4839,269 @@
+         gSprites[spriteIds[i]].invisible = FALSE;
+     }
+ }
++
++#ifdef PLATFORM_3DS
++/* The original INFO page stays on top. The native lower screen owns the
++ * other pages and queues actions for this task, including move swapping. */
++static u8 sCtrSummaryTab, sCtrSummaryCursor, sCtrSummarySwap = 0xFF;
++static bool8 sCtrSummaryPending;
++static unsigned sCtrSummaryCommand, sCtrSummaryValue;
++static u32 sCtrSummarySerial;
++static u8 sCtrProfileMemo[384];
++static bool8 sCtrProfileMemoValid;
++
++void CtrSummary_ResetDual(void)
++{
++    ++sCtrSummarySerial;
++    sCtrProfileMemoValid = FALSE;
++    sCtrSummaryTab = CTR_SUMMARY_STATS;
++    sCtrSummaryCursor = 0;
++    sCtrSummarySwap = 0xFF;
++    sCtrSummaryPending = FALSE;
++}
++
++bool CtrSummary_DualShown(void)
++{
++    return sMonSummaryScreen != NULL && sMonSummaryScreen->mode != SUMMARY_MODE_SELECT_MOVE
++        && (gMain.callback2 == CB2_InitSummaryScreen || gMain.callback2 == MainCB2);
++}
++
++void CtrSummary_ReadProfile(CtrSummaryProfile *profile)
++{
++    struct PokeSummary *sum;
++    struct Sprite *sprite;
++    const u8 *eggMemo;
++
++    memset(profile, 0, sizeof(*profile));
++    profile->serial = sCtrSummarySerial;
++    if (!CtrSummary_DualShown() || gMain.callback2 != MainCB2
++     || !FuncIsActiveTask(Task_HandleInput) || gPaletteFade.active)
++        return;
++    sum = &sMonSummaryScreen->summary;
++    profile->ready = TRUE;
++    profile->species = sum->species;
++    profile->dex = SpeciesToPokedexNum(sum->species);
++    profile->egg = sum->isEgg;
++    profile->level = sum->level;
++    profile->gender = GetMonGender(&sMonSummaryScreen->currentMon);
++    profile->otGender = sum->OTGender;
++    profile->otId = sum->OTID & 0xFFFF;
++    profile->markings = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MARKINGS);
++    GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_NICKNAME, profile->nickname);
++    StringCopy(profile->otName, sum->isEgg ? gText_FiveMarks : sum->OTName);
++    if (!sum->isEgg)
++    {
++        profile->ability = GetAbilityBySpecies(sum->species, sum->abilityNum);
++        StringCopy(profile->abilityName, gAbilityNames[profile->ability]);
++        StringCopy(profile->abilityDescription, gAbilityDescriptionPointers[profile->ability]);
++        if (!sCtrProfileMemoValid)
++        {
++            BufferMonTrainerMemo();
++            StringCopy(sCtrProfileMemo, gStringVar4);
++            sCtrProfileMemoValid = TRUE;
++        }
++    }
++    else
++    {
++        const u8 *state = sum->sanity ? gText_EggWillTakeALongTime
++                       : sum->friendship <= 5 ? gText_EggAboutToHatch
++                       : sum->friendship <= 10 ? gText_EggWillHatchSoon
++                       : sum->friendship <= 40 ? gText_EggWillTakeSomeTime : gText_EggWillTakeALongTime;
++        StringCopy(profile->abilityDescription, state);
++        if (sum->sanity)
++            eggMemo = gText_OddEggFoundByCouple;
++        else if (sum->metLocation == METLOC_FATEFUL_ENCOUNTER)
++            eggMemo = gText_PeculiarEggNicePlace;
++        else if (!DidMonComeFromGBAGames() || !DoesMonOTMatchOwner())
++            eggMemo = gText_PeculiarEggTrade;
++        else if (sum->metLocation == METLOC_SPECIAL_EGG)
++            eggMemo = DidMonComeFromRSE() ? gText_EggFromHotSprings : gText_EggFromTraveler;
++        else
++            eggMemo = gText_OddEggFoundByCouple;
++        StringCopy(sCtrProfileMemo, eggMemo);
++    }
++    StringCopy(profile->memo, sCtrProfileMemo);
++    if (sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON] >= MAX_SPRITES)
++        return;
++    sprite = &gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]];
++    if (sprite->oam.tileNum * TILE_SIZE_4BPP + sizeof(profile->portrait) <= OBJ_VRAM0_SIZE)
++        memcpy(profile->portrait, (const void *)(OBJ_VRAM0 + sprite->oam.tileNum * TILE_SIZE_4BPP), sizeof(profile->portrait));
++    memcpy(profile->palette, gPlttBufferUnfaded + 256 + sprite->oam.paletteNum * 16, sizeof(profile->palette));
++    profile->flip = sprite->hFlip;
++    profile->portraitX = sprite->x2;
++    profile->portraitY = sprite->y2;
++    if (!sum->isEgg && sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_BALL] < MAX_SPRITES)
++    {
++        sprite = &gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_BALL]];
++        if (sprite->oam.tileNum * TILE_SIZE_4BPP + sizeof(profile->ball) <= OBJ_VRAM0_SIZE)
++            memcpy(profile->ball, (const void *)(OBJ_VRAM0 + sprite->oam.tileNum * TILE_SIZE_4BPP), sizeof(profile->ball));
++        memcpy(profile->ballPalette, gPlttBufferUnfaded + 256 + sprite->oam.paletteNum * 16, sizeof(profile->ballPalette));
++    }
++}
++
++void CtrSummary_Command(unsigned command, unsigned value)
++{
++    if (!CtrSummary_DualShown() || gMain.callback2 != MainCB2 || gPaletteFade.active
++     || !FuncIsActiveTask(Task_HandleInput))
++        return;
++    sCtrSummaryCommand = command;
++    sCtrSummaryValue = value;
++    sCtrSummaryPending = TRUE;
++}
++
++void CtrSummary_ReadView(CtrSummaryView *view)
++{
++    struct PokeSummary *sum;
++    unsigned i, growth;
++
++    memset(view, 0, sizeof(*view));
++    view->swapFrom = 0xFF;
++    if (!CtrSummary_DualShown() || gMain.callback2 != MainCB2)
++        return;
++    sum = &sMonSummaryScreen->summary;
++    view->ready = !gPaletteFade.active && FuncIsActiveTask(Task_HandleInput);
++    view->tab = sCtrSummaryTab;
++    view->cursor = sCtrSummaryCursor;
++    view->swapFrom = sCtrSummarySwap;
++    view->species = sum->species;
++    view->egg = sum->isEgg;
++    view->locked = sMonSummaryScreen->lockMovesFlag;
++    view->level = sum->level;
++    GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_NICKNAME, view->nickname);
++    if (sum->isEgg)
++        return;
++    view->item = sum->item;
++    view->hp = sum->currentHP;
++    view->stats[STAT_HP] = sum->maxHP;
++    view->stats[STAT_ATK] = sum->atk;
++    view->stats[STAT_DEF] = sum->def;
++    view->stats[STAT_SPEED] = sum->speed;
++    view->stats[STAT_SPATK] = sum->spatk;
++    view->stats[STAT_SPDEF] = sum->spdef;
++    memcpy(view->ivs, sum->ivs, sizeof(view->ivs));
++    memcpy(view->evs, sum->evs, sizeof(view->evs));
++    view->ivsEnabled = CtrExtras_Get("ivs_evs") != 0;
++    view->statsMode = view->ivsEnabled ? sMonSummaryScreen->statsMode : 0;
++    view->ribbons = sum->ribbonCount;
++    for (i = 0; i < MAX_MON_MOVES; ++i)
++    {
++        view->moves[i] = sum->moves[i];
++        view->pp[i] = sum->pp[i];
++        view->maxPP[i] = CalculatePPWithBonus(sum->moves[i], sum->ppBonuses, i);
++    }
++    growth = gSpeciesInfo[sum->species].growthRate;
++    view->exp = sum->exp;
++    view->expStart = gExperienceTables[growth][sum->level];
++    view->expEnd = gExperienceTables[growth][sum->level < MAX_LEVEL ? sum->level + 1 : MAX_LEVEL];
++    view->nextExp = sum->level < MAX_LEVEL && view->expEnd > sum->exp ? view->expEnd - sum->exp : 0;
++}
++
++static void CtrSummary_HandleDual(u8 taskId)
++{
++    unsigned command = 0xFF, value = 0;
++
++    if (sCtrSummaryPending)
++    {
++        command = sCtrSummaryCommand;
++        value = sCtrSummaryValue;
++        sCtrSummaryPending = FALSE;
++    }
++    else if (JOY_NEW(B_BUTTON))
++        command = CTR_SUMMARY_CLOSE;
++    else if (JOY_NEW(DPAD_LEFT) || GetLRKeysPressed() == MENU_L_PRESSED)
++    {
++        command = CTR_SUMMARY_TAB;
++        value = (sCtrSummaryTab + 2) % 3;
++    }
++    else if (JOY_NEW(DPAD_RIGHT) || GetLRKeysPressed() == MENU_R_PRESSED)
++    {
++        command = CTR_SUMMARY_TAB;
++        value = (sCtrSummaryTab + 1) % 3;
++    }
++    else if (JOY_NEW(DPAD_UP) || JOY_NEW(DPAD_DOWN))
++    {
++        int delta = JOY_NEW(DPAD_UP) ? -1 : 1;
++        if (sCtrSummaryTab == CTR_SUMMARY_STATS)
++            command = delta < 0 ? CTR_SUMMARY_PREVIOUS : CTR_SUMMARY_NEXT;
++        else
++        {
++            int row = sCtrSummaryCursor;
++            for (int n = 0; n < MAX_MON_MOVES; ++n)
++            {
++                row = (row + delta + MAX_MON_MOVES) % MAX_MON_MOVES;
++                if (sMonSummaryScreen->summary.moves[row] != MOVE_NONE)
++                    break;
++            }
++            command = CTR_SUMMARY_SELECT_MOVE;
++            value = row;
++        }
++    }
++    else if (JOY_NEW(A_BUTTON))
++        command = sCtrSummaryTab == CTR_SUMMARY_STATS ? CTR_SUMMARY_STATS_MODE : CTR_SUMMARY_SWAP;
++
++    switch (command)
++    {
++    case CTR_SUMMARY_CLOSE:
++        if (sCtrSummarySwap != 0xFF)
++            sCtrSummarySwap = 0xFF;
++        else
++        {
++            StopPokemonAnimations();
++            BeginCloseSummaryScreen(taskId);
++        }
++        PlaySE(SE_SELECT);
++        break;
++    case CTR_SUMMARY_TAB:
++        if (!sMonSummaryScreen->summary.isEgg && value < 3)
++        {
++            sCtrSummaryTab = value;
++            sCtrSummarySwap = 0xFF;
++            PlaySE(SE_SELECT);
++        }
++        break;
++    case CTR_SUMMARY_PREVIOUS:
++    case CTR_SUMMARY_NEXT:
++        sCtrProfileMemoValid = FALSE;
++        sCtrSummarySwap = 0xFF;
++        sCtrSummaryCursor = 0;
++        ChangeSummaryPokemon(taskId, command == CTR_SUMMARY_PREVIOUS ? -1 : 1);
++        break;
++    case CTR_SUMMARY_STATS_MODE:
++        if (CtrExtras_Get("ivs_evs") && !sMonSummaryScreen->summary.isEgg)
++        {
++            sMonSummaryScreen->statsMode = (sMonSummaryScreen->statsMode + 1) % STATS_MODE_COUNT;
++            PlaySE(SE_SELECT);
++        }
++        break;
++    case CTR_SUMMARY_SELECT_MOVE:
++        if (value < MAX_MON_MOVES && sMonSummaryScreen->summary.moves[value] != MOVE_NONE)
++        {
++            sCtrSummaryCursor = value;
++            PlaySE(SE_SELECT);
++        }
++        break;
++    case CTR_SUMMARY_SWAP:
++        if (sMonSummaryScreen->lockMovesFlag || sMonSummaryScreen->summary.isEgg
++         || sMonSummaryScreen->summary.moves[sCtrSummaryCursor] == MOVE_NONE)
++            break;
++        if (sCtrSummarySwap == 0xFF)
++            sCtrSummarySwap = sCtrSummaryCursor;
++        else
++        {
++            if (sCtrSummarySwap != sCtrSummaryCursor)
++            {
++                if (sMonSummaryScreen->isBoxMon)
++                    SwapBoxMonMoves(&sMonSummaryScreen->monList.boxMons[sMonSummaryScreen->curMonIndex],
++                                   sCtrSummarySwap, sCtrSummaryCursor);
++                else
++                    SwapMonMoves(&sMonSummaryScreen->monList.mons[sMonSummaryScreen->curMonIndex],
++                                 sCtrSummarySwap, sCtrSummaryCursor);
++                CopyMonToSummaryStruct(&sMonSummaryScreen->currentMon);
++            }
++            sCtrSummarySwap = 0xFF;
++        }
++        PlaySE(SE_SELECT);
++        break;
++    }
++}
++#endif

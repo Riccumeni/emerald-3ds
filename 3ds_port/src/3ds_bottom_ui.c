@@ -81,6 +81,8 @@
 #include "pokemon.h"
 #include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
+#include "contest_effect.h"
+#include "3ds_summary_ui.h"
 #include "pokenav.h"
 #include "region_map.h"
 #include "safari_zone.h"
@@ -2311,6 +2313,7 @@ enum
     MODE_POKENAV,
     /* The PC's boxes, drawn by the compositor over the whole screen. */
     MODE_STORAGE,
+    MODE_SUMMARY,
     /* The game's Pokédex, drawn by the compositor left of the column. */
     MODE_POKEDEX,
     MODE_BATTLE_INFO,
@@ -2366,6 +2369,7 @@ typedef struct
     u8 partyActionText[4][32];
     u8 dexNative;
     CtrDexList dexList;
+    CtrSummaryView summary;
     /* The keyboard focus (X): the column item, or FOCUS_NONE; inside the
      * options, the option; the ring's blink frame. */
     u8 focus, optFocus, blink;
@@ -2607,6 +2611,11 @@ enum
     HIT_MAP = 0x90,
     HIT_OPT_SCROLL_UP,
     HIT_OPT_SCROLL_DOWN,
+    HIT_SUMMARY_TAB = 0xA0,
+    HIT_SUMMARY_PREVIOUS = 0xA3,
+    HIT_SUMMARY_NEXT,
+    HIT_SUMMARY_CLOSE,
+    HIT_SUMMARY_SWAP,
     HIT_OPTION = 0xC0,     /* + option row; +HIT_OPTION_BACK for the left arrow */
     HIT_PAGE = 0xE0,       /* + OPTIONS page tab */
 };
@@ -2706,6 +2715,8 @@ static u8 CurrentMode(void)
         return MODE_POKENAV;
     if (CtrPokedex_ListShown() || CtrPokedex_IsOpen())
         return MODE_POKEDEX;
+    if (CtrSummary_DualShown())
+        return MODE_SUMMARY;
     /* Before the boxes: the bag can be opened from them, whole screen too. */
     if (gMain.callback2 == CB2_BagMenuRun && gBagMenu)
         return MODE_BAG_MENU;
@@ -2767,7 +2778,7 @@ static void BeginSession(bool8 battle)
 static bool8 UpdateSession(u8 mode, bool8 planRunning)
 {
     bool8 inMenu = mode == MODE_PARTY_MENU || mode == MODE_BAG_MENU || mode == MODE_POKENAV
-                || mode == MODE_STORAGE || mode == MODE_POKEDEX;
+                || mode == MODE_STORAGE || mode == MODE_POKEDEX || mode == MODE_SUMMARY;
     bool8 home = gMain.callback2 == CB2_Overworld || gMain.callback2 == BattleMainCB2;
 
     if (inMenu && !sSession.active)
@@ -3317,6 +3328,12 @@ static void Snapshot(ViewState *s, u8 mode, u8 pressed)
         s->dexNative = CtrPokedex_ListShown();
         if (s->dexNative)
             CtrPokedex_ReadList(&s->dexList);
+    }
+    else if (mode == MODE_SUMMARY)
+    {
+        s->screen = SCR_COUNT;
+        s->bagView = BAG_VIEW_WHOLE;
+        CtrSummary_ReadView(&s->summary);
     }
     else if (mode == MODE_STORAGE)
         s->screen = SCR_COUNT;   /* the boxes cover the column */
@@ -5437,6 +5454,380 @@ static void DrawTypeIcon(u8 type, int x, int y)
         DrawSprite(sRes.typeTiles + type * 8 * 32, 4, 2, x, y, sRes.typePal[sTypeIconPal[type]].c);
 }
 
+static void DrawSummaryStats(const CtrSummaryView *view)
+{
+    static const u8 order[] = {STAT_HP, STAT_ATK, STAT_DEF, STAT_SPATK, STAT_SPDEF, STAT_SPEED};
+    const u8 *labels[] = {gText_HP4, gText_Attack3, gText_Defense3, gText_SpAtk4, gText_SpDef4, gText_Speed2};
+    u8 text[48];
+
+    DrawMenuBezel(6, 72, 308, 24, FALSE, FALSE);
+    DrawStr(&sSmall, gText_Item, 13, 78, TXT_DARK, TXT_LIGHT);
+    DrawStr(&sSmall, view->item == ITEM_NONE ? gText_None : GetItemName(view->item), 63, 78, TXT_BLUE, TXT_LIGHT);
+    StringCopy(text, Ascii(CTR_TEXT("RIBBONS ", "CINTAS ", "RUBANS ", "FIOCCHI ")));
+    StringAppend(text, Number(view->ribbons, 2, STR_CONV_MODE_LEFT_ALIGN));
+    DrawStrRight(&sSmall, text, 306, 78, TXT_DARK, TXT_LIGHT);
+    for (int i = 0; i < 6; ++i)
+    {
+        int x = i < 3 ? 6 : 164, y = 100 + (i % 3) * 31;
+        int stat = order[i];
+
+        DrawMenuBezel(x, y, 150, 28, FALSE, FALSE);
+        DrawStr(&sSmall, labels[i], x + 7, y + 7, TXT_DARK, TXT_LIGHT);
+        if (view->statsMode)
+            StringCopy(text, Number(view->statsMode == 1 ? view->ivs[stat] : view->evs[stat], 3, STR_CONV_MODE_LEFT_ALIGN));
+        else if (stat == STAT_HP)
+        {
+            StringCopy(text, Number(view->hp, 3, STR_CONV_MODE_LEFT_ALIGN));
+            StringAppend(text, Ascii("/"));
+            StringAppend(text, Number(view->stats[stat], 3, STR_CONV_MODE_LEFT_ALIGN));
+        }
+        else
+            StringCopy(text, Number(view->stats[stat], 3, STR_CONV_MODE_LEFT_ALIGN));
+        DrawStrRight(&sNormal, text, x + 142, y + 5, TXT_DARK, TXT_LIGHT);
+    }
+    DrawMenuBezel(6, 195, 308, 39, FALSE, FALSE);
+    DrawStr(&sSmall, gText_ExpPoints, 13, 200, TXT_DARK, TXT_LIGHT);
+    DrawStrRight(&sSmall, Number(view->exp, 7, STR_CONV_MODE_LEFT_ALIGN), 151, 200, TXT_DARK, TXT_LIGHT);
+    DrawStr(&sSmall, gText_NextLv, 166, 200, TXT_DARK, TXT_LIGHT);
+    DrawStrRight(&sSmall, Number(view->nextExp, 7, STR_CONV_MODE_LEFT_ALIGN), 306, 200, TXT_DARK, TXT_LIGHT);
+    FillRect(13, 221, 294, 6, PackRgb(28, 89, 91));
+    unsigned span = view->expEnd - view->expStart;
+    unsigned done = view->exp > view->expStart ? view->exp - view->expStart : 0;
+    if (done > span) done = span;
+    FillRect(14, 222, span ? 292u * done / span : view->level == MAX_LEVEL ? 292 : 0,
+             4, PackRgb(69, 165, 255));
+}
+
+static void DrawSummaryMoves(const CtrSummaryView *view)
+{
+    bool8 contest = view->tab == CTR_SUMMARY_CONTEST;
+    u8 text[48];
+
+    for (int row = 0; row < MAX_MON_MOVES; ++row)
+    {
+        u16 move = view->moves[row];
+        int y = 72 + row * 26;
+        bool8 selected = row == view->cursor && move != MOVE_NONE;
+
+        DrawMenuBezel(6, y, 308, 24, selected, move == MOVE_NONE);
+        if (move != MOVE_NONE)
+        {
+            if (contest)
+                DrawStrIn(&sSmall, gContestMoveTypeTextPointers[gContestMoves[move].contestCategory],
+                          11, 64, y + 3, y + 21, TXT_DARK, TXT_LIGHT);
+            else
+            {
+                DrawTypeIcon(gBattleMoves[move].type, 13, y + 4);
+                DrawCategoryIcon(move, 204, y + 4);
+            }
+            DrawStr(&sNormal, gMoveNames[move], 68, y + 4,
+                    selected ? TXT_WHITE : TXT_DARK, selected ? sLook.chosenShadow : TXT_LIGHT);
+            StringCopy(text, Ascii("PP "));
+            StringAppend(text, Number(view->pp[row], 2, STR_CONV_MODE_LEFT_ALIGN));
+            StringAppend(text, Ascii("/"));
+            StringAppend(text, Number(view->maxPP[row], 2, STR_CONV_MODE_LEFT_ALIGN));
+            DrawStrRight(&sSmall, text, 306, y + 6,
+                         selected ? TXT_WHITE : TXT_DARK, selected ? sLook.chosenShadow : TXT_LIGHT);
+            if (view->swapFrom == row)
+                DrawRing(7, y + 1, 306, 22, 0);
+            AddHit(6, y, 308, 24, HIT_ROW + row);
+        }
+    }
+    u16 move = view->moves[view->cursor];
+    DrawMenuBezel(6, 178, 308, 57, FALSE, FALSE);
+    if (move != MOVE_NONE)
+    {
+        const u8 *description;
+        char details[48];
+        if (contest)
+        {
+            const struct ContestEffect *effect = &gContestEffects[gContestMoves[move].effect];
+            snprintf(details, sizeof(details), CTR_TEXT("APPEAL %u  JAM %u", "ATRACT. %u  INHIB. %u", "CHARME %u  BLOC. %u", "ATTRATTIVA %u  DISTURBO %u"),
+                     effect->appeal / 10, effect->jam / 10);
+            description = gContestEffectDescriptionPointers[gContestMoves[move].effect];
+        }
+        else
+        {
+            snprintf(details, sizeof(details), CTR_TEXT("POWER %u  ACC. %u", "POT. %u  PREC. %u", "PUISS. %u  PRÉC. %u", "POTENZA %u  PREC. %u"),
+                     gBattleMoves[move].power, gBattleMoves[move].accuracy);
+            description = gMoveDescriptionPointers[move - 1];
+        }
+        DrawStr(&sSmall, Ascii(details), 13, 181, TXT_BLUE, TXT_LIGHT);
+        if (!view->locked)
+        {
+            DrawPlate(231, 180, 79, 17, &sLook.plate, 0, FALSE);
+            DrawStrIn(&sSmall, Ascii(view->swapFrom != 0xFF ? CTR_TEXT("CONFIRM", "CONFIRMAR", "VALIDER", "CONFERMA")
+                                                       : CTR_TEXT("SWITCH", "CAMBIAR", "DÉPLACER", "SCAMBIA")),
+                      232, 309, 182, 195, TXT_DARK, TXT_LIGHT);
+            AddHit(231, 180, 79, 17, HIT_SUMMARY_SWAP);
+        }
+        int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+        sClipX0 = 12; sClipX1 = 308; sClipY0 = 196; sClipY1 = 234;
+        DrawStr(&sSmall, description, 13, 195, TXT_DARK, TXT_LIGHT);
+        RestoreClip(clip);
+    }
+}
+
+static void DrawDualSummary(const ViewState *s)
+{
+    const CtrSummaryView *view = &s->summary;
+    static const u8 previous[] = {CHAR_LEFT_ARROW, EOS}, next[] = {CHAR_RIGHT_ARROW, EOS};
+    const u8 *tabs[3] = {
+        Ascii(view->statsMode == 1 ? "IV" : view->statsMode == 2 ? "EV" : CTR_TEXT("STATS", "DATOS", "STATS", "STATISTICHE")),
+        Ascii(CTR_TEXT("MOVES", "MOVIMIENTOS", "CAPACITÉS", "MOSSE")),
+        Ascii(CTR_TEXT("CONTEST", "CONCURSO", "CONCOURS", "MOSSE GRAZIA"))};
+
+    for (int y = 0; y < H; ++y)
+        FillRect(0, y, W, 1, (y & 3) < 2 ? PackRgb(28, 209, 111) : PackRgb(0, 178, 86));
+    DrawMenuBezel(6, 5, 308, 26, FALSE, FALSE);
+    int end = DrawStr(&sNormal, view->species ? view->nickname : Ascii("POKEMON"), 13, 10, TXT_DARK, TXT_LIGHT);
+    if (view->species && !view->egg)
+    {
+        DrawStr(&sSmall, Ascii("Lv."), end + 10, 12, TXT_BLUE, TXT_LIGHT);
+        DrawStr(&sSmall, Number(view->level, 3, STR_CONV_MODE_LEFT_ALIGN), end + 29, 12, TXT_BLUE, TXT_LIGHT);
+    }
+    for (int action = 0; action < 3; ++action)
+    {
+        int x = 226 + 29 * action;
+        DrawPlate(x, 8, 26, 20, &sLook.plate, 0, FALSE);
+        DrawStrIn(&sSmall, action == 0 ? previous : action == 1 ? next : Ascii("B"), x, x + 26, 9, 27, TXT_DARK, TXT_LIGHT);
+        if (view->ready)
+            AddHit(x, 8, 26, 20, action == 0 ? HIT_SUMMARY_PREVIOUS : action == 1 ? HIT_SUMMARY_NEXT : HIT_SUMMARY_CLOSE);
+    }
+    for (int tab = 0; tab < 3; ++tab)
+    {
+        int x = 6 + tab * 104;
+        DrawMenuBezel(x, 36, 100, 30, view->tab == tab && !view->egg, view->egg);
+        DrawStrIn(&sSmall, tabs[tab], x + 4, x + 96, 40, 62,
+                  view->tab == tab && !view->egg ? TXT_WHITE : TXT_DARK,
+                  view->tab == tab && !view->egg ? sLook.chosenShadow : TXT_LIGHT);
+        if (view->ready && !view->egg)
+            AddHit(x, 36, 100, 30, HIT_SUMMARY_TAB + tab);
+    }
+    if (!view->ready || view->egg)
+    {
+        DrawMenuBezel(6, 72, 308, 163, FALSE, FALSE);
+        DrawStrIn(&sSmall, Ascii(view->egg ? CTR_TEXT("No stats or moves for an Egg.", "Un Huevo no tiene datos de combate.", "Les stats d'un Oeuf sont masquées.", "Statistiche e mosse non visibili per le UOVA.")
+                                         : CTR_TEXT("Loading...", "Cargando...", "Chargement...", "Caricamento...")),
+                  12, 308, 120, 160, TXT_DARK, TXT_LIGHT);
+    }
+    else if (view->tab == CTR_SUMMARY_STATS)
+        DrawSummaryStats(view);
+    else
+        DrawSummaryMoves(view);
+}
+
+static u16 SummaryTextColour(unsigned colour)
+{
+    switch (colour)
+    {
+    case 2: return TXT_LIGHT;
+    case 5: return TXT_RED;
+    case 6: return TXT_LRED;
+    default: return TXT_DARK;
+    }
+}
+
+/* Keep the original memo's colour commands and wrap whole words in the
+ * wider native panel. Glyphs always retain their original pixel grid. */
+static void DrawSummaryProfileText(const Font *font, const u8 *text, int left, int top, int right, int bottom)
+{
+    if (!font->glyphs || !text)
+        return;
+    int x = left, y = top;
+    u16 fg = TXT_DARK, shadow = TXT_LIGHT;
+    bool8 wordStart = TRUE;
+    int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+
+    sClipX0 = left; sClipX1 = right; sClipY0 = top; sClipY1 = bottom;
+    while (*text != EOS && y < bottom)
+    {
+        const u8 *start = text;
+        u8 c = *text++;
+        if (c == EXT_CTRL_CODE_BEGIN)
+        {
+            unsigned length = GetExtCtrlCodeLength(*text);
+            if (!length) break;
+            if (*text == EXT_CTRL_CODE_COLOR) fg = SummaryTextColour(text[1]);
+            else if (*text == EXT_CTRL_CODE_SHADOW) shadow = SummaryTextColour(text[1]);
+            else if (*text == EXT_CTRL_CODE_COLOR_HIGHLIGHT_SHADOW)
+            {
+                fg = SummaryTextColour(text[1]);
+                shadow = SummaryTextColour(text[3]);
+            }
+            text += length;
+            continue;
+        }
+        if (c == CHAR_NEWLINE || c == CHAR_PROMPT_SCROLL || c == CHAR_PROMPT_CLEAR)
+        {
+            x = left;
+            y += font->lineHeight;
+            wordStart = TRUE;
+            continue;
+        }
+        if (wordStart && c != CHAR_SPACE)
+        {
+            int width = 0;
+            const u8 *scan = start;
+            for (u16 glyph; (glyph = NextGlyph(&scan)) != 0xFFFF && glyph != 0xFFFE && glyph != CHAR_SPACE;)
+                width += font->widths[glyph];
+            if (x > left && x + width > right)
+            {
+                x = left;
+                y += font->lineHeight;
+            }
+        }
+        u16 glyph = c == CHAR_EXTRA_SYMBOL ? 0x100 | *text++ : c;
+        if (x + font->widths[glyph] > right)
+        {
+            x = left;
+            y += font->lineHeight;
+        }
+        if (c != CHAR_SPACE || x != left)
+            x += DrawGlyph(font, glyph, x, y, fg, shadow);
+        wordStart = c == CHAR_SPACE;
+    }
+    RestoreClip(clip);
+}
+
+static void DrawSummaryProfileSection(int y, const u8 *label, int height)
+{
+    PartyGradient(146, y, 248, 16, (Rgb){78, 171, 225}, (Rgb){46, 131, 191});
+    FillRect(146, y, 4, 16, PackRgb(17, 153, 126));
+    FillRect(151, y + 1, 239, 1, PackRgb(138, 220, 239));
+    DrawStr(&sNormal, label, 157, y - 1, TXT_WHITE, PackRgb(37, 91, 133));
+    MenuMint(146, y + 16, 248, height - 16);
+}
+
+static void DrawSummaryFullProfile(const CtrSummaryProfile *profile)
+{
+    u8 text[48];
+    Pal portraitPal;
+
+    for (int y = 0; y < H; ++y)
+        FillRect(0, y, 400, 1, (y & 3) < 2 ? PackRgb(8, 128, 102) : PackRgb(0, 105, 91));
+    DrawMenuBezel(4, 3, 392, 24, TRUE, FALSE);
+    DrawStr(&sNormal, gText_PkmnInfo, 14, 7, TXT_WHITE, PackRgb(0, 83, 73));
+    DrawStrRight(&sSmall, Ascii(CTR_TEXT("B: Back", "B: Atrás", "B: Retour", "B: Indietro")),
+                 385, 10, TXT_WHITE, PackRgb(0, 83, 73));
+    if (!profile->ready)
+    {
+        DrawMenuBezel(4, 31, 392, 205, FALSE, FALSE);
+        DrawStrIn(&sNormal, Ascii(CTR_TEXT("Loading...", "Cargando...", "Chargement...", "Caricamento...")),
+                  12, 388, 100, 160, TXT_DARK, TXT_LIGHT);
+        return;
+    }
+
+    DrawMenuBezel(4, 30, 136, 206, FALSE, FALSE);
+    StringCopy(text, Ascii("N."));
+    StringAppend(text, profile->egg ? Ascii("---") : Number(profile->dex, 3, STR_CONV_MODE_LEADING_ZEROS));
+    DrawStr(&sNormal, text, 13, 35, TXT_DARK, TXT_LIGHT);
+    static const u8 marks[4][7] = {
+        {0x1C,0x3E,0x7F,0x7F,0x7F,0x3E,0x1C},
+        {0x7F,0x7F,0x7F,0x7F,0x7F,0x7F,0x7F},
+        {0x08,0x08,0x1C,0x1C,0x3E,0x3E,0x7F},
+        {0x36,0x7F,0x7F,0x3E,0x1C,0x08,0x00}};
+    for (int mark = 0; mark < 4; ++mark)
+        for (int y = 0; y < 7; ++y)
+            for (int x = 0; x < 7; ++x)
+                if (marks[mark][y] & (1 << x))
+                    Put(92 + mark * 10 + x, 40 + y,
+                        (profile->markings & (1 << mark)) ? PackRgb(105, 97, 166) : PackRgb(171, 158, 206));
+    for (int y = 54; y < 182; ++y)
+        FillRect(8, y, 128, 1, (y & 3) < 2 ? PackRgb(228, 241, 202) : PackRgb(205, 225, 207));
+    ToPals(&portraitPal, profile->palette, 1);
+    int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+    sClipX0 = 8; sClipX1 = 136; sClipY0 = 54; sClipY1 = 182;
+    for (int y = 0; y < 64; ++y)
+        for (int x = 0; x < 64; ++x)
+        {
+            int sourceX = profile->flip ? 63 - x : x;
+            int tile = (y / 8) * 8 + sourceX / 8;
+            u8 pixel = profile->portrait[tile * 32 + (y & 7) * 4 + ((sourceX & 7) >> 1)];
+            unsigned colour = (pixel >> ((sourceX & 1) * 4)) & 15;
+            if (colour)
+                FillRect(8 + 2 * (x + profile->portraitX), 54 + 2 * (y + profile->portraitY), 2, 2, portraitPal.c[colour]);
+        }
+    RestoreClip(clip);
+    DrawStr(&sNormal, profile->nickname, 13, 183, TXT_DARK, TXT_LIGHT);
+    if (!profile->egg)
+    {
+        StringCopy(text, Ascii("/"));
+        StringAppend(text, gSpeciesNames[profile->species]);
+        DrawStr(&sSmall, text, 13, 201, TXT_DARK, TXT_LIGHT);
+        Pal ballPal;
+        ToPals(&ballPal, profile->ballPalette, 1);
+        DrawSprite(profile->ball, 2, 2, 16, 215, ballPal.c);
+        StringCopy(text, Ascii("Lv."));
+        StringAppend(text, Number(profile->level, 3, STR_CONV_MODE_LEFT_ALIGN));
+        DrawStr(&sNormal, text, 43, 217, TXT_DARK, TXT_LIGHT);
+        if (profile->gender == MON_MALE || profile->gender == MON_FEMALE)
+            DrawStr(&sNormal, profile->gender == MON_FEMALE ? gText_FemaleSymbol : gText_MaleSymbol,
+                    119, 217, profile->gender == MON_FEMALE ? PackRgb(238, 81, 145) : PackRgb(24, 156, 230), TXT_LIGHT);
+    }
+
+    DrawSummaryProfileSection(32, gText_Profile, 58);
+    int otX = DrawStr(&sNormal, gText_OTSlash, 153, 51, TXT_DARK, TXT_LIGHT);
+    DrawStr(&sNormal, profile->otName, otX, 51,
+            profile->otGender ? PackRgb(238, 81, 145) : PackRgb(24, 156, 230), TXT_LIGHT);
+    StringCopy(text, gText_IDNumber2);
+    StringAppend(text, profile->egg ? Ascii("-----") : Number(profile->otId, 5, STR_CONV_MODE_LEADING_ZEROS));
+    DrawStrRight(&sNormal, text, 386, 51, TXT_DARK, TXT_LIGHT);
+    if (!profile->egg)
+    {
+        int typesX = DrawStr(&sNormal, gText_TypeSlash, 153, 72, TXT_DARK, TXT_LIGHT) + 4;
+        DrawTypeIcon(gSpeciesInfo[profile->species].types[0], typesX, 72);
+        if (gSpeciesInfo[profile->species].types[1] != gSpeciesInfo[profile->species].types[0])
+            DrawTypeIcon(gSpeciesInfo[profile->species].types[1], typesX + 36, 72);
+    }
+    DrawSummaryProfileSection(94, Ascii(profile->egg ? CTR_TEXT("EGG", "HUEVO", "OEUF", "UOVO")
+                                                  : CTR_TEXT("ABILITY", "HABILIDAD", "TALENT", "ABILITÀ")), 64);
+    if (!profile->egg)
+        DrawStr(&sNormal, profile->abilityName, 153, 111, TXT_DARK, TXT_LIGHT);
+    DrawSummaryProfileText(&sSmall, profile->abilityDescription, 153, profile->egg ? 113 : 131, 389, 157);
+    DrawSummaryProfileSection(162, Ascii(CTR_TEXT("TRAINER MEMO", "NOTAS", "MÉMO", "PROMEMORIA")), 72);
+    DrawSummaryProfileText(&sNormal, profile->memo, 153, 181, 389, 233);
+}
+
+const uint16_t *CtrSummary_ProfileCanvas(uint32_t *version)
+{
+    static u16 canvas[400 * H];
+    static CtrSummaryProfile previous, current;
+    static u32 revision, serial;
+    static bool8 painted, haveProfile;
+
+    CtrSummary_ReadProfile(&current);
+    if (current.serial != serial)
+    {
+        painted = haveProfile = FALSE;
+        serial = current.serial;
+    }
+    if ((painted && !current.ready) || (haveProfile && memcmp(&current, &previous, sizeof(current)) == 0))
+    {
+        *version = revision;
+        return canvas;
+    }
+    u16 *destination = sDst;
+    int offset = sOX;
+    int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+    sDst = canvas;
+    sOX = 0;
+    sClipX0 = sClipY0 = 0; sClipX1 = 400; sClipY1 = H;
+    ResolveFonts();
+    DrawSummaryFullProfile(&current);
+    sDst = destination;
+    sOX = offset;
+    RestoreClip(clip);
+    painted = TRUE;
+    if (current.ready)
+    {
+        previous = current;
+        haveProfile = TRUE;
+    }
+    *version = ++revision;
+    return canvas;
+}
+
 static u8 PlateState(const ViewState *s, u8 hit, bool8 focused)
 {
     if ((s->pressed == hit || (hit == HIT_QUICK_BALL
@@ -6816,6 +7207,10 @@ static void Render(const ViewState *s)
     {
         DrawMainMenu(s);
     }
+    else if (s->mode == MODE_SUMMARY)
+    {
+        DrawDualSummary(s);
+    }
     else if (FullSaveShown(s))
     {
         DrawFullSave(s);
@@ -7901,6 +8296,23 @@ static void Activate(u8 id, u8 mode)
     if (id == HIT_NONE)
         return;
     CtrLog_Write(CTR_LOG_INPUT, "bottom screen: tap %02x (mode %u screen %u)", id, mode, sShown.screen);
+    if (mode == MODE_SUMMARY)
+    {
+        if (id >= HIT_SUMMARY_TAB && id < HIT_SUMMARY_TAB + 3)
+            CtrSummary_Command(id == HIT_SUMMARY_TAB && sShown.summary.tab == CTR_SUMMARY_STATS
+                               ? CTR_SUMMARY_STATS_MODE : CTR_SUMMARY_TAB, id - HIT_SUMMARY_TAB);
+        else if (id >= HIT_ROW && id < HIT_ROW + MAX_MON_MOVES)
+            CtrSummary_Command(CTR_SUMMARY_SELECT_MOVE, id - HIT_ROW);
+        else if (id == HIT_SUMMARY_PREVIOUS)
+            CtrSummary_Command(CTR_SUMMARY_PREVIOUS, 0);
+        else if (id == HIT_SUMMARY_NEXT)
+            CtrSummary_Command(CTR_SUMMARY_NEXT, 0);
+        else if (id == HIT_SUMMARY_CLOSE)
+            CtrSummary_Command(CTR_SUMMARY_CLOSE, 0);
+        else if (id == HIT_SUMMARY_SWAP)
+            CtrSummary_Command(CTR_SUMMARY_SWAP, 0);
+        return;
+    }
     if (mode >= MODE_BATTLE_INFO)
     {
         /* The controller waiting for it takes it on its next frame. */
@@ -8916,6 +9328,8 @@ void CtrBottom_Frame(void)
 
     /* The hidden menus: the top screen keeps the world meanwhile. */
     hold = UpdateSession(mode, sPlan.kind != PLAN_NONE);
+    if (mode == MODE_SUMMARY)
+        hold = FALSE;
     if (hold != held)
     {
         CtrVideo_HoldTop(hold);

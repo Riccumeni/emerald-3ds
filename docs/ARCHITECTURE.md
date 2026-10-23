@@ -95,12 +95,18 @@ read back and drawn as buttons. The PokéNav is the game's own, run as it is:
 its screens are composed as a centred GBA screen and drawn into the 240x240
 area left of the column instead of the top screen, laid out for its 240 lines
 (the header on the top edge, the help bar on the bottom edge, the rest in the
-middle), and a tap on them becomes the buttons they read. The PC's boxes and
-the summary opened from them are the game's own screens too, composed the same
-way but over the whole bottom screen (the picture 1:1 in the middle, the
-boxes' scrolling pattern around it); a tap on them acts in the game directly
-(`pokemon_storage_system.c`, `pokemon_summary_screen.c`, under
-`PLATFORM_3DS`), without key presses. The bag is the game's own as well
+middle), and a tap on them becomes the buttons they read. The PC's boxes use
+the whole bottom screen (the picture 1:1 in the middle and their scrolling
+pattern around it); taps act directly in `pokemon_storage_system.c`.
+Normal Pokémon summaries redraw the profile, ability and memo at 400x240 on
+the top screen. The native RGB565 canvas uses the original fonts, coloured
+memo text and animated portrait, uploaded with nearest filtering at 1:1.
+The game's INFO page remains selected internally. `3ds_summary_ui.h` exposes profile data, a snapshot and queued
+commands to three native bottom-screen tabs: stats, battle moves and contest
+moves. The original summary task handles Pokémon selection, IV/EV modes and
+move swaps, including PP bonuses. The top eye buffers are saved in RAM and
+restored when returning to the party or PC. The move-forgetting selector
+retains the original bottom-screen summary and touch handling. The bag is the game's own as well
 (`item_menu.c`): opened from the field it sits left of the column, opened
 from a battle, a shop or the PC it takes the whole screen, its stripes carried
 on around it, and taps act on it directly too. So is the Pokédex
