@@ -73,6 +73,7 @@
 #include "3ds_assets.h"
 #include "3ds_audio.h"
 #include "3ds_bottom.h"
+#include "3ds_pokedex_ui.h"
 #include "3ds_sprite_ids.h"
 
 #include <stdio.h>
@@ -460,7 +461,7 @@ static void UpdateStage(void)
     /* The custom roster draws the party selection itself.  Suppress the
      * GBA party compositor before it can copy the old list beneath it. */
     CtrVideo_SetCentred(caughtMonPage ? CTR_CENTRED_POKEDEX_CAUGHT
-                                    : CtrBottom_UsesPartyRoster() ? CTR_CENTRED_NONE
+                                    : (CtrBottom_UsesPartyRoster() || CtrPokedex_ListShown()) ? CTR_CENTRED_NONE
                                     : sCentred.on ? sCentred.screen : CTR_CENTRED_NONE);
     CtrVideo_SetBattle(!caughtMonPage && sBattle.on);
     CtrVideo_SetTransition(!caughtMonPage && TransitionOn());

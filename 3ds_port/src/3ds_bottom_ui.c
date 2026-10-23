@@ -105,6 +105,7 @@
 
 #include "3ds_data.h"
 #include "3ds_bottom.h"
+#include "3ds_pokedex_ui.h"
 #include "3ds_extras.h"
 #include "3ds_bottom_art.h"
 #include "3ds_input.h"
@@ -2362,6 +2363,8 @@ typedef struct
     /* Party menu state, read-only from the game's existing menu. */
     u8 partyCursor, partyNative, partyActionCursor, partyActionCount;
     u8 partyActionText[4][32];
+    u8 dexNative;
+    CtrDexList dexList;
     /* The keyboard focus (X): the column item, or FOCUS_NONE; inside the
      * options, the option; the ring's blink frame. */
     u8 focus, optFocus, blink;
@@ -3246,7 +3249,12 @@ static void Snapshot(ViewState *s, u8 mode, u8 pressed)
     else if (mode == MODE_POKENAV)
         s->screen = SCR_POKENAV;
     else if (mode == MODE_POKEDEX)
+    {
         s->screen = SCR_POKEDEX;
+        s->dexNative = CtrPokedex_ListShown();
+        if (s->dexNative)
+            CtrPokedex_ReadList(&s->dexList);
+    }
     else if (mode == MODE_STORAGE)
         s->screen = SCR_COUNT;   /* the boxes cover the column */
     StringCopy(s->name, gSaveBlock2Ptr->playerName);
@@ -3348,9 +3356,41 @@ static void Snapshot(ViewState *s, u8 mode, u8 pressed)
 }
 
 /* Loads one icon or picture the snapshot needs; TRUE if it did. */
+static struct
+{
+    u16 species;
+    u8 tiles[64 * 64 / 2];
+    Pal pal;
+    bool8 valid;
+} sDexPortrait;
+
 static bool8 Prefetch(const ViewState *s)
 {
     sIconBudget = TRUE;
+    if (s->dexNative)
+    {
+        const CtrDexRow *row = &s->dexList.rows[s->dexList.cursorRow];
+        u16 species = row->seen ? row->species : SPECIES_NONE;
+
+        if (species != sDexPortrait.species)
+        {
+            u32 size = 0;
+            u8 *tiles = species ? Unlz(gMonFrontPicTable[species].data, &size) : NULL;
+            u16 *pal = species ? Unlz(gMonPaletteTable[species].data, NULL) : NULL;
+
+            sDexPortrait.valid = tiles && pal && size >= sizeof(sDexPortrait.tiles);
+            if (sDexPortrait.valid)
+            {
+                memcpy(sDexPortrait.tiles, tiles, sizeof(sDexPortrait.tiles));
+                ToPals(&sDexPortrait.pal, pal, 1);
+            }
+            free(tiles);
+            free(pal);
+            sDexPortrait.species = species;
+            sIconBudget = FALSE;
+            return TRUE;
+        }
+    }
     for (int i = 0; i < PARTY_SIZE && sIconBudget; ++i)
         if (s->party[i].species)
         {
@@ -4344,6 +4384,108 @@ static void DrawPartyActions(const ViewState *s)
                 FillRect(x + 10, y + 7 + row, 5 - abs(row - 4), 1, PackRgb(25, 49, 63));
         DrawStrCentered(&sNormal, s->partyActionText[i], x + PARTY_ACTION_W / 2 + 4,
                       y + 4, PackRgb(27, 49, 65), PackRgb(255, 250, 209));
+    }
+}
+
+/* The supplied reference supplies the fixed chrome at 320x240. */
+#define DEX_LIST_X 184
+#define DEX_LIST_Y 119
+#define DEX_LIST_ROW_H 16
+
+#include "3ds_pokedex_skin.h"
+
+static void DrawDexSkin(void)
+{
+    static u16 canvas[W * H];
+    static bool8 ready;
+    if (!ready)
+    {
+        unsigned pixel = 0;
+        for (unsigned run = 0; run < ARRAY_COUNT(sPokedexSkinRuns); ++run)
+            for (unsigned n = 0; n < sPokedexSkinRuns[run][0]; ++n, ++pixel)
+                canvas[(pixel % W) * H + H - 1 - pixel / W] = sPokedexSkinRuns[run][1];
+        ready = TRUE;
+    }
+    for (int x = sClipX0; x < sClipX1; ++x)
+        memcpy(sDst + x * H + H - sClipY1, canvas + x * H + H - sClipY1,
+               (sClipY1 - sClipY0) * sizeof(u16));
+}
+
+static void DrawDexCaughtBall(int x, int y)
+{
+    u16 dark = PackRgb(3, 30, 25), white = PackRgb(255, 255, 249);
+    for (int py = -4; py <= 4; ++py)
+        for (int px = -5; px <= 5; ++px)
+        {
+            if (px * px + py * py > 25)
+                continue;
+            u16 colour = abs(py) <= 1 || px * px + py * py >= 16 ? dark
+                       : py < 0 ? PackRgb(244, 50, 58) : white;
+            Put(x + px, y + py, colour);
+        }
+    FillRect(x - 1, y - 1, 3, 3, white);
+    Put(x, y, dark);
+}
+
+static void DrawNativePokedex(const ViewState *s)
+{
+    const CtrDexList *dex = &s->dexList;
+    const CtrDexRow *selected = &dex->rows[dex->cursorRow];
+    u16 ink = PackRgb(2, 38, 29), white = PackRgb(255, 255, 248);
+    u16 dark = PackRgb(0, 57, 52);
+
+    DrawDexSkin();
+    /* Only these small regions of the reference contain live game data. */
+    FillRect(42, 94, 22, 16, dark);
+    FillRect(42, 134, 22, 16, dark);
+    DrawStrCentered(&sNormal, Number(dex->seen, 3, STR_CONV_MODE_LEFT_ALIGN),
+                    52, 94, white, PackRgb(9, 19, 20));
+    DrawStrCentered(&sNormal, Number(dex->caught, 3, STR_CONV_MODE_LEFT_ALIGN),
+                    52, 134, white, PackRgb(9, 19, 20));
+
+    if (sDexPortrait.valid && selected->seen
+     && sDexPortrait.species == selected->species)
+        DrawSprite(sDexPortrait.tiles, 8, 8, 96, 104, sDexPortrait.pal.c);
+
+    /* Keep the empty upper part of the yellow well and its etched highlights.
+     * Five rows sit in its lower half, as in the supplied layout. */
+    PartyGradient(184, 117, 130, 84, (Rgb){236, 242, 105}, (Rgb){238, 244, 133});
+    for (int row = 0; row < CTR_DEX_ROWS; ++row)
+    {
+        const CtrDexRow *entry = &dex->rows[row];
+        int y = DEX_LIST_Y + row * DEX_LIST_ROW_H;
+        if (!entry->number)
+            continue;
+        if (row == dex->cursorRow)
+        {
+            FillRect(185, y - 1, 126, 17, PackRgb(255, 150, 22));
+            FillRect(186, y, 124, 15, white);
+            for (int py = 0; py < 9; ++py)
+                FillRect(189, y + 3 + py, 5 - abs(py - 4), 1, ink);
+        }
+        else if (entry->caught)
+            DrawDexCaughtBall(193, y + 8);
+
+        DrawStr(&sNormal, Ascii("N"), 202, y, ink, PackRgb(243, 250, 174));
+        FillRect(209, y + 3, 3, 3, ink);
+        Put(210, y + 4, row == dex->cursorRow ? white : PackRgb(237, 242, 113));
+        DrawStr(&sNormal, Number(entry->number, 3, STR_CONV_MODE_LEADING_ZEROS),
+                213, y, ink, PackRgb(243, 250, 174));
+        {
+            int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+            sClipX0 = 241; sClipX1 = 304;
+            DrawStr(&sNormal, entry->seen ? gSpeciesNames[entry->species] : Ascii("----------"),
+                    242, y, ink, PackRgb(243, 250, 174));
+            sClipX0 = clip[0]; sClipY0 = clip[1]; sClipX1 = clip[2]; sClipY1 = clip[3];
+        }
+    }
+    /* Repaint the reference's fixed thumb with the actual list position. */
+    PartyGradient(302, 63, 9, 139, (Rgb){236, 242, 105}, (Rgb){238, 244, 133});
+    FillRect(306, 68, 3, 130, PackRgb(76, 104, 31));
+    {
+        int y = 66 + (dex->count > 1 ? 119 * dex->selected / (dex->count - 1) : 0);
+        FillRect(303, y, 7, 13, PackRgb(0, 68, 49));
+        PartyBevel(303, y, 7, 13, PackRgb(6, 106, 64), ink);
     }
 }
 
@@ -6136,6 +6278,10 @@ static void Render(const ViewState *s)
         if (s->title)
             DrawTitleCredit();
     }
+    else if (s->dexNative)
+    {
+        DrawNativePokedex(s);
+    }
     else if (s->mode >= MODE_BATTLE_INFO)
     {
         CopyCache(sCache[CACHE_BATTLE] ? CACHE_BATTLE : CACHE_WIDE);
@@ -7349,6 +7495,54 @@ static u8 ProcessTouch(u8 mode)
         }
         sTouch.active = FALSE;
         sTouch.bag = FALSE;
+        return HIT_NONE;
+    }
+    if (mode == MODE_POKEDEX && sShown.dexNative && CtrPokedex_ListShown())
+    {
+        int x = in->touchX, y = in->touchY;
+        s16 nx = 0, ny = 0;
+
+        if (x >= 302 && y >= 66 && y < 203)
+        {
+            nx = 228;
+            ny = 20 + (y - 66) * 120 / 132;
+        }
+        else if (x >= DEX_LIST_X)
+        {
+            nx = 160;
+            ny = y >= 204 ? 150 : y < DEX_LIST_Y ? 8
+               : 72 + ((y - DEX_LIST_Y) / DEX_LIST_ROW_H - sShown.dexList.cursorRow) * 16;
+        }
+        else if (x >= 80 && y >= 60 && y < 203)
+        {
+            nx = 96; ny = 72;
+        }
+        else if (x < 80 && y >= 170 && y < 204)
+        {
+            nx = 32; ny = y < 188 ? 120 : 144;
+        }
+        if (in->touchDown)
+        {
+            sTouch.active = sTouch.bag = TRUE;
+            sTouch.lastX = x; sTouch.lastY = y;
+            CtrPokedex_Touch(BAG_TOUCH_DOWN, nx, ny);
+        }
+        else if (in->touchActive && sTouch.active)
+        {
+            sTouch.lastX = x; sTouch.lastY = y;
+            CtrPokedex_Touch(BAG_TOUCH_MOVE, nx, ny);
+        }
+        else if (in->touchUp && sTouch.active)
+        {
+            sTouch.active = sTouch.bag = FALSE;
+            if (sTouch.lastX < 80 && sTouch.lastY >= 222)
+            {
+                CtrPokedex_Touch(BAG_TOUCH_CANCEL, 0, 0);
+                CtrPokedex_Close(FALSE);
+            }
+            else
+                CtrPokedex_Touch(BAG_TOUCH_UP, 0, 0);
+        }
         return HIT_NONE;
     }
     if (mode == MODE_PARTY_MENU)
