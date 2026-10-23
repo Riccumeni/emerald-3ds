@@ -31,6 +31,10 @@ void CtrBottom_BlitDim(const uint16_t *canvas, int level);
  * scanned and before the game reads its keys. */
 void CtrBottom_Init(void);
 void CtrBottom_Frame(void);
+/* True while the touch-driven party roster owns the bottom screen.  The
+ * video compositor uses this to keep the original GBA party picture from
+ * being copied underneath it. */
+bool CtrBottom_UsesPartyRoster(void);
 /* The game's soft reset: forget the game it was in (back to the title's
  * screen, no menu session, plan or focus) and let the top screen go. */
 void CtrBottom_SoftReset(void);

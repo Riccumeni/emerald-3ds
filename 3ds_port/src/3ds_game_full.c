@@ -457,7 +457,10 @@ static void UpdateStage(void)
     CtrVideo_SetStage(!caughtMonPage && sStage.on);
     CtrVideo_SetStageFaded(!caughtMonPage && sStage.on && sStage.screen == 1);
     CtrVideo_SetStageZoomed(!caughtMonPage && sStage.on && sStage.screen == 2);
+    /* The custom roster draws the party selection itself.  Suppress the
+     * GBA party compositor before it can copy the old list beneath it. */
     CtrVideo_SetCentred(caughtMonPage ? CTR_CENTRED_POKEDEX_CAUGHT
+                                    : CtrBottom_UsesPartyRoster() ? CTR_CENTRED_NONE
                                     : sCentred.on ? sCentred.screen : CTR_CENTRED_NONE);
     CtrVideo_SetBattle(!caughtMonPage && sBattle.on);
     CtrVideo_SetTransition(!caughtMonPage && TransitionOn());

@@ -14,10 +14,10 @@
  * battle, a shop or the PC it has the whole screen. And the Pokédex
  * (pokedex.c, CtrPokedex_Touch), left of the column.
  *
- * Map, trainer card, save and options are drawn and run here directly. The
- * party menu is the game's own too (party_menu.c, CTR_CENTRED_PARTY), drawn
- * left of the column and taking a tap itself (CtrMenu_PostTap). While one of
- * the game's screens is open, or on its way (a START entry asked for,
+ * Map, trainer card, save, options and the party roster are drawn here
+ * directly. The roster uses the game's live party data and cursor; its tasks
+ * still handle selection and actions. Action menus and dialogs return to the
+ * original compositor. While one of the game's screens is open, or on its way (a START entry asked for,
  * CtrBottom_KeepWorld), the top screen holds the world (CtrVideo_HoldTop, the
  * sessions below); the game still decides everything.
  *
@@ -115,6 +115,9 @@
 void CB2_BagMenuRun(void);
 /* party_menu.c: the column's buttons close the game's party menu. */
 bool8 CtrParty_Close(bool8 leaving);
+u8 CtrParty_ActionCount(void);
+const u8 *CtrParty_ActionText(u8 entry);
+void CtrParty_ChooseAction(u8 entry);
 /* menu.c: a tap on a game screen shown here, for what waits for input. */
 void CtrMenu_PostTap(s16 x, s16 y);
 void CtrStartMenu_Request(u8 action);
@@ -2328,6 +2331,9 @@ typedef struct
      * default, bit 1 the player has the shoes. */
     u16 registered;
     u8 run;
+    /* Party menu state, read-only from the game's existing menu. */
+    u8 partyCursor, partyNative, partyActionCursor, partyActionCount;
+    u8 partyActionText[4][32];
     /* The keyboard focus (X): the column item, or FOCUS_NONE; inside the
      * options, the option; the ring's blink frame. */
     u8 focus, optFocus, blink;
@@ -2364,6 +2370,8 @@ static ViewState sState, sShown;
 static bool8 sForceRedraw = TRUE;
 static bool8 sInGame;
 static u8 sScreen = SCR_MAP;
+static int PartyCardAt(int x, int y);
+static void TapPartySlot(int slot);
 /*
  * The options in two columns of six: the game's own on the left in its order,
  * the port's on the right. A build without the FPS counter or the voxel
@@ -2625,6 +2633,12 @@ static u8 CurrentMode(void)
         return MODE_BATTLE_INFO;
     }
     return MODE_FIELD;
+}
+
+bool CtrBottom_UsesPartyRoster(void)
+{
+    return FuncIsActiveTask(Task_HandleChooseMonInput)
+        || (sPartyMenuCallback && gMain.callback2 == sPartyMenuCallback);
 }
 
 /* ------------------------------------------------------------------------ */
@@ -3047,6 +3061,42 @@ static void SnapshotSave(ViewState *s)
     }
 }
 
+static void CopyText(u8 *dst, int size, const u8 *src);
+
+static void SnapshotParty(ViewState *s)
+{
+    s->partyCursor = gPartyMenu.action == PARTY_ACTION_SWITCH || gPartyMenu.action == PARTY_ACTION_SOFTBOILED
+                   ? gPartyMenu.slotId2 : gPartyMenu.slotId;
+    s->partyNative = FuncIsActiveTask(Task_HandleChooseMonInput);
+    s->partyActionCursor = Menu_GetCursorPos();
+    s->partyActionCount = CtrParty_ActionCount();
+    if (s->partyActionCount > ARRAY_COUNT(s->partyActionText))
+        s->partyActionCount = ARRAY_COUNT(s->partyActionText);
+    for (int i = 0; i < s->partyActionCount; ++i)
+        CopyText(s->partyActionText[i], sizeof(s->partyActionText[i]), CtrParty_ActionText(i));
+    s->frame = gSaveBlock2Ptr->optionsWindowFrameType;
+    for (int i = 0; i < PARTY_SIZE && i < gPlayerPartyCount; ++i)
+    {
+        struct Pokemon *mon = &gPlayerParty[i];
+        MonView *view = &s->party[i];
+        u16 species = GetMonData(mon, MON_DATA_SPECIES);
+
+        if (species == SPECIES_NONE)
+            continue;
+        view->species = species;
+        view->isEgg = GetMonData(mon, MON_DATA_IS_EGG);
+        view->iconSpecies = view->isEgg ? SPECIES_EGG : GetIconSpecies(species, GetMonData(mon, MON_DATA_PERSONALITY));
+        view->deoxys = species == SPECIES_DEOXYS;
+        view->level = GetMonData(mon, MON_DATA_LEVEL);
+        view->hp = GetMonData(mon, MON_DATA_HP);
+        view->maxHp = GetMonData(mon, MON_DATA_MAX_HP);
+        view->ailment = GetMonAilment(mon);
+        GetMonData(mon, MON_DATA_NICKNAME, view->nick);
+        view->gender = GetMonGender(mon);
+    }
+    CopyText(s->text, sizeof(s->text), gStringVar4);
+}
+
 /* The party ball states, as battle_interface.c's party indicator has them. */
 enum { PARTY_BALL_OK, PARTY_BALL_STATUS, PARTY_BALL_FAINT, PARTY_BALL_EMPTY };
 
@@ -3195,7 +3245,7 @@ static void Snapshot(ViewState *s, u8 mode, u8 pressed)
             }
             break;
         case SCR_POKEMON:
-            /* The game's party menu is drawn by the compositor. */
+            SnapshotParty(s);
             break;
         case SCR_CARD:
             SnapshotCard(s);
@@ -4076,6 +4126,162 @@ static void DrawSave(const ViewState *s)
      * file rather than being cut. */
     DrawWindowFrame(s->frame, SAVE_MSG_X, SAVE_MSG_Y, CW / 8 - 2, ht, TXT_WHITE);
     DrawStr(&sNormal, s->text, SAVE_MSG_X + 4, SAVE_MSG_Y + 1 + (ht * 8 - 2 - lines * 16) / 2, TXT_DARK, TXT_LIGHT);
+}
+
+/* ------------------------------------------------------------------------ */
+/* Native party roster                                                     */
+/* ------------------------------------------------------------------------ */
+
+#define PARTY_CARD_X(c) (8 + (c) * 156)
+#define PARTY_CARD_Y(r) (7 + (r) * 49)
+#define PARTY_CARD_W 148
+#define PARTY_CARD_H 44
+
+static void DrawPartyCard(const ViewState *s, int slot)
+{
+    const MonView *mon = &s->party[slot];
+    int x = PARTY_CARD_X(slot & 1), y = PARTY_CARD_Y(slot >> 1);
+    bool8 selected = s->partyCursor == slot;
+    u16 edge = PackRgb(11, 85, 92);
+    u16 body = selected ? PackRgb(28, 210, 75) : PackRgb(0, 130, 65);
+    u16 hi = selected ? PackRgb(129, 247, 138) : PackRgb(33, 170, 92);
+    u16 sh = PackRgb(0, 89, 74);
+    u16 white = PackRgb(255, 255, 255), dark = PackRgb(35, 48, 49);
+
+    FillRect(x, y, PARTY_CARD_W, PARTY_CARD_H, edge);
+    FillRect(x + 2, y + 2, PARTY_CARD_W - 4, PARTY_CARD_H - 4,
+             mon->species ? body : PackRgb(67, 172, 181));
+    FillRect(x + 3, y + 3, PARTY_CARD_W - 6, 1, mon->species ? hi : PackRgb(107, 205, 207));
+    if (!mon->species)
+    {
+        FillRect(x + 2, y + 21, PARTY_CARD_W - 4, 1, PackRgb(105, 202, 204));
+        return;
+    }
+
+    {
+        const u8 *icon = MonIcon(mon->iconSpecies, mon->deoxys);
+        u8 pal = gMonIconPaletteIndices[mon->iconSpecies];
+
+        if (icon && pal < 3)
+            DrawSprite(icon, 4, 4, x + 5, y + 6, sRes.monIconPal[pal].c);
+    }
+    {
+        int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+
+        sClipX0 = x + 42; sClipX1 = x + PARTY_CARD_W - 20; sClipY0 = y + 3; sClipY1 = y + 20;
+        DrawStr(&sNormal, mon->nick, x + 42, y + 4, white, dark);
+        sClipX0 = clip[0]; sClipY0 = clip[1]; sClipX1 = clip[2]; sClipY1 = clip[3];
+    }
+    if (mon->gender == MON_MALE)
+        DrawStr(&sSmall, Ascii("M"), x + PARTY_CARD_W - 16, y + 4, PackRgb(91, 179, 255), dark);
+    else if (mon->gender == MON_FEMALE)
+        DrawStr(&sSmall, Ascii("F"), x + PARTY_CARD_W - 16, y + 4, PackRgb(255, 123, 175), dark);
+
+    DrawStr(&sSmall, Ascii(CTR_TEXT("Lv.", "Nv.", "Niv.", "Lv.")), x + 42, y + 28, white, dark);
+    DrawStr(&sSmall, Number(mon->level, 2, STR_CONV_MODE_RIGHT_ALIGN), x + 62, y + 28, white, dark);
+    DrawStrRight(&sSmall, Number(mon->hp, 3, STR_CONV_MODE_RIGHT_ALIGN), x + PARTY_CARD_W - 46, y + 28,
+                 white, dark);
+    DrawStr(&sSmall, Ascii("/"), x + PARTY_CARD_W - 43, y + 28, white, dark);
+    DrawStrRight(&sSmall, Number(mon->maxHp, 3, STR_CONV_MODE_RIGHT_ALIGN), x + PARTY_CARD_W - 7, y + 28,
+                 white, dark);
+
+    {
+        int barX = x + 42, barY = y + 21, barW = PARTY_CARD_W - 50;
+        int fill = mon->maxHp ? (barW * mon->hp) / mon->maxHp : 0;
+        u16 color = mon->maxHp && (u32)mon->hp * 2 < mon->maxHp ? PackRgb(239, 64, 57)
+                  : mon->maxHp && (u32)mon->hp * 2 < (u32)mon->maxHp * 3 ? PackRgb(246, 186, 55)
+                  : PackRgb(67, 229, 77);
+
+        FillRect(barX, barY, barW, 5, sh);
+        if (fill > 2)
+            FillRect(barX + 1, barY + 1, fill - 2, 3, color);
+    }
+    if (mon->ailment != AILMENT_NONE)
+        DrawStr(&sSmall, Ascii("!"), x + 33, y + 7, PackRgb(255, 221, 90), dark);
+}
+
+static void DrawPartyRoster(const ViewState *s)
+{
+    u16 bg = PackRgb(108, 205, 207), bgLight = PackRgb(146, 227, 225);
+    int lines = StrLines(s->text);
+
+    FillRect(0, 0, W, H, bg);
+    FillRect(0, 0, W, 3, bgLight);
+    for (int i = 0; i < PARTY_SIZE; ++i)
+        DrawPartyCard(s, i);
+
+    DrawWindowFrame(s->frame, 8, 159, 38, 9, TXT_WHITE);
+    if (s->text[0] != EOS)
+    {
+        int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+
+        sClipX0 = 18; sClipX1 = 302; sClipY0 = 172; sClipY1 = 205;
+        DrawStr(&sNormal, s->text, 18, 174, TXT_DARK, TXT_LIGHT);
+        sClipX0 = clip[0]; sClipY0 = clip[1]; sClipX1 = clip[2]; sClipY1 = clip[3];
+    }
+    else
+        DrawStr(&sNormal, Ascii(CTR_TEXT("Choose a Pokémon", "Elige un Pokémon", "Choisissez un Pokémon", "Scegli un Pokémon")),
+                18, 174, TXT_DARK, TXT_LIGHT);
+    DrawStr(&sSmall, Ascii(CTR_TEXT("A: Choose     B: Back", "A: Elegir     B: Atrás", "A: Choisir     B: Retour", "A: Scegli     B: Indietro")),
+            18, lines > 1 ? 211 : 205, TXT_BLUE, TXT_LBLUE);
+}
+
+/* The native party task still owns the operations.  This is only its
+ * presentation: a large Emerald-coloured action list over the roster. */
+static void DrawPartyActions(const ViewState *s)
+{
+    int x = 166, y = 8;
+
+    for (int i = 0; i < s->partyActionCount; ++i)
+    {
+        bool8 selected = s->partyActionCursor == i;
+        u16 border = selected ? PackRgb(226, 70, 40) : PackRgb(30, 77, 58);
+        u16 face = selected ? PackRgb(255, 237, 112) : PackRgb(249, 185, 49);
+        u16 light = selected ? PackRgb(255, 250, 190) : PackRgb(255, 219, 109);
+
+        FillRect(x, y + i * 39, 146, 34, border);
+        FillRect(x + 3, y + 3 + i * 39, 140, 28, face);
+        FillRect(x + 5, y + 5 + i * 39, 136, 2, light);
+        if (selected)
+            DrawStr(&sNormal, Ascii(">"), x + 10, y + 10 + i * 39, TXT_DARK, TXT_LIGHT);
+        DrawStr(&sNormal, s->partyActionText[i], x + 27, y + 10 + i * 39, TXT_DARK, TXT_LIGHT);
+    }
+}
+
+static int PartyCardAt(int x, int y)
+{
+    for (int slot = 0; slot < PARTY_SIZE; ++slot)
+    {
+        int left = PARTY_CARD_X(slot & 1), top = PARTY_CARD_Y(slot >> 1);
+
+        if (x >= left && x < left + PARTY_CARD_W && y >= top && y < top + PARTY_CARD_H)
+            return slot;
+    }
+    return -1;
+}
+
+/* Forward a card tap into the original game's current party layout. */
+static void TapPartySlot(int slot)
+{
+    static const s16 single[PARTY_SIZE][2] = {
+        {48, 52}, {168, 20}, {168, 44}, {168, 68}, {168, 92}, {168, 116},
+    };
+    static const s16 doubleLayout[PARTY_SIZE][2] = {
+        {48, 36}, {48, 92}, {168, 20}, {168, 52}, {168, 84}, {48, 120},
+    };
+    const s16 (*points)[2] = gPartyMenu.layout == PARTY_LAYOUT_SINGLE ? single : doubleLayout;
+
+    if (slot >= 0 && slot < PARTY_SIZE)
+        CtrMenu_PostTap(points[slot][0], points[slot][1]);
+}
+
+static int PartyActionAt(int x, int y)
+{
+    if (x < 166 || x >= 312 || y < 8 || y >= 164)
+        return -1;
+    if ((y - 8) % 39 >= 34)
+        return -1;
+    return (y - 8) / 39;
 }
 
 /*
@@ -5843,9 +6049,17 @@ static void Render(const ViewState *s)
     else
     {
         /* In battle the bag and the party menu have the whole screen. */
-        bool8 column = !s->inBattle && s->bagView != BAG_VIEW_WHOLE;
+        bool8 party = s->mode == MODE_PARTY_MENU;
+        bool8 column = !party && !s->inBattle && s->bagView != BAG_VIEW_WHOLE;
 
-        if (s->screen == SCR_MAP && column)
+        if (party)
+        {
+            sOX = 0;
+            DrawPartyRoster(s);
+            if (!s->partyNative)
+                DrawPartyActions(s);
+        }
+        else if (s->screen == SCR_MAP && column)
             CopyCache(CACHE_MAP);
         else if (s->screen == SCR_CARD && column)
         {
@@ -5856,26 +6070,27 @@ static void Render(const ViewState *s)
             CopyCache(column ? CACHE_MENU : CACHE_WIDE);
         phase[1] = CtrPlatform_Ticks();
         sOX = column ? 0 : (W - CW) / 2;
-        switch (s->screen)
+        if (!party)
         {
-        case SCR_MAP: DrawRegionMap(s); break;
-        case SCR_POKEMON:
-        case SCR_BAG:
-        case SCR_POKEDEX:
-            /* The game's party menu, bag and Pokédex are drawn there by the compositor;
-             * black until they are, as they fade in from black, and while
-             * the field is on its way to opening them (OpenAsked). */
-            FillRect(0, 0, CW, H, 0);
-            break;
-        case SCR_CARD: DrawTrainerCard(s); break;
-        case SCR_SAVE: DrawSave(s); break;
-        case SCR_OPTION: DrawOptions(s); break;
+            switch (s->screen)
+            {
+            case SCR_MAP: DrawRegionMap(s); break;
+            case SCR_POKEMON:
+            case SCR_BAG:
+            case SCR_POKEDEX:
+                /* The game compositor owns these screens. */
+                FillRect(0, 0, CW, H, 0);
+                break;
+            case SCR_CARD: DrawTrainerCard(s); break;
+            case SCR_SAVE: DrawSave(s); break;
+            case SCR_OPTION: DrawOptions(s); break;
+            }
         }
         sOX = 0;
         phase[2] = CtrPlatform_Ticks();
         if (column)
             DrawColumn(s);
-        else if (s->bagView == BAG_VIEW_WHOLE)
+        else if (s->bagView == BAG_VIEW_WHOLE && !party)
             memset(sCanvas, 0, sizeof(sCanvas));
     }
     phase[3] = CtrPlatform_Ticks();
@@ -7014,6 +7229,52 @@ static u8 ProcessTouch(u8 mode)
         sTouch.bag = FALSE;
         return HIT_NONE;
     }
+    if (mode == MODE_PARTY_MENU)
+    {
+        if (in->touchDown)
+        {
+            sTouch.active = TRUE;
+            sTouch.dragged = FALSE;
+            sTouch.startX = sTouch.lastX = in->touchX;
+            sTouch.startY = sTouch.lastY = in->touchY;
+        }
+        else if (in->touchActive && sTouch.active)
+        {
+            int dx = in->touchX - sTouch.startX, dy = in->touchY - sTouch.startY;
+
+            sTouch.lastX = in->touchX;
+            sTouch.lastY = in->touchY;
+            if (dx > 8 || dx < -8 || dy > 8 || dy < -8)
+                sTouch.dragged = TRUE;
+        }
+        else if (in->touchUp && sTouch.active)
+        {
+            int slot;
+
+            sTouch.active = FALSE;
+            if (sTouch.dragged)
+                return HIT_NONE;
+            if (!sState.partyNative)
+            {
+                slot = PartyActionAt(sTouch.lastX, sTouch.lastY);
+                if (slot >= 0 && slot < sState.partyActionCount)
+                {
+                    CtrParty_ChooseAction(slot);
+                }
+                else
+                    PressOnce(B_BUTTON);
+            }
+            else
+            {
+                slot = PartyCardAt(sTouch.lastX, sTouch.lastY);
+                if (slot >= 0 && sState.party[slot].species != SPECIES_NONE)
+                    TapPartySlot(slot);
+                else if (sTouch.lastY >= 159)
+                    PressOnce(A_BUTTON);
+            }
+        }
+        return HIT_NONE;
+    }
     /* The shop's BUY screen: its picture in the middle of the whole screen,
      * the touch in pixels of it, as it goes (drags scroll its list). */
     if ((in->touchDown && ShopShown(mode)) || (sTouch.bag && sTouch.active && ShopShown(mode)))
@@ -7099,14 +7360,6 @@ static u8 ProcessTouch(u8 mode)
          * tap goes to whatever waits for input in it (a mon, the buttons, its
          * menu, a question, a message), in pixels of that picture. The
          * column's buttons are ours. */
-        if (mode == MODE_PARTY_MENU && (sShown.bagView == BAG_VIEW_WHOLE || sTouch.startX < CW))
-        {
-            int ox = sShown.bagView == BAG_VIEW_WHOLE ? (W - 240) / 2 : 0, oy = (H - 160) / 2;
-
-            if (!sTouch.dragged)
-                CtrMenu_PostTap(sTouch.lastX - ox, sTouch.lastY - oy);
-            return HIT_NONE;
-        }
         /* The boxes have the whole screen, their picture in the middle of it,
          * and take the tap themselves, in pixels of that picture. */
         if (mode == MODE_STORAGE)
@@ -7720,6 +7973,9 @@ void CtrBottom_Frame(void)
 
     sFrames = frames;
     mode = CurrentMode();
+    /* The custom roster and its action list own the full bottom screen. */
+    if (mode == MODE_PARTY_MENU)
+        CtrVideo_SetCentred(CTR_CENTRED_NONE);
     /* Away from the action menu its labels may give way: looked at again. */
     if (mode != MODE_BATTLE_ACTION)
         sQuickWarmBall = ITEM_NONE;

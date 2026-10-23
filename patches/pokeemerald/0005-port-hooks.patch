@@ -10935,6 +10935,7 @@ index 7cde1a018c33c86da6ede1b0e7d3259869774cb0..933fdad459798eead64daeeffb82fdcd
 +// The column asked the party menu to close (CtrParty_Close): B once, or B
 +// every time the mon list takes input until the menu is gone (leaving).
 +static bool8 sCtrCloseAsked, sCtrLeaving;
++static s8 sCtrChosenAction = -1;
 +#else
 +#define PARTY_AB_NEW() JOY_NEW(A_BUTTON | B_BUTTON)
 +#endif
@@ -10946,6 +10947,7 @@ index 7cde1a018c33c86da6ede1b0e7d3259869774cb0..933fdad459798eead64daeeffb82fdcd
  
 +#ifdef PLATFORM_3DS
 +    sCtrCloseAsked = sCtrLeaving = FALSE;
++    sCtrChosenAction = -1;
 +#endif
      ResetPartyMenu();
      sPartyMenuInternal = Alloc(sizeof(struct PartyMenuInternal));
@@ -11057,6 +11059,26 @@ index 7cde1a018c33c86da6ede1b0e7d3259869774cb0..933fdad459798eead64daeeffb82fdcd
 +    return TRUE;
 +}
 +
++/* The 3DS roster draws the same actions as this menu.  Keep their text and
++ * count here, where the private action list is available. */
++u8 CtrParty_ActionCount(void)
++{
++    return sPartyMenuInternal ? sPartyMenuInternal->numActions : 0;
++}
++
++const u8 *CtrParty_ActionText(u8 entry)
++{
++    if (sPartyMenuInternal == NULL || entry >= sPartyMenuInternal->numActions)
++        return NULL;
++    return sCursorOptions[sPartyMenuInternal->actions[entry]].text;
++}
++
++void CtrParty_ChooseAction(u8 entry)
++{
++    if (sPartyMenuInternal != NULL && entry < sPartyMenuInternal->numActions)
++        sCtrChosenAction = entry;
++}
++
 +// A tap on the open menu of the party menu (the mon's actions, the moves to
 +// choose among): the entry tapped, as A chooses it; anywhere else B.
 +// MENU_NOTHING_CHOSEN without one.
@@ -11064,6 +11086,14 @@ index 7cde1a018c33c86da6ede1b0e7d3259869774cb0..933fdad459798eead64daeeffb82fdcd
 +{
 +    s16 x, y;
 +    s8 entry;
++
++    if (sCtrChosenAction >= 0)
++    {
++        entry = sCtrChosenAction;
++        sCtrChosenAction = -1;
++        CtrMenu_Choose(entry, TRUE);
++        return entry;
++    }
 +
 +    if (!CtrMenu_TakeTap(&x, &y))
 +    {

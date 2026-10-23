@@ -58,8 +58,17 @@ bool CtrFs_Init(void)
     mkdir("sdmc:/3ds/emerald3ds", 0777);
     FILE *file = CtrFs_OpenAsset("boot.txt");
     char contents[64] = {0};
-    bool valid = file && fgets(contents, sizeof(contents), file)
-        && strcmp(contents, "Emerald3DS RomFS v1\n") == 0;
+    bool valid = file && fgets(contents, sizeof(contents), file);
+    if (valid)
+    {
+        /* Windows checkouts may write this generated marker with CRLF. */
+        size_t length = strlen(contents);
+        if (length && contents[length - 1] == '\n')
+            contents[--length] = '\0';
+        if (length && contents[length - 1] == '\r')
+            contents[--length] = '\0';
+        valid = strcmp(contents, "Emerald3DS RomFS v1") == 0;
+    }
     if (file)
         fclose(file);
     CtrLog_Write(valid ? CTR_LOG_FS : CTR_LOG_ERROR, "RomFS boot marker %s", valid ? "PASS" : "FAIL");
