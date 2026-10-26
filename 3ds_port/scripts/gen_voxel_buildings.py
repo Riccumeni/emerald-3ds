@@ -36,6 +36,7 @@ import voxel_bridge  # noqa: E402
 import voxel_props  # noqa: E402
 import voxel_relief_fixes  # noqa: E402
 import voxel_night
+import voxel_custom_props
 
 PORT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 # A placement whose cells keep their own metatile under the model: the
@@ -2543,6 +2544,7 @@ CAMERAS = [
 
 
 def preview(model, out_dir, cams=None):
+    model = voxel_custom_props.for_render([model], PORT)[0]
     layout = model.layout
     x, y, w, h = model.spec["rect"]
     override = {(x + i, y + j): model.ground_metatile for i in range(w) for j in range(h)}
@@ -3774,6 +3776,7 @@ def export(models, path):
       PICA order, then the texels that follow the game's tile animations
       (anim_table).
     """
+    models = voxel_custom_props.for_render(models, PORT)
     layouts_json = json.load(open(os.path.join(vb.ROOT, "data", "layouts", "layouts.json"),
                                   encoding="utf-8"))["layouts"]
     layouts = {}
@@ -4029,6 +4032,7 @@ def ground_variants(models, layouts_json):
 
 def town_preview(models, layout_id, out_dir):
     """A whole layout with every model placed in it, by the console's rules."""
+    models = voxel_custom_props.for_render(models, PORT)
     layouts_json = json.load(open(os.path.join(vb.ROOT, "data", "layouts", "layouts.json"),
                                   encoding="utf-8"))["layouts"]
     layout = vb.LayoutArt(layout_id)
