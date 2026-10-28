@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **58**.
+Totale: **386**. Fatti con dossier completo: **66**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -62,14 +62,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0298 **Azurill** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0298_azurill/).
 - [x] 0183 **Marill** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0183_marill/).
 - [x] 0184 **Azumarill** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0184_azumarill/).
-- [ ] 0074 **Geodude** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0074_geodude/).
-- [ ] 0075 **Graveler** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0075_graveler/).
-- [ ] 0076 **Golem** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0076_golem/).
-- [ ] 0299 **Nosepass** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0299_nosepass/).
-- [ ] 0300 **Skitty** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0300_skitty/).
-- [ ] 0301 **Delcatty** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0301_delcatty/).
-- [ ] 0041 **Zubat** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0041_zubat/).
-- [ ] 0042 **Golbat** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0042_golbat/).
+- [x] 0074 **Geodude** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0074_geodude/).
+- [x] 0075 **Graveler** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0075_graveler/).
+- [x] 0076 **Golem** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0076_golem/).
+- [x] 0299 **Nosepass** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0299_nosepass/).
+- [x] 0300 **Skitty** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0300_skitty/).
+- [x] 0301 **Delcatty** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0301_delcatty/).
+- [x] 0041 **Zubat** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0041_zubat/).
+- [x] 0042 **Golbat** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0042_golbat/).
 - [ ] 0169 **Crobat** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0169_crobat/).
 - [ ] 0072 **Tentacool** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0072_tentacool/).
 - [ ] 0073 **Tentacruel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0073_tentacruel/).

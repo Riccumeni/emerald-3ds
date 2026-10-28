@@ -1,7 +1,7 @@
 {
   "version": 1,
   "requested_checkpoints": 5,
-  "completed_checkpoints": 3,
+  "completed_checkpoints": 4,
   "starting_pokemon_done": 34,
   "target_pokemon_done": 74,
   "algorithm": "height-source-footprint-v5.1-front-headroom",
@@ -430,7 +430,7 @@
     {
       "number": 8,
       "ordinal": 4,
-      "status": "pending",
+      "status": "complete",
       "national_ids": [
         74,
         75,
@@ -494,8 +494,79 @@
         }
       ],
       "capture_prefix": "cp08h-",
-      "reviewed_normal_pairs": [],
-      "reviewed_shiny": false
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_shiny": true,
+      "audit_dossiers": 72,
+      "movie": {
+        "duration": 212.20366666666666,
+        "decoded_frames": 6363,
+        "sha256": "a911f72c211e9f9193922301549709b190404cd5feb9cf4c31cf38743a369432",
+        "segments": [
+          {
+            "name": "geodude-graveler",
+            "start": 0.0,
+            "end": 25.908333333333335,
+            "frames": 777,
+            "sha256": "e2ab4220e1f79f995e98ca2c3a08a3324631df7dcfb40e05f8511c7a0ff26156"
+          },
+          {
+            "name": "graveler-geodude",
+            "start": 25.908333333333335,
+            "end": 51.86366666666667,
+            "frames": 778,
+            "sha256": "b30a1a847d9c393852dfe5152f23a8f7fb59395e29b19eda16140cd7b8c5e58e"
+          },
+          {
+            "name": "golem-nosepass",
+            "start": 51.86366666666667,
+            "end": 77.366,
+            "frames": 765,
+            "sha256": "0f89ab724790b28e524b9d7b955e8efbab3eef0dc4a1dda6bb10dc5e01711247"
+          },
+          {
+            "name": "nosepass-golem",
+            "start": 77.366,
+            "end": 101.77433333333333,
+            "frames": 732,
+            "sha256": "83b8bdf08dd869d243f1e2d869b16aba4562a7e51f25bea4684048e6ef553e7c"
+          },
+          {
+            "name": "skitty-delcatty",
+            "start": 101.77433333333333,
+            "end": 136.85366666666667,
+            "frames": 1052,
+            "sha256": "c51b3837a848c03b0351a9222e3cfaecf1bfc723201eae037ee5b0bc67af1e4a"
+          },
+          {
+            "name": "delcatty-skitty",
+            "start": 136.85366666666667,
+            "end": 172.137,
+            "frames": 1058,
+            "sha256": "ee4a7fd1b6d1ee3404a77ea978165b29fe5d35b69224f742de00575ed9d3a8ea"
+          },
+          {
+            "name": "zubat-golbat",
+            "start": 172.137,
+            "end": 193.04533333333333,
+            "frames": 627,
+            "sha256": "cd3a559dd215107f6a75d6a0e3da2d47de3c099b1b094b160d17ff9ee8ab3cb2"
+          },
+          {
+            "name": "golbat-zubat",
+            "start": 193.04533333333333,
+            "end": 212.20366666666666,
+            "frames": 574,
+            "sha256": "021c9c3554b85a6a7f90654a18e2622fd4ce0374c18c820c769b4be17126e406"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 8: eight Pokemon"
     },
     {
       "number": 9,

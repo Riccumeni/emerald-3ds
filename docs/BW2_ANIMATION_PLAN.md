@@ -38,7 +38,7 @@ all'animazione originale non valgono come lavoro completato.
 - [Registro strutturato](bw2-plan/stato.json): ID, stati, percorsi e prove.
 - [Punto di ripresa](bw2-plan/CHECKPOINT.md): ultimo lavoro e prossima unità.
 - [Indice delle prove verificate](bw2-plan/EVIDENCE.md): collegamenti a PNG e MP4.
-- [Ultimo gruppo completato](bw2-plan/BATCH4_REVIEW.md): Taillow, Swellow, Wingull, Pelipper, Ralts, Kirlia, Gardevoir e Surskit, con prove front/back e shiny.
+- [Gruppo Taillow–Surskit](bw2-plan/BATCH4_REVIEW.md): Taillow, Swellow, Wingull, Pelipper, Ralts, Kirlia, Gardevoir e Surskit, con prove front/back e shiny.
 - [Gruppo Silcoon–Shiftry](bw2-plan/HOENN_REVIEW.md): Silcoon, Beautifly, Cascoon, Dustox e linee Lotad/Seedot.
 - [Revisione delle dimensioni v5](bw2-plan/V5_REVIEW.md): Lombre, Nuzleaf e Seedot ridotti, Shiftry ingrandito; otto specie riverificate e diciotto scale invariate.
 - [Gruppi precedenti](bw2-plan/BATCHES_REVIEW.md): linee Torchic/Mudkip, primi incontri e nuove mosse.
@@ -57,7 +57,7 @@ Avanzamento corrente (aggiornato insieme alle checklist):
 
 | Ambito | Totale | Prototipo implementato | Fatto con tutte le prove |
 |---|---:|---:|---:|
-| Pokémon | 386 | 2: Treecko, Poochyena | 58 |
+| Pokémon | 386 | 2: Treecko, Poochyena | 66 |
 | Mosse | 354 | 4: Pound, Tackle, Leer, Howl | 6 |
 
 Dal 28 ottobre 2026 le correzioni fisse di Treecko e Poochyena sono sostituite
