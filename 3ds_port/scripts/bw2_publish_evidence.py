@@ -92,10 +92,11 @@ def publish(args):
     metadata["rom_code"] = manifest["rom_code"]
     if args.kind == "pokemon":
         metadata["asset_hashes"] = {f"{item['id_emerald']}_{side}{ext}": sha(assets / f"{item['id_emerald']}_{side}{ext}") for side in directions for ext in ('.bin', '.bin.layout')}
-        metadata["presentation_algorithm"] = "height-source-footprint-v5"
+        metadata["presentation_algorithm"] = "height-source-footprint-v5.1-front-headroom"
         metadata["adaptations"] = ["64x64 indexed source canvas; bounded height-based scale; front silhouette floor, back time-weighted opaque pixel mass centered on its visible arena; rear-view perspective 130-150% according to height",
                                     "Height from Emerald Pokedex plus shared front/back BW2 footprint; bounded correction 80-125%, 15% dead band, fades out for giants; front extent <=104, back extent <=126 logical pixels; source enlargement may exceed 200% only if opaque bounds fit the 128x128 affine envelope, with a two-pixel margin",
                                     "Rear-view placement independent of the message box: lower body may be covered by the text; native default sprite center instead of move aiming coordinate"]
+        metadata["adaptations"].append("Front highest pose remains four logical pixels inside the viewport, accounting for elevation while preserving its arena floor")
         metadata["presentation"] = {direction: report.get("presentation", []) for direction, report in zip(directions, reports)}
         checks = "Ingresso e almeno due cicli completi front/back registrati; palette shiny confrontate con gli asset; pose e copertura inferiore da parte del testo controllate."
     else:

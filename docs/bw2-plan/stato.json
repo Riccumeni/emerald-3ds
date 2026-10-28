@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-28T18:02:49",
+  "aggiornato_il": "2026-10-28T19:00:25",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 50,
+    "pokemon_fatti": 58,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,14 +19,14 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 297,
-    "nome": "Hariyama",
+    "id": 74,
+    "nome": "Geodude",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
     "percorso": "build/bw2-validation/Emerald3DS-BW2.3dsx",
-    "build_id": "2ed791a98434d45b",
-    "sha256": "036f89da901d369a80087f5911adc14843ce003b6ecd09ec275da719b1dde19a"
+    "build_id": "c65648fb2fe7ded3",
+    "sha256": "c7ca71c43aee28d283e43f33ac10761708ec28989e6cdccc7083973257117f3c"
   },
   "pokemon": [
     {
@@ -1731,28 +1731,34 @@
       "costante": "SPECIES_HARIYAMA",
       "nome": "Hariyama",
       "ordine": 49,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0297_hariyama",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0297_hariyama/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0297_hariyama/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "b082d6e6a35bccd08d193799e71d4ca0d0c9ac04843f5ca5ac3d934907862cff",
+          "video_sha256": "312e8dd682e2c6dccb67b948e42eb90334fdcb6e485b9bd5f65838fce998c157"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0297_hariyama/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0297_hariyama/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "8f2cc2e6d0bc340bf15f8dd945e70de95692b4a12bcf81e0de8fe36619a8120f",
+          "video_sha256": "312c7d7e7d14305d8ee2e24bdd246500dc9982dce29b0a12582af0ececbaf6e1"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0297_hariyama/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0297_hariyama/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T19:00:18",
+      "build_verificata": "ab9b0891e3970829"
     },
     {
       "numero_nazionale": 118,
@@ -1760,28 +1766,34 @@
       "costante": "SPECIES_GOLDEEN",
       "nome": "Goldeen",
       "ordine": 50,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0118_goldeen",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0118_goldeen/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0118_goldeen/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "8f2cc2e6d0bc340bf15f8dd945e70de95692b4a12bcf81e0de8fe36619a8120f",
+          "video_sha256": "312c7d7e7d14305d8ee2e24bdd246500dc9982dce29b0a12582af0ececbaf6e1"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0118_goldeen/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0118_goldeen/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "b082d6e6a35bccd08d193799e71d4ca0d0c9ac04843f5ca5ac3d934907862cff",
+          "video_sha256": "312e8dd682e2c6dccb67b948e42eb90334fdcb6e485b9bd5f65838fce998c157"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0118_goldeen/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0118_goldeen/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T19:00:18",
+      "build_verificata": "ab9b0891e3970829"
     },
     {
       "numero_nazionale": 119,
@@ -1789,28 +1801,34 @@
       "costante": "SPECIES_SEAKING",
       "nome": "Seaking",
       "ordine": 51,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0119_seaking",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0119_seaking/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0119_seaking/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "7971e4f8ee51f33f23fac1aef105bc201b6705f6ab21d831fe84f07be514a0a8",
+          "video_sha256": "6626b0173c0f5486b071e4572220c5effadb83922f10cc26aa5fc014c1bc4bce"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0119_seaking/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0119_seaking/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "895b48d2ee64f717dcf1b062c9ffae7f6735ec52a0c42d41ee58c3c046e7aa90",
+          "video_sha256": "5bea65ad953975abb4523c13f62e1586e205df8a902677bef50a4092f3dfd383"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0119_seaking/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0119_seaking/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T19:00:18",
+      "build_verificata": "ab9b0891e3970829"
     },
     {
       "numero_nazionale": 129,
@@ -1818,28 +1836,34 @@
       "costante": "SPECIES_MAGIKARP",
       "nome": "Magikarp",
       "ordine": 52,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0129_magikarp",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0129_magikarp/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0129_magikarp/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "895b48d2ee64f717dcf1b062c9ffae7f6735ec52a0c42d41ee58c3c046e7aa90",
+          "video_sha256": "5bea65ad953975abb4523c13f62e1586e205df8a902677bef50a4092f3dfd383"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0129_magikarp/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0129_magikarp/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "7971e4f8ee51f33f23fac1aef105bc201b6705f6ab21d831fe84f07be514a0a8",
+          "video_sha256": "6626b0173c0f5486b071e4572220c5effadb83922f10cc26aa5fc014c1bc4bce"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0129_magikarp/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0129_magikarp/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T19:00:19",
+      "build_verificata": "ab9b0891e3970829"
     },
     {
       "numero_nazionale": 130,
@@ -1847,28 +1871,34 @@
       "costante": "SPECIES_GYARADOS",
       "nome": "Gyarados",
       "ordine": 53,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0130_gyarados",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0130_gyarados/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0130_gyarados/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "e9878f1c0df3d9f7ca6a34539d26b77fc1f0bc33753ef599aba5fb25f1592e35",
+          "video_sha256": "104baab05282e765a94155b5a15f1468e5a2d5b83fa647419f2743cb6523701a"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0130_gyarados/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0130_gyarados/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "accf893673556f3ce1087eab416498620e43ab626efc2cb8185312f5503c7be9",
+          "video_sha256": "851d5142843129f3d5defa276185f4604a652afb8ca25841f61de165e8ce994e"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0130_gyarados/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0130_gyarados/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T19:00:19",
+      "build_verificata": "ab9b0891e3970829"
     },
     {
       "numero_nazionale": 298,
@@ -1876,28 +1906,34 @@
       "costante": "SPECIES_AZURILL",
       "nome": "Azurill",
       "ordine": 54,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0298_azurill",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0298_azurill/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0298_azurill/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "accf893673556f3ce1087eab416498620e43ab626efc2cb8185312f5503c7be9",
+          "video_sha256": "851d5142843129f3d5defa276185f4604a652afb8ca25841f61de165e8ce994e"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0298_azurill/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0298_azurill/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "e9878f1c0df3d9f7ca6a34539d26b77fc1f0bc33753ef599aba5fb25f1592e35",
+          "video_sha256": "104baab05282e765a94155b5a15f1468e5a2d5b83fa647419f2743cb6523701a"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0298_azurill/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0298_azurill/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T19:00:20",
+      "build_verificata": "ab9b0891e3970829"
     },
     {
       "numero_nazionale": 183,
@@ -1905,28 +1941,34 @@
       "costante": "SPECIES_MARILL",
       "nome": "Marill",
       "ordine": 55,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0183_marill",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0183_marill/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0183_marill/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "aa3d76af462f1e577dad13f6a44d4dd9184b40ed3edcd77e0a7014ad37beac55",
+          "video_sha256": "aed64d67d161caacf4e3f4a43bbb2e2306a9db066bab95111675a276d745c86c"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0183_marill/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0183_marill/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "5a65ef86f1a4f73baa63511a5688b48b2b8590decf5b33616bdc706fa609ddb4",
+          "video_sha256": "13342009659ba0ec71aafb7ef53a0ef20327521e8aa67cd3120b7d77aa80e210"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0183_marill/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0183_marill/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T19:00:20",
+      "build_verificata": "ab9b0891e3970829"
     },
     {
       "numero_nazionale": 184,
@@ -1934,28 +1976,34 @@
       "costante": "SPECIES_AZUMARILL",
       "nome": "Azumarill",
       "ordine": 56,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0184_azumarill",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0184_azumarill/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0184_azumarill/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "5a65ef86f1a4f73baa63511a5688b48b2b8590decf5b33616bdc706fa609ddb4",
+          "video_sha256": "13342009659ba0ec71aafb7ef53a0ef20327521e8aa67cd3120b7d77aa80e210"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0184_azumarill/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0184_azumarill/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "ab9b0891e3970829",
+          "screenshot_sha256": "aa3d76af462f1e577dad13f6a44d4dd9184b40ed3edcd77e0a7014ad37beac55",
+          "video_sha256": "aed64d67d161caacf4e3f4a43bbb2e2306a9db066bab95111675a276d745c86c"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0184_azumarill/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0184_azumarill/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T19:00:21",
+      "build_verificata": "ab9b0891e3970829"
     },
     {
       "numero_nazionale": 74,
@@ -21880,8 +21928,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 296,
-    "nome": "Makuhita"
+    "id": 184,
+    "nome": "Azumarill"
   },
-  "checkpoint_note": "Richiesta esplicita: completare5checkpoint consecutivi in autonomia, non terminare prima di5/5. AUTONOMOUS5.json è il registro esatto: 2/5 chiusi, target34->74Pokemon,6mosse. Gruppo corrente/riferimento 6 (Alakazam,Nincada,Ninjask,Shedinja,Whismur,Loudred,Exploud,Makuhita). Gruppo6 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 7. Build e processi in AUTONOMOUS5.json. Tutte40specie già esportate in una build comune;148viste candidate/74specie,6mosse15effetti,157assetprecedenti invariati. Algoritmo v5 approvato invariato; source/BWL2/hash sono nelle prove. Parent capture:build/bw2-auto5-capture.ps1, logbuild/bw2-auto5-captures.log,80scenari8idle+8shiny pergruppo,prefixcp05..cp09. Controllare processi o sessioni inAUTONOMOUS5.json; non avviare un secondo emulatore simultaneo. Helperbuild/bw2-auto5.py:render(n),palette(n),mark(normal/shiny dopo ispezione),publish(ids),finish(n),commit(n),start(n+1),status. Non sovrascrivere validation.3dsx/ELF/ID e normale comuni durante le prove. Ogni Pokemon completo solo dopo QA e shiny; ogni gruppo richiede report,misure,audit e commitBW2. Proseguire fino al quinto gruppo, senza fermarsi a un checkpoint intermedio. Salvare checkpoint prima di nuovo gruppo se contesto scarso; no reset/bootstrap/push, noROMpokebw2 oAzaharutente."
+  "checkpoint_note": "Richiesta esplicita: completare 5 checkpoint consecutivi in autonomia, senza terminare prima di 5/5. AUTONOMOUS5.json è il registro esatto: 3/5 chiusi, target da 34 a 74 Pokémon; 6 mosse. Gruppo corrente/riferimento 7 (Hariyama, Goldeen, Seaking, Magikarp, Gyarados, Azurill, Marill, Azumarill). Gruppo7 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 8. Build e processi in AUTONOMOUS5.json. Tutte le 40 specie esportate: 148 viste candidate/74 specie, 6 mosse, 15 effetti; 157 asset precedenti invariati. Criterio v5 conservato; margine superiore v5.1 dal gruppo 7. Build iniziali archiviate per gruppi 5/6, nuove per gruppi 7/8/9. Acquisizione: build/bw2-auto5-capture.ps1; log build/bw2-auto5-headroom-captures.log. Controllare prima i processi; mai avviare un secondo emulatore simultaneo. Helper build/bw2-auto5.py: render, palette, mark dopo ispezione, publish, finish, commit, start, status. Prefissi correnti cp07h-, cp08h-, cp09h-. Non usare le vecchie prove cp07- per completare. Non sovrascrivere build/ELF/ID durante le prove. Ogni Pokémon completo solo dopo QA e shiny. Continuare fino al quinto gruppo con report, misure, audit e commit. Nessun reset/bootstrap/push; pokebw2 e ROM in sola lettura; non arrestare Azahar dell’utente."
 }

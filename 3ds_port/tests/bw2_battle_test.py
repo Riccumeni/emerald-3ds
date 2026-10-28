@@ -28,6 +28,8 @@ typedef int8_t s8; typedef int16_t s16; typedef int32_t s32; typedef u8 bool8;
 #define TRUE 1
 #define FALSE 0
 #define MAX_BATTLERS_COUNT 4
+#define CTR_GAME_HEIGHT 240
+#define CTR_BATTLE_ZOOM 1.4f
 #define MAX_SPRITES 64
 #define PLTT_SIZE 1024
 #define SPECIES_NONE 0
@@ -285,6 +287,15 @@ static void TestActorPresentation(void) {
  assert(SourceSizeFactor(&silhouette,5)==256); // established Poochyena size
  silhouette.nativeWidth=0;
  assert(SourceSizeFactor(&silhouette,10)==256); // optional old assets still work
+ BwClip tall={.left=10,.top=2,.right=54,.bottom=62,.floor=62,.centerY=32*256,
+              .nativeWidth=100,.nativeHeight=100};
+ BwPresentation high=PresentationFor(&tall,12,FALSE,64,40);
+ float pixelTop=(high.y+40+(2-32)*high.scale/256.0f)*CTR_BATTLE_ZOOM
+                 +CTR_GAME_HEIGHT-48-112*CTR_BATTLE_ZOOM;
+ assert(pixelTop>=4); // highest raised hand stays inside the display
+ assert(high.y+40+(62-32)*high.scale/256==64); // same arena floor
+ BwPresentation floating=PresentationFor(&tall,12,FALSE,48,24);
+ assert(floating.scale<high.scale); // elevation consumes available headroom
  Start();PrimeOam();struct Sprite logical=gSprites[0];
  CtrBW2_AfterOam();struct OamData *tree=&gMain.oamBuffer[10];unsigned matrix=tree->matrixNum;
  unsigned scale=sPresentation[0].scale;

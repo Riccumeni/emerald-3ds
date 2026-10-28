@@ -1,10 +1,10 @@
 {
   "version": 1,
   "requested_checkpoints": 5,
-  "completed_checkpoints": 2,
+  "completed_checkpoints": 3,
   "starting_pokemon_done": 34,
   "target_pokemon_done": 74,
-  "algorithm": "height-source-footprint-v5",
+  "algorithm": "height-source-footprint-v5.1-front-headroom",
   "groups": [
     {
       "number": 5,
@@ -289,7 +289,7 @@
     {
       "number": 7,
       "ordinal": 3,
-      "status": "pending",
+      "status": "complete",
       "national_ids": [
         297,
         118,
@@ -351,7 +351,81 @@
           "player": 184,
           "enemy": 183
         }
-      ]
+      ],
+      "capture_prefix": "cp07h-",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_shiny": true,
+      "audit_dossiers": 64,
+      "movie": {
+        "duration": 238.84466666666665,
+        "decoded_frames": 7162,
+        "sha256": "5aae0d030a8d9ad6663cf3f7594077d283065d1463b3853dd18c8f1e0434b386",
+        "segments": [
+          {
+            "name": "hariyama-goldeen",
+            "start": 0.0,
+            "end": 30.877333333333333,
+            "frames": 926,
+            "sha256": "312c7d7e7d14305d8ee2e24bdd246500dc9982dce29b0a12582af0ececbaf6e1"
+          },
+          {
+            "name": "goldeen-hariyama",
+            "start": 30.877333333333333,
+            "end": 61.08266666666667,
+            "frames": 906,
+            "sha256": "312e8dd682e2c6dccb67b948e42eb90334fdcb6e485b9bd5f65838fce998c157"
+          },
+          {
+            "name": "seaking-magikarp",
+            "start": 61.08266666666667,
+            "end": 88.694,
+            "frames": 828,
+            "sha256": "5bea65ad953975abb4523c13f62e1586e205df8a902677bef50a4092f3dfd383"
+          },
+          {
+            "name": "magikarp-seaking",
+            "start": 88.694,
+            "end": 115.75833333333334,
+            "frames": 811,
+            "sha256": "6626b0173c0f5486b071e4572220c5effadb83922f10cc26aa5fc014c1bc4bce"
+          },
+          {
+            "name": "gyarados-azurill",
+            "start": 115.75833333333334,
+            "end": 146.40066666666667,
+            "frames": 919,
+            "sha256": "851d5142843129f3d5defa276185f4604a652afb8ca25841f61de165e8ce994e"
+          },
+          {
+            "name": "azurill-gyarados",
+            "start": 146.40066666666667,
+            "end": 177.215,
+            "frames": 924,
+            "sha256": "104baab05282e765a94155b5a15f1468e5a2d5b83fa647419f2743cb6523701a"
+          },
+          {
+            "name": "marill-azumarill",
+            "start": 177.215,
+            "end": 208.23333333333332,
+            "frames": 930,
+            "sha256": "13342009659ba0ec71aafb7ef53a0ef20327521e8aa67cd3120b7d77aa80e210"
+          },
+          {
+            "name": "azumarill-marill",
+            "start": 208.23333333333332,
+            "end": 238.84466666666665,
+            "frames": 918,
+            "sha256": "aed64d67d161caacf4e3f4a43bbb2e2306a9db066bab95111675a276d745c86c"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 7: eight Pokemon"
     },
     {
       "number": 8,
@@ -418,7 +492,10 @@
           "player": 42,
           "enemy": 41
         }
-      ]
+      ],
+      "capture_prefix": "cp08h-",
+      "reviewed_normal_pairs": [],
+      "reviewed_shiny": false
     },
     {
       "number": 9,
@@ -485,18 +562,38 @@
           "player": 384,
           "enemy": 383
         }
-      ]
+      ],
+      "capture_prefix": "cp09h-",
+      "reviewed_normal_pairs": [],
+      "reviewed_shiny": false
     }
   ],
   "runtime": {
     "capture_script": "build/bw2-auto5-capture.ps1",
     "capture_log": "build/bw2-auto5-captures.log",
     "capture_session": 61504,
-    "validation_build_id": "15dde47674f650ec",
-    "production_log": "build/bw2-auto5-production-build.log",
+    "validation_build_id": "ab9b0891e3970829",
+    "production_log": "build/bw2-auto5-headroom-production-build.log",
     "helper": "build/bw2-auto5.py",
-    "production_session_completed": 91602,
+    "production_session_completed": true,
     "builds": {
+      "validation.3dsx": {
+        "build_id": "ab9b0891e3970829",
+        "sha256": "6a48c0fdee8fbab7096fbdb29433741e077bde265f99113c1a2362fbe206a0a6",
+        "archive": "artifacts/bw2-validation/builds/ab9b0891e3970829_6a48c0fdee8f/validation.3dsx"
+      },
+      "validation.elf": {
+        "build_id": "ab9b0891e3970829",
+        "sha256": "0129c6ca38039f85bc4a5e9ff01074c5ffaba53042e57205e066560d35bddc62",
+        "archive": "artifacts/bw2-validation/builds/ab9b0891e3970829_0129c6ca3803/validation.elf"
+      },
+      "Emerald3DS-BW2.3dsx": {
+        "build_id": "c65648fb2fe7ded3",
+        "sha256": "c7ca71c43aee28d283e43f33ac10761708ec28989e6cdccc7083973257117f3c",
+        "archive": "artifacts/bw2-validation/builds/c65648fb2fe7ded3_c7ca71c43aee/Emerald3DS-BW2.3dsx"
+      }
+    },
+    "initial_builds": {
       "validation.3dsx": {
         "build_id": "15dde47674f650ec",
         "sha256": "54227e749aa5fc2b7ef3fd5a8682ecfbf73cf0f9efdd38412924ca92ed629bb3",
@@ -512,6 +609,9 @@
         "sha256": "036f89da901d369a80087f5911adc14843ce003b6ecd09ec275da719b1dde19a",
         "archive": "artifacts/bw2-validation/builds/2ed791a98434d45b_036f89da901d/Emerald3DS-BW2.3dsx"
       }
-    }
+    },
+    "capture_stopped_for": "Hariyama raised hand reaches top row in30/444frames; add viewport headroom guard",
+    "headroom_test_log": "build/bw2-auto5-headroom-test.log",
+    "headroom_review": "docs/bw2-plan/FRONT_HEADROOM_REVIEW.json"
   }
 }

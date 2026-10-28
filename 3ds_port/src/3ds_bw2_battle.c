@@ -263,6 +263,18 @@ static BwPresentation PresentationFor(const BwClip *clip, u16 heightDm, bool8 ba
         if (maxScale > 546) maxScale = 546;
     }
     if (scale > maxScale) scale = maxScale;
+    if (!back && clip->floor > clip->top)
+    {
+        /* The scene maps GBA line 112 to screen line GAME_HEIGHT-48.
+         * Keep the highest source pose four logical pixels inside the view,
+         * including species elevation, without changing its arena floor. */
+        float headroom = ground + (CTR_GAME_HEIGHT - 48) / CTR_BATTLE_ZOOM - 116.0f;
+        if (headroom > 0)
+        {
+            unsigned fit = (unsigned)(headroom * 256 / (clip->floor - clip->top));
+            if (scale > fit) scale = fit;
+        }
+    }
     if (scale < 128) scale = 128;
     /* Center the visible body on the arena. Time-weighted pixel mass avoids
      * a long leaf/tail or one extreme pose pulling its bounding-box center.

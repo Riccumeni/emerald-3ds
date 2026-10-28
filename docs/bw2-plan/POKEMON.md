@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **50**.
+Totale: **386**. Fatti con dossier completo: **58**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -54,14 +54,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0294 **Loudred** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0294_loudred/).
 - [x] 0295 **Exploud** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0295_exploud/).
 - [x] 0296 **Makuhita** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0296_makuhita/).
-- [ ] 0297 **Hariyama** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0297_hariyama/).
-- [ ] 0118 **Goldeen** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0118_goldeen/).
-- [ ] 0119 **Seaking** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0119_seaking/).
-- [ ] 0129 **Magikarp** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0129_magikarp/).
-- [ ] 0130 **Gyarados** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0130_gyarados/).
-- [ ] 0298 **Azurill** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0298_azurill/).
-- [ ] 0183 **Marill** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0183_marill/).
-- [ ] 0184 **Azumarill** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0184_azumarill/).
+- [x] 0297 **Hariyama** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0297_hariyama/).
+- [x] 0118 **Goldeen** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0118_goldeen/).
+- [x] 0119 **Seaking** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0119_seaking/).
+- [x] 0129 **Magikarp** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0129_magikarp/).
+- [x] 0130 **Gyarados** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0130_gyarados/).
+- [x] 0298 **Azurill** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0298_azurill/).
+- [x] 0183 **Marill** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0183_marill/).
+- [x] 0184 **Azumarill** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0184_azumarill/).
 - [ ] 0074 **Geodude** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0074_geodude/).
 - [ ] 0075 **Graveler** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0075_graveler/).
 - [ ] 0076 **Golem** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0076_golem/).

@@ -52,6 +52,24 @@ otto cambiano scala: i quattro segnalati e Torchic, Silcoon, Cascoon, Lotad.
 Per tutti gli otto si rigenerano prove e dossier. Le prove precedenti restano
 in `artifacts/bw2-validation/revisions/2026-10-28-before-v5/`.
 
+## Margine superiore della vista frontale (v5.1)
+
+La verifica di Hariyama ha rilevato che una mano alzata raggiungeva la riga
+superiore in alcune pose. Dal terzo checkpoint autonomo la scala frontale
+ha un ulteriore limite ricavato dal viewport: il pixel più alto dell’intera
+sequenza deve restare quattro pixel logici all’interno dello schermo.
+La base nell’arena e l’elevazione restano identiche; la scala rimane fissa
+per il ciclo, senza spostare o tagliare la mano.
+
+La scena colloca la riga GBA 112 sulla riga schermo 192, con zoom 1,4.
+Il limite di salita rispetto alla base è quindi
+`ground + (240-48)/1.4 - 116`. Si usa la distanza fra la base idle pesata
+e la riga più alta della clip. Questo controllo tiene conto anche dei
+Pokémon sospesi. Nessuna delle 50 specie già chiuse nei primi due checkpoint
+richiede una riduzione aggiuntiva. Il criterio di proporzione v5 e le viste
+posteriori non cambiano. Il confronto video e le misure sono salvati in
+`docs/bw2-plan/FRONT_HEADROOM_REVIEW.json`.
+
 ## Dati opzionali e compatibilità
 
 L’esportatore scrive, per ogni clip, un file `SPECIES_front.bin.layout` o
