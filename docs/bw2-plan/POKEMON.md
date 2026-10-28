@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **106**.
+Totale: **386**. Fatti con dossier completo: **114**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -111,14 +111,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0218 **Slugma** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0218_slugma/).
 - [x] 0219 **Magcargo** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0219_magcargo/).
 - [x] 0324 **Torkoal** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0324_torkoal/).
-- [ ] 0088 **Grimer** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0088_grimer/).
-- [ ] 0089 **Muk** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0089_muk/).
-- [ ] 0109 **Koffing** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0109_koffing/).
-- [ ] 0110 **Weezing** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0110_weezing/).
-- [ ] 0325 **Spoink** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0325_spoink/).
-- [ ] 0326 **Grumpig** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0326_grumpig/).
-- [ ] 0027 **Sandshrew** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0027_sandshrew/).
-- [ ] 0028 **Sandslash** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0028_sandslash/).
+- [x] 0088 **Grimer** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0088_grimer/).
+- [x] 0089 **Muk** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0089_muk/).
+- [x] 0109 **Koffing** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0109_koffing/).
+- [x] 0110 **Weezing** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0110_weezing/).
+- [x] 0325 **Spoink** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0325_spoink/).
+- [x] 0326 **Grumpig** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0326_grumpig/).
+- [x] 0027 **Sandshrew** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0027_sandshrew/).
+- [x] 0028 **Sandslash** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0028_sandslash/).
 - [ ] 0327 **Spinda** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0327_spinda/).
 - [ ] 0227 **Skarmory** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0227_skarmory/).
 - [ ] 0328 **Trapinch** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0328_trapinch/).

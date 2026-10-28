@@ -2,7 +2,7 @@
   "request": "Prossimi cinque checkpoint, 10-14",
   "start_pokemon": 74,
   "target_pokemon": 114,
-  "completed_checkpoints": 4,
+  "completed_checkpoints": 5,
   "groups": [
     {
       "number": 10,
@@ -571,7 +571,7 @@
     {
       "number": 14,
       "ordinal": 5,
-      "status": "pending",
+      "status": "complete",
       "national_ids": [
         88,
         89,
@@ -633,7 +633,81 @@
           "player": 28,
           "enemy": 27
         }
-      ]
+      ],
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 120,
+      "movie": {
+        "duration": 214.14166666666668,
+        "decoded_frames": 6422,
+        "sha256": "4c65558c37c9ffb979b5e758de69617ed6cba86a8ef8a3f02cc2f62bdaa659fa",
+        "segments": [
+          {
+            "name": "grimer-muk",
+            "start": 0.0,
+            "end": 26.580333333333332,
+            "frames": 797,
+            "sha256": "acd8063ed4433eb3b3c408545e5e32260abe526ac0b0b47d632d8b0b50746d85"
+          },
+          {
+            "name": "muk-grimer",
+            "start": 26.580333333333332,
+            "end": 52.92666666666667,
+            "frames": 790,
+            "sha256": "0fd148a8f788e00dad86f489cf28bbe556f1401946528d722dc7ba150cec01f0"
+          },
+          {
+            "name": "koffing-weezing",
+            "start": 52.92666666666667,
+            "end": 77.428,
+            "frames": 735,
+            "sha256": "14478b6ca2a782bea46039a9cc927ee57af33492adb55552b4c36b685f2ef904"
+          },
+          {
+            "name": "weezing-koffing",
+            "start": 77.428,
+            "end": 101.89833333333333,
+            "frames": 734,
+            "sha256": "044490a124b9b0ec20607ca5d6ef28f8317d682ab7c8301b7333ec86f8e22bea"
+          },
+          {
+            "name": "spoink-grumpig",
+            "start": 101.89833333333333,
+            "end": 130.04066666666668,
+            "frames": 844,
+            "sha256": "1c03a181e028afb924c0c5b4533dc405082ed4a8e1c9fc335e7fc4322133724b"
+          },
+          {
+            "name": "grumpig-spoink",
+            "start": 130.04066666666668,
+            "end": 158.824,
+            "frames": 863,
+            "sha256": "1e9dcc7ae4e6445b1f96ace5a40bee2f6b80b359a307681bead2a6b997e67128"
+          },
+          {
+            "name": "sandshrew-sandslash",
+            "start": 158.824,
+            "end": 186.46733333333333,
+            "frames": 829,
+            "sha256": "e17a8c78c09bb18492e9570b894a221492f3f3ddbeddd10e8885d5efc866c255"
+          },
+          {
+            "name": "sandslash-sandshrew",
+            "start": 186.46733333333333,
+            "end": 214.14166666666668,
+            "frames": 830,
+            "sha256": "0b5b7de32d36e7b7dbf3714624a3869e347d29bd736d78b927e68e91c43553d8"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 14: eight Pokemon"
     }
   ],
   "baseline_asset_files": 317,
@@ -648,14 +722,16 @@
       "sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0",
       "path": "artifacts/bw2-validation/builds/35c62b2e2f40bcd4_11ce99dc5a27/validation.3dsx",
       "elf_path": "artifacts/bw2-validation/builds/35c62b2e2f40bcd4_f8cfc596afdd/validation.elf",
-      "elf_sha256": "f8cfc596afdd52e92ca9339f8762d35bd707cbc0ddba47141a2082567ade760f"
+      "elf_sha256": "f8cfc596afdd52e92ca9339f8762d35bd707cbc0ddba47141a2082567ade760f",
+      "id_path": "artifacts/bw2-validation/builds/35c62b2e2f40bcd4_11ce99dc5a27/build_id.bin"
     },
     "production": {
       "build_id": "78ea4c127e93ed58",
       "sha256": "5669769244cfb417882cf953021e219d0250969eff65733dab8e7566047e2eb5",
       "path": "artifacts/bw2-validation/builds/78ea4c127e93ed58_5669769244cf/Emerald3DS-BW2.3dsx",
       "elf_path": "artifacts/bw2-validation/builds/78ea4c127e93ed58_f9142e767ebd/production.elf",
-      "elf_sha256": "f9142e767ebdff03f8ae31fb6b032d99678eee27c5cfd91d83b2003e5d999261"
+      "elf_sha256": "f9142e767ebdff03f8ae31fb6b032d99678eee27c5cfd91d83b2003e5d999261",
+      "id_path": "artifacts/bw2-validation/builds/78ea4c127e93ed58_5669769244cf/production-build-id.bin"
     }
   },
   "checks": {
@@ -667,17 +743,18 @@
     "production_validation_mailbox": false
   },
   "runtime": {
-    "capture_group": 13,
-    "exec_session_id": 29489,
-    "log": "build/bw2-next5-cp13-captures.log",
-    "isolated_executable": "build/bw2-azahar/bw2-test.exe",
-    "pid_file": "build/bw2-validation/emulator.pid",
+    "state": "closed",
+    "isolated_processes": [],
+    "personal_azahar_preserved": 24764,
+    "last_capture_log": "build/bw2-next5-cp14-captures.log",
     "helper": "build/bw2-next5.py",
-    "capture_helper": "build/bw2-next5-capture.ps1",
-    "completed_commits": {
-      "10": "d544a13",
-      "11": "4a24831",
-      "12": "3f7a1d6"
-    }
-  }
+    "capture_helper": "build/bw2-next5-capture.ps1"
+  },
+  "check_logs": {
+    "artifacts/bw2-validation/checkpoints10-14-2026-10-28/bw2-next5-validation-build.log": "077f2b790c174b21150985ab300025dfed651f15211bf743de04c86c747bfb7b",
+    "artifacts/bw2-validation/checkpoints10-14-2026-10-28/bw2-next5-production-build.log": "542a23ec9815e444c904ca35a5ee883e38adf2a9e90e951be907d774f90465a5",
+    "artifacts/bw2-validation/checkpoints10-14-2026-10-28/bw2-next5-bridge-synthetic.log": "12935ec2585addcd6055052b6964d1deb4e4d05d470f10dcd8082f6a2a7c93c3",
+    "artifacts/bw2-validation/checkpoints10-14-2026-10-28/bw2-next5-bridge-assets.log": "303e0b9e098d90337a56ee956c64ec7cc3f589c8f77b95257b3ebb8d9aceece3"
+  },
+  "final_audit": "docs/bw2-plan/AUTONOMOUS10_14_AUDIT.json"
 }

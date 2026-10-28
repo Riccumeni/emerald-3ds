@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-28T21:03:31",
+  "aggiornato_il": "2026-10-28T21:16:26",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 106,
+    "pokemon_fatti": 114,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,8 +19,8 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 88,
-    "nome": "Grimer",
+    "id": 327,
+    "nome": "Spinda",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
@@ -3728,28 +3728,34 @@
       "costante": "SPECIES_GRIMER",
       "nome": "Grimer",
       "ordine": 106,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0088_grimer",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0088_grimer/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0088_grimer/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "25a409c1df1293cdb7016691bb976994bb77652898e4d58b891c4e38584b2117",
+          "video_sha256": "0fd148a8f788e00dad86f489cf28bbe556f1401946528d722dc7ba150cec01f0"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0088_grimer/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0088_grimer/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "25f0146b0b9e5664148d25430dc2373afb786383d4ea84a6ff6eb1d514bffdce",
+          "video_sha256": "acd8063ed4433eb3b3c408545e5e32260abe526ac0b0b47d632d8b0b50746d85"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0088_grimer/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0088_grimer/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T21:14:26",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 89,
@@ -3757,28 +3763,34 @@
       "costante": "SPECIES_MUK",
       "nome": "Muk",
       "ordine": 107,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0089_muk",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0089_muk/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0089_muk/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "25f0146b0b9e5664148d25430dc2373afb786383d4ea84a6ff6eb1d514bffdce",
+          "video_sha256": "acd8063ed4433eb3b3c408545e5e32260abe526ac0b0b47d632d8b0b50746d85"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0089_muk/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0089_muk/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "25a409c1df1293cdb7016691bb976994bb77652898e4d58b891c4e38584b2117",
+          "video_sha256": "0fd148a8f788e00dad86f489cf28bbe556f1401946528d722dc7ba150cec01f0"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0089_muk/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0089_muk/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T21:14:27",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 109,
@@ -3786,28 +3798,34 @@
       "costante": "SPECIES_KOFFING",
       "nome": "Koffing",
       "ordine": 108,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0109_koffing",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0109_koffing/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0109_koffing/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "ff5325acacc7179723ef3f038117792934873f1266041fee6ac6805ff3994280",
+          "video_sha256": "044490a124b9b0ec20607ca5d6ef28f8317d682ab7c8301b7333ec86f8e22bea"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0109_koffing/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0109_koffing/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "3f10469919b30e60ec934134430823fe111b45996a5e22e08cc28de90ad1fcd2",
+          "video_sha256": "14478b6ca2a782bea46039a9cc927ee57af33492adb55552b4c36b685f2ef904"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0109_koffing/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0109_koffing/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T21:14:28",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 110,
@@ -3815,28 +3833,34 @@
       "costante": "SPECIES_WEEZING",
       "nome": "Weezing",
       "ordine": 109,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0110_weezing",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0110_weezing/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0110_weezing/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "3f10469919b30e60ec934134430823fe111b45996a5e22e08cc28de90ad1fcd2",
+          "video_sha256": "14478b6ca2a782bea46039a9cc927ee57af33492adb55552b4c36b685f2ef904"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0110_weezing/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0110_weezing/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "ff5325acacc7179723ef3f038117792934873f1266041fee6ac6805ff3994280",
+          "video_sha256": "044490a124b9b0ec20607ca5d6ef28f8317d682ab7c8301b7333ec86f8e22bea"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0110_weezing/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0110_weezing/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T21:14:28",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 325,
@@ -3844,28 +3868,34 @@
       "costante": "SPECIES_SPOINK",
       "nome": "Spoink",
       "ordine": 110,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0325_spoink",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0325_spoink/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0325_spoink/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "531d30e3aaed1b76d018888c394b4ef089834353b6e4a4d01f22d1b155b08d3f",
+          "video_sha256": "1e9dcc7ae4e6445b1f96ace5a40bee2f6b80b359a307681bead2a6b997e67128"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0325_spoink/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0325_spoink/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "af9784b136e1a3cd353fa7bde4b7b057fffb6b32b2c7b2dff7c1954cefada61c",
+          "video_sha256": "1c03a181e028afb924c0c5b4533dc405082ed4a8e1c9fc335e7fc4322133724b"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0325_spoink/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0325_spoink/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T21:14:29",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 326,
@@ -3873,28 +3903,34 @@
       "costante": "SPECIES_GRUMPIG",
       "nome": "Grumpig",
       "ordine": 111,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0326_grumpig",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0326_grumpig/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0326_grumpig/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "af9784b136e1a3cd353fa7bde4b7b057fffb6b32b2c7b2dff7c1954cefada61c",
+          "video_sha256": "1c03a181e028afb924c0c5b4533dc405082ed4a8e1c9fc335e7fc4322133724b"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0326_grumpig/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0326_grumpig/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "531d30e3aaed1b76d018888c394b4ef089834353b6e4a4d01f22d1b155b08d3f",
+          "video_sha256": "1e9dcc7ae4e6445b1f96ace5a40bee2f6b80b359a307681bead2a6b997e67128"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0326_grumpig/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0326_grumpig/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T21:14:29",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 27,
@@ -3902,28 +3938,34 @@
       "costante": "SPECIES_SANDSHREW",
       "nome": "Sandshrew",
       "ordine": 112,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0027_sandshrew",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0027_sandshrew/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0027_sandshrew/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "1378ec26f271bc1798e61e58e69022edd8f0f2e3f21447b535719cc1f56658a6",
+          "video_sha256": "0b5b7de32d36e7b7dbf3714624a3869e347d29bd736d78b927e68e91c43553d8"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0027_sandshrew/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0027_sandshrew/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "d923c81ebba123082fcdc79a7d2b977f135c40a817e9d1c821a82bc7d362fa21",
+          "video_sha256": "e17a8c78c09bb18492e9570b894a221492f3f3ddbeddd10e8885d5efc866c255"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0027_sandshrew/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0027_sandshrew/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T21:14:30",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 28,
@@ -3931,28 +3973,34 @@
       "costante": "SPECIES_SANDSLASH",
       "nome": "Sandslash",
       "ordine": 113,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0028_sandslash",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0028_sandslash/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0028_sandslash/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "d923c81ebba123082fcdc79a7d2b977f135c40a817e9d1c821a82bc7d362fa21",
+          "video_sha256": "e17a8c78c09bb18492e9570b894a221492f3f3ddbeddd10e8885d5efc866c255"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0028_sandslash/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0028_sandslash/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "1378ec26f271bc1798e61e58e69022edd8f0f2e3f21447b535719cc1f56658a6",
+          "video_sha256": "0b5b7de32d36e7b7dbf3714624a3869e347d29bd736d78b927e68e91c43553d8"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0028_sandslash/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0028_sandslash/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T21:14:30",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 327,
@@ -22216,8 +22264,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 324,
-    "nome": "Torkoal"
+    "id": 28,
+    "nome": "Sandslash"
   },
-  "checkpoint_note": "Richiesta: checkpoint 10–14, 4/5 conclusi; partenza 74 Pokémon, obiettivo 114; mosse 6/354. Registro AUTONOMOUS10_14.json; helper build/bw2-next5.py, catture build/bw2-next5-capture.ps1. Gruppo13 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 14. Build e processi in AUTONOMOUS10_14.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
+  "checkpoint_note": "Richiesta conclusa: 5/5 checkpoint (10–14), 40 nuovi Pokémon, da 74 a 114/386; mosse 6/354. Ogni specie chiusa singolarmente dopo prove native front/back, ingresso e due cicli, palette shiny e revisione visiva. Criterio v5.1 invariato. Audit finale: 120 dossier, 317 asset precedenti e 344 file locali estranei invariati; SHA-256 ROM sorgente verificato. Riepilogo: AUTONOMOUS10_14_REVIEW.md; audit: AUTONOMOUS10_14_AUDIT.json. Build prova 35c62b2e2f40bcd4 e normale 78ea4c127e93ed58 archiviate con ELF, ID e SHA-256; normale senza mailbox e con stub Frame/Input da 4 byte. Acquisizioni terminate; nessun processo isolato attivo, Azahar personale preservato. Prossima unità: Spinda (nazionale 327, ID Emerald 308), con macchie procedurali da verificare; prossimo gruppo 15. AUTONOMOUS5.json e AUTONOMOUS10_14.json sono registri conclusi: non riaprirli. Cinque commit dedicati, nessun push. Audio, console reale, stereo e doppi restano da verificare."
 }
