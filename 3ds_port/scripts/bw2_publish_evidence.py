@@ -103,6 +103,12 @@ def publish(args):
         metadata["asset_hashes"] = {f"move_{args.id}.bin": sha(assets / f"move_{args.id}.bin")}
         metadata["adaptations"] = manifest["adaptations"]
         checks = "Mossa eseguita dal giocatore e dall'avversario con un solo turno reale per scenario; ritorno al menu verificato. L'altro battler usa Splash per isolare la direzione."
+    if item.get('forme_da_verificare',False):
+        from bw2_variants import check_variants
+        metadata['variants_audit']=check_variants(ROOT,item,metadata['test_build'])
+        metadata['forms_complete']=True
+    if args.kind=='pokemon' and args.id==327:
+        metadata['asset_hashes']['308_front.bin.spots']=sha(assets/'308_front.bin.spots')
     (folder / "metadata.json").write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     text = f"# Verifica: {item['nome']}\n\n{checks}\n\n"
     text += f"Build di prova: `{metadata['test_build']['build_id']}`. Build normale senza automatismi: `{metadata['production_build']['build_id']}`.\n\n"
@@ -112,6 +118,8 @@ def publish(args):
         text += f"- {direction}: {report['video']['duration']:.2f} secondi, {report['video']['decoded_frames']} frame, {report['video']['average_fps']:.2f} fps; [screenshot]({direction}/screenshot.png), [video]({direction}/demo.mp4).\n"
     text += "\nAdattamenti dichiarati:\n\n" + "\n".join("- " + a for a in metadata["adaptations"]) + "\n"
     text += "\nLimiti: camera Emerald e presentazione adattata; audio non registrato (DSP firmware assente nel setup di prova); prestazioni su console, stereo e doppi ancora da validare nella fase di integrazione.\n"
+    if metadata.get('variants_audit'):
+        text+='\nVerifiche aggiuntive delle forme/personality: [registro con percorsi e seed](variants.json). Tutti i casi richiesti sono stati controllati indipendentemente prima della chiusura.\n'
     (folder / "verifica.md").write_text(text, encoding="utf-8")
     print(folder)
 

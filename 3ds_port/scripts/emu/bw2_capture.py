@@ -70,6 +70,54 @@ def presentation(rpc, sym):
     return result
 
 
+def verify_spinda_pixels(rpc, sym, scenario):
+    actors=rpc.read_memory(sym['sActors'],32)
+    if not any(struct.unpack_from('<H',actors,b*16+12)[0]==308 for b in range(2)):return []
+    personalities=struct.unpack('<2I',rpc.read_memory(sym['gCtrBW2ActorPersonality'],8))
+    if personalities != (scenario.get('personality',0),)*2:raise ValueError('Actor personality mismatch')
+    gfx=struct.unpack('<I',rpc.read_memory(sym['gMonSpritesGfxPtr'],4))[0]
+    checks=[]
+    for b in range(2):
+        clip,identity,tick,species,shiny,paused=struct.unpack_from('<IIIHBB',actors,b*16)
+        if species!=308:continue
+        path=ROOT/f'build/upstream/3ds_port/romfs/bw2/308_{"front" if b else "back"}.bin'
+        raw=path.read_bytes();frames,steps,loop=struct.unpack_from('<3I',raw,4);offset=92+((steps*2+3)&~3)
+        mask=bytearray(4096);mapping=None
+        if b:
+            mapping=path.with_suffix('.bin.spots').read_bytes()
+            pid=personalities[b]
+            for i in range(4):
+                x0,y0,_=struct.unpack_from('<BBH',mapping,8+i*36)
+                dx=(pid&15)-8;dy=((pid>>4)&15)-8;pid>>=8
+                for y,row in enumerate(struct.unpack_from('<16H',mapping,12+i*36)):
+                    for x in range(16):
+                        if not row&(1<<x):continue
+                        px,py=x0+x+dx,y0+y+dy
+                        if not (0<=px<256 and 0<=py<88):continue
+                        for shift in (0,40):
+                            uv=(py+shift)*256+px;mask[uv//8]|=1<<(uv%8)
+            if rpc.read_memory(sym['sSpindaMask']+b*4096,4096)!=bytes(mask):raise ValueError('Spinda personality mask mismatch')
+        pointer=struct.unpack('<I',rpc.read_memory(gfx+4+b*4,4))[0]
+        matched=None
+        for attempt in range(5):
+            before=struct.unpack('<I',rpc.read_memory(sym['sActors']+b*16+8,4))[0]
+            actual=rpc.read_memory(pointer,2048)
+            after=struct.unpack('<I',rpc.read_memory(sym['sActors']+b*16+8,4))[0]
+            for t in range(max(0,before-2),after+2):
+                at=t if t<steps else loop+(t-loop)%(steps-loop)
+                frame=struct.unpack_from('<H',raw,92+2*at)[0];expected=bytearray(raw[offset+frame*2048:offset+(frame+1)*2048])
+                if mapping:
+                    start,end=struct.unpack_from('<2I',mapping,152+4*frame)
+                    for cursor in range(start,end,4):
+                        pixel,uv=struct.unpack_from('<HH',mapping,cursor);shift=(pixel&1)*4;color=expected[pixel//2]>>shift&15
+                        if mask[uv//8]&(1<<(uv%8)) and 1<=color<=3:expected[pixel//2]+=5<<shift
+                if bytes(expected)==actual:matched=t;break
+            if matched is not None:break
+        if matched is None:raise ValueError('Rendered Spinda pixels differ from procedural source')
+        checks.append(dict(battler=b,personality=personalities[b],procedural=bool(mapping),matched_tick=matched,pixels_sha256=hashlib.sha256(actual).hexdigest(),clip_sha256=sha(path),map_sha256=sha(path.with_suffix('.bin.spots')) if mapping else None))
+    return checks
+
+
 def verify_video(path, qa):
     container = av.open(str(path))
     stream = container.streams.video[0]
@@ -133,6 +181,9 @@ def capture(args):
             time.sleep(.03)
         print("capture start " + json.dumps(state), flush=True)
         initial = state.copy()
+        if 'gCtrBw2Personality' in sym:
+            initial['personality']=struct.unpack('<I',rpc.read_memory(sym['gCtrBw2Personality'],4))[0]
+
         if args.kind == "palette":
             actors = rpc.read_memory(sym["sActors"], 64)
             checked = []
@@ -152,6 +203,7 @@ def capture(args):
                       "build_id": expected.hex(), "binary_sha256": sha(args.binary), "actors": checked,
                       "screenshot_sha256": sha(args.output / "screenshot.png"),
                       "presentation": presentation(rpc, sym)}
+            report["spinda_patterns"]=verify_spinda_pixels(rpc,sym,initial)
             (args.output / "capture.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
             print(json.dumps(report), flush=True)
             return
@@ -275,6 +327,7 @@ def capture(args):
                   "video": verify_video(video, args.output),
                   "acquisition": "Native rendered RGB frames over Azahar local RPC, timestamped in real time",
                   "audio": "Not captured; test emulator has no DSP firmware"}
+        report["spinda_patterns"]=verify_spinda_pixels(rpc,sym,initial)
         (args.output / "capture.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
         print(json.dumps({k: report[k] for k in ("passed", "kind", "build_id", "actual_capture_fps", "video")}), flush=True)
     finally:

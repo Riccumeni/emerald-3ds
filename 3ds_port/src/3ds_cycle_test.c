@@ -44,6 +44,8 @@ volatile struct
                        MOVE_POUND, 0, 4660, 0, 2};
 static u32 sValidationField, sValidationReady;
 static bool8 sValidationInitialized;
+static u32 sValidationPersonality;
+volatile u32 gCtrBw2Personality;
 
 static bool8 ValidationActionMenu(void)
 {
@@ -70,6 +72,7 @@ static void ValidationInit(void)
                 gCtrBw2Validation.move = value;
             else if (!strcmp(key, "shiny")) gCtrBw2Validation.shiny = value != 0;
             else if (!strcmp(key, "seed")) gCtrBw2Validation.seed = value;
+            else if (!strcmp(key, "personality")) sValidationPersonality = value;
             else if (!strcmp(key, "side") && value <= 2) gCtrBw2Validation.side = value;
         }
         fclose(file);
@@ -104,9 +107,10 @@ void CtrCycle_Frame(void)
         SeedRng2(gCtrBw2Validation.seed);
         ZeroPlayerPartyMons();
         ZeroEnemyPartyMons();
-        u32 ot = gCtrBw2Validation.shiny ? 0 : 0x12345678;
-        CreateMon(&gPlayerParty[0], gCtrBw2Validation.player, 5, 31, TRUE, 0, OT_ID_PRESET, ot);
-        CreateMon(&gEnemyParty[0], gCtrBw2Validation.enemy, 5, 31, TRUE, 0, OT_ID_PRESET, ot);
+        u32 ot = sValidationPersonality ^ (gCtrBw2Validation.shiny ? 0 : 0x12345678);
+        gCtrBw2Personality = sValidationPersonality;
+        CreateMon(&gPlayerParty[0], gCtrBw2Validation.player, 5, 31, TRUE, sValidationPersonality, OT_ID_PRESET, ot);
+        CreateMon(&gEnemyParty[0], gCtrBw2Validation.enemy, 5, 31, TRUE, sValidationPersonality, OT_ID_PRESET, ot);
         for (unsigned i = 0; i < MAX_MON_MOVES; ++i)
         {
             u16 move = i ? MOVE_NONE : gCtrBw2Validation.move;

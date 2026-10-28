@@ -1,0 +1,447 @@
+{
+  "start_pokemon": 114,
+  "target_pokemon": 154,
+  "completed_checkpoints": 1,
+  "groups": [
+    {
+      "number": 15,
+      "ordinal": 1,
+      "status": "complete",
+      "names": [
+        "Spinda",
+        "Skarmory",
+        "Trapinch",
+        "Vibrava",
+        "Flygon",
+        "Cacnea",
+        "Cacturne",
+        "Swablu"
+      ],
+      "national_ids": [
+        327,
+        227,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333
+      ],
+      "cases": [
+        {
+          "name": "spinda-skarmory",
+          "player": 308,
+          "enemy": 227
+        },
+        {
+          "name": "skarmory-spinda",
+          "player": 227,
+          "enemy": 308
+        },
+        {
+          "name": "trapinch-vibrava",
+          "player": 332,
+          "enemy": 333
+        },
+        {
+          "name": "vibrava-trapinch",
+          "player": 333,
+          "enemy": 332
+        },
+        {
+          "name": "flygon-cacnea",
+          "player": 334,
+          "enemy": 344
+        },
+        {
+          "name": "cacnea-flygon",
+          "player": 344,
+          "enemy": 334
+        },
+        {
+          "name": "cacturne-swablu",
+          "player": 345,
+          "enemy": 358
+        },
+        {
+          "name": "swablu-cacturne",
+          "player": 358,
+          "enemy": 345
+        }
+      ],
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 128,
+      "movie": {
+        "duration": 250.43766666666667,
+        "decoded_frames": 7506,
+        "sha256": "b659795fa805910736bec7c2076694d451add1d56cafc2936c6a77e8ee8c7e83",
+        "segments": [
+          {
+            "name": "spinda-skarmory",
+            "start": 0.0,
+            "end": 29.861333333333334,
+            "frames": 895,
+            "sha256": "8fcbfbc92f1b36b3ee57cdb76e8655387e822e5a5122c8e8a3f7bbb6aa54f1af"
+          },
+          {
+            "name": "skarmory-spinda",
+            "start": 29.861333333333334,
+            "end": 56.25366666666667,
+            "frames": 790,
+            "sha256": "9207d269941f81ab6f69107aea1e28e88660654062ad7a0713af72314a44f82b"
+          },
+          {
+            "name": "trapinch-vibrava",
+            "start": 56.25366666666667,
+            "end": 84.397,
+            "frames": 844,
+            "sha256": "0929b54ee68f1e0191a27f6ef47d01bc5a75dd1641590067162381f08414220f"
+          },
+          {
+            "name": "vibrava-trapinch",
+            "start": 84.397,
+            "end": 110.47733333333333,
+            "frames": 782,
+            "sha256": "beec5342ef801254ffebe99b197b8bbb4cf18b2b26baf251af40410f3358adfb"
+          },
+          {
+            "name": "flygon-cacnea",
+            "start": 110.47733333333333,
+            "end": 150.83866666666665,
+            "frames": 1210,
+            "sha256": "54b3ccd7446b43f0bc168c647ed594866cce966cb3344554018ad87247a9120d"
+          },
+          {
+            "name": "cacnea-flygon",
+            "start": 150.83866666666665,
+            "end": 189.981,
+            "frames": 1173,
+            "sha256": "212159df1b9868f0ee950fffdd5ca9bd11781659008d0f656341306707a868c5"
+          },
+          {
+            "name": "cacturne-swablu",
+            "start": 189.981,
+            "end": 219.95133333333334,
+            "frames": 898,
+            "sha256": "d3a6791051974dfb7176231f9c58fe00450c302ad6b65b88d775acbbecf2f5b6"
+          },
+          {
+            "name": "swablu-cacturne",
+            "start": 219.95133333333334,
+            "end": 250.43766666666667,
+            "frames": 914,
+            "sha256": "f516ac22f2d398b97526a307e812e3fd6a9e48d135eaef0cfee509fe65bc4b44"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 15: eight Pokemon"
+    },
+    {
+      "number": 16,
+      "ordinal": 2,
+      "status": "pending",
+      "names": [
+        "Altaria",
+        "Zangoose",
+        "Seviper",
+        "Lunatone",
+        "Solrock",
+        "Barboach",
+        "Whiscash",
+        "Corphish"
+      ],
+      "national_ids": [
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341
+      ],
+      "cases": [
+        {
+          "name": "altaria-zangoose",
+          "player": 359,
+          "enemy": 380
+        },
+        {
+          "name": "zangoose-altaria",
+          "player": 380,
+          "enemy": 359
+        },
+        {
+          "name": "seviper-lunatone",
+          "player": 379,
+          "enemy": 348
+        },
+        {
+          "name": "lunatone-seviper",
+          "player": 348,
+          "enemy": 379
+        },
+        {
+          "name": "solrock-barboach",
+          "player": 349,
+          "enemy": 323
+        },
+        {
+          "name": "barboach-solrock",
+          "player": 323,
+          "enemy": 349
+        },
+        {
+          "name": "whiscash-corphish",
+          "player": 324,
+          "enemy": 326
+        },
+        {
+          "name": "corphish-whiscash",
+          "player": 326,
+          "enemy": 324
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "ordinal": 3,
+      "status": "pending",
+      "names": [
+        "Crawdaunt",
+        "Baltoy",
+        "Claydol",
+        "Lileep",
+        "Cradily",
+        "Anorith",
+        "Armaldo",
+        "Igglybuff"
+      ],
+      "national_ids": [
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348,
+        174
+      ],
+      "cases": [
+        {
+          "name": "crawdaunt-baltoy",
+          "player": 327,
+          "enemy": 318
+        },
+        {
+          "name": "baltoy-crawdaunt",
+          "player": 318,
+          "enemy": 327
+        },
+        {
+          "name": "claydol-lileep",
+          "player": 319,
+          "enemy": 388
+        },
+        {
+          "name": "lileep-claydol",
+          "player": 388,
+          "enemy": 319
+        },
+        {
+          "name": "cradily-anorith",
+          "player": 389,
+          "enemy": 390
+        },
+        {
+          "name": "anorith-cradily",
+          "player": 390,
+          "enemy": 389
+        },
+        {
+          "name": "armaldo-igglybuff",
+          "player": 391,
+          "enemy": 174
+        },
+        {
+          "name": "igglybuff-armaldo",
+          "player": 174,
+          "enemy": 391
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "ordinal": 4,
+      "status": "pending",
+      "names": [
+        "Jigglypuff",
+        "Wigglytuff",
+        "Feebas",
+        "Milotic",
+        "Castform",
+        "Staryu",
+        "Starmie",
+        "Kecleon"
+      ],
+      "national_ids": [
+        39,
+        40,
+        349,
+        350,
+        351,
+        120,
+        121,
+        352
+      ],
+      "cases": [
+        {
+          "name": "jigglypuff-wigglytuff",
+          "player": 39,
+          "enemy": 40
+        },
+        {
+          "name": "wigglytuff-jigglypuff",
+          "player": 40,
+          "enemy": 39
+        },
+        {
+          "name": "feebas-milotic",
+          "player": 328,
+          "enemy": 329
+        },
+        {
+          "name": "milotic-feebas",
+          "player": 329,
+          "enemy": 328
+        },
+        {
+          "name": "castform-staryu",
+          "player": 385,
+          "enemy": 120
+        },
+        {
+          "name": "staryu-castform",
+          "player": 120,
+          "enemy": 385
+        },
+        {
+          "name": "starmie-kecleon",
+          "player": 121,
+          "enemy": 317
+        },
+        {
+          "name": "kecleon-starmie",
+          "player": 317,
+          "enemy": 121
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "ordinal": 5,
+      "status": "pending",
+      "names": [
+        "Shuppet",
+        "Banette",
+        "Duskull",
+        "Dusclops",
+        "Tropius",
+        "Chimecho",
+        "Absol",
+        "Vulpix"
+      ],
+      "national_ids": [
+        353,
+        354,
+        355,
+        356,
+        357,
+        358,
+        359,
+        37
+      ],
+      "cases": [
+        {
+          "name": "shuppet-banette",
+          "player": 377,
+          "enemy": 378
+        },
+        {
+          "name": "banette-shuppet",
+          "player": 378,
+          "enemy": 377
+        },
+        {
+          "name": "duskull-dusclops",
+          "player": 361,
+          "enemy": 362
+        },
+        {
+          "name": "dusclops-duskull",
+          "player": 362,
+          "enemy": 361
+        },
+        {
+          "name": "tropius-chimecho",
+          "player": 369,
+          "enemy": 411
+        },
+        {
+          "name": "chimecho-tropius",
+          "player": 411,
+          "enemy": 369
+        },
+        {
+          "name": "absol-vulpix",
+          "player": 376,
+          "enemy": 37
+        },
+        {
+          "name": "vulpix-absol",
+          "player": 37,
+          "enemy": 376
+        }
+      ]
+    }
+  ],
+  "builds": {
+    "test": {
+      "build_id": "4ec0e4edb35bd030",
+      "sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f",
+      "path": "artifacts/bw2-validation/builds/4ec0e4edb35bd030_6649af886e68/validation.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/4ec0e4edb35bd030_fee82b982633/validation.elf",
+      "elf_sha256": "fee82b9826338f9c641f9cae80d30fe39669349b8f9ebeec9b9526e3f2a1cd00"
+    },
+    "production": {
+      "build_id": "93d67843245e6074",
+      "sha256": "283a3e68cd54c250f7247800a6223f76dc622d05477ecb8fd29a84b1179a864c",
+      "path": "artifacts/bw2-validation/builds/93d67843245e6074_283a3e68cd54/Emerald3DS-BW2.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/93d67843245e6074_6fe3b8c2df42/production.elf",
+      "elf_sha256": "6fe3b8c2df420a81d7e339e199f14d9eb43ef6d4f9fea82cded9ef42c5c274fe"
+    }
+  },
+  "runtime": {
+    "capture_group": 15,
+    "exec_session_id": 17460,
+    "log": "build/bw2-spinda-variants-captures.log",
+    "next_capture": "build/bw2-spinda-capture.ps1",
+    "isolated_executable": "build/bw2-azahar/bw2-test.exe",
+    "phase": "Spinda personality variants after all cp15 base captures passed"
+  },
+  "checks": {
+    "exporter_tests": 18,
+    "evidence_tests": 7,
+    "bridge_synthetic": true,
+    "bridge_real_assets": true,
+    "spinda_texture_oracle_seeds": 8
+  }
+}

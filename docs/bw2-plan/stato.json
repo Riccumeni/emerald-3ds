@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-28T21:16:26",
+  "aggiornato_il": "2026-10-28T23:28:40",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 114,
+    "pokemon_fatti": 122,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,14 +19,14 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 327,
-    "nome": "Spinda",
+    "id": 334,
+    "nome": "Altaria",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
     "percorso": "build/bw2-validation/Emerald3DS-BW2.3dsx",
-    "build_id": "78ea4c127e93ed58",
-    "sha256": "5669769244cfb417882cf953021e219d0250969eff65733dab8e7566047e2eb5"
+    "build_id": "93d67843245e6074",
+    "sha256": "283a3e68cd54c250f7247800a6223f76dc622d05477ecb8fd29a84b1179a864c"
   },
   "pokemon": [
     {
@@ -4008,28 +4008,34 @@
       "costante": "SPECIES_SPINDA",
       "nome": "Spinda",
       "ordine": 114,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0327_spinda",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0327_spinda/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0327_spinda/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "a3733292a04ef0e1dbb2d425af76d918854406a381ccdaebb4a1f299c4dc1c29",
+          "video_sha256": "9207d269941f81ab6f69107aea1e28e88660654062ad7a0713af72314a44f82b"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0327_spinda/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0327_spinda/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "ddd58b48b720c892e020b64ad31a2a4df2a153a417fa4fd99848f6b7b1a5deca",
+          "video_sha256": "8fcbfbc92f1b36b3ee57cdb76e8655387e822e5a5122c8e8a3f7bbb6aa54f1af"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0327_spinda/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0327_spinda/verifica.md",
       "forme_da_verificare": true,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T23:28:27",
+      "build_verificata": "4ec0e4edb35bd030"
     },
     {
       "numero_nazionale": 227,
@@ -4037,28 +4043,34 @@
       "costante": "SPECIES_SKARMORY",
       "nome": "Skarmory",
       "ordine": 115,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0227_skarmory",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0227_skarmory/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0227_skarmory/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "ddd58b48b720c892e020b64ad31a2a4df2a153a417fa4fd99848f6b7b1a5deca",
+          "video_sha256": "8fcbfbc92f1b36b3ee57cdb76e8655387e822e5a5122c8e8a3f7bbb6aa54f1af"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0227_skarmory/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0227_skarmory/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "a3733292a04ef0e1dbb2d425af76d918854406a381ccdaebb4a1f299c4dc1c29",
+          "video_sha256": "9207d269941f81ab6f69107aea1e28e88660654062ad7a0713af72314a44f82b"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0227_skarmory/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0227_skarmory/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T23:28:28",
+      "build_verificata": "4ec0e4edb35bd030"
     },
     {
       "numero_nazionale": 328,
@@ -4066,28 +4078,34 @@
       "costante": "SPECIES_TRAPINCH",
       "nome": "Trapinch",
       "ordine": 116,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0328_trapinch",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0328_trapinch/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0328_trapinch/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "490b9f4ca478b91afb08bf7e36e852de9b7b47842a78665d3e9b16194fa89315",
+          "video_sha256": "beec5342ef801254ffebe99b197b8bbb4cf18b2b26baf251af40410f3358adfb"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0328_trapinch/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0328_trapinch/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "89438849c70b09e22c29d7c5ed3a129cb88b8087fc729d84d75febd9c87e4a62",
+          "video_sha256": "0929b54ee68f1e0191a27f6ef47d01bc5a75dd1641590067162381f08414220f"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0328_trapinch/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0328_trapinch/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T23:28:28",
+      "build_verificata": "4ec0e4edb35bd030"
     },
     {
       "numero_nazionale": 329,
@@ -4095,28 +4113,34 @@
       "costante": "SPECIES_VIBRAVA",
       "nome": "Vibrava",
       "ordine": 117,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0329_vibrava",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0329_vibrava/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0329_vibrava/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "89438849c70b09e22c29d7c5ed3a129cb88b8087fc729d84d75febd9c87e4a62",
+          "video_sha256": "0929b54ee68f1e0191a27f6ef47d01bc5a75dd1641590067162381f08414220f"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0329_vibrava/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0329_vibrava/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "490b9f4ca478b91afb08bf7e36e852de9b7b47842a78665d3e9b16194fa89315",
+          "video_sha256": "beec5342ef801254ffebe99b197b8bbb4cf18b2b26baf251af40410f3358adfb"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0329_vibrava/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0329_vibrava/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T23:28:29",
+      "build_verificata": "4ec0e4edb35bd030"
     },
     {
       "numero_nazionale": 330,
@@ -4124,28 +4148,34 @@
       "costante": "SPECIES_FLYGON",
       "nome": "Flygon",
       "ordine": 118,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0330_flygon",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0330_flygon/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0330_flygon/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "2ac0b7352235306da1503473ee2682d26b841c30fd362d334ed90e3ddda70f98",
+          "video_sha256": "212159df1b9868f0ee950fffdd5ca9bd11781659008d0f656341306707a868c5"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0330_flygon/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0330_flygon/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "3ab7752762f68be6f97d234108e50acd4d2edc66f5cc94387ee008724d389976",
+          "video_sha256": "54b3ccd7446b43f0bc168c647ed594866cce966cb3344554018ad87247a9120d"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0330_flygon/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0330_flygon/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T23:28:29",
+      "build_verificata": "4ec0e4edb35bd030"
     },
     {
       "numero_nazionale": 331,
@@ -4153,28 +4183,34 @@
       "costante": "SPECIES_CACNEA",
       "nome": "Cacnea",
       "ordine": 119,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0331_cacnea",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0331_cacnea/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0331_cacnea/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "3ab7752762f68be6f97d234108e50acd4d2edc66f5cc94387ee008724d389976",
+          "video_sha256": "54b3ccd7446b43f0bc168c647ed594866cce966cb3344554018ad87247a9120d"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0331_cacnea/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0331_cacnea/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "2ac0b7352235306da1503473ee2682d26b841c30fd362d334ed90e3ddda70f98",
+          "video_sha256": "212159df1b9868f0ee950fffdd5ca9bd11781659008d0f656341306707a868c5"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0331_cacnea/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0331_cacnea/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T23:28:30",
+      "build_verificata": "4ec0e4edb35bd030"
     },
     {
       "numero_nazionale": 332,
@@ -4182,28 +4218,34 @@
       "costante": "SPECIES_CACTURNE",
       "nome": "Cacturne",
       "ordine": 120,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0332_cacturne",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0332_cacturne/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0332_cacturne/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "d8287875e6d3807f769ff3700a28f7728b867df74e230b661c6b12b4a943514c",
+          "video_sha256": "f516ac22f2d398b97526a307e812e3fd6a9e48d135eaef0cfee509fe65bc4b44"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0332_cacturne/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0332_cacturne/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "087e93787ef6be591b0487927d4862f91d685fa4077112ccba62448ec79bd860",
+          "video_sha256": "d3a6791051974dfb7176231f9c58fe00450c302ad6b65b88d775acbbecf2f5b6"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0332_cacturne/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0332_cacturne/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T23:28:30",
+      "build_verificata": "4ec0e4edb35bd030"
     },
     {
       "numero_nazionale": 333,
@@ -4211,28 +4253,34 @@
       "costante": "SPECIES_SWABLU",
       "nome": "Swablu",
       "ordine": 121,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0333_swablu",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0333_swablu/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0333_swablu/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "087e93787ef6be591b0487927d4862f91d685fa4077112ccba62448ec79bd860",
+          "video_sha256": "d3a6791051974dfb7176231f9c58fe00450c302ad6b65b88d775acbbecf2f5b6"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0333_swablu/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0333_swablu/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "4ec0e4edb35bd030",
+          "screenshot_sha256": "d8287875e6d3807f769ff3700a28f7728b867df74e230b661c6b12b4a943514c",
+          "video_sha256": "f516ac22f2d398b97526a307e812e3fd6a9e48d135eaef0cfee509fe65bc4b44"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0333_swablu/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0333_swablu/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T23:28:31",
+      "build_verificata": "4ec0e4edb35bd030"
     },
     {
       "numero_nazionale": 334,
@@ -22257,15 +22305,16 @@
     {
       "id": "spinda",
       "numero_nazionale": 327,
-      "stato": "da_fare",
-      "fatto": false,
-      "obiettivo": "Macchie procedurali, seed rappresentativi documentati."
+      "stato": "fatto",
+      "fatto": true,
+      "obiettivo": "Macchie procedurali, seed rappresentativi documentati.",
+      "prove": "artifacts/bw2-validation/pokemon/0327_spinda/variants.json"
     }
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 28,
-    "nome": "Sandslash"
+    "id": 333,
+    "nome": "Swablu"
   },
-  "checkpoint_note": "Richiesta conclusa: 5/5 checkpoint (10–14), 40 nuovi Pokémon, da 74 a 114/386; mosse 6/354. Ogni specie chiusa singolarmente dopo prove native front/back, ingresso e due cicli, palette shiny e revisione visiva. Criterio v5.1 invariato. Audit finale: 120 dossier, 317 asset precedenti e 344 file locali estranei invariati; SHA-256 ROM sorgente verificato. Riepilogo: AUTONOMOUS10_14_REVIEW.md; audit: AUTONOMOUS10_14_AUDIT.json. Build prova 35c62b2e2f40bcd4 e normale 78ea4c127e93ed58 archiviate con ELF, ID e SHA-256; normale senza mailbox e con stub Frame/Input da 4 byte. Acquisizioni terminate; nessun processo isolato attivo, Azahar personale preservato. Prossima unità: Spinda (nazionale 327, ID Emerald 308), con macchie procedurali da verificare; prossimo gruppo 15. AUTONOMOUS5.json e AUTONOMOUS10_14.json sono registri conclusi: non riaprirli. Cinque commit dedicati, nessun push. Audio, console reale, stereo e doppi restano da verificare."
+  "checkpoint_note": "Richiesta: checkpoint 15–19, 1/5 conclusi; partenza 114 Pokémon, obiettivo 154; mosse 6/354. Registro AUTONOMOUS15_19.json; helper build/bw2-auto15.py, catture build/bw2-auto15-capture.ps1. Gruppo15 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 16. Build e processi in AUTONOMOUS15_19.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
 }

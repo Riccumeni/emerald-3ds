@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **114**.
+Totale: **386**. Fatti con dossier completo: **122**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -119,14 +119,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0326 **Grumpig** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0326_grumpig/).
 - [x] 0027 **Sandshrew** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0027_sandshrew/).
 - [x] 0028 **Sandslash** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0028_sandslash/).
-- [ ] 0327 **Spinda** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0327_spinda/).
-- [ ] 0227 **Skarmory** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0227_skarmory/).
-- [ ] 0328 **Trapinch** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0328_trapinch/).
-- [ ] 0329 **Vibrava** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0329_vibrava/).
-- [ ] 0330 **Flygon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0330_flygon/).
-- [ ] 0331 **Cacnea** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0331_cacnea/).
-- [ ] 0332 **Cacturne** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0332_cacturne/).
-- [ ] 0333 **Swablu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0333_swablu/).
+- [x] 0327 **Spinda** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0327_spinda/).
+- [x] 0227 **Skarmory** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0227_skarmory/).
+- [x] 0328 **Trapinch** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0328_trapinch/).
+- [x] 0329 **Vibrava** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0329_vibrava/).
+- [x] 0330 **Flygon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0330_flygon/).
+- [x] 0331 **Cacnea** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0331_cacnea/).
+- [x] 0332 **Cacturne** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0332_cacturne/).
+- [x] 0333 **Swablu** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0333_swablu/).
 - [ ] 0334 **Altaria** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0334_altaria/).
 - [ ] 0335 **Zangoose** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0335_zangoose/).
 - [ ] 0336 **Seviper** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0336_seviper/).

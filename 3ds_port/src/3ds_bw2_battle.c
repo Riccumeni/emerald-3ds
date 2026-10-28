@@ -51,6 +51,7 @@ typedef struct
     u8 left, top, right, bottom, floor;
     u16 centerY; // Q8, time-weighted center of opaque pixels in the idle cycle.
     u16 nativeWidth, nativeHeight, nativeFootprint; // Original bounds and shared front/back footprint, Q8.
+    u8 *spots; // Sparse animated texture coordinates for procedural Spinda spots.
 } BwClip;
 
 typedef struct
@@ -91,6 +92,9 @@ typedef struct
 static BwClip sClips[BW_CACHE_SIZE];
 static u16 sPokemonKeys[MAX_BATTLERS_COUNT];
 static BwActor sActors[MAX_BATTLERS_COUNT];
+/* Public diagnostic state; keep the established 16-byte actor/capture ABI. */
+u32 gCtrBW2ActorPersonality[MAX_BATTLERS_COUNT];
+static u8 sSpindaMask[MAX_BATTLERS_COUNT][4096];
 static BwPresentation sPresentation[MAX_BATTLERS_COUNT];
 static BwEffect sEffects[BW_EFFECTS];
 static BwMotion sMotion[MAX_BATTLERS_COUNT];
@@ -310,6 +314,59 @@ static void LoadNativeLayout(BwClip *clip, const char *path)
     free(data);
 }
 
+static bool8 LoadSpindaMap(BwClip *clip, const char *path)
+{
+    char name[80];
+    u32 size;
+    snprintf(name, sizeof(name), "%s.spots", path);
+    if (!CtrData_Size(name, &size)) return TRUE;
+    if (size < 156 || size > 4 * 1024 * 1024) return FALSE;
+    u8 *data = CtrData_Load(name, &size);
+    bool8 valid = data && !memcmp(data, "BWS1", 4) && Read32(data + 4) == clip->frames;
+    u32 start = 152 + 4 * (clip->frames + 1);
+    if (size < start) valid = FALSE;
+    for (unsigned i = 0; valid && i <= clip->frames; ++i)
+    {
+        u32 off = Read32(data + 152 + i * 4);
+        if (off < start || off > size || (off - start) % 4
+            || (!i && off != start) || (i && off < Read32(data + 148 + i * 4))) valid = FALSE;
+    }
+    if (valid && Read32(data + 152 + clip->frames * 4) != size) valid = FALSE;
+    for (unsigned i = start; valid && i < size; i += 4)
+        if (Read16(data + i) >= 4096 || Read16(data + i + 2) >= 32768) valid = FALSE;
+    for (unsigned i = 0; valid && i < 4; ++i)
+        if (data[8 + i * 36] < 8 || data[9 + i * 36] < 8 - (i == 0)
+            || data[8 + i * 36] > 224 || data[9 + i * 36] > 64) valid = FALSE;
+    if (!valid) { free(data); return FALSE; }
+    clip->spots = data;
+    return TRUE;
+}
+
+static void SpindaMask(unsigned battler, const BwClip *clip, u32 personality)
+{
+    u8 *mask = sSpindaMask[battler];
+    memset(mask, 0, 4096);
+    for (unsigned i = 0; i < 4; ++i, personality >>= 8)
+    {
+        const u8 *shape = clip->spots + 8 + i * 36;
+        int ox = shape[0] + (int)(personality & 15) - 8;
+        int oy = shape[1] + (int)(personality >> 4 & 15) - 8;
+        for (unsigned y = 0; y < 16; ++y)
+        {
+            unsigned row = Read16(shape + 4 + y * 2);
+            for (unsigned x = 0; x < 16; ++x)
+                if (row & (1u << x))
+                    for (unsigned pose = 0; pose < 2; ++pose)
+                    {
+                        int px = ox + (int)x, py = oy + (int)y;
+                        if (px < 0 || px >= 256 || py < 0 || py >= 88) continue;
+                        unsigned uv = (py + pose * 40) * 256 + px;
+                        mask[uv / 8] |= 1u << (uv % 8);
+                    }
+        }
+    }
+}
+
 static BwClip *LoadClip(unsigned slot, const char *path)
 {
     BwClip *clip = &sClips[slot];
@@ -340,7 +397,15 @@ static BwClip *LoadClip(unsigned slot, const char *path)
             clip->timeline = (const u16 *)(data + 92);
             clip->tiles = data + offset;
             MeasureClip(clip);
-            if (slot < MAX_BATTLERS_COUNT) LoadNativeLayout(clip, path);
+            if (slot < MAX_BATTLERS_COUNT)
+            {
+                LoadNativeLayout(clip, path);
+                if (!LoadSpindaMap(clip, path))
+                {
+                    free(clip->data); memset(clip, 0, sizeof(*clip)); clip->tried = TRUE;
+                    return NULL;
+                }
+            }
             return clip;
         }
         free(clip->data);
@@ -369,6 +434,7 @@ static BwClip *PokemonClip(u16 species, bool8 back)
         /* A switch can reuse the outgoing actor's slot. Never retain the
          * whole national dex, or evict a clip another battler still owns. */
         free(sClips[slot].data);
+        free(sClips[slot].spots);
         memset(&sClips[slot], 0, sizeof(sClips[slot]));
         sPokemonKeys[slot] = key;
         return LoadClip(slot, path);
@@ -418,6 +484,23 @@ static void ActorPixels(unsigned battler)
     BwActor *actor = &sActors[battler];
     unsigned position = GetBattlerPosition(battler);
     const u8 *frame = Frame(actor->clip, actor->tick, TRUE);
+    u8 patterned[BW_TILE_BYTES];
+    if (actor->clip->spots)
+    {
+        memcpy(patterned, frame, BW_TILE_BYTES);
+        unsigned index = (frame - actor->clip->tiles) / BW_TILE_BYTES;
+        const u8 *map = actor->clip->spots;
+        unsigned end = Read32(map + 156 + index * 4);
+        for (unsigned at = Read32(map + 152 + index * 4); at < end; at += 4)
+        {
+            unsigned pixel = Read16(map + at), uv = Read16(map + at + 2);
+            if (!(sSpindaMask[battler][uv / 8] & (1u << (uv % 8)))) continue;
+            unsigned shift = (pixel & 1) * 4;
+            unsigned color = patterned[pixel / 2] >> shift & 15;
+            if (color >= 1 && color <= 3) patterned[pixel / 2] += 5u << shift;
+        }
+        frame = patterned;
+    }
     for (unsigned i = 0; i < 4; ++i)
         memcpy(gMonSpritesGfxPtr->sprites.byte[position] + i * BW_TILE_BYTES, frame, BW_TILE_BYTES);
 }
@@ -437,11 +520,14 @@ static void RegisterPokemon(struct Pokemon *mon, u8 battler, bool8 back)
     if (transformed != SPECIES_NONE)
         species = transformed;
     clip = PokemonClip(species, back);
-    if (!clip || !gMonSpritesGfxPtr)
+    if (!clip || !gMonSpritesGfxPtr || (species == SPECIES_SPINDA && !back && !clip->spots))
         return;
     actor->species = species;
     actor->clip = clip;
     actor->shiny = IsMonShiny(mon);
+    gCtrBW2ActorPersonality[battler] = transformed != SPECIES_NONE ? gTransformedPersonalities[battler]
+        : GetMonData(mon, MON_DATA_PERSONALITY);
+    if (clip->spots) SpindaMask(battler, clip, gCtrBW2ActorPersonality[battler]);
     u16 height = GetPokedexHeightWeight(SpeciesToNationalPokedexNum(species), 0);
     /* The visible rear arena is centered eight pixels above its lower rim. */
     int ground = GetBattlerSpriteCoord(battler, BATTLER_COORD_Y) + (back ? 24 : 32)
@@ -858,7 +944,7 @@ void CtrBW2_BeforeSprites(void)
     {
         if (sHadBattle)
         {
-            for (unsigned i = 0; i < BW_CACHE_SIZE; ++i) free(sClips[i].data);
+            for (unsigned i = 0; i < BW_CACHE_SIZE; ++i) { free(sClips[i].data); free(sClips[i].spots); }
             free(sScript);
             sScript = NULL;
             memset(sClips, 0, sizeof(sClips));

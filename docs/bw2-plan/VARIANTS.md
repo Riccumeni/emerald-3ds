@@ -12,7 +12,7 @@ Lo stato di questo registro viene aggiornato insieme a `stato.json`.
   dall'albero Emerald e dai suoi percorsi speciali/link/trasformazione;
   censire corrispondenza con le risorse BW2 prima di scegliere il default.
   Documentare e provare front/back per ogni forma richiesta dal motore.
-- [ ] **Spinda (#327)**: preservare le macchie dipendenti dalla personality,
+- [x] **Spinda (#327)**: preservare le macchie dipendenti dalla personality,
   con seed riproducibili rappresentativi, estremi e sovrapposizioni. I seed
   sono casi di test, non una pretesa di registrare ogni personality possibile.
 - [ ] **Shiny**: per tutte le specie verificare palette e trasparenze;

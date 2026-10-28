@@ -244,20 +244,48 @@ def composite_parts(parts, size=(192, 192)):
     DS depth testing preserves the earlier quad over later opaque texels.
     A painter that simply traverses the nodes forward hides eyes and limbs.
     """
-    canvas = Image.new("P", size)
+    canvas = Image.new(parts[0][0].mode if parts else "P", size)
     for piece, matrix_ in reversed(parts):
         placed = transform(piece, matrix_, size)
-        canvas.paste(placed, (0, 0), placed.point(lambda p: 255 if p else 0, "L"))
+        canvas.paste(placed, (0, 0), (placed if placed.mode=="P" else placed.convert("L")).point(lambda p: 255 if p else 0, "L"))
     return canvas
 
 
-def pokemon_frames(members, number, side):
-    base = number * 20 + (0 if side == "front" else 9)
+# BW2 MCSS spot masks, expressed as rows relative to their texture origins.
+# Nibbles of Emerald personality retain the same -8..+7 displacement semantics.
+SPINDA_SPOTS = [(9, 7, [60, 126, 255, 255, 255, 255, 126, 60, 0, 0, 0, 0, 0, 0, 0, 0]), (33, 9, [60, 126, 255, 255, 255, 255, 126, 60, 0, 0, 0, 0, 0, 0, 0, 0]), (12, 25, [28, 62, 127, 127, 127, 127, 127, 62, 28, 0, 0, 0, 0, 0, 0, 0]), (24, 25, [56, 254, 511, 511, 511, 511, 511, 511, 254, 56, 0, 0, 0, 0, 0, 0])]
+
+
+def spinda_texture(atlas, personality):
+    result = atlas.copy()
+    for x0,y0,rows in SPINDA_SPOTS:
+        dx=(personality&15)-8;dy=((personality>>4)&15)-8
+        for y,row in enumerate(rows):
+            for x in range(16):
+                if not row & (1<<x):continue
+                px,py=x0+x+dx,y0+y+dy
+                # Off-texture texels are invisible; never emulate the DS callback's out-of-range writes.
+                if not (0<=px<256 and 0<=py<88):continue
+                for shift in (0,40):
+                    value=result.getpixel((px,py+shift))
+                    if 1<=value<=3:result.putpixel((px,py+shift),value+5)
+        personality >>= 8
+    return result
+
+
+def pokemon_frames(members, number, side, personality=None, labels=False, base_override=None):
+    base = (number * 20 if base_override is None else base_override) + (0 if side == "front" else 9)
     chars = block(members[base + 2], b"RAHC")
     pixels = chars[u32(chars, 20):u32(chars, 20) + u32(chars, 16)]
     if len(pixels) != 16384:
         raise ValueError("Unexpected Pokemon texture size")
     atlas = Image.frombytes("P", (256,128), bytes(v for p in pixels for v in (p&15,p>>4)))
+    if number==327 and side=='front' and personality is not None:
+        atlas=spinda_texture(atlas,personality)
+    label_atlas=None
+    if labels:
+        label_atlas=Image.new('I',atlas.size)
+        label_atlas.putdata([i+1 if 1<=v<=3 else 65535 if v else 0 for i,v in enumerate(atlas.tobytes())])
     cells = animations(members[base + 5])
     multi = animations(members[base + 7])[0]
     b = block(members[base + 6], b"KBCM")
@@ -268,13 +296,13 @@ def pokemon_frames(members, number, side):
         nodes.append([struct.unpack_from("<HhhH", b, hierarchy + off + j*8) for j in range(n)])
     info = members[base + 8]
     quads = [struct.unpack_from("<12i", info, 12 + i*48) for i in range(u32(info))]
-    raw_frames = []
+    raw_frames = []; raw_labels=[]
     for tick in range(multi.duration):
         msrt, age, start = multi.sample(tick)
         mc = compose((1,0,96,0,1,96), matrix(msrt))
         pose_nodes = nodes[msrt[0]]
         poses = cell_poses(pose_nodes, cells, tick, age)
-        parts = []
+        parts = []; label_parts=[]
         for (_, x, y, _), csrt in zip(pose_nodes, poses):
             cell = quads[csrt[0]]
             cm = compose(mc, matrix(csrt, (x,y)))
@@ -285,8 +313,11 @@ def pokemon_frames(members, number, side):
                     continue
                 sx,sy,width,height = (round(v/4096) for v in (s,t,w,h))
                 piece = atlas.crop((sx,sy,sx+width,sy+height))
-                parts.append((piece, compose(cm,(1,0,qx/256,0,1,-qy/256))))
+                matrix_=compose(cm,(1,0,qx/256,0,1,-qy/256))
+                parts.append((piece,matrix_))
+                if labels:label_parts.append((label_atlas.crop((sx,sy,sx+width,sy+height)),matrix_))
         raw_frames.append(composite_parts(parts))
+        if labels:raw_labels.append(composite_parts(label_parts))
     boxes = [im.getbbox() for im in raw_frames if im.getbbox()]
     if not boxes:
         raise ValueError("Pokemon rendered empty")
@@ -299,7 +330,14 @@ def pokemon_frames(members, number, side):
         im = im.crop(box).resize((max(1,round(w*scale)),max(1,round(h*scale))), Image.Resampling.NEAREST)
         out=Image.new("P",(64,64)); out.paste(im,((64-im.width)//2,62-im.height))
         result.append(out)
-    return result, sum(d for d,_ in multi.frames[:multi.loop_start]), box
+    loop=sum(d for d,_ in multi.frames[:multi.loop_start])
+    if labels:
+        mapped=[]
+        for im in raw_labels:
+            im=im.crop(box).resize((max(1,round(w*scale)),max(1,round(h*scale))),Image.Resampling.NEAREST)
+            out=Image.new('I',(64,64));out.paste(im,((64-im.width)//2,62-im.height));mapped.append(out)
+        return result,loop,box,mapped
+    return result,loop,box
 
 
 def tiles(image):
@@ -318,19 +356,35 @@ def write_layout(path, bounds, paired_bounds=None):
     path.write_bytes(struct.pack('<4s4H', b'BWL2', w, h, ow, oh))
 
 
-def write_clip(path, images, normal, shiny=None, loop=0):
+def write_clip(path, images, normal, shiny=None, loop=0, uv_frames=None):
     unique=[]; lookup={}; timeline=[]
-    for im in images:
+    unique_uv=[]
+    for index,im in enumerate(images):
         tile = tiles(im)
-        if tile not in lookup:
-            lookup[tile] = len(unique); unique.append(tile)
-        timeline.append(lookup[tile])
+        key=(tile,uv_frames[index].tobytes()) if uv_frames is not None else tile
+        if key not in lookup:
+            lookup[key]=len(unique);unique.append(tile)
+            if uv_frames is not None:unique_uv.append(uv_frames[index])
+        timeline.append(lookup[key])
     if len(unique)>512 or not 0<=loop<len(timeline) or len(timeline)>1024:
         raise ValueError("Clip exceeds prototype limits")
     header = struct.pack("<4s6I",b"BWA1",len(unique),len(timeline),loop,64,64,60)
     raw_timeline=struct.pack("<"+"H"*len(timeline),*timeline)
     path.write_bytes(header + normal + (shiny or normal) + raw_timeline +
                      b"\0"*(-len(raw_timeline)%4) + b"".join(unique))
+    if uv_frames is not None:
+        shapes=b''.join(struct.pack('<BBH16H',x,y,0,*rows) for x,y,rows in SPINDA_SPOTS)
+        payload=bytearray();offsets=[]
+        start=152+4*(len(unique)+1)
+        for uv in unique_uv:
+            offsets.append(start+len(payload))
+            for pos,value in enumerate(uv.get_flattened_data()):
+                if not 0<value<65535:continue
+                # Destination in tile order, one nibble per output pixel.
+                x,y=pos%64,pos//64;destination=(y//8*8+x//8)*64+(y%8)*8+x%8
+                payload+=struct.pack('<HH',destination,value-1)
+        offsets.append(start+len(payload))
+        path.with_suffix(path.suffix+'.spots').write_bytes(b'BWS1'+struct.pack('<I',len(unique))+shapes+struct.pack('<'+'I'*len(offsets),*offsets)+payload)
     return {"frames":len(images),"unique":len(unique),"bytes":path.stat().st_size,"loop":loop}
 
 
@@ -502,9 +556,12 @@ def generate(rom_path, output, previews=None, species=None, moves=None):
     for number,(emerald,name) in (SPECIES if species is None else species).items():
         normal,shiny=palette(mons[number*20+18]),palette(mons[number*20+19])
         for side in ('front','back'):
-            images,loop,bounds=pokemon_frames(mons,number,side)
+            uv=None
+            if number==327 and side=='front':
+                images,loop,bounds,uv=pokemon_frames(mons,number,side,labels=True)
+            else:images,loop,bounds=pokemon_frames(mons,number,side)
             key=f'{emerald}_{side}'
-            report['pokemon'][key]=write_clip(output/(key+'.bin'),images,normal,shiny,loop)
+            report['pokemon'][key]=write_clip(output/(key+'.bin'),images,normal,shiny,loop,uv)
             report['pokemon'][key]['source_bounds']=bounds
             if previews:preview(previews/(name+'_'+side+'.gif'),images,normal)
     scripts=nds.archive('a/0/6/5'); particles=nds.archive('a/0/0/6'); exported=set()

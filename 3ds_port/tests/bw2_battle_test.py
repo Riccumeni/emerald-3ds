@@ -33,6 +33,8 @@ typedef int8_t s8; typedef int16_t s16; typedef int32_t s32; typedef u8 bool8;
 #define MAX_SPRITES 64
 #define PLTT_SIZE 1024
 #define SPECIES_NONE 0
+#define SPECIES_SPINDA 308
+#define MON_DATA_PERSONALITY 1
 #define SPECIES_TREECKO 277
 #define SPECIES_POOCHYENA 286
 #define NUM_SPECIES 412
@@ -85,7 +87,7 @@ struct Sprite {
     s16 x,y,x2,y2; struct OamData oam; const union AnimCmd *const *anims;
 };
 struct SpritePalette { const u16 *data; u16 tag; };
-struct Pokemon { u16 species; bool8 shiny; };
+struct Pokemon { u16 species; bool8 shiny; u32 personality; };
 struct BattleMon { u16 species; };
 struct BattleSpriteInfo { bool8 behindSubstitute; u16 transformSpecies; };
 struct BattleSpriteData { struct BattleSpriteInfo *battlerData; };
@@ -97,7 +99,7 @@ extern struct BattleSpriteData *gBattleSpritesDataPtr;
 extern struct MonSpritesGfx *gMonSpritesGfxPtr;
 extern u8 gBattlersCount,gBattlerSpriteIds[4],gBattlerPartyIndexes[4],gBattlerAttacker,gBattlerTarget;
 extern u8 gBattleAnimAttacker,gBattleAnimTarget,gAnimScriptActive;
-extern u32 gBattleTypeFlags;
+extern u32 gBattleTypeFlags, gTransformedPersonalities[4];
 extern u16 gPlttBufferFaded[512];
 extern struct Main { bool8 inBattle; struct OamData oamBuffer[128]; } gMain;
 extern s16 gSpriteCoordOffsetY;
@@ -150,7 +152,7 @@ struct BattleSpriteData battleData={info},*gBattleSpritesDataPtr=&battleData;
 struct MonSpritesGfx gfx,*gMonSpritesGfxPtr=&gfx;
 u8 gBattlersCount=2,gBattlerSpriteIds[4]={0,1,2,3},gBattlerPartyIndexes[4];
 u8 gBattlerAttacker,gBattlerTarget,gBattleAnimAttacker,gBattleAnimTarget,gAnimScriptActive;
-u32 gBattleTypeFlags;
+u32 gBattleTypeFlags, gTransformedPersonalities[4];
 u16 gPlttBufferFaded[512];
 u8 testVram[65536],pixels[4][8192];
 void (*gAnimScriptCallback)(void);
@@ -166,7 +168,7 @@ static u32 identities[64],serial;
 static unsigned fallbacks,watchdogs,emitted,copies,matrixCount;
 static bool8 denyTestClip;
 static u32 matrixBitmap;
-u32 GetMonData(struct Pokemon *m,unsigned unused) { (void)unused; return m->species; }
+u32 GetMonData(struct Pokemon *m,unsigned field) { return field==MON_DATA_PERSONALITY ? m->personality : m->species; }
 bool8 IsMonShiny(struct Pokemon *m) { return m->shiny; }
 u16 SpeciesToNationalPokedexNum(u16 s) { return s; }
 u16 GetPokedexHeightWeight(u16 s,u8 d) { (void)d;return s==278?9:s==279?17:5; }

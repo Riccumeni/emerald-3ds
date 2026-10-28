@@ -115,6 +115,31 @@ class ExportTest(unittest.TestCase):
             self.assertEqual(struct.unpack_from('<3H',data,92),(0,1,0))
             self.assertEqual(len(data),100+4096)
 
+    def test_procedural_uv_frames_are_not_deduplicated_by_base_pixels(self):
+        a=Image.new('P',(64,64),1);uv=Image.new('I',(64,64));uv.putpixel((2,3),1)
+        other=uv.copy();other.putpixel((2,3),2)
+        with tempfile.TemporaryDirectory() as directory:
+            p=Path(directory)/'clip.bin'
+            bw.write_clip(p,[a,a,a],bytes(32),uv_frames=[uv,other,uv])
+            self.assertEqual(struct.unpack_from('<3H',p.read_bytes(),92),(0,1,0))
+            sidecar=p.with_suffix('.bin.spots').read_bytes()
+            self.assertEqual(struct.unpack_from('<4sI',sidecar),(b'BWS1',2))
+            offsets=struct.unpack_from('<3I',sidecar,152)
+            self.assertEqual(offsets[-1],len(sidecar))
+            self.assertEqual(struct.unpack_from('<HH',sidecar,offsets[0]),(26,0))
+            self.assertEqual(struct.unpack_from('<HH',sidecar,offsets[1]),(26,1))
+
+    def test_spinda_overlap_is_a_union_and_extreme_y_is_clipped(self):
+        atlas=Image.new('P',(256,128),1)
+        marked=bw.spinda_texture(atlas,0x808f8888)
+        self.assertEqual(set(marked.tobytes()),{1,6})
+        extreme=bw.spinda_texture(atlas,0)
+        self.assertEqual(list(extreme.crop((0,120,256,128)).tobytes()),[1]*(256*8))
+        # An opaque foreground quad must cover the UV labels of parts behind it.
+        body=Image.new('I',(2,2),13);cover=Image.new('I',(2,2));cover.putpixel((0,0),65535)
+        out=bw.composite_parts([(cover,(1,0,0,0,1,0)),(body,(1,0,0,0,1,0))],(2,2))
+        self.assertEqual(list(out.get_flattened_data()),[65535,13,13,13])
+
     def test_source_footprint_preserves_native_dimensions(self):
         with tempfile.TemporaryDirectory() as directory:
             p=Path(directory)/'clip.bin.layout'

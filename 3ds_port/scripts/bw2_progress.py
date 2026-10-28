@@ -5,6 +5,8 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parent))
 
 ROOT = Path(__file__).resolve().parents[2]
 PLAN = ROOT / "docs/bw2-plan"
@@ -59,6 +61,9 @@ def check_dossier(item, kind):
                 raise ValueError("Requested move not demonstrated")
         item["prove"][direction].update(stato="verificato", build_verificata=report["build_id"],
                                          screenshot_sha256=proof["screenshot_sha256"], video_sha256=proof["video_sha256"])
+    if kind=='pokemon' and item['forme_da_verificare']:
+        from bw2_variants import check_variants
+        check_variants(ROOT,item,metadata['test_build'])
     return metadata
 
 
@@ -167,6 +172,11 @@ def main():
                         build_verificata=metadata["test_build"]["build_id"])
             state["ultimo_completato"] = {"tipo": args.kind, "id": args.id, "nome": item["nome"]}
             state["unita_in_corso"] = None
+            if args.kind=='pokemon' and item.get('forme_da_verificare'):
+                special=next(case for case in state['casi_speciali'] if case['numero_nazionale']==args.id)
+                special.update(stato='fatto',fatto=True,prove=item['cartella']+'/variants.json')
+                variants=PLAN/'VARIANTS.md'
+                variants.write_text(variants.read_text(encoding='utf-8').replace('- [ ] **'+item['nome'],'- [x] **'+item['nome']),encoding='utf-8')
     refresh(state)
     print(json.dumps(state["contatori"]))
 
