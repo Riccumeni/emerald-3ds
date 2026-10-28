@@ -1,7 +1,7 @@
 {
   "version": 1,
   "requested_checkpoints": 5,
-  "completed_checkpoints": 1,
+  "completed_checkpoints": 2,
   "starting_pokemon_done": 34,
   "target_pokemon_done": 74,
   "algorithm": "height-source-footprint-v5",
@@ -149,7 +149,7 @@
     {
       "number": 6,
       "ordinal": 2,
-      "status": "pending",
+      "status": "complete",
       "national_ids": [
         65,
         290,
@@ -211,7 +211,80 @@
           "player": 335,
           "enemy": 372
         }
-      ]
+      ],
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_shiny": true,
+      "audit_dossiers": 56,
+      "movie": {
+        "duration": 233.96966666666665,
+        "decoded_frames": 7017,
+        "sha256": "2562934a2fe4296d060ec044fb85a78c82810176d593111b302df0e42ba9a909",
+        "segments": [
+          {
+            "name": "alakazam-nincada",
+            "start": 0.0,
+            "end": 33.43933333333333,
+            "frames": 1003,
+            "sha256": "644a1289e82d70592d33bedfbf4d97e0eaed6f68c503823c668671f71bcb24bc"
+          },
+          {
+            "name": "nincada-alakazam",
+            "start": 33.43933333333333,
+            "end": 65.91066666666667,
+            "frames": 974,
+            "sha256": "df1d323604481cb72cf0cb755db364df01c42ea0de68cf2e50770b31dba05173"
+          },
+          {
+            "name": "ninjask-shedinja",
+            "start": 65.91066666666667,
+            "end": 88.99,
+            "frames": 692,
+            "sha256": "f60a5521fdbeafd4674c210dfeadbdfef9b6d025139e11d65d6e32790b102683"
+          },
+          {
+            "name": "shedinja-ninjask",
+            "start": 88.99,
+            "end": 111.80533333333334,
+            "frames": 684,
+            "sha256": "48df429ecd16534c6af7639b17cb14a321458662ea658aed572f96fa19d38156"
+          },
+          {
+            "name": "whismur-loudred",
+            "start": 111.80533333333334,
+            "end": 143.65166666666667,
+            "frames": 955,
+            "sha256": "e83dd90d33854c1197ebec7f9c1f8f06223e6755da14e7976f0aac113f8f22a5"
+          },
+          {
+            "name": "loudred-whismur",
+            "start": 143.65166666666667,
+            "end": 174.091,
+            "frames": 913,
+            "sha256": "1df59402864c916c8c55adbd7f0ea77b7bd3eac0b6f423f1c3d99af4c71bdd87"
+          },
+          {
+            "name": "exploud-makuhita",
+            "start": 174.091,
+            "end": 204.26433333333333,
+            "frames": 905,
+            "sha256": "92f01e2fa84a625a02c5189348d80240de0a9cdf01fa65931f1542372380b17c"
+          },
+          {
+            "name": "makuhita-exploud",
+            "start": 204.26433333333333,
+            "end": 233.96966666666665,
+            "frames": 891,
+            "sha256": "e56710ffba0f4fdb687a0608ea9d5fc851b970a3b42b1c7576e06267af0956d2"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 6: eight Pokemon"
     },
     {
       "number": 7,

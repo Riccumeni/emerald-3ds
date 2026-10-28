@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **42**.
+Totale: **386**. Fatti con dossier completo: **50**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -46,14 +46,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0289 **Slaking** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0289_slaking/).
 - [x] 0063 **Abra** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0063_abra/).
 - [x] 0064 **Kadabra** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0064_kadabra/).
-- [ ] 0065 **Alakazam** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0065_alakazam/).
-- [ ] 0290 **Nincada** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0290_nincada/).
-- [ ] 0291 **Ninjask** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0291_ninjask/).
-- [ ] 0292 **Shedinja** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0292_shedinja/).
-- [ ] 0293 **Whismur** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0293_whismur/).
-- [ ] 0294 **Loudred** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0294_loudred/).
-- [ ] 0295 **Exploud** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0295_exploud/).
-- [ ] 0296 **Makuhita** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0296_makuhita/).
+- [x] 0065 **Alakazam** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0065_alakazam/).
+- [x] 0290 **Nincada** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0290_nincada/).
+- [x] 0291 **Ninjask** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0291_ninjask/).
+- [x] 0292 **Shedinja** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0292_shedinja/).
+- [x] 0293 **Whismur** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0293_whismur/).
+- [x] 0294 **Loudred** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0294_loudred/).
+- [x] 0295 **Exploud** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0295_exploud/).
+- [x] 0296 **Makuhita** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0296_makuhita/).
 - [ ] 0297 **Hariyama** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0297_hariyama/).
 - [ ] 0118 **Goldeen** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0118_goldeen/).
 - [ ] 0119 **Seaking** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0119_seaking/).
