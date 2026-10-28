@@ -1,0 +1,394 @@
+# Checklist Pokémon
+
+Totale: **386**. Fatti con dossier completo: **26**.
+
+Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
+
+[Piano](../BW2_ANIMATION_PLAN.md) · [Registro](stato.json)
+
+- [x] 0252 **Treecko** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0252_treecko/).
+- [x] 0261 **Poochyena** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0261_poochyena/).
+- [x] 0253 **Grovyle** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0253_grovyle/).
+- [x] 0254 **Sceptile** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0254_sceptile/).
+- [x] 0255 **Torchic** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0255_torchic/).
+- [x] 0256 **Combusken** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0256_combusken/).
+- [x] 0257 **Blaziken** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0257_blaziken/).
+- [x] 0258 **Mudkip** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0258_mudkip/).
+- [x] 0259 **Marshtomp** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0259_marshtomp/).
+- [x] 0260 **Swampert** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0260_swampert/).
+- [x] 0262 **Mightyena** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0262_mightyena/).
+- [x] 0263 **Zigzagoon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0263_zigzagoon/).
+- [x] 0264 **Linoone** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0264_linoone/).
+- [x] 0265 **Wurmple** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0265_wurmple/).
+- [x] 0266 **Silcoon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0266_silcoon/).
+- [x] 0267 **Beautifly** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0267_beautifly/).
+- [x] 0268 **Cascoon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0268_cascoon/).
+- [x] 0269 **Dustox** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0269_dustox/).
+- [x] 0270 **Lotad** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0270_lotad/).
+- [x] 0271 **Lombre** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0271_lombre/).
+- [x] 0272 **Ludicolo** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0272_ludicolo/).
+- [x] 0273 **Seedot** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0273_seedot/).
+- [x] 0274 **Nuzleaf** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0274_nuzleaf/).
+- [x] 0275 **Shiftry** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0275_shiftry/).
+- [ ] 0276 **Taillow** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0276_taillow/).
+- [ ] 0277 **Swellow** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0277_swellow/).
+- [ ] 0278 **Wingull** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0278_wingull/).
+- [ ] 0279 **Pelipper** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0279_pelipper/).
+- [ ] 0280 **Ralts** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0280_ralts/).
+- [ ] 0281 **Kirlia** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0281_kirlia/).
+- [ ] 0282 **Gardevoir** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0282_gardevoir/).
+- [ ] 0283 **Surskit** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0283_surskit/).
+- [ ] 0284 **Masquerain** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0284_masquerain/).
+- [ ] 0285 **Shroomish** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0285_shroomish/).
+- [ ] 0286 **Breloom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0286_breloom/).
+- [ ] 0287 **Slakoth** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0287_slakoth/).
+- [ ] 0288 **Vigoroth** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0288_vigoroth/).
+- [ ] 0289 **Slaking** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0289_slaking/).
+- [ ] 0063 **Abra** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0063_abra/).
+- [ ] 0064 **Kadabra** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0064_kadabra/).
+- [ ] 0065 **Alakazam** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0065_alakazam/).
+- [ ] 0290 **Nincada** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0290_nincada/).
+- [ ] 0291 **Ninjask** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0291_ninjask/).
+- [ ] 0292 **Shedinja** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0292_shedinja/).
+- [ ] 0293 **Whismur** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0293_whismur/).
+- [ ] 0294 **Loudred** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0294_loudred/).
+- [ ] 0295 **Exploud** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0295_exploud/).
+- [ ] 0296 **Makuhita** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0296_makuhita/).
+- [ ] 0297 **Hariyama** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0297_hariyama/).
+- [ ] 0118 **Goldeen** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0118_goldeen/).
+- [ ] 0119 **Seaking** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0119_seaking/).
+- [ ] 0129 **Magikarp** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0129_magikarp/).
+- [ ] 0130 **Gyarados** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0130_gyarados/).
+- [ ] 0298 **Azurill** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0298_azurill/).
+- [ ] 0183 **Marill** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0183_marill/).
+- [ ] 0184 **Azumarill** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0184_azumarill/).
+- [ ] 0074 **Geodude** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0074_geodude/).
+- [ ] 0075 **Graveler** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0075_graveler/).
+- [ ] 0076 **Golem** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0076_golem/).
+- [ ] 0299 **Nosepass** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0299_nosepass/).
+- [ ] 0300 **Skitty** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0300_skitty/).
+- [ ] 0301 **Delcatty** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0301_delcatty/).
+- [ ] 0041 **Zubat** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0041_zubat/).
+- [ ] 0042 **Golbat** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0042_golbat/).
+- [ ] 0169 **Crobat** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0169_crobat/).
+- [ ] 0072 **Tentacool** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0072_tentacool/).
+- [ ] 0073 **Tentacruel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0073_tentacruel/).
+- [ ] 0302 **Sableye** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0302_sableye/).
+- [ ] 0303 **Mawile** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0303_mawile/).
+- [ ] 0304 **Aron** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0304_aron/).
+- [ ] 0305 **Lairon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0305_lairon/).
+- [ ] 0306 **Aggron** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0306_aggron/).
+- [ ] 0066 **Machop** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0066_machop/).
+- [ ] 0067 **Machoke** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0067_machoke/).
+- [ ] 0068 **Machamp** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0068_machamp/).
+- [ ] 0307 **Meditite** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0307_meditite/).
+- [ ] 0308 **Medicham** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0308_medicham/).
+- [ ] 0309 **Electrike** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0309_electrike/).
+- [ ] 0310 **Manectric** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0310_manectric/).
+- [ ] 0311 **Plusle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0311_plusle/).
+- [ ] 0312 **Minun** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0312_minun/).
+- [ ] 0081 **Magnemite** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0081_magnemite/).
+- [ ] 0082 **Magneton** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0082_magneton/).
+- [ ] 0100 **Voltorb** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0100_voltorb/).
+- [ ] 0101 **Electrode** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0101_electrode/).
+- [ ] 0313 **Volbeat** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0313_volbeat/).
+- [ ] 0314 **Illumise** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0314_illumise/).
+- [ ] 0043 **Oddish** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0043_oddish/).
+- [ ] 0044 **Gloom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0044_gloom/).
+- [ ] 0045 **Vileplume** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0045_vileplume/).
+- [ ] 0182 **Bellossom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0182_bellossom/).
+- [ ] 0084 **Doduo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0084_doduo/).
+- [ ] 0085 **Dodrio** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0085_dodrio/).
+- [ ] 0315 **Roselia** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0315_roselia/).
+- [ ] 0316 **Gulpin** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0316_gulpin/).
+- [ ] 0317 **Swalot** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0317_swalot/).
+- [ ] 0318 **Carvanha** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0318_carvanha/).
+- [ ] 0319 **Sharpedo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0319_sharpedo/).
+- [ ] 0320 **Wailmer** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0320_wailmer/).
+- [x] 0321 **Wailord** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0321_wailord/).
+- [ ] 0322 **Numel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0322_numel/).
+- [ ] 0323 **Camerupt** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0323_camerupt/).
+- [ ] 0218 **Slugma** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0218_slugma/).
+- [ ] 0219 **Magcargo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0219_magcargo/).
+- [ ] 0324 **Torkoal** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0324_torkoal/).
+- [ ] 0088 **Grimer** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0088_grimer/).
+- [ ] 0089 **Muk** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0089_muk/).
+- [ ] 0109 **Koffing** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0109_koffing/).
+- [ ] 0110 **Weezing** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0110_weezing/).
+- [ ] 0325 **Spoink** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0325_spoink/).
+- [ ] 0326 **Grumpig** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0326_grumpig/).
+- [ ] 0027 **Sandshrew** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0027_sandshrew/).
+- [ ] 0028 **Sandslash** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0028_sandslash/).
+- [ ] 0327 **Spinda** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0327_spinda/).
+- [ ] 0227 **Skarmory** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0227_skarmory/).
+- [ ] 0328 **Trapinch** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0328_trapinch/).
+- [ ] 0329 **Vibrava** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0329_vibrava/).
+- [ ] 0330 **Flygon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0330_flygon/).
+- [ ] 0331 **Cacnea** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0331_cacnea/).
+- [ ] 0332 **Cacturne** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0332_cacturne/).
+- [ ] 0333 **Swablu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0333_swablu/).
+- [ ] 0334 **Altaria** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0334_altaria/).
+- [ ] 0335 **Zangoose** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0335_zangoose/).
+- [ ] 0336 **Seviper** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0336_seviper/).
+- [ ] 0337 **Lunatone** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0337_lunatone/).
+- [ ] 0338 **Solrock** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0338_solrock/).
+- [ ] 0339 **Barboach** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0339_barboach/).
+- [ ] 0340 **Whiscash** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0340_whiscash/).
+- [ ] 0341 **Corphish** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0341_corphish/).
+- [ ] 0342 **Crawdaunt** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0342_crawdaunt/).
+- [ ] 0343 **Baltoy** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0343_baltoy/).
+- [ ] 0344 **Claydol** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0344_claydol/).
+- [ ] 0345 **Lileep** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0345_lileep/).
+- [ ] 0346 **Cradily** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0346_cradily/).
+- [ ] 0347 **Anorith** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0347_anorith/).
+- [ ] 0348 **Armaldo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0348_armaldo/).
+- [ ] 0174 **Igglybuff** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0174_igglybuff/).
+- [ ] 0039 **Jigglypuff** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0039_jigglypuff/).
+- [ ] 0040 **Wigglytuff** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0040_wigglytuff/).
+- [ ] 0349 **Feebas** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0349_feebas/).
+- [ ] 0350 **Milotic** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0350_milotic/).
+- [ ] 0351 **Castform** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0351_castform/).
+- [ ] 0120 **Staryu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0120_staryu/).
+- [ ] 0121 **Starmie** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0121_starmie/).
+- [ ] 0352 **Kecleon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0352_kecleon/).
+- [ ] 0353 **Shuppet** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0353_shuppet/).
+- [ ] 0354 **Banette** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0354_banette/).
+- [ ] 0355 **Duskull** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0355_duskull/).
+- [ ] 0356 **Dusclops** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0356_dusclops/).
+- [ ] 0357 **Tropius** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0357_tropius/).
+- [ ] 0358 **Chimecho** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0358_chimecho/).
+- [ ] 0359 **Absol** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0359_absol/).
+- [ ] 0037 **Vulpix** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0037_vulpix/).
+- [ ] 0038 **Ninetales** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0038_ninetales/).
+- [ ] 0172 **Pichu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0172_pichu/).
+- [ ] 0025 **Pikachu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0025_pikachu/).
+- [ ] 0026 **Raichu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0026_raichu/).
+- [ ] 0054 **Psyduck** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0054_psyduck/).
+- [ ] 0055 **Golduck** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0055_golduck/).
+- [ ] 0360 **Wynaut** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0360_wynaut/).
+- [ ] 0202 **Wobbuffet** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0202_wobbuffet/).
+- [x] 0177 **Natu** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0177_natu/).
+- [ ] 0178 **Xatu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0178_xatu/).
+- [ ] 0203 **Girafarig** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0203_girafarig/).
+- [ ] 0231 **Phanpy** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0231_phanpy/).
+- [ ] 0232 **Donphan** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0232_donphan/).
+- [ ] 0127 **Pinsir** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0127_pinsir/).
+- [ ] 0214 **Heracross** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0214_heracross/).
+- [ ] 0111 **Rhyhorn** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0111_rhyhorn/).
+- [ ] 0112 **Rhydon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0112_rhydon/).
+- [ ] 0361 **Snorunt** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0361_snorunt/).
+- [ ] 0362 **Glalie** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0362_glalie/).
+- [ ] 0363 **Spheal** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0363_spheal/).
+- [ ] 0364 **Sealeo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0364_sealeo/).
+- [ ] 0365 **Walrein** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0365_walrein/).
+- [ ] 0366 **Clamperl** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0366_clamperl/).
+- [ ] 0367 **Huntail** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0367_huntail/).
+- [ ] 0368 **Gorebyss** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0368_gorebyss/).
+- [ ] 0369 **Relicanth** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0369_relicanth/).
+- [ ] 0222 **Corsola** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0222_corsola/).
+- [ ] 0170 **Chinchou** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0170_chinchou/).
+- [ ] 0171 **Lanturn** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0171_lanturn/).
+- [ ] 0370 **Luvdisc** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0370_luvdisc/).
+- [ ] 0116 **Horsea** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0116_horsea/).
+- [ ] 0117 **Seadra** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0117_seadra/).
+- [ ] 0230 **Kingdra** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0230_kingdra/).
+- [ ] 0371 **Bagon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0371_bagon/).
+- [ ] 0372 **Shelgon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0372_shelgon/).
+- [ ] 0373 **Salamence** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0373_salamence/).
+- [ ] 0374 **Beldum** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0374_beldum/).
+- [ ] 0375 **Metang** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0375_metang/).
+- [ ] 0376 **Metagross** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0376_metagross/).
+- [ ] 0377 **Regirock** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0377_regirock/).
+- [ ] 0378 **Regice** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0378_regice/).
+- [ ] 0379 **Registeel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0379_registeel/).
+- [ ] 0380 **Latias** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0380_latias/).
+- [ ] 0381 **Latios** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0381_latios/).
+- [ ] 0382 **Kyogre** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0382_kyogre/).
+- [ ] 0383 **Groudon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0383_groudon/).
+- [ ] 0384 **Rayquaza** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0384_rayquaza/).
+- [ ] 0385 **Jirachi** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0385_jirachi/).
+- [ ] 0386 **Deoxys** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0386_deoxys/).
+- [ ] 0001 **Bulbasaur** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0001_bulbasaur/).
+- [ ] 0002 **Ivysaur** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0002_ivysaur/).
+- [ ] 0003 **Venusaur** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0003_venusaur/).
+- [ ] 0004 **Charmander** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0004_charmander/).
+- [ ] 0005 **Charmeleon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0005_charmeleon/).
+- [ ] 0006 **Charizard** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0006_charizard/).
+- [ ] 0007 **Squirtle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0007_squirtle/).
+- [ ] 0008 **Wartortle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0008_wartortle/).
+- [ ] 0009 **Blastoise** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0009_blastoise/).
+- [ ] 0010 **Caterpie** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0010_caterpie/).
+- [ ] 0011 **Metapod** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0011_metapod/).
+- [ ] 0012 **Butterfree** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0012_butterfree/).
+- [ ] 0013 **Weedle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0013_weedle/).
+- [ ] 0014 **Kakuna** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0014_kakuna/).
+- [ ] 0015 **Beedrill** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0015_beedrill/).
+- [ ] 0016 **Pidgey** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0016_pidgey/).
+- [ ] 0017 **Pidgeotto** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0017_pidgeotto/).
+- [ ] 0018 **Pidgeot** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0018_pidgeot/).
+- [ ] 0019 **Rattata** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0019_rattata/).
+- [ ] 0020 **Raticate** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0020_raticate/).
+- [ ] 0021 **Spearow** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0021_spearow/).
+- [ ] 0022 **Fearow** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0022_fearow/).
+- [ ] 0023 **Ekans** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0023_ekans/).
+- [ ] 0024 **Arbok** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0024_arbok/).
+- [ ] 0029 **Nidoran F** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0029_nidoran_f/).
+- [ ] 0030 **Nidorina** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0030_nidorina/).
+- [ ] 0031 **Nidoqueen** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0031_nidoqueen/).
+- [ ] 0032 **Nidoran M** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0032_nidoran_m/).
+- [ ] 0033 **Nidorino** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0033_nidorino/).
+- [ ] 0034 **Nidoking** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0034_nidoking/).
+- [ ] 0035 **Clefairy** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0035_clefairy/).
+- [ ] 0036 **Clefable** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0036_clefable/).
+- [ ] 0046 **Paras** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0046_paras/).
+- [ ] 0047 **Parasect** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0047_parasect/).
+- [ ] 0048 **Venonat** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0048_venonat/).
+- [ ] 0049 **Venomoth** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0049_venomoth/).
+- [ ] 0050 **Diglett** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0050_diglett/).
+- [ ] 0051 **Dugtrio** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0051_dugtrio/).
+- [ ] 0052 **Meowth** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0052_meowth/).
+- [ ] 0053 **Persian** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0053_persian/).
+- [ ] 0056 **Mankey** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0056_mankey/).
+- [ ] 0057 **Primeape** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0057_primeape/).
+- [ ] 0058 **Growlithe** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0058_growlithe/).
+- [ ] 0059 **Arcanine** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0059_arcanine/).
+- [ ] 0060 **Poliwag** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0060_poliwag/).
+- [ ] 0061 **Poliwhirl** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0061_poliwhirl/).
+- [ ] 0062 **Poliwrath** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0062_poliwrath/).
+- [ ] 0069 **Bellsprout** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0069_bellsprout/).
+- [ ] 0070 **Weepinbell** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0070_weepinbell/).
+- [ ] 0071 **Victreebel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0071_victreebel/).
+- [ ] 0077 **Ponyta** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0077_ponyta/).
+- [ ] 0078 **Rapidash** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0078_rapidash/).
+- [ ] 0079 **Slowpoke** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0079_slowpoke/).
+- [ ] 0080 **Slowbro** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0080_slowbro/).
+- [ ] 0083 **Farfetchd** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0083_farfetchd/).
+- [ ] 0086 **Seel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0086_seel/).
+- [ ] 0087 **Dewgong** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0087_dewgong/).
+- [ ] 0090 **Shellder** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0090_shellder/).
+- [ ] 0091 **Cloyster** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0091_cloyster/).
+- [ ] 0092 **Gastly** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0092_gastly/).
+- [ ] 0093 **Haunter** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0093_haunter/).
+- [ ] 0094 **Gengar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0094_gengar/).
+- [ ] 0095 **Onix** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0095_onix/).
+- [ ] 0096 **Drowzee** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0096_drowzee/).
+- [ ] 0097 **Hypno** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0097_hypno/).
+- [ ] 0098 **Krabby** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0098_krabby/).
+- [ ] 0099 **Kingler** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0099_kingler/).
+- [ ] 0102 **Exeggcute** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0102_exeggcute/).
+- [ ] 0103 **Exeggutor** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0103_exeggutor/).
+- [ ] 0104 **Cubone** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0104_cubone/).
+- [ ] 0105 **Marowak** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0105_marowak/).
+- [ ] 0106 **Hitmonlee** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0106_hitmonlee/).
+- [ ] 0107 **Hitmonchan** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0107_hitmonchan/).
+- [ ] 0108 **Lickitung** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0108_lickitung/).
+- [ ] 0113 **Chansey** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0113_chansey/).
+- [ ] 0114 **Tangela** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0114_tangela/).
+- [ ] 0115 **Kangaskhan** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0115_kangaskhan/).
+- [ ] 0122 **Mr Mime** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0122_mr_mime/).
+- [ ] 0123 **Scyther** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0123_scyther/).
+- [ ] 0124 **Jynx** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0124_jynx/).
+- [ ] 0125 **Electabuzz** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0125_electabuzz/).
+- [ ] 0126 **Magmar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0126_magmar/).
+- [ ] 0128 **Tauros** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0128_tauros/).
+- [ ] 0131 **Lapras** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0131_lapras/).
+- [ ] 0132 **Ditto** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0132_ditto/).
+- [ ] 0133 **Eevee** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0133_eevee/).
+- [ ] 0134 **Vaporeon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0134_vaporeon/).
+- [ ] 0135 **Jolteon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0135_jolteon/).
+- [ ] 0136 **Flareon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0136_flareon/).
+- [ ] 0137 **Porygon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0137_porygon/).
+- [ ] 0138 **Omanyte** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0138_omanyte/).
+- [ ] 0139 **Omastar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0139_omastar/).
+- [ ] 0140 **Kabuto** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0140_kabuto/).
+- [ ] 0141 **Kabutops** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0141_kabutops/).
+- [ ] 0142 **Aerodactyl** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0142_aerodactyl/).
+- [ ] 0143 **Snorlax** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0143_snorlax/).
+- [ ] 0144 **Articuno** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0144_articuno/).
+- [ ] 0145 **Zapdos** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0145_zapdos/).
+- [ ] 0146 **Moltres** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0146_moltres/).
+- [ ] 0147 **Dratini** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0147_dratini/).
+- [ ] 0148 **Dragonair** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0148_dragonair/).
+- [ ] 0149 **Dragonite** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0149_dragonite/).
+- [ ] 0150 **Mewtwo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0150_mewtwo/).
+- [ ] 0151 **Mew** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0151_mew/).
+- [ ] 0152 **Chikorita** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0152_chikorita/).
+- [ ] 0153 **Bayleef** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0153_bayleef/).
+- [ ] 0154 **Meganium** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0154_meganium/).
+- [ ] 0155 **Cyndaquil** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0155_cyndaquil/).
+- [ ] 0156 **Quilava** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0156_quilava/).
+- [ ] 0157 **Typhlosion** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0157_typhlosion/).
+- [ ] 0158 **Totodile** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0158_totodile/).
+- [ ] 0159 **Croconaw** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0159_croconaw/).
+- [ ] 0160 **Feraligatr** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0160_feraligatr/).
+- [ ] 0161 **Sentret** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0161_sentret/).
+- [ ] 0162 **Furret** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0162_furret/).
+- [ ] 0163 **Hoothoot** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0163_hoothoot/).
+- [ ] 0164 **Noctowl** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0164_noctowl/).
+- [ ] 0165 **Ledyba** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0165_ledyba/).
+- [ ] 0166 **Ledian** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0166_ledian/).
+- [ ] 0167 **Spinarak** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0167_spinarak/).
+- [ ] 0168 **Ariados** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0168_ariados/).
+- [ ] 0173 **Cleffa** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0173_cleffa/).
+- [ ] 0175 **Togepi** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0175_togepi/).
+- [ ] 0176 **Togetic** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0176_togetic/).
+- [ ] 0179 **Mareep** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0179_mareep/).
+- [ ] 0180 **Flaaffy** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0180_flaaffy/).
+- [ ] 0181 **Ampharos** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0181_ampharos/).
+- [ ] 0185 **Sudowoodo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0185_sudowoodo/).
+- [ ] 0186 **Politoed** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0186_politoed/).
+- [ ] 0187 **Hoppip** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0187_hoppip/).
+- [ ] 0188 **Skiploom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0188_skiploom/).
+- [ ] 0189 **Jumpluff** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0189_jumpluff/).
+- [ ] 0190 **Aipom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0190_aipom/).
+- [ ] 0191 **Sunkern** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0191_sunkern/).
+- [ ] 0192 **Sunflora** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0192_sunflora/).
+- [ ] 0193 **Yanma** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0193_yanma/).
+- [ ] 0194 **Wooper** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0194_wooper/).
+- [ ] 0195 **Quagsire** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0195_quagsire/).
+- [ ] 0196 **Espeon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0196_espeon/).
+- [ ] 0197 **Umbreon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0197_umbreon/).
+- [ ] 0198 **Murkrow** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0198_murkrow/).
+- [ ] 0199 **Slowking** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0199_slowking/).
+- [ ] 0200 **Misdreavus** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0200_misdreavus/).
+- [ ] 0201 **Unown** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0201_unown/).
+- [ ] 0204 **Pineco** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0204_pineco/).
+- [ ] 0205 **Forretress** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0205_forretress/).
+- [ ] 0206 **Dunsparce** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0206_dunsparce/).
+- [ ] 0207 **Gligar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0207_gligar/).
+- [ ] 0208 **Steelix** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0208_steelix/).
+- [ ] 0209 **Snubbull** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0209_snubbull/).
+- [ ] 0210 **Granbull** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0210_granbull/).
+- [ ] 0211 **Qwilfish** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0211_qwilfish/).
+- [ ] 0212 **Scizor** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0212_scizor/).
+- [ ] 0213 **Shuckle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0213_shuckle/).
+- [ ] 0215 **Sneasel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0215_sneasel/).
+- [ ] 0216 **Teddiursa** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0216_teddiursa/).
+- [ ] 0217 **Ursaring** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0217_ursaring/).
+- [ ] 0220 **Swinub** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0220_swinub/).
+- [ ] 0221 **Piloswine** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0221_piloswine/).
+- [ ] 0223 **Remoraid** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0223_remoraid/).
+- [ ] 0224 **Octillery** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0224_octillery/).
+- [ ] 0225 **Delibird** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0225_delibird/).
+- [ ] 0226 **Mantine** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0226_mantine/).
+- [ ] 0228 **Houndour** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0228_houndour/).
+- [ ] 0229 **Houndoom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0229_houndoom/).
+- [ ] 0233 **Porygon2** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0233_porygon2/).
+- [ ] 0234 **Stantler** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0234_stantler/).
+- [ ] 0235 **Smeargle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0235_smeargle/).
+- [ ] 0236 **Tyrogue** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0236_tyrogue/).
+- [ ] 0237 **Hitmontop** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0237_hitmontop/).
+- [ ] 0238 **Smoochum** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0238_smoochum/).
+- [ ] 0239 **Elekid** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0239_elekid/).
+- [ ] 0240 **Magby** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0240_magby/).
+- [ ] 0241 **Miltank** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0241_miltank/).
+- [ ] 0242 **Blissey** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0242_blissey/).
+- [ ] 0243 **Raikou** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0243_raikou/).
+- [ ] 0244 **Entei** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0244_entei/).
+- [ ] 0245 **Suicune** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0245_suicune/).
+- [ ] 0246 **Larvitar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0246_larvitar/).
+- [ ] 0247 **Pupitar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0247_pupitar/).
+- [ ] 0248 **Tyranitar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0248_tyranitar/).
+- [ ] 0249 **Lugia** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0249_lugia/).
+- [ ] 0250 **Ho Oh** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0250_ho_oh/).
+- [ ] 0251 **Celebi** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0251_celebi/).

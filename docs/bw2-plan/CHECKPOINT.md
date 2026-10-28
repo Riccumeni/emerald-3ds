@@ -1,0 +1,24 @@
+# Punto di ripresa — 2026-10-28T16:44:23
+
+Stato: esecuzione in corso. Completati **26/386 Pokemon** e **6/354 mosse**, con dossier verificati.
+
+- Piano e registri: `docs/BW2_ANIMATION_PLAN.md`, `docs/bw2-plan/stato.json` e le due checklist.
+- Dossier permanenti: `artifacts/bw2-validation/`; i dati grandi restano locali e ignorati da Git.
+- Unita' in corso: `null`. Ultima chiusa: `{"tipo": "pokemon", "id": 268, "nome": "Cascoon"}`.
+- Prossima unita' da affrontare: `{"tipo": "pokemon", "id": 276, "nome": "Taillow", "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"}`.
+- Tutti i dossier pilota sono chiusi; continuare dalla prossima unita' indicata sopra.
+- Inventario `docs/bw2-plan/INVENTORY.json`: 772 viste base senza incompatibilita' di formato rilevate; solo 53/354 script accettati dal decoder attuale. Non significa che siano gia' importati/verificati. Forme ancora da censire.
+- `3ds_port/scripts/emu/run_bw2_validation.ps1`: avvia solo l'emulatore isolato; `bw2_capture.py` registra fotogrammi nativi via RPC, a 1x, in MP4/H.264 con timestamp reali e verifica la decodifica.
+- Dipendenza PyAV locale in `build/bw2-python/`; Python runtime Codex. UI Windows non disponibile in questa sessione (errore kernel assets); usare l'API locale dell'emulatore.
+- Banco prova `CTR_BW2_VALIDATION` in `3ds_cycle_test.c`; mailbox esposta via simboli ELF, comando 1 esegue un turno reale, configurazione `bw2-validation.txt` sulla SD isolata.
+- Build prova/ELF/ID: `build/bw2-validation/validation.{3dsx,elf}`, `build_id.bin`. Build normale: `build/bw2-validation/Emerald3DS-BW2.3dsx`, `production-build-id.bin`. Le prove usano l'ELF copiato, mai quello sovrascritto da una build successiva.
+- Emulatore isolato: `build/bw2-azahar/bw2-test.exe`; PID in `build/bw2-validation/emulator.pid`. Non chiudere l'Azahar originale dell'utente. Durante la registrazione la finestra di prova deve renderizzare: minimizzarla puo' causare timeout.
+- Acquisizioni grezze e report: `build/bw2-validation/`. I metadati di ciascun dossier indicano le acquisizioni effettive; quelle precedenti sono storiche. Scala e appoggio: `docs/BW2_POKEMON_LAYOUT.md`.
+- Prima di marcare fatto: ispezionare screenshot e fotogrammi QA, assemblare con `bw2_publish_evidence.py --reviewed`, poi `bw2_progress.py --action complete --kind pokemon|mosse --id N`. Il secondo comando controlla hash, direzioni e completamento del turno.
+- Correzione aggiuntiva: flush Citro2D durante il ritaglio degli attori, per non ripetere pixel sotto il textbox; verificata nei nuovi video. Non usare le acquisizioni senza `final` precedenti a questa correzione.
+- Test dedicati di bridge, esportatore e integrita' dossier passati; build normale verificata con CtrCycle_Frame/Input da 4 byte. Suite generale preesistente bloccata dai test bottom-map: non dichiararla passata.
+- ROM sorgente `D:/Projects/pokebw2/black2.nds` solo letta; non resettare lo staging o le modifiche locali preesistenti.
+
+Prima della nuova unita' controllare contesto/budget; salvare processi e sessioni attivi in questo checkpoint se serve interrompere. Non segnare mai completo un dossier parziale.
+
+Nota persistente: Revisione v5 conclusa. Richiesta utente: Lombre/Nuzleaf/Seedot più piccoli, Shiftry più grande. Misure front/back rispetto v4: Lombre -20.8%/-16.2%, Nuzleaf -20.2%/-20.7%, Seedot -21.2%/-15.0%, Shiftry +19.3%/+12.6%. Criterio generale senza eccezioni per ID: altezza Emerald e impronta originale BW2 condivisa tra front/back, fascia neutra15%, correzione80–125%, attenuata2–4m. File BWL2 da12byte per52viste, BWA/palette invariati. Centri/ancore invariati. Anche Torchic, Silcoon, Cascoon e Lotad sono cambiati: tutti gli8 dossier riaperti sono ora riverificati e fatti individualmente. Diciotto altre specie invariate, inclusi Treecko/Poochyena/Grovyle/Sceptile/Natu/Wailord (audit codiceC su52clip). Totale26/386 Pokemon,6/354 mosse. Report docs/bw2-plan/V5_REVIEW.md, algoritmo docs/BW2_POKEMON_LAYOUT.md, misure V5_MEASUREMENTS.json, audit V5_PROFILE_AUDIT.json. Video richiesti artifacts/bw2-validation/v5-size-2026-10-28/pokemon.mp4:148.804s/4463frame, concatenazione nativa senza tagli/ricodifica; confrontoPNG per ciascuna specie. Prove8idle+8shiny v5-* concluse, nessuna registrazione pendente. Test f4d71104098af506 SHA d98ad34610150829fc165ba4d59a855188d15205d030478a4679de6351738c46; normale7f2a20de7ba65da2 SHA f9dc6ca9e595b0c3708109adf88122257639ba6fb47fcb4ee8fdf0710603b362, archiviati conELF. Build normale e copieprototype aggiornate, stub Frame/Input4byte, mailbox assente. Vecchie prove inrevisions/2026-10-28-before-v5. Passati16testexport,bridge sintetico/reale6mosse×2lati,7testdossier,audit32dossier. Nessuna nuova specie/mossa in questa revisione. Prossimo Pokemon Taillow276. Non avviare bootstrap/reset, non modificare pokebw2/ROM o Azahar utente. Emulatore isolato non attivo alla chiusura.

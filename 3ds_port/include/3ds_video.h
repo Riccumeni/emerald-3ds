@@ -106,6 +106,9 @@ void CtrVideo_HoldTop(bool hold);
  */
 void CtrVideo_ClearOamAnchors(void);
 void CtrVideo_SetOamAnchor(unsigned first, unsigned end, int y);
+/* Enlarged battle actors must not enter the scenery edge repeated below the
+ * message box. Cleared with the OAM anchors at the next sprite build. */
+void CtrVideo_MarkBattleActor(unsigned first, unsigned end);
 void CtrVideo_ClearVoxelWeatherOam(void);
 void CtrVideo_MarkVoxelWeatherOam(unsigned first, unsigned end);
 /* OAM entries of the fog's sprites, one picture on a 64-pixel lattice: the

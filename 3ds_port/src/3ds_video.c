@@ -485,11 +485,20 @@ static uint32_t sTileSerial;
 #define PAL_IDS (PAL_EXT + CTR_EXT_PALETTES)
 
 static uint32_t sOamAnchored[4];
+static uint32_t sBattleActorOam[4];
 static int16_t sOamAnchor[128];
 
 void CtrVideo_ClearOamAnchors(void)
 {
     memset(sOamAnchored, 0, sizeof(sOamAnchored));
+    memset(sBattleActorOam, 0, sizeof(sBattleActorOam));
+}
+
+void CtrVideo_MarkBattleActor(unsigned first, unsigned end)
+{
+    if (end > 128) end = 128;
+    for (unsigned i = first; i < end; ++i)
+        sBattleActorOam[i >> 5] |= 1u << (i & 31);
 }
 
 void CtrVideo_SetOamAnchor(unsigned first, unsigned end, int y)
@@ -5561,8 +5570,33 @@ static void DrawObjects(unsigned priority, bool effects)
                                  false, color256, effects, mode);
             continue;
         }
-        DrawObjectAt(x, y, attr1, attr2, ObjBank((unsigned)i, attr2), width, height, boxW, boxH, affine, color256,
-                     effects, mode);
+        if (sBattle && (sBattleActorOam[i >> 5] & (1u << (i & 31)))
+            && BATTLE_SCENE_BOTTOM == BATTLE_SCENE_BOX_BOTTOM)
+        {
+            /* ScenePlaceFrom repeats the scenery's last row below the text
+             * box. Leave that row free of enlarged actor pixels, otherwise
+             * their feet reappear in the narrow margin below the box. */
+            int bottom = sClipY1;
+            SpriteBatchFlush();
+            C2D_Flush();
+            if (sClipY1 > BATTLE_SCENE_BOX_BOTTOM - 1)
+                sClipY1 = BATTLE_SCENE_BOX_BOTTOM - 1;
+            if (sClipY0 < sClipY1)
+            {
+                Scissor(sClipX0, sClipY0, sClipX1, sClipY1);
+                DrawObjectAt(x, y, attr1, attr2, ObjBank((unsigned)i, attr2), width, height, boxW, boxH,
+                             affine, color256, effects, mode);
+                SpriteBatchFlush();
+                /* Affine tiles use Citro2D's queue, not the fast sprite batch.
+                 * Submit them while this actor's scissor is still installed. */
+                C2D_Flush();
+            }
+            sClipY1 = bottom;
+            RestoreScissor();
+        }
+        else
+            DrawObjectAt(x, y, attr1, attr2, ObjBank((unsigned)i, attr2), width, height, boxW, boxH, affine,
+                         color256, effects, mode);
     }
     SpriteBatchFlush();
     sLayerShift = layerShift;
@@ -7220,7 +7254,10 @@ static void BattleSkyCompose(bool sprites)
 
     if (sBattleWorld || sScenePut.top <= VIEW_TOP) return;
     ClipToView();
-    sClipY1 = sScenePut.top;
+    /* Overlap the scene by one logical row. The rounded scissor edge and
+     * the filtered sky fill otherwise leave a screen row of repeated scene
+     * pixels at the join (visible above an enlarged, animated Lombre). */
+    sClipY1 = sScenePut.top + 1;
     sScissored = true;
     C2D_Flush();
     Scissor(sClipX0, sClipY0, sClipX1, sClipY1);
