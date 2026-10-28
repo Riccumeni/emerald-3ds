@@ -30,7 +30,7 @@ all'animazione originale non valgono come lavoro completato.
 
 ## Registro e avanzamento
 
-- [Cinque checkpoint autonomi](bw2-plan/AUTONOMOUS10_14_REVIEW.md): cinque gruppi consecutivi con prove e commit individuali.
+- [Checkpoint autonomi 10–14](bw2-plan/AUTONOMOUS10_14_REVIEW.md): cinque gruppi consecutivi con prove e commit individuali.
 
 - [Cinque checkpoint autonomi](bw2-plan/AUTONOMOUS5_REVIEW.md): cinque gruppi consecutivi con prove e commit individuali.
 
@@ -59,7 +59,7 @@ Avanzamento corrente (aggiornato insieme alle checklist):
 
 | Ambito | Totale | Prototipo implementato | Fatto con tutte le prove |
 |---|---:|---:|---:|
-| Pokémon | 386 | 2: Treecko, Poochyena | 90 |
+| Pokémon | 386 | 2: Treecko, Poochyena | 98 |
 | Mosse | 354 | 4: Pound, Tackle, Leer, Howl | 6 |
 
 Dal 28 ottobre 2026 le correzioni fisse di Treecko e Poochyena sono sostituite

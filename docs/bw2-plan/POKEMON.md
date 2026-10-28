@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **90**.
+Totale: **386**. Fatti con dossier completo: **98**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -94,14 +94,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0313 **Volbeat** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0313_volbeat/).
 - [x] 0314 **Illumise** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0314_illumise/).
 - [x] 0043 **Oddish** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0043_oddish/).
-- [ ] 0044 **Gloom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0044_gloom/).
-- [ ] 0045 **Vileplume** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0045_vileplume/).
-- [ ] 0182 **Bellossom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0182_bellossom/).
-- [ ] 0084 **Doduo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0084_doduo/).
-- [ ] 0085 **Dodrio** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0085_dodrio/).
-- [ ] 0315 **Roselia** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0315_roselia/).
-- [ ] 0316 **Gulpin** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0316_gulpin/).
-- [ ] 0317 **Swalot** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0317_swalot/).
+- [x] 0044 **Gloom** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0044_gloom/).
+- [x] 0045 **Vileplume** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0045_vileplume/).
+- [x] 0182 **Bellossom** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0182_bellossom/).
+- [x] 0084 **Doduo** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0084_doduo/).
+- [x] 0085 **Dodrio** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0085_dodrio/).
+- [x] 0315 **Roselia** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0315_roselia/).
+- [x] 0316 **Gulpin** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0316_gulpin/).
+- [x] 0317 **Swalot** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0317_swalot/).
 - [ ] 0318 **Carvanha** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0318_carvanha/).
 - [ ] 0319 **Sharpedo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0319_sharpedo/).
 - [ ] 0320 **Wailmer** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0320_wailmer/).

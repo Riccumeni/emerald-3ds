@@ -2,7 +2,7 @@
   "request": "Prossimi cinque checkpoint, 10-14",
   "start_pokemon": 74,
   "target_pokemon": 114,
-  "completed_checkpoints": 2,
+  "completed_checkpoints": 3,
   "groups": [
     {
       "number": 10,
@@ -289,7 +289,7 @@
     {
       "number": 12,
       "ordinal": 3,
-      "status": "pending",
+      "status": "complete",
       "national_ids": [
         44,
         45,
@@ -351,7 +351,81 @@
           "player": 368,
           "enemy": 367
         }
-      ]
+      ],
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 104,
+      "movie": {
+        "duration": 241.38966666666667,
+        "decoded_frames": 7239,
+        "sha256": "8ecd81c8768300d01311b0c60cab1818c92a66bf08c7276651ccbe4a5a217541",
+        "segments": [
+          {
+            "name": "gloom-vileplume",
+            "start": 0.0,
+            "end": 27.048333333333332,
+            "frames": 811,
+            "sha256": "a3cb5bd92b847a1eed2066f8407af9bd34324861b037cd23bf9359741c38af29"
+          },
+          {
+            "name": "vileplume-gloom",
+            "start": 27.048333333333332,
+            "end": 53.62766666666667,
+            "frames": 797,
+            "sha256": "d36c6ad0e16d5a501658539088e490b67d45a3b7ad0e98a88a595a421eb98bd9"
+          },
+          {
+            "name": "bellossom-doduo",
+            "start": 53.62766666666667,
+            "end": 89.708,
+            "frames": 1082,
+            "sha256": "3dac48d721050c5a95c7d8421775c32120e9d2f4c58433b204d1d56f57a1442b"
+          },
+          {
+            "name": "doduo-bellossom",
+            "start": 89.708,
+            "end": 125.78833333333333,
+            "frames": 1082,
+            "sha256": "2aa34930c5b782e8357c7c157519959e6e19138fbd3f71698b09bf0ee58ff208"
+          },
+          {
+            "name": "dodrio-roselia",
+            "start": 125.78833333333333,
+            "end": 156.13366666666667,
+            "frames": 910,
+            "sha256": "78d1e9d0b14031f212ec5954cb8bfb46e3e3b7826785288accd75188671f60f4"
+          },
+          {
+            "name": "roselia-dodrio",
+            "start": 156.13366666666667,
+            "end": 187.808,
+            "frames": 950,
+            "sha256": "d14561d2cce3a50bd601c1e7c05b010db40b6a273545db3f20622c03431e23da"
+          },
+          {
+            "name": "gulpin-swalot",
+            "start": 187.808,
+            "end": 214.77833333333334,
+            "frames": 809,
+            "sha256": "ad8dae72e22c0954caeb6ab8c511dee53fe57df9f36c8ce6ebb1cd1b7b1aa3e4"
+          },
+          {
+            "name": "swalot-gulpin",
+            "start": 214.77833333333334,
+            "end": 241.38966666666667,
+            "frames": 798,
+            "sha256": "14d343b41f523d6fff51a94f038c9e104d4f9749c27a1fcaf7837b71355cec1c"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 12: eight Pokemon"
     },
     {
       "number": 13,
@@ -519,15 +593,16 @@
     "production_validation_mailbox": false
   },
   "runtime": {
-    "capture_group": 11,
-    "exec_session_id": 18371,
-    "log": "build/bw2-next5-cp11-captures.log",
+    "capture_group": 12,
+    "exec_session_id": 20307,
+    "log": "build/bw2-next5-cp12-captures.log",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "pid_file": "build/bw2-validation/emulator.pid",
     "helper": "build/bw2-next5.py",
     "capture_helper": "build/bw2-next5-capture.ps1",
     "completed_commits": {
-      "10": "d544a13"
+      "10": "d544a13",
+      "11": "4a24831"
     }
   }
 }
