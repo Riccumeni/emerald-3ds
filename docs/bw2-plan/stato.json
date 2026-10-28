@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-28T16:44:23",
+  "aggiornato_il": "2026-10-28T17:20:13",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 26,
+    "pokemon_fatti": 34,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,14 +19,14 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 276,
-    "nome": "Taillow",
+    "id": 284,
+    "nome": "Masquerain",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
     "percorso": "build/bw2-validation/Emerald3DS-BW2.3dsx",
-    "build_id": "7f2a20de7ba65da2",
-    "sha256": "f9dc6ca9e595b0c3708109adf88122257639ba6fb47fcb4ee8fdf0710603b362"
+    "build_id": "c4d710a45a166c54",
+    "sha256": "2e04cc3c8fc17d3aff9eaa92f5f3ecbc0a738532e744b83be81d29beae2b8303"
   },
   "pokemon": [
     {
@@ -891,28 +891,34 @@
       "costante": "SPECIES_TAILLOW",
       "nome": "Taillow",
       "ordine": 25,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0276_taillow",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0276_taillow/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0276_taillow/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "fd9243433a5563454d58d0e6bb13352140c58ff210fe11f197d62bc42cc66e32",
+          "video_sha256": "3c4f2d9da80f417185b766ea1316a272ccc638aa1a80e5e12604065c12c5e7c8"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0276_taillow/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0276_taillow/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "308124ac3bdc2d95b4461c1ffc28fa41dfca3d9012e18ccf91d16e6dd1bc6847",
+          "video_sha256": "44b75798f86963150a20a8b24bd981938a5aa7042c23a865b06c62cb4ce61b49"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0276_taillow/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0276_taillow/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T17:12:20",
+      "build_verificata": "f2ecf4d5e40cf598"
     },
     {
       "numero_nazionale": 277,
@@ -920,28 +926,34 @@
       "costante": "SPECIES_SWELLOW",
       "nome": "Swellow",
       "ordine": 26,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0277_swellow",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0277_swellow/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0277_swellow/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "308124ac3bdc2d95b4461c1ffc28fa41dfca3d9012e18ccf91d16e6dd1bc6847",
+          "video_sha256": "44b75798f86963150a20a8b24bd981938a5aa7042c23a865b06c62cb4ce61b49"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0277_swellow/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0277_swellow/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "fd9243433a5563454d58d0e6bb13352140c58ff210fe11f197d62bc42cc66e32",
+          "video_sha256": "3c4f2d9da80f417185b766ea1316a272ccc638aa1a80e5e12604065c12c5e7c8"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0277_swellow/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0277_swellow/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T17:12:20",
+      "build_verificata": "f2ecf4d5e40cf598"
     },
     {
       "numero_nazionale": 278,
@@ -949,28 +961,34 @@
       "costante": "SPECIES_WINGULL",
       "nome": "Wingull",
       "ordine": 27,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0278_wingull",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0278_wingull/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0278_wingull/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "65821c9b41e791edddb7346349de8406394c91b082580768a7f504d4dfb24ed5",
+          "video_sha256": "70a56d4cfc5e6a49a033b62eea5e0452ba8bcf1f81ca1a69b2e830ca4999e258"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0278_wingull/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0278_wingull/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "d156430bbcf40bdc453fbaa6cd6bb2967f8d7548dd8fa26bf0ccdd18bf06c081",
+          "video_sha256": "62998011232269f3386e6ba15fc887538d8f8bfcf6c3830879f8837317cf40ff"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0278_wingull/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0278_wingull/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T17:12:21",
+      "build_verificata": "f2ecf4d5e40cf598"
     },
     {
       "numero_nazionale": 279,
@@ -978,28 +996,34 @@
       "costante": "SPECIES_PELIPPER",
       "nome": "Pelipper",
       "ordine": 28,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0279_pelipper",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0279_pelipper/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0279_pelipper/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "d156430bbcf40bdc453fbaa6cd6bb2967f8d7548dd8fa26bf0ccdd18bf06c081",
+          "video_sha256": "62998011232269f3386e6ba15fc887538d8f8bfcf6c3830879f8837317cf40ff"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0279_pelipper/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0279_pelipper/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "65821c9b41e791edddb7346349de8406394c91b082580768a7f504d4dfb24ed5",
+          "video_sha256": "70a56d4cfc5e6a49a033b62eea5e0452ba8bcf1f81ca1a69b2e830ca4999e258"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0279_pelipper/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0279_pelipper/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T17:12:21",
+      "build_verificata": "f2ecf4d5e40cf598"
     },
     {
       "numero_nazionale": 280,
@@ -1007,28 +1031,34 @@
       "costante": "SPECIES_RALTS",
       "nome": "Ralts",
       "ordine": 29,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0280_ralts",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0280_ralts/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0280_ralts/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "e991db795957ce1bd16f86214164d5574160bc03114f4c2e62818fc99e57ffc9",
+          "video_sha256": "c7c668b4cc0552fda2c7557b6c3b2827cc2e2d70b63521c131c2bf9bdc6943c0"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0280_ralts/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0280_ralts/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "80040f32da116fa1acb775f4442735df08d54b644a5bd2a7807c4d2540bd3cef",
+          "video_sha256": "0261223818698a288a01dbc50055c363a317fc8cf08985c686a2760ea162123c"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0280_ralts/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0280_ralts/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T17:13:36",
+      "build_verificata": "f2ecf4d5e40cf598"
     },
     {
       "numero_nazionale": 281,
@@ -1036,28 +1066,34 @@
       "costante": "SPECIES_KIRLIA",
       "nome": "Kirlia",
       "ordine": 30,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0281_kirlia",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0281_kirlia/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0281_kirlia/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "80040f32da116fa1acb775f4442735df08d54b644a5bd2a7807c4d2540bd3cef",
+          "video_sha256": "0261223818698a288a01dbc50055c363a317fc8cf08985c686a2760ea162123c"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0281_kirlia/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0281_kirlia/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "e991db795957ce1bd16f86214164d5574160bc03114f4c2e62818fc99e57ffc9",
+          "video_sha256": "c7c668b4cc0552fda2c7557b6c3b2827cc2e2d70b63521c131c2bf9bdc6943c0"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0281_kirlia/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0281_kirlia/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T17:13:36",
+      "build_verificata": "f2ecf4d5e40cf598"
     },
     {
       "numero_nazionale": 282,
@@ -1065,28 +1101,34 @@
       "costante": "SPECIES_GARDEVOIR",
       "nome": "Gardevoir",
       "ordine": 31,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0282_gardevoir",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0282_gardevoir/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0282_gardevoir/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "2a7d642431c0b7d1dd191f8140a2f1071e23c6d7b3501691ea20d34c8704aa87",
+          "video_sha256": "6c412a04927accdb004928ed1b382e47fe9580e86edbda71b46438a8d021df67"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0282_gardevoir/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0282_gardevoir/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "194448d0f73fed770fd71cce3110e25cf2d245d96583f877b2a9dcb6045ed108",
+          "video_sha256": "4292f24f0067f2d1de50810b8313d9bd907a5fddcbf9ac0ed9a184f2fa0a1026"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0282_gardevoir/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0282_gardevoir/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T17:13:36",
+      "build_verificata": "f2ecf4d5e40cf598"
     },
     {
       "numero_nazionale": 283,
@@ -1094,28 +1136,34 @@
       "costante": "SPECIES_SURSKIT",
       "nome": "Surskit",
       "ordine": 32,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0283_surskit",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0283_surskit/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0283_surskit/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "194448d0f73fed770fd71cce3110e25cf2d245d96583f877b2a9dcb6045ed108",
+          "video_sha256": "4292f24f0067f2d1de50810b8313d9bd907a5fddcbf9ac0ed9a184f2fa0a1026"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0283_surskit/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0283_surskit/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "f2ecf4d5e40cf598",
+          "screenshot_sha256": "2a7d642431c0b7d1dd191f8140a2f1071e23c6d7b3501691ea20d34c8704aa87",
+          "video_sha256": "6c412a04927accdb004928ed1b382e47fe9580e86edbda71b46438a8d021df67"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0283_surskit/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0283_surskit/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T17:13:37",
+      "build_verificata": "f2ecf4d5e40cf598"
     },
     {
       "numero_nazionale": 284,
@@ -21736,8 +21784,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 268,
-    "nome": "Cascoon"
+    "id": 283,
+    "nome": "Surskit"
   },
-  "checkpoint_note": "Revisione v5 conclusa. Richiesta utente: Lombre/Nuzleaf/Seedot più piccoli, Shiftry più grande. Misure front/back rispetto v4: Lombre -20.8%/-16.2%, Nuzleaf -20.2%/-20.7%, Seedot -21.2%/-15.0%, Shiftry +19.3%/+12.6%. Criterio generale senza eccezioni per ID: altezza Emerald e impronta originale BW2 condivisa tra front/back, fascia neutra15%, correzione80–125%, attenuata2–4m. File BWL2 da12byte per52viste, BWA/palette invariati. Centri/ancore invariati. Anche Torchic, Silcoon, Cascoon e Lotad sono cambiati: tutti gli8 dossier riaperti sono ora riverificati e fatti individualmente. Diciotto altre specie invariate, inclusi Treecko/Poochyena/Grovyle/Sceptile/Natu/Wailord (audit codiceC su52clip). Totale26/386 Pokemon,6/354 mosse. Report docs/bw2-plan/V5_REVIEW.md, algoritmo docs/BW2_POKEMON_LAYOUT.md, misure V5_MEASUREMENTS.json, audit V5_PROFILE_AUDIT.json. Video richiesti artifacts/bw2-validation/v5-size-2026-10-28/pokemon.mp4:148.804s/4463frame, concatenazione nativa senza tagli/ricodifica; confrontoPNG per ciascuna specie. Prove8idle+8shiny v5-* concluse, nessuna registrazione pendente. Test f4d71104098af506 SHA d98ad34610150829fc165ba4d59a855188d15205d030478a4679de6351738c46; normale7f2a20de7ba65da2 SHA f9dc6ca9e595b0c3708109adf88122257639ba6fb47fcb4ee8fdf0710603b362, archiviati conELF. Build normale e copieprototype aggiornate, stub Frame/Input4byte, mailbox assente. Vecchie prove inrevisions/2026-10-28-before-v5. Passati16testexport,bridge sintetico/reale6mosse×2lati,7testdossier,audit32dossier. Nessuna nuova specie/mossa in questa revisione. Prossimo Pokemon Taillow276. Non avviare bootstrap/reset, non modificare pokebw2/ROM o Azahar utente. Emulatore isolato non attivo alla chiusura."
+  "checkpoint_note": "Commit3f239cf salvato: motore e strumenti BW2, piano completo e algoritmo v5 approvato; selezionati solo45file/hunk pertinenti, altre modifiche UI/voxel e conversioni EOL conservate. Nuovo gruppo276–283 completato singolarmente: Taillow304,Swellow305,Wingull309,Pelipper310,Ralts392,Kirlia393,Gardevoir394,Surskit311. Totale34/386Pokemon e6/354mosse. Algoritmo v5 invariato;125assetprecedenti invariati (SHA-256). Export68viste/34specie,6mosse15effetti. Report docs/bw2-plan/BATCH4_REVIEW.md, misure BATCH4_MEASUREMENTS.json. Acquisizioni batch4-* e batch4-shiny-* concluse (job74155 completato); revisionati8pose/ciclo più QAstart/mid/end/poster per8scenari e8shiny. Raccolta artifacts/bw2-validation/batch4-taillow-surskit-2026-10-28/pokemon.mp4:272.657s,8178frame, concat nativa senza tagli/ricodifica/accelerazione. Buildtest f2ecf4d5e40cf598 SHA8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616 e normale c4d710a45a166c54 SHA2e04cc3c8fc17d3aff9eaa92f5f3ecbc0a738532e744b83be81d29beae2b8303 archiviate conELF; buildnormale e copieprototype aggiornate, Frame/Input4byte, mailbox assente. Audit40dossier passati e7testdossier passati. Nessun nuovo codice runtime o nuova mossa in questo gruppo. Commit dell’avanzamento: consultare git log; include soltanto i file BW2. ProssimoPokemon Masquerain284. Emulatoreisolato chiuso, nessuna registrazione o build pendente; non toccareAzaharutente/pokebw2/ROM. Non bootstrap/reset/push. Prima di un nuovo gruppo verificare contesto e salvarecheckpoint."
 }

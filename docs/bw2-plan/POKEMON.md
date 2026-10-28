@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **26**.
+Totale: **386**. Fatti con dossier completo: **34**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -30,14 +30,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0273 **Seedot** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0273_seedot/).
 - [x] 0274 **Nuzleaf** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0274_nuzleaf/).
 - [x] 0275 **Shiftry** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0275_shiftry/).
-- [ ] 0276 **Taillow** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0276_taillow/).
-- [ ] 0277 **Swellow** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0277_swellow/).
-- [ ] 0278 **Wingull** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0278_wingull/).
-- [ ] 0279 **Pelipper** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0279_pelipper/).
-- [ ] 0280 **Ralts** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0280_ralts/).
-- [ ] 0281 **Kirlia** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0281_kirlia/).
-- [ ] 0282 **Gardevoir** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0282_gardevoir/).
-- [ ] 0283 **Surskit** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0283_surskit/).
+- [x] 0276 **Taillow** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0276_taillow/).
+- [x] 0277 **Swellow** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0277_swellow/).
+- [x] 0278 **Wingull** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0278_wingull/).
+- [x] 0279 **Pelipper** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0279_pelipper/).
+- [x] 0280 **Ralts** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0280_ralts/).
+- [x] 0281 **Kirlia** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0281_kirlia/).
+- [x] 0282 **Gardevoir** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0282_gardevoir/).
+- [x] 0283 **Surskit** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0283_surskit/).
 - [ ] 0284 **Masquerain** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0284_masquerain/).
 - [ ] 0285 **Shroomish** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0285_shroomish/).
 - [ ] 0286 **Breloom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0286_breloom/).

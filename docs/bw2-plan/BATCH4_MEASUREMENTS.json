@@ -1,0 +1,546 @@
+[
+  {
+    "national": 276,
+    "emerald": 304,
+    "name": "Taillow",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 250,
+          "scale_percent": 97.66,
+          "shift_x": 0,
+          "shift_y": -13,
+          "height_dm": 3,
+          "target_span": 43,
+          "source_factor_q8": 212,
+          "silhouette_bounds": [
+            10,
+            26,
+            54,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 11270,
+          "source_width": 44,
+          "source_height": 36,
+          "source_footprint_q8": 10393
+        },
+        "steps": 344,
+        "unique": 13,
+        "duration": 32.65833333333333,
+        "decoded_frames": 980,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0276_taillow/front/capture.json"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 292,
+          "scale_percent": 114.06,
+          "shift_x": 0,
+          "shift_y": -8,
+          "height_dm": 3,
+          "target_span": 56,
+          "source_factor_q8": 212,
+          "silhouette_bounds": [
+            7,
+            27,
+            56,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 11734,
+          "source_width": 49,
+          "source_height": 35,
+          "source_footprint_q8": 10393
+        },
+        "steps": 344,
+        "unique": 13,
+        "duration": 33.18933333333333,
+        "decoded_frames": 996,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0276_taillow/back/capture.json"
+      }
+    },
+    "height_m": 0.3
+  },
+  {
+    "national": 277,
+    "emerald": 305,
+    "name": "Swellow",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 285,
+          "scale_percent": 111.33,
+          "shift_x": 0,
+          "shift_y": -6,
+          "height_dm": 7,
+          "target_span": 67,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            13,
+            62,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 9578,
+          "source_width": 72,
+          "source_height": 59,
+          "source_footprint_q8": 16468
+        },
+        "steps": 576,
+        "unique": 24,
+        "duration": 33.18933333333333,
+        "decoded_frames": 996,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0277_swellow/front/capture.json"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 396,
+          "scale_percent": 154.69,
+          "shift_x": 0,
+          "shift_y": 5,
+          "height_dm": 7,
+          "target_span": 93,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            15,
+            62,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 10014,
+          "source_width": 72,
+          "source_height": 56,
+          "source_footprint_q8": 16468
+        },
+        "steps": 576,
+        "unique": 25,
+        "duration": 32.65833333333333,
+        "decoded_frames": 980,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0277_swellow/back/capture.json"
+      }
+    },
+    "height_m": 0.7
+  },
+  {
+    "national": 278,
+    "emerald": 309,
+    "name": "Wingull",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 273,
+          "scale_percent": 106.64,
+          "shift_x": 0,
+          "shift_y": -21,
+          "height_dm": 6,
+          "target_span": 64,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            20,
+            62,
+            62
+          ],
+          "idle_floor": 60,
+          "body_center_y_q8": 10258,
+          "source_width": 64,
+          "source_height": 45,
+          "source_footprint_q8": 13583
+        },
+        "steps": 480,
+        "unique": 28,
+        "duration": 32.720333333333336,
+        "decoded_frames": 982,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0278_wingull/front/capture.json"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 366,
+          "scale_percent": 142.97,
+          "shift_x": 0,
+          "shift_y": -2,
+          "height_dm": 6,
+          "target_span": 86,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            22,
+            62,
+            62
+          ],
+          "idle_floor": 58,
+          "body_center_y_q8": 10386,
+          "source_width": 64,
+          "source_height": 43,
+          "source_footprint_q8": 13583
+        },
+        "steps": 480,
+        "unique": 28,
+        "duration": 33.15833333333333,
+        "decoded_frames": 995,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0278_wingull/back/capture.json"
+      }
+    },
+    "height_m": 0.6
+  },
+  {
+    "national": 279,
+    "emerald": 310,
+    "name": "Pelipper",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 384,
+          "scale_percent": 150.0,
+          "shift_x": 0,
+          "shift_y": 0,
+          "height_dm": 12,
+          "target_span": 90,
+          "source_factor_q8": 302,
+          "silhouette_bounds": [
+            2,
+            15,
+            62,
+            62
+          ],
+          "idle_floor": 51,
+          "body_center_y_q8": 8816,
+          "source_width": 95,
+          "source_height": 75,
+          "source_footprint_q8": 21188
+        },
+        "steps": 512,
+        "unique": 33,
+        "duration": 33.15833333333333,
+        "decoded_frames": 995,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0279_pelipper/front/capture.json"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 537,
+          "scale_percent": 209.77,
+          "shift_x": 0,
+          "shift_y": 14,
+          "height_dm": 12,
+          "target_span": 126,
+          "source_factor_q8": 302,
+          "silhouette_bounds": [
+            2,
+            12,
+            62,
+            62
+          ],
+          "idle_floor": 53,
+          "body_center_y_q8": 8715,
+          "source_width": 89,
+          "source_height": 74,
+          "source_footprint_q8": 21188
+        },
+        "steps": 512,
+        "unique": 34,
+        "duration": 32.720333333333336,
+        "decoded_frames": 982,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0279_pelipper/back/capture.json"
+      }
+    },
+    "height_m": 1.2
+  },
+  {
+    "national": 280,
+    "emerald": 392,
+    "name": "Ralts",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 295,
+          "scale_percent": 115.23,
+          "shift_x": 0,
+          "shift_y": -17,
+          "height_dm": 4,
+          "target_span": 45,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            20,
+            23,
+            43,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 10508,
+          "source_width": 23,
+          "source_height": 39,
+          "source_footprint_q8": 7975
+        },
+        "steps": 480,
+        "unique": 13,
+        "duration": 31.190333333333335,
+        "decoded_frames": 936,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0280_ralts/front/capture.json"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 359,
+          "scale_percent": 140.23,
+          "shift_x": 0,
+          "shift_y": 0,
+          "height_dm": 4,
+          "target_span": 59,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            19,
+            20,
+            44,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 10265,
+          "source_width": 25,
+          "source_height": 42,
+          "source_footprint_q8": 7975
+        },
+        "steps": 480,
+        "unique": 13,
+        "duration": 30.595333333333333,
+        "decoded_frames": 918,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0280_ralts/back/capture.json"
+      }
+    },
+    "height_m": 0.4
+  },
+  {
+    "national": 281,
+    "emerald": 393,
+    "name": "Kirlia",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 234,
+          "scale_percent": 91.41,
+          "shift_x": 0,
+          "shift_y": -1,
+          "height_dm": 8,
+          "target_span": 55,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            14,
+            2,
+            49,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 7653,
+          "source_width": 37,
+          "source_height": 63,
+          "source_footprint_q8": 12275
+        },
+        "steps": 336,
+        "unique": 21,
+        "duration": 30.595333333333333,
+        "decoded_frames": 918,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0281_kirlia/front/capture.json"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 341,
+          "scale_percent": 133.2,
+          "shift_x": 0,
+          "shift_y": 21,
+          "height_dm": 8,
+          "target_span": 80,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            15,
+            2,
+            49,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 7554,
+          "source_width": 36,
+          "source_height": 63,
+          "source_footprint_q8": 12275
+        },
+        "steps": 336,
+        "unique": 21,
+        "duration": 31.190333333333335,
+        "decoded_frames": 936,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0281_kirlia/back/capture.json"
+      }
+    },
+    "height_m": 0.8
+  },
+  {
+    "national": 282,
+    "emerald": 394,
+    "name": "Gardevoir",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 349,
+          "scale_percent": 136.33,
+          "shift_x": 0,
+          "shift_y": -7,
+          "height_dm": 16,
+          "target_span": 82,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            4,
+            2,
+            60,
+            62
+          ],
+          "idle_floor": 60,
+          "body_center_y_q8": 8866,
+          "source_width": 72,
+          "source_height": 77,
+          "source_footprint_q8": 19127
+        },
+        "steps": 744,
+        "unique": 58,
+        "duration": 39.361333333333334,
+        "decoded_frames": 1181,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0282_gardevoir/front/capture.json"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 477,
+          "scale_percent": 186.33,
+          "shift_x": 0,
+          "shift_y": 14,
+          "height_dm": 16,
+          "target_span": 112,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            3,
+            2,
+            60,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 9035,
+          "source_width": 73,
+          "source_height": 77,
+          "source_footprint_q8": 19127
+        },
+        "steps": 744,
+        "unique": 57,
+        "duration": 39.65833333333333,
+        "decoded_frames": 1190,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0282_gardevoir/back/capture.json"
+      }
+    },
+    "height_m": 1.6
+  },
+  {
+    "national": 283,
+    "emerald": 311,
+    "name": "Surskit",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 260,
+          "scale_percent": 101.56,
+          "shift_x": 0,
+          "shift_y": -12,
+          "height_dm": 5,
+          "target_span": 61,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            18,
+            62,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 10169,
+          "source_width": 68,
+          "source_height": 50,
+          "source_footprint_q8": 14981
+        },
+        "steps": 451,
+        "unique": 55,
+        "duration": 39.65833333333333,
+        "decoded_frames": 1190,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0283_surskit/front/capture.json"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 337,
+          "scale_percent": 131.64,
+          "shift_x": 0,
+          "shift_y": 1,
+          "height_dm": 5,
+          "target_span": 79,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            19,
+            62,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 10615,
+          "source_width": 69,
+          "source_height": 50,
+          "source_footprint_q8": 14981
+        },
+        "steps": 451,
+        "unique": 52,
+        "duration": 39.361333333333334,
+        "decoded_frames": 1181,
+        "build_id": "f2ecf4d5e40cf598",
+        "binary_sha256": "8f0bbf00cc6618af733f2a60b1cbab3908d83696ce72372dc80d761fccbf1616",
+        "capture": "artifacts/bw2-validation/pokemon/0283_surskit/back/capture.json"
+      }
+    },
+    "height_m": 0.5
+  }
+]
