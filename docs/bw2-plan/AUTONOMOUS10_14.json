@@ -1,0 +1,447 @@
+{
+  "request": "Prossimi cinque checkpoint, 10-14",
+  "start_pokemon": 74,
+  "target_pokemon": 114,
+  "completed_checkpoints": 1,
+  "groups": [
+    {
+      "number": 10,
+      "ordinal": 1,
+      "status": "complete",
+      "national_ids": [
+        66,
+        67,
+        68,
+        307,
+        308,
+        309,
+        310,
+        311
+      ],
+      "names": [
+        "Machop",
+        "Machoke",
+        "Machamp",
+        "Meditite",
+        "Medicham",
+        "Electrike",
+        "Manectric",
+        "Plusle"
+      ],
+      "cases": [
+        {
+          "name": "machop-machoke",
+          "player": 66,
+          "enemy": 67
+        },
+        {
+          "name": "machoke-machop",
+          "player": 67,
+          "enemy": 66
+        },
+        {
+          "name": "machamp-meditite",
+          "player": 68,
+          "enemy": 356
+        },
+        {
+          "name": "meditite-machamp",
+          "player": 356,
+          "enemy": 68
+        },
+        {
+          "name": "medicham-electrike",
+          "player": 357,
+          "enemy": 337
+        },
+        {
+          "name": "electrike-medicham",
+          "player": 337,
+          "enemy": 357
+        },
+        {
+          "name": "manectric-plusle",
+          "player": 338,
+          "enemy": 353
+        },
+        {
+          "name": "plusle-manectric",
+          "player": 353,
+          "enemy": 338
+        }
+      ],
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 88,
+      "movie": {
+        "duration": 277.5776666666667,
+        "decoded_frames": 8325,
+        "sha256": "b7801d6bea116bff895d281ec9829a0f565b0494c56a6f5764d01e5ec1f72649",
+        "segments": [
+          {
+            "name": "machop-machoke",
+            "start": 0.0,
+            "end": 30.439333333333334,
+            "frames": 913,
+            "sha256": "b1330c37ab5f7bf377bcfeebf25adaa871372efd3719a04c763290e21c7dea21"
+          },
+          {
+            "name": "machoke-machop",
+            "start": 30.439333333333334,
+            "end": 61.00366666666667,
+            "frames": 916,
+            "sha256": "4611fc4b161aa23cf39b5d6021210e34454880dad114afafc22dc0f3ccd739ea"
+          },
+          {
+            "name": "machamp-meditite",
+            "start": 61.00366666666667,
+            "end": 109.318,
+            "frames": 1449,
+            "sha256": "89cbaf9683bd910d406ff9fae25858e1eabcb188ce29dbc891dcb838d6196758"
+          },
+          {
+            "name": "meditite-machamp",
+            "start": 109.318,
+            "end": 158.28833333333333,
+            "frames": 1469,
+            "sha256": "9373665e02d6bd651db5674cce68d85dc0312e21cd5f43632fb0b3968d22343c"
+          },
+          {
+            "name": "medicham-electrike",
+            "start": 158.28833333333333,
+            "end": 186.79066666666668,
+            "frames": 855,
+            "sha256": "c3613934769860fd397ecd6726e4e268617905bc5a365f4d695b34f3b25c2cc6"
+          },
+          {
+            "name": "electrike-medicham",
+            "start": 186.79066666666668,
+            "end": 214.527,
+            "frames": 832,
+            "sha256": "e7b4b0f8d4cf4f6a7cb2aeb010acdb95b7e1e23b51584e5fe89eac33b8aa1626"
+          },
+          {
+            "name": "manectric-plusle",
+            "start": 214.527,
+            "end": 245.84133333333332,
+            "frames": 939,
+            "sha256": "639692df01460372123fe2536f8cd6f97c8412cfb0d8e2cb514ad44bfa52c459"
+          },
+          {
+            "name": "plusle-manectric",
+            "start": 245.84133333333332,
+            "end": 277.5776666666667,
+            "frames": 952,
+            "sha256": "6455d508f1067b91776613011d1819e3799bf41758bf3453612e0fc611633ca7"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 10: eight Pokemon"
+    },
+    {
+      "number": 11,
+      "ordinal": 2,
+      "status": "pending",
+      "national_ids": [
+        312,
+        81,
+        82,
+        100,
+        101,
+        313,
+        314,
+        43
+      ],
+      "names": [
+        "Minun",
+        "Magnemite",
+        "Magneton",
+        "Voltorb",
+        "Electrode",
+        "Volbeat",
+        "Illumise",
+        "Oddish"
+      ],
+      "cases": [
+        {
+          "name": "minun-magnemite",
+          "player": 354,
+          "enemy": 81
+        },
+        {
+          "name": "magnemite-minun",
+          "player": 81,
+          "enemy": 354
+        },
+        {
+          "name": "magneton-voltorb",
+          "player": 82,
+          "enemy": 100
+        },
+        {
+          "name": "voltorb-magneton",
+          "player": 100,
+          "enemy": 82
+        },
+        {
+          "name": "electrode-volbeat",
+          "player": 101,
+          "enemy": 386
+        },
+        {
+          "name": "volbeat-electrode",
+          "player": 386,
+          "enemy": 101
+        },
+        {
+          "name": "illumise-oddish",
+          "player": 387,
+          "enemy": 43
+        },
+        {
+          "name": "oddish-illumise",
+          "player": 43,
+          "enemy": 387
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "ordinal": 3,
+      "status": "pending",
+      "national_ids": [
+        44,
+        45,
+        182,
+        84,
+        85,
+        315,
+        316,
+        317
+      ],
+      "names": [
+        "Gloom",
+        "Vileplume",
+        "Bellossom",
+        "Doduo",
+        "Dodrio",
+        "Roselia",
+        "Gulpin",
+        "Swalot"
+      ],
+      "cases": [
+        {
+          "name": "gloom-vileplume",
+          "player": 44,
+          "enemy": 45
+        },
+        {
+          "name": "vileplume-gloom",
+          "player": 45,
+          "enemy": 44
+        },
+        {
+          "name": "bellossom-doduo",
+          "player": 182,
+          "enemy": 84
+        },
+        {
+          "name": "doduo-bellossom",
+          "player": 84,
+          "enemy": 182
+        },
+        {
+          "name": "dodrio-roselia",
+          "player": 85,
+          "enemy": 363
+        },
+        {
+          "name": "roselia-dodrio",
+          "player": 363,
+          "enemy": 85
+        },
+        {
+          "name": "gulpin-swalot",
+          "player": 367,
+          "enemy": 368
+        },
+        {
+          "name": "swalot-gulpin",
+          "player": 368,
+          "enemy": 367
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "ordinal": 4,
+      "status": "pending",
+      "national_ids": [
+        318,
+        319,
+        320,
+        322,
+        323,
+        218,
+        219,
+        324
+      ],
+      "names": [
+        "Carvanha",
+        "Sharpedo",
+        "Wailmer",
+        "Numel",
+        "Camerupt",
+        "Slugma",
+        "Magcargo",
+        "Torkoal"
+      ],
+      "cases": [
+        {
+          "name": "carvanha-sharpedo",
+          "player": 330,
+          "enemy": 331
+        },
+        {
+          "name": "sharpedo-carvanha",
+          "player": 331,
+          "enemy": 330
+        },
+        {
+          "name": "wailmer-numel",
+          "player": 313,
+          "enemy": 339
+        },
+        {
+          "name": "numel-wailmer",
+          "player": 339,
+          "enemy": 313
+        },
+        {
+          "name": "camerupt-slugma",
+          "player": 340,
+          "enemy": 218
+        },
+        {
+          "name": "slugma-camerupt",
+          "player": 218,
+          "enemy": 340
+        },
+        {
+          "name": "magcargo-torkoal",
+          "player": 219,
+          "enemy": 321
+        },
+        {
+          "name": "torkoal-magcargo",
+          "player": 321,
+          "enemy": 219
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "ordinal": 5,
+      "status": "pending",
+      "national_ids": [
+        88,
+        89,
+        109,
+        110,
+        325,
+        326,
+        27,
+        28
+      ],
+      "names": [
+        "Grimer",
+        "Muk",
+        "Koffing",
+        "Weezing",
+        "Spoink",
+        "Grumpig",
+        "Sandshrew",
+        "Sandslash"
+      ],
+      "cases": [
+        {
+          "name": "grimer-muk",
+          "player": 88,
+          "enemy": 89
+        },
+        {
+          "name": "muk-grimer",
+          "player": 89,
+          "enemy": 88
+        },
+        {
+          "name": "koffing-weezing",
+          "player": 109,
+          "enemy": 110
+        },
+        {
+          "name": "weezing-koffing",
+          "player": 110,
+          "enemy": 109
+        },
+        {
+          "name": "spoink-grumpig",
+          "player": 351,
+          "enemy": 352
+        },
+        {
+          "name": "grumpig-spoink",
+          "player": 352,
+          "enemy": 351
+        },
+        {
+          "name": "sandshrew-sandslash",
+          "player": 27,
+          "enemy": 28
+        },
+        {
+          "name": "sandslash-sandshrew",
+          "player": 28,
+          "enemy": 27
+        }
+      ]
+    }
+  ],
+  "baseline_asset_files": 317,
+  "archived_previous_builds": [
+    "artifacts/bw2-validation/builds/ab9b0891e3970829_6a48c0fdee8f/validation.3dsx",
+    "artifacts/bw2-validation/builds/ab9b0891e3970829_0129c6ca3803/validation.elf",
+    "artifacts/bw2-validation/builds/c65648fb2fe7ded3_c7ca71c43aee/Emerald3DS-BW2.3dsx"
+  ],
+  "builds": {
+    "test": {
+      "build_id": "35c62b2e2f40bcd4",
+      "sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0",
+      "path": "artifacts/bw2-validation/builds/35c62b2e2f40bcd4_11ce99dc5a27/validation.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/35c62b2e2f40bcd4_f8cfc596afdd/validation.elf",
+      "elf_sha256": "f8cfc596afdd52e92ca9339f8762d35bd707cbc0ddba47141a2082567ade760f"
+    },
+    "production": {
+      "build_id": "78ea4c127e93ed58",
+      "sha256": "5669769244cfb417882cf953021e219d0250969eff65733dab8e7566047e2eb5",
+      "path": "artifacts/bw2-validation/builds/78ea4c127e93ed58_5669769244cf/Emerald3DS-BW2.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/78ea4c127e93ed58_f9142e767ebd/production.elf",
+      "elf_sha256": "f9142e767ebdff03f8ae31fb6b032d99678eee27c5cfd91d83b2003e5d999261"
+    }
+  },
+  "checks": {
+    "exporter_tests": 16,
+    "evidence_tests": 7,
+    "bridge_synthetic": true,
+    "bridge_real_assets": true,
+    "production_stubs_bytes": 4,
+    "production_validation_mailbox": false
+  }
+}

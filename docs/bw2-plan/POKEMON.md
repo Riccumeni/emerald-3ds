@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **74**.
+Totale: **386**. Fatti con dossier completo: **82**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -78,14 +78,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0304 **Aron** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0304_aron/).
 - [x] 0305 **Lairon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0305_lairon/).
 - [x] 0306 **Aggron** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0306_aggron/).
-- [ ] 0066 **Machop** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0066_machop/).
-- [ ] 0067 **Machoke** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0067_machoke/).
-- [ ] 0068 **Machamp** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0068_machamp/).
-- [ ] 0307 **Meditite** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0307_meditite/).
-- [ ] 0308 **Medicham** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0308_medicham/).
-- [ ] 0309 **Electrike** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0309_electrike/).
-- [ ] 0310 **Manectric** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0310_manectric/).
-- [ ] 0311 **Plusle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0311_plusle/).
+- [x] 0066 **Machop** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0066_machop/).
+- [x] 0067 **Machoke** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0067_machoke/).
+- [x] 0068 **Machamp** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0068_machamp/).
+- [x] 0307 **Meditite** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0307_meditite/).
+- [x] 0308 **Medicham** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0308_medicham/).
+- [x] 0309 **Electrike** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0309_electrike/).
+- [x] 0310 **Manectric** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0310_manectric/).
+- [x] 0311 **Plusle** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0311_plusle/).
 - [ ] 0312 **Minun** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0312_minun/).
 - [ ] 0081 **Magnemite** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0081_magnemite/).
 - [ ] 0082 **Magneton** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0082_magneton/).

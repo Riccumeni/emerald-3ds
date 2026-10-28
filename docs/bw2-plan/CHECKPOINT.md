@@ -1,11 +1,11 @@
-# Punto di ripresa — 2026-10-28T19:26:33
+# Punto di ripresa — 2026-10-28T20:31:44
 
-Stato: esecuzione in corso. Completati **74/386 Pokemon** e **6/354 mosse**, con dossier verificati.
+Stato: esecuzione in corso. Completati **82/386 Pokemon** e **6/354 mosse**, con dossier verificati.
 
 - Piano e registri: `docs/BW2_ANIMATION_PLAN.md`, `docs/bw2-plan/stato.json` e le due checklist.
 - Dossier permanenti: `artifacts/bw2-validation/`; i dati grandi restano locali e ignorati da Git.
-- Unita' in corso: `null`. Ultima chiusa: `{"tipo": "pokemon", "id": 306, "nome": "Aggron"}`.
-- Prossima unita' da affrontare: `{"tipo": "pokemon", "id": 66, "nome": "Machop", "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"}`.
+- Unita' in corso: `null`. Ultima chiusa: `{"tipo": "pokemon", "id": 311, "nome": "Plusle"}`.
+- Prossima unita' da affrontare: `{"tipo": "pokemon", "id": 312, "nome": "Minun", "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"}`.
 - Tutti i dossier pilota sono chiusi; continuare dalla prossima unita' indicata sopra.
 - Inventario `docs/bw2-plan/INVENTORY.json`: 772 viste base senza incompatibilita' di formato rilevate; solo 53/354 script accettati dal decoder attuale. Non significa che siano gia' importati/verificati. Forme ancora da censire.
 - `3ds_port/scripts/emu/run_bw2_validation.ps1`: avvia solo l'emulatore isolato; `bw2_capture.py` registra fotogrammi nativi via RPC, a 1x, in MP4/H.264 con timestamp reali e verifica la decodifica.
@@ -21,4 +21,4 @@ Stato: esecuzione in corso. Completati **74/386 Pokemon** e **6/354 mosse**, con
 
 Prima della nuova unita' controllare contesto/budget; salvare processi e sessioni attivi in questo checkpoint se serve interrompere. Non segnare mai completo un dossier parziale.
 
-Nota persistente: Richiesta conclusa: 5/5 checkpoint autonomi, 40 nuovi Pokémon, totale 74/386; mosse 6/354. Tutti i dossier front/back e shiny sono stati rivisti e verificati. Ogni gruppo ha un commit dedicato. Riepilogo: AUTONOMOUS5_REVIEW.md. Criterio v5 con margine superiore v5.1 dal gruppo 7; confronti in FRONT_HEADROOM_REVIEW.json. Build normale e build di prova archiviate con hash; ROM e salvataggio utente preservati. Acquisizioni terminate; emulatore isolato chiuso; nessun processo di prova attivo. Prossima unità generale: Machop.
+Nota persistente: Richiesta: checkpoint 10–14, 1/5 conclusi; partenza 74 Pokémon, obiettivo 114; mosse 6/354. Registro AUTONOMOUS10_14.json; helper build/bw2-next5.py, catture build/bw2-next5-capture.ps1. Gruppo10 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 11. Build e processi in AUTONOMOUS10_14.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap.

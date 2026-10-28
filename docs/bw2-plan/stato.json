@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-28T19:26:33",
+  "aggiornato_il": "2026-10-28T20:31:44",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 74,
+    "pokemon_fatti": 82,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,14 +19,14 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 66,
-    "nome": "Machop",
+    "id": 312,
+    "nome": "Minun",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
     "percorso": "build/bw2-validation/Emerald3DS-BW2.3dsx",
-    "build_id": "c65648fb2fe7ded3",
-    "sha256": "c7ca71c43aee28d283e43f33ac10761708ec28989e6cdccc7083973257117f3c"
+    "build_id": "78ea4c127e93ed58",
+    "sha256": "5669769244cfb417882cf953021e219d0250969eff65733dab8e7566047e2eb5"
   },
   "pokemon": [
     {
@@ -2571,28 +2571,34 @@
       "costante": "SPECIES_MACHOP",
       "nome": "Machop",
       "ordine": 73,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0066_machop",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0066_machop/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0066_machop/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "1c6614cd1a6c5d62df14223765a20f2fadc196494bca8560497cb5f361e7f6db",
+          "video_sha256": "4611fc4b161aa23cf39b5d6021210e34454880dad114afafc22dc0f3ccd739ea"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0066_machop/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0066_machop/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "3639ab0b27425ea4540bdadfb174c916729d6eea28194450deefb89b00eeebfe",
+          "video_sha256": "b1330c37ab5f7bf377bcfeebf25adaa871372efd3719a04c763290e21c7dea21"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0066_machop/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0066_machop/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T20:31:34",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 67,
@@ -2600,28 +2606,34 @@
       "costante": "SPECIES_MACHOKE",
       "nome": "Machoke",
       "ordine": 74,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0067_machoke",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0067_machoke/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0067_machoke/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "3639ab0b27425ea4540bdadfb174c916729d6eea28194450deefb89b00eeebfe",
+          "video_sha256": "b1330c37ab5f7bf377bcfeebf25adaa871372efd3719a04c763290e21c7dea21"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0067_machoke/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0067_machoke/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "1c6614cd1a6c5d62df14223765a20f2fadc196494bca8560497cb5f361e7f6db",
+          "video_sha256": "4611fc4b161aa23cf39b5d6021210e34454880dad114afafc22dc0f3ccd739ea"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0067_machoke/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0067_machoke/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T20:31:35",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 68,
@@ -2629,28 +2641,34 @@
       "costante": "SPECIES_MACHAMP",
       "nome": "Machamp",
       "ordine": 75,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0068_machamp",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0068_machamp/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0068_machamp/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "de7ee2d6e8b549d4fe0c2c14714da0dd1777892fb8bf2fd2cda35c7f54ac69ee",
+          "video_sha256": "9373665e02d6bd651db5674cce68d85dc0312e21cd5f43632fb0b3968d22343c"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0068_machamp/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0068_machamp/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "ecba353598ff7e26bd98fdfd196873cc0e68007c5c1985032f0fc1d0c441a416",
+          "video_sha256": "89cbaf9683bd910d406ff9fae25858e1eabcb188ce29dbc891dcb838d6196758"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0068_machamp/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0068_machamp/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T20:31:35",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 307,
@@ -2658,28 +2676,34 @@
       "costante": "SPECIES_MEDITITE",
       "nome": "Meditite",
       "ordine": 76,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0307_meditite",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0307_meditite/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0307_meditite/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "ecba353598ff7e26bd98fdfd196873cc0e68007c5c1985032f0fc1d0c441a416",
+          "video_sha256": "89cbaf9683bd910d406ff9fae25858e1eabcb188ce29dbc891dcb838d6196758"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0307_meditite/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0307_meditite/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "de7ee2d6e8b549d4fe0c2c14714da0dd1777892fb8bf2fd2cda35c7f54ac69ee",
+          "video_sha256": "9373665e02d6bd651db5674cce68d85dc0312e21cd5f43632fb0b3968d22343c"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0307_meditite/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0307_meditite/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T20:31:36",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 308,
@@ -2687,28 +2711,34 @@
       "costante": "SPECIES_MEDICHAM",
       "nome": "Medicham",
       "ordine": 77,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0308_medicham",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0308_medicham/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0308_medicham/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "a9f3c4605a799499984de607e9751564fd2162cbda44715ca8d70275b24c42de",
+          "video_sha256": "e7b4b0f8d4cf4f6a7cb2aeb010acdb95b7e1e23b51584e5fe89eac33b8aa1626"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0308_medicham/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0308_medicham/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "112cadf8d62bcc8d61ef12e6740bf40309b91eaf508d4dcf379930d4eb7da7f6",
+          "video_sha256": "c3613934769860fd397ecd6726e4e268617905bc5a365f4d695b34f3b25c2cc6"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0308_medicham/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0308_medicham/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T20:31:36",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 309,
@@ -2716,28 +2746,34 @@
       "costante": "SPECIES_ELECTRIKE",
       "nome": "Electrike",
       "ordine": 78,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0309_electrike",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0309_electrike/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0309_electrike/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "112cadf8d62bcc8d61ef12e6740bf40309b91eaf508d4dcf379930d4eb7da7f6",
+          "video_sha256": "c3613934769860fd397ecd6726e4e268617905bc5a365f4d695b34f3b25c2cc6"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0309_electrike/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0309_electrike/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "a9f3c4605a799499984de607e9751564fd2162cbda44715ca8d70275b24c42de",
+          "video_sha256": "e7b4b0f8d4cf4f6a7cb2aeb010acdb95b7e1e23b51584e5fe89eac33b8aa1626"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0309_electrike/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0309_electrike/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T20:31:37",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 310,
@@ -2745,28 +2781,34 @@
       "costante": "SPECIES_MANECTRIC",
       "nome": "Manectric",
       "ordine": 79,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0310_manectric",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0310_manectric/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0310_manectric/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "31b75cc1da8cc13e4f8052e273ba1b5c0284899fa6e1cee24bb2ea513d7010af",
+          "video_sha256": "6455d508f1067b91776613011d1819e3799bf41758bf3453612e0fc611633ca7"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0310_manectric/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0310_manectric/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "0d8b195fea60250ab2e29d69ecbf1e58af6db42d892ba683ba3423f573c1df58",
+          "video_sha256": "639692df01460372123fe2536f8cd6f97c8412cfb0d8e2cb514ad44bfa52c459"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0310_manectric/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0310_manectric/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T20:31:37",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 311,
@@ -2774,28 +2816,34 @@
       "costante": "SPECIES_PLUSLE",
       "nome": "Plusle",
       "ordine": 80,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0311_plusle",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0311_plusle/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0311_plusle/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "0d8b195fea60250ab2e29d69ecbf1e58af6db42d892ba683ba3423f573c1df58",
+          "video_sha256": "639692df01460372123fe2536f8cd6f97c8412cfb0d8e2cb514ad44bfa52c459"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0311_plusle/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0311_plusle/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "35c62b2e2f40bcd4",
+          "screenshot_sha256": "31b75cc1da8cc13e4f8052e273ba1b5c0284899fa6e1cee24bb2ea513d7010af",
+          "video_sha256": "6455d508f1067b91776613011d1819e3799bf41758bf3453612e0fc611633ca7"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0311_plusle/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0311_plusle/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-28T20:31:38",
+      "build_verificata": "35c62b2e2f40bcd4"
     },
     {
       "numero_nazionale": 312,
@@ -22024,8 +22072,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 306,
-    "nome": "Aggron"
+    "id": 311,
+    "nome": "Plusle"
   },
-  "checkpoint_note": "Richiesta conclusa: 5/5 checkpoint autonomi, 40 nuovi Pokémon, totale 74/386; mosse 6/354. Tutti i dossier front/back e shiny sono stati rivisti e verificati. Ogni gruppo ha un commit dedicato. Riepilogo: AUTONOMOUS5_REVIEW.md. Criterio v5 con margine superiore v5.1 dal gruppo 7; confronti in FRONT_HEADROOM_REVIEW.json. Build normale e build di prova archiviate con hash; ROM e salvataggio utente preservati. Acquisizioni terminate; emulatore isolato chiuso; nessun processo di prova attivo. Prossima unità generale: Machop."
+  "checkpoint_note": "Richiesta: checkpoint 10–14, 1/5 conclusi; partenza 74 Pokémon, obiettivo 114; mosse 6/354. Registro AUTONOMOUS10_14.json; helper build/bw2-next5.py, catture build/bw2-next5-capture.ps1. Gruppo10 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 11. Build e processi in AUTONOMOUS10_14.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap. "
 }
