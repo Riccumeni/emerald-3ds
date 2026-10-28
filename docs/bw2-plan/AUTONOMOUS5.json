@@ -1,0 +1,444 @@
+{
+  "version": 1,
+  "requested_checkpoints": 5,
+  "completed_checkpoints": 1,
+  "starting_pokemon_done": 34,
+  "target_pokemon_done": 74,
+  "algorithm": "height-source-footprint-v5",
+  "groups": [
+    {
+      "number": 5,
+      "ordinal": 1,
+      "status": "complete",
+      "national_ids": [
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        63,
+        64
+      ],
+      "names": [
+        "Masquerain",
+        "Shroomish",
+        "Breloom",
+        "Slakoth",
+        "Vigoroth",
+        "Slaking",
+        "Abra",
+        "Kadabra"
+      ],
+      "cases": [
+        {
+          "name": "masquerain-shroomish",
+          "player": 312,
+          "enemy": 306
+        },
+        {
+          "name": "shroomish-masquerain",
+          "player": 306,
+          "enemy": 312
+        },
+        {
+          "name": "breloom-slakoth",
+          "player": 307,
+          "enemy": 364
+        },
+        {
+          "name": "slakoth-breloom",
+          "player": 364,
+          "enemy": 307
+        },
+        {
+          "name": "vigoroth-slaking",
+          "player": 365,
+          "enemy": 366
+        },
+        {
+          "name": "slaking-vigoroth",
+          "player": 366,
+          "enemy": 365
+        },
+        {
+          "name": "abra-kadabra",
+          "player": 63,
+          "enemy": 64
+        },
+        {
+          "name": "kadabra-abra",
+          "player": 64,
+          "enemy": 63
+        }
+      ],
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_shiny": true,
+      "audit_dossiers": 48,
+      "movie": {
+        "duration": 243.13966666666667,
+        "decoded_frames": 7292,
+        "sha256": "49e6af6be4821490cff481685d409b71760f32f6e5a509ecabfa81e3a8b8a5b9",
+        "segments": [
+          {
+            "name": "masquerain-shroomish",
+            "start": 0.0,
+            "end": 39.001333333333335,
+            "frames": 1170,
+            "sha256": "02b457bde462969fa019da56aebf931c0cc57696e582f1ec225622cd69523b2d"
+          },
+          {
+            "name": "shroomish-masquerain",
+            "start": 39.001333333333335,
+            "end": 77.73766666666667,
+            "frames": 1162,
+            "sha256": "3a2a3ed223875fc516a3451d2369f3e351123df34eb1c28a4aee553206da731f"
+          },
+          {
+            "name": "breloom-slakoth",
+            "start": 77.73766666666667,
+            "end": 100.818,
+            "frames": 692,
+            "sha256": "f9e3f8bbf1b08e2a8e4bc0b34d89df2c22125a6b1d3ec2017d94d9b80dc0cd0c"
+          },
+          {
+            "name": "slakoth-breloom",
+            "start": 100.818,
+            "end": 123.66333333333333,
+            "frames": 685,
+            "sha256": "5ae1ad7b32a60840ca6dd6e33b414a8c5a5f49079ee44399fc06ae0e4e7c2cf4"
+          },
+          {
+            "name": "vigoroth-slaking",
+            "start": 123.66333333333333,
+            "end": 156.13366666666667,
+            "frames": 974,
+            "sha256": "5995f798830fb9cf3ade9f2ed806763311a7b3526536206452cc0ee6dc08e662"
+          },
+          {
+            "name": "slaking-vigoroth",
+            "start": 156.13366666666667,
+            "end": 186.542,
+            "frames": 912,
+            "sha256": "d4ff084d668f87ce9fffc6b089d87d5d3587d1b452dd83dcacecfabd2d399a6a"
+          },
+          {
+            "name": "abra-kadabra",
+            "start": 186.542,
+            "end": 214.74733333333333,
+            "frames": 846,
+            "sha256": "18ad8f9cb0f7eee6c35e453ba4daa5221fdc8c88c5c9f823787f5b0909664a0d"
+          },
+          {
+            "name": "kadabra-abra",
+            "start": 214.74733333333333,
+            "end": 243.13966666666667,
+            "frames": 851,
+            "sha256": "e009454a1c91d9dd57dc13faac5ddefb31612b5269223e0ad7d020d4c68c7193"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 5: eight Pokemon"
+    },
+    {
+      "number": 6,
+      "ordinal": 2,
+      "status": "pending",
+      "national_ids": [
+        65,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296
+      ],
+      "names": [
+        "Alakazam",
+        "Nincada",
+        "Ninjask",
+        "Shedinja",
+        "Whismur",
+        "Loudred",
+        "Exploud",
+        "Makuhita"
+      ],
+      "cases": [
+        {
+          "name": "alakazam-nincada",
+          "player": 65,
+          "enemy": 301
+        },
+        {
+          "name": "nincada-alakazam",
+          "player": 301,
+          "enemy": 65
+        },
+        {
+          "name": "ninjask-shedinja",
+          "player": 302,
+          "enemy": 303
+        },
+        {
+          "name": "shedinja-ninjask",
+          "player": 303,
+          "enemy": 302
+        },
+        {
+          "name": "whismur-loudred",
+          "player": 370,
+          "enemy": 371
+        },
+        {
+          "name": "loudred-whismur",
+          "player": 371,
+          "enemy": 370
+        },
+        {
+          "name": "exploud-makuhita",
+          "player": 372,
+          "enemy": 335
+        },
+        {
+          "name": "makuhita-exploud",
+          "player": 335,
+          "enemy": 372
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "ordinal": 3,
+      "status": "pending",
+      "national_ids": [
+        297,
+        118,
+        119,
+        129,
+        130,
+        298,
+        183,
+        184
+      ],
+      "names": [
+        "Hariyama",
+        "Goldeen",
+        "Seaking",
+        "Magikarp",
+        "Gyarados",
+        "Azurill",
+        "Marill",
+        "Azumarill"
+      ],
+      "cases": [
+        {
+          "name": "hariyama-goldeen",
+          "player": 336,
+          "enemy": 118
+        },
+        {
+          "name": "goldeen-hariyama",
+          "player": 118,
+          "enemy": 336
+        },
+        {
+          "name": "seaking-magikarp",
+          "player": 119,
+          "enemy": 129
+        },
+        {
+          "name": "magikarp-seaking",
+          "player": 129,
+          "enemy": 119
+        },
+        {
+          "name": "gyarados-azurill",
+          "player": 130,
+          "enemy": 350
+        },
+        {
+          "name": "azurill-gyarados",
+          "player": 350,
+          "enemy": 130
+        },
+        {
+          "name": "marill-azumarill",
+          "player": 183,
+          "enemy": 184
+        },
+        {
+          "name": "azumarill-marill",
+          "player": 184,
+          "enemy": 183
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "ordinal": 4,
+      "status": "pending",
+      "national_ids": [
+        74,
+        75,
+        76,
+        299,
+        300,
+        301,
+        41,
+        42
+      ],
+      "names": [
+        "Geodude",
+        "Graveler",
+        "Golem",
+        "Nosepass",
+        "Skitty",
+        "Delcatty",
+        "Zubat",
+        "Golbat"
+      ],
+      "cases": [
+        {
+          "name": "geodude-graveler",
+          "player": 74,
+          "enemy": 75
+        },
+        {
+          "name": "graveler-geodude",
+          "player": 75,
+          "enemy": 74
+        },
+        {
+          "name": "golem-nosepass",
+          "player": 76,
+          "enemy": 320
+        },
+        {
+          "name": "nosepass-golem",
+          "player": 320,
+          "enemy": 76
+        },
+        {
+          "name": "skitty-delcatty",
+          "player": 315,
+          "enemy": 316
+        },
+        {
+          "name": "delcatty-skitty",
+          "player": 316,
+          "enemy": 315
+        },
+        {
+          "name": "zubat-golbat",
+          "player": 41,
+          "enemy": 42
+        },
+        {
+          "name": "golbat-zubat",
+          "player": 42,
+          "enemy": 41
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "ordinal": 5,
+      "status": "pending",
+      "national_ids": [
+        169,
+        72,
+        73,
+        302,
+        303,
+        304,
+        305,
+        306
+      ],
+      "names": [
+        "Crobat",
+        "Tentacool",
+        "Tentacruel",
+        "Sableye",
+        "Mawile",
+        "Aron",
+        "Lairon",
+        "Aggron"
+      ],
+      "cases": [
+        {
+          "name": "crobat-tentacool",
+          "player": 169,
+          "enemy": 72
+        },
+        {
+          "name": "tentacool-crobat",
+          "player": 72,
+          "enemy": 169
+        },
+        {
+          "name": "tentacruel-sableye",
+          "player": 73,
+          "enemy": 322
+        },
+        {
+          "name": "sableye-tentacruel",
+          "player": 322,
+          "enemy": 73
+        },
+        {
+          "name": "mawile-aron",
+          "player": 355,
+          "enemy": 382
+        },
+        {
+          "name": "aron-mawile",
+          "player": 382,
+          "enemy": 355
+        },
+        {
+          "name": "lairon-aggron",
+          "player": 383,
+          "enemy": 384
+        },
+        {
+          "name": "aggron-lairon",
+          "player": 384,
+          "enemy": 383
+        }
+      ]
+    }
+  ],
+  "runtime": {
+    "capture_script": "build/bw2-auto5-capture.ps1",
+    "capture_log": "build/bw2-auto5-captures.log",
+    "capture_session": 61504,
+    "validation_build_id": "15dde47674f650ec",
+    "production_log": "build/bw2-auto5-production-build.log",
+    "helper": "build/bw2-auto5.py",
+    "production_session_completed": 91602,
+    "builds": {
+      "validation.3dsx": {
+        "build_id": "15dde47674f650ec",
+        "sha256": "54227e749aa5fc2b7ef3fd5a8682ecfbf73cf0f9efdd38412924ca92ed629bb3",
+        "archive": "artifacts/bw2-validation/builds/15dde47674f650ec_54227e749aa5/validation.3dsx"
+      },
+      "validation.elf": {
+        "build_id": "15dde47674f650ec",
+        "sha256": "48c627c086c87ee65349de1cdd509ba38427b4f65f661c4de73e46a0e9b3758f",
+        "archive": "artifacts/bw2-validation/builds/15dde47674f650ec_48c627c086c8/validation.elf"
+      },
+      "Emerald3DS-BW2.3dsx": {
+        "build_id": "2ed791a98434d45b",
+        "sha256": "036f89da901d369a80087f5911adc14843ce003b6ecd09ec275da719b1dde19a",
+        "archive": "artifacts/bw2-validation/builds/2ed791a98434d45b_036f89da901d/Emerald3DS-BW2.3dsx"
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **34**.
+Totale: **386**. Fatti con dossier completo: **42**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -38,14 +38,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0281 **Kirlia** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0281_kirlia/).
 - [x] 0282 **Gardevoir** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0282_gardevoir/).
 - [x] 0283 **Surskit** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0283_surskit/).
-- [ ] 0284 **Masquerain** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0284_masquerain/).
-- [ ] 0285 **Shroomish** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0285_shroomish/).
-- [ ] 0286 **Breloom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0286_breloom/).
-- [ ] 0287 **Slakoth** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0287_slakoth/).
-- [ ] 0288 **Vigoroth** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0288_vigoroth/).
-- [ ] 0289 **Slaking** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0289_slaking/).
-- [ ] 0063 **Abra** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0063_abra/).
-- [ ] 0064 **Kadabra** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0064_kadabra/).
+- [x] 0284 **Masquerain** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0284_masquerain/).
+- [x] 0285 **Shroomish** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0285_shroomish/).
+- [x] 0286 **Breloom** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0286_breloom/).
+- [x] 0287 **Slakoth** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0287_slakoth/).
+- [x] 0288 **Vigoroth** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0288_vigoroth/).
+- [x] 0289 **Slaking** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0289_slaking/).
+- [x] 0063 **Abra** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0063_abra/).
+- [x] 0064 **Kadabra** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0064_kadabra/).
 - [ ] 0065 **Alakazam** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0065_alakazam/).
 - [ ] 0290 **Nincada** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0290_nincada/).
 - [ ] 0291 **Ninjask** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0291_ninjask/).
