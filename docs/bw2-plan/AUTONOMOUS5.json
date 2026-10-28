@@ -1,7 +1,7 @@
 {
   "version": 1,
   "requested_checkpoints": 5,
-  "completed_checkpoints": 4,
+  "completed_checkpoints": 5,
   "starting_pokemon_done": 34,
   "target_pokemon_done": 74,
   "algorithm": "height-source-footprint-v5.1-front-headroom",
@@ -571,7 +571,7 @@
     {
       "number": 9,
       "ordinal": 5,
-      "status": "pending",
+      "status": "complete",
       "national_ids": [
         169,
         72,
@@ -635,14 +635,84 @@
         }
       ],
       "capture_prefix": "cp09h-",
-      "reviewed_normal_pairs": [],
-      "reviewed_shiny": false
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_shiny": true,
+      "audit_dossiers": 80,
+      "movie": {
+        "duration": 255.93966666666665,
+        "decoded_frames": 7675,
+        "sha256": "ccda9ca3b332cfb4e61de57c7f89389cd9002a4daa5f476bc90867670e45affa",
+        "segments": [
+          {
+            "name": "crobat-tentacool",
+            "start": 0.0,
+            "end": 23.971333333333334,
+            "frames": 719,
+            "sha256": "17d1c2e5cd26a3af034b32bfa5e9d88fa9a5d74e2ced23605227046b1af6e019"
+          },
+          {
+            "name": "tentacool-crobat",
+            "start": 23.971333333333334,
+            "end": 47.785666666666664,
+            "frames": 714,
+            "sha256": "4ae36f9b656bedaf5647bcd39a26e86b593f0eef3c2bced60d03c4549032d6bc"
+          },
+          {
+            "name": "tentacruel-sableye",
+            "start": 47.785666666666664,
+            "end": 78.101,
+            "frames": 909,
+            "sha256": "deb8d791859bdd0b78a05313bcf5f7f361d71de48fd5bd5d0d17a32188cb5285"
+          },
+          {
+            "name": "sableye-tentacruel",
+            "start": 78.101,
+            "end": 107.91533333333334,
+            "frames": 894,
+            "sha256": "4308ba466dd2369423f2432705bf5d3b9678b422661a95f3ad88f73e8d987b60"
+          },
+          {
+            "name": "mawile-aron",
+            "start": 107.91533333333334,
+            "end": 143.72966666666667,
+            "frames": 1074,
+            "sha256": "4f1728d9a35167818c590b2b61f979b6b8da490e12f61b940f79218032bd2b90"
+          },
+          {
+            "name": "aron-mawile",
+            "start": 143.72966666666667,
+            "end": 177.951,
+            "frames": 1026,
+            "sha256": "9c0cc12492342bbab00c4077ca93077ecd6b3b680ee088a4e1fce6392108cced"
+          },
+          {
+            "name": "lairon-aggron",
+            "start": 177.951,
+            "end": 216.76533333333333,
+            "frames": 1164,
+            "sha256": "9c7bfa6e1b79f922a252080ef1b267461e2ef950d634c0bd8d8d9acca131f372"
+          },
+          {
+            "name": "aggron-lairon",
+            "start": 216.76533333333333,
+            "end": 255.93966666666665,
+            "frames": 1175,
+            "sha256": "5dd07c1109d8d6cab604b95348f7edf09b069052d1ec2797cf9fd9c93b4ba032"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 9: eight Pokemon"
     }
   ],
   "runtime": {
     "capture_script": "build/bw2-auto5-capture.ps1",
-    "capture_log": "build/bw2-auto5-captures.log",
-    "capture_session": 61504,
+    "capture_log": "build/bw2-auto5-headroom-captures.log",
     "validation_build_id": "ab9b0891e3970829",
     "production_log": "build/bw2-auto5-headroom-production-build.log",
     "helper": "build/bw2-auto5.py",
@@ -681,8 +751,15 @@
         "archive": "artifacts/bw2-validation/builds/2ed791a98434d45b_036f89da901d/Emerald3DS-BW2.3dsx"
       }
     },
-    "capture_stopped_for": "Hariyama raised hand reaches top row in30/444frames; add viewport headroom guard",
     "headroom_test_log": "build/bw2-auto5-headroom-test.log",
-    "headroom_review": "docs/bw2-plan/FRONT_HEADROOM_REVIEW.json"
+    "headroom_review": "docs/bw2-plan/FRONT_HEADROOM_REVIEW.json",
+    "initial_capture_session": 61504,
+    "initial_capture_log": "build/bw2-auto5-captures.log",
+    "capture_completed": true,
+    "isolated_emulator_closed": true,
+    "active_jobs": [],
+    "last_audit_dossiers": 80,
+    "capture_interruption_resolved": "Hariyama raised hand reaches top row in30/444frames; add viewport headroom guard",
+    "new_pokemon_views_verified": 80
   }
 }

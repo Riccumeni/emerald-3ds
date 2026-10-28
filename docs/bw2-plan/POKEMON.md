@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **66**.
+Totale: **386**. Fatti con dossier completo: **74**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -70,14 +70,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0301 **Delcatty** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0301_delcatty/).
 - [x] 0041 **Zubat** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0041_zubat/).
 - [x] 0042 **Golbat** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0042_golbat/).
-- [ ] 0169 **Crobat** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0169_crobat/).
-- [ ] 0072 **Tentacool** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0072_tentacool/).
-- [ ] 0073 **Tentacruel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0073_tentacruel/).
-- [ ] 0302 **Sableye** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0302_sableye/).
-- [ ] 0303 **Mawile** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0303_mawile/).
-- [ ] 0304 **Aron** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0304_aron/).
-- [ ] 0305 **Lairon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0305_lairon/).
-- [ ] 0306 **Aggron** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0306_aggron/).
+- [x] 0169 **Crobat** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0169_crobat/).
+- [x] 0072 **Tentacool** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0072_tentacool/).
+- [x] 0073 **Tentacruel** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0073_tentacruel/).
+- [x] 0302 **Sableye** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0302_sableye/).
+- [x] 0303 **Mawile** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0303_mawile/).
+- [x] 0304 **Aron** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0304_aron/).
+- [x] 0305 **Lairon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0305_lairon/).
+- [x] 0306 **Aggron** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0306_aggron/).
 - [ ] 0066 **Machop** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0066_machop/).
 - [ ] 0067 **Machoke** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0067_machoke/).
 - [ ] 0068 **Machamp** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0068_machamp/).
