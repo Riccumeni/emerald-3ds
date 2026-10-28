@@ -2,7 +2,7 @@
   "request": "Prossimi cinque checkpoint, 10-14",
   "start_pokemon": 74,
   "target_pokemon": 114,
-  "completed_checkpoints": 1,
+  "completed_checkpoints": 2,
   "groups": [
     {
       "number": 10,
@@ -148,7 +148,7 @@
     {
       "number": 11,
       "ordinal": 2,
-      "status": "pending",
+      "status": "complete",
       "national_ids": [
         312,
         81,
@@ -210,7 +210,81 @@
           "player": 43,
           "enemy": 387
         }
-      ]
+      ],
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 96,
+      "movie": {
+        "duration": 220.76666666666668,
+        "decoded_frames": 6621,
+        "sha256": "6d5432edf5f2ea785ab4bd57c42d0d6a76142b7b02a9b6f52213e1f8c7e50428",
+        "segments": [
+          {
+            "name": "minun-magnemite",
+            "start": 0.0,
+            "end": 32.67333333333333,
+            "frames": 980,
+            "sha256": "ee4c16eaf2e3cf7a3298a8000ad5813f0a6464940299d25331f111872c711103"
+          },
+          {
+            "name": "magnemite-minun",
+            "start": 32.67333333333333,
+            "end": 63.34766666666667,
+            "frames": 920,
+            "sha256": "39f73f3a74a8b8bd8574c5deedf9f76c705b1b6c0575cf4a3876db1e131d9220"
+          },
+          {
+            "name": "magneton-voltorb",
+            "start": 63.34766666666667,
+            "end": 92.319,
+            "frames": 869,
+            "sha256": "f94a7e4908966f030f608fab3f351edc0101b35338adca9b74801d138eb6c780"
+          },
+          {
+            "name": "voltorb-magneton",
+            "start": 92.319,
+            "end": 121.75833333333334,
+            "frames": 883,
+            "sha256": "e7079f2a92a157e87e7f23fdd548f9494b02db65b24edaf4ad462d4f49808f41"
+          },
+          {
+            "name": "electrode-volbeat",
+            "start": 121.75833333333334,
+            "end": 144.96366666666665,
+            "frames": 696,
+            "sha256": "1bcfed2ff10305daa9a3c5847698e48d83ead71f627f7f09be4373fdadffb85d"
+          },
+          {
+            "name": "volbeat-electrode",
+            "start": 144.96366666666665,
+            "end": 169.106,
+            "frames": 724,
+            "sha256": "5d548797c842111d4082358504b812bfa5c9e3121fcf52d89f202e326e13978a"
+          },
+          {
+            "name": "illumise-oddish",
+            "start": 169.106,
+            "end": 195.26433333333333,
+            "frames": 784,
+            "sha256": "4a93bf6bf7c1aa095009766c12abd69efd961c69a0db8c0c63db7ea16cbb4047"
+          },
+          {
+            "name": "oddish-illumise",
+            "start": 195.26433333333333,
+            "end": 220.76666666666668,
+            "frames": 765,
+            "sha256": "626a9211e69638dbe62f312dd3cf25f110a44674e8dc2e6bc1ab34bb5affeae6"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 11: eight Pokemon"
     },
     {
       "number": 12,
@@ -443,5 +517,17 @@
     "bridge_real_assets": true,
     "production_stubs_bytes": 4,
     "production_validation_mailbox": false
+  },
+  "runtime": {
+    "capture_group": 11,
+    "exec_session_id": 18371,
+    "log": "build/bw2-next5-cp11-captures.log",
+    "isolated_executable": "build/bw2-azahar/bw2-test.exe",
+    "pid_file": "build/bw2-validation/emulator.pid",
+    "helper": "build/bw2-next5.py",
+    "capture_helper": "build/bw2-next5-capture.ps1",
+    "completed_commits": {
+      "10": "d544a13"
+    }
   }
 }

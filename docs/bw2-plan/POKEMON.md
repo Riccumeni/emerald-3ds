@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **82**.
+Totale: **386**. Fatti con dossier completo: **90**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -86,14 +86,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0309 **Electrike** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0309_electrike/).
 - [x] 0310 **Manectric** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0310_manectric/).
 - [x] 0311 **Plusle** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0311_plusle/).
-- [ ] 0312 **Minun** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0312_minun/).
-- [ ] 0081 **Magnemite** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0081_magnemite/).
-- [ ] 0082 **Magneton** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0082_magneton/).
-- [ ] 0100 **Voltorb** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0100_voltorb/).
-- [ ] 0101 **Electrode** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0101_electrode/).
-- [ ] 0313 **Volbeat** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0313_volbeat/).
-- [ ] 0314 **Illumise** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0314_illumise/).
-- [ ] 0043 **Oddish** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0043_oddish/).
+- [x] 0312 **Minun** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0312_minun/).
+- [x] 0081 **Magnemite** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0081_magnemite/).
+- [x] 0082 **Magneton** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0082_magneton/).
+- [x] 0100 **Voltorb** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0100_voltorb/).
+- [x] 0101 **Electrode** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0101_electrode/).
+- [x] 0313 **Volbeat** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0313_volbeat/).
+- [x] 0314 **Illumise** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0314_illumise/).
+- [x] 0043 **Oddish** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0043_oddish/).
 - [ ] 0044 **Gloom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0044_gloom/).
 - [ ] 0045 **Vileplume** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0045_vileplume/).
 - [ ] 0182 **Bellossom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0182_bellossom/).

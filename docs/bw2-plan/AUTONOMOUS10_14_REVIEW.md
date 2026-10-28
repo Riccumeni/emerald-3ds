@@ -1,11 +1,11 @@
 # Cinque checkpoint autonomi
 
-Completati **1/5 checkpoint** richiesti, nell’ordine del piano. Partenza: 74 Pokémon. Obiettivo: 114. Totale corrente: **82/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
+Completati **2/5 checkpoint** richiesti, nell’ordine del piano. Partenza: 74 Pokémon. Obiettivo: 114. Totale corrente: **90/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
 
 | Checkpoint | Specie | Stato | Prove |
 |---|---|---|---|
 | 1/5 (gruppo 10) | Machop, Machoke, Machamp, Meditite, Medicham, Electrike, Manectric, Plusle | complete | [Dossier, screenshot e video](CHECKPOINT10_REVIEW.md) |
-| 2/5 (gruppo 11) | Minun, Magnemite, Magneton, Voltorb, Electrode, Volbeat, Illumise, Oddish | pending | In preparazione/verifica |
+| 2/5 (gruppo 11) | Minun, Magnemite, Magneton, Voltorb, Electrode, Volbeat, Illumise, Oddish | complete | [Dossier, screenshot e video](CHECKPOINT11_REVIEW.md) |
 | 3/5 (gruppo 12) | Gloom, Vileplume, Bellossom, Doduo, Dodrio, Roselia, Gulpin, Swalot | pending | In preparazione/verifica |
 | 4/5 (gruppo 13) | Carvanha, Sharpedo, Wailmer, Numel, Camerupt, Slugma, Magcargo, Torkoal | pending | In preparazione/verifica |
 | 5/5 (gruppo 14) | Grimer, Muk, Koffing, Weezing, Spoink, Grumpig, Sandshrew, Sandslash | pending | In preparazione/verifica |
