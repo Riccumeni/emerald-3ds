@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **98**.
+Totale: **386**. Fatti con dossier completo: **106**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -102,15 +102,15 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0315 **Roselia** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0315_roselia/).
 - [x] 0316 **Gulpin** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0316_gulpin/).
 - [x] 0317 **Swalot** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0317_swalot/).
-- [ ] 0318 **Carvanha** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0318_carvanha/).
-- [ ] 0319 **Sharpedo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0319_sharpedo/).
-- [ ] 0320 **Wailmer** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0320_wailmer/).
+- [x] 0318 **Carvanha** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0318_carvanha/).
+- [x] 0319 **Sharpedo** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0319_sharpedo/).
+- [x] 0320 **Wailmer** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0320_wailmer/).
 - [x] 0321 **Wailord** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0321_wailord/).
-- [ ] 0322 **Numel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0322_numel/).
-- [ ] 0323 **Camerupt** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0323_camerupt/).
-- [ ] 0218 **Slugma** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0218_slugma/).
-- [ ] 0219 **Magcargo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0219_magcargo/).
-- [ ] 0324 **Torkoal** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0324_torkoal/).
+- [x] 0322 **Numel** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0322_numel/).
+- [x] 0323 **Camerupt** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0323_camerupt/).
+- [x] 0218 **Slugma** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0218_slugma/).
+- [x] 0219 **Magcargo** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0219_magcargo/).
+- [x] 0324 **Torkoal** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0324_torkoal/).
 - [ ] 0088 **Grimer** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0088_grimer/).
 - [ ] 0089 **Muk** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0089_muk/).
 - [ ] 0109 **Koffing** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0109_koffing/).

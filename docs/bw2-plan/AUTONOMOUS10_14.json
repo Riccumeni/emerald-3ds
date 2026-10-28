@@ -2,7 +2,7 @@
   "request": "Prossimi cinque checkpoint, 10-14",
   "start_pokemon": 74,
   "target_pokemon": 114,
-  "completed_checkpoints": 3,
+  "completed_checkpoints": 4,
   "groups": [
     {
       "number": 10,
@@ -430,7 +430,7 @@
     {
       "number": 13,
       "ordinal": 4,
-      "status": "pending",
+      "status": "complete",
       "national_ids": [
         318,
         319,
@@ -492,7 +492,81 @@
           "player": 321,
           "enemy": 219
         }
-      ]
+      ],
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 112,
+      "movie": {
+        "duration": 248.32866666666666,
+        "decoded_frames": 7446,
+        "sha256": "2b60c80418876e254ec7896717d6cff76f75efa56692d363757088793dabcb66",
+        "segments": [
+          {
+            "name": "carvanha-sharpedo",
+            "start": 0.0,
+            "end": 30.439333333333334,
+            "frames": 913,
+            "sha256": "471c63737e0ed37b55fad44e26bfe5d9c97fc443d90db0dfcd843ba9e9dfa6d8"
+          },
+          {
+            "name": "sharpedo-carvanha",
+            "start": 30.439333333333334,
+            "end": 61.409666666666666,
+            "frames": 929,
+            "sha256": "450076827888730fc2aa2492bf7821f5ee62eb45da1e411d759d5938aa07308d"
+          },
+          {
+            "name": "wailmer-numel",
+            "start": 61.409666666666666,
+            "end": 88.49,
+            "frames": 812,
+            "sha256": "7a6aee7813744fb23a11f7b2e55329b0602f13b7481dbd411144cc954b3dc936"
+          },
+          {
+            "name": "numel-wailmer",
+            "start": 88.49,
+            "end": 115.58533333333334,
+            "frames": 812,
+            "sha256": "aba3102867ead5ed340ee405550673b3f27b1ecda622c0ef8a9e7c9040b950e8"
+          },
+          {
+            "name": "camerupt-slugma",
+            "start": 115.58533333333334,
+            "end": 145.63466666666667,
+            "frames": 901,
+            "sha256": "4c20836b0626630b570ebd36d1fdd659ffdb0b6e831a07fcda204aaefc041c10"
+          },
+          {
+            "name": "slugma-camerupt",
+            "start": 145.63466666666667,
+            "end": 176.028,
+            "frames": 911,
+            "sha256": "6b8a418f4767e91b89fc07a56676eeffe64b873f2162040de30aed0354375a98"
+          },
+          {
+            "name": "magcargo-torkoal",
+            "start": 176.028,
+            "end": 212.18633333333332,
+            "frames": 1084,
+            "sha256": "78e15b104081cd642e1ad2a303c96069dd65730677e5d7196d8a5b318bfb3b79"
+          },
+          {
+            "name": "torkoal-magcargo",
+            "start": 212.18633333333332,
+            "end": 248.32866666666666,
+            "frames": 1084,
+            "sha256": "81639a307f9a6a128b046f131bb167d2bb4897905dec892a369adafa5e659a2a"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 13: eight Pokemon"
     },
     {
       "number": 14,
@@ -593,16 +667,17 @@
     "production_validation_mailbox": false
   },
   "runtime": {
-    "capture_group": 12,
-    "exec_session_id": 20307,
-    "log": "build/bw2-next5-cp12-captures.log",
+    "capture_group": 13,
+    "exec_session_id": 29489,
+    "log": "build/bw2-next5-cp13-captures.log",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "pid_file": "build/bw2-validation/emulator.pid",
     "helper": "build/bw2-next5.py",
     "capture_helper": "build/bw2-next5-capture.ps1",
     "completed_commits": {
       "10": "d544a13",
-      "11": "4a24831"
+      "11": "4a24831",
+      "12": "3f7a1d6"
     }
   }
 }
