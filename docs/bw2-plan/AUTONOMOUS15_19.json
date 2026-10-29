@@ -1,7 +1,7 @@
 {
   "start_pokemon": 114,
   "target_pokemon": 154,
-  "completed_checkpoints": 4,
+  "completed_checkpoints": 5,
   "groups": [
     {
       "number": 15,
@@ -574,7 +574,7 @@
     {
       "number": 19,
       "ordinal": 5,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Shuppet",
         "Banette",
@@ -637,7 +637,81 @@
           "enemy": 376
         }
       ],
-      "artifact_date": "2026-10-29"
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 160,
+      "movie": {
+        "duration": 222.45566666666667,
+        "decoded_frames": 6665,
+        "sha256": "16a982fc84f2c0b432dc9258315b9cc6c4027e604a3f3050334dbc6f8c626941",
+        "segments": [
+          {
+            "name": "shuppet-banette",
+            "start": 0.0,
+            "end": 28.018333333333334,
+            "frames": 840,
+            "sha256": "e9beb84478ed168675518f5ad0f23a8cde11fa0b4b264af72211f8dec7f2d975"
+          },
+          {
+            "name": "banette-shuppet",
+            "start": 28.018333333333334,
+            "end": 56.06766666666667,
+            "frames": 841,
+            "sha256": "f0aa228ec962fc95a94172c9ab5b66d08f7f3cb2b82431648fe443c9c13a1870"
+          },
+          {
+            "name": "duskull-dusclops",
+            "start": 56.06766666666667,
+            "end": 82.413,
+            "frames": 789,
+            "sha256": "8781326b4f8d2c79a9b0e24ccf905bd94ff12ccf0c2e98c7e3bfc144eadac76e"
+          },
+          {
+            "name": "dusclops-duskull",
+            "start": 82.413,
+            "end": 108.91533333333334,
+            "frames": 793,
+            "sha256": "a1ac1f15a482d20116700621a138aae76bb31a8abba574c5dfdade0a8dd704d2"
+          },
+          {
+            "name": "tropius-chimecho",
+            "start": 108.91533333333334,
+            "end": 135.96466666666666,
+            "frames": 810,
+            "sha256": "b6c8f7815ca4dd9f7cae7ad115915818687a2f3d158f1b0f2803dc62aab3b0d2"
+          },
+          {
+            "name": "chimecho-tropius",
+            "start": 135.96466666666666,
+            "end": 162.186,
+            "frames": 786,
+            "sha256": "0a0b34f0bee9b3f52d215853721c489a9ad11b2b1fb20195a7518be64873c8ef"
+          },
+          {
+            "name": "absol-vulpix",
+            "start": 162.186,
+            "end": 192.37533333333334,
+            "frames": 905,
+            "sha256": "dceed4db01fa9795e9bb1b41c43c78d1d8c7fd602c668885118858b54ef4f854"
+          },
+          {
+            "name": "vulpix-absol",
+            "start": 192.37533333333334,
+            "end": 222.45566666666667,
+            "frames": 901,
+            "sha256": "89503170ffcc46a115f2c96b601598539073bbcba484a9ac6e62336ed786fd2a"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 19: eight Pokemon"
     }
   ],
   "builds": {
@@ -646,24 +720,31 @@
       "sha256": "d46fe452124971b1f853041140908d6e566c0fd7df0e1ce5dd5400aebf5c9594",
       "path": "artifacts/bw2-validation/builds/24b3c6b5fb7206c7_d46fe4521249/validation.3dsx",
       "elf_path": "artifacts/bw2-validation/builds/24b3c6b5fb7206c7_5e1123811805/validation.elf",
-      "elf_sha256": "5e1123811805cda16eed8e97cf167752748adddd0430c79bc697572867887c5b"
+      "elf_sha256": "5e1123811805cda16eed8e97cf167752748adddd0430c79bc697572867887c5b",
+      "id_path": "artifacts/bw2-validation/builds/24b3c6b5fb7206c7_d46fe4521249/build_id.bin",
+      "id_provenance": "Full 32-byte ID extracted from matching archived 3DSX RomFS; unique eight-byte recorded prefix; current pair also byte-matches local build ID files"
     },
     "production": {
       "build_id": "b9eafa1bb23e8fcf",
       "sha256": "ad98f8246237ba4a1998bdcf5dd50a3cafd8688784a2347cc3a04923506d7c6b",
       "path": "artifacts/bw2-validation/builds/b9eafa1bb23e8fcf_ad98f8246237/Emerald3DS-BW2.3dsx",
       "elf_path": "artifacts/bw2-validation/builds/b9eafa1bb23e8fcf_c49316d65db2/production.elf",
-      "elf_sha256": "c49316d65db2f9d9aeb3a983f6250218ea75cba89dfe34523a8b2c17b3825360"
+      "elf_sha256": "c49316d65db2f9d9aeb3a983f6250218ea75cba89dfe34523a8b2c17b3825360",
+      "id_path": "artifacts/bw2-validation/builds/b9eafa1bb23e8fcf_ad98f8246237/production-build-id.bin",
+      "id_provenance": "Full 32-byte ID extracted from matching archived 3DSX RomFS; unique eight-byte recorded prefix; current pair also byte-matches local build ID files"
     }
   },
   "runtime": {
-    "capture_group": 18,
-    "exec_session_id": 36879,
-    "log": "build/bw2-cp18-capture.log",
-    "next_capture": "build/bw2-auto15-capture.ps1 -Number 19",
+    "capture_group": null,
+    "exec_session_id": null,
+    "log": "build/bw2-cp19-capture.log",
+    "next_capture": null,
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
-    "phase": "CP18 base normal and shiny native captures; all Castform special captures passed",
-    "build_script": "build/bw2-castform-build.sh"
+    "phase": "closed: all five groups captured, reviewed, published and audited; isolated emulator stopped; personal Azahar preserved",
+    "build_script": "build/bw2-castform-build.sh",
+    "isolated_emulator_closed": true,
+    "personal_emulator_pid": 24764,
+    "final_audit": "docs/bw2-plan/AUTONOMOUS15_19_AUDIT.json"
   },
   "checks": {
     "exporter_tests": 18,
@@ -684,14 +765,18 @@
         "sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f",
         "path": "artifacts/bw2-validation/builds/4ec0e4edb35bd030_6649af886e68/validation.3dsx",
         "elf_path": "artifacts/bw2-validation/builds/4ec0e4edb35bd030_fee82b982633/validation.elf",
-        "elf_sha256": "fee82b9826338f9c641f9cae80d30fe39669349b8f9ebeec9b9526e3f2a1cd00"
+        "elf_sha256": "fee82b9826338f9c641f9cae80d30fe39669349b8f9ebeec9b9526e3f2a1cd00",
+        "id_path": "artifacts/bw2-validation/builds/4ec0e4edb35bd030_6649af886e68/build_id.bin",
+        "id_provenance": "Full 32-byte ID extracted from matching archived 3DSX RomFS; unique eight-byte recorded prefix; current pair also byte-matches local build ID files"
       },
       "production": {
         "build_id": "93d67843245e6074",
         "sha256": "283a3e68cd54c250f7247800a6223f76dc622d05477ecb8fd29a84b1179a864c",
         "path": "artifacts/bw2-validation/builds/93d67843245e6074_283a3e68cd54/Emerald3DS-BW2.3dsx",
         "elf_path": "artifacts/bw2-validation/builds/93d67843245e6074_6fe3b8c2df42/production.elf",
-        "elf_sha256": "6fe3b8c2df420a81d7e339e199f14d9eb43ef6d4f9fea82cded9ef42c5c274fe"
+        "elf_sha256": "6fe3b8c2df420a81d7e339e199f14d9eb43ef6d4f9fea82cded9ef42c5c274fe",
+        "id_path": "artifacts/bw2-validation/builds/93d67843245e6074_283a3e68cd54/production-build-id.bin",
+        "id_provenance": "Full 32-byte ID extracted from matching archived 3DSX RomFS; unique eight-byte recorded prefix; current pair also byte-matches local build ID files"
       }
     }
   ]

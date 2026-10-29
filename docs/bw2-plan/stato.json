@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-29T03:08:42",
+  "aggiornato_il": "2026-10-29T04:35:19",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 146,
+    "pokemon_fatti": 154,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,8 +19,8 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 353,
-    "nome": "Shuppet",
+    "id": 38,
+    "nome": "Ninetales",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
@@ -60,10 +60,10 @@
       "metadata": "artifacts/bw2-validation/pokemon/0252_treecko/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0252_treecko/verifica.md",
       "forme_da_verificare": false,
-      "note": "Back centrato nell’arena tramite massa dei pixel, fisso per l’intero ciclo. Parte inferiore coperta dal testo consentita. Nuovi video front/back e verifica shiny completati.",
+      "note": "Back centrato nellâ€™arena tramite massa dei pixel, fisso per lâ€™intero ciclo. Parte inferiore coperta dal testo consentita. Nuovi video front/back e verifica shiny completati.",
       "completato_il": "2026-10-28T12:04:13",
       "build_verificata": "5017a095de7daa51",
-      "revisione": "Completata: abbassamento back richiesto dall’utente; dossier precedente conservato in revisions/2026-10-28-before-back-centering.",
+      "revisione": "Completata: abbassamento back richiesto dallâ€™utente; dossier precedente conservato in revisions/2026-10-28-before-back-centering.",
       "algoritmo_presentazione": "height-silhouette-v3-arena-mass-center-back"
     },
     {
@@ -97,10 +97,10 @@
       "metadata": "artifacts/bw2-validation/pokemon/0261_poochyena/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0261_poochyena/verifica.md",
       "forme_da_verificare": false,
-      "note": "Back centrato nell’arena tramite massa dei pixel, fisso per l’intero ciclo. Parte inferiore coperta dal testo consentita. Nuovi video front/back e verifica shiny completati.",
+      "note": "Back centrato nellâ€™arena tramite massa dei pixel, fisso per lâ€™intero ciclo. Parte inferiore coperta dal testo consentita. Nuovi video front/back e verifica shiny completati.",
       "completato_il": "2026-10-28T12:04:13",
       "build_verificata": "5017a095de7daa51",
-      "revisione": "Completata: abbassamento back richiesto dall’utente; dossier precedente conservato in revisions/2026-10-28-before-back-centering.",
+      "revisione": "Completata: abbassamento back richiesto dallâ€™utente; dossier precedente conservato in revisions/2026-10-28-before-back-centering.",
       "algoritmo_presentazione": "height-silhouette-v3-arena-mass-center-back"
     },
     {
@@ -134,10 +134,10 @@
       "metadata": "artifacts/bw2-validation/pokemon/0253_grovyle/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0253_grovyle/verifica.md",
       "forme_da_verificare": false,
-      "note": "Back ingrandito: Grovyle Q8 460 (+34,9%), Sceptile Q8 477 (+39,9%) rispetto a Q8 341. Centro massa nell’arena conservato, testo può coprire la parte inferiore. Nuove prove front/back e shiny chiuse.",
+      "note": "Back ingrandito: Grovyle Q8 460 (+34,9%), Sceptile Q8 477 (+39,9%) rispetto a Q8 341. Centro massa nellâ€™arena conservato, testo puÃ² coprire la parte inferiore. Nuove prove front/back e shiny chiuse.",
       "completato_il": "2026-10-28T12:23:18",
       "build_verificata": "bda058839521ce0d",
-      "revisione": "Completata: back più grandi secondo riscontro utente; dossier precedente in revisions/2026-10-28-before-large-back.",
+      "revisione": "Completata: back piÃ¹ grandi secondo riscontro utente; dossier precedente in revisions/2026-10-28-before-large-back.",
       "algoritmo_presentazione": "height-silhouette-v4-large-back"
     },
     {
@@ -171,10 +171,10 @@
       "metadata": "artifacts/bw2-validation/pokemon/0254_sceptile/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0254_sceptile/verifica.md",
       "forme_da_verificare": false,
-      "note": "Back ingrandito: Grovyle Q8 460 (+34,9%), Sceptile Q8 477 (+39,9%) rispetto a Q8 341. Centro massa nell’arena conservato, testo può coprire la parte inferiore. Nuove prove front/back e shiny chiuse.",
+      "note": "Back ingrandito: Grovyle Q8 460 (+34,9%), Sceptile Q8 477 (+39,9%) rispetto a Q8 341. Centro massa nellâ€™arena conservato, testo puÃ² coprire la parte inferiore. Nuove prove front/back e shiny chiuse.",
       "completato_il": "2026-10-28T12:23:18",
       "build_verificata": "bda058839521ce0d",
-      "revisione": "Completata: back più grandi secondo riscontro utente; dossier precedente in revisions/2026-10-28-before-large-back.",
+      "revisione": "Completata: back piÃ¹ grandi secondo riscontro utente; dossier precedente in revisions/2026-10-28-before-large-back.",
       "algoritmo_presentazione": "height-silhouette-v4-large-back"
     },
     {
@@ -3541,7 +3541,7 @@
       "metadata": "artifacts/bw2-validation/pokemon/0321_wailord/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0321_wailord/verifica.md",
       "forme_da_verificare": false,
-      "note": "Caso massimo: Wailord 14,5 m, massimo del Pokedex di Smeraldo. Importato BW2 e verificato front/back insieme all’altro estremo, due cicli completi e palette shiny, senza correzioni specifiche alla scala.",
+      "note": "Caso massimo: Wailord 14,5 m, massimo del Pokedex di Smeraldo. Importato BW2 e verificato front/back insieme allâ€™altro estremo, due cicli completi e palette shiny, senza correzioni specifiche alla scala.",
       "completato_il": "2026-10-28T12:44:55",
       "build_verificata": "8c0f9eae3f9ed8e0",
       "algoritmo_presentazione": "height-silhouette-v4-large-back",
@@ -5128,28 +5128,34 @@
       "costante": "SPECIES_SHUPPET",
       "nome": "Shuppet",
       "ordine": 146,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0353_shuppet",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0353_shuppet/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0353_shuppet/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "fd4f54069c571fbcad8711c72f246dd1b6dca79d95262cbf864fa82e9c59a68a",
+          "video_sha256": "f0aa228ec962fc95a94172c9ab5b66d08f7f3cb2b82431648fe443c9c13a1870"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0353_shuppet/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0353_shuppet/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "0e38c12fa24d0ddd13d816621d0444fb654238cbd179ac53343c3b74361738bb",
+          "video_sha256": "e9beb84478ed168675518f5ad0f23a8cde11fa0b4b264af72211f8dec7f2d975"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0353_shuppet/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0353_shuppet/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T04:30:19",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 354,
@@ -5157,28 +5163,34 @@
       "costante": "SPECIES_BANETTE",
       "nome": "Banette",
       "ordine": 147,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0354_banette",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0354_banette/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0354_banette/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "0e38c12fa24d0ddd13d816621d0444fb654238cbd179ac53343c3b74361738bb",
+          "video_sha256": "e9beb84478ed168675518f5ad0f23a8cde11fa0b4b264af72211f8dec7f2d975"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0354_banette/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0354_banette/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "fd4f54069c571fbcad8711c72f246dd1b6dca79d95262cbf864fa82e9c59a68a",
+          "video_sha256": "f0aa228ec962fc95a94172c9ab5b66d08f7f3cb2b82431648fe443c9c13a1870"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0354_banette/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0354_banette/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T04:30:19",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 355,
@@ -5186,28 +5198,34 @@
       "costante": "SPECIES_DUSKULL",
       "nome": "Duskull",
       "ordine": 148,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0355_duskull",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0355_duskull/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0355_duskull/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "9905df4be3d3ee676b14adc6ed432991bd584a23b9d4cd5e5154814b370d0eb4",
+          "video_sha256": "a1ac1f15a482d20116700621a138aae76bb31a8abba574c5dfdade0a8dd704d2"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0355_duskull/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0355_duskull/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "dcb3d16d9340eff2737a212a3cc9cfc55c2d411d6d144eacf69e0a0f3212ee29",
+          "video_sha256": "8781326b4f8d2c79a9b0e24ccf905bd94ff12ccf0c2e98c7e3bfc144eadac76e"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0355_duskull/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0355_duskull/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T04:30:20",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 356,
@@ -5215,28 +5233,34 @@
       "costante": "SPECIES_DUSCLOPS",
       "nome": "Dusclops",
       "ordine": 149,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0356_dusclops",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0356_dusclops/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0356_dusclops/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "dcb3d16d9340eff2737a212a3cc9cfc55c2d411d6d144eacf69e0a0f3212ee29",
+          "video_sha256": "8781326b4f8d2c79a9b0e24ccf905bd94ff12ccf0c2e98c7e3bfc144eadac76e"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0356_dusclops/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0356_dusclops/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "9905df4be3d3ee676b14adc6ed432991bd584a23b9d4cd5e5154814b370d0eb4",
+          "video_sha256": "a1ac1f15a482d20116700621a138aae76bb31a8abba574c5dfdade0a8dd704d2"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0356_dusclops/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0356_dusclops/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T04:30:20",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 357,
@@ -5244,28 +5268,34 @@
       "costante": "SPECIES_TROPIUS",
       "nome": "Tropius",
       "ordine": 150,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0357_tropius",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0357_tropius/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0357_tropius/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "4ceabc3655e4a0b63a2172887e099563abf0ea0c618c917ba6b521f057ea7afe",
+          "video_sha256": "0a0b34f0bee9b3f52d215853721c489a9ad11b2b1fb20195a7518be64873c8ef"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0357_tropius/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0357_tropius/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "965ff2b6e97b7fe1819494641a7becbf2d5227400ba5f2ba431b7b4e0c776b2b",
+          "video_sha256": "b6c8f7815ca4dd9f7cae7ad115915818687a2f3d158f1b0f2803dc62aab3b0d2"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0357_tropius/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0357_tropius/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T04:30:21",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 358,
@@ -5273,28 +5303,34 @@
       "costante": "SPECIES_CHIMECHO",
       "nome": "Chimecho",
       "ordine": 151,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0358_chimecho",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0358_chimecho/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0358_chimecho/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "965ff2b6e97b7fe1819494641a7becbf2d5227400ba5f2ba431b7b4e0c776b2b",
+          "video_sha256": "b6c8f7815ca4dd9f7cae7ad115915818687a2f3d158f1b0f2803dc62aab3b0d2"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0358_chimecho/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0358_chimecho/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "4ceabc3655e4a0b63a2172887e099563abf0ea0c618c917ba6b521f057ea7afe",
+          "video_sha256": "0a0b34f0bee9b3f52d215853721c489a9ad11b2b1fb20195a7518be64873c8ef"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0358_chimecho/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0358_chimecho/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T04:30:21",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 359,
@@ -5302,28 +5338,34 @@
       "costante": "SPECIES_ABSOL",
       "nome": "Absol",
       "ordine": 152,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0359_absol",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0359_absol/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0359_absol/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "8ce366b022fc63168de614d5a0057fe309693d62e7b91ad8a0ae3c3f4800534b",
+          "video_sha256": "89503170ffcc46a115f2c96b601598539073bbcba484a9ac6e62336ed786fd2a"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0359_absol/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0359_absol/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "f7f4e850b5dbf9b8f7dc0a914e342495d3f532c4ecfcdffbabc2db9dfd228128",
+          "video_sha256": "dceed4db01fa9795e9bb1b41c43c78d1d8c7fd602c668885118858b54ef4f854"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0359_absol/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0359_absol/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T04:30:22",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 37,
@@ -5331,28 +5373,34 @@
       "costante": "SPECIES_VULPIX",
       "nome": "Vulpix",
       "ordine": 153,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0037_vulpix",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0037_vulpix/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0037_vulpix/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "f7f4e850b5dbf9b8f7dc0a914e342495d3f532c4ecfcdffbabc2db9dfd228128",
+          "video_sha256": "dceed4db01fa9795e9bb1b41c43c78d1d8c7fd602c668885118858b54ef4f854"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0037_vulpix/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0037_vulpix/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "8ce366b022fc63168de614d5a0057fe309693d62e7b91ad8a0ae3c3f4800534b",
+          "video_sha256": "89503170ffcc46a115f2c96b601598539073bbcba484a9ac6e62336ed786fd2a"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0037_vulpix/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0037_vulpix/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T04:30:22",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 38,
@@ -5617,7 +5665,7 @@
       "metadata": "artifacts/bw2-validation/pokemon/0177_natu/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0177_natu/verifica.md",
       "forme_da_verificare": false,
-      "note": "Caso minimo: Natu 0,2 m, minimo condiviso con Diglett e Azurill. Importato BW2 e verificato front/back insieme all’altro estremo, due cicli completi e palette shiny, senza correzioni specifiche alla scala.",
+      "note": "Caso minimo: Natu 0,2 m, minimo condiviso con Diglett e Azurill. Importato BW2 e verificato front/back insieme allâ€™altro estremo, due cicli completi e palette shiny, senza correzioni specifiche alla scala.",
       "completato_il": "2026-10-28T12:44:54",
       "build_verificata": "8c0f9eae3f9ed8e0",
       "algoritmo_presentazione": "height-silhouette-v4-large-back",
@@ -22458,8 +22506,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 352,
-    "nome": "Kecleon"
+    "id": 37,
+    "nome": "Vulpix"
   },
-  "checkpoint_note": "Richiesta: checkpoint 15–19, 4/5 conclusi; partenza 114 Pokémon, obiettivo 154; mosse 6/354. Registro AUTONOMOUS15_19.json; helper build/bw2-auto15.py, catture build/bw2-auto15-capture.ps1. Gruppo18 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 19. Build e processi in AUTONOMOUS15_19.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
+  "checkpoint_note": "Richiesta checkpoint 15–19 conclusa: 5/5 gruppi, 40 nuovi Pokemon, totale 154/386 Pokemon e 6/354 mosse. Tutti i 160 dossier verificati; 477 asset precedenti e 342 file estranei conservano gli hash iniziali. Spinda: macchie procedurali, otto personality e shiny; Castform: quattro forme front/back, shiny e Forecast con ritorno naturale dopo cinque turni. Scala/appoggio v5.1 invariati. Build/ELF/ID archiviati in AUTONOMOUS15_19.json; audit in AUTONOMOUS15_19_AUDIT.json. Emulatore isolato chiuso, Azahar personale PID 24764 preservato; nessuna acquisizione o unita in corso. Cinque commit dedicati identificabili da git log; nessun push. Prossima unita del piano: Ninetales (#38). Audio/DSP, console, stereo e doppi restano da verificare; nessuna pretesa di suite generale bottom-map superata."
 }

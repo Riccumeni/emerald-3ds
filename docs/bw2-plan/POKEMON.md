@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **146**.
+Totale: **386**. Fatti con dossier completo: **154**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -151,14 +151,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0120 **Staryu** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0120_staryu/).
 - [x] 0121 **Starmie** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0121_starmie/).
 - [x] 0352 **Kecleon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0352_kecleon/).
-- [ ] 0353 **Shuppet** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0353_shuppet/).
-- [ ] 0354 **Banette** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0354_banette/).
-- [ ] 0355 **Duskull** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0355_duskull/).
-- [ ] 0356 **Dusclops** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0356_dusclops/).
-- [ ] 0357 **Tropius** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0357_tropius/).
-- [ ] 0358 **Chimecho** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0358_chimecho/).
-- [ ] 0359 **Absol** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0359_absol/).
-- [ ] 0037 **Vulpix** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0037_vulpix/).
+- [x] 0353 **Shuppet** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0353_shuppet/).
+- [x] 0354 **Banette** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0354_banette/).
+- [x] 0355 **Duskull** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0355_duskull/).
+- [x] 0356 **Dusclops** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0356_dusclops/).
+- [x] 0357 **Tropius** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0357_tropius/).
+- [x] 0358 **Chimecho** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0358_chimecho/).
+- [x] 0359 **Absol** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0359_absol/).
+- [x] 0037 **Vulpix** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0037_vulpix/).
 - [ ] 0038 **Ninetales** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0038_ninetales/).
 - [ ] 0172 **Pichu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0172_pichu/).
 - [ ] 0025 **Pikachu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0025_pikachu/).
