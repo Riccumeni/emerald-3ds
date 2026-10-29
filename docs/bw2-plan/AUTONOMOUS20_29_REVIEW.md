@@ -1,12 +1,12 @@
 # Dieci checkpoint autonomi — 20–29
 
-Completati **2/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 154 Pokémon. Obiettivo: 234. Totale corrente: **170/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
+Completati **3/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 154 Pokémon. Obiettivo: 234. Totale corrente: **178/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
 
 | Checkpoint | Specie | Stato | Prove |
 |---|---|---|---|
 | 1/10 (gruppo 20) | Ninetales, Pichu, Pikachu, Raichu, Psyduck, Golduck, Wynaut, Wobbuffet | complete | [Dossier, screenshot e video](CHECKPOINT20_REVIEW.md) |
 | 2/10 (gruppo 21) | Xatu, Girafarig, Phanpy, Donphan, Pinsir, Heracross, Rhyhorn, Rhydon | complete | [Dossier, screenshot e video](CHECKPOINT21_REVIEW.md) |
-| 3/10 (gruppo 22) | Snorunt, Glalie, Spheal, Sealeo, Walrein, Clamperl, Huntail, Gorebyss | pending | In preparazione/verifica |
+| 3/10 (gruppo 22) | Snorunt, Glalie, Spheal, Sealeo, Walrein, Clamperl, Huntail, Gorebyss | complete | [Dossier, screenshot e video](CHECKPOINT22_REVIEW.md) |
 | 4/10 (gruppo 23) | Relicanth, Corsola, Chinchou, Lanturn, Luvdisc, Horsea, Seadra, Kingdra | pending | In preparazione/verifica |
 | 5/10 (gruppo 24) | Bagon, Shelgon, Salamence, Beldum, Metang, Metagross, Regirock, Regice | pending | In preparazione/verifica |
 | 6/10 (gruppo 25) | Registeel, Latias, Latios, Kyogre, Groudon, Rayquaza, Jirachi, Deoxys | pending | In preparazione/verifica |

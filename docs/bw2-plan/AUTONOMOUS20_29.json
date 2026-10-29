@@ -1,7 +1,7 @@
 {
   "start_pokemon": 154,
   "target_pokemon": 234,
-  "completed_checkpoints": 2,
+  "completed_checkpoints": 3,
   "groups": [
     {
       "number": 20,
@@ -290,7 +290,7 @@
     {
       "number": 22,
       "ordinal": 3,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Snorunt",
         "Glalie",
@@ -353,7 +353,81 @@
           "enemy": 374
         }
       ],
-      "artifact_date": "2026-10-29"
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 184,
+      "movie": {
+        "duration": 217.21866666666668,
+        "decoded_frames": 6514,
+        "sha256": "f17c8cee73e5c292234a1c2040a1383fcdc207078d56073698fef50c87a9f512",
+        "segments": [
+          {
+            "name": "snorunt-glalie",
+            "start": 0.0,
+            "end": 26.205333333333332,
+            "frames": 786,
+            "sha256": "00821eb47f23fc6401356afa2383756c45048faf56483dc1006080fbc2a03819"
+          },
+          {
+            "name": "glalie-snorunt",
+            "start": 26.205333333333332,
+            "end": 53.534666666666666,
+            "frames": 819,
+            "sha256": "0d4b735615831db08a508241fc417f28726c018fed5f401463838a3f41611c01"
+          },
+          {
+            "name": "spheal-sealeo",
+            "start": 53.534666666666666,
+            "end": 79.912,
+            "frames": 791,
+            "sha256": "c53cfe82149e1c7a7fc4080372f42010980ac3cb64bcd19a545d7c4d28c57738"
+          },
+          {
+            "name": "sealeo-spheal",
+            "start": 79.912,
+            "end": 108.32033333333334,
+            "frames": 852,
+            "sha256": "e2c9bc4ce46f703cd260cb5069149790bf88c86670c5de2ded725fd385e63f17"
+          },
+          {
+            "name": "walrein-clamperl",
+            "start": 108.32033333333334,
+            "end": 135.43166666666667,
+            "frames": 813,
+            "sha256": "a1d07ccb6db25832178d3e5bddec25095469230c92ae45f65538e1c12798da33"
+          },
+          {
+            "name": "clamperl-walrein",
+            "start": 135.43166666666667,
+            "end": 161.934,
+            "frames": 795,
+            "sha256": "70acbfef765018e1da751f715f23e3a0501200b34a9982c7f1596386c947bc20"
+          },
+          {
+            "name": "huntail-gorebyss",
+            "start": 161.934,
+            "end": 190.04533333333333,
+            "frames": 843,
+            "sha256": "f43ac4c385eaac517bc0e91d2d74e739590dacf56fd6121172ac26d0b0a834ba"
+          },
+          {
+            "name": "gorebyss-huntail",
+            "start": 190.04533333333333,
+            "end": 217.21866666666668,
+            "frames": 815,
+            "sha256": "667a9c8641b469de657716427364ff0195471b8f28fbacfeec6f278033c35c5e"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 22: eight Pokemon"
     },
     {
       "number": 23,
@@ -873,13 +947,13 @@
     }
   ],
   "runtime": {
-    "phase": "serial native captures and visual review; Deoxys drafts in build/bw2-implement-deoxys20.py NOT APPLIED",
+    "phase": "serial native captures; Deoxys draft tested but NOT APPLIED; apply before group25",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "initial_emulator_processes": [],
     "build_script": "build/bw2-auto20-build.sh",
-    "capture_group": 21,
-    "exec_session_id": 91157,
-    "log": "build/bw2-auto20-cp21-capture.log",
+    "capture_group": 22,
+    "exec_session_id": 23273,
+    "log": "build/bw2-auto20-cp22-capture.log",
     "personal_emulator_pid": 2460
   },
   "checks": {

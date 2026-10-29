@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **170**.
+Totale: **386**. Fatti con dossier completo: **178**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -176,14 +176,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0214 **Heracross** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0214_heracross/).
 - [x] 0111 **Rhyhorn** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0111_rhyhorn/).
 - [x] 0112 **Rhydon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0112_rhydon/).
-- [ ] 0361 **Snorunt** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0361_snorunt/).
-- [ ] 0362 **Glalie** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0362_glalie/).
-- [ ] 0363 **Spheal** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0363_spheal/).
-- [ ] 0364 **Sealeo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0364_sealeo/).
-- [ ] 0365 **Walrein** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0365_walrein/).
-- [ ] 0366 **Clamperl** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0366_clamperl/).
-- [ ] 0367 **Huntail** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0367_huntail/).
-- [ ] 0368 **Gorebyss** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0368_gorebyss/).
+- [x] 0361 **Snorunt** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0361_snorunt/).
+- [x] 0362 **Glalie** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0362_glalie/).
+- [x] 0363 **Spheal** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0363_spheal/).
+- [x] 0364 **Sealeo** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0364_sealeo/).
+- [x] 0365 **Walrein** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0365_walrein/).
+- [x] 0366 **Clamperl** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0366_clamperl/).
+- [x] 0367 **Huntail** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0367_huntail/).
+- [x] 0368 **Gorebyss** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0368_gorebyss/).
 - [ ] 0369 **Relicanth** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0369_relicanth/).
 - [ ] 0222 **Corsola** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0222_corsola/).
 - [ ] 0170 **Chinchou** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0170_chinchou/).
