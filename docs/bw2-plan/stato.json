@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-29T04:35:19",
+  "aggiornato_il": "2026-10-29T21:05:01",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 154,
+    "pokemon_fatti": 162,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,14 +19,14 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 38,
-    "nome": "Ninetales",
+    "id": 178,
+    "nome": "Xatu",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
     "percorso": "build/bw2-validation/Emerald3DS-BW2.3dsx",
-    "build_id": "b9eafa1bb23e8fcf",
-    "sha256": "ad98f8246237ba4a1998bdcf5dd50a3cafd8688784a2347cc3a04923506d7c6b"
+    "build_id": "39b4647bb1f1c442",
+    "sha256": "72f680aa46297f31c747341a34e85817e92e86d09e698d344bb11d37422f8ab4"
   },
   "pokemon": [
     {
@@ -5408,28 +5408,34 @@
       "costante": "SPECIES_NINETALES",
       "nome": "Ninetales",
       "ordine": 154,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0038_ninetales",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0038_ninetales/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0038_ninetales/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "24397aced83d9d144b5da7ae9eedd12fe14139598e1d44d941c4faaa58caf716",
+          "video_sha256": "043ea15adfc158af6f8af9ac1832bc411beec0e32970f6e64c461daee15b83ca"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0038_ninetales/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0038_ninetales/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "c7f7187afc77740102db15585a62bcbea712c8d27e59c7142bf92c172c87b1f3",
+          "video_sha256": "84561aeccc2b1fb84045c43a28fa75d8f54622e42f04446e02a73ab4c7e70b09"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0038_ninetales/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0038_ninetales/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:04:45",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 172,
@@ -5437,28 +5443,34 @@
       "costante": "SPECIES_PICHU",
       "nome": "Pichu",
       "ordine": 155,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0172_pichu",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0172_pichu/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0172_pichu/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "c7f7187afc77740102db15585a62bcbea712c8d27e59c7142bf92c172c87b1f3",
+          "video_sha256": "84561aeccc2b1fb84045c43a28fa75d8f54622e42f04446e02a73ab4c7e70b09"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0172_pichu/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0172_pichu/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "24397aced83d9d144b5da7ae9eedd12fe14139598e1d44d941c4faaa58caf716",
+          "video_sha256": "043ea15adfc158af6f8af9ac1832bc411beec0e32970f6e64c461daee15b83ca"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0172_pichu/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0172_pichu/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:04:46",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 25,
@@ -5466,28 +5478,34 @@
       "costante": "SPECIES_PIKACHU",
       "nome": "Pikachu",
       "ordine": 156,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0025_pikachu",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0025_pikachu/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0025_pikachu/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "745aa6979b2ce1da43ffd17ab7e2a75f7b04d125200772597abdcc9e9c4a82b4",
+          "video_sha256": "ebdb50116ff2a6b20440c85278f5d1ce183e75c1bfed8a79e1221630bf37aa0b"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0025_pikachu/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0025_pikachu/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "2ef0e28231786c9aa8ebad5633ef50ce2ea48d8eda75ae066cb30a520bc96a86",
+          "video_sha256": "f04b282e097ee49f9564b7423e2162cdf343b31b680fb1d6e5bf58472fe3df54"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0025_pikachu/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0025_pikachu/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:04:46",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 26,
@@ -5495,28 +5513,34 @@
       "costante": "SPECIES_RAICHU",
       "nome": "Raichu",
       "ordine": 157,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0026_raichu",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0026_raichu/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0026_raichu/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "2ef0e28231786c9aa8ebad5633ef50ce2ea48d8eda75ae066cb30a520bc96a86",
+          "video_sha256": "f04b282e097ee49f9564b7423e2162cdf343b31b680fb1d6e5bf58472fe3df54"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0026_raichu/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0026_raichu/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "745aa6979b2ce1da43ffd17ab7e2a75f7b04d125200772597abdcc9e9c4a82b4",
+          "video_sha256": "ebdb50116ff2a6b20440c85278f5d1ce183e75c1bfed8a79e1221630bf37aa0b"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0026_raichu/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0026_raichu/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:04:47",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 54,
@@ -5524,28 +5548,34 @@
       "costante": "SPECIES_PSYDUCK",
       "nome": "Psyduck",
       "ordine": 158,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0054_psyduck",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0054_psyduck/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0054_psyduck/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "096384203c061c5de967c13b66f2eb21161c48fb1d8b8ae7e2ab2a824826d364",
+          "video_sha256": "3e0f1c5ed1bdfa2423222b1bc3089efb919ecaa6fb79c766e2dc57efec47b3f3"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0054_psyduck/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0054_psyduck/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "011e8bd26846c81681a2c7edc817bfd184fdd94e5fdd49b040205919814add46",
+          "video_sha256": "4c2986128d7f68bd67a39975d15b881ed65048074454be30f6e49d06974eb523"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0054_psyduck/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0054_psyduck/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:04:48",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 55,
@@ -5553,28 +5583,34 @@
       "costante": "SPECIES_GOLDUCK",
       "nome": "Golduck",
       "ordine": 159,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0055_golduck",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0055_golduck/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0055_golduck/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "011e8bd26846c81681a2c7edc817bfd184fdd94e5fdd49b040205919814add46",
+          "video_sha256": "4c2986128d7f68bd67a39975d15b881ed65048074454be30f6e49d06974eb523"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0055_golduck/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0055_golduck/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "096384203c061c5de967c13b66f2eb21161c48fb1d8b8ae7e2ab2a824826d364",
+          "video_sha256": "3e0f1c5ed1bdfa2423222b1bc3089efb919ecaa6fb79c766e2dc57efec47b3f3"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0055_golduck/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0055_golduck/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:04:48",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 360,
@@ -5582,28 +5618,34 @@
       "costante": "SPECIES_WYNAUT",
       "nome": "Wynaut",
       "ordine": 160,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0360_wynaut",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0360_wynaut/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0360_wynaut/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "7d041989a969590837a48f383889e9ceda34d0bb405fdf088f2247f6e7ee1e36",
+          "video_sha256": "0a7a30775be81a0b3eec7d36ab4870a5a4afb4ac63c69531725339203c9cc924"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0360_wynaut/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0360_wynaut/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "cac194dd8e587b8167cc44958646ec6cf4a77a0a695a5e1cd5a76ca5f14a7ab7",
+          "video_sha256": "6a4fe41b26cbdc74363ac80f1859cc3512664de53fa6fb9cb86f7ba271062504"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0360_wynaut/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0360_wynaut/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:04:49",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 202,
@@ -5611,28 +5653,34 @@
       "costante": "SPECIES_WOBBUFFET",
       "nome": "Wobbuffet",
       "ordine": 161,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0202_wobbuffet",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0202_wobbuffet/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0202_wobbuffet/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "cac194dd8e587b8167cc44958646ec6cf4a77a0a695a5e1cd5a76ca5f14a7ab7",
+          "video_sha256": "6a4fe41b26cbdc74363ac80f1859cc3512664de53fa6fb9cb86f7ba271062504"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0202_wobbuffet/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0202_wobbuffet/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "7d041989a969590837a48f383889e9ceda34d0bb405fdf088f2247f6e7ee1e36",
+          "video_sha256": "0a7a30775be81a0b3eec7d36ab4870a5a4afb4ac63c69531725339203c9cc924"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0202_wobbuffet/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0202_wobbuffet/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:04:49",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 177,
@@ -22506,8 +22554,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 37,
-    "nome": "Vulpix"
+    "id": 202,
+    "nome": "Wobbuffet"
   },
-  "checkpoint_note": "Richiesta checkpoint 15–19 conclusa: 5/5 gruppi, 40 nuovi Pokemon, totale 154/386 Pokemon e 6/354 mosse. Tutti i 160 dossier verificati; 477 asset precedenti e 342 file estranei conservano gli hash iniziali. Spinda: macchie procedurali, otto personality e shiny; Castform: quattro forme front/back, shiny e Forecast con ritorno naturale dopo cinque turni. Scala/appoggio v5.1 invariati. Build/ELF/ID archiviati in AUTONOMOUS15_19.json; audit in AUTONOMOUS15_19_AUDIT.json. Emulatore isolato chiuso, Azahar personale PID 24764 preservato; nessuna acquisizione o unita in corso. Cinque commit dedicati identificabili da git log; nessun push. Prossima unita del piano: Ninetales (#38). Audio/DSP, console, stereo e doppi restano da verificare; nessuna pretesa di suite generale bottom-map superata."
+  "checkpoint_note": "Richiesta: checkpoint 20–29, 1/10 conclusi; partenza 154 Pokémon, obiettivo 234; mosse 6/354. Registro AUTONOMOUS20_29.json; helper build/bw2-auto20.py, catture build/bw2-auto20-capture.ps1. Gruppo20 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 21. Build e processi in AUTONOMOUS20_29.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
 }

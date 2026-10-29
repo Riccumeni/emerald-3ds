@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **154**.
+Totale: **386**. Fatti con dossier completo: **162**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -159,14 +159,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0358 **Chimecho** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0358_chimecho/).
 - [x] 0359 **Absol** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0359_absol/).
 - [x] 0037 **Vulpix** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0037_vulpix/).
-- [ ] 0038 **Ninetales** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0038_ninetales/).
-- [ ] 0172 **Pichu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0172_pichu/).
-- [ ] 0025 **Pikachu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0025_pikachu/).
-- [ ] 0026 **Raichu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0026_raichu/).
-- [ ] 0054 **Psyduck** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0054_psyduck/).
-- [ ] 0055 **Golduck** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0055_golduck/).
-- [ ] 0360 **Wynaut** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0360_wynaut/).
-- [ ] 0202 **Wobbuffet** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0202_wobbuffet/).
+- [x] 0038 **Ninetales** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0038_ninetales/).
+- [x] 0172 **Pichu** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0172_pichu/).
+- [x] 0025 **Pikachu** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0025_pikachu/).
+- [x] 0026 **Raichu** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0026_raichu/).
+- [x] 0054 **Psyduck** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0054_psyduck/).
+- [x] 0055 **Golduck** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0055_golduck/).
+- [x] 0360 **Wynaut** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0360_wynaut/).
+- [x] 0202 **Wobbuffet** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0202_wobbuffet/).
 - [x] 0177 **Natu** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0177_natu/).
 - [ ] 0178 **Xatu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0178_xatu/).
 - [ ] 0203 **Girafarig** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0203_girafarig/).

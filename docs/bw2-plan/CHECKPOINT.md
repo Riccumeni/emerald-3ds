@@ -1,11 +1,11 @@
-# Punto di ripresa — 2026-10-29T04:35:19
+# Punto di ripresa — 2026-10-29T21:05:01
 
-Stato: esecuzione in corso. Completati **154/386 Pokemon** e **6/354 mosse**, con dossier verificati.
+Stato: esecuzione in corso. Completati **162/386 Pokemon** e **6/354 mosse**, con dossier verificati.
 
 - Piano e registri: `docs/BW2_ANIMATION_PLAN.md`, `docs/bw2-plan/stato.json` e le due checklist.
 - Dossier permanenti: `artifacts/bw2-validation/`; i dati grandi restano locali e ignorati da Git.
-- Unita' in corso: `null`. Ultima chiusa: `{"tipo": "pokemon", "id": 37, "nome": "Vulpix"}`.
-- Prossima unita' da affrontare: `{"tipo": "pokemon", "id": 38, "nome": "Ninetales", "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"}`.
+- Unita' in corso: `null`. Ultima chiusa: `{"tipo": "pokemon", "id": 202, "nome": "Wobbuffet"}`.
+- Prossima unita' da affrontare: `{"tipo": "pokemon", "id": 178, "nome": "Xatu", "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"}`.
 - Tutti i dossier pilota sono chiusi; continuare dalla prossima unita' indicata sopra.
 - Inventario `docs/bw2-plan/INVENTORY.json`: 772 viste base senza incompatibilita' di formato rilevate; solo 53/354 script accettati dal decoder attuale. Non significa che siano gia' importati/verificati. Forme ancora da censire.
 - `3ds_port/scripts/emu/run_bw2_validation.ps1`: avvia solo l'emulatore isolato; `bw2_capture.py` registra fotogrammi nativi via RPC, a 1x, in MP4/H.264 con timestamp reali e verifica la decodifica.
@@ -21,4 +21,4 @@ Stato: esecuzione in corso. Completati **154/386 Pokemon** e **6/354 mosse**, co
 
 Prima della nuova unita' controllare contesto/budget; salvare processi e sessioni attivi in questo checkpoint se serve interrompere. Non segnare mai completo un dossier parziale.
 
-Nota persistente: Richiesta checkpoint 15–19 conclusa: 5/5 gruppi, 40 nuovi Pokemon, totale 154/386 Pokemon e 6/354 mosse. Tutti i 160 dossier verificati; 477 asset precedenti e 342 file estranei conservano gli hash iniziali. Spinda: macchie procedurali, otto personality e shiny; Castform: quattro forme front/back, shiny e Forecast con ritorno naturale dopo cinque turni. Scala/appoggio v5.1 invariati. Build/ELF/ID archiviati in AUTONOMOUS15_19.json; audit in AUTONOMOUS15_19_AUDIT.json. Emulatore isolato chiuso, Azahar personale PID 24764 preservato; nessuna acquisizione o unita in corso. Cinque commit dedicati identificabili da git log; nessun push. Prossima unita del piano: Ninetales (#38). Audio/DSP, console, stereo e doppi restano da verificare; nessuna pretesa di suite generale bottom-map superata.
+Nota persistente: Richiesta: checkpoint 20–29, 1/10 conclusi; partenza 154 Pokémon, obiettivo 234; mosse 6/354. Registro AUTONOMOUS20_29.json; helper build/bw2-auto20.py, catture build/bw2-auto20-capture.ps1. Gruppo20 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 21. Build e processi in AUTONOMOUS20_29.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap.

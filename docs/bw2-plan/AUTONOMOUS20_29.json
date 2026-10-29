@@ -1,0 +1,820 @@
+{
+  "start_pokemon": 154,
+  "target_pokemon": 234,
+  "completed_checkpoints": 1,
+  "groups": [
+    {
+      "number": 20,
+      "ordinal": 1,
+      "status": "complete",
+      "names": [
+        "Ninetales",
+        "Pichu",
+        "Pikachu",
+        "Raichu",
+        "Psyduck",
+        "Golduck",
+        "Wynaut",
+        "Wobbuffet"
+      ],
+      "national_ids": [
+        38,
+        172,
+        25,
+        26,
+        54,
+        55,
+        360,
+        202
+      ],
+      "cases": [
+        {
+          "name": "ninetales-pichu",
+          "player": 38,
+          "enemy": 172
+        },
+        {
+          "name": "pichu-ninetales",
+          "player": 172,
+          "enemy": 38
+        },
+        {
+          "name": "pikachu-raichu",
+          "player": 25,
+          "enemy": 26
+        },
+        {
+          "name": "raichu-pikachu",
+          "player": 26,
+          "enemy": 25
+        },
+        {
+          "name": "psyduck-golduck",
+          "player": 54,
+          "enemy": 55
+        },
+        {
+          "name": "golduck-psyduck",
+          "player": 55,
+          "enemy": 54
+        },
+        {
+          "name": "wynaut-wobbuffet",
+          "player": 360,
+          "enemy": 202
+        },
+        {
+          "name": "wobbuffet-wynaut",
+          "player": 202,
+          "enemy": 360
+        }
+      ],
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 168,
+      "movie": {
+        "duration": 222.40566666666666,
+        "decoded_frames": 6670,
+        "sha256": "a954fb5552d2ea51aac8f7fc9ec3684580572a41d512dfb619f27256b516f3e4",
+        "segments": [
+          {
+            "name": "ninetales-pichu",
+            "start": 0.0,
+            "end": 26.736333333333334,
+            "frames": 802,
+            "sha256": "84561aeccc2b1fb84045c43a28fa75d8f54622e42f04446e02a73ab4c7e70b09"
+          },
+          {
+            "name": "pichu-ninetales",
+            "start": 26.736333333333334,
+            "end": 53.20766666666667,
+            "frames": 794,
+            "sha256": "043ea15adfc158af6f8af9ac1832bc411beec0e32970f6e64c461daee15b83ca"
+          },
+          {
+            "name": "pikachu-raichu",
+            "start": 53.20766666666667,
+            "end": 85.335,
+            "frames": 963,
+            "sha256": "f04b282e097ee49f9564b7423e2162cdf343b31b680fb1d6e5bf58472fe3df54"
+          },
+          {
+            "name": "raichu-pikachu",
+            "start": 85.335,
+            "end": 117.33633333333333,
+            "frames": 960,
+            "sha256": "ebdb50116ff2a6b20440c85278f5d1ce183e75c1bfed8a79e1221630bf37aa0b"
+          },
+          {
+            "name": "psyduck-golduck",
+            "start": 117.33633333333333,
+            "end": 141.21266666666668,
+            "frames": 716,
+            "sha256": "4c2986128d7f68bd67a39975d15b881ed65048074454be30f6e49d06974eb523"
+          },
+          {
+            "name": "golduck-psyduck",
+            "start": 141.21266666666668,
+            "end": 166.496,
+            "frames": 758,
+            "sha256": "3e0f1c5ed1bdfa2423222b1bc3089efb919ecaa6fb79c766e2dc57efec47b3f3"
+          },
+          {
+            "name": "wynaut-wobbuffet",
+            "start": 166.496,
+            "end": 194.43533333333335,
+            "frames": 838,
+            "sha256": "6a4fe41b26cbdc74363ac80f1859cc3512664de53fa6fb9cb86f7ba271062504"
+          },
+          {
+            "name": "wobbuffet-wynaut",
+            "start": 194.43533333333335,
+            "end": 222.40566666666666,
+            "frames": 839,
+            "sha256": "0a7a30775be81a0b3eec7d36ab4870a5a4afb4ac63c69531725339203c9cc924"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 20: eight Pokemon"
+    },
+    {
+      "number": 21,
+      "ordinal": 2,
+      "status": "pending",
+      "names": [
+        "Xatu",
+        "Girafarig",
+        "Phanpy",
+        "Donphan",
+        "Pinsir",
+        "Heracross",
+        "Rhyhorn",
+        "Rhydon"
+      ],
+      "national_ids": [
+        178,
+        203,
+        231,
+        232,
+        127,
+        214,
+        111,
+        112
+      ],
+      "cases": [
+        {
+          "name": "xatu-girafarig",
+          "player": 178,
+          "enemy": 203
+        },
+        {
+          "name": "girafarig-xatu",
+          "player": 203,
+          "enemy": 178
+        },
+        {
+          "name": "phanpy-donphan",
+          "player": 231,
+          "enemy": 232
+        },
+        {
+          "name": "donphan-phanpy",
+          "player": 232,
+          "enemy": 231
+        },
+        {
+          "name": "pinsir-heracross",
+          "player": 127,
+          "enemy": 214
+        },
+        {
+          "name": "heracross-pinsir",
+          "player": 214,
+          "enemy": 127
+        },
+        {
+          "name": "rhyhorn-rhydon",
+          "player": 111,
+          "enemy": 112
+        },
+        {
+          "name": "rhydon-rhyhorn",
+          "player": 112,
+          "enemy": 111
+        }
+      ],
+      "artifact_date": "2026-10-29"
+    },
+    {
+      "number": 22,
+      "ordinal": 3,
+      "status": "pending",
+      "names": [
+        "Snorunt",
+        "Glalie",
+        "Spheal",
+        "Sealeo",
+        "Walrein",
+        "Clamperl",
+        "Huntail",
+        "Gorebyss"
+      ],
+      "national_ids": [
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368
+      ],
+      "cases": [
+        {
+          "name": "snorunt-glalie",
+          "player": 346,
+          "enemy": 347
+        },
+        {
+          "name": "glalie-snorunt",
+          "player": 347,
+          "enemy": 346
+        },
+        {
+          "name": "spheal-sealeo",
+          "player": 341,
+          "enemy": 342
+        },
+        {
+          "name": "sealeo-spheal",
+          "player": 342,
+          "enemy": 341
+        },
+        {
+          "name": "walrein-clamperl",
+          "player": 343,
+          "enemy": 373
+        },
+        {
+          "name": "clamperl-walrein",
+          "player": 373,
+          "enemy": 343
+        },
+        {
+          "name": "huntail-gorebyss",
+          "player": 374,
+          "enemy": 375
+        },
+        {
+          "name": "gorebyss-huntail",
+          "player": 375,
+          "enemy": 374
+        }
+      ],
+      "artifact_date": "2026-10-29"
+    },
+    {
+      "number": 23,
+      "ordinal": 4,
+      "status": "pending",
+      "names": [
+        "Relicanth",
+        "Corsola",
+        "Chinchou",
+        "Lanturn",
+        "Luvdisc",
+        "Horsea",
+        "Seadra",
+        "Kingdra"
+      ],
+      "national_ids": [
+        369,
+        222,
+        170,
+        171,
+        370,
+        116,
+        117,
+        230
+      ],
+      "cases": [
+        {
+          "name": "relicanth-corsola",
+          "player": 381,
+          "enemy": 222
+        },
+        {
+          "name": "corsola-relicanth",
+          "player": 222,
+          "enemy": 381
+        },
+        {
+          "name": "chinchou-lanturn",
+          "player": 170,
+          "enemy": 171
+        },
+        {
+          "name": "lanturn-chinchou",
+          "player": 171,
+          "enemy": 170
+        },
+        {
+          "name": "luvdisc-horsea",
+          "player": 325,
+          "enemy": 116
+        },
+        {
+          "name": "horsea-luvdisc",
+          "player": 116,
+          "enemy": 325
+        },
+        {
+          "name": "seadra-kingdra",
+          "player": 117,
+          "enemy": 230
+        },
+        {
+          "name": "kingdra-seadra",
+          "player": 230,
+          "enemy": 117
+        }
+      ],
+      "artifact_date": "2026-10-29"
+    },
+    {
+      "number": 24,
+      "ordinal": 5,
+      "status": "pending",
+      "names": [
+        "Bagon",
+        "Shelgon",
+        "Salamence",
+        "Beldum",
+        "Metang",
+        "Metagross",
+        "Regirock",
+        "Regice"
+      ],
+      "national_ids": [
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378
+      ],
+      "cases": [
+        {
+          "name": "bagon-shelgon",
+          "player": 395,
+          "enemy": 396
+        },
+        {
+          "name": "shelgon-bagon",
+          "player": 396,
+          "enemy": 395
+        },
+        {
+          "name": "salamence-beldum",
+          "player": 397,
+          "enemy": 398
+        },
+        {
+          "name": "beldum-salamence",
+          "player": 398,
+          "enemy": 397
+        },
+        {
+          "name": "metang-metagross",
+          "player": 399,
+          "enemy": 400
+        },
+        {
+          "name": "metagross-metang",
+          "player": 400,
+          "enemy": 399
+        },
+        {
+          "name": "regirock-regice",
+          "player": 401,
+          "enemy": 402
+        },
+        {
+          "name": "regice-regirock",
+          "player": 402,
+          "enemy": 401
+        }
+      ],
+      "artifact_date": "2026-10-29"
+    },
+    {
+      "number": 25,
+      "ordinal": 6,
+      "status": "pending",
+      "names": [
+        "Registeel",
+        "Latias",
+        "Latios",
+        "Kyogre",
+        "Groudon",
+        "Rayquaza",
+        "Jirachi",
+        "Deoxys"
+      ],
+      "national_ids": [
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386
+      ],
+      "cases": [
+        {
+          "name": "registeel-latias",
+          "player": 403,
+          "enemy": 407
+        },
+        {
+          "name": "latias-registeel",
+          "player": 407,
+          "enemy": 403
+        },
+        {
+          "name": "latios-kyogre",
+          "player": 408,
+          "enemy": 404
+        },
+        {
+          "name": "kyogre-latios",
+          "player": 404,
+          "enemy": 408
+        },
+        {
+          "name": "groudon-rayquaza",
+          "player": 405,
+          "enemy": 406
+        },
+        {
+          "name": "rayquaza-groudon",
+          "player": 406,
+          "enemy": 405
+        },
+        {
+          "name": "jirachi-deoxys",
+          "player": 409,
+          "enemy": 410
+        },
+        {
+          "name": "deoxys-jirachi",
+          "player": 410,
+          "enemy": 409
+        }
+      ],
+      "artifact_date": "2026-10-29"
+    },
+    {
+      "number": 26,
+      "ordinal": 7,
+      "status": "pending",
+      "names": [
+        "Bulbasaur",
+        "Ivysaur",
+        "Venusaur",
+        "Charmander",
+        "Charmeleon",
+        "Charizard",
+        "Squirtle",
+        "Wartortle"
+      ],
+      "national_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "cases": [
+        {
+          "name": "bulbasaur-ivysaur",
+          "player": 1,
+          "enemy": 2
+        },
+        {
+          "name": "ivysaur-bulbasaur",
+          "player": 2,
+          "enemy": 1
+        },
+        {
+          "name": "venusaur-charmander",
+          "player": 3,
+          "enemy": 4
+        },
+        {
+          "name": "charmander-venusaur",
+          "player": 4,
+          "enemy": 3
+        },
+        {
+          "name": "charmeleon-charizard",
+          "player": 5,
+          "enemy": 6
+        },
+        {
+          "name": "charizard-charmeleon",
+          "player": 6,
+          "enemy": 5
+        },
+        {
+          "name": "squirtle-wartortle",
+          "player": 7,
+          "enemy": 8
+        },
+        {
+          "name": "wartortle-squirtle",
+          "player": 8,
+          "enemy": 7
+        }
+      ],
+      "artifact_date": "2026-10-29"
+    },
+    {
+      "number": 27,
+      "ordinal": 8,
+      "status": "pending",
+      "names": [
+        "Blastoise",
+        "Caterpie",
+        "Metapod",
+        "Butterfree",
+        "Weedle",
+        "Kakuna",
+        "Beedrill",
+        "Pidgey"
+      ],
+      "national_ids": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "cases": [
+        {
+          "name": "blastoise-caterpie",
+          "player": 9,
+          "enemy": 10
+        },
+        {
+          "name": "caterpie-blastoise",
+          "player": 10,
+          "enemy": 9
+        },
+        {
+          "name": "metapod-butterfree",
+          "player": 11,
+          "enemy": 12
+        },
+        {
+          "name": "butterfree-metapod",
+          "player": 12,
+          "enemy": 11
+        },
+        {
+          "name": "weedle-kakuna",
+          "player": 13,
+          "enemy": 14
+        },
+        {
+          "name": "kakuna-weedle",
+          "player": 14,
+          "enemy": 13
+        },
+        {
+          "name": "beedrill-pidgey",
+          "player": 15,
+          "enemy": 16
+        },
+        {
+          "name": "pidgey-beedrill",
+          "player": 16,
+          "enemy": 15
+        }
+      ],
+      "artifact_date": "2026-10-29"
+    },
+    {
+      "number": 28,
+      "ordinal": 9,
+      "status": "pending",
+      "names": [
+        "Pidgeotto",
+        "Pidgeot",
+        "Rattata",
+        "Raticate",
+        "Spearow",
+        "Fearow",
+        "Ekans",
+        "Arbok"
+      ],
+      "national_ids": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "cases": [
+        {
+          "name": "pidgeotto-pidgeot",
+          "player": 17,
+          "enemy": 18
+        },
+        {
+          "name": "pidgeot-pidgeotto",
+          "player": 18,
+          "enemy": 17
+        },
+        {
+          "name": "rattata-raticate",
+          "player": 19,
+          "enemy": 20
+        },
+        {
+          "name": "raticate-rattata",
+          "player": 20,
+          "enemy": 19
+        },
+        {
+          "name": "spearow-fearow",
+          "player": 21,
+          "enemy": 22
+        },
+        {
+          "name": "fearow-spearow",
+          "player": 22,
+          "enemy": 21
+        },
+        {
+          "name": "ekans-arbok",
+          "player": 23,
+          "enemy": 24
+        },
+        {
+          "name": "arbok-ekans",
+          "player": 24,
+          "enemy": 23
+        }
+      ],
+      "artifact_date": "2026-10-29"
+    },
+    {
+      "number": 29,
+      "ordinal": 10,
+      "status": "pending",
+      "names": [
+        "Nidoran F",
+        "Nidorina",
+        "Nidoqueen",
+        "Nidoran M",
+        "Nidorino",
+        "Nidoking",
+        "Clefairy",
+        "Clefable"
+      ],
+      "national_ids": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "cases": [
+        {
+          "name": "nidoran-f-nidorina",
+          "player": 29,
+          "enemy": 30
+        },
+        {
+          "name": "nidorina-nidoran-f",
+          "player": 30,
+          "enemy": 29
+        },
+        {
+          "name": "nidoqueen-nidoran-m",
+          "player": 31,
+          "enemy": 32
+        },
+        {
+          "name": "nidoran-m-nidoqueen",
+          "player": 32,
+          "enemy": 31
+        },
+        {
+          "name": "nidorino-nidoking",
+          "player": 33,
+          "enemy": 34
+        },
+        {
+          "name": "nidoking-nidorino",
+          "player": 34,
+          "enemy": 33
+        },
+        {
+          "name": "clefairy-clefable",
+          "player": 35,
+          "enemy": 36
+        },
+        {
+          "name": "clefable-clefairy",
+          "player": 36,
+          "enemy": 35
+        }
+      ],
+      "artifact_date": "2026-10-29"
+    }
+  ],
+  "builds": {
+    "test": {
+      "build_id": "78516b1a53c4bfa8",
+      "sha256": "5a198041106a73236613d17631667fd1f74774a24837fa8e06a578d2ccb827ca",
+      "path": "artifacts/bw2-validation/builds/78516b1a53c4bfa8_5a198041106a/validation.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/78516b1a53c4bfa8_bcaa4006b767/validation.elf",
+      "elf_sha256": "bcaa4006b7677ab146492d0bf17bb647d605dce3d8c3ae4f4102d7b243cfedb4",
+      "id_path": "artifacts/bw2-validation/builds/78516b1a53c4bfa8_ce3d53eb90ab/build_id.bin"
+    },
+    "production": {
+      "build_id": "39b4647bb1f1c442",
+      "sha256": "72f680aa46297f31c747341a34e85817e92e86d09e698d344bb11d37422f8ab4",
+      "path": "artifacts/bw2-validation/builds/39b4647bb1f1c442_72f680aa4629/Emerald3DS-BW2.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/39b4647bb1f1c442_0a3a924ecb1c/production.elf",
+      "elf_sha256": "0a3a924ecb1ce9f66e23fe58d96a530992a27d17d7b4e86f55ed47ee4cde44d0",
+      "id_path": "artifacts/bw2-validation/builds/39b4647bb1f1c442_85b9c73e955a/production-build-id.bin"
+    }
+  },
+  "build_history": [
+    {
+      "test": {
+        "build_id": "24b3c6b5fb7206c7",
+        "sha256": "d46fe452124971b1f853041140908d6e566c0fd7df0e1ce5dd5400aebf5c9594",
+        "path": "artifacts/bw2-validation/builds/24b3c6b5fb7206c7_d46fe4521249/validation.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/24b3c6b5fb7206c7_5e1123811805/validation.elf",
+        "elf_sha256": "5e1123811805cda16eed8e97cf167752748adddd0430c79bc697572867887c5b",
+        "id_path": "artifacts/bw2-validation/builds/24b3c6b5fb7206c7_d46fe4521249/build_id.bin",
+        "id_provenance": "Full 32-byte ID extracted from matching archived 3DSX RomFS; unique eight-byte recorded prefix; current pair also byte-matches local build ID files"
+      },
+      "production": {
+        "build_id": "b9eafa1bb23e8fcf",
+        "sha256": "ad98f8246237ba4a1998bdcf5dd50a3cafd8688784a2347cc3a04923506d7c6b",
+        "path": "artifacts/bw2-validation/builds/b9eafa1bb23e8fcf_ad98f8246237/Emerald3DS-BW2.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/b9eafa1bb23e8fcf_c49316d65db2/production.elf",
+        "elf_sha256": "c49316d65db2f9d9aeb3a983f6250218ea75cba89dfe34523a8b2c17b3825360",
+        "id_path": "artifacts/bw2-validation/builds/b9eafa1bb23e8fcf_ad98f8246237/production-build-id.bin",
+        "id_provenance": "Full 32-byte ID extracted from matching archived 3DSX RomFS; unique eight-byte recorded prefix; current pair also byte-matches local build ID files"
+      }
+    }
+  ],
+  "runtime": {
+    "phase": "serial native captures; process exit wait corrected",
+    "isolated_executable": "build/bw2-azahar/bw2-test.exe",
+    "initial_emulator_processes": [],
+    "build_script": "build/bw2-auto20-build.sh",
+    "capture_group": 20,
+    "exec_session_id": 65717,
+    "log": "build/bw2-auto20-cp20-capture.log",
+    "personal_emulator_pid": 2460
+  },
+  "checks": {
+    "exporter_tests": 18,
+    "evidence_tests": 7,
+    "variant_gate_tests": 15,
+    "bridge_synthetic": true,
+    "bridge_real_assets": true,
+    "spinda_texture_oracle_seeds": 8,
+    "castform_bridge": true
+  }
+}
