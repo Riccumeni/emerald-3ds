@@ -1,7 +1,7 @@
 {
   "start_pokemon": 154,
   "target_pokemon": 234,
-  "completed_checkpoints": 9,
+  "completed_checkpoints": 10,
   "groups": [
     {
       "number": 20,
@@ -1354,7 +1354,7 @@
     {
       "number": 29,
       "ordinal": 10,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Nidoran F",
         "Nidorina",
@@ -1417,7 +1417,81 @@
           "enemy": 35
         }
       ],
-      "artifact_date": "2026-10-29"
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 240,
+      "movie": {
+        "duration": 231.68766666666667,
+        "decoded_frames": 6943,
+        "sha256": "fb7801bddbfbd79da4a11a8b299a773bdf2aa575a379455f280c1da915021c9a",
+        "segments": [
+          {
+            "name": "nidoran-f-nidorina",
+            "start": 0.0,
+            "end": 31.470333333333333,
+            "frames": 943,
+            "sha256": "1d14c9fa06c965bb1becd545f2c6075c458f9a7eb0ee857779a3a896b7dc3382"
+          },
+          {
+            "name": "nidorina-nidoran-f",
+            "start": 31.470333333333333,
+            "end": 63.00366666666667,
+            "frames": 945,
+            "sha256": "48bc9d578504f12d91659129cf6cf6fb60a18520e1cf3e9734a5b25ac8aebe06"
+          },
+          {
+            "name": "nidoqueen-nidoran-m",
+            "start": 63.00366666666667,
+            "end": 90.365,
+            "frames": 820,
+            "sha256": "aa19d943ef321de01e05bd5b506bc2cf580e1a0945f3145131004efb1a43056a"
+          },
+          {
+            "name": "nidoran-m-nidoqueen",
+            "start": 90.365,
+            "end": 117.96033333333334,
+            "frames": 827,
+            "sha256": "b451dd6b008a80f44a9b3258f3c06e3d02f783143bd3045d2e49445b57169bc1"
+          },
+          {
+            "name": "nidorino-nidoking",
+            "start": 117.96033333333334,
+            "end": 145.30666666666667,
+            "frames": 819,
+            "sha256": "a103f33963b17e2aa105d2b74cbbf2ab838e4d70b5c906f5672c7d5737acdb41"
+          },
+          {
+            "name": "nidoking-nidorino",
+            "start": 145.30666666666667,
+            "end": 173.199,
+            "frames": 836,
+            "sha256": "00d429d980f45a1440c515301513e187cb6b6982d4e56d6fa56f1217070f4619"
+          },
+          {
+            "name": "clefairy-clefable",
+            "start": 173.199,
+            "end": 203.43533333333335,
+            "frames": 906,
+            "sha256": "4c497a088dcf18319213952ba1aefb5f4d90a0bf49a33b34aa8f3b4464c28281"
+          },
+          {
+            "name": "clefable-clefairy",
+            "start": 203.43533333333335,
+            "end": 231.68766666666667,
+            "frames": 847,
+            "sha256": "28f33db2d0b958685af771baa64c8dbb978ff3bf771f1b4c239a360027a49b6c"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 29: eight Pokemon"
     }
   ],
   "builds": {
@@ -1515,16 +1589,26 @@
     }
   ],
   "runtime": {
-    "phase": "serial native captures and visual review",
+    "phase": "closed: all ten checkpoints completed and independently audited",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "initial_emulator_processes": [],
     "build_script": "build/bw2-auto20-build.sh",
-    "capture_group": 28,
+    "capture_group": null,
     "exec_session_id": null,
-    "log": "build/bw2-auto20-cp28-capture.log",
+    "log": "build/bw2-auto20-cp29-capture.log",
     "personal_emulator_pid": 2460,
     "continuity": "build/BW2_CONTINUITY20.md",
-    "extra_log": "build/bw2-auto20-deoxys-r3-extra-capture.log"
+    "extra_log": "build/bw2-auto20-deoxys-r3-extra-capture.log",
+    "isolated_emulator_closed": true,
+    "active_capture": false,
+    "personal_emulator_processes": [
+      {
+        "ProcessId": 2460,
+        "Name": "azahar.exe",
+        "ExecutablePath": "D:\\Emulators\\Azahar\\azahar.exe"
+      }
+    ],
+    "final_process_snapshot": "build/bw2-final20-processes.json"
   },
   "checks": {
     "exporter_tests": 20,
@@ -1560,5 +1644,52 @@
       "visual_reviewed": true,
       "video_sha256": "b0d7ec5385715a4aa0d706866e4e361eee2f3e46f63cc191c3c111b14292fa08"
     }
-  ]
+  ],
+  "final_audit": "docs/bw2-plan/AUTONOMOUS20_29_AUDIT.json",
+  "completed_at": "2026-10-30T00:47:33",
+  "next_unit": {
+    "tipo": "pokemon",
+    "id": 46,
+    "nome": "Paras",
+    "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
+  },
+  "commits_before_final": [
+    {
+      "checkpoint": 20,
+      "commit": "38483c1"
+    },
+    {
+      "checkpoint": 21,
+      "commit": "8a22db5"
+    },
+    {
+      "checkpoint": 22,
+      "commit": "36ba026"
+    },
+    {
+      "checkpoint": 23,
+      "commit": "0771fd6"
+    },
+    {
+      "checkpoint": 24,
+      "commit": "0d0cd92"
+    },
+    {
+      "checkpoint": 25,
+      "commit": "13c9048"
+    },
+    {
+      "checkpoint": 26,
+      "commit": "51b5dd3"
+    },
+    {
+      "checkpoint": 27,
+      "commit": "9978b56"
+    },
+    {
+      "checkpoint": 28,
+      "commit": "9f2e1fd"
+    }
+  ],
+  "final_commit_identification": "Complete autonomous BW2 checkpoint 29: eight Pokemon; final hash available from git log"
 }

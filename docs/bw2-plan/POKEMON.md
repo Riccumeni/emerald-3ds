@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **226**.
+Totale: **386**. Fatti con dossier completo: **234**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -232,14 +232,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0022 **Fearow** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0022_fearow/).
 - [x] 0023 **Ekans** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0023_ekans/).
 - [x] 0024 **Arbok** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0024_arbok/).
-- [ ] 0029 **Nidoran F** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0029_nidoran_f/).
-- [ ] 0030 **Nidorina** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0030_nidorina/).
-- [ ] 0031 **Nidoqueen** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0031_nidoqueen/).
-- [ ] 0032 **Nidoran M** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0032_nidoran_m/).
-- [ ] 0033 **Nidorino** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0033_nidorino/).
-- [ ] 0034 **Nidoking** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0034_nidoking/).
-- [ ] 0035 **Clefairy** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0035_clefairy/).
-- [ ] 0036 **Clefable** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0036_clefable/).
+- [x] 0029 **Nidoran F** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0029_nidoran_f/).
+- [x] 0030 **Nidorina** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0030_nidorina/).
+- [x] 0031 **Nidoqueen** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0031_nidoqueen/).
+- [x] 0032 **Nidoran M** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0032_nidoran_m/).
+- [x] 0033 **Nidorino** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0033_nidorino/).
+- [x] 0034 **Nidoking** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0034_nidoking/).
+- [x] 0035 **Clefairy** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0035_clefairy/).
+- [x] 0036 **Clefable** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0036_clefable/).
 - [ ] 0046 **Paras** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0046_paras/).
 - [ ] 0047 **Parasect** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0047_parasect/).
 - [ ] 0048 **Venonat** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0048_venonat/).

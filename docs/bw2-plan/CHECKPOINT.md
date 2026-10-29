@@ -1,11 +1,11 @@
-# Punto di ripresa — 2026-10-30T00:17:14
+# Punto di ripresa — 2026-10-30T00:47:33
 
-Stato: esecuzione in corso. Completati **226/386 Pokemon** e **6/354 mosse**, con dossier verificati.
+Stato: richiesta checkpoint 20–29 conclusa; piano generale da proseguire. Completati **234/386 Pokemon** e **6/354 mosse**, con dossier verificati.
 
 - Piano e registri: `docs/BW2_ANIMATION_PLAN.md`, `docs/bw2-plan/stato.json` e le due checklist.
 - Dossier permanenti: `artifacts/bw2-validation/`; i dati grandi restano locali e ignorati da Git.
-- Unita' in corso: `null`. Ultima chiusa: `{"tipo": "pokemon", "id": 24, "nome": "Arbok"}`.
-- Prossima unita' da affrontare: `{"tipo": "pokemon", "id": 29, "nome": "Nidoran F", "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"}`.
+- Unita' in corso: `null`. Ultima chiusa: `{"tipo": "pokemon", "id": 36, "nome": "Clefable"}`.
+- Prossima unita' da affrontare: `{"tipo": "pokemon", "id": 46, "nome": "Paras", "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"}`.
 - Tutti i dossier pilota sono chiusi; continuare dalla prossima unita' indicata sopra.
 - Inventario `docs/bw2-plan/INVENTORY.json`: 772 viste base senza incompatibilita' di formato rilevate; solo 53/354 script accettati dal decoder attuale. Non significa che siano gia' importati/verificati. Forme ancora da censire.
 - `3ds_port/scripts/emu/run_bw2_validation.ps1`: avvia solo l'emulatore isolato; `bw2_capture.py` registra fotogrammi nativi via RPC, a 1x, in MP4/H.264 con timestamp reali e verifica la decodifica.
@@ -21,4 +21,4 @@ Stato: esecuzione in corso. Completati **226/386 Pokemon** e **6/354 mosse**, co
 
 Prima della nuova unita' controllare contesto/budget; salvare processi e sessioni attivi in questo checkpoint se serve interrompere. Non segnare mai completo un dossier parziale.
 
-Nota persistente: Richiesta: checkpoint 20–29, 9/10 conclusi; partenza 154 Pokémon, obiettivo 234; mosse 6/354. Registro AUTONOMOUS20_29.json; helper build/bw2-auto20.py, catture build/bw2-auto20-capture.ps1. Gruppo28 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 29. Build e processi in AUTONOMOUS20_29.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap.
+Nota persistente: Richiesta conclusa: 10/10 checkpoint 20–29, 80 nuove specie; 234/386 Pokémon e 6/354 mosse. Nessuna unità in corso. Audit indipendente AUTONOMOUS20_29_AUDIT.json: 240 dossier, 650 file asset precedenti e 330 file locali estranei invariati; repository BW2 e ROM solo letti. Algoritmo v5 e margine v5.1 invariati. Deoxys Normale/Velocità e shiny verificati; Trasformazione reale normale/shiny e regressione Spinda superate, correzione generale del riaggancio attore inclusa. Le mosse di supporto restano Emerald e non aumentano i completamenti BW2. Build normali e di prova con binario/ELF/ID e SHA archiviati in AUTONOMOUS20_29.json e nei dossier. Emulatore isolato chiuso dopo uscita effettiva; nessuna cattura attiva. Azahar personale preservato (PID 2460 ancora presente nel controllo finale). Dieci commit dedicati; nessun push. Prossima unità: Paras, nazionale/Emerald 46. Prove Azahar a 1×; console, audio/DSP, stereo, doppi, link reale e integrazione completa delle interazioni speciali restano da validare. Suite generale bottom-map con problemi preesistenti, non dichiarata superata. Riepilogo e prove: AUTONOMOUS20_29_REVIEW.md; riprendere dal registro autorevole senza riaprire gruppi conclusi.

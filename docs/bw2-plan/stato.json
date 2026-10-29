@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-30T00:17:14",
+  "aggiornato_il": "2026-10-30T00:47:33",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 226,
+    "pokemon_fatti": 234,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,8 +19,8 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 29,
-    "nome": "Nidoran F",
+    "id": 46,
+    "nome": "Paras",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
@@ -7965,28 +7965,34 @@
       "costante": "SPECIES_NIDORAN_F",
       "nome": "Nidoran F",
       "ordine": 227,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0029_nidoran_f",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0029_nidoran_f/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0029_nidoran_f/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "0498dc74ab922f1be8f0977468641220f70f7780d78914be521edc9a93164c29",
+          "video_sha256": "48bc9d578504f12d91659129cf6cf6fb60a18520e1cf3e9734a5b25ac8aebe06"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0029_nidoran_f/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0029_nidoran_f/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "8747346397055ab40df35d99e31166dbe1eddd093ba2f6ff7a43e6fab72ed60e",
+          "video_sha256": "1d14c9fa06c965bb1becd545f2c6075c458f9a7eb0ee857779a3a896b7dc3382"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0029_nidoran_f/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0029_nidoran_f/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:43:07",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 30,
@@ -7994,28 +8000,34 @@
       "costante": "SPECIES_NIDORINA",
       "nome": "Nidorina",
       "ordine": 228,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0030_nidorina",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0030_nidorina/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0030_nidorina/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "8747346397055ab40df35d99e31166dbe1eddd093ba2f6ff7a43e6fab72ed60e",
+          "video_sha256": "1d14c9fa06c965bb1becd545f2c6075c458f9a7eb0ee857779a3a896b7dc3382"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0030_nidorina/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0030_nidorina/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "0498dc74ab922f1be8f0977468641220f70f7780d78914be521edc9a93164c29",
+          "video_sha256": "48bc9d578504f12d91659129cf6cf6fb60a18520e1cf3e9734a5b25ac8aebe06"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0030_nidorina/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0030_nidorina/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:43:08",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 31,
@@ -8023,28 +8035,34 @@
       "costante": "SPECIES_NIDOQUEEN",
       "nome": "Nidoqueen",
       "ordine": 229,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0031_nidoqueen",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0031_nidoqueen/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0031_nidoqueen/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "cb2ebd5a1f325bc697194c2b7078ba5a5df7b3295e03061817f569d253952e62",
+          "video_sha256": "b451dd6b008a80f44a9b3258f3c06e3d02f783143bd3045d2e49445b57169bc1"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0031_nidoqueen/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0031_nidoqueen/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "d8653fdedf53ccf889eb632274217c0cddae8f00a0c2b6ed06a643f2ef7dd252",
+          "video_sha256": "aa19d943ef321de01e05bd5b506bc2cf580e1a0945f3145131004efb1a43056a"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0031_nidoqueen/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0031_nidoqueen/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:43:08",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 32,
@@ -8052,28 +8070,34 @@
       "costante": "SPECIES_NIDORAN_M",
       "nome": "Nidoran M",
       "ordine": 230,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0032_nidoran_m",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0032_nidoran_m/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0032_nidoran_m/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "d8653fdedf53ccf889eb632274217c0cddae8f00a0c2b6ed06a643f2ef7dd252",
+          "video_sha256": "aa19d943ef321de01e05bd5b506bc2cf580e1a0945f3145131004efb1a43056a"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0032_nidoran_m/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0032_nidoran_m/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "cb2ebd5a1f325bc697194c2b7078ba5a5df7b3295e03061817f569d253952e62",
+          "video_sha256": "b451dd6b008a80f44a9b3258f3c06e3d02f783143bd3045d2e49445b57169bc1"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0032_nidoran_m/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0032_nidoran_m/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:43:09",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 33,
@@ -8081,28 +8105,34 @@
       "costante": "SPECIES_NIDORINO",
       "nome": "Nidorino",
       "ordine": 231,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0033_nidorino",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0033_nidorino/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0033_nidorino/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "d7bcb0e341d041aaf3e829caf22928950c6bd2f3853638bee4abe39aaed461cf",
+          "video_sha256": "00d429d980f45a1440c515301513e187cb6b6982d4e56d6fa56f1217070f4619"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0033_nidorino/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0033_nidorino/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "e1dd7a3ff796bf82443acfdfadd85d8039192a8d0713a59df20aea54884ecdb5",
+          "video_sha256": "a103f33963b17e2aa105d2b74cbbf2ab838e4d70b5c906f5672c7d5737acdb41"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0033_nidorino/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0033_nidorino/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:43:10",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 34,
@@ -8110,28 +8140,34 @@
       "costante": "SPECIES_NIDOKING",
       "nome": "Nidoking",
       "ordine": 232,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0034_nidoking",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0034_nidoking/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0034_nidoking/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "e1dd7a3ff796bf82443acfdfadd85d8039192a8d0713a59df20aea54884ecdb5",
+          "video_sha256": "a103f33963b17e2aa105d2b74cbbf2ab838e4d70b5c906f5672c7d5737acdb41"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0034_nidoking/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0034_nidoking/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "d7bcb0e341d041aaf3e829caf22928950c6bd2f3853638bee4abe39aaed461cf",
+          "video_sha256": "00d429d980f45a1440c515301513e187cb6b6982d4e56d6fa56f1217070f4619"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0034_nidoking/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0034_nidoking/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:43:10",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 35,
@@ -8139,28 +8175,34 @@
       "costante": "SPECIES_CLEFAIRY",
       "nome": "Clefairy",
       "ordine": 233,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0035_clefairy",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0035_clefairy/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0035_clefairy/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "dd2940e155860f92387fbad2d4f93cc7be84bc5b70926a1ad4e3008442734223",
+          "video_sha256": "28f33db2d0b958685af771baa64c8dbb978ff3bf771f1b4c239a360027a49b6c"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0035_clefairy/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0035_clefairy/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "2704b2489d413498e85df728ef005b2eef44f5a9a0a19623f90f4a8eeb6295e9",
+          "video_sha256": "4c497a088dcf18319213952ba1aefb5f4d90a0bf49a33b34aa8f3b4464c28281"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0035_clefairy/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0035_clefairy/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:43:11",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 36,
@@ -8168,28 +8210,34 @@
       "costante": "SPECIES_CLEFABLE",
       "nome": "Clefable",
       "ordine": 234,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0036_clefable",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0036_clefable/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0036_clefable/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "2704b2489d413498e85df728ef005b2eef44f5a9a0a19623f90f4a8eeb6295e9",
+          "video_sha256": "4c497a088dcf18319213952ba1aefb5f4d90a0bf49a33b34aa8f3b4464c28281"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0036_clefable/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0036_clefable/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "dd2940e155860f92387fbad2d4f93cc7be84bc5b70926a1ad4e3008442734223",
+          "video_sha256": "28f33db2d0b958685af771baa64c8dbb978ff3bf771f1b4c239a360027a49b6c"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0036_clefable/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0036_clefable/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:43:11",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 46,
@@ -22939,8 +22987,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 24,
-    "nome": "Arbok"
+    "id": 36,
+    "nome": "Clefable"
   },
-  "checkpoint_note": "Richiesta: checkpoint 20–29, 9/10 conclusi; partenza 154 Pokémon, obiettivo 234; mosse 6/354. Registro AUTONOMOUS20_29.json; helper build/bw2-auto20.py, catture build/bw2-auto20-capture.ps1. Gruppo28 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 29. Build e processi in AUTONOMOUS20_29.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
+  "checkpoint_note": "Richiesta conclusa: 10/10 checkpoint 20–29, 80 nuove specie; 234/386 Pokémon e 6/354 mosse. Nessuna unità in corso. Audit indipendente AUTONOMOUS20_29_AUDIT.json: 240 dossier, 650 file asset precedenti e 330 file locali estranei invariati; repository BW2 e ROM solo letti. Algoritmo v5 e margine v5.1 invariati. Deoxys Normale/Velocità e shiny verificati; Trasformazione reale normale/shiny e regressione Spinda superate, correzione generale del riaggancio attore inclusa. Le mosse di supporto restano Emerald e non aumentano i completamenti BW2. Build normali e di prova con binario/ELF/ID e SHA archiviati in AUTONOMOUS20_29.json e nei dossier. Emulatore isolato chiuso dopo uscita effettiva; nessuna cattura attiva. Azahar personale preservato (PID 2460 ancora presente nel controllo finale). Dieci commit dedicati; nessun push. Prossima unità: Paras, nazionale/Emerald 46. Prove Azahar a 1×; console, audio/DSP, stereo, doppi, link reale e integrazione completa delle interazioni speciali restano da validare. Suite generale bottom-map con problemi preesistenti, non dichiarata superata. Riepilogo e prove: AUTONOMOUS20_29_REVIEW.md; riprendere dal registro autorevole senza riaprire gruppi conclusi."
 }
