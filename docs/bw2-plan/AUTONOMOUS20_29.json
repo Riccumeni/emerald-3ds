@@ -1,7 +1,7 @@
 {
   "start_pokemon": 154,
   "target_pokemon": 234,
-  "completed_checkpoints": 1,
+  "completed_checkpoints": 2,
   "groups": [
     {
       "number": 20,
@@ -148,7 +148,7 @@
     {
       "number": 21,
       "ordinal": 2,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Xatu",
         "Girafarig",
@@ -211,7 +211,81 @@
           "enemy": 111
         }
       ],
-      "artifact_date": "2026-10-29"
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 176,
+      "movie": {
+        "duration": 241.25266666666667,
+        "decoded_frames": 7234,
+        "sha256": "c7ae34246d7a5b54edd01e5a8e99284eefe473bff1866cef0175fca7483188d1",
+        "segments": [
+          {
+            "name": "xatu-girafarig",
+            "start": 0.0,
+            "end": 26.268333333333334,
+            "frames": 788,
+            "sha256": "0d85842d061f06fd6ee4c6c82bf879de4599c2521979a9417c6562184d429c05"
+          },
+          {
+            "name": "girafarig-xatu",
+            "start": 26.268333333333334,
+            "end": 53.34866666666667,
+            "frames": 812,
+            "sha256": "28094dd8740fdd835da467513a8bf016223eca930ed3f8526d3b9c7719b7f7b1"
+          },
+          {
+            "name": "phanpy-donphan",
+            "start": 53.34866666666667,
+            "end": 82.491,
+            "frames": 874,
+            "sha256": "ac6d4ca0bcd97a102e5c1e0e08af76c8cac6bd64d3fb4828b1a7cbbeda204119"
+          },
+          {
+            "name": "donphan-phanpy",
+            "start": 82.491,
+            "end": 112.38433333333333,
+            "frames": 896,
+            "sha256": "703790bc26e106d22777c7f71e3b0ab8a26b1fb0bc32cd7781690308583ffee3"
+          },
+          {
+            "name": "pinsir-heracross",
+            "start": 112.38433333333333,
+            "end": 141.43366666666665,
+            "frames": 871,
+            "sha256": "df642fd9bdaf4e0c6e3edbd9a713e4b9571465b255619f83af492c79663f3ec2"
+          },
+          {
+            "name": "heracross-pinsir",
+            "start": 141.43366666666665,
+            "end": 170.17,
+            "frames": 862,
+            "sha256": "625e3ad15f6946f2fa05d7bb9b6145346d5b252aa8d5ab5f1d9dd1cb16363320"
+          },
+          {
+            "name": "rhyhorn-rhydon",
+            "start": 170.17,
+            "end": 206.00033333333334,
+            "frames": 1074,
+            "sha256": "a76646752bc7ff67f1342aaf64d9a5934f30cb390d50c8205b2846ea73d8f991"
+          },
+          {
+            "name": "rhydon-rhyhorn",
+            "start": 206.00033333333334,
+            "end": 241.25266666666667,
+            "frames": 1057,
+            "sha256": "678018a5a02317a7e1751707714d316ca7bc6c07182d072d5b4aa1d54ee86f4b"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 21: eight Pokemon"
     },
     {
       "number": 22,
@@ -799,13 +873,13 @@
     }
   ],
   "runtime": {
-    "phase": "serial native captures; process exit wait corrected",
+    "phase": "serial native captures and visual review; Deoxys drafts in build/bw2-implement-deoxys20.py NOT APPLIED",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "initial_emulator_processes": [],
     "build_script": "build/bw2-auto20-build.sh",
-    "capture_group": 20,
-    "exec_session_id": 65717,
-    "log": "build/bw2-auto20-cp20-capture.log",
+    "capture_group": 21,
+    "exec_session_id": 91157,
+    "log": "build/bw2-auto20-cp21-capture.log",
     "personal_emulator_pid": 2460
   },
   "checks": {

@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **162**.
+Totale: **386**. Fatti con dossier completo: **170**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -168,14 +168,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0360 **Wynaut** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0360_wynaut/).
 - [x] 0202 **Wobbuffet** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0202_wobbuffet/).
 - [x] 0177 **Natu** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0177_natu/).
-- [ ] 0178 **Xatu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0178_xatu/).
-- [ ] 0203 **Girafarig** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0203_girafarig/).
-- [ ] 0231 **Phanpy** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0231_phanpy/).
-- [ ] 0232 **Donphan** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0232_donphan/).
-- [ ] 0127 **Pinsir** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0127_pinsir/).
-- [ ] 0214 **Heracross** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0214_heracross/).
-- [ ] 0111 **Rhyhorn** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0111_rhyhorn/).
-- [ ] 0112 **Rhydon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0112_rhydon/).
+- [x] 0178 **Xatu** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0178_xatu/).
+- [x] 0203 **Girafarig** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0203_girafarig/).
+- [x] 0231 **Phanpy** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0231_phanpy/).
+- [x] 0232 **Donphan** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0232_donphan/).
+- [x] 0127 **Pinsir** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0127_pinsir/).
+- [x] 0214 **Heracross** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0214_heracross/).
+- [x] 0111 **Rhyhorn** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0111_rhyhorn/).
+- [x] 0112 **Rhydon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0112_rhydon/).
 - [ ] 0361 **Snorunt** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0361_snorunt/).
 - [ ] 0362 **Glalie** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0362_glalie/).
 - [ ] 0363 **Spheal** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0363_spheal/).
