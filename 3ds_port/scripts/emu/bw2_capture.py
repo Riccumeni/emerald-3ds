@@ -66,6 +66,9 @@ def presentation(rpc, sym):
             if source_factor:
                 w, h, footprint = struct.unpack('<3H', rpc.read_memory(clip + 36, 6))
                 item.update(source_width=w, source_height=h, source_footprint_q8=footprint)
+        if 'gCtrBW2ActorForms' in sym:
+            item['form']=rpc.read_memory(sym['gCtrBW2ActorForms']+b,1)[0]
+            item['game_form']=rpc.read_memory(sym['gBattleMonForms']+b,1)[0]
         result.append(item)
     return result
 

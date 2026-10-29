@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('idle', 'move', 'palette')][string]$Kind = 'idle',
+    [ValidateSet('idle', 'move', 'palette', 'form')][string]$Kind = 'idle',
     [int]$PlayerSpecies = 277,
     [int]$EnemySpecies = 286,
     [int]$Move = 1,
@@ -7,6 +7,7 @@ param(
     [ValidateRange(0, 2)][int]$Side = 2,
     [ValidateRange(0, 1)][int]$Shiny = 0,
     [Parameter(Mandatory = $true)][string]$Name,
+    [switch]$ReturnNormal,
     [switch]$Overwrite
 )
 
@@ -31,7 +32,7 @@ if ((Test-Path -LiteralPath $taskPreviousReport) -and -not $Overwrite) {
     if ($taskPrevious.passed -and $taskPrevious.binary_sha256 -eq $taskHash -and
         $taskPrevious.scenario.player -eq $PlayerSpecies -and $taskPrevious.scenario.enemy -eq $EnemySpecies -and
         $taskPrevious.scenario.move -eq $Move -and $taskPrevious.scenario.side -eq $Side -and
-        $taskPrevious.scenario.shiny -eq $Shiny -and [uint32]$taskPrevious.scenario.personality -eq $Personality -and $taskPrevious.kind -eq $Kind) {
+        $taskPrevious.scenario.shiny -eq $Shiny -and [bool]$taskPrevious.scenario.return_normal -eq [bool]$ReturnNormal -and [uint32]$taskPrevious.scenario.personality -eq $Personality -and $taskPrevious.kind -eq $Kind) {
         Write-Output "Verified capture already exists: $Name"
         exit 0
     }
@@ -52,7 +53,10 @@ $taskSettings = "player=$PlayerSpecies`nenemy=$EnemySpecies`nmove=$Move`nshiny=$
 $taskProcess = Start-Process -FilePath $taskExe -ArgumentList ('"' + $taskBinary + '"') -WindowStyle Normal -PassThru
 $taskProcess.Id | Set-Content -LiteralPath $taskPidFile
 $taskPython = 'C:\Users\rzero\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
-$taskArgs = @('-B', (Join-Path $PSScriptRoot 'bw2_capture.py'), '--kind', $Kind, '--output', $taskOutput)
+$taskScript='bw2_capture.py'
+if ($Kind -eq 'form') {$taskScript='bw2_capture_forms.py'}
+$taskArgs = @('-B', (Join-Path $PSScriptRoot $taskScript), '--kind', $Kind, '--output', $taskOutput)
+if ($ReturnNormal) {$taskArgs += '--return-normal'}
 if ($Overwrite) { $taskArgs += '--overwrite' }
 & $taskPython @taskArgs
 $taskStatus = $LASTEXITCODE

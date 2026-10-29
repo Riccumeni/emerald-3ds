@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **138**.
+Totale: **386**. Fatti con dossier completo: **146**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -143,14 +143,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0347 **Anorith** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0347_anorith/).
 - [x] 0348 **Armaldo** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0348_armaldo/).
 - [x] 0174 **Igglybuff** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0174_igglybuff/).
-- [ ] 0039 **Jigglypuff** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0039_jigglypuff/).
-- [ ] 0040 **Wigglytuff** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0040_wigglytuff/).
-- [ ] 0349 **Feebas** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0349_feebas/).
-- [ ] 0350 **Milotic** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0350_milotic/).
-- [ ] 0351 **Castform** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0351_castform/).
-- [ ] 0120 **Staryu** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0120_staryu/).
-- [ ] 0121 **Starmie** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0121_starmie/).
-- [ ] 0352 **Kecleon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0352_kecleon/).
+- [x] 0039 **Jigglypuff** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0039_jigglypuff/).
+- [x] 0040 **Wigglytuff** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0040_wigglytuff/).
+- [x] 0349 **Feebas** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0349_feebas/).
+- [x] 0350 **Milotic** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0350_milotic/).
+- [x] 0351 **Castform** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0351_castform/).
+- [x] 0120 **Staryu** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0120_staryu/).
+- [x] 0121 **Starmie** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0121_starmie/).
+- [x] 0352 **Kecleon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0352_kecleon/).
 - [ ] 0353 **Shuppet** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0353_shuppet/).
 - [ ] 0354 **Banette** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0354_banette/).
 - [ ] 0355 **Duskull** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0355_duskull/).

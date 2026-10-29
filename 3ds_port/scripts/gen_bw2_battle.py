@@ -550,7 +550,7 @@ def generate(rom_path, output, previews=None, species=None, moves=None):
         previous=json.loads(existing.read_text(encoding='utf-8'))
         if previous.get('rom_sha256') != report['rom_sha256'] or previous.get('canvas') != report['canvas']:
             raise ValueError('Output contains assets from another ROM or canvas format')
-        for section in ('pokemon','moves','effects'):
+        for section in ('pokemon','moves','effects','forms'):
             report[section]=previous.get(section,{}).copy()
     mons=nds.archive('a/0/0/4')
     for number,(emerald,name) in (SPECIES if species is None else species).items():
@@ -564,6 +564,21 @@ def generate(rom_path, output, previews=None, species=None, moves=None):
             report['pokemon'][key]=write_clip(output/(key+'.bin'),images,normal,shiny,loop,uv)
             report['pokemon'][key]['source_bounds']=bounds
             if previews:preview(previews/(name+'_'+side+'.gif'),images,normal)
+    if 351 in (SPECIES if species is None else species):
+        personal=nds.archive('a/0/1/6')[351]
+        sprite_offset,form_count,flags=struct.unpack_from('<HBB',personal,30)
+        if form_count!=4 or flags&128:raise ValueError('Unexpected Castform resource mapping')
+        report.setdefault('forms',{})['385']={}
+        for form,name in [(1,'sunny'),(2,'rainy'),(3,'snowy')]:
+            base=0x3584+(sprite_offset+form-1)*20
+            normal,shiny=palette(mons[base+18]),palette(mons[base+19])
+            report['forms']['385'][str(form)]=dict(name=name,resource_base=base)
+            for side in ('front','back'):
+                images,loop,bounds=pokemon_frames(mons,351,side,base_override=base)
+                key=f'385_form{form}_{side}'
+                report['pokemon'][key]=write_clip(output/(key+'.bin'),images,normal,shiny,loop)
+                report['pokemon'][key]['source_bounds']=bounds
+                if previews:preview(previews/(f'castform_{name}_{side}.gif'),images,normal)
     scripts=nds.archive('a/0/6/5'); particles=nds.archive('a/0/0/6'); exported=set()
     selected_moves = MOVES if moves is None else moves
     for move,name in selected_moves.items():

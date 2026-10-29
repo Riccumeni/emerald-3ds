@@ -34,6 +34,7 @@ typedef int8_t s8; typedef int16_t s16; typedef int32_t s32; typedef u8 bool8;
 #define PLTT_SIZE 1024
 #define SPECIES_NONE 0
 #define SPECIES_SPINDA 308
+#define SPECIES_CASTFORM 385
 #define MON_DATA_PERSONALITY 1
 #define SPECIES_TREECKO 277
 #define SPECIES_POOCHYENA 286
@@ -100,6 +101,7 @@ extern struct MonSpritesGfx *gMonSpritesGfxPtr;
 extern u8 gBattlersCount,gBattlerSpriteIds[4],gBattlerPartyIndexes[4],gBattlerAttacker,gBattlerTarget;
 extern u8 gBattleAnimAttacker,gBattleAnimTarget,gAnimScriptActive;
 extern u32 gBattleTypeFlags, gTransformedPersonalities[4];
+extern u8 gBattleMonForms[4];
 extern u16 gPlttBufferFaded[512];
 extern struct Main { bool8 inBattle; struct OamData oamBuffer[128]; } gMain;
 extern s16 gSpriteCoordOffsetY;
@@ -153,13 +155,14 @@ struct MonSpritesGfx gfx,*gMonSpritesGfxPtr=&gfx;
 u8 gBattlersCount=2,gBattlerSpriteIds[4]={0,1,2,3},gBattlerPartyIndexes[4];
 u8 gBattlerAttacker,gBattlerTarget,gBattleAnimAttacker,gBattleAnimTarget,gAnimScriptActive;
 u32 gBattleTypeFlags, gTransformedPersonalities[4];
+u8 gBattleMonForms[4];
 u16 gPlttBufferFaded[512];
 u8 testVram[65536],pixels[4][8192];
 void (*gAnimScriptCallback)(void);
 const union AnimCmd *const gAnims_MonPic[]={NULL},*const gDummySpriteAnimTable[]={NULL};
 static const union AnimCmd frontCommand={1};
 static const union AnimCmd *const treeckoFront[]={&frontCommand},*const poochyenaFront[]={&frontCommand};
-const union AnimCmd *const *const gMonFrontAnimsPtrTable[287]={
+const union AnimCmd *const *const gMonFrontAnimsPtrTable[412]={
  [SPECIES_TREECKO]=treeckoFront,[SPECIES_POOCHYENA]=poochyenaFront
 };
 const union AffineAnimCmd *const gDummySpriteAffineAnimTable[]={NULL};

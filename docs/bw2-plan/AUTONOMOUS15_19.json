@@ -1,7 +1,7 @@
 {
   "start_pokemon": 114,
   "target_pokemon": 154,
-  "completed_checkpoints": 3,
+  "completed_checkpoints": 4,
   "groups": [
     {
       "number": 15,
@@ -432,7 +432,7 @@
     {
       "number": 18,
       "ordinal": 4,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Jigglypuff",
         "Wigglytuff",
@@ -495,7 +495,81 @@
           "enemy": 121
         }
       ],
-      "artifact_date": "2026-10-29"
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 152,
+      "movie": {
+        "duration": 241.23666666666668,
+        "decoded_frames": 7228,
+        "sha256": "c1eb4ba77d3877fc8168a004c2a213d4b66504dc1f83fb0f02da486c7ed1d7a4",
+        "segments": [
+          {
+            "name": "jigglypuff-wigglytuff",
+            "start": 0.0,
+            "end": 27.627333333333333,
+            "frames": 827,
+            "sha256": "e3cac987aee1f30c2bdf0bbb312d49b191d6d6edfa4dee00b0172401b06d66b1"
+          },
+          {
+            "name": "wigglytuff-jigglypuff",
+            "start": 27.627333333333333,
+            "end": 55.410666666666664,
+            "frames": 832,
+            "sha256": "a2b110ff6b504a7afd311f2dba08e8d0fd2b93338075fb7eebc77dc3b6a363ff"
+          },
+          {
+            "name": "feebas-milotic",
+            "start": 55.410666666666664,
+            "end": 91.1,
+            "frames": 1069,
+            "sha256": "ee199a9bf359060de4aa39e7465b0ee24e5fa8be124a81162d9164aaeb753855"
+          },
+          {
+            "name": "milotic-feebas",
+            "start": 91.1,
+            "end": 128.96133333333333,
+            "frames": 1135,
+            "sha256": "549eb3878507a32ab43a0cbde8a61130c35e1a35fe1a6747741e7389b2d95684"
+          },
+          {
+            "name": "castform-staryu",
+            "start": 128.96133333333333,
+            "end": 154.41666666666666,
+            "frames": 763,
+            "sha256": "64f1bf1a6d84d5b0e358720d59e3e1a22eb5b72b545788475a195b740d4d8f73"
+          },
+          {
+            "name": "staryu-castform",
+            "start": 154.41666666666666,
+            "end": 178.622,
+            "frames": 725,
+            "sha256": "e67504d29331570e318527e36965b33ad66936c3afe000a0192ae7cafdd8d067"
+          },
+          {
+            "name": "starmie-kecleon",
+            "start": 178.622,
+            "end": 210.87433333333334,
+            "frames": 967,
+            "sha256": "87de29898f277d9fc519124a1fe587d1db764e8b27b45d1716a0dabf31c970b7"
+          },
+          {
+            "name": "kecleon-starmie",
+            "start": 210.87433333333334,
+            "end": 241.23666666666668,
+            "frames": 910,
+            "sha256": "667f96ccab3df93778c3743361d331f77804ba746482094b8ae90c68a1c16e34"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 18: eight Pokemon"
     },
     {
       "number": 19,
@@ -568,33 +642,57 @@
   ],
   "builds": {
     "test": {
-      "build_id": "4ec0e4edb35bd030",
-      "sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f",
-      "path": "artifacts/bw2-validation/builds/4ec0e4edb35bd030_6649af886e68/validation.3dsx",
-      "elf_path": "artifacts/bw2-validation/builds/4ec0e4edb35bd030_fee82b982633/validation.elf",
-      "elf_sha256": "fee82b9826338f9c641f9cae80d30fe39669349b8f9ebeec9b9526e3f2a1cd00"
+      "build_id": "24b3c6b5fb7206c7",
+      "sha256": "d46fe452124971b1f853041140908d6e566c0fd7df0e1ce5dd5400aebf5c9594",
+      "path": "artifacts/bw2-validation/builds/24b3c6b5fb7206c7_d46fe4521249/validation.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/24b3c6b5fb7206c7_5e1123811805/validation.elf",
+      "elf_sha256": "5e1123811805cda16eed8e97cf167752748adddd0430c79bc697572867887c5b"
     },
     "production": {
-      "build_id": "93d67843245e6074",
-      "sha256": "283a3e68cd54c250f7247800a6223f76dc622d05477ecb8fd29a84b1179a864c",
-      "path": "artifacts/bw2-validation/builds/93d67843245e6074_283a3e68cd54/Emerald3DS-BW2.3dsx",
-      "elf_path": "artifacts/bw2-validation/builds/93d67843245e6074_6fe3b8c2df42/production.elf",
-      "elf_sha256": "6fe3b8c2df420a81d7e339e199f14d9eb43ef6d4f9fea82cded9ef42c5c274fe"
+      "build_id": "b9eafa1bb23e8fcf",
+      "sha256": "ad98f8246237ba4a1998bdcf5dd50a3cafd8688784a2347cc3a04923506d7c6b",
+      "path": "artifacts/bw2-validation/builds/b9eafa1bb23e8fcf_ad98f8246237/Emerald3DS-BW2.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/b9eafa1bb23e8fcf_c49316d65db2/production.elf",
+      "elf_sha256": "c49316d65db2f9d9aeb3a983f6250218ea75cba89dfe34523a8b2c17b3825360"
     }
   },
   "runtime": {
-    "capture_group": 17,
-    "exec_session_id": 36149,
-    "log": "build/bw2-auto15-cp17-captures.log",
-    "next_capture": "build/bw2-spinda-capture.ps1",
+    "capture_group": 18,
+    "exec_session_id": 36879,
+    "log": "build/bw2-cp18-capture.log",
+    "next_capture": "build/bw2-auto15-capture.ps1 -Number 19",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
-    "phase": "Checkpoint 17 captures; commit16 complete; apply Castform only after cp17 publication"
+    "phase": "CP18 base normal and shiny native captures; all Castform special captures passed",
+    "build_script": "build/bw2-castform-build.sh"
   },
   "checks": {
     "exporter_tests": 18,
     "evidence_tests": 7,
     "bridge_synthetic": true,
     "bridge_real_assets": true,
-    "spinda_texture_oracle_seeds": 8
-  }
+    "spinda_texture_oracle_seeds": 8,
+    "variant_gate_tests": 15,
+    "castform_bridge": true,
+    "castform_expiry_real_turns": 5,
+    "castform_weather_scenarios": 7,
+    "castform_special_visual_review": true
+  },
+  "build_history": [
+    {
+      "test": {
+        "build_id": "4ec0e4edb35bd030",
+        "sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f",
+        "path": "artifacts/bw2-validation/builds/4ec0e4edb35bd030_6649af886e68/validation.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/4ec0e4edb35bd030_fee82b982633/validation.elf",
+        "elf_sha256": "fee82b9826338f9c641f9cae80d30fe39669349b8f9ebeec9b9526e3f2a1cd00"
+      },
+      "production": {
+        "build_id": "93d67843245e6074",
+        "sha256": "283a3e68cd54c250f7247800a6223f76dc622d05477ecb8fd29a84b1179a864c",
+        "path": "artifacts/bw2-validation/builds/93d67843245e6074_283a3e68cd54/Emerald3DS-BW2.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/93d67843245e6074_6fe3b8c2df42/production.elf",
+        "elf_sha256": "6fe3b8c2df420a81d7e339e199f14d9eb43ef6d4f9fea82cded9ef42c5c274fe"
+      }
+    }
+  ]
 }

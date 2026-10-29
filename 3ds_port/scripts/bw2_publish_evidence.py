@@ -109,6 +109,12 @@ def publish(args):
         metadata['forms_complete']=True
     if args.kind=='pokemon' and args.id==327:
         metadata['asset_hashes']['308_front.bin.spots']=sha(assets/'308_front.bin.spots')
+    if args.kind=='pokemon' and args.id==351:
+        for form in range(1,4):
+            for side in directions:
+                for ext in ('.bin','.bin.layout'):
+                    name=f'385_form{form}_{side}{ext}'
+                    metadata['asset_hashes'][name]=sha(assets/name)
     (folder / "metadata.json").write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     text = f"# Verifica: {item['nome']}\n\n{checks}\n\n"
     text += f"Build di prova: `{metadata['test_build']['build_id']}`. Build normale senza automatismi: `{metadata['production_build']['build_id']}`.\n\n"

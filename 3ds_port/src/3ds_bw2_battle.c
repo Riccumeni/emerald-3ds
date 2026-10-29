@@ -94,6 +94,7 @@ static u16 sPokemonKeys[MAX_BATTLERS_COUNT];
 static BwActor sActors[MAX_BATTLERS_COUNT];
 /* Public diagnostic state; keep the established 16-byte actor/capture ABI. */
 u32 gCtrBW2ActorPersonality[MAX_BATTLERS_COUNT];
+u8 gCtrBW2ActorForms[MAX_BATTLERS_COUNT];
 static u8 sSpindaMask[MAX_BATTLERS_COUNT][4096];
 static BwPresentation sPresentation[MAX_BATTLERS_COUNT];
 static BwEffect sEffects[BW_EFFECTS];
@@ -415,13 +416,15 @@ static BwClip *LoadClip(unsigned slot, const char *path)
     return NULL;
 }
 
-static BwClip *PokemonClip(u16 species, bool8 back)
+static BwClip *PokemonFormClip(u16 species, bool8 back, unsigned form)
 {
     char path[64];
     if (!SupportedSpecies(species))
         return NULL;
-    snprintf(path, sizeof(path), "bw2/%u_%s.bin", species, back ? "back" : "front");
-    u16 key = species * 2 + (back ? 1 : 0);
+    if (form > 3 || (form && species != SPECIES_CASTFORM)) return NULL;
+    if (form) snprintf(path, sizeof(path), "bw2/%u_form%u_%s.bin", species, form, back ? "back" : "front");
+    else snprintf(path, sizeof(path), "bw2/%u_%s.bin", species, back ? "back" : "front");
+    u16 key = species * 2 + (back ? 1 : 0) + form * 1024;
     for (unsigned slot = 0; slot < MAX_BATTLERS_COUNT; ++slot)
         if (sPokemonKeys[slot] == key)
             return LoadClip(slot, path);
@@ -440,6 +443,11 @@ static BwClip *PokemonClip(u16 species, bool8 back)
         return LoadClip(slot, path);
     }
     return NULL;
+}
+
+static BwClip *PokemonClip(u16 species, bool8 back)
+{
+    return PokemonFormClip(species, back, 0);
 }
 
 static BwClip *EffectClip(unsigned file, unsigned emitter)
@@ -519,10 +527,12 @@ static void RegisterPokemon(struct Pokemon *mon, u8 battler, bool8 back)
     memset(actor, 0, sizeof(*actor));
     if (transformed != SPECIES_NONE)
         species = transformed;
-    clip = PokemonClip(species, back);
+    unsigned form = species == SPECIES_CASTFORM ? gBattleMonForms[battler] : 0;
+    clip = form ? PokemonFormClip(species, back, form) : PokemonClip(species, back);
     if (!clip || !gMonSpritesGfxPtr || (species == SPECIES_SPINDA && !back && !clip->spots))
         return;
     actor->species = species;
+    gCtrBW2ActorForms[battler] = form;
     actor->clip = clip;
     actor->shiny = IsMonShiny(mon);
     gCtrBW2ActorPersonality[battler] = transformed != SPECIES_NONE ? gTransformedPersonalities[battler]
@@ -974,6 +984,13 @@ void CtrBW2_BeforeSprites(void)
         {
             actor->id = 0;
             continue;
+        }
+        if (species == SPECIES_CASTFORM && gBattleMonForms[b] != gCtrBW2ActorForms[b])
+        {
+            bool8 back = GetBattlerSide(b) == B_SIDE_PLAYER;
+            RegisterPokemon(back ? &gPlayerParty[gBattlerPartyIndexes[b]]
+                                 : &gEnemyParty[gBattlerPartyIndexes[b]], b, back);
+            if (!actor->clip) continue;
         }
         u32 identity = CtrSprites_Id(id);
         if (actor->id != identity) { actor->tick = 0; actor->id = identity; }

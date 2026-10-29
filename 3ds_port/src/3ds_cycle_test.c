@@ -113,7 +113,7 @@ void CtrCycle_Frame(void)
         CreateMon(&gEnemyParty[0], gCtrBw2Validation.enemy, 5, 31, TRUE, sValidationPersonality, OT_ID_PRESET, ot);
         for (unsigned i = 0; i < MAX_MON_MOVES; ++i)
         {
-            u16 move = i ? MOVE_NONE : gCtrBw2Validation.move;
+            u16 move = !i ? gCtrBw2Validation.move : i == 1 ? MOVE_SPLASH : MOVE_NONE;
             SetMonMoveSlot(&gPlayerParty[0], !i && gCtrBw2Validation.side == 1 ? MOVE_SPLASH : move, i);
             SetMonMoveSlot(&gEnemyParty[0], !i && gCtrBw2Validation.side == 0 ? MOVE_SPLASH : move, i);
         }
@@ -130,8 +130,11 @@ void CtrCycle_Frame(void)
     }
     if (gCtrBw2Validation.phase == 2 && gCtrBw2Validation.frame - sValidationReady >= 60)
         gCtrBw2Validation.phase = 3;
-    if (gCtrBw2Validation.phase == 3 && gCtrBw2Validation.command == 1)
+    if (gCtrBw2Validation.phase == 3 && (gCtrBw2Validation.command == 1 || gCtrBw2Validation.command == 2))
     {
+        /* Command 2 selects the existing Splash slot through the real menu.
+         * Weather expiry still follows ordinary Emerald turns and Forecast. */
+        gMoveSelectionCursor[0] = gCtrBw2Validation.command == 2 ? 1 : 0;
         gCtrBw2Validation.command = 0;
         gCtrBw2Validation.turn = gBattleResults.battleTurnCounter;
         gCtrBw2Validation.phase = 4;

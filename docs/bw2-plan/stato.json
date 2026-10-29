@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-29T02:15:03",
+  "aggiornato_il": "2026-10-29T03:08:42",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 138,
+    "pokemon_fatti": 146,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,14 +19,14 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 39,
-    "nome": "Jigglypuff",
+    "id": 353,
+    "nome": "Shuppet",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
     "percorso": "build/bw2-validation/Emerald3DS-BW2.3dsx",
-    "build_id": "93d67843245e6074",
-    "sha256": "283a3e68cd54c250f7247800a6223f76dc622d05477ecb8fd29a84b1179a864c"
+    "build_id": "b9eafa1bb23e8fcf",
+    "sha256": "ad98f8246237ba4a1998bdcf5dd50a3cafd8688784a2347cc3a04923506d7c6b"
   },
   "pokemon": [
     {
@@ -4848,28 +4848,34 @@
       "costante": "SPECIES_JIGGLYPUFF",
       "nome": "Jigglypuff",
       "ordine": 138,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0039_jigglypuff",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0039_jigglypuff/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0039_jigglypuff/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "f1014379aee0708fde7be23f90710eff9d0ddb024ea404442f4a30e2fee0fea7",
+          "video_sha256": "a2b110ff6b504a7afd311f2dba08e8d0fd2b93338075fb7eebc77dc3b6a363ff"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0039_jigglypuff/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0039_jigglypuff/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "5c044373247ba6b080f8baa41aabe7cf52ec64ca2f9900ec9c70e7ca9c5dbad7",
+          "video_sha256": "e3cac987aee1f30c2bdf0bbb312d49b191d6d6edfa4dee00b0172401b06d66b1"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0039_jigglypuff/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0039_jigglypuff/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T03:08:21",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 40,
@@ -4877,28 +4883,34 @@
       "costante": "SPECIES_WIGGLYTUFF",
       "nome": "Wigglytuff",
       "ordine": 139,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0040_wigglytuff",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0040_wigglytuff/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0040_wigglytuff/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "5c044373247ba6b080f8baa41aabe7cf52ec64ca2f9900ec9c70e7ca9c5dbad7",
+          "video_sha256": "e3cac987aee1f30c2bdf0bbb312d49b191d6d6edfa4dee00b0172401b06d66b1"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0040_wigglytuff/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0040_wigglytuff/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "f1014379aee0708fde7be23f90710eff9d0ddb024ea404442f4a30e2fee0fea7",
+          "video_sha256": "a2b110ff6b504a7afd311f2dba08e8d0fd2b93338075fb7eebc77dc3b6a363ff"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0040_wigglytuff/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0040_wigglytuff/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T03:08:21",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 349,
@@ -4906,28 +4918,34 @@
       "costante": "SPECIES_FEEBAS",
       "nome": "Feebas",
       "ordine": 140,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0349_feebas",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0349_feebas/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0349_feebas/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "4d46a91a9e9f4db368e3448dc8ac4ab13ee38c12d9e8b2c6bf60ce4c409b8db4",
+          "video_sha256": "549eb3878507a32ab43a0cbde8a61130c35e1a35fe1a6747741e7389b2d95684"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0349_feebas/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0349_feebas/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "3587b92efe5d5fba5fb0d5814c6f106f59e6dab5066de39547fe7a1c1e1d7e7b",
+          "video_sha256": "ee199a9bf359060de4aa39e7465b0ee24e5fa8be124a81162d9164aaeb753855"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0349_feebas/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0349_feebas/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T03:08:22",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 350,
@@ -4935,28 +4953,34 @@
       "costante": "SPECIES_MILOTIC",
       "nome": "Milotic",
       "ordine": 141,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0350_milotic",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0350_milotic/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0350_milotic/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "3587b92efe5d5fba5fb0d5814c6f106f59e6dab5066de39547fe7a1c1e1d7e7b",
+          "video_sha256": "ee199a9bf359060de4aa39e7465b0ee24e5fa8be124a81162d9164aaeb753855"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0350_milotic/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0350_milotic/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "4d46a91a9e9f4db368e3448dc8ac4ab13ee38c12d9e8b2c6bf60ce4c409b8db4",
+          "video_sha256": "549eb3878507a32ab43a0cbde8a61130c35e1a35fe1a6747741e7389b2d95684"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0350_milotic/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0350_milotic/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T03:08:22",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 351,
@@ -4964,28 +4988,34 @@
       "costante": "SPECIES_CASTFORM",
       "nome": "Castform",
       "ordine": 142,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0351_castform",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0351_castform/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0351_castform/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "54320a9d342adf0c7e61b5b57339d682b32279662d123466caf6bc262445c934",
+          "video_sha256": "e67504d29331570e318527e36965b33ad66936c3afe000a0192ae7cafdd8d067"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0351_castform/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0351_castform/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "c48bcccc728356ca3fd9797c81bfa4e6201cf82cb84571e1feeeb141a49a5b9e",
+          "video_sha256": "64f1bf1a6d84d5b0e358720d59e3e1a22eb5b72b545788475a195b740d4d8f73"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0351_castform/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0351_castform/verifica.md",
       "forme_da_verificare": true,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T03:08:23",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 120,
@@ -4993,28 +5023,34 @@
       "costante": "SPECIES_STARYU",
       "nome": "Staryu",
       "ordine": 143,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0120_staryu",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0120_staryu/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0120_staryu/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "c48bcccc728356ca3fd9797c81bfa4e6201cf82cb84571e1feeeb141a49a5b9e",
+          "video_sha256": "64f1bf1a6d84d5b0e358720d59e3e1a22eb5b72b545788475a195b740d4d8f73"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0120_staryu/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0120_staryu/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "54320a9d342adf0c7e61b5b57339d682b32279662d123466caf6bc262445c934",
+          "video_sha256": "e67504d29331570e318527e36965b33ad66936c3afe000a0192ae7cafdd8d067"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0120_staryu/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0120_staryu/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T03:08:24",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 121,
@@ -5022,28 +5058,34 @@
       "costante": "SPECIES_STARMIE",
       "nome": "Starmie",
       "ordine": 144,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0121_starmie",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0121_starmie/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0121_starmie/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "938435dd312f2f36010a21d8b9fd34cce3a0e6276d1a79b3a8a7a5b744be03ab",
+          "video_sha256": "667f96ccab3df93778c3743361d331f77804ba746482094b8ae90c68a1c16e34"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0121_starmie/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0121_starmie/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "4fa86a4747c31e8af6c7965c315f937711236d06005c23f6dc48fe3ca40479bf",
+          "video_sha256": "87de29898f277d9fc519124a1fe587d1db764e8b27b45d1716a0dabf31c970b7"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0121_starmie/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0121_starmie/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T03:08:24",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 352,
@@ -5051,28 +5093,34 @@
       "costante": "SPECIES_KECLEON",
       "nome": "Kecleon",
       "ordine": 145,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0352_kecleon",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0352_kecleon/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0352_kecleon/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "4fa86a4747c31e8af6c7965c315f937711236d06005c23f6dc48fe3ca40479bf",
+          "video_sha256": "87de29898f277d9fc519124a1fe587d1db764e8b27b45d1716a0dabf31c970b7"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0352_kecleon/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0352_kecleon/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "24b3c6b5fb7206c7",
+          "screenshot_sha256": "938435dd312f2f36010a21d8b9fd34cce3a0e6276d1a79b3a8a7a5b744be03ab",
+          "video_sha256": "667f96ccab3df93778c3743361d331f77804ba746482094b8ae90c68a1c16e34"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0352_kecleon/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0352_kecleon/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T03:08:25",
+      "build_verificata": "24b3c6b5fb7206c7"
     },
     {
       "numero_nazionale": 353,
@@ -22387,9 +22435,10 @@
     {
       "id": "castform",
       "numero_nazionale": 351,
-      "stato": "da_fare",
-      "fatto": false,
-      "obiettivo": "Normale, sunny, rainy, snowy e cambi in battaglia."
+      "stato": "fatto",
+      "fatto": true,
+      "obiettivo": "Normale, sunny, rainy, snowy e cambi in battaglia.",
+      "prove": "artifacts/bw2-validation/pokemon/0351_castform/variants.json"
     },
     {
       "id": "deoxys",
@@ -22409,8 +22458,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 174,
-    "nome": "Igglybuff"
+    "id": 352,
+    "nome": "Kecleon"
   },
-  "checkpoint_note": "Richiesta: checkpoint 15–19, 3/5 conclusi; partenza 114 Pokémon, obiettivo 154; mosse 6/354. Registro AUTONOMOUS15_19.json; helper build/bw2-auto15.py, catture build/bw2-auto15-capture.ps1. Gruppo17 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 18. Build e processi in AUTONOMOUS15_19.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
+  "checkpoint_note": "Richiesta: checkpoint 15–19, 4/5 conclusi; partenza 114 Pokémon, obiettivo 154; mosse 6/354. Registro AUTONOMOUS15_19.json; helper build/bw2-auto15.py, catture build/bw2-auto15-capture.ps1. Gruppo18 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 19. Build e processi in AUTONOMOUS15_19.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
 }

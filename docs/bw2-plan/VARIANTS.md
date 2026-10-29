@@ -6,7 +6,7 @@ Lo stato di questo registro viene aggiornato insieme a `stato.json`.
 - [ ] **Unown (#201)**: censire e importare tutte le 28 forme (A-Z, !, ?).
   La forma A usa il dossier principale; le altre hanno `forms/<forma>/`
   con screenshot e video front/back. Verificare la selezione da personality.
-- [ ] **Castform (#351)**: dossier della forma normale più `sunny`, `rainy`,
+- [x] **Castform (#351)**: dossier della forma normale più `sunny`, `rainy`,
   `snowy`. Provare anche la transizione in battaglia e le palette.
 - [ ] **Deoxys (#386)**: verificare le forme selezionate effettivamente
   dall'albero Emerald e dai suoi percorsi speciali/link/trasformazione;

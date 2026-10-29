@@ -155,10 +155,11 @@ class ExportTest(unittest.TestCase):
             clips={'300_front':{'source_bounds':[46,25,146,97]},
                    '300_back':{'source_bounds':[48,25,150,95]}}
             (output/'manifest.json').write_text(json.dumps({'rom_sha256':hashlib.sha256(nds.data).hexdigest(),
-                'canvas':[64,64],'pokemon':clips,'moves':{},'effects':{}}))
+                'canvas':[64,64],'pokemon':clips,'moves':{},'effects':{},'forms':{'385':{'1':{'name':'sunny','resource_base':14240}}}}))
             (output/'300_front.bin').write_bytes(b'original-pixels')
             with patch.object(bw,'Nds',return_value=nds):bw.generate('unused.nds',output,species={},moves={})
             self.assertEqual((output/'300_front.bin').read_bytes(),b'original-pixels')
+            self.assertEqual(json.loads((output/'manifest.json').read_text())['forms']['385']['1']['name'],'sunny')
             self.assertEqual(struct.unpack('<4s4H',(output/'300_front.bin.layout').read_bytes()),(b'BWL2',100,72,102,70))
             self.assertEqual(struct.unpack('<4s4H',(output/'300_back.bin.layout').read_bytes()),(b'BWL2',102,70,100,72))
 
