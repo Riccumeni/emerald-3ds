@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **186**.
+Totale: **386**. Fatti con dossier completo: **194**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -192,14 +192,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0116 **Horsea** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0116_horsea/).
 - [x] 0117 **Seadra** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0117_seadra/).
 - [x] 0230 **Kingdra** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0230_kingdra/).
-- [ ] 0371 **Bagon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0371_bagon/).
-- [ ] 0372 **Shelgon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0372_shelgon/).
-- [ ] 0373 **Salamence** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0373_salamence/).
-- [ ] 0374 **Beldum** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0374_beldum/).
-- [ ] 0375 **Metang** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0375_metang/).
-- [ ] 0376 **Metagross** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0376_metagross/).
-- [ ] 0377 **Regirock** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0377_regirock/).
-- [ ] 0378 **Regice** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0378_regice/).
+- [x] 0371 **Bagon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0371_bagon/).
+- [x] 0372 **Shelgon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0372_shelgon/).
+- [x] 0373 **Salamence** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0373_salamence/).
+- [x] 0374 **Beldum** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0374_beldum/).
+- [x] 0375 **Metang** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0375_metang/).
+- [x] 0376 **Metagross** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0376_metagross/).
+- [x] 0377 **Regirock** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0377_regirock/).
+- [x] 0378 **Regice** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0378_regice/).
 - [ ] 0379 **Registeel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0379_registeel/).
 - [ ] 0380 **Latias** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0380_latias/).
 - [ ] 0381 **Latios** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0381_latios/).

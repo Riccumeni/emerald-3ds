@@ -1,7 +1,7 @@
 {
   "start_pokemon": 154,
   "target_pokemon": 234,
-  "completed_checkpoints": 4,
+  "completed_checkpoints": 5,
   "groups": [
     {
       "number": 20,
@@ -574,7 +574,7 @@
     {
       "number": 24,
       "ordinal": 5,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Bagon",
         "Shelgon",
@@ -637,7 +637,81 @@
           "enemy": 401
         }
       ],
-      "artifact_date": "2026-10-29"
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 200,
+      "movie": {
+        "duration": 262.43966666666665,
+        "decoded_frames": 7869,
+        "sha256": "e064820ed55b5d7cca86a443a14159622cd7d4e3b9a1b4a3a00b953e13e8ae0f",
+        "segments": [
+          {
+            "name": "bagon-shelgon",
+            "start": 0.0,
+            "end": 29.314333333333334,
+            "frames": 879,
+            "sha256": "22e2a28385fba6245c6af39fe11373157bfc05194262888d7ee0d04bea85a0ab"
+          },
+          {
+            "name": "shelgon-bagon",
+            "start": 29.314333333333334,
+            "end": 59.160666666666664,
+            "frames": 895,
+            "sha256": "4bced6327ee84b6a48d71893bbbe85548374d6cf85f2b391e25a45237cd22d4b"
+          },
+          {
+            "name": "salamence-beldum",
+            "start": 59.160666666666664,
+            "end": 96.507,
+            "frames": 1120,
+            "sha256": "93deae51e1f246cf457f42bcaf28481ea3abc92ffb78e9f7b9113e46ed2bf606"
+          },
+          {
+            "name": "beldum-salamence",
+            "start": 96.507,
+            "end": 134.33733333333333,
+            "frames": 1134,
+            "sha256": "dc522e7eb4134ee92378645a9488188fd45e1ece6949dca5bc46a968d7ad8d9d"
+          },
+          {
+            "name": "metang-metagross",
+            "start": 134.33733333333333,
+            "end": 169.63566666666668,
+            "frames": 1058,
+            "sha256": "c8e60843dc0354bfd63f994722d477067924add6bd4fe9a5259eefad83d07243"
+          },
+          {
+            "name": "metagross-metang",
+            "start": 169.63566666666668,
+            "end": 205.044,
+            "frames": 1062,
+            "sha256": "026732fc707aadc65c8f599fddeca24a2b970af74db8978320f514420f34ee9b"
+          },
+          {
+            "name": "regirock-regice",
+            "start": 205.044,
+            "end": 233.81233333333333,
+            "frames": 863,
+            "sha256": "90aab0da7bbd155fdd8a140b4196d9610d320fc2a98935ae026439f13d63c8f4"
+          },
+          {
+            "name": "regice-regirock",
+            "start": 233.81233333333333,
+            "end": 262.43966666666665,
+            "frames": 858,
+            "sha256": "24ecb773e894106bac580a45f4a2af77539247d478ff55c8d096c6db2bec6fdb"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 24: eight Pokemon"
     },
     {
       "number": 25,
@@ -1025,9 +1099,9 @@
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "initial_emulator_processes": [],
     "build_script": "build/bw2-auto20-build.sh",
-    "capture_group": 23,
-    "exec_session_id": 25325,
-    "log": "build/bw2-auto20-cp23-capture.log",
+    "capture_group": 24,
+    "exec_session_id": 53325,
+    "log": "build/bw2-auto20-cp24-capture.log",
     "personal_emulator_pid": 2460,
     "continuity": "build/BW2_CONTINUITY20.md"
   },
@@ -1038,6 +1112,8 @@
     "bridge_synthetic": true,
     "bridge_real_assets": true,
     "spinda_texture_oracle_seeds": 8,
-    "castform_bridge": true
+    "castform_bridge": true,
+    "production_stubs_bytes": 4,
+    "production_validation_mailbox": false
   }
 }

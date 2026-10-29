@@ -1,6 +1,6 @@
 # Dieci checkpoint autonomi — 20–29
 
-Completati **4/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 154 Pokémon. Obiettivo: 234. Totale corrente: **186/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
+Completati **5/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 154 Pokémon. Obiettivo: 234. Totale corrente: **194/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
 
 | Checkpoint | Specie | Stato | Prove |
 |---|---|---|---|
@@ -8,7 +8,7 @@ Completati **4/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 154
 | 2/10 (gruppo 21) | Xatu, Girafarig, Phanpy, Donphan, Pinsir, Heracross, Rhyhorn, Rhydon | complete | [Dossier, screenshot e video](CHECKPOINT21_REVIEW.md) |
 | 3/10 (gruppo 22) | Snorunt, Glalie, Spheal, Sealeo, Walrein, Clamperl, Huntail, Gorebyss | complete | [Dossier, screenshot e video](CHECKPOINT22_REVIEW.md) |
 | 4/10 (gruppo 23) | Relicanth, Corsola, Chinchou, Lanturn, Luvdisc, Horsea, Seadra, Kingdra | complete | [Dossier, screenshot e video](CHECKPOINT23_REVIEW.md) |
-| 5/10 (gruppo 24) | Bagon, Shelgon, Salamence, Beldum, Metang, Metagross, Regirock, Regice | pending | In preparazione/verifica |
+| 5/10 (gruppo 24) | Bagon, Shelgon, Salamence, Beldum, Metang, Metagross, Regirock, Regice | complete | [Dossier, screenshot e video](CHECKPOINT24_REVIEW.md) |
 | 6/10 (gruppo 25) | Registeel, Latias, Latios, Kyogre, Groudon, Rayquaza, Jirachi, Deoxys | pending | In preparazione/verifica |
 | 7/10 (gruppo 26) | Bulbasaur, Ivysaur, Venusaur, Charmander, Charmeleon, Charizard, Squirtle, Wartortle | pending | In preparazione/verifica |
 | 8/10 (gruppo 27) | Blastoise, Caterpie, Metapod, Butterfree, Weedle, Kakuna, Beedrill, Pidgey | pending | In preparazione/verifica |

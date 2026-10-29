@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-29T21:37:15",
+  "aggiornato_il": "2026-10-29T21:54:03",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 186,
+    "pokemon_fatti": 194,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,8 +19,8 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 371,
-    "nome": "Bagon",
+    "id": 379,
+    "nome": "Registeel",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
@@ -6565,28 +6565,34 @@
       "costante": "SPECIES_BAGON",
       "nome": "Bagon",
       "ordine": 187,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0371_bagon",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0371_bagon/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0371_bagon/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "28d36ab91074e95ebfa5fda8af2896a85b526946aae3f90db8b5504f2c1e798b",
+          "video_sha256": "4bced6327ee84b6a48d71893bbbe85548374d6cf85f2b391e25a45237cd22d4b"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0371_bagon/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0371_bagon/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "d36c6531a2df4461aafc8256e11af6e9aa081f55e0e1b5bc5a264bc19ab799b4",
+          "video_sha256": "22e2a28385fba6245c6af39fe11373157bfc05194262888d7ee0d04bea85a0ab"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0371_bagon/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0371_bagon/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:53:36",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 372,
@@ -6594,28 +6600,34 @@
       "costante": "SPECIES_SHELGON",
       "nome": "Shelgon",
       "ordine": 188,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0372_shelgon",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0372_shelgon/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0372_shelgon/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "d36c6531a2df4461aafc8256e11af6e9aa081f55e0e1b5bc5a264bc19ab799b4",
+          "video_sha256": "22e2a28385fba6245c6af39fe11373157bfc05194262888d7ee0d04bea85a0ab"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0372_shelgon/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0372_shelgon/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "28d36ab91074e95ebfa5fda8af2896a85b526946aae3f90db8b5504f2c1e798b",
+          "video_sha256": "4bced6327ee84b6a48d71893bbbe85548374d6cf85f2b391e25a45237cd22d4b"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0372_shelgon/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0372_shelgon/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:53:37",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 373,
@@ -6623,28 +6635,34 @@
       "costante": "SPECIES_SALAMENCE",
       "nome": "Salamence",
       "ordine": 189,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0373_salamence",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0373_salamence/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0373_salamence/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "7cb01ad2f0cb983e65a7f39fdf234203b033071c7d9520515a6fd03268c1753b",
+          "video_sha256": "dc522e7eb4134ee92378645a9488188fd45e1ece6949dca5bc46a968d7ad8d9d"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0373_salamence/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0373_salamence/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "5095732eaabd9fbe634747a7c06e19e10008370f417c01202ff136f3bce9095a",
+          "video_sha256": "93deae51e1f246cf457f42bcaf28481ea3abc92ffb78e9f7b9113e46ed2bf606"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0373_salamence/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0373_salamence/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:53:38",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 374,
@@ -6652,28 +6670,34 @@
       "costante": "SPECIES_BELDUM",
       "nome": "Beldum",
       "ordine": 190,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0374_beldum",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0374_beldum/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0374_beldum/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "5095732eaabd9fbe634747a7c06e19e10008370f417c01202ff136f3bce9095a",
+          "video_sha256": "93deae51e1f246cf457f42bcaf28481ea3abc92ffb78e9f7b9113e46ed2bf606"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0374_beldum/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0374_beldum/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "7cb01ad2f0cb983e65a7f39fdf234203b033071c7d9520515a6fd03268c1753b",
+          "video_sha256": "dc522e7eb4134ee92378645a9488188fd45e1ece6949dca5bc46a968d7ad8d9d"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0374_beldum/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0374_beldum/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:53:39",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 375,
@@ -6681,28 +6705,34 @@
       "costante": "SPECIES_METANG",
       "nome": "Metang",
       "ordine": 191,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0375_metang",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0375_metang/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0375_metang/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "3e726fd6256915fb665af7607094f31eb30727578c2685525707bd54e30623e7",
+          "video_sha256": "026732fc707aadc65c8f599fddeca24a2b970af74db8978320f514420f34ee9b"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0375_metang/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0375_metang/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "a2a3a889e0c55ca5a95872b00738f9693c58a3a2606bb522a9496542d8e9e04d",
+          "video_sha256": "c8e60843dc0354bfd63f994722d477067924add6bd4fe9a5259eefad83d07243"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0375_metang/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0375_metang/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:53:39",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 376,
@@ -6710,28 +6740,34 @@
       "costante": "SPECIES_METAGROSS",
       "nome": "Metagross",
       "ordine": 192,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0376_metagross",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0376_metagross/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0376_metagross/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "a2a3a889e0c55ca5a95872b00738f9693c58a3a2606bb522a9496542d8e9e04d",
+          "video_sha256": "c8e60843dc0354bfd63f994722d477067924add6bd4fe9a5259eefad83d07243"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0376_metagross/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0376_metagross/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "3e726fd6256915fb665af7607094f31eb30727578c2685525707bd54e30623e7",
+          "video_sha256": "026732fc707aadc65c8f599fddeca24a2b970af74db8978320f514420f34ee9b"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0376_metagross/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0376_metagross/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:53:40",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 377,
@@ -6739,28 +6775,34 @@
       "costante": "SPECIES_REGIROCK",
       "nome": "Regirock",
       "ordine": 193,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0377_regirock",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0377_regirock/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0377_regirock/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "150a7de80ff87903ec70716751d04c368e2aa52e0da963973f944a4f6cb2ecf2",
+          "video_sha256": "24ecb773e894106bac580a45f4a2af77539247d478ff55c8d096c6db2bec6fdb"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0377_regirock/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0377_regirock/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "f8a90418ecfec55c62858dde6678ddbf415ddd082820d8ade427d89fd5581f6e",
+          "video_sha256": "90aab0da7bbd155fdd8a140b4196d9610d320fc2a98935ae026439f13d63c8f4"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0377_regirock/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0377_regirock/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:53:41",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 378,
@@ -6768,28 +6810,34 @@
       "costante": "SPECIES_REGICE",
       "nome": "Regice",
       "ordine": 194,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0378_regice",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0378_regice/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0378_regice/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "f8a90418ecfec55c62858dde6678ddbf415ddd082820d8ade427d89fd5581f6e",
+          "video_sha256": "90aab0da7bbd155fdd8a140b4196d9610d320fc2a98935ae026439f13d63c8f4"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0378_regice/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0378_regice/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "78516b1a53c4bfa8",
+          "screenshot_sha256": "150a7de80ff87903ec70716751d04c368e2aa52e0da963973f944a4f6cb2ecf2",
+          "video_sha256": "24ecb773e894106bac580a45f4a2af77539247d478ff55c8d096c6db2bec6fdb"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0378_regice/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0378_regice/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T21:53:41",
+      "build_verificata": "78516b1a53c4bfa8"
     },
     {
       "numero_nazionale": 379,
@@ -22698,8 +22746,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 230,
-    "nome": "Kingdra"
+    "id": 378,
+    "nome": "Regice"
   },
-  "checkpoint_note": "Richiesta: checkpoint 20–29, 4/10 conclusi; partenza 154 Pokémon, obiettivo 234; mosse 6/354. Registro AUTONOMOUS20_29.json; helper build/bw2-auto20.py, catture build/bw2-auto20-capture.ps1. Gruppo23 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 24. Build e processi in AUTONOMOUS20_29.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
+  "checkpoint_note": "Richiesta: checkpoint 20–29, 5/10 conclusi; partenza 154 Pokémon, obiettivo 234; mosse 6/354. Registro AUTONOMOUS20_29.json; helper build/bw2-auto20.py, catture build/bw2-auto20-capture.ps1. Gruppo24 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 25. Build e processi in AUTONOMOUS20_29.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
 }
