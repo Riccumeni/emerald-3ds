@@ -78,4 +78,43 @@ def check_variants(root,item,build):
   if not manifest.get('return_normal_reviewed'):raise ValueError('Normal return is not reviewed')
   for direction,side in [('front',1),('back',0)]:castform_media(folder,manifest['return_normal'][direction],build,side,1,0,True)
   return dict(kind=manifest['kind'],forms=4,shiny_forms=4,front_back=True,real_weather_expiry=True)
+ if item['numero_nazionale']==386:
+  if manifest.get('kind')!='deoxys-emerald':raise ValueError('Deoxys Emerald audit missing')
+  cases={c['form']:c for c in manifest['cases']}
+  if set(cases)!={0,3}:raise ValueError('Missing Emerald Deoxys form')
+  def selected(cap,side,form):
+   pose=next((p for p in cap.get('presentation',[]) if p['battler']==side),None)
+   pixels=next((p for p in cap.get('deoxys_pixels',[]) if p['battler']==side),None)
+   if not pose or pose.get('form')!=form or not pixels or pixels.get('form')!=form or pixels.get('species')!=410:raise ValueError('Deoxys selected pixels/form mismatch')
+   if pixels.get('shiny')!=cap['scenario']['shiny']:raise ValueError('Deoxys shiny pixels selection mismatch')
+   if cap['kind']=='idle':
+    ticks=[a['tick'] for s in cap['samples'] if s['time']>=cap['ready_at'] and s['phase']==3 for a in s['actors'] if a['battler']==side and a['species']==410]
+    if not ticks or max(ticks)-min(ticks)<2*cap['actor_steps'][str(side)]:raise ValueError('Two Deoxys form cycles missing')
+  for form,case in cases.items():
+   if not case.get('visual_reviewed'):raise ValueError('Unreviewed Deoxys form')
+   for direction,side in [('front',1),('back',0)]:
+    for shiny,key in [(0,'normal'),(1,'shiny')]:
+     cap=media(folder,case[key][direction],build,410,side,'palette' if shiny else 'idle')
+     if cap['scenario'].get('deoxys_preview')!=(2 if form else 1):raise ValueError('Deoxys art inventory context missing')
+     selected(cap,side,form)
+  for direction,side in [('front',1),('back',0)]:
+   for shiny,key in [(0,'normal'),(1,'shiny')]:
+    cap=media(folder,manifest['default'][key][direction],build,410,side,'palette' if shiny else 'idle')
+    if cap['scenario'].get('deoxys_preview')!=0:raise ValueError('Ordinary Deoxys capture cannot use an art preview')
+    selected(cap,side,0 if side else 3)
+  if not manifest.get('transform_reviewed'):raise ValueError('Real Deoxys Transform not reviewed')
+  for shiny,key in [(0,'normal'),(1,'shiny')]:
+   source=(folder/manifest['transform'][key]).resolve()
+   if not source.is_relative_to(folder.resolve()):raise ValueError('Deoxys transform path escaped dossier')
+   cap=read(source/'capture.json');scenario=cap['scenario']
+   if not cap.get('passed') or cap['kind']!='transform' or cap['build_id']!=build['build_id'] or cap['binary_sha256']!=build['sha256']:raise ValueError('Deoxys Transform build/capture mismatch')
+   if (scenario['player'],scenario['enemy'],scenario['move'],scenario['side'],scenario['shiny'],scenario.get('deoxys_preview'))!=(132,410,144,0,shiny,0):raise ValueError('Deoxys Transform scenario mismatch')
+   if not cap.get('turn_completed_at') or not cap.get('ready_at'):raise ValueError('Real Transform turn/menu return missing')
+   for side in (0,1):
+    selected(cap,side,0)
+    ticks=[a['tick'] for s in cap['samples'] if s['time']>=cap['ready_at'] and s['phase']==3 for a in s['actors'] if a['battler']==side and a['species']==410]
+    if not ticks or max(ticks)-min(ticks)<2*cap['actor_steps'][str(side)]:raise ValueError('Two transformed Deoxys cycles missing')
+   if sha(source/'screenshot.png')!=cap['screenshot_sha256'] or sha(source/'demo.mp4')!=cap['video']['sha256']:raise ValueError('Deoxys Transform media changed')
+  if not manifest.get('selection_reviewed'):raise ValueError('Emerald Deoxys selectors not reviewed')
+  return dict(kind=manifest['kind'],forms=2,shiny_forms=2,front_back=True,ordinary_player_speed=True,ordinary_opponent_normal=True,real_transform=True,link_selection_host_tested=True,link_runtime_verified=False)
  raise ValueError('No implemented variant audit for this species')

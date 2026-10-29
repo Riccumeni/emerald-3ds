@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-29T21:54:03",
+  "aggiornato_il": "2026-10-29T23:13:02",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 194,
+    "pokemon_fatti": 202,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,14 +19,14 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 379,
-    "nome": "Registeel",
+    "id": 1,
+    "nome": "Bulbasaur",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
     "percorso": "build/bw2-validation/Emerald3DS-BW2.3dsx",
-    "build_id": "39b4647bb1f1c442",
-    "sha256": "72f680aa46297f31c747341a34e85817e92e86d09e698d344bb11d37422f8ab4"
+    "build_id": "3724fc8cdfba9514",
+    "sha256": "31a8bb0a85c2d0f4b69be3129b3c2283c9a759e90485e0d15eda5149aca5319a"
   },
   "pokemon": [
     {
@@ -6845,28 +6845,34 @@
       "costante": "SPECIES_REGISTEEL",
       "nome": "Registeel",
       "ordine": 195,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0379_registeel",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0379_registeel/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0379_registeel/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "1a39f324158c61bc0d6cd6ab53b552e99f3199c1511f1e05a35fdc644280296c",
+          "video_sha256": "a6d8702c16174457aae370e7a05e126b23fda15e4fa1d01a615e41353b78b10d"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0379_registeel/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0379_registeel/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "fbb2ade0267585728b68cd635a4c6316d82a759832e5301359bf85b6359a39cc",
+          "video_sha256": "1a99066b2b3ddf8ba0a45a17692e508f28e3ad0450ce90f0ce4c4e23b86e5c64"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0379_registeel/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0379_registeel/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T22:13:15",
+      "build_verificata": "41d32c7d95a1d171"
     },
     {
       "numero_nazionale": 380,
@@ -6874,28 +6880,34 @@
       "costante": "SPECIES_LATIAS",
       "nome": "Latias",
       "ordine": 196,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0380_latias",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0380_latias/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0380_latias/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "fbb2ade0267585728b68cd635a4c6316d82a759832e5301359bf85b6359a39cc",
+          "video_sha256": "1a99066b2b3ddf8ba0a45a17692e508f28e3ad0450ce90f0ce4c4e23b86e5c64"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0380_latias/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0380_latias/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "1a39f324158c61bc0d6cd6ab53b552e99f3199c1511f1e05a35fdc644280296c",
+          "video_sha256": "a6d8702c16174457aae370e7a05e126b23fda15e4fa1d01a615e41353b78b10d"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0380_latias/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0380_latias/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T22:13:16",
+      "build_verificata": "41d32c7d95a1d171"
     },
     {
       "numero_nazionale": 381,
@@ -6903,28 +6915,34 @@
       "costante": "SPECIES_LATIOS",
       "nome": "Latios",
       "ordine": 197,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0381_latios",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0381_latios/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0381_latios/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "59cdb6ea01f40a2c163d659aa7e86f2278c7e312a5a5f380d0e018be743c443e",
+          "video_sha256": "42a80948d9956097fec03e61d6fdb0aa182114b9d8d6a3cd7bb6425e99ea7839"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0381_latios/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0381_latios/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "34138777084a7cbb9d9f5cb3209e23d9209efd5e4a7f9beff4e4944152b33f45",
+          "video_sha256": "f9b2ac0757ebd779ab6affbd4518fbf5b65dc30763cdf5710edd407b3a87ef06"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0381_latios/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0381_latios/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T22:13:16",
+      "build_verificata": "41d32c7d95a1d171"
     },
     {
       "numero_nazionale": 382,
@@ -6932,28 +6950,34 @@
       "costante": "SPECIES_KYOGRE",
       "nome": "Kyogre",
       "ordine": 198,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0382_kyogre",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0382_kyogre/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0382_kyogre/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "34138777084a7cbb9d9f5cb3209e23d9209efd5e4a7f9beff4e4944152b33f45",
+          "video_sha256": "f9b2ac0757ebd779ab6affbd4518fbf5b65dc30763cdf5710edd407b3a87ef06"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0382_kyogre/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0382_kyogre/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "59cdb6ea01f40a2c163d659aa7e86f2278c7e312a5a5f380d0e018be743c443e",
+          "video_sha256": "42a80948d9956097fec03e61d6fdb0aa182114b9d8d6a3cd7bb6425e99ea7839"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0382_kyogre/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0382_kyogre/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T22:13:17",
+      "build_verificata": "41d32c7d95a1d171"
     },
     {
       "numero_nazionale": 383,
@@ -6961,28 +6985,34 @@
       "costante": "SPECIES_GROUDON",
       "nome": "Groudon",
       "ordine": 199,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0383_groudon",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0383_groudon/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0383_groudon/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "2fc5d483b422f6c4299cc4ac7fc3d84c4ecbeab7a7920f1cdf39e4df6e94db4e",
+          "video_sha256": "ebda8804816c79c2f4f3bddc210cbae94264df0348d937ef67521d2ba218d934"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0383_groudon/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0383_groudon/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "8d105450224f45438e51f35e9540708509b9cb28be409d925485ccced123402c",
+          "video_sha256": "95a107e7e39e4f020d0b6f775a137c2fbd3bbca82303511501d6e73004cbed3d"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0383_groudon/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0383_groudon/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T22:13:18",
+      "build_verificata": "41d32c7d95a1d171"
     },
     {
       "numero_nazionale": 384,
@@ -6990,28 +7020,34 @@
       "costante": "SPECIES_RAYQUAZA",
       "nome": "Rayquaza",
       "ordine": 200,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0384_rayquaza",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0384_rayquaza/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0384_rayquaza/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "8d105450224f45438e51f35e9540708509b9cb28be409d925485ccced123402c",
+          "video_sha256": "95a107e7e39e4f020d0b6f775a137c2fbd3bbca82303511501d6e73004cbed3d"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0384_rayquaza/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0384_rayquaza/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "2fc5d483b422f6c4299cc4ac7fc3d84c4ecbeab7a7920f1cdf39e4df6e94db4e",
+          "video_sha256": "ebda8804816c79c2f4f3bddc210cbae94264df0348d937ef67521d2ba218d934"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0384_rayquaza/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0384_rayquaza/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T22:13:18",
+      "build_verificata": "41d32c7d95a1d171"
     },
     {
       "numero_nazionale": 385,
@@ -7019,28 +7055,34 @@
       "costante": "SPECIES_JIRACHI",
       "nome": "Jirachi",
       "ordine": 201,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0385_jirachi",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0385_jirachi/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0385_jirachi/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "20e7ab7ef4a5e5c7f7f0f64291548b10155f71fd05f06370cdd1910ac4327f47",
+          "video_sha256": "8d91bc96959ed132d365f9021cfa6f4d38e9c0fd29606c5f87eab2410582c5f8"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0385_jirachi/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0385_jirachi/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "41d32c7d95a1d171",
+          "screenshot_sha256": "7a5c5e0c52b1379f6be6e26b83d35044abc8a721dfe440c77ecb10283d359ec1",
+          "video_sha256": "9bba224da006e4b378432e4f0fd6d86b9a3398dc0562031493dbc75055ad3e55"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0385_jirachi/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0385_jirachi/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T22:13:19",
+      "build_verificata": "41d32c7d95a1d171"
     },
     {
       "numero_nazionale": 386,
@@ -7048,28 +7090,34 @@
       "costante": "SPECIES_DEOXYS",
       "nome": "Deoxys",
       "ordine": 202,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0386_deoxys",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0386_deoxys/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0386_deoxys/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "5f936f9c278cfcb16605394b485db090c7aea4d56d880f7047f9d9dac45a3e71",
+          "video_sha256": "27012d70cdfd9ab886eb50bc7e5a59f654fcf005cdf8d53a6e8563aef2be299b"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0386_deoxys/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0386_deoxys/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "d0204668f565c3e93725145238b58bb0c4ed30b4832463e5691b76ece20c6c0d",
+          "video_sha256": "ab7f4646b4f6252936a820f9419b6cb3526523b0d98ac756e6dcae774fa9d6f4"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0386_deoxys/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0386_deoxys/verifica.md",
       "forme_da_verificare": true,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-29T23:12:40",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 1,
@@ -22731,9 +22779,10 @@
     {
       "id": "deoxys",
       "numero_nazionale": 386,
-      "stato": "da_fare",
-      "fatto": false,
-      "obiettivo": "Censire e verificare le forme selezionate dal motore Emerald."
+      "stato": "fatto",
+      "fatto": true,
+      "obiettivo": "Censire e verificare le forme selezionate dal motore Emerald.",
+      "prove": "artifacts/bw2-validation/pokemon/0386_deoxys/variants.json"
     },
     {
       "id": "spinda",
@@ -22746,8 +22795,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 378,
-    "nome": "Regice"
+    "id": 386,
+    "nome": "Deoxys"
   },
-  "checkpoint_note": "Richiesta: checkpoint 20–29, 5/10 conclusi; partenza 154 Pokémon, obiettivo 234; mosse 6/354. Registro AUTONOMOUS20_29.json; helper build/bw2-auto20.py, catture build/bw2-auto20-capture.ps1. Gruppo24 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 25. Build e processi in AUTONOMOUS20_29.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
+  "checkpoint_note": "Richiesta: checkpoint 20–29, 6/10 conclusi; partenza 154 Pokémon, obiettivo 234; mosse 6/354. Registro AUTONOMOUS20_29.json; helper build/bw2-auto20.py, catture build/bw2-auto20-capture.ps1. Gruppo25 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 26. Build e processi in AUTONOMOUS20_29.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
 }

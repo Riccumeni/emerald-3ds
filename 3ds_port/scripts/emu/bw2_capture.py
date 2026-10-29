@@ -149,6 +149,36 @@ def verify_video(path, qa):
     return info
 
 
+def verify_deoxys_pixels(rpc, sym):
+    """Compare the actual battler tiles with the selected ROM-derived clip."""
+    actors=rpc.read_memory(sym['sActors'],32);checks=[]
+    if not any(struct.unpack_from('<H',actors,b*16+12)[0]==410 for b in range(2)):return checks
+    gfx=struct.unpack('<I',rpc.read_memory(sym['gMonSpritesGfxPtr'],4))[0]
+    for b in range(2):
+        clip,identity,tick,species,shiny,paused=struct.unpack_from('<IIIHBB',actors,b*16)
+        if species!=410:continue
+        form=rpc.read_memory(sym['gCtrBW2ActorForms']+b,1)[0]
+        if form not in (0,3):raise ValueError('Non-Emerald Deoxys form')
+        suffix=f'_form{form}' if form else ''
+        path=ROOT/f'build/upstream/3ds_port/romfs/bw2/410{suffix}_{"front" if b else "back"}.bin'
+        raw=path.read_bytes();frames,steps,loop=struct.unpack_from('<3I',raw,4);offset=92+((steps*2+3)&~3)
+        pointer=struct.unpack('<I',rpc.read_memory(gfx+4+b*4,4))[0];matched=None
+        for attempt in range(5):
+            before=struct.unpack('<I',rpc.read_memory(sym['sActors']+b*16+8,4))[0]
+            actual=rpc.read_memory(pointer,2048)
+            after=struct.unpack('<I',rpc.read_memory(sym['sActors']+b*16+8,4))[0]
+            for t in range(max(0,before-2),after+2):
+                at=t if t<steps else loop+(t-loop)%(steps-loop)
+                frame=struct.unpack_from('<H',raw,92+2*at)[0]
+                if raw[offset+frame*2048:offset+(frame+1)*2048]==actual:matched=t;break
+            if matched is not None:break
+        if matched is None:raise ValueError('Rendered Deoxys pixels differ from selected BW2 form')
+        actual_palette=rpc.read_memory(sym['gPlttBufferFaded']+(256+b*16)*2,32)
+        if actual_palette!=raw[60 if shiny else 28:92 if shiny else 60]:raise ValueError('Deoxys rendered palette differs from selected BW2 form')
+        checks.append(dict(battler=b,form=form,species=410,shiny=shiny,matched_tick=matched,clip_sha256=sha(path),pixels_sha256=hashlib.sha256(actual).hexdigest(),palette_sha256=hashlib.sha256(actual_palette).hexdigest()))
+    return checks
+
+
 def capture(args):
     spec = importlib.util.spec_from_file_location("azahar_client", args.client)
     module = importlib.util.module_from_spec(spec)
@@ -172,10 +202,10 @@ def capture(args):
                 loaded = rpc.read_memory(sym["sBuildId"], 8)
                 if loaded == expected:
                     state = mailbox(rpc, sym["gCtrBw2Validation"])
-                    if (args.kind == "idle" and state["phase"] == 1
+                    if (args.kind in ("idle", "transform") and state["phase"] == 1
                             or args.kind in ("move", "palette") and state["phase"] == 3):
                         break
-                    if args.kind == "idle" and state["phase"] > 1:
+                    if args.kind in ("idle", "transform") and state["phase"] > 1:
                         raise ValueError("Entrance already passed; restart the isolated encounter")
             except (OSError, TimeoutError):
                 pass
@@ -186,6 +216,9 @@ def capture(args):
         initial = state.copy()
         if 'gCtrBw2Personality' in sym:
             initial['personality']=struct.unpack('<I',rpc.read_memory(sym['gCtrBw2Personality'],4))[0]
+
+        if "gCtrBw2DeoxysPreview" in sym:
+            initial["deoxys_preview"]=struct.unpack("<I",rpc.read_memory(sym["gCtrBw2DeoxysPreview"],4))[0]
 
         if args.kind == "palette":
             actors = rpc.read_memory(sym["sActors"], 64)
@@ -207,6 +240,7 @@ def capture(args):
                       "screenshot_sha256": sha(args.output / "screenshot.png"),
                       "presentation": presentation(rpc, sym)}
             report["spinda_patterns"]=verify_spinda_pixels(rpc,sym,initial)
+            report["deoxys_pixels"]=verify_deoxys_pixels(rpc,sym)
             (args.output / "capture.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
             print(json.dumps(report), flush=True)
             return
@@ -234,17 +268,19 @@ def capture(args):
             if (state["player"], state["enemy"], state["move"], state["shiny"], state["seed"], state["side"]) != tuple(
                     initial[n] for n in ("player", "enemy", "move", "shiny", "seed", "side")):
                 raise ValueError("Scenario changed during recording")
-            if state["phase"] == 3 and ready_at is None:
+            if state["phase"] == 3 and ready_at is None and args.kind != "transform":
                 ready_at = now
                 print("actors ready at %.2fs" % now, flush=True)
-            if args.kind == "move" and not command_sent and now >= 2:
+            if (args.kind == "move" or args.kind == "transform" and state["phase"] == 3) and not command_sent and now >= 2:
                 rpc.write_memory(sym["gCtrBw2Validation"] + 12, struct.pack("<I", 1))
                 command_sent = True
             if state["phase"] == 4:
                 turn_seen = True
-            if args.kind == "move" and turn_seen and state["phase"] == 3 and completed_at is None:
+            if args.kind in ("move", "transform") and turn_seen and state["phase"] == 3 and completed_at is None:
                 completed_at = now
                 print("turn completed at %.2fs" % now, flush=True)
+                if args.kind == "transform":
+                    ready_at=now;first_tick.clear();last_tick.clear();clip_steps.clear()
             running = bool(rpc.read_memory(sym["sRunning"], 1)[0])
             event = None
             if running:
@@ -288,7 +324,7 @@ def capture(args):
                           encoder.time_base, encoder.codec_context.time_base, flush=True)
                     raise
             frames += 1
-            want_snapshot = (args.kind == "idle" and ready_at is not None and now > ready_at + 1
+            want_snapshot = (args.kind in ("idle", "transform") and ready_at is not None and now > ready_at + 1
                              or args.kind == "move" and running and 32 <= tick <= 44)
             if want_snapshot and not snapshot:
                 Image.fromarray(array).save(args.output / "screenshot.png")
@@ -299,7 +335,7 @@ def capture(args):
                         Image.fromarray(array).save(args.output / ("effect-%04d.png" % moment))
                         effect_snapshots.add(moment)
             duration = max(clip_steps.values(), default=472) * 2 / 60 + 1
-            if (args.kind == "idle" and ready_at is not None and now >= ready_at + duration
+            if (args.kind in ("idle", "transform") and ready_at is not None and now >= ready_at + duration
                     or args.kind == "move" and completed_at is not None and now >= completed_at + 2):
                 break
             if now > 70:
@@ -313,7 +349,7 @@ def capture(args):
         movie = None
         if not snapshot:
             raise ValueError("No meaningful screenshot captured")
-        if args.kind == "idle":
+        if args.kind in ("idle", "transform"):
             for b in range(2):
                 if last_tick.get(b, 0) - first_tick.get(b, 0) < 2 * clip_steps.get(b, 1024):
                     raise ValueError("Actor did not advance through two complete loops")
@@ -331,6 +367,7 @@ def capture(args):
                   "acquisition": "Native rendered RGB frames over Azahar local RPC, timestamped in real time",
                   "audio": "Not captured; test emulator has no DSP firmware"}
         report["spinda_patterns"]=verify_spinda_pixels(rpc,sym,initial)
+        report["deoxys_pixels"]=verify_deoxys_pixels(rpc,sym)
         (args.output / "capture.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
         print(json.dumps({k: report[k] for k in ("passed", "kind", "build_id", "actual_capture_fps", "video")}), flush=True)
     finally:
@@ -341,7 +378,7 @@ def capture(args):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--kind", choices=("idle", "move", "palette"), required=True)
+    p.add_argument("--kind", choices=("idle", "move", "palette", "transform"), required=True)
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--elf", type=Path, default=ROOT / "build/bw2-validation/validation.elf")
     p.add_argument("--binary", type=Path, default=ROOT / "build/bw2-validation/validation.3dsx")

@@ -88,4 +88,55 @@ class CastformVariantsTest(unittest.TestCase):
  def test_hashes_apply_to_shiny_form_videos(self):
   (self.folder/'2/shiny/back/demo.mp4').write_bytes(b'changed')
   with self.assertRaisesRegex(ValueError,'media changed'):self.check()
+class DeoxysVariantsTest(unittest.TestCase):
+ def setUp(self):
+  self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name);self.folder=self.root/'deoxys';self.folder.mkdir();self.item=dict(cartella='deoxys',numero_nazionale=386);self.build=dict(build_id='id',sha256='binary')
+  self.manifest=dict(kind='deoxys-emerald',visual_reviewed=True,cases=[],default={'normal':{},'shiny':{}},transform={},transform_reviewed=True,selection_reviewed=True)
+  for form in [0,3]:
+   case=dict(form=form,visual_reviewed=True,normal={},shiny={})
+   for side in ['front','back']:
+    for shiny,key in [(0,'normal'),(1,'shiny')]:
+     path=f'{form}/{key}/{side}';self.make(path,form,shiny,2 if form else 1);case[key][side]=path
+   self.manifest['cases'].append(case)
+  for side in ['front','back']:
+   for shiny,key in [(0,'normal'),(1,'shiny')]:
+    path=f'default/{key}/{side}';self.make(path,0 if side=='front' else 3,shiny,0);self.manifest['default'][key][side]=path
+  for shiny,key in [(0,'normal'),(1,'shiny')]:
+   path=f'transform/{key}';self.make(path,0,shiny,0,True);self.manifest['transform'][key]=path
+  self.write(self.folder/'variants.json',self.manifest)
+ def write(self,p,v):p.write_text(json.dumps(v))
+ def make(self,path,form,shiny,preview,transform=False):
+  p=self.folder/path;p.mkdir(parents=True);(p/'screenshot.png').write_bytes(b'png');(p/'demo.mp4').write_bytes(b'video')
+  actors=[dict(battler=b,species=410,shiny=shiny) for b in range(2)]
+  cap=dict(passed=True,kind='transform' if transform else 'palette' if shiny else 'idle',build_id='id',binary_sha256='binary',scenario=dict(player=132 if transform else 410,enemy=410,shiny=shiny,move=144 if transform else 1,side=0 if transform else 2,deoxys_preview=preview),screenshot_sha256=hashlib.sha256(b'png').hexdigest(),video=dict(sha256=hashlib.sha256(b'video').hexdigest()),actors=actors,presentation=[dict(battler=b,form=form) for b in range(2)],deoxys_pixels=[dict(battler=b,form=form,species=410,shiny=shiny) for b in range(2)],ready_at=10,turn_completed_at=10 if transform else None,actor_steps={'0':40,'1':40},samples=[dict(time=t,phase=3,actors=[dict(battler=b,species=410,tick=tick) for b in range(2)]) for t,tick in [(10,0),(15,100)]])
+  self.write(p/'capture.json',cap)
+ def mutate(self,relative,change):
+  p=self.folder/relative;v=json.loads(p.read_text());change(v);self.write(p,v)
+ def check(self):return variants.check_variants(self.root,self.item,self.build)
+ def test_complete_emerald_forms_and_real_transform(self):self.assertTrue(self.check()['real_transform'])
+ def test_reject_attack_defense_as_emerald_default(self):
+  self.mutate('variants.json',lambda m:m['cases'][1].update(form=1))
+  with self.assertRaisesRegex(ValueError,'Missing Emerald'):self.check()
+ def test_default_cannot_use_diagnostic_preview(self):
+  self.mutate('default/normal/back/capture.json',lambda c:c['scenario'].update(deoxys_preview=2))
+  with self.assertRaisesRegex(ValueError,'Ordinary Deoxys'):self.check()
+ def test_speed_back_required_in_ordinary_encounter(self):
+  self.mutate('default/normal/back/capture.json',lambda c:c['presentation'][0].update(form=0))
+  with self.assertRaisesRegex(ValueError,'selected pixels'):self.check()
+ def test_transformed_back_must_be_normal(self):
+  self.mutate('transform/normal/capture.json',lambda c:c['deoxys_pixels'][0].update(form=3))
+  with self.assertRaisesRegex(ValueError,'selected pixels'):self.check()
+ def test_real_turn_required(self):
+  self.mutate('transform/normal/capture.json',lambda c:c.update(turn_completed_at=None))
+  with self.assertRaisesRegex(ValueError,'turn/menu'):self.check()
+ def test_two_cycles_required(self):
+  self.mutate('3/normal/front/capture.json',lambda c:c['samples'][1]['actors'][1].update(tick=79))
+  with self.assertRaisesRegex(ValueError,'Two Deoxys'):self.check()
+ def test_shiny_transform_video_hash(self):
+  (self.folder/'transform/shiny/demo.mp4').write_bytes(b'changed')
+  with self.assertRaisesRegex(ValueError,'media changed'):self.check()
+ def test_shiny_transform_requires_actual_shiny_actor(self):
+  self.mutate('transform/shiny/capture.json',lambda c:c['deoxys_pixels'][0].update(shiny=0))
+  with self.assertRaisesRegex(ValueError,'shiny pixels'):self.check()
+
 if __name__=='__main__':unittest.main()

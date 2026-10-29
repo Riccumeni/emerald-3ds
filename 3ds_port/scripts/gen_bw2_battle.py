@@ -579,6 +579,23 @@ def generate(rom_path, output, previews=None, species=None, moves=None):
                 report['pokemon'][key]=write_clip(output/(key+'.bin'),images,normal,shiny,loop)
                 report['pokemon'][key]['source_bounds']=bounds
                 if previews:preview(previews/(f'castform_{name}_{side}.gif'),images,normal)
+    if 386 in (SPECIES if species is None else species):
+        personal=nds.archive('a/0/1/6')[386]
+        sprite_offset,form_count,flags=struct.unpack_from('<HBB',personal,30)
+        if form_count!=4 or flags&128:raise ValueError('Unexpected Deoxys resource mapping')
+        # Preserve Normal as the base clip; Emerald's own rear view uses Speed.
+        base=0x3584+(sprite_offset+2)*20
+        report.setdefault('forms',{})['410']={
+            '0':dict(name='normal',resource_base=386*20),
+            '3':dict(name='speed',resource_base=base),
+            'excluded':dict(forms=['attack','defense'],reason='Not selected by Emerald battle loaders')}
+        normal,shiny=palette(mons[base+18]),palette(mons[base+19])
+        for side in ('front','back'):
+            images,loop,bounds=pokemon_frames(mons,386,side,base_override=base)
+            key=f'410_form3_{side}'
+            report['pokemon'][key]=write_clip(output/(key+'.bin'),images,normal,shiny,loop)
+            report['pokemon'][key]['source_bounds']=bounds
+            if previews:preview(previews/(f'deoxys_speed_{side}.gif'),images,normal)
     scripts=nds.archive('a/0/6/5'); particles=nds.archive('a/0/0/6'); exported=set()
     selected_moves = MOVES if moves is None else moves
     for move,name in selected_moves.items():

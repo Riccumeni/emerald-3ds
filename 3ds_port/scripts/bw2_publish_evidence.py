@@ -115,6 +115,12 @@ def publish(args):
                 for ext in ('.bin','.bin.layout'):
                     name=f'385_form{form}_{side}{ext}'
                     metadata['asset_hashes'][name]=sha(assets/name)
+    if args.kind=='pokemon' and args.id==386:
+        for side in directions:
+            for ext in ('.bin','.bin.layout'):
+                name=f'410_form3_{side}{ext}'
+                metadata['asset_hashes'][name]=sha(assets/name)
+        metadata['adaptations'].append('Emerald Deoxys selection: own untransformed back Speed; opponent, transformed copies and remote multi partner Normal. Normal and Speed have separate native front/back art inventories; Attack/Defense excluded by Emerald rules. Actual link runtime remains pending.')
     (folder / "metadata.json").write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     text = f"# Verifica: {item['nome']}\n\n{checks}\n\n"
     text += f"Build di prova: `{metadata['test_build']['build_id']}`. Build normale senza automatismi: `{metadata['production_build']['build_id']}`.\n\n"

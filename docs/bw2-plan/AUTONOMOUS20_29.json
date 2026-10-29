@@ -1,7 +1,7 @@
 {
   "start_pokemon": 154,
   "target_pokemon": 234,
-  "completed_checkpoints": 5,
+  "completed_checkpoints": 6,
   "groups": [
     {
       "number": 20,
@@ -716,7 +716,7 @@
     {
       "number": 25,
       "ordinal": 6,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Registeel",
         "Latias",
@@ -769,17 +769,161 @@
           "enemy": 405
         },
         {
-          "name": "jirachi-deoxys",
+          "name": "r3-jirachi-deoxys",
           "player": 409,
           "enemy": 410
         },
         {
-          "name": "deoxys-jirachi",
+          "name": "r3-deoxys-jirachi",
           "player": 410,
           "enemy": 409
         }
       ],
-      "artifact_date": "2026-10-29"
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "capture_history": [
+        {
+          "reason": "Ordinary Deoxys selection valid; bridge preview macro missing, corrected with scoped Make overlay",
+          "cases": [
+            {
+              "name": "jirachi-deoxys",
+              "player": 409,
+              "enemy": 410
+            },
+            {
+              "name": "deoxys-jirachi",
+              "player": 410,
+              "enemy": 409
+            }
+          ],
+          "builds": {
+            "test": {
+              "build_id": "41d32c7d95a1d171",
+              "sha256": "24cd0dd6f7badd662c5f1b1d615a0c93279321370936d58f49e46566c9e08b1f",
+              "path": "artifacts/bw2-validation/builds/41d32c7d95a1d171_24cd0dd6f7ba/validation.3dsx",
+              "elf_path": "artifacts/bw2-validation/builds/41d32c7d95a1d171_32d2b85679be/validation.elf",
+              "elf_sha256": "32d2b85679be01106442b04605b41c4e78d0128a8030ddf7a51a7c7275580c3d",
+              "id_path": "artifacts/bw2-validation/builds/41d32c7d95a1d171_37890f7058a9/build_id.bin"
+            },
+            "production": {
+              "build_id": "a7578461a1177544",
+              "sha256": "b4c867aef84895c9b663b312b4a4da09193483e5d2f351b2cf3fa105721ef7e2",
+              "path": "artifacts/bw2-validation/builds/a7578461a1177544_b4c867aef848/Emerald3DS-BW2.3dsx",
+              "elf_path": "artifacts/bw2-validation/builds/a7578461a1177544_019d20338afc/production.elf",
+              "elf_sha256": "019d20338afc9b9e55ba7644d51e71230ff42e6139f3b3f70374e2a3901c9124",
+              "id_path": "artifacts/bw2-validation/builds/a7578461a1177544_2267d9f645f6/production-build-id.bin"
+            }
+          }
+        },
+        {
+          "reason": "Native Transform exposed actor rebinding defect; fixed after original animation finishes",
+          "cases": [
+            {
+              "name": "r2-jirachi-deoxys",
+              "player": 409,
+              "enemy": 410
+            },
+            {
+              "name": "r2-deoxys-jirachi",
+              "player": 410,
+              "enemy": 409
+            }
+          ],
+          "builds": {
+            "test": {
+              "build_id": "d11002aaa53a7c2f",
+              "sha256": "54e404f5302d9b5ee0f4c71726d0fd429adff2d81f06b12fbf6b5af1b58f8f2f",
+              "path": "artifacts/bw2-validation/builds/d11002aaa53a7c2f_54e404f5302d/validation.3dsx",
+              "elf_path": "artifacts/bw2-validation/builds/d11002aaa53a7c2f_f694f730e9c4/validation.elf",
+              "elf_sha256": "f694f730e9c46efe35693030cca77af9a578d4110336e22b67f184a3e3e9d619",
+              "id_path": "artifacts/bw2-validation/builds/d11002aaa53a7c2f_badd587b2eb3/build_id.bin"
+            },
+            "production": {
+              "build_id": "ab949852ac0d5895",
+              "sha256": "871222452e3f687c7eea22dc4e761ca5340deab21edd09f4774784478b7dfd9a",
+              "path": "artifacts/bw2-validation/builds/ab949852ac0d5895_871222452e3f/Emerald3DS-BW2.3dsx",
+              "elf_path": "artifacts/bw2-validation/builds/ab949852ac0d5895_4ef884461e32/production.elf",
+              "elf_sha256": "4ef884461e3273c6bd9249d2b362edddfb502fd8d56b24fe14fd85c71ca48f1e",
+              "id_path": "artifacts/bw2-validation/builds/ab949852ac0d5895_04862545de23/production-build-id.bin"
+            }
+          },
+          "extra_prefix": "cp25-"
+        }
+      ],
+      "deoxys_capture_prefix": "cp25-r3-",
+      "audit_dossiers": 208,
+      "movie": {
+        "duration": 286.7656666666667,
+        "decoded_frames": 8601,
+        "sha256": "481345a94f10013ca26771c8cf2aa1b9cb1bffe388d754ca3af349185481e74e",
+        "segments": [
+          {
+            "name": "registeel-latias",
+            "start": 0.0,
+            "end": 27.376333333333335,
+            "frames": 821,
+            "sha256": "1a99066b2b3ddf8ba0a45a17692e508f28e3ad0450ce90f0ce4c4e23b86e5c64"
+          },
+          {
+            "name": "latias-registeel",
+            "start": 27.376333333333335,
+            "end": 54.190666666666665,
+            "frames": 804,
+            "sha256": "a6d8702c16174457aae370e7a05e126b23fda15e4fa1d01a615e41353b78b10d"
+          },
+          {
+            "name": "latios-kyogre",
+            "start": 54.190666666666665,
+            "end": 104.396,
+            "frames": 1506,
+            "sha256": "f9b2ac0757ebd779ab6affbd4518fbf5b65dc30763cdf5710edd407b3a87ef06"
+          },
+          {
+            "name": "kyogre-latios",
+            "start": 104.396,
+            "end": 154.13233333333332,
+            "frames": 1492,
+            "sha256": "42a80948d9956097fec03e61d6fdb0aa182114b9d8d6a3cd7bb6425e99ea7839"
+          },
+          {
+            "name": "groudon-rayquaza",
+            "start": 154.13233333333332,
+            "end": 188.86866666666666,
+            "frames": 1042,
+            "sha256": "95a107e7e39e4f020d0b6f775a137c2fbd3bbca82303511501d6e73004cbed3d"
+          },
+          {
+            "name": "rayquaza-groudon",
+            "start": 188.86866666666666,
+            "end": 222.98,
+            "frames": 1023,
+            "sha256": "ebda8804816c79c2f4f3bddc210cbae94264df0348d937ef67521d2ba218d934"
+          },
+          {
+            "name": "r3-jirachi-deoxys",
+            "start": 222.98,
+            "end": 253.56033333333335,
+            "frames": 917,
+            "sha256": "27012d70cdfd9ab886eb50bc7e5a59f654fcf005cdf8d53a6e8563aef2be299b"
+          },
+          {
+            "name": "r3-deoxys-jirachi",
+            "start": 253.56033333333335,
+            "end": 286.7656666666667,
+            "frames": 996,
+            "sha256": "ab7f4646b4f6252936a820f9419b6cb3526523b0d98ac756e6dcae774fa9d6f4"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 25: eight Pokemon"
     },
     {
       "number": 26,
@@ -1056,20 +1200,20 @@
   ],
   "builds": {
     "test": {
-      "build_id": "78516b1a53c4bfa8",
-      "sha256": "5a198041106a73236613d17631667fd1f74774a24837fa8e06a578d2ccb827ca",
-      "path": "artifacts/bw2-validation/builds/78516b1a53c4bfa8_5a198041106a/validation.3dsx",
-      "elf_path": "artifacts/bw2-validation/builds/78516b1a53c4bfa8_bcaa4006b767/validation.elf",
-      "elf_sha256": "bcaa4006b7677ab146492d0bf17bb647d605dce3d8c3ae4f4102d7b243cfedb4",
-      "id_path": "artifacts/bw2-validation/builds/78516b1a53c4bfa8_ce3d53eb90ab/build_id.bin"
+      "build_id": "1441ec92f9e6b9b6",
+      "sha256": "aab76a7b3322e46be17cb62dbf3366706d1fa2e7e8105615dbccfb6d50a269ca",
+      "path": "artifacts/bw2-validation/builds/1441ec92f9e6b9b6_aab76a7b3322/validation.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/1441ec92f9e6b9b6_f63a7127dbdc/validation.elf",
+      "elf_sha256": "f63a7127dbdc16f70b0da3c3d6bf989b965aeb0b97c11a15826ca37325db18f2",
+      "id_path": "artifacts/bw2-validation/builds/1441ec92f9e6b9b6_94b107ef9eef/build_id.bin"
     },
     "production": {
-      "build_id": "39b4647bb1f1c442",
-      "sha256": "72f680aa46297f31c747341a34e85817e92e86d09e698d344bb11d37422f8ab4",
-      "path": "artifacts/bw2-validation/builds/39b4647bb1f1c442_72f680aa4629/Emerald3DS-BW2.3dsx",
-      "elf_path": "artifacts/bw2-validation/builds/39b4647bb1f1c442_0a3a924ecb1c/production.elf",
-      "elf_sha256": "0a3a924ecb1ce9f66e23fe58d96a530992a27d17d7b4e86f55ed47ee4cde44d0",
-      "id_path": "artifacts/bw2-validation/builds/39b4647bb1f1c442_85b9c73e955a/production-build-id.bin"
+      "build_id": "3724fc8cdfba9514",
+      "sha256": "31a8bb0a85c2d0f4b69be3129b3c2283c9a759e90485e0d15eda5149aca5319a",
+      "path": "artifacts/bw2-validation/builds/3724fc8cdfba9514_31a8bb0a85c2/Emerald3DS-BW2.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/3724fc8cdfba9514_b1c750266922/production.elf",
+      "elf_sha256": "b1c750266922487a0fe9421f9b0605bbfadfd99850da9b6e3ed8134b76b6c124",
+      "id_path": "artifacts/bw2-validation/builds/3724fc8cdfba9514_fa351ea16457/production-build-id.bin"
     }
   },
   "build_history": [
@@ -1092,28 +1236,107 @@
         "id_path": "artifacts/bw2-validation/builds/b9eafa1bb23e8fcf_ad98f8246237/production-build-id.bin",
         "id_provenance": "Full 32-byte ID extracted from matching archived 3DSX RomFS; unique eight-byte recorded prefix; current pair also byte-matches local build ID files"
       }
+    },
+    {
+      "test": {
+        "build_id": "78516b1a53c4bfa8",
+        "sha256": "5a198041106a73236613d17631667fd1f74774a24837fa8e06a578d2ccb827ca",
+        "path": "artifacts/bw2-validation/builds/78516b1a53c4bfa8_5a198041106a/validation.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/78516b1a53c4bfa8_bcaa4006b767/validation.elf",
+        "elf_sha256": "bcaa4006b7677ab146492d0bf17bb647d605dce3d8c3ae4f4102d7b243cfedb4",
+        "id_path": "artifacts/bw2-validation/builds/78516b1a53c4bfa8_ce3d53eb90ab/build_id.bin"
+      },
+      "production": {
+        "build_id": "39b4647bb1f1c442",
+        "sha256": "72f680aa46297f31c747341a34e85817e92e86d09e698d344bb11d37422f8ab4",
+        "path": "artifacts/bw2-validation/builds/39b4647bb1f1c442_72f680aa4629/Emerald3DS-BW2.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/39b4647bb1f1c442_0a3a924ecb1c/production.elf",
+        "elf_sha256": "0a3a924ecb1ce9f66e23fe58d96a530992a27d17d7b4e86f55ed47ee4cde44d0",
+        "id_path": "artifacts/bw2-validation/builds/39b4647bb1f1c442_85b9c73e955a/production-build-id.bin"
+      }
+    },
+    {
+      "test": {
+        "build_id": "41d32c7d95a1d171",
+        "sha256": "24cd0dd6f7badd662c5f1b1d615a0c93279321370936d58f49e46566c9e08b1f",
+        "path": "artifacts/bw2-validation/builds/41d32c7d95a1d171_24cd0dd6f7ba/validation.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/41d32c7d95a1d171_32d2b85679be/validation.elf",
+        "elf_sha256": "32d2b85679be01106442b04605b41c4e78d0128a8030ddf7a51a7c7275580c3d",
+        "id_path": "artifacts/bw2-validation/builds/41d32c7d95a1d171_37890f7058a9/build_id.bin"
+      },
+      "production": {
+        "build_id": "a7578461a1177544",
+        "sha256": "b4c867aef84895c9b663b312b4a4da09193483e5d2f351b2cf3fa105721ef7e2",
+        "path": "artifacts/bw2-validation/builds/a7578461a1177544_b4c867aef848/Emerald3DS-BW2.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/a7578461a1177544_019d20338afc/production.elf",
+        "elf_sha256": "019d20338afc9b9e55ba7644d51e71230ff42e6139f3b3f70374e2a3901c9124",
+        "id_path": "artifacts/bw2-validation/builds/a7578461a1177544_2267d9f645f6/production-build-id.bin"
+      }
+    },
+    {
+      "test": {
+        "build_id": "d11002aaa53a7c2f",
+        "sha256": "54e404f5302d9b5ee0f4c71726d0fd429adff2d81f06b12fbf6b5af1b58f8f2f",
+        "path": "artifacts/bw2-validation/builds/d11002aaa53a7c2f_54e404f5302d/validation.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/d11002aaa53a7c2f_f694f730e9c4/validation.elf",
+        "elf_sha256": "f694f730e9c46efe35693030cca77af9a578d4110336e22b67f184a3e3e9d619",
+        "id_path": "artifacts/bw2-validation/builds/d11002aaa53a7c2f_badd587b2eb3/build_id.bin"
+      },
+      "production": {
+        "build_id": "ab949852ac0d5895",
+        "sha256": "871222452e3f687c7eea22dc4e761ca5340deab21edd09f4774784478b7dfd9a",
+        "path": "artifacts/bw2-validation/builds/ab949852ac0d5895_871222452e3f/Emerald3DS-BW2.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/ab949852ac0d5895_4ef884461e32/production.elf",
+        "elf_sha256": "4ef884461e3273c6bd9249d2b362edddfb502fd8d56b24fe14fd85c71ca48f1e",
+        "id_path": "artifacts/bw2-validation/builds/ab949852ac0d5895_04862545de23/production-build-id.bin"
+      }
     }
   ],
   "runtime": {
-    "phase": "serial native captures and visual review",
+    "phase": "group25 reviewed and audited; all native forms, Transform normal/shiny and Spinda regression passed; commit pending",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "initial_emulator_processes": [],
     "build_script": "build/bw2-auto20-build.sh",
-    "capture_group": 24,
-    "exec_session_id": 53325,
-    "log": "build/bw2-auto20-cp24-capture.log",
+    "capture_group": 25,
+    "exec_session_id": null,
+    "log": "build/bw2-auto20-cp25-r3-capture.log",
     "personal_emulator_pid": 2460,
-    "continuity": "build/BW2_CONTINUITY20.md"
+    "continuity": "build/BW2_CONTINUITY20.md",
+    "extra_log": "build/bw2-auto20-deoxys-r3-extra-capture.log"
   },
   "checks": {
-    "exporter_tests": 18,
+    "exporter_tests": 20,
     "evidence_tests": 7,
-    "variant_gate_tests": 15,
+    "variant_gate_tests": 24,
     "bridge_synthetic": true,
     "bridge_real_assets": true,
     "spinda_texture_oracle_seeds": 8,
     "castform_bridge": true,
     "production_stubs_bytes": 4,
-    "production_validation_mailbox": false
-  }
+    "production_validation_mailbox": false,
+    "deoxys_bridge": true,
+    "production_deoxys_preview": false,
+    "deoxys_validation_bridge": true,
+    "transform_actor_rebind": true,
+    "deoxys_forms": 2,
+    "deoxys_transform_native_scenarios": 2,
+    "deoxys_native_pixels_and_palettes": true,
+    "deoxys_link_runtime": false,
+    "spinda_transform_native": true
+  },
+  "auxiliary_fixture_species": [
+    {
+      "national": 132,
+      "name": "Ditto",
+      "purpose": "Real Transform into Deoxys; not a completed species"
+    }
+  ],
+  "native_regressions": [
+    {
+      "name": "spinda-transform",
+      "folder": "artifacts/bw2-validation/regressions/2026-10-29-deoxys-transform/spinda",
+      "visual_reviewed": true,
+      "video_sha256": "b0d7ec5385715a4aa0d706866e4e361eee2f3e46f63cc191c3c111b14292fa08"
+    }
+  ]
 }

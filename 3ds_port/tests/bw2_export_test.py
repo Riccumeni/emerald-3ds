@@ -164,4 +164,33 @@ class ExportTest(unittest.TestCase):
             self.assertEqual(struct.unpack('<4s4H',(output/'300_back.bin.layout').read_bytes()),(b'BWL2',102,70,100,72))
 
 
+    def test_deoxys_exports_only_emerald_normal_and_speed_views(self):
+        personal=bytearray(44);struct.pack_into('<HBB',personal,30,30,4,0)
+        members=[None]*15065
+        nds=SimpleNamespace(data=b'local-rom',code='TEST',archive=lambda path: members if path=='a/0/0/4' else [personal]*387 if path=='a/0/1/6' else [])
+        image=Image.new('P',(64,64),1)
+        with tempfile.TemporaryDirectory() as directory:
+            output=Path(directory)
+            with patch.object(bw,'Nds',return_value=nds),patch.object(bw,'palette',return_value=bytes(32)),patch.object(bw,'pokemon_frames',return_value=([image],0,(32,32,96,96))) as frames:
+                report=bw.generate('unused.nds',output,species={386:(410,'deoxys')},moves={})
+            self.assertEqual(set(report['pokemon']),{'410_front','410_back','410_form3_front','410_form3_back'})
+            self.assertEqual(report['forms']['410']['3']['resource_base'],0x3584+32*20)
+            self.assertEqual(report['forms']['410']['excluded']['forms'],['attack','defense'])
+            self.assertEqual([call.kwargs.get('base_override') for call in frames.call_args_list],[None,None,0x3584+32*20,0x3584+32*20])
+            for side in ['front','back']:
+                self.assertTrue((output/f'410_form3_{side}.bin.layout').exists())
+            # Incremental exports keep the complete Deoxys form inventory.
+            with patch.object(bw,'Nds',return_value=nds):
+                again=bw.generate('unused.nds',output,species={},moves={})
+            self.assertEqual(again['forms'],report['forms'])
+
+    def test_deoxys_rejects_unknown_rom_form_mapping(self):
+        personal=bytearray(44);struct.pack_into('<HBB',personal,30,30,3,0)
+        nds=SimpleNamespace(data=b'local-rom',code='TEST',archive=lambda path: [None]*15065 if path=='a/0/0/4' else [personal]*387 if path=='a/0/1/6' else [])
+        image=Image.new('P',(64,64),1)
+        with tempfile.TemporaryDirectory() as directory,patch.object(bw,'Nds',return_value=nds),patch.object(bw,'palette',return_value=bytes(32)),patch.object(bw,'pokemon_frames',return_value=([image],0,(32,32,96,96))):
+            with self.assertRaisesRegex(ValueError,'Unexpected Deoxys'):
+                bw.generate('unused.nds',Path(directory),species={386:(410,'deoxys')},moves={})
+
+
 if __name__=='__main__':unittest.main()

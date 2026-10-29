@@ -421,7 +421,8 @@ static BwClip *PokemonFormClip(u16 species, bool8 back, unsigned form)
     char path[64];
     if (!SupportedSpecies(species))
         return NULL;
-    if (form > 3 || (form && species != SPECIES_CASTFORM)) return NULL;
+    if (form > 3 || (form && species != SPECIES_CASTFORM
+        && !(species == SPECIES_DEOXYS && form == 3))) return NULL;
     if (form) snprintf(path, sizeof(path), "bw2/%u_form%u_%s.bin", species, form, back ? "back" : "front");
     else snprintf(path, sizeof(path), "bw2/%u_%s.bin", species, back ? "back" : "front");
     u16 key = species * 2 + (back ? 1 : 0) + form * 1024;
@@ -518,6 +519,22 @@ static int ActorDrop(unsigned battler)
     return sActors[battler].clip ? sPresentation[battler].y : 0;
 }
 
+/* Emerald uses Speed for its own untransformed rear sprite. The opponent,
+ * transformed copies and the remote multi-battle partner use Normal.
+ * Attack and Defense belong to other games and do not change Emerald rules. */
+static unsigned SelectedPokemonForm(u16 species, u8 battler, bool8 back, u16 transformed)
+{
+    if (species == SPECIES_CASTFORM) return gBattleMonForms[battler];
+    if (species != SPECIES_DEOXYS) return 0;
+#ifdef CTR_BW2_VALIDATION
+    /* Explicit art inventory preview only; absent from production. Ordinary
+     * encounters and Transform evidence leave this diagnostic at zero. */
+    extern volatile u32 gCtrBw2DeoxysPreview;
+    if (gCtrBw2DeoxysPreview) return gCtrBw2DeoxysPreview == 2 ? 3 : 0;
+#endif
+    return back && transformed == SPECIES_NONE && !ShouldIgnoreDeoxysForm(1, battler) ? 3 : 0;
+}
+
 static void RegisterPokemon(struct Pokemon *mon, u8 battler, bool8 back)
 {
     BwActor *actor = &sActors[battler];
@@ -527,7 +544,7 @@ static void RegisterPokemon(struct Pokemon *mon, u8 battler, bool8 back)
     memset(actor, 0, sizeof(*actor));
     if (transformed != SPECIES_NONE)
         species = transformed;
-    unsigned form = species == SPECIES_CASTFORM ? gBattleMonForms[battler] : 0;
+    unsigned form = SelectedPokemonForm(species, battler, back, transformed);
     clip = form ? PokemonFormClip(species, back, form) : PokemonClip(species, back);
     if (!clip || !gMonSpritesGfxPtr || (species == SPECIES_SPINDA && !back && !clip->spots))
         return;
@@ -983,7 +1000,18 @@ void CtrBW2_BeforeSprites(void)
         if (species != actor->species)
         {
             actor->id = 0;
-            continue;
+            /* Transform changes graphics directly, without the wrapped mon
+             * loaders. Let its native mosaic/BG animation finish, then bind
+             * the displayed species again and resume the BW2 idle clip. */
+            if (gAnimScriptActive) continue;
+            bool8 back = GetBattlerSide(b) == B_SIDE_PLAYER;
+            struct Pokemon *mon = back ? &gPlayerParty[gBattlerPartyIndexes[b]]
+                                       : &gEnemyParty[gBattlerPartyIndexes[b]];
+            u16 expected = gBattleSpritesDataPtr->battlerData[b].transformSpecies;
+            if (expected == SPECIES_NONE) expected = GetMonData(mon, MON_DATA_SPECIES);
+            if (expected != species) continue;
+            RegisterPokemon(mon, b, back);
+            if (!actor->clip) continue;
         }
         if (species == SPECIES_CASTFORM && gBattleMonForms[b] != gCtrBW2ActorForms[b])
         {

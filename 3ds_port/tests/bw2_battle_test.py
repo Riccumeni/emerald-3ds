@@ -35,6 +35,7 @@ typedef int8_t s8; typedef int16_t s16; typedef int32_t s32; typedef u8 bool8;
 #define SPECIES_NONE 0
 #define SPECIES_SPINDA 308
 #define SPECIES_CASTFORM 385
+#define SPECIES_DEOXYS 410
 #define MON_DATA_PERSONALITY 1
 #define SPECIES_TREECKO 277
 #define SPECIES_POOCHYENA 286
@@ -113,6 +114,7 @@ extern u8 testVram[65536];
 #define OBJ_VRAM0 testVram
 u32 GetMonData(struct Pokemon *,unsigned);
 bool8 IsMonShiny(struct Pokemon *);
+bool8 ShouldIgnoreDeoxysForm(u8,u8);
 u16 SpeciesToNationalPokedexNum(u16);
 u16 GetPokedexHeightWeight(u16,u8);
 u8 GetBattlerElevation(u8,u16);
@@ -144,6 +146,7 @@ void CtrVideo_MarkBattleActor(unsigned,unsigned);
 HARNESS = r'''
 #include "global.h"
 #include "PRODUCTION"
+bool8 ShouldIgnoreDeoxysForm(u8 c,u8 b) { (void)c; (void)b; return FALSE; }
 struct Sprite gSprites[64];
 struct Pokemon gPlayerParty[6],gEnemyParty[6];
 struct BattleMon gBattleMons[4];

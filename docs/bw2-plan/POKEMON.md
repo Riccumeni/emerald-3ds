@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **194**.
+Totale: **386**. Fatti con dossier completo: **202**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -200,14 +200,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0376 **Metagross** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0376_metagross/).
 - [x] 0377 **Regirock** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0377_regirock/).
 - [x] 0378 **Regice** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0378_regice/).
-- [ ] 0379 **Registeel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0379_registeel/).
-- [ ] 0380 **Latias** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0380_latias/).
-- [ ] 0381 **Latios** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0381_latios/).
-- [ ] 0382 **Kyogre** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0382_kyogre/).
-- [ ] 0383 **Groudon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0383_groudon/).
-- [ ] 0384 **Rayquaza** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0384_rayquaza/).
-- [ ] 0385 **Jirachi** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0385_jirachi/).
-- [ ] 0386 **Deoxys** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0386_deoxys/).
+- [x] 0379 **Registeel** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0379_registeel/).
+- [x] 0380 **Latias** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0380_latias/).
+- [x] 0381 **Latios** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0381_latios/).
+- [x] 0382 **Kyogre** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0382_kyogre/).
+- [x] 0383 **Groudon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0383_groudon/).
+- [x] 0384 **Rayquaza** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0384_rayquaza/).
+- [x] 0385 **Jirachi** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0385_jirachi/).
+- [x] 0386 **Deoxys** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0386_deoxys/).
 - [ ] 0001 **Bulbasaur** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0001_bulbasaur/).
 - [ ] 0002 **Ivysaur** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0002_ivysaur/).
 - [ ] 0003 **Venusaur** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0003_venusaur/).

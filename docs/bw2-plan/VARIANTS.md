@@ -8,10 +8,8 @@ Lo stato di questo registro viene aggiornato insieme a `stato.json`.
   con screenshot e video front/back. Verificare la selezione da personality.
 - [x] **Castform (#351)**: dossier della forma normale più `sunny`, `rainy`,
   `snowy`. Provare anche la transizione in battaglia e le palette.
-- [ ] **Deoxys (#386)**: verificare le forme selezionate effettivamente
-  dall'albero Emerald e dai suoi percorsi speciali/link/trasformazione;
-  censire corrispondenza con le risorse BW2 prima di scegliere il default.
-  Documentare e provare front/back per ogni forma richiesta dal motore.
+- [x] **Deoxys (#386)**: forme Normale e Velocità censite e verificate front/back e shiny; selezione ordinaria e due turni reali di Trasformazione. Predicati link/multi verificati sul host; esecuzione link e copie temporanee delle mosse restano nella fase di integrazione. [Prove e limiti](DEOXYS_REVIEW.md).
+
 - [x] **Spinda (#327)**: preservare le macchie dipendenti dalla personality,
   con seed riproducibili rappresentativi, estremi e sovrapposizioni. I seed
   sono casi di test, non una pretesa di registrare ogni personality possibile.

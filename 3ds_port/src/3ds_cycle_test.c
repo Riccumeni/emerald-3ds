@@ -46,6 +46,7 @@ static u32 sValidationField, sValidationReady;
 static bool8 sValidationInitialized;
 static u32 sValidationPersonality;
 volatile u32 gCtrBw2Personality;
+volatile u32 gCtrBw2DeoxysPreview;
 
 static bool8 ValidationActionMenu(void)
 {
@@ -73,6 +74,7 @@ static void ValidationInit(void)
             else if (!strcmp(key, "shiny")) gCtrBw2Validation.shiny = value != 0;
             else if (!strcmp(key, "seed")) gCtrBw2Validation.seed = value;
             else if (!strcmp(key, "personality")) sValidationPersonality = value;
+            else if (!strcmp(key, "deoxys_preview") && value <= 2) gCtrBw2DeoxysPreview = value;
             else if (!strcmp(key, "side") && value <= 2) gCtrBw2Validation.side = value;
         }
         fclose(file);
