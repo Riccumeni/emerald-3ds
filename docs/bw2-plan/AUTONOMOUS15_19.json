@@ -1,7 +1,7 @@
 {
   "start_pokemon": 114,
   "target_pokemon": 154,
-  "completed_checkpoints": 2,
+  "completed_checkpoints": 3,
   "groups": [
     {
       "number": 15,
@@ -290,7 +290,7 @@
     {
       "number": 17,
       "ordinal": 3,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Crawdaunt",
         "Baltoy",
@@ -353,7 +353,81 @@
           "enemy": 391
         }
       ],
-      "artifact_date": "2026-10-29"
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 144,
+      "movie": {
+        "duration": 245.11066666666667,
+        "decoded_frames": 7347,
+        "sha256": "0a41cc68c114683ec03ff4c8d8a3f8be55bb24f3268142eb9508ce45f8fe8f82",
+        "segments": [
+          {
+            "name": "crawdaunt-baltoy",
+            "start": 0.0,
+            "end": 31.330333333333332,
+            "frames": 939,
+            "sha256": "0fcf7d050f71f1c2fb701588d4095baf2daa3af10db9c960c8013bd5707b9fec"
+          },
+          {
+            "name": "baltoy-crawdaunt",
+            "start": 31.330333333333332,
+            "end": 61.379666666666665,
+            "frames": 901,
+            "sha256": "f798e096e23a8792ab0e4edd3a1a07ac4feaaeaa31f959f4c9f0b7b7c21c0166"
+          },
+          {
+            "name": "claydol-lileep",
+            "start": 61.379666666666665,
+            "end": 93.272,
+            "frames": 956,
+            "sha256": "11ca00732b58b0b0aa058d5563476e8f14dfd7e4f0b917df0c6eba50ed1ae23f"
+          },
+          {
+            "name": "lileep-claydol",
+            "start": 93.272,
+            "end": 124.93033333333334,
+            "frames": 949,
+            "sha256": "2fee32f3a95d57c9f0ee16d9f3cbd5c30057b881b6b4980e4af774ebcf9e69d1"
+          },
+          {
+            "name": "cradily-anorith",
+            "start": 124.93033333333334,
+            "end": 153.90166666666667,
+            "frames": 868,
+            "sha256": "4c6c0ba1f99ad552affb7b9aaddf8afce002bbd7236cbc802c91d0624733c2d3"
+          },
+          {
+            "name": "anorith-cradily",
+            "start": 153.90166666666667,
+            "end": 182.154,
+            "frames": 847,
+            "sha256": "9c20aba403d821a657cc8c0301bc8cf0d200b74cd3f0bf46ea7eccb808e3f0ed"
+          },
+          {
+            "name": "armaldo-igglybuff",
+            "start": 182.154,
+            "end": 214.04633333333334,
+            "frames": 956,
+            "sha256": "380b12d95bc6c830a3776888a111a6a3d0aff0a32b3644c2024673cf6a797ffb"
+          },
+          {
+            "name": "igglybuff-armaldo",
+            "start": 214.04633333333334,
+            "end": 245.11066666666667,
+            "frames": 931,
+            "sha256": "cf25f9a73dc61a8337a334cc256ed79c7103348725dabfe0f6f2574d71ee889b"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 17: eight Pokemon"
     },
     {
       "number": 18,
@@ -509,12 +583,12 @@
     }
   },
   "runtime": {
-    "capture_group": 16,
-    "exec_session_id": 5811,
-    "log": "build/bw2-auto15-cp16-captures.log",
+    "capture_group": 17,
+    "exec_session_id": 36149,
+    "log": "build/bw2-auto15-cp17-captures.log",
     "next_capture": "build/bw2-spinda-capture.ps1",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
-    "phase": "Checkpoint 16 base captures; Spinda complete in commit 8a5784d"
+    "phase": "Checkpoint 17 captures; commit16 complete; apply Castform only after cp17 publication"
   },
   "checks": {
     "exporter_tests": 18,

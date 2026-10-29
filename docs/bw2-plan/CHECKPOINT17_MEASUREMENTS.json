@@ -1,0 +1,530 @@
+[
+  {
+    "national": 342,
+    "emerald": 327,
+    "name": "Crawdaunt",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 320,
+          "scale_percent": 125.0,
+          "shift_x": 0,
+          "shift_y": -5,
+          "height_dm": 11,
+          "target_span": 75,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            7,
+            62,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 9331,
+          "source_width": 70,
+          "source_height": 64,
+          "source_footprint_q8": 17315
+        },
+        "steps": 360,
+        "duration": 30.017333333333333,
+        "decoded_frames": 901,
+        "video_sha256": "f798e096e23a8792ab0e4edd3a1a07ac4feaaeaa31f959f4c9f0b7b7c21c0166",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 477,
+          "scale_percent": 186.33,
+          "shift_x": 0,
+          "shift_y": 8,
+          "height_dm": 11,
+          "target_span": 112,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            9,
+            62,
+            62
+          ],
+          "idle_floor": 60,
+          "body_center_y_q8": 9735,
+          "source_width": 73,
+          "source_height": 64,
+          "source_footprint_q8": 17315
+        },
+        "steps": 360,
+        "duration": 31.314333333333334,
+        "decoded_frames": 939,
+        "video_sha256": "0fcf7d050f71f1c2fb701588d4095baf2daa3af10db9c960c8013bd5707b9fec",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      }
+    },
+    "height_m": 1.1
+  },
+  {
+    "national": 343,
+    "emerald": 318,
+    "name": "Baltoy",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 299,
+          "scale_percent": 116.8,
+          "shift_x": 0,
+          "shift_y": -15,
+          "height_dm": 5,
+          "target_span": 48,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            11,
+            22,
+            52,
+            62
+          ],
+          "idle_floor": 59,
+          "body_center_y_q8": 10826,
+          "source_width": 41,
+          "source_height": 40,
+          "source_footprint_q8": 10173
+        },
+        "steps": 448,
+        "duration": 31.314333333333334,
+        "decoded_frames": 939,
+        "video_sha256": "0fcf7d050f71f1c2fb701588d4095baf2daa3af10db9c960c8013bd5707b9fec",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 413,
+          "scale_percent": 161.33,
+          "shift_x": 0,
+          "shift_y": -1,
+          "height_dm": 5,
+          "target_span": 63,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            12,
+            23,
+            51,
+            62
+          ],
+          "idle_floor": 60,
+          "body_center_y_q8": 10923,
+          "source_width": 39,
+          "source_height": 39,
+          "source_footprint_q8": 10173
+        },
+        "steps": 448,
+        "duration": 30.017333333333333,
+        "decoded_frames": 901,
+        "video_sha256": "f798e096e23a8792ab0e4edd3a1a07ac4feaaeaa31f959f4c9f0b7b7c21c0166",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      }
+    },
+    "height_m": 0.5
+  },
+  {
+    "national": 344,
+    "emerald": 319,
+    "name": "Claydol",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 343,
+          "scale_percent": 133.98,
+          "shift_x": 0,
+          "shift_y": -8,
+          "height_dm": 15,
+          "target_span": 81,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            3,
+            2,
+            61,
+            62
+          ],
+          "idle_floor": 58,
+          "body_center_y_q8": 8006,
+          "source_width": 70,
+          "source_height": 72,
+          "source_footprint_q8": 18174
+        },
+        "steps": 415,
+        "duration": 31.627333333333333,
+        "decoded_frames": 949,
+        "video_sha256": "2fee32f3a95d57c9f0ee16d9f3cbd5c30057b881b6b4980e4af774ebcf9e69d1",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 477,
+          "scale_percent": 186.33,
+          "shift_x": 0,
+          "shift_y": 18,
+          "height_dm": 15,
+          "target_span": 112,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            3,
+            2,
+            61,
+            62
+          ],
+          "idle_floor": 58,
+          "body_center_y_q8": 8001,
+          "source_width": 70,
+          "source_height": 72,
+          "source_footprint_q8": 18174
+        },
+        "steps": 415,
+        "duration": 31.861333333333334,
+        "decoded_frames": 956,
+        "video_sha256": "11ca00732b58b0b0aa058d5563476e8f14dfd7e4f0b917df0c6eba50ed1ae23f",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      }
+    },
+    "height_m": 1.5
+  },
+  {
+    "national": 345,
+    "emerald": 388,
+    "name": "Lileep",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 256,
+          "scale_percent": 100.0,
+          "shift_x": 0,
+          "shift_y": -4,
+          "height_dm": 10,
+          "target_span": 60,
+          "source_factor_q8": 211,
+          "silhouette_bounds": [
+            2,
+            2,
+            61,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 7776,
+          "source_width": 60,
+          "source_height": 61,
+          "source_footprint_q8": 14831
+        },
+        "steps": 504,
+        "duration": 31.861333333333334,
+        "decoded_frames": 956,
+        "video_sha256": "11ca00732b58b0b0aa058d5563476e8f14dfd7e4f0b917df0c6eba50ed1ae23f",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 408,
+          "scale_percent": 159.38,
+          "shift_x": 0,
+          "shift_y": 14,
+          "height_dm": 10,
+          "target_span": 91,
+          "source_factor_q8": 211,
+          "silhouette_bounds": [
+            5,
+            5,
+            59,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 8497,
+          "source_width": 54,
+          "source_height": 57,
+          "source_footprint_q8": 14831
+        },
+        "steps": 504,
+        "duration": 31.627333333333333,
+        "decoded_frames": 949,
+        "video_sha256": "2fee32f3a95d57c9f0ee16d9f3cbd5c30057b881b6b4980e4af774ebcf9e69d1",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      }
+    },
+    "height_m": 1.0
+  },
+  {
+    "national": 346,
+    "emerald": 389,
+    "name": "Cradily",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 345,
+          "scale_percent": 134.77,
+          "shift_x": 0,
+          "shift_y": -8,
+          "height_dm": 15,
+          "target_span": 81,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            9,
+            2,
+            55,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 8399,
+          "source_width": 60,
+          "source_height": 78,
+          "source_footprint_q8": 17854
+        },
+        "steps": 402,
+        "duration": 28.236333333333334,
+        "decoded_frames": 847,
+        "video_sha256": "9c20aba403d821a657cc8c0301bc8cf0d200b74cd3f0bf46ea7eccb808e3f0ed",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 477,
+          "scale_percent": 186.33,
+          "shift_x": 0,
+          "shift_y": 21,
+          "height_dm": 15,
+          "target_span": 112,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            7,
+            2,
+            56,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 8017,
+          "source_width": 64,
+          "source_height": 79,
+          "source_footprint_q8": 17854
+        },
+        "steps": 402,
+        "duration": 28.955333333333332,
+        "decoded_frames": 868,
+        "video_sha256": "4c6c0ba1f99ad552affb7b9aaddf8afce002bbd7236cbc802c91d0624733c2d3",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      }
+    },
+    "height_m": 1.5
+  },
+  {
+    "national": 347,
+    "emerald": 390,
+    "name": "Anorith",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 256,
+          "scale_percent": 100.0,
+          "shift_x": 0,
+          "shift_y": -5,
+          "height_dm": 7,
+          "target_span": 53,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            9,
+            9,
+            54,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 8929,
+          "source_width": 45,
+          "source_height": 53,
+          "source_footprint_q8": 11999
+        },
+        "steps": 324,
+        "duration": 28.955333333333332,
+        "decoded_frames": 868,
+        "video_sha256": "4c6c0ba1f99ad552affb7b9aaddf8afce002bbd7236cbc802c91d0624733c2d3",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 411,
+          "scale_percent": 160.55,
+          "shift_x": 0,
+          "shift_y": -11,
+          "height_dm": 7,
+          "target_span": 74,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            9,
+            18,
+            55,
+            62
+          ],
+          "idle_floor": 58,
+          "body_center_y_q8": 10162,
+          "source_width": 46,
+          "source_height": 44,
+          "source_footprint_q8": 11999
+        },
+        "steps": 324,
+        "duration": 28.236333333333334,
+        "decoded_frames": 847,
+        "video_sha256": "9c20aba403d821a657cc8c0301bc8cf0d200b74cd3f0bf46ea7eccb808e3f0ed",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      }
+    },
+    "height_m": 0.7
+  },
+  {
+    "national": 348,
+    "emerald": 391,
+    "name": "Armaldo",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 345,
+          "scale_percent": 134.77,
+          "shift_x": 0,
+          "shift_y": -8,
+          "height_dm": 15,
+          "target_span": 81,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            13,
+            62,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 10058,
+          "source_width": 83,
+          "source_height": 68,
+          "source_footprint_q8": 18751
+        },
+        "steps": 460,
+        "duration": 31.033333333333335,
+        "decoded_frames": 931,
+        "video_sha256": "cf25f9a73dc61a8337a334cc256ed79c7103348725dabfe0f6f2574d71ee889b",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 477,
+          "scale_percent": 186.33,
+          "shift_x": 0,
+          "shift_y": 10,
+          "height_dm": 15,
+          "target_span": 112,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            8,
+            62,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 9563,
+          "source_width": 75,
+          "source_height": 68,
+          "source_footprint_q8": 18751
+        },
+        "steps": 460,
+        "duration": 31.876333333333335,
+        "decoded_frames": 956,
+        "video_sha256": "380b12d95bc6c830a3776888a111a6a3d0aff0a32b3644c2024673cf6a797ffb",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      }
+    },
+    "height_m": 1.5
+  },
+  {
+    "national": 174,
+    "emerald": 174,
+    "name": "Igglybuff",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 251,
+          "scale_percent": 98.05,
+          "shift_x": 0,
+          "shift_y": -6,
+          "height_dm": 3,
+          "target_span": 53,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            5,
+            11,
+            59,
+            62
+          ],
+          "idle_floor": 53,
+          "body_center_y_q8": 9522,
+          "source_width": 54,
+          "source_height": 51,
+          "source_footprint_q8": 13676
+        },
+        "steps": 486,
+        "duration": 31.876333333333335,
+        "decoded_frames": 956,
+        "video_sha256": "380b12d95bc6c830a3776888a111a6a3d0aff0a32b3644c2024673cf6a797ffb",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 300,
+          "scale_percent": 117.19,
+          "shift_x": 0,
+          "shift_y": 8,
+          "height_dm": 3,
+          "target_span": 68,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            3,
+            11,
+            61,
+            62
+          ],
+          "idle_floor": 52,
+          "body_center_y_q8": 9494,
+          "source_width": 58,
+          "source_height": 51,
+          "source_footprint_q8": 13676
+        },
+        "steps": 486,
+        "duration": 31.033333333333335,
+        "decoded_frames": 931,
+        "video_sha256": "cf25f9a73dc61a8337a334cc256ed79c7103348725dabfe0f6f2574d71ee889b",
+        "build_id": "4ec0e4edb35bd030",
+        "binary_sha256": "6649af886e687646e349fb7f1bdd1d091016df23e0641e2624bc26f8701f007f"
+      }
+    },
+    "height_m": 0.3
+  }
+]

@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **130**.
+Totale: **386**. Fatti con dossier completo: **138**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -135,14 +135,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0339 **Barboach** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0339_barboach/).
 - [x] 0340 **Whiscash** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0340_whiscash/).
 - [x] 0341 **Corphish** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0341_corphish/).
-- [ ] 0342 **Crawdaunt** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0342_crawdaunt/).
-- [ ] 0343 **Baltoy** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0343_baltoy/).
-- [ ] 0344 **Claydol** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0344_claydol/).
-- [ ] 0345 **Lileep** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0345_lileep/).
-- [ ] 0346 **Cradily** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0346_cradily/).
-- [ ] 0347 **Anorith** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0347_anorith/).
-- [ ] 0348 **Armaldo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0348_armaldo/).
-- [ ] 0174 **Igglybuff** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0174_igglybuff/).
+- [x] 0342 **Crawdaunt** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0342_crawdaunt/).
+- [x] 0343 **Baltoy** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0343_baltoy/).
+- [x] 0344 **Claydol** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0344_claydol/).
+- [x] 0345 **Lileep** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0345_lileep/).
+- [x] 0346 **Cradily** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0346_cradily/).
+- [x] 0347 **Anorith** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0347_anorith/).
+- [x] 0348 **Armaldo** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0348_armaldo/).
+- [x] 0174 **Igglybuff** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0174_igglybuff/).
 - [ ] 0039 **Jigglypuff** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0039_jigglypuff/).
 - [ ] 0040 **Wigglytuff** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0040_wigglytuff/).
 - [ ] 0349 **Feebas** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0349_feebas/).
