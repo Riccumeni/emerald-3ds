@@ -1,6 +1,6 @@
 # Dieci checkpoint autonomi — 20–29
 
-Completati **8/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 154 Pokémon. Obiettivo: 234. Totale corrente: **218/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
+Completati **9/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 154 Pokémon. Obiettivo: 234. Totale corrente: **226/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
 
 | Checkpoint | Specie | Stato | Prove |
 |---|---|---|---|
@@ -12,7 +12,7 @@ Completati **8/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 154
 | 6/10 (gruppo 25) | Registeel, Latias, Latios, Kyogre, Groudon, Rayquaza, Jirachi, Deoxys | complete | [Dossier, screenshot e video](CHECKPOINT25_REVIEW.md) |
 | 7/10 (gruppo 26) | Bulbasaur, Ivysaur, Venusaur, Charmander, Charmeleon, Charizard, Squirtle, Wartortle | complete | [Dossier, screenshot e video](CHECKPOINT26_REVIEW.md) |
 | 8/10 (gruppo 27) | Blastoise, Caterpie, Metapod, Butterfree, Weedle, Kakuna, Beedrill, Pidgey | complete | [Dossier, screenshot e video](CHECKPOINT27_REVIEW.md) |
-| 9/10 (gruppo 28) | Pidgeotto, Pidgeot, Rattata, Raticate, Spearow, Fearow, Ekans, Arbok | pending | In preparazione/verifica |
+| 9/10 (gruppo 28) | Pidgeotto, Pidgeot, Rattata, Raticate, Spearow, Fearow, Ekans, Arbok | complete | [Dossier, screenshot e video](CHECKPOINT28_REVIEW.md) |
 | 10/10 (gruppo 29) | Nidoran F, Nidorina, Nidoqueen, Nidoran M, Nidorino, Nidoking, Clefairy, Clefable | pending | In preparazione/verifica |
 
 Le specie vengono segnate come fatte soltanto dopo prove front/back e shiny, revisione visiva e verifica dei dossier. Ogni gruppo completo è salvato in un commit dedicato; i messaggi Git identificano il numero di checkpoint. ROM, asset e filmati restano locali secondo la politica artifacts.

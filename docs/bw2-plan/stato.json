@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-29T23:57:58",
+  "aggiornato_il": "2026-10-30T00:17:14",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 218,
+    "pokemon_fatti": 226,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,8 +19,8 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 17,
-    "nome": "Pidgeotto",
+    "id": 29,
+    "nome": "Nidoran F",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
@@ -7685,28 +7685,34 @@
       "costante": "SPECIES_PIDGEOTTO",
       "nome": "Pidgeotto",
       "ordine": 219,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0017_pidgeotto",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0017_pidgeotto/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0017_pidgeotto/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "4ef69d8e0c2c8668d64f7d9182b4b9290f62e631169275f4f6bb2bbf9e3d8cce",
+          "video_sha256": "6de9ee8bcfb8f61a9d522be5f8557ba216ea7f9a999f262dc351a9f681866080"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0017_pidgeotto/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0017_pidgeotto/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "6d7626c4c60c4c847662d0556a7ccff597eb3bf90032e65717d13812d52127b8",
+          "video_sha256": "d4290d02de7faddf248204b73601a2ccd60971b9b1d2fad4e3f9fa18199029a7"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0017_pidgeotto/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0017_pidgeotto/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:16:43",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 18,
@@ -7714,28 +7720,34 @@
       "costante": "SPECIES_PIDGEOT",
       "nome": "Pidgeot",
       "ordine": 220,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0018_pidgeot",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0018_pidgeot/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0018_pidgeot/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "6d7626c4c60c4c847662d0556a7ccff597eb3bf90032e65717d13812d52127b8",
+          "video_sha256": "d4290d02de7faddf248204b73601a2ccd60971b9b1d2fad4e3f9fa18199029a7"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0018_pidgeot/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0018_pidgeot/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "4ef69d8e0c2c8668d64f7d9182b4b9290f62e631169275f4f6bb2bbf9e3d8cce",
+          "video_sha256": "6de9ee8bcfb8f61a9d522be5f8557ba216ea7f9a999f262dc351a9f681866080"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0018_pidgeot/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0018_pidgeot/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:16:44",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 19,
@@ -7743,28 +7755,34 @@
       "costante": "SPECIES_RATTATA",
       "nome": "Rattata",
       "ordine": 221,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0019_rattata",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0019_rattata/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0019_rattata/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "b1535df310ab0843cb8a23b02be5849cdae2059abab777ddd4877be576125f52",
+          "video_sha256": "618f9e11ff5e3b41d9930359dbcda51513cb6cda47e07b21bb7909e686cf7795"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0019_rattata/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0019_rattata/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "e5a79dbad0c76593cfa6a871db95c4438a24c0aecb126d7981bf69899524eb86",
+          "video_sha256": "3ca2417fae8e659339a2d26baa4c5847a0d224242197eef22ef3a5d3fb541bb5"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0019_rattata/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0019_rattata/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:16:45",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 20,
@@ -7772,28 +7790,34 @@
       "costante": "SPECIES_RATICATE",
       "nome": "Raticate",
       "ordine": 222,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0020_raticate",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0020_raticate/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0020_raticate/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "e5a79dbad0c76593cfa6a871db95c4438a24c0aecb126d7981bf69899524eb86",
+          "video_sha256": "3ca2417fae8e659339a2d26baa4c5847a0d224242197eef22ef3a5d3fb541bb5"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0020_raticate/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0020_raticate/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "b1535df310ab0843cb8a23b02be5849cdae2059abab777ddd4877be576125f52",
+          "video_sha256": "618f9e11ff5e3b41d9930359dbcda51513cb6cda47e07b21bb7909e686cf7795"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0020_raticate/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0020_raticate/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:16:45",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 21,
@@ -7801,28 +7825,34 @@
       "costante": "SPECIES_SPEAROW",
       "nome": "Spearow",
       "ordine": 223,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0021_spearow",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0021_spearow/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0021_spearow/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "ef0ee6421a9a6bdb4f2306b662a41f31d41f47b2f63be7c7abbad5f415867086",
+          "video_sha256": "cfb184848230a620c8054cf5fb5b502161a7e4238ef773dcb360b58f867bfa65"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0021_spearow/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0021_spearow/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "ad2a79aa0891f2e5834087c9b4303886e36d86729d643ac928ed2e1ffca2af54",
+          "video_sha256": "c17fc838177479f6b7a6702c97a3face6f0173a6dce8ba9908e4ba26e833a28f"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0021_spearow/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0021_spearow/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:16:46",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 22,
@@ -7830,28 +7860,34 @@
       "costante": "SPECIES_FEAROW",
       "nome": "Fearow",
       "ordine": 224,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0022_fearow",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0022_fearow/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0022_fearow/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "ad2a79aa0891f2e5834087c9b4303886e36d86729d643ac928ed2e1ffca2af54",
+          "video_sha256": "c17fc838177479f6b7a6702c97a3face6f0173a6dce8ba9908e4ba26e833a28f"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0022_fearow/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0022_fearow/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "ef0ee6421a9a6bdb4f2306b662a41f31d41f47b2f63be7c7abbad5f415867086",
+          "video_sha256": "cfb184848230a620c8054cf5fb5b502161a7e4238ef773dcb360b58f867bfa65"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0022_fearow/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0022_fearow/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:16:46",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 23,
@@ -7859,28 +7895,34 @@
       "costante": "SPECIES_EKANS",
       "nome": "Ekans",
       "ordine": 225,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0023_ekans",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0023_ekans/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0023_ekans/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "86ef9af44bd2343db5db7148a61245e962be196068552d016bf412d70e3b701e",
+          "video_sha256": "0260c89485a93f1620ed7b8648254409ba1934ec57db731c374dfc912bec4b9c"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0023_ekans/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0023_ekans/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "c8798979b1c0e49a9bb66c75d86feb32becf812d4e5f8524485da06b98becd68",
+          "video_sha256": "2e89fb1dda3ec61c7f42a54f90fbc47f424224bb42a73d7c337476ce3a366547"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0023_ekans/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0023_ekans/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:16:47",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 24,
@@ -7888,28 +7930,34 @@
       "costante": "SPECIES_ARBOK",
       "nome": "Arbok",
       "ordine": 226,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0024_arbok",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0024_arbok/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0024_arbok/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "c8798979b1c0e49a9bb66c75d86feb32becf812d4e5f8524485da06b98becd68",
+          "video_sha256": "2e89fb1dda3ec61c7f42a54f90fbc47f424224bb42a73d7c337476ce3a366547"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0024_arbok/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0024_arbok/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "1441ec92f9e6b9b6",
+          "screenshot_sha256": "86ef9af44bd2343db5db7148a61245e962be196068552d016bf412d70e3b701e",
+          "video_sha256": "0260c89485a93f1620ed7b8648254409ba1934ec57db731c374dfc912bec4b9c"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0024_arbok/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0024_arbok/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T00:16:48",
+      "build_verificata": "1441ec92f9e6b9b6"
     },
     {
       "numero_nazionale": 29,
@@ -22891,8 +22939,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 16,
-    "nome": "Pidgey"
+    "id": 24,
+    "nome": "Arbok"
   },
-  "checkpoint_note": "Richiesta: checkpoint 20–29, 8/10 conclusi; partenza 154 Pokémon, obiettivo 234; mosse 6/354. Registro AUTONOMOUS20_29.json; helper build/bw2-auto20.py, catture build/bw2-auto20-capture.ps1. Gruppo27 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 28. Build e processi in AUTONOMOUS20_29.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
+  "checkpoint_note": "Richiesta: checkpoint 20–29, 9/10 conclusi; partenza 154 Pokémon, obiettivo 234; mosse 6/354. Registro AUTONOMOUS20_29.json; helper build/bw2-auto20.py, catture build/bw2-auto20-capture.ps1. Gruppo28 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 29. Build e processi in AUTONOMOUS20_29.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
 }

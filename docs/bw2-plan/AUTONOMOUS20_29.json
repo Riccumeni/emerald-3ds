@@ -1,7 +1,7 @@
 {
   "start_pokemon": 154,
   "target_pokemon": 234,
-  "completed_checkpoints": 8,
+  "completed_checkpoints": 9,
   "groups": [
     {
       "number": 20,
@@ -1212,7 +1212,7 @@
     {
       "number": 28,
       "ordinal": 9,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Pidgeotto",
         "Pidgeot",
@@ -1275,7 +1275,81 @@
           "enemy": 23
         }
       ],
-      "artifact_date": "2026-10-29"
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 232,
+      "movie": {
+        "duration": 206.21866666666668,
+        "decoded_frames": 6179,
+        "sha256": "7b550c17a871c7aaab678bb8f9d1a636add0ced159a74745444232e6bdf2687f",
+        "segments": [
+          {
+            "name": "pidgeotto-pidgeot",
+            "start": 0.0,
+            "end": 21.565333333333335,
+            "frames": 646,
+            "sha256": "d4290d02de7faddf248204b73601a2ccd60971b9b1d2fad4e3f9fa18199029a7"
+          },
+          {
+            "name": "pidgeot-pidgeotto",
+            "start": 21.565333333333335,
+            "end": 43.19166666666667,
+            "frames": 648,
+            "sha256": "6de9ee8bcfb8f61a9d522be5f8557ba216ea7f9a999f262dc351a9f681866080"
+          },
+          {
+            "name": "rattata-raticate",
+            "start": 43.19166666666667,
+            "end": 69.428,
+            "frames": 786,
+            "sha256": "3ca2417fae8e659339a2d26baa4c5847a0d224242197eef22ef3a5d3fb541bb5"
+          },
+          {
+            "name": "raticate-rattata",
+            "start": 69.428,
+            "end": 96.24233333333333,
+            "frames": 803,
+            "sha256": "618f9e11ff5e3b41d9930359dbcda51513cb6cda47e07b21bb7909e686cf7795"
+          },
+          {
+            "name": "spearow-fearow",
+            "start": 96.24233333333333,
+            "end": 117.11866666666667,
+            "frames": 626,
+            "sha256": "c17fc838177479f6b7a6702c97a3face6f0173a6dce8ba9908e4ba26e833a28f"
+          },
+          {
+            "name": "fearow-spearow",
+            "start": 117.11866666666667,
+            "end": 138.433,
+            "frames": 638,
+            "sha256": "cfb184848230a620c8054cf5fb5b502161a7e4238ef773dcb360b58f867bfa65"
+          },
+          {
+            "name": "ekans-arbok",
+            "start": 138.433,
+            "end": 172.16933333333333,
+            "frames": 1011,
+            "sha256": "2e89fb1dda3ec61c7f42a54f90fbc47f424224bb42a73d7c337476ce3a366547"
+          },
+          {
+            "name": "arbok-ekans",
+            "start": 172.16933333333333,
+            "end": 206.21866666666668,
+            "frames": 1021,
+            "sha256": "0260c89485a93f1620ed7b8648254409ba1934ec57db731c374dfc912bec4b9c"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 28: eight Pokemon"
     },
     {
       "number": 29,
@@ -1445,9 +1519,9 @@
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "initial_emulator_processes": [],
     "build_script": "build/bw2-auto20-build.sh",
-    "capture_group": 27,
+    "capture_group": 28,
     "exec_session_id": null,
-    "log": "build/bw2-auto20-cp27-capture.log",
+    "log": "build/bw2-auto20-cp28-capture.log",
     "personal_emulator_pid": 2460,
     "continuity": "build/BW2_CONTINUITY20.md",
     "extra_log": "build/bw2-auto20-deoxys-r3-extra-capture.log"

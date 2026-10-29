@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **218**.
+Totale: **386**. Fatti con dossier completo: **226**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -224,14 +224,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0014 **Kakuna** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0014_kakuna/).
 - [x] 0015 **Beedrill** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0015_beedrill/).
 - [x] 0016 **Pidgey** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0016_pidgey/).
-- [ ] 0017 **Pidgeotto** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0017_pidgeotto/).
-- [ ] 0018 **Pidgeot** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0018_pidgeot/).
-- [ ] 0019 **Rattata** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0019_rattata/).
-- [ ] 0020 **Raticate** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0020_raticate/).
-- [ ] 0021 **Spearow** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0021_spearow/).
-- [ ] 0022 **Fearow** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0022_fearow/).
-- [ ] 0023 **Ekans** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0023_ekans/).
-- [ ] 0024 **Arbok** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0024_arbok/).
+- [x] 0017 **Pidgeotto** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0017_pidgeotto/).
+- [x] 0018 **Pidgeot** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0018_pidgeot/).
+- [x] 0019 **Rattata** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0019_rattata/).
+- [x] 0020 **Raticate** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0020_raticate/).
+- [x] 0021 **Spearow** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0021_spearow/).
+- [x] 0022 **Fearow** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0022_fearow/).
+- [x] 0023 **Ekans** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0023_ekans/).
+- [x] 0024 **Arbok** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0024_arbok/).
 - [ ] 0029 **Nidoran F** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0029_nidoran_f/).
 - [ ] 0030 **Nidorina** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0030_nidorina/).
 - [ ] 0031 **Nidoqueen** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0031_nidoqueen/).
