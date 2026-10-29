@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **210**.
+Totale: **386**. Fatti con dossier completo: **218**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -216,14 +216,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0006 **Charizard** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0006_charizard/).
 - [x] 0007 **Squirtle** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0007_squirtle/).
 - [x] 0008 **Wartortle** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0008_wartortle/).
-- [ ] 0009 **Blastoise** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0009_blastoise/).
-- [ ] 0010 **Caterpie** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0010_caterpie/).
-- [ ] 0011 **Metapod** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0011_metapod/).
-- [ ] 0012 **Butterfree** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0012_butterfree/).
-- [ ] 0013 **Weedle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0013_weedle/).
-- [ ] 0014 **Kakuna** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0014_kakuna/).
-- [ ] 0015 **Beedrill** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0015_beedrill/).
-- [ ] 0016 **Pidgey** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0016_pidgey/).
+- [x] 0009 **Blastoise** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0009_blastoise/).
+- [x] 0010 **Caterpie** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0010_caterpie/).
+- [x] 0011 **Metapod** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0011_metapod/).
+- [x] 0012 **Butterfree** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0012_butterfree/).
+- [x] 0013 **Weedle** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0013_weedle/).
+- [x] 0014 **Kakuna** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0014_kakuna/).
+- [x] 0015 **Beedrill** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0015_beedrill/).
+- [x] 0016 **Pidgey** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0016_pidgey/).
 - [ ] 0017 **Pidgeotto** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0017_pidgeotto/).
 - [ ] 0018 **Pidgeot** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0018_pidgeot/).
 - [ ] 0019 **Rattata** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0019_rattata/).

@@ -1,7 +1,7 @@
 {
   "start_pokemon": 154,
   "target_pokemon": 234,
-  "completed_checkpoints": 7,
+  "completed_checkpoints": 8,
   "groups": [
     {
       "number": 20,
@@ -1070,7 +1070,7 @@
     {
       "number": 27,
       "ordinal": 8,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Blastoise",
         "Caterpie",
@@ -1133,7 +1133,81 @@
           "enemy": 15
         }
       ],
-      "artifact_date": "2026-10-29"
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 224,
+      "movie": {
+        "duration": 238.79866666666666,
+        "decoded_frames": 7153,
+        "sha256": "24a42db8a70f601a49fdf93756b86c65f3bf2c8fba2f640b84a6feef7b274812",
+        "segments": [
+          {
+            "name": "blastoise-caterpie",
+            "start": 0.0,
+            "end": 41.93933333333333,
+            "frames": 1257,
+            "sha256": "9a01a5d3db2dd4b9cdd22e15c0d8fb417ab6ad0629202bfc37ecce260ce6794c"
+          },
+          {
+            "name": "caterpie-blastoise",
+            "start": 41.93933333333333,
+            "end": 82.56666666666666,
+            "frames": 1218,
+            "sha256": "3de22b762aa890347bf0f09f85ab36fa2bdf17947dd5fa0c4482777f856b6202"
+          },
+          {
+            "name": "metapod-butterfree",
+            "start": 82.56666666666666,
+            "end": 109.49,
+            "frames": 806,
+            "sha256": "38a8897497ed78f4351a896c6e3d35c4adac6c3b09077a5588b59cbe334f9823"
+          },
+          {
+            "name": "butterfree-metapod",
+            "start": 109.49,
+            "end": 136.63333333333333,
+            "frames": 813,
+            "sha256": "bfd893b2fc6ffd421a61ff513bd48979700e09c43866bdbc5b4d40ef0a42bbc9"
+          },
+          {
+            "name": "weedle-kakuna",
+            "start": 136.63333333333333,
+            "end": 163.83866666666665,
+            "frames": 815,
+            "sha256": "1eff9af170a587a8b3f7b8a74da20396c6079edf980bd4ca5d4815afda9387e1"
+          },
+          {
+            "name": "kakuna-weedle",
+            "start": 163.83866666666665,
+            "end": 191.45,
+            "frames": 826,
+            "sha256": "7407acfdec75a2edd1ba967ca529c031f92a9e527a9c1cb785831538743ee809"
+          },
+          {
+            "name": "beedrill-pidgey",
+            "start": 191.45,
+            "end": 215.32733333333334,
+            "frames": 715,
+            "sha256": "3289b3e46e3d05bf68bed33753ebafcdfbf1d47ef4a16c4116a0cbf0f05a9129"
+          },
+          {
+            "name": "pidgey-beedrill",
+            "start": 215.32733333333334,
+            "end": 238.79866666666666,
+            "frames": 703,
+            "sha256": "ec57ea66d0afb882b9884f7e80472fc6e086d851dc0f9e8c32779cc0872815de"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 27: eight Pokemon"
     },
     {
       "number": 28,
@@ -1367,13 +1441,13 @@
     }
   ],
   "runtime": {
-    "phase": "group26 serial normal/shiny captures; checkpoint25 complete with Deoxys gate and native Spinda regression",
+    "phase": "serial native captures and visual review",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "initial_emulator_processes": [],
     "build_script": "build/bw2-auto20-build.sh",
-    "capture_group": 26,
-    "exec_session_id": 61779,
-    "log": "build/bw2-auto20-cp26-capture.log",
+    "capture_group": 27,
+    "exec_session_id": null,
+    "log": "build/bw2-auto20-cp27-capture.log",
     "personal_emulator_pid": 2460,
     "continuity": "build/BW2_CONTINUITY20.md",
     "extra_log": "build/bw2-auto20-deoxys-r3-extra-capture.log"
