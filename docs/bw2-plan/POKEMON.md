@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **178**.
+Totale: **386**. Fatti con dossier completo: **186**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -184,14 +184,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0366 **Clamperl** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0366_clamperl/).
 - [x] 0367 **Huntail** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0367_huntail/).
 - [x] 0368 **Gorebyss** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0368_gorebyss/).
-- [ ] 0369 **Relicanth** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0369_relicanth/).
-- [ ] 0222 **Corsola** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0222_corsola/).
-- [ ] 0170 **Chinchou** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0170_chinchou/).
-- [ ] 0171 **Lanturn** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0171_lanturn/).
-- [ ] 0370 **Luvdisc** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0370_luvdisc/).
-- [ ] 0116 **Horsea** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0116_horsea/).
-- [ ] 0117 **Seadra** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0117_seadra/).
-- [ ] 0230 **Kingdra** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0230_kingdra/).
+- [x] 0369 **Relicanth** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0369_relicanth/).
+- [x] 0222 **Corsola** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0222_corsola/).
+- [x] 0170 **Chinchou** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0170_chinchou/).
+- [x] 0171 **Lanturn** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0171_lanturn/).
+- [x] 0370 **Luvdisc** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0370_luvdisc/).
+- [x] 0116 **Horsea** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0116_horsea/).
+- [x] 0117 **Seadra** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0117_seadra/).
+- [x] 0230 **Kingdra** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0230_kingdra/).
 - [ ] 0371 **Bagon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0371_bagon/).
 - [ ] 0372 **Shelgon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0372_shelgon/).
 - [ ] 0373 **Salamence** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0373_salamence/).

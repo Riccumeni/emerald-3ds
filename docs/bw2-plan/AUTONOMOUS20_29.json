@@ -1,7 +1,7 @@
 {
   "start_pokemon": 154,
   "target_pokemon": 234,
-  "completed_checkpoints": 3,
+  "completed_checkpoints": 4,
   "groups": [
     {
       "number": 20,
@@ -432,7 +432,7 @@
     {
       "number": 23,
       "ordinal": 4,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Relicanth",
         "Corsola",
@@ -495,7 +495,81 @@
           "enemy": 117
         }
       ],
-      "artifact_date": "2026-10-29"
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 192,
+      "movie": {
+        "duration": 203.04866666666666,
+        "decoded_frames": 6090,
+        "sha256": "89ce14df8b3cf41e5b12b18594064185c02c4a3668300f69f7e5ab3c51106f30",
+        "segments": [
+          {
+            "name": "relicanth-corsola",
+            "start": 0.0,
+            "end": 26.408333333333335,
+            "frames": 792,
+            "sha256": "60a442eeaad58a846e2e5eacf8f623ce92117936b10eac41648992e0e9fb167f"
+          },
+          {
+            "name": "corsola-relicanth",
+            "start": 26.408333333333335,
+            "end": 52.910666666666664,
+            "frames": 795,
+            "sha256": "fd209d41d278ee7122395c26e99f962b1ded1f3ae07f617b1d6ebe047783797a"
+          },
+          {
+            "name": "chinchou-lanturn",
+            "start": 52.910666666666664,
+            "end": 80.288,
+            "frames": 821,
+            "sha256": "d258867fdf1c8151a214c865dc0c24911285818dbaf4f7687e6b407ee283a007"
+          },
+          {
+            "name": "lanturn-chinchou",
+            "start": 80.288,
+            "end": 108.22733333333333,
+            "frames": 838,
+            "sha256": "978806a231bcd39b7ee2a717f6bcd79d3ada3235749d9391458f028f66852956"
+          },
+          {
+            "name": "luvdisc-horsea",
+            "start": 108.22733333333333,
+            "end": 133.69766666666666,
+            "frames": 764,
+            "sha256": "38a22678f7810d957804cca1f9de17dfe47ea85c842e69e9ed0ef2f4bcb78de8"
+          },
+          {
+            "name": "horsea-luvdisc",
+            "start": 133.69766666666666,
+            "end": 159.575,
+            "frames": 776,
+            "sha256": "b233e8ed07004dfa30f09b0fa8f971bcb7612706aad8697d62b3dbbc24e98cc4"
+          },
+          {
+            "name": "seadra-kingdra",
+            "start": 159.575,
+            "end": 181.04633333333334,
+            "frames": 644,
+            "sha256": "850030c9a5ada5a1a9886da43a784d4e3b8c16b07412954ecb8e85d509cf3769"
+          },
+          {
+            "name": "kingdra-seadra",
+            "start": 181.04633333333334,
+            "end": 203.04866666666666,
+            "frames": 660,
+            "sha256": "f3b3d109c7977210d9fa3b0e34cbaf87f78e84e221d822195718839c7388e5dc"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 23: eight Pokemon"
     },
     {
       "number": 24,
@@ -947,14 +1021,15 @@
     }
   ],
   "runtime": {
-    "phase": "serial native captures; Deoxys draft tested but NOT APPLIED; apply before group25",
+    "phase": "serial native captures and visual review",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "initial_emulator_processes": [],
     "build_script": "build/bw2-auto20-build.sh",
-    "capture_group": 22,
-    "exec_session_id": 23273,
-    "log": "build/bw2-auto20-cp22-capture.log",
-    "personal_emulator_pid": 2460
+    "capture_group": 23,
+    "exec_session_id": 25325,
+    "log": "build/bw2-auto20-cp23-capture.log",
+    "personal_emulator_pid": 2460,
+    "continuity": "build/BW2_CONTINUITY20.md"
   },
   "checks": {
     "exporter_tests": 18,
