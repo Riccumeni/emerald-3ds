@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **122**.
+Totale: **386**. Fatti con dossier completo: **130**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -127,14 +127,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0331 **Cacnea** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0331_cacnea/).
 - [x] 0332 **Cacturne** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0332_cacturne/).
 - [x] 0333 **Swablu** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0333_swablu/).
-- [ ] 0334 **Altaria** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0334_altaria/).
-- [ ] 0335 **Zangoose** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0335_zangoose/).
-- [ ] 0336 **Seviper** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0336_seviper/).
-- [ ] 0337 **Lunatone** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0337_lunatone/).
-- [ ] 0338 **Solrock** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0338_solrock/).
-- [ ] 0339 **Barboach** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0339_barboach/).
-- [ ] 0340 **Whiscash** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0340_whiscash/).
-- [ ] 0341 **Corphish** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0341_corphish/).
+- [x] 0334 **Altaria** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0334_altaria/).
+- [x] 0335 **Zangoose** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0335_zangoose/).
+- [x] 0336 **Seviper** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0336_seviper/).
+- [x] 0337 **Lunatone** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0337_lunatone/).
+- [x] 0338 **Solrock** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0338_solrock/).
+- [x] 0339 **Barboach** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0339_barboach/).
+- [x] 0340 **Whiscash** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0340_whiscash/).
+- [x] 0341 **Corphish** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0341_corphish/).
 - [ ] 0342 **Crawdaunt** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0342_crawdaunt/).
 - [ ] 0343 **Baltoy** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0343_baltoy/).
 - [ ] 0344 **Claydol** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0344_claydol/).
