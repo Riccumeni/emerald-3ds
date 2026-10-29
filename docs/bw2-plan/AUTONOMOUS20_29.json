@@ -1,7 +1,7 @@
 {
   "start_pokemon": 154,
   "target_pokemon": 234,
-  "completed_checkpoints": 6,
+  "completed_checkpoints": 7,
   "groups": [
     {
       "number": 20,
@@ -928,7 +928,7 @@
     {
       "number": 26,
       "ordinal": 7,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Bulbasaur",
         "Ivysaur",
@@ -991,7 +991,81 @@
           "enemy": 7
         }
       ],
-      "artifact_date": "2026-10-29"
+      "artifact_date": "2026-10-29",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 216,
+      "movie": {
+        "duration": 227.92166666666665,
+        "decoded_frames": 6830,
+        "sha256": "92528f3b084cff3f0add034aa7fa2144a6857ae88ff2de58b2348e76f90ec47f",
+        "segments": [
+          {
+            "name": "bulbasaur-ivysaur",
+            "start": 0.0,
+            "end": 25.971333333333334,
+            "frames": 778,
+            "sha256": "eed6e6bd69bae5750e0566a0a24d356bcaaac0e421801dc83d1e6ebfb360f02a"
+          },
+          {
+            "name": "ivysaur-bulbasaur",
+            "start": 25.971333333333334,
+            "end": 51.550666666666665,
+            "frames": 766,
+            "sha256": "77d94048eca91bed1b9490896a680a88ab3abe799d1e9801322021b56c247d9b"
+          },
+          {
+            "name": "venusaur-charmander",
+            "start": 51.550666666666665,
+            "end": 85.912,
+            "frames": 1030,
+            "sha256": "0c01fcfbb872ba02b57c7834c3db3450a4371e5e80cc6fab0c1fa401d5254050"
+          },
+          {
+            "name": "charmander-venusaur",
+            "start": 85.912,
+            "end": 120.50733333333334,
+            "frames": 1037,
+            "sha256": "117d0cf412c394af2e7b28b6a694cea7dd4c9138cf49f02aeccb1b513a1fb290"
+          },
+          {
+            "name": "charmeleon-charizard",
+            "start": 120.50733333333334,
+            "end": 149.29066666666668,
+            "frames": 863,
+            "sha256": "a50cbf69227d7685bdc54311784cab99e26667941e5552fe143f6fe87e526faf"
+          },
+          {
+            "name": "charizard-charmeleon",
+            "start": 149.29066666666668,
+            "end": 179.699,
+            "frames": 911,
+            "sha256": "bbcba4b64518b35de997c561cd5f5daa25f4445388114e43bd594d87929a1317"
+          },
+          {
+            "name": "squirtle-wartortle",
+            "start": 179.699,
+            "end": 203.32533333333333,
+            "frames": 708,
+            "sha256": "727874c09111764941dc61a9071e4a08118626ff9634f5b4c771a6ef987be07c"
+          },
+          {
+            "name": "wartortle-squirtle",
+            "start": 203.32533333333333,
+            "end": 227.92166666666665,
+            "frames": 737,
+            "sha256": "d8341b0a114c02ff064d425feb7ce07cde6696fb1d9942ca937ee9531281e269"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 26: eight Pokemon"
     },
     {
       "number": 27,
@@ -1293,13 +1367,13 @@
     }
   ],
   "runtime": {
-    "phase": "group25 reviewed and audited; all native forms, Transform normal/shiny and Spinda regression passed; commit pending",
+    "phase": "group26 serial normal/shiny captures; checkpoint25 complete with Deoxys gate and native Spinda regression",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "initial_emulator_processes": [],
     "build_script": "build/bw2-auto20-build.sh",
-    "capture_group": 25,
-    "exec_session_id": null,
-    "log": "build/bw2-auto20-cp25-r3-capture.log",
+    "capture_group": 26,
+    "exec_session_id": 61779,
+    "log": "build/bw2-auto20-cp26-capture.log",
     "personal_emulator_pid": 2460,
     "continuity": "build/BW2_CONTINUITY20.md",
     "extra_log": "build/bw2-auto20-deoxys-r3-extra-capture.log"

@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **202**.
+Totale: **386**. Fatti con dossier completo: **210**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -208,14 +208,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0384 **Rayquaza** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0384_rayquaza/).
 - [x] 0385 **Jirachi** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0385_jirachi/).
 - [x] 0386 **Deoxys** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0386_deoxys/).
-- [ ] 0001 **Bulbasaur** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0001_bulbasaur/).
-- [ ] 0002 **Ivysaur** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0002_ivysaur/).
-- [ ] 0003 **Venusaur** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0003_venusaur/).
-- [ ] 0004 **Charmander** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0004_charmander/).
-- [ ] 0005 **Charmeleon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0005_charmeleon/).
-- [ ] 0006 **Charizard** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0006_charizard/).
-- [ ] 0007 **Squirtle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0007_squirtle/).
-- [ ] 0008 **Wartortle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0008_wartortle/).
+- [x] 0001 **Bulbasaur** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0001_bulbasaur/).
+- [x] 0002 **Ivysaur** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0002_ivysaur/).
+- [x] 0003 **Venusaur** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0003_venusaur/).
+- [x] 0004 **Charmander** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0004_charmander/).
+- [x] 0005 **Charmeleon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0005_charmeleon/).
+- [x] 0006 **Charizard** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0006_charizard/).
+- [x] 0007 **Squirtle** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0007_squirtle/).
+- [x] 0008 **Wartortle** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0008_wartortle/).
 - [ ] 0009 **Blastoise** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0009_blastoise/).
 - [ ] 0010 **Caterpie** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0010_caterpie/).
 - [ ] 0011 **Metapod** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0011_metapod/).
