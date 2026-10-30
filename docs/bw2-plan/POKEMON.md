@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **266**.
+Totale: **386**. Fatti con dossier completo: **274**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -272,14 +272,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0094 **Gengar** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0094_gengar/).
 - [x] 0095 **Onix** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0095_onix/).
 - [x] 0096 **Drowzee** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0096_drowzee/).
-- [ ] 0097 **Hypno** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0097_hypno/).
-- [ ] 0098 **Krabby** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0098_krabby/).
-- [ ] 0099 **Kingler** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0099_kingler/).
-- [ ] 0102 **Exeggcute** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0102_exeggcute/).
-- [ ] 0103 **Exeggutor** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0103_exeggutor/).
-- [ ] 0104 **Cubone** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0104_cubone/).
-- [ ] 0105 **Marowak** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0105_marowak/).
-- [ ] 0106 **Hitmonlee** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0106_hitmonlee/).
+- [x] 0097 **Hypno** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0097_hypno/).
+- [x] 0098 **Krabby** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0098_krabby/).
+- [x] 0099 **Kingler** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0099_kingler/).
+- [x] 0102 **Exeggcute** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0102_exeggcute/).
+- [x] 0103 **Exeggutor** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0103_exeggutor/).
+- [x] 0104 **Cubone** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0104_cubone/).
+- [x] 0105 **Marowak** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0105_marowak/).
+- [x] 0106 **Hitmonlee** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0106_hitmonlee/).
 - [ ] 0107 **Hitmonchan** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0107_hitmonchan/).
 - [ ] 0108 **Lickitung** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0108_lickitung/).
 - [ ] 0113 **Chansey** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0113_chansey/).
