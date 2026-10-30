@@ -1,7 +1,7 @@
 {
   "start_pokemon": 314,
   "target_pokemon": 386,
-  "completed_checkpoints": 1,
+  "completed_checkpoints": 2,
   "groups": [
     {
       "number": 40,
@@ -148,7 +148,7 @@
     {
       "number": 41,
       "ordinal": 2,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Ariados",
         "Cleffa",
@@ -211,7 +211,81 @@
           "enemy": 181
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 336,
+      "movie": {
+        "duration": 193.92166666666665,
+        "decoded_frames": 5815,
+        "sha256": "04b03ae820cae912f5d38fb7361a2505f4d9997fdc13ebef9ecba014d54ef251",
+        "segments": [
+          {
+            "name": "ariados-cleffa",
+            "start": 0.0,
+            "end": 20.658333333333335,
+            "frames": 619,
+            "sha256": "ddf9afb3e02a9f8125d6039582fd8387c206e139581041f7237f8c45791304a0"
+          },
+          {
+            "name": "cleffa-ariados",
+            "start": 20.658333333333335,
+            "end": 42.23866666666667,
+            "frames": 647,
+            "sha256": "754f44d8f278b3ea10bf5cafb577424553c92e0ca63e021bce55827e5c293c4d"
+          },
+          {
+            "name": "togepi-togetic",
+            "start": 42.23866666666667,
+            "end": 67.443,
+            "frames": 756,
+            "sha256": "3fb5b24ede4fdca49ee713725edcf904c16400556d2ed577b1d23ee8897a917b"
+          },
+          {
+            "name": "togetic-togepi",
+            "start": 67.443,
+            "end": 94.35133333333333,
+            "frames": 807,
+            "sha256": "261eef1b9ba92fc2b48a2a1f6122395db1ca2e01ac694937865b065d50680626"
+          },
+          {
+            "name": "mareep-flaaffy",
+            "start": 94.35133333333333,
+            "end": 120.29066666666667,
+            "frames": 778,
+            "sha256": "4bf2c4520db6ab4e26f78d3438ac35f726a8706a5b79b704b5ad5579a26302d8"
+          },
+          {
+            "name": "flaaffy-mareep",
+            "start": 120.29066666666667,
+            "end": 147.23,
+            "frames": 808,
+            "sha256": "131aab7cb5522ad9002825cf217b0496476c04539a2b65b2675fd1165155a370"
+          },
+          {
+            "name": "ampharos-sudowoodo",
+            "start": 147.23,
+            "end": 171.10733333333334,
+            "frames": 716,
+            "sha256": "b5f60145ec68bda529361cee661da8e7642abe98ee67d4f45153c9b6c944e9a3"
+          },
+          {
+            "name": "sudowoodo-ampharos",
+            "start": 171.10733333333334,
+            "end": 193.92166666666665,
+            "frames": 684,
+            "sha256": "d16387f3d4ad374e7b3eb7a3e16fc3e6cc7099f698ebf46b2e904199d3bc8e34"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 41: eight Pokemon"
     },
     {
       "number": 42,
@@ -729,7 +803,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint40: reviewed, published and audited; commit follows",
+    "phase": "checkpoint41: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -740,9 +814,9 @@
         "CommandLine": "\"D:\\Emulators\\Azahar\\azahar.exe\" "
       }
     ],
-    "capture_group": 40,
+    "capture_group": 41,
     "exec_session_id": null,
-    "log": "build/bw2-auto40-cp40-capture.log",
+    "log": "build/bw2-auto40-cp41-capture.log",
     "build_script": "build/bw2-auto40-build.sh"
   },
   "checks": {

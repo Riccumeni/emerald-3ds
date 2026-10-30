@@ -1,0 +1,562 @@
+[
+  {
+    "national": 168,
+    "emerald": 168,
+    "name": "Ariados",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 256,
+          "scale_percent": 100.0,
+          "shift_x": 0,
+          "shift_y": -3,
+          "height_dm": 11,
+          "target_span": 60,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            2,
+            14,
+            62,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 10738,
+          "source_width": 64,
+          "source_height": 51,
+          "source_footprint_q8": 13554,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 160,
+        "duration": 21.564333333333334,
+        "decoded_frames": 647,
+        "video_sha256": "754f44d8f278b3ea10bf5cafb577424553c92e0ca63e021bce55827e5c293c4d",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 406,
+          "scale_percent": 158.59,
+          "shift_x": 0,
+          "shift_y": -6,
+          "height_dm": 11,
+          "target_span": 89,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            4,
+            19,
+            60,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 11414,
+          "source_width": 56,
+          "source_height": 43,
+          "source_footprint_q8": 13554,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 160,
+        "duration": 20.642333333333333,
+        "decoded_frames": 619,
+        "video_sha256": "ddf9afb3e02a9f8125d6039582fd8387c206e139581041f7237f8c45791304a0",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      }
+    },
+    "height_m": 1.1
+  },
+  {
+    "national": 173,
+    "emerald": 173,
+    "name": "Cleffa",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 282,
+          "scale_percent": 110.16,
+          "shift_x": 0,
+          "shift_y": -18,
+          "height_dm": 3,
+          "target_span": 42,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            13,
+            29,
+            51,
+            62
+          ],
+          "idle_floor": 60,
+          "body_center_y_q8": 11905,
+          "source_width": 38,
+          "source_height": 33,
+          "source_footprint_q8": 9124,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 216,
+        "duration": 20.642333333333333,
+        "decoded_frames": 619,
+        "video_sha256": "ddf9afb3e02a9f8125d6039582fd8387c206e139581041f7237f8c45791304a0",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 354,
+          "scale_percent": 138.28,
+          "shift_x": 0,
+          "shift_y": -10,
+          "height_dm": 3,
+          "target_span": 54,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            12,
+            29,
+            51,
+            62
+          ],
+          "idle_floor": 60,
+          "body_center_y_q8": 11793,
+          "source_width": 39,
+          "source_height": 33,
+          "source_footprint_q8": 9124,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 216,
+        "duration": 21.564333333333334,
+        "decoded_frames": 647,
+        "video_sha256": "754f44d8f278b3ea10bf5cafb577424553c92e0ca63e021bce55827e5c293c4d",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      }
+    },
+    "height_m": 0.3
+  },
+  {
+    "national": 175,
+    "emerald": 175,
+    "name": "Togepi",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 268,
+          "scale_percent": 104.69,
+          "shift_x": 0,
+          "shift_y": -18,
+          "height_dm": 3,
+          "target_span": 42,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            12,
+            24,
+            52,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 11315,
+          "source_width": 40,
+          "source_height": 38,
+          "source_footprint_q8": 9788,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 324,
+        "duration": 26.908333333333335,
+        "decoded_frames": 807,
+        "video_sha256": "261eef1b9ba92fc2b48a2a1f6122395db1ca2e01ac694937865b065d50680626",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 363,
+          "scale_percent": 141.8,
+          "shift_x": 0,
+          "shift_y": -10,
+          "height_dm": 3,
+          "target_span": 54,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            13,
+            24,
+            50,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 11510,
+          "source_width": 37,
+          "source_height": 38,
+          "source_footprint_q8": 9788,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 324,
+        "duration": 25.189333333333334,
+        "decoded_frames": 756,
+        "video_sha256": "3fb5b24ede4fdca49ee713725edcf904c16400556d2ed577b1d23ee8897a917b",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      }
+    },
+    "height_m": 0.3
+  },
+  {
+    "national": 176,
+    "emerald": 176,
+    "name": "Togetic",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 273,
+          "scale_percent": 106.64,
+          "shift_x": 0,
+          "shift_y": -8,
+          "height_dm": 6,
+          "target_span": 64,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            17,
+            2,
+            46,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 9691,
+          "source_width": 34,
+          "source_height": 70,
+          "source_footprint_q8": 12890,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 324,
+        "duration": 25.189333333333334,
+        "decoded_frames": 756,
+        "video_sha256": "3fb5b24ede4fdca49ee713725edcf904c16400556d2ed577b1d23ee8897a917b",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 366,
+          "scale_percent": 142.97,
+          "shift_x": 0,
+          "shift_y": 9,
+          "height_dm": 6,
+          "target_span": 86,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            17,
+            2,
+            47,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 9547,
+          "source_width": 37,
+          "source_height": 73,
+          "source_footprint_q8": 12890,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 324,
+        "duration": 26.908333333333335,
+        "decoded_frames": 807,
+        "video_sha256": "261eef1b9ba92fc2b48a2a1f6122395db1ca2e01ac694937865b065d50680626",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      }
+    },
+    "height_m": 0.6
+  },
+  {
+    "national": 179,
+    "emerald": 179,
+    "name": "Mareep",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 266,
+          "scale_percent": 103.91,
+          "shift_x": 0,
+          "shift_y": -15,
+          "height_dm": 6,
+          "target_span": 51,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            7,
+            21,
+            56,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 10564,
+          "source_width": 49,
+          "source_height": 41,
+          "source_footprint_q8": 11474,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 324,
+        "duration": 26.908333333333335,
+        "decoded_frames": 808,
+        "video_sha256": "131aab7cb5522ad9002825cf217b0496476c04539a2b65b2675fd1165155a370",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 355,
+          "scale_percent": 138.67,
+          "shift_x": 0,
+          "shift_y": 3,
+          "height_dm": 6,
+          "target_span": 68,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            7,
+            21,
+            56,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 10486,
+          "source_width": 49,
+          "source_height": 41,
+          "source_footprint_q8": 11474,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 324,
+        "duration": 25.908333333333335,
+        "decoded_frames": 778,
+        "video_sha256": "4bf2c4520db6ab4e26f78d3438ac35f726a8706a5b79b704b5ad5579a26302d8",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      }
+    },
+    "height_m": 0.6
+  },
+  {
+    "national": 180,
+    "emerald": 180,
+    "name": "Flaaffy",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 270,
+          "scale_percent": 105.47,
+          "shift_x": 0,
+          "shift_y": -9,
+          "height_dm": 8,
+          "target_span": 55,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            9,
+            10,
+            55,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 9391,
+          "source_width": 46,
+          "source_height": 52,
+          "source_footprint_q8": 12382,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 360,
+        "duration": 25.908333333333335,
+        "decoded_frames": 778,
+        "video_sha256": "4bf2c4520db6ab4e26f78d3438ac35f726a8706a5b79b704b5ad5579a26302d8",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 393,
+          "scale_percent": 153.52,
+          "shift_x": 0,
+          "shift_y": 7,
+          "height_dm": 8,
+          "target_span": 80,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            10,
+            10,
+            54,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 9586,
+          "source_width": 44,
+          "source_height": 52,
+          "source_footprint_q8": 12382,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 360,
+        "duration": 26.908333333333335,
+        "decoded_frames": 808,
+        "video_sha256": "131aab7cb5522ad9002825cf217b0496476c04539a2b65b2675fd1165155a370",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      }
+    },
+    "height_m": 0.8
+  },
+  {
+    "national": 181,
+    "emerald": 181,
+    "name": "Ampharos",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 341,
+          "scale_percent": 133.2,
+          "shift_x": 0,
+          "shift_y": -12,
+          "height_dm": 14,
+          "target_span": 80,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            4,
+            2,
+            59,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 8922,
+          "source_width": 61,
+          "source_height": 67,
+          "source_footprint_q8": 16501,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 252,
+        "duration": 22.798333333333332,
+        "decoded_frames": 684,
+        "video_sha256": "d16387f3d4ad374e7b3eb7a3e16fc3e6cc7099f698ebf46b2e904199d3bc8e34",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 477,
+          "scale_percent": 186.33,
+          "shift_x": 0,
+          "shift_y": 13,
+          "height_dm": 14,
+          "target_span": 112,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            4,
+            62,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 9647,
+          "source_width": 66,
+          "source_height": 64,
+          "source_footprint_q8": 16501,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 252,
+        "duration": 23.861333333333334,
+        "decoded_frames": 716,
+        "video_sha256": "b5f60145ec68bda529361cee661da8e7642abe98ee67d4f45153c9b6c944e9a3",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      }
+    },
+    "height_m": 1.4
+  },
+  {
+    "national": 185,
+    "emerald": 185,
+    "name": "Sudowoodo",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 328,
+          "scale_percent": 128.12,
+          "shift_x": 0,
+          "shift_y": -12,
+          "height_dm": 12,
+          "target_span": 77,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            9,
+            62,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 9159,
+          "source_width": 66,
+          "source_height": 58,
+          "source_footprint_q8": 15675,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 256,
+        "duration": 23.861333333333334,
+        "decoded_frames": 716,
+        "video_sha256": "b5f60145ec68bda529361cee661da8e7642abe98ee67d4f45153c9b6c944e9a3",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 477,
+          "scale_percent": 186.33,
+          "shift_x": 0,
+          "shift_y": 5,
+          "height_dm": 12,
+          "target_span": 112,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            14,
+            62,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 9812,
+          "source_width": 68,
+          "source_height": 54,
+          "source_footprint_q8": 15675,
+          "form": 0,
+          "game_form": 0
+        },
+        "steps": 256,
+        "duration": 22.798333333333332,
+        "decoded_frames": 684,
+        "video_sha256": "d16387f3d4ad374e7b3eb7a3e16fc3e6cc7099f698ebf46b2e904199d3bc8e34",
+        "build_id": "5f8ed2ae5815137f",
+        "binary_sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0"
+      }
+    },
+    "height_m": 1.2
+  }
+]

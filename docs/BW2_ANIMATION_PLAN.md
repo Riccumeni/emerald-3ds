@@ -67,7 +67,7 @@ Avanzamento corrente (aggiornato insieme alle checklist):
 
 | Ambito | Totale | Prototipo implementato | Fatto con tutte le prove |
 |---|---:|---:|---:|
-| Pokémon | 386 | 2: Treecko, Poochyena | 322 |
+| Pokémon | 386 | 2: Treecko, Poochyena | 330 |
 | Mosse | 354 | 4: Pound, Tackle, Leer, Howl | 6 |
 
 Dal 28 ottobre 2026 le correzioni fisse di Treecko e Poochyena sono sostituite

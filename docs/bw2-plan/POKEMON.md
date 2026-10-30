@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **322**.
+Totale: **386**. Fatti con dossier completo: **330**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -328,14 +328,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0165 **Ledyba** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0165_ledyba/).
 - [x] 0166 **Ledian** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0166_ledian/).
 - [x] 0167 **Spinarak** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0167_spinarak/).
-- [ ] 0168 **Ariados** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0168_ariados/).
-- [ ] 0173 **Cleffa** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0173_cleffa/).
-- [ ] 0175 **Togepi** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0175_togepi/).
-- [ ] 0176 **Togetic** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0176_togetic/).
-- [ ] 0179 **Mareep** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0179_mareep/).
-- [ ] 0180 **Flaaffy** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0180_flaaffy/).
-- [ ] 0181 **Ampharos** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0181_ampharos/).
-- [ ] 0185 **Sudowoodo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0185_sudowoodo/).
+- [x] 0168 **Ariados** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0168_ariados/).
+- [x] 0173 **Cleffa** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0173_cleffa/).
+- [x] 0175 **Togepi** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0175_togepi/).
+- [x] 0176 **Togetic** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0176_togetic/).
+- [x] 0179 **Mareep** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0179_mareep/).
+- [x] 0180 **Flaaffy** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0180_flaaffy/).
+- [x] 0181 **Ampharos** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0181_ampharos/).
+- [x] 0185 **Sudowoodo** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0185_sudowoodo/).
 - [ ] 0186 **Politoed** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0186_politoed/).
 - [ ] 0187 **Hoppip** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0187_hoppip/).
 - [ ] 0188 **Skiploom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0188_skiploom/).
