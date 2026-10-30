@@ -1,7 +1,7 @@
 {
   "start_pokemon": 314,
   "target_pokemon": 386,
-  "completed_checkpoints": 8,
+  "completed_checkpoints": 9,
   "groups": [
     {
       "number": 40,
@@ -1142,7 +1142,7 @@
     {
       "number": 48,
       "ordinal": 9,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Entei",
         "Suicune",
@@ -1205,7 +1205,81 @@
           "enemy": 250
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 392,
+      "movie": {
+        "duration": 239.37566666666666,
+        "decoded_frames": 7179,
+        "sha256": "994e7c92edd9e5d3b299795761bdf9b2c04d1b5cf7dc2c087bb5848f421490bc",
+        "segments": [
+          {
+            "name": "entei-suicune",
+            "start": 0.0,
+            "end": 30.345333333333333,
+            "frames": 910,
+            "sha256": "d9f3211ceb8b58482fdf225e7b7f63aebef7658e09b365a55c21efac7ba8c674"
+          },
+          {
+            "name": "suicune-entei",
+            "start": 30.345333333333333,
+            "end": 60.315666666666665,
+            "frames": 899,
+            "sha256": "1989d712450559620504d627c9232670f263c64b1bf8567d3dbea7cb83233f23"
+          },
+          {
+            "name": "larvitar-pupitar",
+            "start": 60.315666666666665,
+            "end": 88.959,
+            "frames": 859,
+            "sha256": "e7f968589a990a21827f497b5a5eef4389b19e7e72bbf5217cde7c187ba2eb5e"
+          },
+          {
+            "name": "pupitar-larvitar",
+            "start": 88.959,
+            "end": 116.30533333333334,
+            "frames": 820,
+            "sha256": "b0180d9a5c9ee9aaa4cc7ccc64469e70d30042bf37eb1f01c7dce0c7dd9a730c"
+          },
+          {
+            "name": "tyranitar-lugia",
+            "start": 116.30533333333334,
+            "end": 150.88566666666668,
+            "frames": 1037,
+            "sha256": "425d56821e6966de12d3e5491221f5592851e9063752e8895b59557fc9d11610"
+          },
+          {
+            "name": "lugia-tyranitar",
+            "start": 150.88566666666668,
+            "end": 185.528,
+            "frames": 1039,
+            "sha256": "53aea2f6511bd86b82210fe0d9fed788c05cfd2f9a7f746bcc10caf38adefade"
+          },
+          {
+            "name": "ho-oh-celebi",
+            "start": 185.528,
+            "end": 213.17033333333333,
+            "frames": 829,
+            "sha256": "90f96c1e428486ee70b916050d450789a609a6fc79daf7bd7917547f710908ef"
+          },
+          {
+            "name": "celebi-ho-oh",
+            "start": 213.17033333333333,
+            "end": 239.37566666666666,
+            "frames": 786,
+            "sha256": "273d64bd16d88384ee5c1c274396467791e80960fa0dbcddbba4bdb47756c2dd"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 48: eight Pokemon"
     }
   ],
   "builds": {
@@ -1247,7 +1321,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint47: reviewed, published and audited; commit follows",
+    "phase": "closed: all nine checkpoints completed and independently audited",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -1258,10 +1332,20 @@
         "CommandLine": "\"D:\\Emulators\\Azahar\\azahar.exe\" "
       }
     ],
-    "capture_group": 47,
+    "capture_group": null,
     "exec_session_id": null,
-    "log": "build/bw2-auto40-cp47-capture.log",
-    "build_script": "build/bw2-auto40-build.sh"
+    "log": "build/bw2-auto40-cp48-capture.log",
+    "build_script": "build/bw2-auto40-build.sh",
+    "isolated_emulator_closed": true,
+    "personal_emulator_processes": [
+      {
+        "ProcessId": 12992,
+        "Name": "azahar.exe",
+        "ExecutablePath": "D:\\Emulators\\Azahar\\azahar.exe",
+        "CommandLine": "\"D:\\Emulators\\Azahar\\azahar.exe\" "
+      }
+    ],
+    "final_process_snapshot": "build/bw2-final40-processes.json"
   },
   "checks": {
     "unown": {

@@ -30,7 +30,7 @@ all'animazione originale non valgono come lavoro completato.
 
 ## Registro e avanzamento
 
-- [Checkpoint autonomi 40â€“48](bw2-plan/AUTONOMOUS40_48_REVIEW.md): nove gruppi consecutivi con prove e commit individuali.
+- [Checkpoint autonomi 40–48](bw2-plan/AUTONOMOUS40_48_REVIEW.md): nove gruppi consecutivi con prove e commit individuali.
 
 - [Checkpoint autonomi 30–39](bw2-plan/AUTONOMOUS30_39_REVIEW.md): dieci gruppi consecutivi con prove e commit individuali.
 
@@ -67,7 +67,7 @@ Avanzamento corrente (aggiornato insieme alle checklist):
 
 | Ambito | Totale | Prototipo implementato | Fatto con tutte le prove |
 |---|---:|---:|---:|
-| Pokémon | 386 | 2: Treecko, Poochyena | 378 |
+| Pokémon | 386 | 2: Treecko, Poochyena | 386 |
 | Mosse | 354 | 4: Pound, Tackle, Leer, Howl | 6 |
 
 Dal 28 ottobre 2026 le correzioni fisse di Treecko e Poochyena sono sostituite
@@ -227,6 +227,8 @@ Per ogni Pokémon:
    Segnare **fatto** soltanto quando codice, esecuzione e dossier sono completi.
 7. Aggiornare subito registro, casella della specie, contatori e checkpoint.
    Comunicare Pokémon completato, percorso delle prove e prossimo elemento.
+
+Catalogo Pokémon completato: 386/386 specie e tutte le varianti richieste. [Audit checkpoint 40–48](bw2-plan/AUTONOMOUS40_48_REVIEW.md). Restano 348 mosse e le verifiche di integrazione. [Preparazione del checkpoint 49](bw2-plan/CHECKPOINT49_PREPARATION.md).
 
 ## Fase 3 — Generalizzare il motore delle mosse
 

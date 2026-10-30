@@ -13,7 +13,7 @@ Lo stato di questo registro viene aggiornato insieme a `stato.json`.
 - [x] **Spinda (#327)**: preservare le macchie dipendenti dalla personality,
   con seed riproducibili rappresentativi, estremi e sovrapposizioni. I seed
   sono casi di test, non una pretesa di registrare ogni personality possibile.
-- [ ] **Shiny**: per tutte le specie verificare palette e trasparenze;
+- [x] **Shiny**: per tutte le specie verificare palette e trasparenze;
   aggiungere prove dedicate quando il normale dossier non documenta il caso.
 - [ ] **Differenze di sesso**: verificare le risorse BW2 e preservare la
   selezione prevista da Emerald, senza introdurre cambiamenti di gameplay.

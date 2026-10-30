@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **378**.
+Totale: **386**. Fatti con dossier completo: **386**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -384,11 +384,11 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0241 **Miltank** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0241_miltank/).
 - [x] 0242 **Blissey** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0242_blissey/).
 - [x] 0243 **Raikou** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0243_raikou/).
-- [ ] 0244 **Entei** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0244_entei/).
-- [ ] 0245 **Suicune** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0245_suicune/).
-- [ ] 0246 **Larvitar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0246_larvitar/).
-- [ ] 0247 **Pupitar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0247_pupitar/).
-- [ ] 0248 **Tyranitar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0248_tyranitar/).
-- [ ] 0249 **Lugia** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0249_lugia/).
-- [ ] 0250 **Ho Oh** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0250_ho_oh/).
-- [ ] 0251 **Celebi** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0251_celebi/).
+- [x] 0244 **Entei** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0244_entei/).
+- [x] 0245 **Suicune** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0245_suicune/).
+- [x] 0246 **Larvitar** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0246_larvitar/).
+- [x] 0247 **Pupitar** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0247_pupitar/).
+- [x] 0248 **Tyranitar** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0248_tyranitar/).
+- [x] 0249 **Lugia** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0249_lugia/).
+- [x] 0250 **Ho Oh** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0250_ho_oh/).
+- [x] 0251 **Celebi** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0251_celebi/).
