@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **298**.
+Totale: **386**. Fatti con dossier completo: **306**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -304,14 +304,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0141 **Kabutops** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0141_kabutops/).
 - [x] 0142 **Aerodactyl** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0142_aerodactyl/).
 - [x] 0143 **Snorlax** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0143_snorlax/).
-- [ ] 0144 **Articuno** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0144_articuno/).
-- [ ] 0145 **Zapdos** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0145_zapdos/).
-- [ ] 0146 **Moltres** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0146_moltres/).
-- [ ] 0147 **Dratini** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0147_dratini/).
-- [ ] 0148 **Dragonair** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0148_dragonair/).
-- [ ] 0149 **Dragonite** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0149_dragonite/).
-- [ ] 0150 **Mewtwo** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0150_mewtwo/).
-- [ ] 0151 **Mew** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0151_mew/).
+- [x] 0144 **Articuno** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0144_articuno/).
+- [x] 0145 **Zapdos** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0145_zapdos/).
+- [x] 0146 **Moltres** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0146_moltres/).
+- [x] 0147 **Dratini** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0147_dratini/).
+- [x] 0148 **Dragonair** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0148_dragonair/).
+- [x] 0149 **Dragonite** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0149_dragonite/).
+- [x] 0150 **Mewtwo** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0150_mewtwo/).
+- [x] 0151 **Mew** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0151_mew/).
 - [ ] 0152 **Chikorita** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0152_chikorita/).
 - [ ] 0153 **Bayleef** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0153_bayleef/).
 - [ ] 0154 **Meganium** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0154_meganium/).

@@ -1,6 +1,6 @@
 # Dieci checkpoint autonomi — 30–39
 
-Completati **8/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 234 Pokémon. Obiettivo: 314. Totale corrente: **298/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
+Completati **9/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 234 Pokémon. Obiettivo: 314. Totale corrente: **306/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
 
 | Checkpoint | Specie | Stato | Prove |
 |---|---|---|---|
@@ -12,7 +12,7 @@ Completati **8/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 234
 | 6/10 (gruppo 35) | Hitmonchan, Lickitung, Chansey, Tangela, Kangaskhan, Mr Mime, Scyther, Jynx | complete | [Dossier, screenshot e video](CHECKPOINT35_REVIEW.md) |
 | 7/10 (gruppo 36) | Electabuzz, Magmar, Tauros, Lapras, Ditto, Eevee, Vaporeon, Jolteon | complete | [Dossier, screenshot e video](CHECKPOINT36_REVIEW.md) |
 | 8/10 (gruppo 37) | Flareon, Porygon, Omanyte, Omastar, Kabuto, Kabutops, Aerodactyl, Snorlax | complete | [Dossier, screenshot e video](CHECKPOINT37_REVIEW.md) |
-| 9/10 (gruppo 38) | Articuno, Zapdos, Moltres, Dratini, Dragonair, Dragonite, Mewtwo, Mew | pending | In preparazione/verifica |
+| 9/10 (gruppo 38) | Articuno, Zapdos, Moltres, Dratini, Dragonair, Dragonite, Mewtwo, Mew | complete | [Dossier, screenshot e video](CHECKPOINT38_REVIEW.md) |
 | 10/10 (gruppo 39) | Chikorita, Bayleef, Meganium, Cyndaquil, Quilava, Typhlosion, Totodile, Croconaw | pending | In preparazione/verifica |
 
 Le specie vengono segnate come fatte soltanto dopo prove front/back e shiny, revisione visiva e verifica dei dossier. Ogni gruppo completo è salvato in un commit dedicato; i messaggi Git identificano il numero di checkpoint. ROM, asset e filmati restano locali secondo la politica artifacts.

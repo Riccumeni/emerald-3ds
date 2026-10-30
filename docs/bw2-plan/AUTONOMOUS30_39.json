@@ -1,7 +1,7 @@
 {
   "start_pokemon": 234,
   "target_pokemon": 314,
-  "completed_checkpoints": 8,
+  "completed_checkpoints": 9,
   "groups": [
     {
       "number": 30,
@@ -1142,7 +1142,7 @@
     {
       "number": 38,
       "ordinal": 9,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Articuno",
         "Zapdos",
@@ -1205,7 +1205,81 @@
           "enemy": 150
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 312,
+      "movie": {
+        "duration": 199.42266666666666,
+        "decoded_frames": 5979,
+        "sha256": "1efa1e2fe8c142e3a4eef302efe97ee728cfb2e36dde21b04b7f5723df80194f",
+        "segments": [
+          {
+            "name": "articuno-zapdos",
+            "start": 0.0,
+            "end": 23.705333333333332,
+            "frames": 711,
+            "sha256": "d2f34b52ab2252fdcd0e8d7de3c7f84b6436b869089d0afdc80ade07730da581"
+          },
+          {
+            "name": "zapdos-articuno",
+            "start": 23.705333333333332,
+            "end": 46.504666666666665,
+            "frames": 683,
+            "sha256": "d0320ef1d38ff06f5061b61dd8573a78139ec7ea679057b28f876def01cbb1b7"
+          },
+          {
+            "name": "moltres-dratini",
+            "start": 46.504666666666665,
+            "end": 68.053,
+            "frames": 646,
+            "sha256": "0e850ed6e037014ee3838541ac8090e7ad12f8cc93dfe1bf2560b5d5ab00a9fd"
+          },
+          {
+            "name": "dratini-moltres",
+            "start": 68.053,
+            "end": 88.49233333333333,
+            "frames": 613,
+            "sha256": "74b8b5df10391b9670fdfc050b2a8937c292b8ef5208e3b25abc88e040ec91fb"
+          },
+          {
+            "name": "dragonair-dragonite",
+            "start": 88.49233333333333,
+            "end": 116.10366666666667,
+            "frames": 828,
+            "sha256": "a9edc062f204915d6eb4e62eee080ae80239cf8686f674589c031a6ca84a32d4"
+          },
+          {
+            "name": "dragonite-dragonair",
+            "start": 116.10366666666667,
+            "end": 143.293,
+            "frames": 815,
+            "sha256": "ea681198e022f10378d0e3a2a644cced0b4d2f195658009029e00a7a6b79416d"
+          },
+          {
+            "name": "mewtwo-mew",
+            "start": 143.293,
+            "end": 171.96733333333333,
+            "frames": 860,
+            "sha256": "2454318f19e41885c4c9ea1966f33b4584ff028d171a96b4d2497813a9c2d025"
+          },
+          {
+            "name": "mew-mewtwo",
+            "start": 171.96733333333333,
+            "end": 199.42266666666666,
+            "frames": 823,
+            "sha256": "57bc706af339d194da3d4952fac0e80edaddee51d699054e9f9480e2b3f2d05a"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 38: eight Pokemon"
     },
     {
       "number": 39,
@@ -1315,7 +1389,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint37: reviewed, published and audited; commit follows",
+    "phase": "checkpoint38: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -1326,9 +1400,9 @@
       }
     ],
     "continuity": "build/BW2_CONTINUITY30.md",
-    "capture_group": 37,
+    "capture_group": 38,
     "exec_session_id": null,
-    "log": "build/bw2-auto30-cp37-capture.log",
+    "log": "build/bw2-auto30-cp38-capture.log",
     "build_script": "build/bw2-auto30-build.sh"
   },
   "checks": {
