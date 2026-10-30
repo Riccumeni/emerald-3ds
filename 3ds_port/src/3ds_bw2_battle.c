@@ -130,7 +130,7 @@ static u16 Read16(const void *ptr)
 static bool8 SupportedSpecies(u16 species)
 {
     /* Emerald's legacy Unown placeholders are not real species. Actual
-     * Unown forms require a separate personality-based import. */
+     * Unown forms are selected separately from the native personality. */
     return (species > SPECIES_NONE && species < 252)
         || (species >= SPECIES_TREECKO && species < NUM_SPECIES);
 }
@@ -421,7 +421,11 @@ static BwClip *PokemonFormClip(u16 species, bool8 back, unsigned form)
     char path[64];
     if (!SupportedSpecies(species))
         return NULL;
-    if (form > 3 || (form && species != SPECIES_CASTFORM
+    if (species == SPECIES_UNOWN)
+    {
+        if (form >= NUM_UNOWN_FORMS) return NULL;
+    }
+    else if (form > 3 || (form && species != SPECIES_CASTFORM
         && !(species == SPECIES_DEOXYS && form == 3))) return NULL;
     if (form) snprintf(path, sizeof(path), "bw2/%u_form%u_%s.bin", species, form, back ? "back" : "front");
     else snprintf(path, sizeof(path), "bw2/%u_%s.bin", species, back ? "back" : "front");
@@ -544,7 +548,10 @@ static void RegisterPokemon(struct Pokemon *mon, u8 battler, bool8 back)
     memset(actor, 0, sizeof(*actor));
     if (transformed != SPECIES_NONE)
         species = transformed;
-    unsigned form = SelectedPokemonForm(species, battler, back, transformed);
+    u32 personality = transformed != SPECIES_NONE ? gTransformedPersonalities[battler]
+        : GetMonData(mon, MON_DATA_PERSONALITY);
+    unsigned form = species == SPECIES_UNOWN ? GET_UNOWN_LETTER(personality)
+        : SelectedPokemonForm(species, battler, back, transformed);
     clip = form ? PokemonFormClip(species, back, form) : PokemonClip(species, back);
     if (!clip || !gMonSpritesGfxPtr || (species == SPECIES_SPINDA && !back && !clip->spots))
         return;
@@ -552,8 +559,7 @@ static void RegisterPokemon(struct Pokemon *mon, u8 battler, bool8 back)
     gCtrBW2ActorForms[battler] = form;
     actor->clip = clip;
     actor->shiny = IsMonShiny(mon);
-    gCtrBW2ActorPersonality[battler] = transformed != SPECIES_NONE ? gTransformedPersonalities[battler]
-        : GetMonData(mon, MON_DATA_PERSONALITY);
+    gCtrBW2ActorPersonality[battler] = personality;
     if (clip->spots) SpindaMask(battler, clip, gCtrBW2ActorPersonality[battler]);
     u16 height = GetPokedexHeightWeight(SpeciesToNationalPokedexNum(species), 0);
     /* The visible rear arena is centered eight pixels above its lower rim. */

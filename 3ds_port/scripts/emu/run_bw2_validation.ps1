@@ -4,6 +4,7 @@ param(
     [int]$EnemySpecies = 286,
     [int]$Move = 1,
     [uint32]$Personality = 0,
+    [Nullable[uint32]]$EnemyPersonality = $null,
     [ValidateRange(0, 2)][int]$Side = 2,
     [ValidateRange(0, 1)][int]$Shiny = 0,
     [Parameter(Mandatory = $true)][string]$Name,
@@ -34,6 +35,11 @@ if ((Test-Path -LiteralPath $taskPreviousReport) -and -not $Overwrite) {
         $taskPrevious.scenario.player -eq $PlayerSpecies -and $taskPrevious.scenario.enemy -eq $EnemySpecies -and
         $taskPrevious.scenario.move -eq $Move -and $taskPrevious.scenario.side -eq $Side -and
         $taskPrevious.scenario.shiny -eq $Shiny -and [int]$taskPrevious.scenario.deoxys_preview -eq $DeoxysPreview -and [bool]$taskPrevious.scenario.return_normal -eq [bool]$ReturnNormal -and [uint32]$taskPrevious.scenario.personality -eq $Personality -and $taskPrevious.kind -eq $Kind) {
+        $taskExpectedEnemyPersonality = $Personality
+        if ($null -ne $EnemyPersonality) {$taskExpectedEnemyPersonality = $EnemyPersonality}
+        $taskRecordedEnemyPersonality = $taskPrevious.scenario.enemy_personality
+        if ($null -eq $taskRecordedEnemyPersonality) {$taskRecordedEnemyPersonality = $taskPrevious.scenario.personality}
+        if ([uint32]$taskRecordedEnemyPersonality -ne $taskExpectedEnemyPersonality) {throw 'Capture exists with another enemy personality.'}
         Write-Output "Verified capture already exists: $Name"
         exit 0
     }
@@ -48,6 +54,7 @@ if (Test-Path -LiteralPath $taskPidFile) {
 }
 $taskConfig = Join-Path $taskRoot 'build/bw2-azahar/user/sdmc/3ds/emerald3ds/bw2-validation.txt'
 $taskSettings = "player=$PlayerSpecies`nenemy=$EnemySpecies`nmove=$Move`nshiny=$Shiny`nseed=4660`nside=$Side`npersonality=$Personality`ndeoxys_preview=$DeoxysPreview`n"
+if ($null -ne $EnemyPersonality) {$taskSettings += "enemy_personality=$EnemyPersonality`n"}
 [IO.File]::WriteAllText($taskConfig, $taskSettings)
 # Native frame capture requires a rendering window. The user requested these
 # demonstrations; minimising this test window can suspend screenshot delivery.

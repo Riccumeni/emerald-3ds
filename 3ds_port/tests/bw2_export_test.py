@@ -21,6 +21,21 @@ spec.loader.exec_module(bw)
 
 
 class ExportTest(unittest.TestCase):
+    def test_unown_mapping_uses_personal_offset_instead_of_base_formula(self):
+        personal=bytearray(76);struct.pack_into('<HBB',personal,30,7,28,68)
+        mapping=bw.unown_resources(personal)
+        self.assertEqual(set(mapping),set(range(28)))
+        self.assertEqual(mapping[0],dict(name='A',resource_base=4020))
+        self.assertEqual(mapping[1]['resource_base'],0x3584+7*20)
+        self.assertEqual(mapping[27]['resource_base'],0x3584+33*20)
+        self.assertEqual(mapping[26]['name'],'exclamation')
+        self.assertEqual(mapping[27]['name'],'question')
+
+    def test_unown_rejects_incomplete_or_palette_only_mapping(self):
+        for count,flags in [(27,68),(28,128)]:
+            personal=bytearray(76);struct.pack_into('<HBB',personal,30,0,count,flags)
+            with self.assertRaisesRegex(ValueError,'Unown resource'):bw.unown_resources(personal)
+
     def test_nearest_parts_cover_body_but_keep_transparent_holes(self):
         eye = Image.new('P', (2, 2)); eye.putpixel((0, 0), 3)
         body = Image.new('P', (2, 2), 7)

@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **314**.
+Totale: **386**. Fatti con dossier completo: **322**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -320,14 +320,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0157 **Typhlosion** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0157_typhlosion/).
 - [x] 0158 **Totodile** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0158_totodile/).
 - [x] 0159 **Croconaw** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0159_croconaw/).
-- [ ] 0160 **Feraligatr** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0160_feraligatr/).
-- [ ] 0161 **Sentret** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0161_sentret/).
-- [ ] 0162 **Furret** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0162_furret/).
-- [ ] 0163 **Hoothoot** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0163_hoothoot/).
-- [ ] 0164 **Noctowl** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0164_noctowl/).
-- [ ] 0165 **Ledyba** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0165_ledyba/).
-- [ ] 0166 **Ledian** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0166_ledian/).
-- [ ] 0167 **Spinarak** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0167_spinarak/).
+- [x] 0160 **Feraligatr** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0160_feraligatr/).
+- [x] 0161 **Sentret** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0161_sentret/).
+- [x] 0162 **Furret** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0162_furret/).
+- [x] 0163 **Hoothoot** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0163_hoothoot/).
+- [x] 0164 **Noctowl** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0164_noctowl/).
+- [x] 0165 **Ledyba** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0165_ledyba/).
+- [x] 0166 **Ledian** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0166_ledian/).
+- [x] 0167 **Spinarak** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0167_spinarak/).
 - [ ] 0168 **Ariados** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0168_ariados/).
 - [ ] 0173 **Cleffa** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0173_cleffa/).
 - [ ] 0175 **Togepi** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0175_togepi/).

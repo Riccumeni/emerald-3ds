@@ -1,0 +1,804 @@
+{
+  "start_pokemon": 314,
+  "target_pokemon": 386,
+  "completed_checkpoints": 1,
+  "groups": [
+    {
+      "number": 40,
+      "ordinal": 1,
+      "status": "complete",
+      "names": [
+        "Feraligatr",
+        "Sentret",
+        "Furret",
+        "Hoothoot",
+        "Noctowl",
+        "Ledyba",
+        "Ledian",
+        "Spinarak"
+      ],
+      "national_ids": [
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167
+      ],
+      "cases": [
+        {
+          "name": "feraligatr-sentret",
+          "player": 160,
+          "enemy": 161
+        },
+        {
+          "name": "sentret-feraligatr",
+          "player": 161,
+          "enemy": 160
+        },
+        {
+          "name": "furret-hoothoot",
+          "player": 162,
+          "enemy": 163
+        },
+        {
+          "name": "hoothoot-furret",
+          "player": 163,
+          "enemy": 162
+        },
+        {
+          "name": "noctowl-ledyba",
+          "player": 164,
+          "enemy": 165
+        },
+        {
+          "name": "ledyba-noctowl",
+          "player": 165,
+          "enemy": 164
+        },
+        {
+          "name": "ledian-spinarak",
+          "player": 166,
+          "enemy": 167
+        },
+        {
+          "name": "spinarak-ledian",
+          "player": 167,
+          "enemy": 166
+        }
+      ],
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 328,
+      "movie": {
+        "duration": 218.87666666666667,
+        "decoded_frames": 6564,
+        "sha256": "f676bf0d56902ca5395854b74d840d494327613b975e39a46c4acb7b61807fbc",
+        "segments": [
+          {
+            "name": "feraligatr-sentret",
+            "start": 0.0,
+            "end": 25.908333333333335,
+            "frames": 777,
+            "sha256": "5d147e095d678c4cc8abb292e8014db4c66214d9c6bf217e0466b6f7c7fce592"
+          },
+          {
+            "name": "sentret-feraligatr",
+            "start": 25.908333333333335,
+            "end": 52.144666666666666,
+            "frames": 787,
+            "sha256": "4b731a010148582fc2d51f3d7b9588051d92178f9a95d8f879c414b06e073db1"
+          },
+          {
+            "name": "furret-hoothoot",
+            "start": 52.144666666666666,
+            "end": 81.49,
+            "frames": 880,
+            "sha256": "1de3c1fbf4b8247b324e6a79ec3d675850d15eeeebd13aa1db5b9ad7f4373789"
+          },
+          {
+            "name": "hoothoot-furret",
+            "start": 81.49,
+            "end": 111.07033333333334,
+            "frames": 887,
+            "sha256": "0e9fb39679d44962f0ed95b4e413a9122455b10f43fcaaee7a6c4e84c4591ec9"
+          },
+          {
+            "name": "noctowl-ledyba",
+            "start": 111.07033333333334,
+            "end": 142.94766666666666,
+            "frames": 956,
+            "sha256": "e86fd0ea648df7cce26168c7f490c19b6e7067dca0a33e1764ec1504e05758ea"
+          },
+          {
+            "name": "ledyba-noctowl",
+            "start": 142.94766666666666,
+            "end": 174.825,
+            "frames": 956,
+            "sha256": "5e515cc5d4532042ce62d7a080e5cd85d01949fedc0f91e5b2abbbc95693dc17"
+          },
+          {
+            "name": "ledian-spinarak",
+            "start": 174.825,
+            "end": 197.06233333333333,
+            "frames": 667,
+            "sha256": "2af06fd78576501737e955cb5d8d4cb0dc90283675cba2136821059e3b950bab"
+          },
+          {
+            "name": "spinarak-ledian",
+            "start": 197.06233333333333,
+            "end": 218.87666666666667,
+            "frames": 654,
+            "sha256": "0a4b5eeb3101c8cd4e22208119bcb0d5f8e5d02f3a003465ad70a05a87aa4426"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 40: eight Pokemon"
+    },
+    {
+      "number": 41,
+      "ordinal": 2,
+      "status": "pending",
+      "names": [
+        "Ariados",
+        "Cleffa",
+        "Togepi",
+        "Togetic",
+        "Mareep",
+        "Flaaffy",
+        "Ampharos",
+        "Sudowoodo"
+      ],
+      "national_ids": [
+        168,
+        173,
+        175,
+        176,
+        179,
+        180,
+        181,
+        185
+      ],
+      "cases": [
+        {
+          "name": "ariados-cleffa",
+          "player": 168,
+          "enemy": 173
+        },
+        {
+          "name": "cleffa-ariados",
+          "player": 173,
+          "enemy": 168
+        },
+        {
+          "name": "togepi-togetic",
+          "player": 175,
+          "enemy": 176
+        },
+        {
+          "name": "togetic-togepi",
+          "player": 176,
+          "enemy": 175
+        },
+        {
+          "name": "mareep-flaaffy",
+          "player": 179,
+          "enemy": 180
+        },
+        {
+          "name": "flaaffy-mareep",
+          "player": 180,
+          "enemy": 179
+        },
+        {
+          "name": "ampharos-sudowoodo",
+          "player": 181,
+          "enemy": 185
+        },
+        {
+          "name": "sudowoodo-ampharos",
+          "player": 185,
+          "enemy": 181
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 42,
+      "ordinal": 3,
+      "status": "pending",
+      "names": [
+        "Politoed",
+        "Hoppip",
+        "Skiploom",
+        "Jumpluff",
+        "Aipom",
+        "Sunkern",
+        "Sunflora",
+        "Yanma"
+      ],
+      "national_ids": [
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193
+      ],
+      "cases": [
+        {
+          "name": "politoed-hoppip",
+          "player": 186,
+          "enemy": 187
+        },
+        {
+          "name": "hoppip-politoed",
+          "player": 187,
+          "enemy": 186
+        },
+        {
+          "name": "skiploom-jumpluff",
+          "player": 188,
+          "enemy": 189
+        },
+        {
+          "name": "jumpluff-skiploom",
+          "player": 189,
+          "enemy": 188
+        },
+        {
+          "name": "aipom-sunkern",
+          "player": 190,
+          "enemy": 191
+        },
+        {
+          "name": "sunkern-aipom",
+          "player": 191,
+          "enemy": 190
+        },
+        {
+          "name": "sunflora-yanma",
+          "player": 192,
+          "enemy": 193
+        },
+        {
+          "name": "yanma-sunflora",
+          "player": 193,
+          "enemy": 192
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 43,
+      "ordinal": 4,
+      "status": "pending",
+      "names": [
+        "Wooper",
+        "Quagsire",
+        "Espeon",
+        "Umbreon",
+        "Murkrow",
+        "Slowking",
+        "Misdreavus",
+        "Unown"
+      ],
+      "national_ids": [
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201
+      ],
+      "cases": [
+        {
+          "name": "wooper-quagsire",
+          "player": 194,
+          "enemy": 195
+        },
+        {
+          "name": "quagsire-wooper",
+          "player": 195,
+          "enemy": 194
+        },
+        {
+          "name": "espeon-umbreon",
+          "player": 196,
+          "enemy": 197
+        },
+        {
+          "name": "umbreon-espeon",
+          "player": 197,
+          "enemy": 196
+        },
+        {
+          "name": "murkrow-slowking",
+          "player": 198,
+          "enemy": 199
+        },
+        {
+          "name": "slowking-murkrow",
+          "player": 199,
+          "enemy": 198
+        },
+        {
+          "name": "misdreavus-unown",
+          "player": 200,
+          "enemy": 201
+        },
+        {
+          "name": "unown-misdreavus",
+          "player": 201,
+          "enemy": 200
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 44,
+      "ordinal": 5,
+      "status": "pending",
+      "names": [
+        "Pineco",
+        "Forretress",
+        "Dunsparce",
+        "Gligar",
+        "Steelix",
+        "Snubbull",
+        "Granbull",
+        "Qwilfish"
+      ],
+      "national_ids": [
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211
+      ],
+      "cases": [
+        {
+          "name": "pineco-forretress",
+          "player": 204,
+          "enemy": 205
+        },
+        {
+          "name": "forretress-pineco",
+          "player": 205,
+          "enemy": 204
+        },
+        {
+          "name": "dunsparce-gligar",
+          "player": 206,
+          "enemy": 207
+        },
+        {
+          "name": "gligar-dunsparce",
+          "player": 207,
+          "enemy": 206
+        },
+        {
+          "name": "steelix-snubbull",
+          "player": 208,
+          "enemy": 209
+        },
+        {
+          "name": "snubbull-steelix",
+          "player": 209,
+          "enemy": 208
+        },
+        {
+          "name": "granbull-qwilfish",
+          "player": 210,
+          "enemy": 211
+        },
+        {
+          "name": "qwilfish-granbull",
+          "player": 211,
+          "enemy": 210
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 45,
+      "ordinal": 6,
+      "status": "pending",
+      "names": [
+        "Scizor",
+        "Shuckle",
+        "Sneasel",
+        "Teddiursa",
+        "Ursaring",
+        "Swinub",
+        "Piloswine",
+        "Remoraid"
+      ],
+      "national_ids": [
+        212,
+        213,
+        215,
+        216,
+        217,
+        220,
+        221,
+        223
+      ],
+      "cases": [
+        {
+          "name": "scizor-shuckle",
+          "player": 212,
+          "enemy": 213
+        },
+        {
+          "name": "shuckle-scizor",
+          "player": 213,
+          "enemy": 212
+        },
+        {
+          "name": "sneasel-teddiursa",
+          "player": 215,
+          "enemy": 216
+        },
+        {
+          "name": "teddiursa-sneasel",
+          "player": 216,
+          "enemy": 215
+        },
+        {
+          "name": "ursaring-swinub",
+          "player": 217,
+          "enemy": 220
+        },
+        {
+          "name": "swinub-ursaring",
+          "player": 220,
+          "enemy": 217
+        },
+        {
+          "name": "piloswine-remoraid",
+          "player": 221,
+          "enemy": 223
+        },
+        {
+          "name": "remoraid-piloswine",
+          "player": 223,
+          "enemy": 221
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 46,
+      "ordinal": 7,
+      "status": "pending",
+      "names": [
+        "Octillery",
+        "Delibird",
+        "Mantine",
+        "Houndour",
+        "Houndoom",
+        "Porygon2",
+        "Stantler",
+        "Smeargle"
+      ],
+      "national_ids": [
+        224,
+        225,
+        226,
+        228,
+        229,
+        233,
+        234,
+        235
+      ],
+      "cases": [
+        {
+          "name": "octillery-delibird",
+          "player": 224,
+          "enemy": 225
+        },
+        {
+          "name": "delibird-octillery",
+          "player": 225,
+          "enemy": 224
+        },
+        {
+          "name": "mantine-houndour",
+          "player": 226,
+          "enemy": 228
+        },
+        {
+          "name": "houndour-mantine",
+          "player": 228,
+          "enemy": 226
+        },
+        {
+          "name": "houndoom-porygon2",
+          "player": 229,
+          "enemy": 233
+        },
+        {
+          "name": "porygon2-houndoom",
+          "player": 233,
+          "enemy": 229
+        },
+        {
+          "name": "stantler-smeargle",
+          "player": 234,
+          "enemy": 235
+        },
+        {
+          "name": "smeargle-stantler",
+          "player": 235,
+          "enemy": 234
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 47,
+      "ordinal": 8,
+      "status": "pending",
+      "names": [
+        "Tyrogue",
+        "Hitmontop",
+        "Smoochum",
+        "Elekid",
+        "Magby",
+        "Miltank",
+        "Blissey",
+        "Raikou"
+      ],
+      "national_ids": [
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243
+      ],
+      "cases": [
+        {
+          "name": "tyrogue-hitmontop",
+          "player": 236,
+          "enemy": 237
+        },
+        {
+          "name": "hitmontop-tyrogue",
+          "player": 237,
+          "enemy": 236
+        },
+        {
+          "name": "smoochum-elekid",
+          "player": 238,
+          "enemy": 239
+        },
+        {
+          "name": "elekid-smoochum",
+          "player": 239,
+          "enemy": 238
+        },
+        {
+          "name": "magby-miltank",
+          "player": 240,
+          "enemy": 241
+        },
+        {
+          "name": "miltank-magby",
+          "player": 241,
+          "enemy": 240
+        },
+        {
+          "name": "blissey-raikou",
+          "player": 242,
+          "enemy": 243
+        },
+        {
+          "name": "raikou-blissey",
+          "player": 243,
+          "enemy": 242
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 48,
+      "ordinal": 9,
+      "status": "pending",
+      "names": [
+        "Entei",
+        "Suicune",
+        "Larvitar",
+        "Pupitar",
+        "Tyranitar",
+        "Lugia",
+        "Ho Oh",
+        "Celebi"
+      ],
+      "national_ids": [
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251
+      ],
+      "cases": [
+        {
+          "name": "entei-suicune",
+          "player": 244,
+          "enemy": 245
+        },
+        {
+          "name": "suicune-entei",
+          "player": 245,
+          "enemy": 244
+        },
+        {
+          "name": "larvitar-pupitar",
+          "player": 246,
+          "enemy": 247
+        },
+        {
+          "name": "pupitar-larvitar",
+          "player": 247,
+          "enemy": 246
+        },
+        {
+          "name": "tyranitar-lugia",
+          "player": 248,
+          "enemy": 249
+        },
+        {
+          "name": "lugia-tyranitar",
+          "player": 249,
+          "enemy": 248
+        },
+        {
+          "name": "ho-oh-celebi",
+          "player": 250,
+          "enemy": 251
+        },
+        {
+          "name": "celebi-ho-oh",
+          "player": 251,
+          "enemy": 250
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    }
+  ],
+  "builds": {
+    "test": {
+      "build_id": "5f8ed2ae5815137f",
+      "sha256": "f4bbbe0e09bc1ba120d00e78858c70cf2621da876aea8e7c0fc025b1390952a0",
+      "path": "artifacts/bw2-validation/builds/5f8ed2ae5815137f_f4bbbe0e09bc/validation.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/5f8ed2ae5815137f_a9eb96860bd4/validation.elf",
+      "elf_sha256": "a9eb96860bd4f1ae1d62f54ee3d579186a1a72b19946dc51ff84da731c9fb6a7",
+      "id_path": "artifacts/bw2-validation/builds/5f8ed2ae5815137f_34cc04fdffc3/build_id.bin"
+    },
+    "production": {
+      "build_id": "c18abb147273c4ca",
+      "sha256": "5f1a359e9eb5f188a28110162d93653d4a679207ae2de8de8120710703e6f073",
+      "path": "artifacts/bw2-validation/builds/c18abb147273c4ca_5f1a359e9eb5/Emerald3DS-BW2.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/c18abb147273c4ca_3fc9f061c443/production.elf",
+      "elf_sha256": "3fc9f061c443cfba9f8447d6d2310f5af48e80151fbe50106cd9c3ed34db542f",
+      "id_path": "artifacts/bw2-validation/builds/c18abb147273c4ca_3f6d91c230ee/production-build-id.bin"
+    }
+  },
+  "build_history": [
+    {
+      "test": {
+        "build_id": "de509bec1e539760",
+        "sha256": "f2ecde88d6d665029ecfcd7e5c335604e31d8bb3c96c4adc7c04f272636d468c",
+        "path": "artifacts/bw2-validation/builds/de509bec1e539760_f2ecde88d6d6/validation.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/de509bec1e539760_84f94a734784/validation.elf",
+        "elf_sha256": "84f94a7347844328c0c357f3afce36dc68ba17d19035c4d873845056c64048b5",
+        "id_path": "artifacts/bw2-validation/builds/de509bec1e539760_59fb21cf6a34/build_id.bin"
+      },
+      "production": {
+        "build_id": "f65244ae7f660a26",
+        "sha256": "6b27f2290acfcd48b5813237d5c072fd4b3ea48c63825de7177dbff0f28f25f6",
+        "path": "artifacts/bw2-validation/builds/f65244ae7f660a26_6b27f2290acf/Emerald3DS-BW2.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/f65244ae7f660a26_a4ef3f5f2b4c/production.elf",
+        "elf_sha256": "a4ef3f5f2b4caa9f4b0f8d33277c08acedeae13bd719dda348adf03da4df2ada",
+        "id_path": "artifacts/bw2-validation/builds/f65244ae7f660a26_d673eb861184/production-build-id.bin"
+      }
+    }
+  ],
+  "runtime": {
+    "phase": "checkpoint40: reviewed, published and audited; commit follows",
+    "isolated_executable": "build/bw2-azahar/bw2-test.exe",
+    "active_capture": false,
+    "initial_emulator_processes": [
+      {
+        "ProcessId": 12992,
+        "Name": "azahar.exe",
+        "ExecutablePath": "D:\\Emulators\\Azahar\\azahar.exe",
+        "CommandLine": "\"D:\\Emulators\\Azahar\\azahar.exe\" "
+      }
+    ],
+    "capture_group": 40,
+    "exec_session_id": null,
+    "log": "build/bw2-auto40-cp40-capture.log",
+    "build_script": "build/bw2-auto40-build.sh"
+  },
+  "checks": {
+    "unown": {
+      "passed": true,
+      "log": "build/bw2-auto40-test-unown.log"
+    },
+    "synthetic": {
+      "passed": true,
+      "log": "build/bw2-auto40-test-synthetic.log"
+    },
+    "real": {
+      "passed": true,
+      "log": "build/bw2-auto40-test-real.log"
+    },
+    "castform": {
+      "passed": true,
+      "log": "build/bw2-auto40-test-castform.log"
+    },
+    "spinda": {
+      "passed": true,
+      "log": "build/bw2-auto40-test-spinda.log"
+    },
+    "deoxys": {
+      "passed": true,
+      "log": "build/bw2-auto40-test-deoxys.log"
+    },
+    "deoxys-validation": {
+      "passed": true,
+      "log": "build/bw2-auto40-test-deoxys-validation.log"
+    },
+    "export": {
+      "passed": true,
+      "log": "build/bw2-auto40-test-export.log"
+    },
+    "evidence": {
+      "passed": true,
+      "log": "build/bw2-auto40-test-evidence.log"
+    },
+    "variants": {
+      "passed": true,
+      "log": "build/bw2-auto40-test-variants.log"
+    },
+    "production_stubs_bytes": 4,
+    "production_validation_mailbox": false,
+    "presentation_v5_1_unchanged": true,
+    "build_modes_commands_verified": true,
+    "unown_evidence_tests": 13,
+    "exporter_tests": 22,
+    "dossier_tests": 7,
+    "prior_variants_tests": 24
+  },
+  "baseline": {
+    "existing_assets": 1294,
+    "foreign_files": 345,
+    "source_files": 129660,
+    "head": "e0de71817608872388149a2abe21a8a7a091a1e8"
+  }
+}

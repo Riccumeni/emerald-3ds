@@ -49,9 +49,47 @@ def castform_media(folder,relative,build,side,form,shiny,cycle=False):
  if sha(source/'screenshot.png')!=cap['screenshot_sha256'] or sha(source/'demo.mp4')!=cap['video']['sha256']:raise ValueError('Castform media changed')
  return cap
 
+def unown_media(folder,relative,build,side,form,shiny):
+ source=(folder/relative).resolve()
+ if not source.is_relative_to(folder.resolve()):raise ValueError('Unown evidence escaped dossier')
+ cap=read(source/'capture.json');scenario=cap['scenario']
+ if not cap.get('passed') or cap['kind']!='idle':raise ValueError('Unown requires native entrance and video')
+ if cap['build_id']!=build['build_id'] or cap['binary_sha256']!=build['sha256']:raise ValueError('Unown build mismatch')
+ if scenario['enemy' if side else 'player']!=201 or scenario['shiny']!=shiny or scenario.get('deoxys_preview',0):raise ValueError('Unown native scenario mismatch')
+ personality=scenario.get('enemy_personality',scenario.get('personality')) if side else scenario.get('personality')
+ if personality is None:raise ValueError('Unown personality missing')
+ native=(((personality>>24)&3)*64+((personality>>16)&3)*16+((personality>>8)&3)*4+(personality&3))%28
+ pixels=next((p for p in cap.get('unown_pixels',[]) if p['battler']==side),{})
+ if native!=form or pixels.get('form')!=form or pixels.get('personality')!=personality or pixels.get('shiny')!=shiny or pixels.get('species')!=201 or not pixels.get('native_selection'):raise ValueError('Unown native pixels/personality mismatch')
+ if not pixels.get('clip_sha256') or not pixels.get('palette_sha256'):raise ValueError('Unown pixels/palette proof missing')
+ pose=next((p for p in cap.get('presentation',[]) if p['battler']==side),{})
+ if pose.get('form')!=form or not pose.get('source_factor_q8'):raise ValueError('Unown presentation missing')
+ if cap.get('ready_at') is None or cap['ready_at']<=0:raise ValueError('Unown entrance missing')
+ actors=[a for s in cap['samples'] if s['phase']==3 and s['time']>=cap['ready_at'] for a in s['actors'] if a['battler']==side and a['species']==201 and a['shiny']==shiny]
+ ticks=[a['tick'] for a in actors]
+ if not ticks or max(ticks)-min(ticks)<2*cap['actor_steps'][str(side)]:raise ValueError('Unown two cycles missing')
+ if sha(source/'screenshot.png')!=cap['screenshot_sha256'] or sha(source/'demo.mp4')!=cap['video']['sha256']:raise ValueError('Unown media changed')
+ if cap['video'].get('codec')!='h264' or cap['video'].get('decoded_frames',0)<30:raise ValueError('Unown native H264 video missing')
+ return cap
+
+
 def check_variants(root,item,build):
  folder=Path(root)/item['cartella'];manifest=read(folder/'variants.json')
  if not manifest.get('visual_reviewed'):raise ValueError('Variants require visual review')
+ if item['numero_nazionale']==201:
+  if manifest.get('kind')!='unown-personality':raise ValueError('Unown personality audit missing')
+  cases={c['form']:c for c in manifest['cases']}
+  if len(manifest['cases'])!=28 or set(cases)!=set(range(28)):raise ValueError('Missing or duplicate Unown form')
+  for form,case in cases.items():
+   if not case.get('visual_reviewed'):raise ValueError('Unreviewed Unown form')
+   for key,shiny in [('normal',0),('shiny',1)]:
+    for direction,side in [('front',1),('back',0)]:
+     unown_media(folder,case[key][direction],build,side,form,shiny)
+  if not manifest.get('cache_reviewed'):raise ValueError('Unown multi-actor review missing')
+  cap=unown_media(folder,manifest['multi_actor'],build,0,1,0)
+  pixels={p['battler']:p for p in cap['unown_pixels']}
+  if cap['scenario']['player']!=201 or cap['scenario']['enemy']!=201 or set(pixels)!={0,1} or pixels[0]['form']==pixels[1]['form']:raise ValueError('Distinct simultaneous Unown forms missing')
+  return dict(kind=manifest['kind'],forms=28,shiny_forms=28,front_back=True,native_personality_selection=True,distinct_simultaneous_forms=True)
  if item['numero_nazionale']==327:
   if manifest.get('kind')!='spinda-personality':raise ValueError('Spinda personality audit missing')
   cases={c['personality']:c for c in manifest['cases']}

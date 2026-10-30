@@ -536,6 +536,17 @@ def particle_frames(resource, index, seed):
     return result,struct.pack('<16H',*(colors+[0]*(16-len(colors))))
 
 
+def unown_resources(personal):
+    # GetPokemonDataIDBase in BW2 src/system/pokegra.c: alternate graphics
+    # use the personal-table offset into POKEGRA_FORM_FILES, not species*20.
+    offset, count, flags = struct.unpack_from('<HBB', personal, 30)
+    if count != 28 or flags & 128:
+        raise ValueError('Unexpected Unown resource mapping')
+    return {form: dict(name=chr(65+form) if form < 26 else ('exclamation' if form == 26 else 'question'),
+                       resource_base=201*20 if form == 0 else 0x3584+(offset+form-1)*20)
+            for form in range(count)}
+
+
 def generate(rom_path, output, previews=None, species=None, moves=None):
     nds=Nds(rom_path); output.mkdir(parents=True,exist_ok=True)
     if previews:previews.mkdir(parents=True,exist_ok=True)
@@ -564,6 +575,19 @@ def generate(rom_path, output, previews=None, species=None, moves=None):
             report['pokemon'][key]=write_clip(output/(key+'.bin'),images,normal,shiny,loop,uv)
             report['pokemon'][key]['source_bounds']=bounds
             if previews:preview(previews/(name+'_'+side+'.gif'),images,normal)
+    if 201 in (SPECIES if species is None else species):
+        mapping = unown_resources(nds.archive('a/0/1/6')[201])
+        report.setdefault('forms', {})['201'] = {str(f): entry for f, entry in mapping.items()}
+        for form, entry in mapping.items():
+            if not form: continue  # A is the ordinary base dossier/clip.
+            base = entry['resource_base']
+            normal, shiny = palette(mons[base+18]), palette(mons[base+19])
+            for side in ('front', 'back'):
+                images, loop, bounds = pokemon_frames(mons, 201, side, base_override=base)
+                key = f'201_form{form}_{side}'
+                report['pokemon'][key] = write_clip(output/(key+'.bin'), images, normal, shiny, loop)
+                report['pokemon'][key]['source_bounds'] = bounds
+                if previews: preview(previews/(f'unown_{entry["name"]}_{side}.gif'), images, normal)
     if 351 in (SPECIES if species is None else species):
         personal=nds.archive('a/0/1/6')[351]
         sprite_offset,form_count,flags=struct.unpack_from('<HBB',personal,30)

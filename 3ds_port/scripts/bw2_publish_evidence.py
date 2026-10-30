@@ -109,6 +109,13 @@ def publish(args):
         metadata['forms_complete']=True
     if args.kind=='pokemon' and args.id==327:
         metadata['asset_hashes']['308_front.bin.spots']=sha(assets/'308_front.bin.spots')
+    if args.kind=='pokemon' and args.id==201:
+        for form in range(1,28):
+            for side in directions:
+                for ext in ('.bin','.bin.layout'):
+                    name=f'201_form{form}_{side}{ext}'
+                    metadata['asset_hashes'][name]=sha(assets/name)
+        metadata['adaptations'].append('All 28 Unown forms selected by the native Emerald personality macro; BW2 alternate resources mapped through the ROM personal-table sprite offset. Separate form/view cache keys; no new species or gameplay rules.')
     if args.kind=='pokemon' and args.id==351:
         for form in range(1,4):
             for side in directions:

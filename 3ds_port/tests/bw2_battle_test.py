@@ -33,6 +33,9 @@ typedef int8_t s8; typedef int16_t s16; typedef int32_t s32; typedef u8 bool8;
 #define MAX_SPRITES 64
 #define PLTT_SIZE 1024
 #define SPECIES_NONE 0
+#define SPECIES_UNOWN 201
+#define NUM_UNOWN_FORMS 28
+#define GET_UNOWN_LETTER(p) (((((p)&0x03000000)>>18)|(((p)&0x00030000)>>12)|(((p)&0x00000300)>>6)|((p)&3))%28)
 #define SPECIES_SPINDA 308
 #define SPECIES_CASTFORM 385
 #define SPECIES_DEOXYS 410

@@ -149,18 +149,35 @@ def verify_video(path, qa):
     return info
 
 
-def verify_deoxys_pixels(rpc, sym):
+def unown_letter(personality):
+    return (((personality & 0x03000000) >> 18) | ((personality & 0x00030000) >> 12)
+            | ((personality & 0x00000300) >> 6) | (personality & 3)) % 28
+
+
+def verify_unown_pixels(rpc, sym):
+    actors = rpc.read_memory(sym['sActors'], 32)
+    if not any(struct.unpack_from('<H', actors, b*16+12)[0] == 201 for b in range(2)): return []
+    checks = verify_deoxys_pixels(rpc, sym, species_id=201)
+    for check in checks:
+        b = check['battler']
+        personality = struct.unpack('<I', rpc.read_memory(sym['gCtrBW2ActorPersonality']+b*4, 4))[0]
+        if check['form'] != unown_letter(personality): raise ValueError('Unown native personality selection mismatch')
+        check.update(personality=personality, native_selection=True)
+    return checks
+
+
+def verify_deoxys_pixels(rpc, sym, species_id=410):
     """Compare the actual battler tiles with the selected ROM-derived clip."""
     actors=rpc.read_memory(sym['sActors'],32);checks=[]
-    if not any(struct.unpack_from('<H',actors,b*16+12)[0]==410 for b in range(2)):return checks
+    if not any(struct.unpack_from('<H',actors,b*16+12)[0]==species_id for b in range(2)):return checks
     gfx=struct.unpack('<I',rpc.read_memory(sym['gMonSpritesGfxPtr'],4))[0]
     for b in range(2):
         clip,identity,tick,species,shiny,paused=struct.unpack_from('<IIIHBB',actors,b*16)
-        if species!=410:continue
+        if species!=species_id:continue
         form=rpc.read_memory(sym['gCtrBW2ActorForms']+b,1)[0]
-        if form not in (0,3):raise ValueError('Non-Emerald Deoxys form')
+        if (species_id==410 and form not in (0,3)) or (species_id==201 and form>=28):raise ValueError('Invalid selected BW2 form')
         suffix=f'_form{form}' if form else ''
-        path=ROOT/f'build/upstream/3ds_port/romfs/bw2/410{suffix}_{"front" if b else "back"}.bin'
+        path=ROOT/f'build/upstream/3ds_port/romfs/bw2/{species_id}{suffix}_{"front" if b else "back"}.bin'
         raw=path.read_bytes();frames,steps,loop=struct.unpack_from('<3I',raw,4);offset=92+((steps*2+3)&~3)
         pointer=struct.unpack('<I',rpc.read_memory(gfx+4+b*4,4))[0];matched=None
         for attempt in range(5):
@@ -175,7 +192,7 @@ def verify_deoxys_pixels(rpc, sym):
         if matched is None:raise ValueError('Rendered Deoxys pixels differ from selected BW2 form')
         actual_palette=rpc.read_memory(sym['gPlttBufferFaded']+(256+b*16)*2,32)
         if actual_palette!=raw[60 if shiny else 28:92 if shiny else 60]:raise ValueError('Deoxys rendered palette differs from selected BW2 form')
-        checks.append(dict(battler=b,form=form,species=410,shiny=shiny,matched_tick=matched,clip_sha256=sha(path),pixels_sha256=hashlib.sha256(actual).hexdigest(),palette_sha256=hashlib.sha256(actual_palette).hexdigest()))
+        checks.append(dict(battler=b,form=form,species=species_id,shiny=shiny,matched_tick=matched,clip_sha256=sha(path),pixels_sha256=hashlib.sha256(actual).hexdigest(),palette_sha256=hashlib.sha256(actual_palette).hexdigest()))
     return checks
 
 
@@ -216,6 +233,8 @@ def capture(args):
         initial = state.copy()
         if 'gCtrBw2Personality' in sym:
             initial['personality']=struct.unpack('<I',rpc.read_memory(sym['gCtrBw2Personality'],4))[0]
+        if 'gCtrBw2EnemyPersonality' in sym:
+            initial['enemy_personality']=struct.unpack('<I',rpc.read_memory(sym['gCtrBw2EnemyPersonality'],4))[0]
 
         if "gCtrBw2DeoxysPreview" in sym:
             initial["deoxys_preview"]=struct.unpack("<I",rpc.read_memory(sym["gCtrBw2DeoxysPreview"],4))[0]
@@ -241,6 +260,7 @@ def capture(args):
                       "presentation": presentation(rpc, sym)}
             report["spinda_patterns"]=verify_spinda_pixels(rpc,sym,initial)
             report["deoxys_pixels"]=verify_deoxys_pixels(rpc,sym)
+            report["unown_pixels"]=verify_unown_pixels(rpc,sym)
             (args.output / "capture.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
             print(json.dumps(report), flush=True)
             return
@@ -368,6 +388,7 @@ def capture(args):
                   "audio": "Not captured; test emulator has no DSP firmware"}
         report["spinda_patterns"]=verify_spinda_pixels(rpc,sym,initial)
         report["deoxys_pixels"]=verify_deoxys_pixels(rpc,sym)
+        report["unown_pixels"]=verify_unown_pixels(rpc,sym)
         (args.output / "capture.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
         print(json.dumps({k: report[k] for k in ("passed", "kind", "build_id", "actual_capture_fps", "video")}), flush=True)
     finally:

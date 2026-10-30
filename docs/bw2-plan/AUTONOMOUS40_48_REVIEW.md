@@ -1,0 +1,19 @@
+# Nove checkpoint autonomi â€” 40â€“48
+
+Completati **1/9 checkpoint** richiesti, nellâ€™ordine del piano. Partenza: 314 PokÃ©mon. Obiettivo: 386. Totale corrente: **322/386 PokÃ©mon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
+
+| Checkpoint | Specie | Stato | Prove |
+|---|---|---|---|
+| 1/9 (gruppo 40) | Feraligatr, Sentret, Furret, Hoothoot, Noctowl, Ledyba, Ledian, Spinarak | complete | [Dossier, screenshot e video](CHECKPOINT40_REVIEW.md) |
+| 2/9 (gruppo 41) | Ariados, Cleffa, Togepi, Togetic, Mareep, Flaaffy, Ampharos, Sudowoodo | pending | In preparazione/verifica |
+| 3/9 (gruppo 42) | Politoed, Hoppip, Skiploom, Jumpluff, Aipom, Sunkern, Sunflora, Yanma | pending | In preparazione/verifica |
+| 4/9 (gruppo 43) | Wooper, Quagsire, Espeon, Umbreon, Murkrow, Slowking, Misdreavus, Unown | pending | In preparazione/verifica |
+| 5/9 (gruppo 44) | Pineco, Forretress, Dunsparce, Gligar, Steelix, Snubbull, Granbull, Qwilfish | pending | In preparazione/verifica |
+| 6/9 (gruppo 45) | Scizor, Shuckle, Sneasel, Teddiursa, Ursaring, Swinub, Piloswine, Remoraid | pending | In preparazione/verifica |
+| 7/9 (gruppo 46) | Octillery, Delibird, Mantine, Houndour, Houndoom, Porygon2, Stantler, Smeargle | pending | In preparazione/verifica |
+| 8/9 (gruppo 47) | Tyrogue, Hitmontop, Smoochum, Elekid, Magby, Miltank, Blissey, Raikou | pending | In preparazione/verifica |
+| 9/9 (gruppo 48) | Entei, Suicune, Larvitar, Pupitar, Tyranitar, Lugia, Ho Oh, Celebi | pending | In preparazione/verifica |
+
+Le specie vengono segnate come fatte soltanto dopo prove front/back e shiny, revisione visiva e verifica dei dossier. Ogni gruppo completo Ã¨ salvato in un commit dedicato; i messaggi Git identificano il numero di checkpoint. ROM, asset e filmati restano locali secondo la politica artifacts.
+
+[Piano](../BW2_ANIMATION_PLAN.md) Â· [Registro](AUTONOMOUS40_48.json) Â· [Checkpoint di ripresa](CHECKPOINT.md).
