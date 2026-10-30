@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **354**.
+Totale: **386**. Fatti con dossier completo: **362**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -360,14 +360,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0209 **Snubbull** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0209_snubbull/).
 - [x] 0210 **Granbull** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0210_granbull/).
 - [x] 0211 **Qwilfish** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0211_qwilfish/).
-- [ ] 0212 **Scizor** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0212_scizor/).
-- [ ] 0213 **Shuckle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0213_shuckle/).
-- [ ] 0215 **Sneasel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0215_sneasel/).
-- [ ] 0216 **Teddiursa** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0216_teddiursa/).
-- [ ] 0217 **Ursaring** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0217_ursaring/).
-- [ ] 0220 **Swinub** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0220_swinub/).
-- [ ] 0221 **Piloswine** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0221_piloswine/).
-- [ ] 0223 **Remoraid** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0223_remoraid/).
+- [x] 0212 **Scizor** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0212_scizor/).
+- [x] 0213 **Shuckle** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0213_shuckle/).
+- [x] 0215 **Sneasel** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0215_sneasel/).
+- [x] 0216 **Teddiursa** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0216_teddiursa/).
+- [x] 0217 **Ursaring** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0217_ursaring/).
+- [x] 0220 **Swinub** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0220_swinub/).
+- [x] 0221 **Piloswine** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0221_piloswine/).
+- [x] 0223 **Remoraid** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0223_remoraid/).
 - [ ] 0224 **Octillery** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0224_octillery/).
 - [ ] 0225 **Delibird** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0225_delibird/).
 - [ ] 0226 **Mantine** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0226_mantine/).
