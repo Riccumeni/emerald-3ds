@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **282**.
+Totale: **386**. Fatti con dossier completo: **290**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -288,14 +288,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0122 **Mr Mime** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0122_mr_mime/).
 - [x] 0123 **Scyther** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0123_scyther/).
 - [x] 0124 **Jynx** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0124_jynx/).
-- [ ] 0125 **Electabuzz** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0125_electabuzz/).
-- [ ] 0126 **Magmar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0126_magmar/).
-- [ ] 0128 **Tauros** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0128_tauros/).
-- [ ] 0131 **Lapras** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0131_lapras/).
-- [ ] 0132 **Ditto** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0132_ditto/).
-- [ ] 0133 **Eevee** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0133_eevee/).
-- [ ] 0134 **Vaporeon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0134_vaporeon/).
-- [ ] 0135 **Jolteon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0135_jolteon/).
+- [x] 0125 **Electabuzz** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0125_electabuzz/).
+- [x] 0126 **Magmar** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0126_magmar/).
+- [x] 0128 **Tauros** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0128_tauros/).
+- [x] 0131 **Lapras** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0131_lapras/).
+- [x] 0132 **Ditto** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0132_ditto/).
+- [x] 0133 **Eevee** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0133_eevee/).
+- [x] 0134 **Vaporeon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0134_vaporeon/).
+- [x] 0135 **Jolteon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0135_jolteon/).
 - [ ] 0136 **Flareon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0136_flareon/).
 - [ ] 0137 **Porygon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0137_porygon/).
 - [ ] 0138 **Omanyte** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0138_omanyte/).

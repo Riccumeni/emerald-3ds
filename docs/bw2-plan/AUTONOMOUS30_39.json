@@ -1,7 +1,7 @@
 {
   "start_pokemon": 234,
   "target_pokemon": 314,
-  "completed_checkpoints": 6,
+  "completed_checkpoints": 7,
   "groups": [
     {
       "number": 30,
@@ -858,7 +858,7 @@
     {
       "number": 36,
       "ordinal": 7,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Electabuzz",
         "Magmar",
@@ -921,7 +921,81 @@
           "enemy": 134
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 296,
+      "movie": {
+        "duration": 229.39066666666668,
+        "decoded_frames": 6878,
+        "sha256": "497583b5c1e4451c6b551b003d06dce7d89a717b503ffd8b6808b5c4ab950bcf",
+        "segments": [
+          {
+            "name": "electabuzz-magmar",
+            "start": 0.0,
+            "end": 24.595333333333333,
+            "frames": 737,
+            "sha256": "3278f9a0e2d50c870002253289b9c2ab6f91bc395c8a87c136e49a646dc6e137"
+          },
+          {
+            "name": "magmar-electabuzz",
+            "start": 24.595333333333333,
+            "end": 50.20666666666666,
+            "frames": 768,
+            "sha256": "ec2c43a0f1799c5ab4d968539e6b73a607d6493fa7a7cf6617f2019155eacf23"
+          },
+          {
+            "name": "tauros-lapras",
+            "start": 50.20666666666666,
+            "end": 80.13,
+            "frames": 897,
+            "sha256": "56e7f06b7aa92e6a6bbe2d98a75d3d8f56e7769a48eb445a36bfe5ed0b5f39de"
+          },
+          {
+            "name": "lapras-tauros",
+            "start": 80.13,
+            "end": 111.91333333333333,
+            "frames": 953,
+            "sha256": "186a095968e70c88b8c4597ba9ec15a9a513bff341a7dce1177727e91c638ce7"
+          },
+          {
+            "name": "ditto-eevee",
+            "start": 111.91333333333333,
+            "end": 139.38466666666667,
+            "frames": 824,
+            "sha256": "72661e4498f7841d46cb87b58c216d453635165012b330b57e67eec2e3872ecd"
+          },
+          {
+            "name": "eevee-ditto",
+            "start": 139.38466666666667,
+            "end": 166.59,
+            "frames": 816,
+            "sha256": "3b0e943233c3f11efd7e63e4e7041299b9990c95cf31513edc792276ad5f5980"
+          },
+          {
+            "name": "vaporeon-jolteon",
+            "start": 166.59,
+            "end": 198.41933333333333,
+            "frames": 954,
+            "sha256": "f0c755f67c39aab7429afdcd69efe8c0e30eb35e13e58655d9501b1b5416fa09"
+          },
+          {
+            "name": "jolteon-vaporeon",
+            "start": 198.41933333333333,
+            "end": 229.39066666666668,
+            "frames": 929,
+            "sha256": "7313835799edb95113e335ea308a597873d273d9b2e02bd68805b64fde339efd"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 36: eight Pokemon"
     },
     {
       "number": 37,
@@ -1167,7 +1241,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint35: reviewed, published and audited; commit follows",
+    "phase": "checkpoint36: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -1178,9 +1252,9 @@
       }
     ],
     "continuity": "build/BW2_CONTINUITY30.md",
-    "capture_group": 35,
+    "capture_group": 36,
     "exec_session_id": null,
-    "log": "build/bw2-auto30-cp35-capture.log",
+    "log": "build/bw2-auto30-cp36-capture.log",
     "build_script": "build/bw2-auto30-build.sh"
   },
   "checks": {
