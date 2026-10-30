@@ -1,7 +1,7 @@
 {
   "start_pokemon": 234,
   "target_pokemon": 314,
-  "completed_checkpoints": 2,
+  "completed_checkpoints": 3,
   "groups": [
     {
       "number": 30,
@@ -290,7 +290,7 @@
     {
       "number": 32,
       "ordinal": 3,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Weepinbell",
         "Victreebel",
@@ -353,7 +353,81 @@
           "enemy": 83
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 264,
+      "movie": {
+        "duration": 206.43966666666665,
+        "decoded_frames": 6191,
+        "sha256": "d77c01d054d7f10ce0a0946932c7709ecf0fc2ff2a2597f2fdee4af4eabdcd07",
+        "segments": [
+          {
+            "name": "weepinbell-victreebel",
+            "start": 0.0,
+            "end": 25.580333333333332,
+            "frames": 767,
+            "sha256": "606a12be67cc88f49f0c41e3be3f567dbe9969a029e3270b3771fa1ae002b533"
+          },
+          {
+            "name": "victreebel-weepinbell",
+            "start": 25.580333333333332,
+            "end": 51.785666666666664,
+            "frames": 786,
+            "sha256": "b35c8e727f5d537666d8687b9347839dd19edabc729882177ffde28f1077292a"
+          },
+          {
+            "name": "ponyta-rapidash",
+            "start": 51.785666666666664,
+            "end": 76.866,
+            "frames": 752,
+            "sha256": "fde4b1ff6df5a47bd23578972f3348841cc1af2363272e940ac66bbc0c95bbf6"
+          },
+          {
+            "name": "rapidash-ponyta",
+            "start": 76.866,
+            "end": 100.80633333333333,
+            "frames": 718,
+            "sha256": "e9a780ce7af3c055262d337699cd8adb409d91108fb738c4c3a2b23aacc55394"
+          },
+          {
+            "name": "slowpoke-slowbro",
+            "start": 100.80633333333333,
+            "end": 130.35466666666667,
+            "frames": 886,
+            "sha256": "02a62a410b37d8366446efa7a879e4b192adec349d5c7bd210c0c896869fc317"
+          },
+          {
+            "name": "slowbro-slowpoke",
+            "start": 130.35466666666667,
+            "end": 160.56,
+            "frames": 906,
+            "sha256": "6db234a282aa778d4ba800b62bd61068369496c611ee0892d6eb78cc0eeedf08"
+          },
+          {
+            "name": "farfetchd-seel",
+            "start": 160.56,
+            "end": 183.56233333333333,
+            "frames": 690,
+            "sha256": "ba7711b26c545cf87b2f09712b70a2090218c7a59474fe359538e60cc72aa91f"
+          },
+          {
+            "name": "seel-farfetchd",
+            "start": 183.56233333333333,
+            "end": 206.43966666666665,
+            "frames": 686,
+            "sha256": "ec9d9ace74794d8244bc33a7de8408f1ff339de114f8448e9f9c1bd66f551c81"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 32: eight Pokemon"
     },
     {
       "number": 33,
@@ -871,7 +945,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint31: reviewed, published and audited; commit follows",
+    "phase": "checkpoint32: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -882,9 +956,9 @@
       }
     ],
     "continuity": "build/BW2_CONTINUITY30.md",
-    "capture_group": 31,
+    "capture_group": 32,
     "exec_session_id": null,
-    "log": "build/bw2-auto30-cp31-capture.log",
+    "log": "build/bw2-auto30-cp32-capture.log",
     "build_script": "build/bw2-auto30-build.sh"
   },
   "checks": {

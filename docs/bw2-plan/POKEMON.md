@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **250**.
+Totale: **386**. Fatti con dossier completo: **258**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -256,14 +256,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0061 **Poliwhirl** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0061_poliwhirl/).
 - [x] 0062 **Poliwrath** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0062_poliwrath/).
 - [x] 0069 **Bellsprout** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0069_bellsprout/).
-- [ ] 0070 **Weepinbell** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0070_weepinbell/).
-- [ ] 0071 **Victreebel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0071_victreebel/).
-- [ ] 0077 **Ponyta** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0077_ponyta/).
-- [ ] 0078 **Rapidash** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0078_rapidash/).
-- [ ] 0079 **Slowpoke** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0079_slowpoke/).
-- [ ] 0080 **Slowbro** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0080_slowbro/).
-- [ ] 0083 **Farfetchd** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0083_farfetchd/).
-- [ ] 0086 **Seel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0086_seel/).
+- [x] 0070 **Weepinbell** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0070_weepinbell/).
+- [x] 0071 **Victreebel** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0071_victreebel/).
+- [x] 0077 **Ponyta** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0077_ponyta/).
+- [x] 0078 **Rapidash** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0078_rapidash/).
+- [x] 0079 **Slowpoke** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0079_slowpoke/).
+- [x] 0080 **Slowbro** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0080_slowbro/).
+- [x] 0083 **Farfetchd** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0083_farfetchd/).
+- [x] 0086 **Seel** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0086_seel/).
 - [ ] 0087 **Dewgong** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0087_dewgong/).
 - [ ] 0090 **Shellder** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0090_shellder/).
 - [ ] 0091 **Cloyster** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0091_cloyster/).
