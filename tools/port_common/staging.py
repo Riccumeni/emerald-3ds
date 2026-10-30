@@ -61,6 +61,7 @@ ENGINE_PATTERNS = [
 ]
 OPTIONAL_PATTERNS = [
     "followers/*",
+    "bw2/*",
 ]
 SUPPORTED_ROM_SHA1 = bytes.fromhex("f3ae088181bf583e55daf962a92bb46f4f1d07b7")
 

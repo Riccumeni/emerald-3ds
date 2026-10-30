@@ -8,9 +8,9 @@ diff --git a/src/new_game.c b/src/new_game.c
 +#if defined(PLATFORM_3DS) && defined(PORT_BRIDGE)
 +#include "3ds_nuzlocke.h"
 +#endif
-
+ 
  extern const u8 EventScript_ResetAllMapFlags[];
-
+ 
 @@ -215,6 +218,10 @@
      WipeTrainerNameRecords();
      ResetTrainerHillResults();
@@ -20,7 +20,7 @@ diff --git a/src/new_game.c b/src/new_game.c
 +    CtrNuzlocke_NewGame();
 +#endif
  }
-
+ 
  static void ResetMiniGamesRecords(void)
 diff --git a/src/save.c b/src/save.c
 --- a/src/save.c
@@ -41,7 +41,7 @@ diff --git a/src/save.c b/src/save.c
 +#define CTR_NUZLOCKE_SAVED()
 +#define CTR_NUZLOCKE_LOADED()
 +#endif
-
+ 
  static u16 CalculateChecksum(void *, u16);
  static bool8 ReadFlashSector(u8, struct SaveSector *);
 @@ -789,7 +801,10 @@
@@ -67,7 +67,7 @@ diff --git a/src/save.c b/src/save.c
      return FALSE;
  }
 @@ -911,7 +929,10 @@
-
+ 
  #ifdef PLATFORM_3DS
      if (finished && !gDamagedSaveSectors)
 +    {

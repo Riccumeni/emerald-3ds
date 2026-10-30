@@ -16,6 +16,7 @@
 #include "3ds_data.h"
 #include "3ds_bottom.h"
 #include "3ds_summary_ui.h"
+#include "3ds_bag_ui.h"
 #include "ctr_battle_layout.h"
 #include "3ds_battle_hud.h"
 #include "3ds_local.h"
@@ -561,11 +562,20 @@ static uint32_t sTileSerial;
 #define PAL_COLOURS (PAL_TILE_BANK_COLOURS + CTR_TILE_BANKS * CTR_TILE_BANK_PALETTES * 16)
 
 static uint32_t sOamAnchored[4];
+static uint32_t sBattleActorOam[4];
 static int16_t sOamAnchor[128];
 
 void CtrVideo_ClearOamAnchors(void)
 {
     memset(sOamAnchored, 0, sizeof(sOamAnchored));
+    memset(sBattleActorOam, 0, sizeof(sBattleActorOam));
+}
+
+void CtrVideo_MarkBattleActor(unsigned first, unsigned end)
+{
+    if (end > 128) end = 128;
+    for (unsigned i = first; i < end; ++i)
+        sBattleActorOam[i >> 5] |= 1u << (i & 31);
 }
 
 void CtrVideo_SetOamAnchor(unsigned first, unsigned end, int y)
@@ -6096,8 +6106,33 @@ static void DrawObjects(unsigned priority, bool effects)
                                  false, color256, effects, mode);
             continue;
         }
-        DrawObjectAt(x, y, attr1, attr2, ObjBank((unsigned)i, attr2), width, height, boxW, boxH, affine, color256,
-                     effects, mode);
+        if (sBattle && (sBattleActorOam[i >> 5] & (1u << (i & 31)))
+            && BATTLE_SCENE_BOTTOM == BATTLE_SCENE_BOX_BOTTOM)
+        {
+            /* ScenePlaceFrom repeats the scenery's last row below the text
+             * box. Leave that row free of enlarged actor pixels, otherwise
+             * their feet reappear in the narrow margin below the box. */
+            int bottom = sClipY1;
+            SpriteBatchFlush();
+            C2D_Flush();
+            if (sClipY1 > BATTLE_SCENE_BOX_BOTTOM - 1)
+                sClipY1 = BATTLE_SCENE_BOX_BOTTOM - 1;
+            if (sClipY0 < sClipY1)
+            {
+                Scissor(sClipX0, sClipY0, sClipX1, sClipY1);
+                DrawObjectAt(x, y, attr1, attr2, ObjBank((unsigned)i, attr2), width, height, boxW, boxH,
+                             affine, color256, effects, mode);
+                SpriteBatchFlush();
+                /* Affine tiles use Citro2D's queue, not the fast sprite batch.
+                 * Submit them while this actor's scissor is still installed. */
+                C2D_Flush();
+            }
+            sClipY1 = bottom;
+            RestoreScissor();
+        }
+        else
+            DrawObjectAt(x, y, attr1, attr2, ObjBank((unsigned)i, attr2), width, height, boxW, boxH, affine,
+                         color256, effects, mode);
     }
     SpriteBatchFlush();
     sLayerShift = layerShift;
@@ -8012,7 +8047,8 @@ static void BattleEdgesCompose(bool sprites, int widen, int lift)
     right = VIEW_RIGHT;
     top = VIEW_TOP;
     bottom = VIEW_BOTTOM;
-    BattleRectCompose(left, top, right, sScenePut.top, sprites ? 0u : 16u);
+    /* Overlap one logical row to cover the filtered sky/scene seam. */
+    BattleRectCompose(left, top, right, sScenePut.top + 1, sprites ? 0u : 16u);
     if (box)
     {
         int from = BATTLE_SCENE_BOX_BOTTOM;
@@ -12139,31 +12175,40 @@ static void DrawSpeedBadge(C3D_RenderTarget *target, int halves)
  * the frame is only paced to the display.
  */
 static bool sHoldTop;
-/* A dual-screen summary temporarily replaces the world held above the
- * party/PC menu. Keep the completed eye buffers in ordinary RAM while its
- * INFO page uses the GPU, then present those same buffers on return. */
-static u8 *sSummaryTopSaved;
-static bool sSummaryTopStereo;
-#define SUMMARY_EYE_BYTES (240u * 400u * 4u)
-static C3D_Tex sSummaryProfileTexture;
-static u32 sSummaryProfileVersion;
+/* The native bag and summary temporarily replace the held world/battle.
+ * Keep the completed eye buffers in ordinary RAM while their top canvas
+ * uses the GPU, then present those same buffers on return. */
+static u8 *sNativeTopSaved;
+static bool sNativeTopStereo;
+#define NATIVE_EYE_BYTES (240u * 400u * 4u)
+static C3D_Tex sNativeTopTexture;
+static u32 sNativeTopVersion;
 
-static bool DrawNativeSummaryProfile(void)
+static bool NativeTopShown(void)
 {
+    return CtrSummary_DualShown() || CtrBag_DualShown();
+}
+
+static bool DrawNativeTop(void)
+{
+    static bool wasBag;
+    bool bag = CtrBag_DualShown();
     u32 version;
-    const u16 *canvas = CtrSummary_ProfileCanvas(&version);
-    if (!sSummaryProfileTexture.data)
+    const u16 *canvas = bag ? CtrBag_TopCanvas(&version) : CtrSummary_ProfileCanvas(&version);
+    if (wasBag != bag) sNativeTopVersion = version - 1;
+    wasBag = bag;
+    if (!sNativeTopTexture.data)
     {
-        if (!C3D_TexInit(&sSummaryProfileTexture, 512, 256, GPU_RGB565))
+        if (!C3D_TexInit(&sNativeTopTexture, 512, 256, GPU_RGB565))
             return false;
-        C3D_TexSetFilter(&sSummaryProfileTexture, GPU_NEAREST, GPU_NEAREST);
-        C3D_TexSetWrap(&sSummaryProfileTexture, GPU_CLAMP_TO_EDGE, GPU_CLAMP_TO_EDGE);
-        memset(sSummaryProfileTexture.data, 0, 512u * 256u * sizeof(u16));
-        sSummaryProfileVersion = version - 1;
+        C3D_TexSetFilter(&sNativeTopTexture, GPU_NEAREST, GPU_NEAREST);
+        C3D_TexSetWrap(&sNativeTopTexture, GPU_CLAMP_TO_EDGE, GPU_CLAMP_TO_EDGE);
+        memset(sNativeTopTexture.data, 0, 512u * 256u * sizeof(u16));
+        sNativeTopVersion = version - 1;
     }
-    if (version != sSummaryProfileVersion)
+    if (version != sNativeTopVersion)
     {
-        u16 *data = sSummaryProfileTexture.data;
+        u16 *data = sNativeTopTexture.data;
         for (unsigned ty = 0; ty < 240; ty += 8)
             for (unsigned tx = 0; tx < 400; tx += 8)
             {
@@ -12172,8 +12217,8 @@ static bool DrawNativeSummaryProfile(void)
                     for (unsigned x = 0; x < 8; ++x)
                         tile[sMorton[y * 8 + x]] = canvas[(tx + x) * 240 + 239 - ty - y];
             }
-        C3D_TexFlush(&sSummaryProfileTexture);
-        sSummaryProfileVersion = version;
+        C3D_TexFlush(&sNativeTopTexture);
+        sNativeTopVersion = version;
     }
     const Tex3DS_SubTexture profile = {400, 240, 0, 1, 400.0f / 512.0f, 1 - 240.0f / 256.0f};
     ColourClear(sTop, C2D_Color32(0, 0, 0, 255));
@@ -12181,7 +12226,7 @@ static bool DrawNativeSummaryProfile(void)
     BlendForget();
     Blend(5, false, false);
     C2D_ViewReset();
-    C2D_DrawImageAt((C2D_Image){&sSummaryProfileTexture, &profile}, 0, 0, 0, NULL, 1, 1);
+    C2D_DrawImageAt((C2D_Image){&sNativeTopTexture, &profile}, 0, 0, 0, NULL, 1, 1);
     C2D_Flush();
     return true;
 }
@@ -12407,8 +12452,8 @@ void CtrVideo_Present(void)
     /* Nor is the shop's BUY screen ever shown on the top screen while its
      * surface down there is not ready yet, nor a screen the bottom one
      * draws natively. */
-    if ((sHoldTop || sCentredRequested == CTR_CENTRED_SHOP || (wanted && native)) && !down
-     && !(sSummaryTopSaved && !CtrSummary_DualShown()))
+    if ((sHoldTop || sCentredRequested == CTR_CENTRED_SHOP || (wanted && native)) && !down && !NativeTopShown()
+     && !(sNativeTopSaved && !NativeTopShown()))
     {
         sStats.mode = CTR_MODE_OTHER;
         sStats.route = CTR_ROUTE_BLANK;
@@ -12511,38 +12556,38 @@ void CtrVideo_Present(void)
     uint64_t waitStart = svcGetSystemTick();
     CtrVoxel_NoteFrameWait(waitStart);
     if (!C3D_FrameBegin(C3D_FRAME_SYNCDRAW)) return;
-    if (CtrSummary_DualShown() && !sSummaryTopSaved)
+    if (NativeTopShown() && !sNativeTopSaved)
     {
-        sSummaryTopSaved = malloc(SUMMARY_EYE_BYTES * (sTopRight ? 2 : 1));
-        if (sSummaryTopSaved)
+        sNativeTopSaved = malloc(NATIVE_EYE_BYTES * (sTopRight ? 2 : 1));
+        if (sNativeTopSaved)
         {
-            memcpy(sSummaryTopSaved, sTop->frameBuf.colorBuf, SUMMARY_EYE_BYTES);
+            memcpy(sNativeTopSaved, sTop->frameBuf.colorBuf, NATIVE_EYE_BYTES);
             if (sTopRight)
-                memcpy(sSummaryTopSaved + SUMMARY_EYE_BYTES, sTopRight->frameBuf.colorBuf, SUMMARY_EYE_BYTES);
-            sSummaryTopStereo = sStereo;
+                memcpy(sNativeTopSaved + NATIVE_EYE_BYTES, sTopRight->frameBuf.colorBuf, NATIVE_EYE_BYTES);
+            sNativeTopStereo = sStereo;
         }
     }
-    else if (sSummaryTopSaved && !CtrSummary_DualShown())
+    else if (sNativeTopSaved && !NativeTopShown())
     {
-        memcpy(sTop->frameBuf.colorBuf, sSummaryTopSaved, SUMMARY_EYE_BYTES);
-        GSPGPU_FlushDataCache(sTop->frameBuf.colorBuf, SUMMARY_EYE_BYTES);
+        memcpy(sTop->frameBuf.colorBuf, sNativeTopSaved, NATIVE_EYE_BYTES);
+        GSPGPU_FlushDataCache(sTop->frameBuf.colorBuf, NATIVE_EYE_BYTES);
         C3D_FrameDrawOn(sTop);
-        if (sTopRight && sSummaryTopStereo)
+        if (sTopRight && sNativeTopStereo)
         {
-            memcpy(sTopRight->frameBuf.colorBuf, sSummaryTopSaved + SUMMARY_EYE_BYTES, SUMMARY_EYE_BYTES);
-            GSPGPU_FlushDataCache(sTopRight->frameBuf.colorBuf, SUMMARY_EYE_BYTES);
+            memcpy(sTopRight->frameBuf.colorBuf, sNativeTopSaved + NATIVE_EYE_BYTES, NATIVE_EYE_BYTES);
+            GSPGPU_FlushDataCache(sTopRight->frameBuf.colorBuf, NATIVE_EYE_BYTES);
             C3D_FrameDrawOn(sTopRight);
         }
-        gfxSet3D(sSummaryTopStereo);
-        sStereo = sSummaryTopStereo;
+        gfxSet3D(sNativeTopStereo);
+        sStereo = sNativeTopStereo;
         bool running = GpuFinishEarly();
         C3D_FrameEnd(running ? GX_CMDLIST_FLUSH : 0);
-        free(sSummaryTopSaved);
-        sSummaryTopSaved = NULL;
-        if (sSummaryProfileTexture.data)
+        free(sNativeTopSaved);
+        sNativeTopSaved = NULL;
+        if (sNativeTopTexture.data)
         {
-            C3D_TexDelete(&sSummaryProfileTexture);
-            memset(&sSummaryProfileTexture, 0, sizeof(sSummaryProfileTexture));
+            C3D_TexDelete(&sNativeTopTexture);
+            memset(&sNativeTopTexture, 0, sizeof(sNativeTopTexture));
         }
         ++sStats.frames;
         return;
@@ -12554,7 +12599,7 @@ void CtrVideo_Present(void)
     sUploadCommands = sAnimCommands = 0;
     sRenderReserve = sBattle ? RENDER_RESERVE_MOST : RENDER_RESERVE;
     Flat2D();
-    if (CtrSummary_DualShown() && DrawNativeSummaryProfile())
+    if (NativeTopShown() && DrawNativeTop())
     {
         if (sStereo) { gfxSet3D(false); sStereo = false; }
         bool running = GpuFinishEarly();
@@ -12836,7 +12881,7 @@ void CtrVideo_Present(void)
     bool stereo = voxelStereo || battleStereo || worldStereo
                   || (!voxel && !blank && !sBattleWorld && !sTransition && sTopRight && slider > 0.0f
                       && roundf(slider * CTR_STEREO_PIXELS) > 0.0f);
-    if (CtrSummary_DualShown()) stereo = false;
+    if (NativeTopShown()) stereo = false;
     /* A 2D screen composed per eye walks every layer twice, which on an Old
      * 3DS is 30 fps in a menu. Without its planes it stays flat until they
      * can be made (before the next frame, see sBandsWanted). */
@@ -13216,8 +13261,8 @@ void CtrVideo_SetLineScroll(unsigned reg, bool wide, const void *values, unsigne
 
 void CtrVideo_Shutdown(void)
 {
-    free(sSummaryTopSaved);
-    sSummaryTopSaved = NULL;
+    free(sNativeTopSaved);
+    sNativeTopSaved = NULL;
     BottomRelease();
     CtrVoxel_Shutdown();
     StereoSurfaceRelease();
@@ -13227,10 +13272,10 @@ void CtrVideo_Shutdown(void)
     if (sLogical) C3D_RenderTargetDelete(sLogical);
     if (sTop) C3D_RenderTargetDelete(sTop);
     if (sTopRight) C3D_RenderTargetDelete(sTopRight);
-    if (sSummaryProfileTexture.data)
+    if (sNativeTopTexture.data)
     {
-        C3D_TexDelete(&sSummaryProfileTexture);
-        memset(&sSummaryProfileTexture, 0, sizeof(sSummaryProfileTexture));
+        C3D_TexDelete(&sNativeTopTexture);
+        memset(&sNativeTopTexture, 0, sizeof(sNativeTopTexture));
     }
     BandsRelease();
     sBandsFailed = false;

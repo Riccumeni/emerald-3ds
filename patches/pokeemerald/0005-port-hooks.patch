@@ -649,7 +649,7 @@ diff --git a/include/party_menu.h b/include/party_menu.h
 index 386437c121e233cf73c60cc131356589f847c204..eb7554bb38946dcaa1de8a9f22c41ec5f155ad50 100644
 --- a/include/party_menu.h
 +++ b/include/party_menu.h
-@@ -90,4 +90,11 @@ void BufferMoveDeleterNicknameAndMove(void);
+@@ -90,4 +90,10 @@ void BufferMoveDeleterNicknameAndMove(void);
  void GetNumMovesSelectedMonHas(void);
  void MoveDeleterChooseMoveToForget(void);
  
@@ -657,7 +657,6 @@ index 386437c121e233cf73c60cc131356589f847c204..eb7554bb38946dcaa1de8a9f22c41ec5
 +void CtrParty_Fly(u8 slot, u16 mapSecId, u8 posWithinMapSec);
 +#endif
 +#ifdef PLATFORM_3DS
-+void CtrBottom_OpenFlyMap(u8 slot, bool8 fromBag);
 +#endif
 +
  #endif // GUARD_PARTY_MENU_H
@@ -12883,20 +12882,6 @@ index 7cde1a018c33c86da6ede1b0e7d3259869774cb0..d6720e2e5c86b64f5fd2691f4d19dc00
  
          data[0] = Menu_GetCursorPos();
          switch (input)
-@@ -3750,7 +4171,13 @@ static void CursorCb_FieldMove(u8 taskId)
-                 sPartyMenuInternal->data[0] = fieldMove;
-                 break;
-             case FIELD_MOVE_FLY:
-+#ifdef PLATFORM_3DS
-+                // the bottom screen's map is the Fly map (3ds_bottom_ui.c)
-+                CtrBottom_OpenFlyMap(gPartyMenu.slotId, FALSE);
-+                gPartyMenu.exitCallback = CB2_ReturnToField;
-+#else
-                 gPartyMenu.exitCallback = CB2_OpenFlyMap;
-+#endif
-                 Task_ClosePartyMenu(taskId);
-                 break;
-             default:
 @@ -3837,7 +4264,7 @@ static u16 GetFieldMoveMonSpecies(void)
  
  static void Task_CancelAfterAorBPress(u8 taskId)

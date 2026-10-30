@@ -442,6 +442,13 @@ build/pak_test.exe: tests/pak_test.c src/3ds_pak.c include/3ds_pak.h
 	@mkdir -p build
 	$(HOSTCC) -std=c99 -O2 -Wall -Wextra -Werror -Iinclude tests/pak_test.c src/3ds_pak.c -o $@
 
+.PHONY: verify-bw2
+verify: verify-bw2
+verify-bw2:
+	$(PYTHON) tests/bw2_export_test.py
+	$(PYTHON) tests/bw2_battle_test.py --cc "$(HOSTCC)"
+	$(PYTHON) tests/bw2_evidence_test.py
+
 clean:
 	rm -rf build dist $(TARGET).elf $(TARGET).3dsx $(TARGET).smdh
 

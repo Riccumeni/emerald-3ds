@@ -12,7 +12,7 @@ diff --git a/src/wild_encounter.c b/src/wild_encounter.c
  #include "wild_encounter.h"
  #include "pokemon.h"
 @@ -76,6 +79,24 @@
-
+ 
  EWRAM_DATA static u8 sWildEncountersDisabled = 0;
  EWRAM_DATA static u32 sFeebasRngValue = 0;
 +
@@ -33,18 +33,18 @@ diff --git a/src/wild_encounter.c b/src/wild_encounter.c
 +#else
 +#define WILD_SPECIES(species) (species)
 +#endif
-
+ 
  #include "data/wild_encounters.h"
-
+ 
 @@ -466,7 +487,7 @@
      if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
          return FALSE;
-
+ 
 -    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
 +    CreateWildMon(WILD_SPECIES(wildMonInfo->wildPokemon[wildMonIndex].species), level);
      return TRUE;
  }
-
+ 
 @@ -474,9 +495,10 @@
  {
      u8 wildMonIndex = ChooseWildMonIndex_Fishing(rod);
@@ -57,7 +57,7 @@ diff --git a/src/wild_encounter.c b/src/wild_encounter.c
 +    CreateWildMon(species, level);
 +    return species;
  }
-
+ 
  static bool8 SetUpMassOutbreakEncounter(u8 flags)
 @@ -1061,7 +1083,8 @@
              VisibleLogFail("kept away by a repel", wild->species);
@@ -72,7 +72,7 @@ diff --git a/src/wild_encounter.c b/src/wild_encounter.c
 @@ -1670,7 +1693,7 @@
      {
          u8 level = ChooseWildMonLevel(&sWildFeebas);
-
+ 
 -        species = sWildFeebas.species;
 +        species = WILD_SPECIES(sWildFeebas.species);
          CreateWildMon(species, level);
@@ -82,12 +82,12 @@ diff --git a/src/starter_choose.c b/src/starter_choose.c
 --- a/src/starter_choose.c
 +++ b/src/starter_choose.c
 @@ -26,6 +26,7 @@
-
+ 
  #ifdef PORT_BRIDGE
  #include "port_platform.h"
 +#include "3ds_randomizer.h" // seeded species randomizer (off by default)
  #endif
-
+ 
  #define STARTER_MON_COUNT   3
 @@ -356,7 +357,13 @@
  {
@@ -101,7 +101,7 @@ diff --git a/src/starter_choose.c b/src/starter_choose.c
      return sStarterMon[chosenStarterId];
 +#endif
  }
-
+ 
  static void VblankCB_StarterChoose(void)
 diff --git a/src/battle_main.c b/src/battle_main.c
 --- a/src/battle_main.c
@@ -119,11 +119,11 @@ diff --git a/src/battle_main.c b/src/battle_main.c
 +#else
 +#define TRAINER_MON_SPECIES(species) (species)
 +#endif
-
+ 
  extern const struct BgTemplate gBattleBgTemplates[];
  extern const struct WindowTemplate *const gBattleWindowTemplates[];
 @@ -2014,7 +2023,7 @@
-
+ 
                  personalityValue += nameHash << 8;
                  fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
 -                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
@@ -132,7 +132,7 @@ diff --git a/src/battle_main.c b/src/battle_main.c
              }
              case F_TRAINER_PARTY_CUSTOM_MOVESET:
 @@ -2026,8 +2035,13 @@
-
+ 
                  personalityValue += nameHash << 8;
                  fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
 -                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
@@ -148,23 +148,23 @@ diff --git a/src/battle_main.c b/src/battle_main.c
                  {
                      SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
 @@ -2044,7 +2058,7 @@
-
+ 
                  personalityValue += nameHash << 8;
                  fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
 -                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
 +                CreateMon(&party[i], TRAINER_MON_SPECIES(partyData[i].species), partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
-
+ 
                  SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                  break;
 @@ -2058,10 +2072,14 @@
-
+ 
                  personalityValue += nameHash << 8;
                  fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
 -                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
 +                CreateMon(&party[i], TRAINER_MON_SPECIES(partyData[i].species), partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
-
+ 
                  SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
-
+ 
 +#ifdef PORT_BRIDGE
 +                // As above: a randomized species keeps its level-up moves.
 +                if (GetMonData(&party[i], MON_DATA_SPECIES) == partyData[i].species)

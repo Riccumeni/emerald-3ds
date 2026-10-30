@@ -1,0 +1,106 @@
+{
+  "pokemon_completed": 114,
+  "moves_completed": 6,
+  "audited_dossiers": 120,
+  "new_pokemon": 40,
+  "normal_scenarios": 40,
+  "shiny_scenarios": 40,
+  "source_rom_sha256": "2ad60a931c2a17deed4596d23605e10048bf3ccb8f2e012eb9d13c37fb2ac509",
+  "previous_assets_preserved": 317,
+  "foreign_files_preserved": 344,
+  "recording_seconds": 1201.4243333333334,
+  "decoded_frames": 36053,
+  "capture_fps_range": [
+    29.95051333187878,
+    29.982618771739247
+  ],
+  "builds": {
+    "test": {
+      "build_id": "35c62b2e2f40bcd4",
+      "sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0",
+      "path": "artifacts/bw2-validation/builds/35c62b2e2f40bcd4_11ce99dc5a27/validation.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/35c62b2e2f40bcd4_f8cfc596afdd/validation.elf",
+      "elf_sha256": "f8cfc596afdd52e92ca9339f8762d35bd707cbc0ddba47141a2082567ade760f",
+      "id_path": "artifacts/bw2-validation/builds/35c62b2e2f40bcd4_11ce99dc5a27/build_id.bin"
+    },
+    "production": {
+      "build_id": "78ea4c127e93ed58",
+      "sha256": "5669769244cfb417882cf953021e219d0250969eff65733dab8e7566047e2eb5",
+      "path": "artifacts/bw2-validation/builds/78ea4c127e93ed58_5669769244cf/Emerald3DS-BW2.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/78ea4c127e93ed58_f9142e767ebd/production.elf",
+      "elf_sha256": "f9142e767ebdff03f8ae31fb6b032d99678eee27c5cfd91d83b2003e5d999261",
+      "id_path": "artifacts/bw2-validation/builds/78ea4c127e93ed58_5669769244cf/production-build-id.bin"
+    }
+  },
+  "checks": {
+    "exporter_tests": 16,
+    "evidence_tests": 7,
+    "bridge_synthetic": true,
+    "bridge_real_assets": true,
+    "production_stubs_bytes": 4,
+    "production_validation_mailbox": false
+  },
+  "next_unit": {
+    "tipo": "pokemon",
+    "id": 327,
+    "nome": "Spinda",
+    "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
+  },
+  "limitations": [
+    "Azahar 1x only; audio not captured without DSP firmware",
+    "Hardware console, stereo, double battles pending",
+    "General bottom-map tests have pre-existing failures; not claimed as passed"
+  ],
+  "review_image_hashes": {
+    "artifacts/bw2-validation/checkpoint10-2026-10-28/cp10-entry-review.png": "c4981e925e70f21d19ab548331365c9b397f03deea96732092fdcdd34518d2ce",
+    "artifacts/bw2-validation/checkpoint10-2026-10-28/cp10-review-pair0.png": "4bd7f4e9c568b3f2e2df69d408645486573aff20f8ccceb62d9ef2d20357b25c",
+    "artifacts/bw2-validation/checkpoint10-2026-10-28/cp10-review-pair1.png": "d6d2371240250c1514ec9d619324488b74f283fb680b96fe22d4d004eb46819c",
+    "artifacts/bw2-validation/checkpoint10-2026-10-28/cp10-review-pair2.png": "594a66c3705f2fe56eeb533b0556ecaf7b6663a3a657d4afc417c7193f7fe20f",
+    "artifacts/bw2-validation/checkpoint10-2026-10-28/cp10-review-pair3.png": "b66998f238bf166ce5abdc28e7066a8b76c02b62065b98de0da576c6690001d5",
+    "artifacts/bw2-validation/checkpoint10-2026-10-28/cp10-shiny-review.png": "e92f1e5905f531beb6cc10a6074c9b72995a26c1c1c67253fa2dd5db071e63eb",
+    "artifacts/bw2-validation/checkpoint10-2026-10-28/pokemon.png": "253ca6ec616475b87e8de07d864ff9dd84da716e58ea037c90b59ca16cb54fca",
+    "artifacts/bw2-validation/checkpoint11-2026-10-28/cp11-entry-review.png": "38986fdc612975c2b44696ce25e169bd3fa3eb19a17386956088a3e408c6d690",
+    "artifacts/bw2-validation/checkpoint11-2026-10-28/cp11-review-pair0.png": "20dee28d7ec85f6d7519e809cebd7a089c8978bb449e26abc6b07e8514d8840c",
+    "artifacts/bw2-validation/checkpoint11-2026-10-28/cp11-review-pair1.png": "c55f260fcc68143a275983654e6303ac8aaaed11f6851d579eb536aa5947637f",
+    "artifacts/bw2-validation/checkpoint11-2026-10-28/cp11-review-pair2.png": "3c91c601da0564b99091403a22a87c3f669a5883524df4fd85acb49f6f16626e",
+    "artifacts/bw2-validation/checkpoint11-2026-10-28/cp11-review-pair3.png": "923627774dcff650cafd2233a7d023c01d89d2571d6f81286789665f17f82683",
+    "artifacts/bw2-validation/checkpoint11-2026-10-28/cp11-shiny-review.png": "93fcce52300b89450fd1cea4cce2a2a1685ac096602941c21d17cce23e029283",
+    "artifacts/bw2-validation/checkpoint11-2026-10-28/pokemon.png": "05f7c2c5a7613d783deb2f28392adaf24e7dabc933ef85a37390e4c372218a46",
+    "artifacts/bw2-validation/checkpoint12-2026-10-28/cp12-entry-review.png": "534b2d0fe199a3fd623de38e622b194ef8a696c9f464284ee2efc6800882a80e",
+    "artifacts/bw2-validation/checkpoint12-2026-10-28/cp12-review-pair0.png": "44ac5b09e136b410f0a52ac26191a7e65985429dac3a5b724fc93671a78bd2e6",
+    "artifacts/bw2-validation/checkpoint12-2026-10-28/cp12-review-pair1.png": "c753205fb2af7972c95f1ecd3f2a9c6f6b437c1e975408b45c92fbf8381d5fe9",
+    "artifacts/bw2-validation/checkpoint12-2026-10-28/cp12-review-pair2.png": "999b28be1ecea22cd06191e1f078bb1f3e353176cad0cbe5e3ccd36cafd65e41",
+    "artifacts/bw2-validation/checkpoint12-2026-10-28/cp12-review-pair3.png": "819439964d8fe3fec8b7059357669483f5247e69218942328a95a80f3fbba826",
+    "artifacts/bw2-validation/checkpoint12-2026-10-28/cp12-shiny-review.png": "86ba3ddead7f9542c4825d35e3f1a3ee64e872a7b0921dd6f32ad1b772d8d18b",
+    "artifacts/bw2-validation/checkpoint12-2026-10-28/pokemon.png": "a2256540aba9980c2a8a8c3ca04aa96f080389ea5b2bb6a50aab7e2db710c64f",
+    "artifacts/bw2-validation/checkpoint13-2026-10-28/cp13-entry-review.png": "8200ba0754f3b0ceb2fd6818a956310e0dce2eb654dff79bdf4e673bda4595fd",
+    "artifacts/bw2-validation/checkpoint13-2026-10-28/cp13-review-pair0.png": "1f8967c94ed283089f8744517e2c49f18f75986fc4f571c9cbafe7b860fdf153",
+    "artifacts/bw2-validation/checkpoint13-2026-10-28/cp13-review-pair1.png": "9354e5eb4caa4b19bf8de0369df37403fd1c63e3ea67c62f6fe5762a2f3f416a",
+    "artifacts/bw2-validation/checkpoint13-2026-10-28/cp13-review-pair2.png": "eb5480ae672d644b8e813e4a7d38f393c4db6e96cb02270bd5ae85fc1559f2a9",
+    "artifacts/bw2-validation/checkpoint13-2026-10-28/cp13-review-pair3.png": "4a57da68eadf24cd1d08659e40a084ad7760ba7fa3c17f35e493a3a9da1c197a",
+    "artifacts/bw2-validation/checkpoint13-2026-10-28/cp13-shiny-review.png": "457c6f71f7deda6bf86c236b4e33e806542d629521819b2d4c490448ad9313ea",
+    "artifacts/bw2-validation/checkpoint13-2026-10-28/pokemon.png": "3590fff484310062a4e14c9fe6f3d1993fe024581e5d5c8e2b2d1f87361297ba",
+    "artifacts/bw2-validation/checkpoint14-2026-10-28/cp14-entry-review.png": "af24c880f98ade1e79e767f8b964aecdee4e985700d4b00a0a80393188bf2a39",
+    "artifacts/bw2-validation/checkpoint14-2026-10-28/cp14-review-pair0.png": "9138d43b3c48a5408be02fa992365d24900a466ec0731c17e2802fd0973f81af",
+    "artifacts/bw2-validation/checkpoint14-2026-10-28/cp14-review-pair1.png": "f377cdb79d6d010bf88aa04af3705f389dd0d350fe3edff50a1a175d32fd72d3",
+    "artifacts/bw2-validation/checkpoint14-2026-10-28/cp14-review-pair2.png": "94804f046095f1c0a6057756da14b39371c3e95f43f5d5eb5cd8fa5e0a8dacad",
+    "artifacts/bw2-validation/checkpoint14-2026-10-28/cp14-review-pair3.png": "4cb61b0b0182e14537b5d20648bbf71d3369a99b5fb11ccc0eb9f29dd8f4c374",
+    "artifacts/bw2-validation/checkpoint14-2026-10-28/cp14-shiny-review.png": "e02c7f473c14479fe63b457835d75e4c5d58748a5089f716475c0d1a1a864b85",
+    "artifacts/bw2-validation/checkpoint14-2026-10-28/pokemon.png": "4434cdaab5b18c5804c7d062fbf29817ba23d629d15b42e8e6beec3f0d3f152e"
+  },
+  "matching_capture_elf_verified": true,
+  "runtime": {
+    "state": "closed",
+    "isolated_processes": [],
+    "personal_azahar_preserved": 24764,
+    "last_capture_log": "build/bw2-next5-cp14-captures.log",
+    "helper": "build/bw2-next5.py",
+    "capture_helper": "build/bw2-next5-capture.ps1"
+  },
+  "check_logs": {
+    "artifacts/bw2-validation/checkpoints10-14-2026-10-28/bw2-next5-validation-build.log": "077f2b790c174b21150985ab300025dfed651f15211bf743de04c86c747bfb7b",
+    "artifacts/bw2-validation/checkpoints10-14-2026-10-28/bw2-next5-production-build.log": "542a23ec9815e444c904ca35a5ee883e38adf2a9e90e951be907d774f90465a5",
+    "artifacts/bw2-validation/checkpoints10-14-2026-10-28/bw2-next5-bridge-synthetic.log": "12935ec2585addcd6055052b6964d1deb4e4d05d470f10dcd8082f6a2a7c93c3",
+    "artifacts/bw2-validation/checkpoints10-14-2026-10-28/bw2-next5-bridge-assets.log": "303e0b9e098d90337a56ee956c64ec7cc3f589c8f77b95257b3ebb8d9aceece3"
+  }
+}

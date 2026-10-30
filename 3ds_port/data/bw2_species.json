@@ -1,0 +1,1546 @@
+{
+  "1": {
+    "emerald": 1,
+    "name": "bulbasaur"
+  },
+  "2": {
+    "emerald": 2,
+    "name": "ivysaur"
+  },
+  "3": {
+    "emerald": 3,
+    "name": "venusaur"
+  },
+  "4": {
+    "emerald": 4,
+    "name": "charmander"
+  },
+  "5": {
+    "emerald": 5,
+    "name": "charmeleon"
+  },
+  "6": {
+    "emerald": 6,
+    "name": "charizard"
+  },
+  "7": {
+    "emerald": 7,
+    "name": "squirtle"
+  },
+  "8": {
+    "emerald": 8,
+    "name": "wartortle"
+  },
+  "9": {
+    "emerald": 9,
+    "name": "blastoise"
+  },
+  "10": {
+    "emerald": 10,
+    "name": "caterpie"
+  },
+  "11": {
+    "emerald": 11,
+    "name": "metapod"
+  },
+  "12": {
+    "emerald": 12,
+    "name": "butterfree"
+  },
+  "13": {
+    "emerald": 13,
+    "name": "weedle"
+  },
+  "14": {
+    "emerald": 14,
+    "name": "kakuna"
+  },
+  "15": {
+    "emerald": 15,
+    "name": "beedrill"
+  },
+  "16": {
+    "emerald": 16,
+    "name": "pidgey"
+  },
+  "17": {
+    "emerald": 17,
+    "name": "pidgeotto"
+  },
+  "18": {
+    "emerald": 18,
+    "name": "pidgeot"
+  },
+  "19": {
+    "emerald": 19,
+    "name": "rattata"
+  },
+  "20": {
+    "emerald": 20,
+    "name": "raticate"
+  },
+  "21": {
+    "emerald": 21,
+    "name": "spearow"
+  },
+  "22": {
+    "emerald": 22,
+    "name": "fearow"
+  },
+  "23": {
+    "emerald": 23,
+    "name": "ekans"
+  },
+  "24": {
+    "emerald": 24,
+    "name": "arbok"
+  },
+  "25": {
+    "emerald": 25,
+    "name": "pikachu"
+  },
+  "26": {
+    "emerald": 26,
+    "name": "raichu"
+  },
+  "27": {
+    "emerald": 27,
+    "name": "sandshrew"
+  },
+  "28": {
+    "emerald": 28,
+    "name": "sandslash"
+  },
+  "29": {
+    "emerald": 29,
+    "name": "nidoran_f"
+  },
+  "30": {
+    "emerald": 30,
+    "name": "nidorina"
+  },
+  "31": {
+    "emerald": 31,
+    "name": "nidoqueen"
+  },
+  "32": {
+    "emerald": 32,
+    "name": "nidoran_m"
+  },
+  "33": {
+    "emerald": 33,
+    "name": "nidorino"
+  },
+  "34": {
+    "emerald": 34,
+    "name": "nidoking"
+  },
+  "35": {
+    "emerald": 35,
+    "name": "clefairy"
+  },
+  "36": {
+    "emerald": 36,
+    "name": "clefable"
+  },
+  "37": {
+    "emerald": 37,
+    "name": "vulpix"
+  },
+  "38": {
+    "emerald": 38,
+    "name": "ninetales"
+  },
+  "39": {
+    "emerald": 39,
+    "name": "jigglypuff"
+  },
+  "40": {
+    "emerald": 40,
+    "name": "wigglytuff"
+  },
+  "41": {
+    "emerald": 41,
+    "name": "zubat"
+  },
+  "42": {
+    "emerald": 42,
+    "name": "golbat"
+  },
+  "43": {
+    "emerald": 43,
+    "name": "oddish"
+  },
+  "44": {
+    "emerald": 44,
+    "name": "gloom"
+  },
+  "45": {
+    "emerald": 45,
+    "name": "vileplume"
+  },
+  "46": {
+    "emerald": 46,
+    "name": "paras"
+  },
+  "47": {
+    "emerald": 47,
+    "name": "parasect"
+  },
+  "48": {
+    "emerald": 48,
+    "name": "venonat"
+  },
+  "49": {
+    "emerald": 49,
+    "name": "venomoth"
+  },
+  "50": {
+    "emerald": 50,
+    "name": "diglett"
+  },
+  "51": {
+    "emerald": 51,
+    "name": "dugtrio"
+  },
+  "52": {
+    "emerald": 52,
+    "name": "meowth"
+  },
+  "53": {
+    "emerald": 53,
+    "name": "persian"
+  },
+  "54": {
+    "emerald": 54,
+    "name": "psyduck"
+  },
+  "55": {
+    "emerald": 55,
+    "name": "golduck"
+  },
+  "56": {
+    "emerald": 56,
+    "name": "mankey"
+  },
+  "57": {
+    "emerald": 57,
+    "name": "primeape"
+  },
+  "58": {
+    "emerald": 58,
+    "name": "growlithe"
+  },
+  "59": {
+    "emerald": 59,
+    "name": "arcanine"
+  },
+  "60": {
+    "emerald": 60,
+    "name": "poliwag"
+  },
+  "61": {
+    "emerald": 61,
+    "name": "poliwhirl"
+  },
+  "62": {
+    "emerald": 62,
+    "name": "poliwrath"
+  },
+  "63": {
+    "emerald": 63,
+    "name": "abra"
+  },
+  "64": {
+    "emerald": 64,
+    "name": "kadabra"
+  },
+  "65": {
+    "emerald": 65,
+    "name": "alakazam"
+  },
+  "66": {
+    "emerald": 66,
+    "name": "machop"
+  },
+  "67": {
+    "emerald": 67,
+    "name": "machoke"
+  },
+  "68": {
+    "emerald": 68,
+    "name": "machamp"
+  },
+  "69": {
+    "emerald": 69,
+    "name": "bellsprout"
+  },
+  "70": {
+    "emerald": 70,
+    "name": "weepinbell"
+  },
+  "71": {
+    "emerald": 71,
+    "name": "victreebel"
+  },
+  "72": {
+    "emerald": 72,
+    "name": "tentacool"
+  },
+  "73": {
+    "emerald": 73,
+    "name": "tentacruel"
+  },
+  "74": {
+    "emerald": 74,
+    "name": "geodude"
+  },
+  "75": {
+    "emerald": 75,
+    "name": "graveler"
+  },
+  "76": {
+    "emerald": 76,
+    "name": "golem"
+  },
+  "77": {
+    "emerald": 77,
+    "name": "ponyta"
+  },
+  "78": {
+    "emerald": 78,
+    "name": "rapidash"
+  },
+  "79": {
+    "emerald": 79,
+    "name": "slowpoke"
+  },
+  "80": {
+    "emerald": 80,
+    "name": "slowbro"
+  },
+  "81": {
+    "emerald": 81,
+    "name": "magnemite"
+  },
+  "82": {
+    "emerald": 82,
+    "name": "magneton"
+  },
+  "83": {
+    "emerald": 83,
+    "name": "farfetchd"
+  },
+  "84": {
+    "emerald": 84,
+    "name": "doduo"
+  },
+  "85": {
+    "emerald": 85,
+    "name": "dodrio"
+  },
+  "86": {
+    "emerald": 86,
+    "name": "seel"
+  },
+  "87": {
+    "emerald": 87,
+    "name": "dewgong"
+  },
+  "88": {
+    "emerald": 88,
+    "name": "grimer"
+  },
+  "89": {
+    "emerald": 89,
+    "name": "muk"
+  },
+  "90": {
+    "emerald": 90,
+    "name": "shellder"
+  },
+  "91": {
+    "emerald": 91,
+    "name": "cloyster"
+  },
+  "92": {
+    "emerald": 92,
+    "name": "gastly"
+  },
+  "93": {
+    "emerald": 93,
+    "name": "haunter"
+  },
+  "94": {
+    "emerald": 94,
+    "name": "gengar"
+  },
+  "95": {
+    "emerald": 95,
+    "name": "onix"
+  },
+  "96": {
+    "emerald": 96,
+    "name": "drowzee"
+  },
+  "97": {
+    "emerald": 97,
+    "name": "hypno"
+  },
+  "98": {
+    "emerald": 98,
+    "name": "krabby"
+  },
+  "99": {
+    "emerald": 99,
+    "name": "kingler"
+  },
+  "100": {
+    "emerald": 100,
+    "name": "voltorb"
+  },
+  "101": {
+    "emerald": 101,
+    "name": "electrode"
+  },
+  "102": {
+    "emerald": 102,
+    "name": "exeggcute"
+  },
+  "103": {
+    "emerald": 103,
+    "name": "exeggutor"
+  },
+  "104": {
+    "emerald": 104,
+    "name": "cubone"
+  },
+  "105": {
+    "emerald": 105,
+    "name": "marowak"
+  },
+  "106": {
+    "emerald": 106,
+    "name": "hitmonlee"
+  },
+  "107": {
+    "emerald": 107,
+    "name": "hitmonchan"
+  },
+  "108": {
+    "emerald": 108,
+    "name": "lickitung"
+  },
+  "109": {
+    "emerald": 109,
+    "name": "koffing"
+  },
+  "110": {
+    "emerald": 110,
+    "name": "weezing"
+  },
+  "111": {
+    "emerald": 111,
+    "name": "rhyhorn"
+  },
+  "112": {
+    "emerald": 112,
+    "name": "rhydon"
+  },
+  "113": {
+    "emerald": 113,
+    "name": "chansey"
+  },
+  "114": {
+    "emerald": 114,
+    "name": "tangela"
+  },
+  "115": {
+    "emerald": 115,
+    "name": "kangaskhan"
+  },
+  "116": {
+    "emerald": 116,
+    "name": "horsea"
+  },
+  "117": {
+    "emerald": 117,
+    "name": "seadra"
+  },
+  "118": {
+    "emerald": 118,
+    "name": "goldeen"
+  },
+  "119": {
+    "emerald": 119,
+    "name": "seaking"
+  },
+  "120": {
+    "emerald": 120,
+    "name": "staryu"
+  },
+  "121": {
+    "emerald": 121,
+    "name": "starmie"
+  },
+  "122": {
+    "emerald": 122,
+    "name": "mr_mime"
+  },
+  "123": {
+    "emerald": 123,
+    "name": "scyther"
+  },
+  "124": {
+    "emerald": 124,
+    "name": "jynx"
+  },
+  "125": {
+    "emerald": 125,
+    "name": "electabuzz"
+  },
+  "126": {
+    "emerald": 126,
+    "name": "magmar"
+  },
+  "127": {
+    "emerald": 127,
+    "name": "pinsir"
+  },
+  "128": {
+    "emerald": 128,
+    "name": "tauros"
+  },
+  "129": {
+    "emerald": 129,
+    "name": "magikarp"
+  },
+  "130": {
+    "emerald": 130,
+    "name": "gyarados"
+  },
+  "131": {
+    "emerald": 131,
+    "name": "lapras"
+  },
+  "132": {
+    "emerald": 132,
+    "name": "ditto"
+  },
+  "133": {
+    "emerald": 133,
+    "name": "eevee"
+  },
+  "134": {
+    "emerald": 134,
+    "name": "vaporeon"
+  },
+  "135": {
+    "emerald": 135,
+    "name": "jolteon"
+  },
+  "136": {
+    "emerald": 136,
+    "name": "flareon"
+  },
+  "137": {
+    "emerald": 137,
+    "name": "porygon"
+  },
+  "138": {
+    "emerald": 138,
+    "name": "omanyte"
+  },
+  "139": {
+    "emerald": 139,
+    "name": "omastar"
+  },
+  "140": {
+    "emerald": 140,
+    "name": "kabuto"
+  },
+  "141": {
+    "emerald": 141,
+    "name": "kabutops"
+  },
+  "142": {
+    "emerald": 142,
+    "name": "aerodactyl"
+  },
+  "143": {
+    "emerald": 143,
+    "name": "snorlax"
+  },
+  "144": {
+    "emerald": 144,
+    "name": "articuno"
+  },
+  "145": {
+    "emerald": 145,
+    "name": "zapdos"
+  },
+  "146": {
+    "emerald": 146,
+    "name": "moltres"
+  },
+  "147": {
+    "emerald": 147,
+    "name": "dratini"
+  },
+  "148": {
+    "emerald": 148,
+    "name": "dragonair"
+  },
+  "149": {
+    "emerald": 149,
+    "name": "dragonite"
+  },
+  "150": {
+    "emerald": 150,
+    "name": "mewtwo"
+  },
+  "151": {
+    "emerald": 151,
+    "name": "mew"
+  },
+  "152": {
+    "emerald": 152,
+    "name": "chikorita"
+  },
+  "153": {
+    "emerald": 153,
+    "name": "bayleef"
+  },
+  "154": {
+    "emerald": 154,
+    "name": "meganium"
+  },
+  "155": {
+    "emerald": 155,
+    "name": "cyndaquil"
+  },
+  "156": {
+    "emerald": 156,
+    "name": "quilava"
+  },
+  "157": {
+    "emerald": 157,
+    "name": "typhlosion"
+  },
+  "158": {
+    "emerald": 158,
+    "name": "totodile"
+  },
+  "159": {
+    "emerald": 159,
+    "name": "croconaw"
+  },
+  "160": {
+    "emerald": 160,
+    "name": "feraligatr"
+  },
+  "161": {
+    "emerald": 161,
+    "name": "sentret"
+  },
+  "162": {
+    "emerald": 162,
+    "name": "furret"
+  },
+  "163": {
+    "emerald": 163,
+    "name": "hoothoot"
+  },
+  "164": {
+    "emerald": 164,
+    "name": "noctowl"
+  },
+  "165": {
+    "emerald": 165,
+    "name": "ledyba"
+  },
+  "166": {
+    "emerald": 166,
+    "name": "ledian"
+  },
+  "167": {
+    "emerald": 167,
+    "name": "spinarak"
+  },
+  "168": {
+    "emerald": 168,
+    "name": "ariados"
+  },
+  "169": {
+    "emerald": 169,
+    "name": "crobat"
+  },
+  "170": {
+    "emerald": 170,
+    "name": "chinchou"
+  },
+  "171": {
+    "emerald": 171,
+    "name": "lanturn"
+  },
+  "172": {
+    "emerald": 172,
+    "name": "pichu"
+  },
+  "173": {
+    "emerald": 173,
+    "name": "cleffa"
+  },
+  "174": {
+    "emerald": 174,
+    "name": "igglybuff"
+  },
+  "175": {
+    "emerald": 175,
+    "name": "togepi"
+  },
+  "176": {
+    "emerald": 176,
+    "name": "togetic"
+  },
+  "177": {
+    "emerald": 177,
+    "name": "natu"
+  },
+  "178": {
+    "emerald": 178,
+    "name": "xatu"
+  },
+  "179": {
+    "emerald": 179,
+    "name": "mareep"
+  },
+  "180": {
+    "emerald": 180,
+    "name": "flaaffy"
+  },
+  "181": {
+    "emerald": 181,
+    "name": "ampharos"
+  },
+  "182": {
+    "emerald": 182,
+    "name": "bellossom"
+  },
+  "183": {
+    "emerald": 183,
+    "name": "marill"
+  },
+  "184": {
+    "emerald": 184,
+    "name": "azumarill"
+  },
+  "185": {
+    "emerald": 185,
+    "name": "sudowoodo"
+  },
+  "186": {
+    "emerald": 186,
+    "name": "politoed"
+  },
+  "187": {
+    "emerald": 187,
+    "name": "hoppip"
+  },
+  "188": {
+    "emerald": 188,
+    "name": "skiploom"
+  },
+  "189": {
+    "emerald": 189,
+    "name": "jumpluff"
+  },
+  "190": {
+    "emerald": 190,
+    "name": "aipom"
+  },
+  "191": {
+    "emerald": 191,
+    "name": "sunkern"
+  },
+  "192": {
+    "emerald": 192,
+    "name": "sunflora"
+  },
+  "193": {
+    "emerald": 193,
+    "name": "yanma"
+  },
+  "194": {
+    "emerald": 194,
+    "name": "wooper"
+  },
+  "195": {
+    "emerald": 195,
+    "name": "quagsire"
+  },
+  "196": {
+    "emerald": 196,
+    "name": "espeon"
+  },
+  "197": {
+    "emerald": 197,
+    "name": "umbreon"
+  },
+  "198": {
+    "emerald": 198,
+    "name": "murkrow"
+  },
+  "199": {
+    "emerald": 199,
+    "name": "slowking"
+  },
+  "200": {
+    "emerald": 200,
+    "name": "misdreavus"
+  },
+  "201": {
+    "emerald": 201,
+    "name": "unown"
+  },
+  "202": {
+    "emerald": 202,
+    "name": "wobbuffet"
+  },
+  "203": {
+    "emerald": 203,
+    "name": "girafarig"
+  },
+  "204": {
+    "emerald": 204,
+    "name": "pineco"
+  },
+  "205": {
+    "emerald": 205,
+    "name": "forretress"
+  },
+  "206": {
+    "emerald": 206,
+    "name": "dunsparce"
+  },
+  "207": {
+    "emerald": 207,
+    "name": "gligar"
+  },
+  "208": {
+    "emerald": 208,
+    "name": "steelix"
+  },
+  "209": {
+    "emerald": 209,
+    "name": "snubbull"
+  },
+  "210": {
+    "emerald": 210,
+    "name": "granbull"
+  },
+  "211": {
+    "emerald": 211,
+    "name": "qwilfish"
+  },
+  "212": {
+    "emerald": 212,
+    "name": "scizor"
+  },
+  "213": {
+    "emerald": 213,
+    "name": "shuckle"
+  },
+  "214": {
+    "emerald": 214,
+    "name": "heracross"
+  },
+  "215": {
+    "emerald": 215,
+    "name": "sneasel"
+  },
+  "216": {
+    "emerald": 216,
+    "name": "teddiursa"
+  },
+  "217": {
+    "emerald": 217,
+    "name": "ursaring"
+  },
+  "218": {
+    "emerald": 218,
+    "name": "slugma"
+  },
+  "219": {
+    "emerald": 219,
+    "name": "magcargo"
+  },
+  "220": {
+    "emerald": 220,
+    "name": "swinub"
+  },
+  "221": {
+    "emerald": 221,
+    "name": "piloswine"
+  },
+  "222": {
+    "emerald": 222,
+    "name": "corsola"
+  },
+  "223": {
+    "emerald": 223,
+    "name": "remoraid"
+  },
+  "224": {
+    "emerald": 224,
+    "name": "octillery"
+  },
+  "225": {
+    "emerald": 225,
+    "name": "delibird"
+  },
+  "226": {
+    "emerald": 226,
+    "name": "mantine"
+  },
+  "227": {
+    "emerald": 227,
+    "name": "skarmory"
+  },
+  "228": {
+    "emerald": 228,
+    "name": "houndour"
+  },
+  "229": {
+    "emerald": 229,
+    "name": "houndoom"
+  },
+  "230": {
+    "emerald": 230,
+    "name": "kingdra"
+  },
+  "231": {
+    "emerald": 231,
+    "name": "phanpy"
+  },
+  "232": {
+    "emerald": 232,
+    "name": "donphan"
+  },
+  "233": {
+    "emerald": 233,
+    "name": "porygon2"
+  },
+  "234": {
+    "emerald": 234,
+    "name": "stantler"
+  },
+  "235": {
+    "emerald": 235,
+    "name": "smeargle"
+  },
+  "236": {
+    "emerald": 236,
+    "name": "tyrogue"
+  },
+  "237": {
+    "emerald": 237,
+    "name": "hitmontop"
+  },
+  "238": {
+    "emerald": 238,
+    "name": "smoochum"
+  },
+  "239": {
+    "emerald": 239,
+    "name": "elekid"
+  },
+  "240": {
+    "emerald": 240,
+    "name": "magby"
+  },
+  "241": {
+    "emerald": 241,
+    "name": "miltank"
+  },
+  "242": {
+    "emerald": 242,
+    "name": "blissey"
+  },
+  "243": {
+    "emerald": 243,
+    "name": "raikou"
+  },
+  "244": {
+    "emerald": 244,
+    "name": "entei"
+  },
+  "245": {
+    "emerald": 245,
+    "name": "suicune"
+  },
+  "246": {
+    "emerald": 246,
+    "name": "larvitar"
+  },
+  "247": {
+    "emerald": 247,
+    "name": "pupitar"
+  },
+  "248": {
+    "emerald": 248,
+    "name": "tyranitar"
+  },
+  "249": {
+    "emerald": 249,
+    "name": "lugia"
+  },
+  "250": {
+    "emerald": 250,
+    "name": "ho_oh"
+  },
+  "251": {
+    "emerald": 251,
+    "name": "celebi"
+  },
+  "252": {
+    "emerald": 277,
+    "name": "treecko"
+  },
+  "253": {
+    "emerald": 278,
+    "name": "grovyle"
+  },
+  "254": {
+    "emerald": 279,
+    "name": "sceptile"
+  },
+  "255": {
+    "emerald": 280,
+    "name": "torchic"
+  },
+  "256": {
+    "emerald": 281,
+    "name": "combusken"
+  },
+  "257": {
+    "emerald": 282,
+    "name": "blaziken"
+  },
+  "258": {
+    "emerald": 283,
+    "name": "mudkip"
+  },
+  "259": {
+    "emerald": 284,
+    "name": "marshtomp"
+  },
+  "260": {
+    "emerald": 285,
+    "name": "swampert"
+  },
+  "261": {
+    "emerald": 286,
+    "name": "poochyena"
+  },
+  "262": {
+    "emerald": 287,
+    "name": "mightyena"
+  },
+  "263": {
+    "emerald": 288,
+    "name": "zigzagoon"
+  },
+  "264": {
+    "emerald": 289,
+    "name": "linoone"
+  },
+  "265": {
+    "emerald": 290,
+    "name": "wurmple"
+  },
+  "266": {
+    "emerald": 291,
+    "name": "silcoon"
+  },
+  "267": {
+    "emerald": 292,
+    "name": "beautifly"
+  },
+  "268": {
+    "emerald": 293,
+    "name": "cascoon"
+  },
+  "269": {
+    "emerald": 294,
+    "name": "dustox"
+  },
+  "270": {
+    "emerald": 295,
+    "name": "lotad"
+  },
+  "271": {
+    "emerald": 296,
+    "name": "lombre"
+  },
+  "272": {
+    "emerald": 297,
+    "name": "ludicolo"
+  },
+  "273": {
+    "emerald": 298,
+    "name": "seedot"
+  },
+  "274": {
+    "emerald": 299,
+    "name": "nuzleaf"
+  },
+  "275": {
+    "emerald": 300,
+    "name": "shiftry"
+  },
+  "276": {
+    "emerald": 304,
+    "name": "taillow"
+  },
+  "277": {
+    "emerald": 305,
+    "name": "swellow"
+  },
+  "278": {
+    "emerald": 309,
+    "name": "wingull"
+  },
+  "279": {
+    "emerald": 310,
+    "name": "pelipper"
+  },
+  "280": {
+    "emerald": 392,
+    "name": "ralts"
+  },
+  "281": {
+    "emerald": 393,
+    "name": "kirlia"
+  },
+  "282": {
+    "emerald": 394,
+    "name": "gardevoir"
+  },
+  "283": {
+    "emerald": 311,
+    "name": "surskit"
+  },
+  "284": {
+    "emerald": 312,
+    "name": "masquerain"
+  },
+  "285": {
+    "emerald": 306,
+    "name": "shroomish"
+  },
+  "286": {
+    "emerald": 307,
+    "name": "breloom"
+  },
+  "287": {
+    "emerald": 364,
+    "name": "slakoth"
+  },
+  "288": {
+    "emerald": 365,
+    "name": "vigoroth"
+  },
+  "289": {
+    "emerald": 366,
+    "name": "slaking"
+  },
+  "290": {
+    "emerald": 301,
+    "name": "nincada"
+  },
+  "291": {
+    "emerald": 302,
+    "name": "ninjask"
+  },
+  "292": {
+    "emerald": 303,
+    "name": "shedinja"
+  },
+  "293": {
+    "emerald": 370,
+    "name": "whismur"
+  },
+  "294": {
+    "emerald": 371,
+    "name": "loudred"
+  },
+  "295": {
+    "emerald": 372,
+    "name": "exploud"
+  },
+  "296": {
+    "emerald": 335,
+    "name": "makuhita"
+  },
+  "297": {
+    "emerald": 336,
+    "name": "hariyama"
+  },
+  "298": {
+    "emerald": 350,
+    "name": "azurill"
+  },
+  "299": {
+    "emerald": 320,
+    "name": "nosepass"
+  },
+  "300": {
+    "emerald": 315,
+    "name": "skitty"
+  },
+  "301": {
+    "emerald": 316,
+    "name": "delcatty"
+  },
+  "302": {
+    "emerald": 322,
+    "name": "sableye"
+  },
+  "303": {
+    "emerald": 355,
+    "name": "mawile"
+  },
+  "304": {
+    "emerald": 382,
+    "name": "aron"
+  },
+  "305": {
+    "emerald": 383,
+    "name": "lairon"
+  },
+  "306": {
+    "emerald": 384,
+    "name": "aggron"
+  },
+  "307": {
+    "emerald": 356,
+    "name": "meditite"
+  },
+  "308": {
+    "emerald": 357,
+    "name": "medicham"
+  },
+  "309": {
+    "emerald": 337,
+    "name": "electrike"
+  },
+  "310": {
+    "emerald": 338,
+    "name": "manectric"
+  },
+  "311": {
+    "emerald": 353,
+    "name": "plusle"
+  },
+  "312": {
+    "emerald": 354,
+    "name": "minun"
+  },
+  "313": {
+    "emerald": 386,
+    "name": "volbeat"
+  },
+  "314": {
+    "emerald": 387,
+    "name": "illumise"
+  },
+  "315": {
+    "emerald": 363,
+    "name": "roselia"
+  },
+  "316": {
+    "emerald": 367,
+    "name": "gulpin"
+  },
+  "317": {
+    "emerald": 368,
+    "name": "swalot"
+  },
+  "318": {
+    "emerald": 330,
+    "name": "carvanha"
+  },
+  "319": {
+    "emerald": 331,
+    "name": "sharpedo"
+  },
+  "320": {
+    "emerald": 313,
+    "name": "wailmer"
+  },
+  "321": {
+    "emerald": 314,
+    "name": "wailord"
+  },
+  "322": {
+    "emerald": 339,
+    "name": "numel"
+  },
+  "323": {
+    "emerald": 340,
+    "name": "camerupt"
+  },
+  "324": {
+    "emerald": 321,
+    "name": "torkoal"
+  },
+  "325": {
+    "emerald": 351,
+    "name": "spoink"
+  },
+  "326": {
+    "emerald": 352,
+    "name": "grumpig"
+  },
+  "327": {
+    "emerald": 308,
+    "name": "spinda"
+  },
+  "328": {
+    "emerald": 332,
+    "name": "trapinch"
+  },
+  "329": {
+    "emerald": 333,
+    "name": "vibrava"
+  },
+  "330": {
+    "emerald": 334,
+    "name": "flygon"
+  },
+  "331": {
+    "emerald": 344,
+    "name": "cacnea"
+  },
+  "332": {
+    "emerald": 345,
+    "name": "cacturne"
+  },
+  "333": {
+    "emerald": 358,
+    "name": "swablu"
+  },
+  "334": {
+    "emerald": 359,
+    "name": "altaria"
+  },
+  "335": {
+    "emerald": 380,
+    "name": "zangoose"
+  },
+  "336": {
+    "emerald": 379,
+    "name": "seviper"
+  },
+  "337": {
+    "emerald": 348,
+    "name": "lunatone"
+  },
+  "338": {
+    "emerald": 349,
+    "name": "solrock"
+  },
+  "339": {
+    "emerald": 323,
+    "name": "barboach"
+  },
+  "340": {
+    "emerald": 324,
+    "name": "whiscash"
+  },
+  "341": {
+    "emerald": 326,
+    "name": "corphish"
+  },
+  "342": {
+    "emerald": 327,
+    "name": "crawdaunt"
+  },
+  "343": {
+    "emerald": 318,
+    "name": "baltoy"
+  },
+  "344": {
+    "emerald": 319,
+    "name": "claydol"
+  },
+  "345": {
+    "emerald": 388,
+    "name": "lileep"
+  },
+  "346": {
+    "emerald": 389,
+    "name": "cradily"
+  },
+  "347": {
+    "emerald": 390,
+    "name": "anorith"
+  },
+  "348": {
+    "emerald": 391,
+    "name": "armaldo"
+  },
+  "349": {
+    "emerald": 328,
+    "name": "feebas"
+  },
+  "350": {
+    "emerald": 329,
+    "name": "milotic"
+  },
+  "351": {
+    "emerald": 385,
+    "name": "castform"
+  },
+  "352": {
+    "emerald": 317,
+    "name": "kecleon"
+  },
+  "353": {
+    "emerald": 377,
+    "name": "shuppet"
+  },
+  "354": {
+    "emerald": 378,
+    "name": "banette"
+  },
+  "355": {
+    "emerald": 361,
+    "name": "duskull"
+  },
+  "356": {
+    "emerald": 362,
+    "name": "dusclops"
+  },
+  "357": {
+    "emerald": 369,
+    "name": "tropius"
+  },
+  "358": {
+    "emerald": 411,
+    "name": "chimecho"
+  },
+  "359": {
+    "emerald": 376,
+    "name": "absol"
+  },
+  "360": {
+    "emerald": 360,
+    "name": "wynaut"
+  },
+  "361": {
+    "emerald": 346,
+    "name": "snorunt"
+  },
+  "362": {
+    "emerald": 347,
+    "name": "glalie"
+  },
+  "363": {
+    "emerald": 341,
+    "name": "spheal"
+  },
+  "364": {
+    "emerald": 342,
+    "name": "sealeo"
+  },
+  "365": {
+    "emerald": 343,
+    "name": "walrein"
+  },
+  "366": {
+    "emerald": 373,
+    "name": "clamperl"
+  },
+  "367": {
+    "emerald": 374,
+    "name": "huntail"
+  },
+  "368": {
+    "emerald": 375,
+    "name": "gorebyss"
+  },
+  "369": {
+    "emerald": 381,
+    "name": "relicanth"
+  },
+  "370": {
+    "emerald": 325,
+    "name": "luvdisc"
+  },
+  "371": {
+    "emerald": 395,
+    "name": "bagon"
+  },
+  "372": {
+    "emerald": 396,
+    "name": "shelgon"
+  },
+  "373": {
+    "emerald": 397,
+    "name": "salamence"
+  },
+  "374": {
+    "emerald": 398,
+    "name": "beldum"
+  },
+  "375": {
+    "emerald": 399,
+    "name": "metang"
+  },
+  "376": {
+    "emerald": 400,
+    "name": "metagross"
+  },
+  "377": {
+    "emerald": 401,
+    "name": "regirock"
+  },
+  "378": {
+    "emerald": 402,
+    "name": "regice"
+  },
+  "379": {
+    "emerald": 403,
+    "name": "registeel"
+  },
+  "380": {
+    "emerald": 407,
+    "name": "latias"
+  },
+  "381": {
+    "emerald": 408,
+    "name": "latios"
+  },
+  "382": {
+    "emerald": 404,
+    "name": "kyogre"
+  },
+  "383": {
+    "emerald": 405,
+    "name": "groudon"
+  },
+  "384": {
+    "emerald": 406,
+    "name": "rayquaza"
+  },
+  "385": {
+    "emerald": 409,
+    "name": "jirachi"
+  },
+  "386": {
+    "emerald": 410,
+    "name": "deoxys"
+  }
+}

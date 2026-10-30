@@ -1,7 +1,12 @@
 diff --git a/src/pokedex.c b/src/pokedex.c
 --- a/src/pokedex.c
 +++ b/src/pokedex.c
-@@ -5873,3 +5873,48 @@
+@@ -7008,3 +7008,51 @@
+     return Port_ResolveAssetPointerSized(sCaughtBall_Gfx, 64);
+ }
+ #endif
++
++#ifdef PLATFORM_3DS
 +#include "3ds_pokedex_ui.h"
 +
 +bool CtrPokedex_ListShown(void)
@@ -47,6 +52,4 @@ diff --git a/src/pokedex.c b/src/pokedex.c
 +    }
 +}
 +
- // The tile the screen on show carries out past its edges on the bottom
- // screen (3ds_video.c, CentredFillOf), as bg << 16 | column << 8 | row (or
- // 1 << 20 | bg << 16 | a tilemap entry): the stripes behind every page, the
++#endif

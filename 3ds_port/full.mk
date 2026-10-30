@@ -105,6 +105,11 @@ SOUND_WRAPPED := m4aSoundVSync m4aSoundMain m4aSoundInit m4aSoundMode m4aSoundVS
 BACKEND_SRCS += src/3ds_map_events.c
 # Sprites' identities, numbered by sprite.c and completed here.
 BACKEND_SRCS += src/3ds_sprite_ids.c
+# Optional BW2 Treecko/Poochyena presentation; no Nintendo data in the engine.
+BACKEND_SRCS += src/3ds_bw2_battle.c
+BW2_WRAPPED := BattleLoadOpponentMonSpriteGfx BattleLoadPlayerMonSpriteGfx \
+    BattleLoadSubstituteOrMonSpriteGfx LoadBattleMonGfxAndAnimate DoMoveAnim
+LDFLAGS += $(foreach f,$(BW2_WRAPPED),-Wl,--wrap=$(f))
 # The scene cycling test of phase F2 (empty unless built with CTR_CYCLE_TEST).
 BACKEND_SRCS += src/3ds_cycle_test.c
 # Its flags, e.g. TEST_FLAGS=-DCTR_BATTLE_TEST=SPECIES_SHUCKLE (touch the source to rebuild it).
@@ -143,6 +148,14 @@ ROMFS_SHADER_OUTS += romfs/bottom/battle.bin
 ROMFS_SHADER_OUTS += romfs/bottom/menu.bin
 # The battle's info boxes and text box: the port's own art (scripts/gen_battle_hud.py).
 ROMFS_SHADER_OUTS += romfs/battle/hud.bin
+
+# Private prototype data, generated only when a Black 2 ROM is supplied.
+# Keep the imported data optional in the ABI, pack and release pipeline.
+ifneq ($(strip $(BW2_ROM)),)
+ROMFS_SHADER_OUTS += romfs/bw2/manifest.json
+romfs/bw2/manifest.json: scripts/gen_bw2_battle.py $(BW2_ROM)
+	$(PYTHON) scripts/gen_bw2_battle.py --rom "$(BW2_ROM)" --out romfs/bw2
+endif
 
 FULL_OBJECTS := $(FULL_C_OBJS) $(FULL_DATA_OBJS) $(BACKEND_OBJS)
 # The keep table is only referenced from the payload, which is not linked,
@@ -517,6 +530,12 @@ romfs/voxel/trees.rgba5551: scripts/gen_voxel_trees.py \
 # verify-voxel-buildings runs the proofs alone, even when the file is
 # up to date: the release build asks for it.
 romfs/voxel/buildings.bin: scripts/gen_voxel_buildings.py scripts/voxel_building.py scripts/voxel_night.py \
+		scripts/voxel_custom_props.py assets/voxel/props/yellow_table.vox \
+		assets/voxel/props/green_bookshelf.vox \
+		assets/voxel/props/purple_display_cabinet.vox assets/voxel/props/white_console.vox \
+		assets/voxel/props/potted_plant.vox \
+		assets/voxel/props/kitchen_fridge.vox assets/voxel/props/kitchen_sink.vox \
+		assets/voxel/props/striped_kitchen_table.vox \
 		scripts/voxel_building_specs.py scripts/voxel_bridge.py scripts/voxel_fence.py scripts/voxel_fortree.py scripts/dump_region_art.py scripts/voxel_props.py \
 		scripts/voxel_relief_fixes.py assets/voxel/relief_fixes.json \
 		scripts/gen_voxel_relief.py \
@@ -528,6 +547,11 @@ romfs/voxel/buildings.bin: scripts/gen_voxel_buildings.py scripts/voxel_building
 .PHONY: verify-voxel-buildings
 verify-voxel-buildings:
 	"$(PYTHON)" scripts/gen_voxel_buildings.py --verify
+
+.PHONY: verify-voxel-custom-props
+verify: verify-voxel-custom-props
+verify-voxel-custom-props:
+	"$(PYTHON)" -B tests/voxel_custom_props_test.py
 
 # Terrain relief read off the drawing: gen_voxel_relief.py explains it.
 # It leaves a building's cells to its model and reads which cells those are

@@ -1,0 +1,530 @@
+[
+  {
+    "national": 318,
+    "emerald": 330,
+    "name": "Carvanha",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 304,
+          "scale_percent": 118.75,
+          "shift_x": 0,
+          "shift_y": -8,
+          "height_dm": 8,
+          "target_span": 69,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            3,
+            8,
+            61,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 8569,
+          "source_width": 58,
+          "source_height": 54,
+          "source_footprint_q8": 14137
+        },
+        "steps": 396,
+        "duration": 30.939333333333334,
+        "decoded_frames": 929,
+        "video_sha256": "450076827888730fc2aa2492bf7821f5ee62eb45da1e411d759d5938aa07308d",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 465,
+          "scale_percent": 181.64,
+          "shift_x": 0,
+          "shift_y": 14,
+          "height_dm": 8,
+          "target_span": 100,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            5,
+            7,
+            59,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 8743,
+          "source_width": 54,
+          "source_height": 55,
+          "source_footprint_q8": 14137
+        },
+        "steps": 396,
+        "duration": 30.424333333333333,
+        "decoded_frames": 913,
+        "video_sha256": "471c63737e0ed37b55fad44e26bfe5d9c97fc443d90db0dfcd843ba9e9dfa6d8",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      }
+    },
+    "height_m": 0.8
+  },
+  {
+    "national": 319,
+    "emerald": 331,
+    "name": "Sharpedo",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 358,
+          "scale_percent": 139.84,
+          "shift_x": 0,
+          "shift_y": -11,
+          "height_dm": 18,
+          "target_span": 84,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            2,
+            62,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 9253,
+          "source_width": 72,
+          "source_height": 72,
+          "source_footprint_q8": 18103
+        },
+        "steps": 432,
+        "duration": 30.424333333333333,
+        "decoded_frames": 913,
+        "video_sha256": "471c63737e0ed37b55fad44e26bfe5d9c97fc443d90db0dfcd843ba9e9dfa6d8",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 477,
+          "scale_percent": 186.33,
+          "shift_x": 0,
+          "shift_y": 22,
+          "height_dm": 18,
+          "target_span": 112,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            4,
+            2,
+            60,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 8326,
+          "source_width": 67,
+          "source_height": 72,
+          "source_footprint_q8": 18103
+        },
+        "steps": 432,
+        "duration": 30.939333333333334,
+        "decoded_frames": 929,
+        "video_sha256": "450076827888730fc2aa2492bf7821f5ee62eb45da1e411d759d5938aa07308d",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      }
+    },
+    "height_m": 1.8
+  },
+  {
+    "national": 320,
+    "emerald": 313,
+    "name": "Wailmer",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 366,
+          "scale_percent": 142.97,
+          "shift_x": 0,
+          "shift_y": -18,
+          "height_dm": 20,
+          "target_span": 86,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            22,
+            62,
+            62
+          ],
+          "idle_floor": 57,
+          "body_center_y_q8": 10289,
+          "source_width": 84,
+          "source_height": 56,
+          "source_footprint_q8": 17479
+        },
+        "steps": 330,
+        "duration": 27.080333333333332,
+        "decoded_frames": 812,
+        "video_sha256": "aba3102867ead5ed340ee405550673b3f27b1ecda622c0ef8a9e7c9040b950e8",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 477,
+          "scale_percent": 186.33,
+          "shift_x": 0,
+          "shift_y": -13,
+          "height_dm": 20,
+          "target_span": 112,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            23,
+            62,
+            62
+          ],
+          "idle_floor": 58,
+          "body_center_y_q8": 10420,
+          "source_width": 84,
+          "source_height": 55,
+          "source_footprint_q8": 17479
+        },
+        "steps": 330,
+        "duration": 27.048333333333332,
+        "decoded_frames": 812,
+        "video_sha256": "7a6aee7813744fb23a11f7b2e55329b0602f13b7481dbd411144cc954b3dc936",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      }
+    },
+    "height_m": 2.0
+  },
+  {
+    "national": 322,
+    "emerald": 339,
+    "name": "Numel",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 282,
+          "scale_percent": 110.16,
+          "shift_x": 0,
+          "shift_y": -16,
+          "height_dm": 7,
+          "target_span": 53,
+          "source_factor_q8": 206,
+          "silhouette_bounds": [
+            8,
+            14,
+            56,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 10367,
+          "source_width": 48,
+          "source_height": 48,
+          "source_footprint_q8": 12596
+        },
+        "steps": 216,
+        "duration": 27.048333333333332,
+        "decoded_frames": 812,
+        "video_sha256": "7a6aee7813744fb23a11f7b2e55329b0602f13b7481dbd411144cc954b3dc936",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 357,
+          "scale_percent": 139.45,
+          "shift_x": 0,
+          "shift_y": 4,
+          "height_dm": 7,
+          "target_span": 74,
+          "source_factor_q8": 206,
+          "silhouette_bounds": [
+            8,
+            9,
+            56,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 9898,
+          "source_width": 48,
+          "source_height": 53,
+          "source_footprint_q8": 12596
+        },
+        "steps": 216,
+        "duration": 27.080333333333332,
+        "decoded_frames": 812,
+        "video_sha256": "aba3102867ead5ed340ee405550673b3f27b1ecda622c0ef8a9e7c9040b950e8",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      }
+    },
+    "height_m": 0.7
+  },
+  {
+    "national": 323,
+    "emerald": 340,
+    "name": "Camerupt",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 362,
+          "scale_percent": 141.41,
+          "shift_x": 0,
+          "shift_y": -19,
+          "height_dm": 19,
+          "target_span": 85,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            15,
+            62,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 10032,
+          "source_width": 78,
+          "source_height": 61,
+          "source_footprint_q8": 18007
+        },
+        "steps": 432,
+        "duration": 30.377333333333333,
+        "decoded_frames": 911,
+        "video_sha256": "6b8a418f4767e91b89fc07a56676eeffe64b873f2162040de30aed0354375a98",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 477,
+          "scale_percent": 186.33,
+          "shift_x": 0,
+          "shift_y": -9,
+          "height_dm": 19,
+          "target_span": 112,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            2,
+            17,
+            62,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 10252,
+          "source_width": 83,
+          "source_height": 62,
+          "source_footprint_q8": 18007
+        },
+        "steps": 432,
+        "duration": 30.033333333333335,
+        "decoded_frames": 901,
+        "video_sha256": "4c20836b0626630b570ebd36d1fdd659ffdb0b6e831a07fcda204aaefc041c10",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      }
+    },
+    "height_m": 1.9
+  },
+  {
+    "national": 218,
+    "emerald": 218,
+    "name": "Slugma",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 339,
+          "scale_percent": 132.42,
+          "shift_x": 0,
+          "shift_y": -20,
+          "height_dm": 7,
+          "target_span": 53,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            12,
+            22,
+            51,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 11131,
+          "source_width": 39,
+          "source_height": 40,
+          "source_footprint_q8": 9816
+        },
+        "steps": 192,
+        "duration": 30.033333333333335,
+        "decoded_frames": 901,
+        "video_sha256": "4c20836b0626630b570ebd36d1fdd659ffdb0b6e831a07fcda204aaefc041c10",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 451,
+          "scale_percent": 176.17,
+          "shift_x": 0,
+          "shift_y": -3,
+          "height_dm": 7,
+          "target_span": 74,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            15,
+            20,
+            48,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 11082,
+          "source_width": 33,
+          "source_height": 42,
+          "source_footprint_q8": 9816
+        },
+        "steps": 192,
+        "duration": 30.377333333333333,
+        "decoded_frames": 911,
+        "video_sha256": "6b8a418f4767e91b89fc07a56676eeffe64b873f2162040de30aed0354375a98",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      }
+    },
+    "height_m": 0.7
+  },
+  {
+    "national": 219,
+    "emerald": 219,
+    "name": "Magcargo",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 299,
+          "scale_percent": 116.8,
+          "shift_x": 0,
+          "shift_y": -16,
+          "height_dm": 8,
+          "target_span": 69,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            5,
+            3,
+            59,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 9895,
+          "source_width": 54,
+          "source_height": 59,
+          "source_footprint_q8": 14364
+        },
+        "steps": 192,
+        "duration": 36.111333333333334,
+        "decoded_frames": 1084,
+        "video_sha256": "81639a307f9a6a128b046f131bb167d2bb4897905dec892a369adafa5e659a2a",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 426,
+          "scale_percent": 166.41,
+          "shift_x": 0,
+          "shift_y": 3,
+          "height_dm": 8,
+          "target_span": 100,
+          "source_factor_q8": 256,
+          "silhouette_bounds": [
+            7,
+            2,
+            57,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 10053,
+          "source_width": 51,
+          "source_height": 61,
+          "source_footprint_q8": 14364
+        },
+        "steps": 192,
+        "duration": 36.14233333333333,
+        "decoded_frames": 1084,
+        "video_sha256": "78e15b104081cd642e1ad2a303c96069dd65730677e5d7196d8a5b318bfb3b79",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      }
+    },
+    "height_m": 0.8
+  },
+  {
+    "national": 324,
+    "emerald": 321,
+    "name": "Torkoal",
+    "directions": {
+      "front": {
+        "presentation": {
+          "battler": 1,
+          "scale_q8": 302,
+          "scale_percent": 117.97,
+          "shift_x": 0,
+          "shift_y": -5,
+          "height_dm": 5,
+          "target_span": 71,
+          "source_factor_q8": 301,
+          "silhouette_bounds": [
+            2,
+            2,
+            61,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 8323,
+          "source_width": 64,
+          "source_height": 65,
+          "source_footprint_q8": 16571
+        },
+        "steps": 616,
+        "duration": 36.14233333333333,
+        "decoded_frames": 1084,
+        "video_sha256": "78e15b104081cd642e1ad2a303c96069dd65730677e5d7196d8a5b318bfb3b79",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      },
+      "back": {
+        "presentation": {
+          "battler": 0,
+          "scale_q8": 392,
+          "scale_percent": 153.12,
+          "shift_x": 0,
+          "shift_y": 11,
+          "height_dm": 5,
+          "target_span": 92,
+          "source_factor_q8": 301,
+          "silhouette_bounds": [
+            2,
+            6,
+            62,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 8835,
+          "source_width": 67,
+          "source_height": 63,
+          "source_footprint_q8": 16571
+        },
+        "steps": 616,
+        "duration": 36.111333333333334,
+        "decoded_frames": 1084,
+        "video_sha256": "81639a307f9a6a128b046f131bb167d2bb4897905dec892a369adafa5e659a2a",
+        "build_id": "35c62b2e2f40bcd4",
+        "binary_sha256": "11ce99dc5a277f4fbc3d58bf36af20d7a140ed201f0e6a90ab426f931cfcf3a0"
+      }
+    },
+    "height_m": 0.5
+  }
+]

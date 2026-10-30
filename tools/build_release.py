@@ -62,7 +62,11 @@ DIST = ROOT / "dist"
 CIA_NAME = "Emerald3DS-Forwarder.cia"
 GENERATORS = ["gen_voxel_regions.py", "gen_voxel_sign_masks.py",
               "gen_voxel_relief.py", "gen_voxel_buildings.py", "gen_intro_margins.py"]
-VOXELGEN_FILES = ["src/voxel/voxel_regions.h", "assets/voxel/relief_fixes.json"]
+VOXELGEN_FILES = ["src/voxel/voxel_regions.h", "assets/voxel/relief_fixes.json",
+                  "assets/voxel/props/yellow_table.vox", "assets/voxel/props/green_bookshelf.vox",
+                  "assets/voxel/props/purple_display_cabinet.vox", "assets/voxel/props/white_console.vox",
+                  "assets/voxel/props/potted_plant.vox", "assets/voxel/props/kitchen_fridge.vox",
+                  "assets/voxel/props/kitchen_sink.vox", "assets/voxel/props/striped_kitchen_table.vox"]
 
 
 def run(cmd, cwd=None, env=None):

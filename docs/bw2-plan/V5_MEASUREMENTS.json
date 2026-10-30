@@ -1,0 +1,370 @@
+[
+  {
+    "national": 271,
+    "name": "Lombre",
+    "directions": {
+      "front": {
+        "old": {
+          "battler": 1,
+          "scale_q8": 379,
+          "scale_percent": 148.05,
+          "shift_x": 0,
+          "shift_y": -19,
+          "height_dm": 12,
+          "target_span": 77,
+          "silhouette_bounds": [
+            7,
+            10,
+            57,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 9578
+        },
+        "new": {
+          "battler": 1,
+          "scale_q8": 300,
+          "scale_percent": 117.19,
+          "shift_x": 0,
+          "shift_y": -10,
+          "height_dm": 12,
+          "target_span": 61,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            7,
+            10,
+            57,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 9578,
+          "source_width": 50,
+          "source_height": 52,
+          "source_footprint_q8": 12845
+        },
+        "relative_percent": -20.8,
+        "old_capture": "artifacts/bw2-validation/revisions/2026-10-28-before-v5/0271_lombre/front/capture.json",
+        "new_capture": "build/bw2-validation/v5-nuzleaf-lombre/capture.json"
+      },
+      "back": {
+        "old": {
+          "battler": 0,
+          "scale_q8": 512,
+          "scale_percent": 200.0,
+          "shift_x": 0,
+          "shift_y": 3,
+          "height_dm": 12,
+          "target_span": 112,
+          "silhouette_bounds": [
+            9,
+            9,
+            55,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 9868
+        },
+        "new": {
+          "battler": 0,
+          "scale_q8": 429,
+          "scale_percent": 167.58,
+          "shift_x": 0,
+          "shift_y": 6,
+          "height_dm": 12,
+          "target_span": 89,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            9,
+            9,
+            55,
+            62
+          ],
+          "idle_floor": 61,
+          "body_center_y_q8": 9868,
+          "source_width": 46,
+          "source_height": 53,
+          "source_footprint_q8": 12845
+        },
+        "relative_percent": -16.2,
+        "old_capture": "artifacts/bw2-validation/revisions/2026-10-28-before-v5/0271_lombre/back/capture.json",
+        "new_capture": "build/bw2-validation/v5-lombre-nuzleaf/capture.json"
+      }
+    }
+  },
+  {
+    "national": 274,
+    "name": "Nuzleaf",
+    "directions": {
+      "front": {
+        "old": {
+          "battler": 1,
+          "scale_q8": 326,
+          "scale_percent": 127.34,
+          "shift_x": 0,
+          "shift_y": -14,
+          "height_dm": 10,
+          "target_span": 74,
+          "silhouette_bounds": [
+            8,
+            4,
+            55,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 8415
+        },
+        "new": {
+          "battler": 1,
+          "scale_q8": 260,
+          "scale_percent": 101.56,
+          "shift_x": 0,
+          "shift_y": -6,
+          "height_dm": 10,
+          "target_span": 59,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            8,
+            4,
+            55,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 8415,
+          "source_width": 47,
+          "source_height": 58,
+          "source_footprint_q8": 13178
+        },
+        "relative_percent": -20.2,
+        "old_capture": "artifacts/bw2-validation/revisions/2026-10-28-before-v5/0274_nuzleaf/front/capture.json",
+        "new_capture": "build/bw2-validation/v5-lombre-nuzleaf/capture.json"
+      },
+      "back": {
+        "old": {
+          "battler": 0,
+          "scale_q8": 507,
+          "scale_percent": 198.05,
+          "shift_x": 0,
+          "shift_y": 10,
+          "height_dm": 10,
+          "target_span": 111,
+          "silhouette_bounds": [
+            9,
+            6,
+            55,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 8722
+        },
+        "new": {
+          "battler": 0,
+          "scale_q8": 402,
+          "scale_percent": 157.03,
+          "shift_x": 0,
+          "shift_y": 11,
+          "height_dm": 10,
+          "target_span": 88,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            9,
+            6,
+            55,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 8722,
+          "source_width": 46,
+          "source_height": 56,
+          "source_footprint_q8": 13178
+        },
+        "relative_percent": -20.7,
+        "old_capture": "artifacts/bw2-validation/revisions/2026-10-28-before-v5/0274_nuzleaf/back/capture.json",
+        "new_capture": "build/bw2-validation/v5-nuzleaf-lombre/capture.json"
+      }
+    }
+  },
+  {
+    "national": 273,
+    "name": "Seedot",
+    "directions": {
+      "front": {
+        "old": {
+          "battler": 1,
+          "scale_q8": 410,
+          "scale_percent": 160.16,
+          "shift_x": 0,
+          "shift_y": -32,
+          "height_dm": 5,
+          "target_span": 61,
+          "silhouette_bounds": [
+            14,
+            24,
+            50,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 11261
+        },
+        "new": {
+          "battler": 1,
+          "scale_q8": 323,
+          "scale_percent": 126.17,
+          "shift_x": 0,
+          "shift_y": -21,
+          "height_dm": 5,
+          "target_span": 48,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            14,
+            24,
+            50,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 11261,
+          "source_width": 36,
+          "source_height": 38,
+          "source_footprint_q8": 9405
+        },
+        "relative_percent": -21.2,
+        "old_capture": "artifacts/bw2-validation/revisions/2026-10-28-before-v5/0273_seedot/front/capture.json",
+        "new_capture": "build/bw2-validation/v5-shiftry-seedot/capture.json"
+      },
+      "back": {
+        "old": {
+          "battler": 0,
+          "scale_q8": 512,
+          "scale_percent": 200.0,
+          "shift_x": 0,
+          "shift_y": -9,
+          "height_dm": 5,
+          "target_span": 79,
+          "silhouette_bounds": [
+            14,
+            25,
+            50,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 11374
+        },
+        "new": {
+          "battler": 0,
+          "scale_q8": 435,
+          "scale_percent": 169.92,
+          "shift_x": 0,
+          "shift_y": -6,
+          "height_dm": 5,
+          "target_span": 63,
+          "source_factor_q8": 205,
+          "silhouette_bounds": [
+            14,
+            25,
+            50,
+            62
+          ],
+          "idle_floor": 62,
+          "body_center_y_q8": 11374,
+          "source_width": 36,
+          "source_height": 37,
+          "source_footprint_q8": 9405
+        },
+        "relative_percent": -15.0,
+        "old_capture": "artifacts/bw2-validation/revisions/2026-10-28-before-v5/0273_seedot/back/capture.json",
+        "new_capture": "build/bw2-validation/v5-seedot-shiftry/capture.json"
+      }
+    }
+  },
+  {
+    "national": 275,
+    "name": "Shiftry",
+    "directions": {
+      "front": {
+        "old": {
+          "battler": 1,
+          "scale_q8": 332,
+          "scale_percent": 129.69,
+          "shift_x": 0,
+          "shift_y": -5,
+          "height_dm": 13,
+          "target_span": 78,
+          "silhouette_bounds": [
+            2,
+            19,
+            62,
+            62
+          ],
+          "idle_floor": 59,
+          "body_center_y_q8": 9946
+        },
+        "new": {
+          "battler": 1,
+          "scale_q8": 396,
+          "scale_percent": 154.69,
+          "shift_x": 0,
+          "shift_y": -11,
+          "height_dm": 13,
+          "target_span": 93,
+          "source_factor_q8": 308,
+          "silhouette_bounds": [
+            2,
+            19,
+            62,
+            62
+          ],
+          "idle_floor": 59,
+          "body_center_y_q8": 9946,
+          "source_width": 100,
+          "source_height": 71,
+          "source_footprint_q8": 21601
+        },
+        "relative_percent": 19.3,
+        "old_capture": "artifacts/bw2-validation/revisions/2026-10-28-before-v5/0275_shiftry/front/capture.json",
+        "new_capture": "build/bw2-validation/v5-seedot-shiftry/capture.json"
+      },
+      "back": {
+        "old": {
+          "battler": 0,
+          "scale_q8": 477,
+          "scale_percent": 186.33,
+          "shift_x": 0,
+          "shift_y": -1,
+          "height_dm": 13,
+          "target_span": 112,
+          "silhouette_bounds": [
+            2,
+            21,
+            62,
+            62
+          ],
+          "idle_floor": 59,
+          "body_center_y_q8": 10649
+        },
+        "new": {
+          "battler": 0,
+          "scale_q8": 537,
+          "scale_percent": 209.77,
+          "shift_x": 0,
+          "shift_y": -4,
+          "height_dm": 13,
+          "target_span": 126,
+          "source_factor_q8": 308,
+          "silhouette_bounds": [
+            2,
+            21,
+            62,
+            62
+          ],
+          "idle_floor": 59,
+          "body_center_y_q8": 10649,
+          "source_width": 102,
+          "source_height": 70,
+          "source_footprint_q8": 21601
+        },
+        "relative_percent": 12.6,
+        "old_capture": "artifacts/bw2-validation/revisions/2026-10-28-before-v5/0275_shiftry/back/capture.json",
+        "new_capture": "build/bw2-validation/v5-shiftry-seedot/capture.json"
+      }
+    }
+  }
+]

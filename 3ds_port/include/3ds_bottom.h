@@ -48,6 +48,21 @@ uint16_t CtrBottom_InjectedKeys(void);
 uint16_t CtrBottom_FilterKeys(uint16_t held);
 #ifdef CTR_TEST_SWOOP
 void CtrBottom_TestSwoop(unsigned step);
+
+
 #endif
+
+/* Backdrop colours used by the custom codex canvases. */
+#define CTR_SECTION_RGB(r, g, b) ((uint16_t)((r) | ((g) << 5) | ((b) << 10)))
+#define CTR_SECTION_BASE CTR_SECTION_RGB(23, 29, 24)
+#define CTR_SECTION_LINE CTR_SECTION_RGB(19, 26, 21)
+#define CTR_SECTION_LIGHT CTR_SECTION_RGB(30, 31, 30)
+#define CTR_SECTION_BALL CTR_SECTION_RGB(21, 28, 23)
+#define CTR_SECTION_BALL_TOP CTR_SECTION_RGB(22, 28, 23)
+#define CTR_SECTION_BALL_RADIUS 64
+/* The Poké Ball, 2R x 2R from the section's centre minus R: 0 nothing, 1
+ * the line colour, 2 the bottom (lighter) half's. Ready after CtrBottom_Init. */
+const uint8_t *CtrBottom_BallMask(void);
+
 
 #endif

@@ -1,0 +1,765 @@
+{
+  "version": 1,
+  "requested_checkpoints": 5,
+  "completed_checkpoints": 5,
+  "starting_pokemon_done": 34,
+  "target_pokemon_done": 74,
+  "algorithm": "height-source-footprint-v5.1-front-headroom",
+  "groups": [
+    {
+      "number": 5,
+      "ordinal": 1,
+      "status": "complete",
+      "national_ids": [
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        63,
+        64
+      ],
+      "names": [
+        "Masquerain",
+        "Shroomish",
+        "Breloom",
+        "Slakoth",
+        "Vigoroth",
+        "Slaking",
+        "Abra",
+        "Kadabra"
+      ],
+      "cases": [
+        {
+          "name": "masquerain-shroomish",
+          "player": 312,
+          "enemy": 306
+        },
+        {
+          "name": "shroomish-masquerain",
+          "player": 306,
+          "enemy": 312
+        },
+        {
+          "name": "breloom-slakoth",
+          "player": 307,
+          "enemy": 364
+        },
+        {
+          "name": "slakoth-breloom",
+          "player": 364,
+          "enemy": 307
+        },
+        {
+          "name": "vigoroth-slaking",
+          "player": 365,
+          "enemy": 366
+        },
+        {
+          "name": "slaking-vigoroth",
+          "player": 366,
+          "enemy": 365
+        },
+        {
+          "name": "abra-kadabra",
+          "player": 63,
+          "enemy": 64
+        },
+        {
+          "name": "kadabra-abra",
+          "player": 64,
+          "enemy": 63
+        }
+      ],
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_shiny": true,
+      "audit_dossiers": 48,
+      "movie": {
+        "duration": 243.13966666666667,
+        "decoded_frames": 7292,
+        "sha256": "49e6af6be4821490cff481685d409b71760f32f6e5a509ecabfa81e3a8b8a5b9",
+        "segments": [
+          {
+            "name": "masquerain-shroomish",
+            "start": 0.0,
+            "end": 39.001333333333335,
+            "frames": 1170,
+            "sha256": "02b457bde462969fa019da56aebf931c0cc57696e582f1ec225622cd69523b2d"
+          },
+          {
+            "name": "shroomish-masquerain",
+            "start": 39.001333333333335,
+            "end": 77.73766666666667,
+            "frames": 1162,
+            "sha256": "3a2a3ed223875fc516a3451d2369f3e351123df34eb1c28a4aee553206da731f"
+          },
+          {
+            "name": "breloom-slakoth",
+            "start": 77.73766666666667,
+            "end": 100.818,
+            "frames": 692,
+            "sha256": "f9e3f8bbf1b08e2a8e4bc0b34d89df2c22125a6b1d3ec2017d94d9b80dc0cd0c"
+          },
+          {
+            "name": "slakoth-breloom",
+            "start": 100.818,
+            "end": 123.66333333333333,
+            "frames": 685,
+            "sha256": "5ae1ad7b32a60840ca6dd6e33b414a8c5a5f49079ee44399fc06ae0e4e7c2cf4"
+          },
+          {
+            "name": "vigoroth-slaking",
+            "start": 123.66333333333333,
+            "end": 156.13366666666667,
+            "frames": 974,
+            "sha256": "5995f798830fb9cf3ade9f2ed806763311a7b3526536206452cc0ee6dc08e662"
+          },
+          {
+            "name": "slaking-vigoroth",
+            "start": 156.13366666666667,
+            "end": 186.542,
+            "frames": 912,
+            "sha256": "d4ff084d668f87ce9fffc6b089d87d5d3587d1b452dd83dcacecfabd2d399a6a"
+          },
+          {
+            "name": "abra-kadabra",
+            "start": 186.542,
+            "end": 214.74733333333333,
+            "frames": 846,
+            "sha256": "18ad8f9cb0f7eee6c35e453ba4daa5221fdc8c88c5c9f823787f5b0909664a0d"
+          },
+          {
+            "name": "kadabra-abra",
+            "start": 214.74733333333333,
+            "end": 243.13966666666667,
+            "frames": 851,
+            "sha256": "e009454a1c91d9dd57dc13faac5ddefb31612b5269223e0ad7d020d4c68c7193"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 5: eight Pokemon"
+    },
+    {
+      "number": 6,
+      "ordinal": 2,
+      "status": "complete",
+      "national_ids": [
+        65,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296
+      ],
+      "names": [
+        "Alakazam",
+        "Nincada",
+        "Ninjask",
+        "Shedinja",
+        "Whismur",
+        "Loudred",
+        "Exploud",
+        "Makuhita"
+      ],
+      "cases": [
+        {
+          "name": "alakazam-nincada",
+          "player": 65,
+          "enemy": 301
+        },
+        {
+          "name": "nincada-alakazam",
+          "player": 301,
+          "enemy": 65
+        },
+        {
+          "name": "ninjask-shedinja",
+          "player": 302,
+          "enemy": 303
+        },
+        {
+          "name": "shedinja-ninjask",
+          "player": 303,
+          "enemy": 302
+        },
+        {
+          "name": "whismur-loudred",
+          "player": 370,
+          "enemy": 371
+        },
+        {
+          "name": "loudred-whismur",
+          "player": 371,
+          "enemy": 370
+        },
+        {
+          "name": "exploud-makuhita",
+          "player": 372,
+          "enemy": 335
+        },
+        {
+          "name": "makuhita-exploud",
+          "player": 335,
+          "enemy": 372
+        }
+      ],
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_shiny": true,
+      "audit_dossiers": 56,
+      "movie": {
+        "duration": 233.96966666666665,
+        "decoded_frames": 7017,
+        "sha256": "2562934a2fe4296d060ec044fb85a78c82810176d593111b302df0e42ba9a909",
+        "segments": [
+          {
+            "name": "alakazam-nincada",
+            "start": 0.0,
+            "end": 33.43933333333333,
+            "frames": 1003,
+            "sha256": "644a1289e82d70592d33bedfbf4d97e0eaed6f68c503823c668671f71bcb24bc"
+          },
+          {
+            "name": "nincada-alakazam",
+            "start": 33.43933333333333,
+            "end": 65.91066666666667,
+            "frames": 974,
+            "sha256": "df1d323604481cb72cf0cb755db364df01c42ea0de68cf2e50770b31dba05173"
+          },
+          {
+            "name": "ninjask-shedinja",
+            "start": 65.91066666666667,
+            "end": 88.99,
+            "frames": 692,
+            "sha256": "f60a5521fdbeafd4674c210dfeadbdfef9b6d025139e11d65d6e32790b102683"
+          },
+          {
+            "name": "shedinja-ninjask",
+            "start": 88.99,
+            "end": 111.80533333333334,
+            "frames": 684,
+            "sha256": "48df429ecd16534c6af7639b17cb14a321458662ea658aed572f96fa19d38156"
+          },
+          {
+            "name": "whismur-loudred",
+            "start": 111.80533333333334,
+            "end": 143.65166666666667,
+            "frames": 955,
+            "sha256": "e83dd90d33854c1197ebec7f9c1f8f06223e6755da14e7976f0aac113f8f22a5"
+          },
+          {
+            "name": "loudred-whismur",
+            "start": 143.65166666666667,
+            "end": 174.091,
+            "frames": 913,
+            "sha256": "1df59402864c916c8c55adbd7f0ea77b7bd3eac0b6f423f1c3d99af4c71bdd87"
+          },
+          {
+            "name": "exploud-makuhita",
+            "start": 174.091,
+            "end": 204.26433333333333,
+            "frames": 905,
+            "sha256": "92f01e2fa84a625a02c5189348d80240de0a9cdf01fa65931f1542372380b17c"
+          },
+          {
+            "name": "makuhita-exploud",
+            "start": 204.26433333333333,
+            "end": 233.96966666666665,
+            "frames": 891,
+            "sha256": "e56710ffba0f4fdb687a0608ea9d5fc851b970a3b42b1c7576e06267af0956d2"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 6: eight Pokemon"
+    },
+    {
+      "number": 7,
+      "ordinal": 3,
+      "status": "complete",
+      "national_ids": [
+        297,
+        118,
+        119,
+        129,
+        130,
+        298,
+        183,
+        184
+      ],
+      "names": [
+        "Hariyama",
+        "Goldeen",
+        "Seaking",
+        "Magikarp",
+        "Gyarados",
+        "Azurill",
+        "Marill",
+        "Azumarill"
+      ],
+      "cases": [
+        {
+          "name": "hariyama-goldeen",
+          "player": 336,
+          "enemy": 118
+        },
+        {
+          "name": "goldeen-hariyama",
+          "player": 118,
+          "enemy": 336
+        },
+        {
+          "name": "seaking-magikarp",
+          "player": 119,
+          "enemy": 129
+        },
+        {
+          "name": "magikarp-seaking",
+          "player": 129,
+          "enemy": 119
+        },
+        {
+          "name": "gyarados-azurill",
+          "player": 130,
+          "enemy": 350
+        },
+        {
+          "name": "azurill-gyarados",
+          "player": 350,
+          "enemy": 130
+        },
+        {
+          "name": "marill-azumarill",
+          "player": 183,
+          "enemy": 184
+        },
+        {
+          "name": "azumarill-marill",
+          "player": 184,
+          "enemy": 183
+        }
+      ],
+      "capture_prefix": "cp07h-",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_shiny": true,
+      "audit_dossiers": 64,
+      "movie": {
+        "duration": 238.84466666666665,
+        "decoded_frames": 7162,
+        "sha256": "5aae0d030a8d9ad6663cf3f7594077d283065d1463b3853dd18c8f1e0434b386",
+        "segments": [
+          {
+            "name": "hariyama-goldeen",
+            "start": 0.0,
+            "end": 30.877333333333333,
+            "frames": 926,
+            "sha256": "312c7d7e7d14305d8ee2e24bdd246500dc9982dce29b0a12582af0ececbaf6e1"
+          },
+          {
+            "name": "goldeen-hariyama",
+            "start": 30.877333333333333,
+            "end": 61.08266666666667,
+            "frames": 906,
+            "sha256": "312e8dd682e2c6dccb67b948e42eb90334fdcb6e485b9bd5f65838fce998c157"
+          },
+          {
+            "name": "seaking-magikarp",
+            "start": 61.08266666666667,
+            "end": 88.694,
+            "frames": 828,
+            "sha256": "5bea65ad953975abb4523c13f62e1586e205df8a902677bef50a4092f3dfd383"
+          },
+          {
+            "name": "magikarp-seaking",
+            "start": 88.694,
+            "end": 115.75833333333334,
+            "frames": 811,
+            "sha256": "6626b0173c0f5486b071e4572220c5effadb83922f10cc26aa5fc014c1bc4bce"
+          },
+          {
+            "name": "gyarados-azurill",
+            "start": 115.75833333333334,
+            "end": 146.40066666666667,
+            "frames": 919,
+            "sha256": "851d5142843129f3d5defa276185f4604a652afb8ca25841f61de165e8ce994e"
+          },
+          {
+            "name": "azurill-gyarados",
+            "start": 146.40066666666667,
+            "end": 177.215,
+            "frames": 924,
+            "sha256": "104baab05282e765a94155b5a15f1468e5a2d5b83fa647419f2743cb6523701a"
+          },
+          {
+            "name": "marill-azumarill",
+            "start": 177.215,
+            "end": 208.23333333333332,
+            "frames": 930,
+            "sha256": "13342009659ba0ec71aafb7ef53a0ef20327521e8aa67cd3120b7d77aa80e210"
+          },
+          {
+            "name": "azumarill-marill",
+            "start": 208.23333333333332,
+            "end": 238.84466666666665,
+            "frames": 918,
+            "sha256": "aed64d67d161caacf4e3f4a43bbb2e2306a9db066bab95111675a276d745c86c"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 7: eight Pokemon"
+    },
+    {
+      "number": 8,
+      "ordinal": 4,
+      "status": "complete",
+      "national_ids": [
+        74,
+        75,
+        76,
+        299,
+        300,
+        301,
+        41,
+        42
+      ],
+      "names": [
+        "Geodude",
+        "Graveler",
+        "Golem",
+        "Nosepass",
+        "Skitty",
+        "Delcatty",
+        "Zubat",
+        "Golbat"
+      ],
+      "cases": [
+        {
+          "name": "geodude-graveler",
+          "player": 74,
+          "enemy": 75
+        },
+        {
+          "name": "graveler-geodude",
+          "player": 75,
+          "enemy": 74
+        },
+        {
+          "name": "golem-nosepass",
+          "player": 76,
+          "enemy": 320
+        },
+        {
+          "name": "nosepass-golem",
+          "player": 320,
+          "enemy": 76
+        },
+        {
+          "name": "skitty-delcatty",
+          "player": 315,
+          "enemy": 316
+        },
+        {
+          "name": "delcatty-skitty",
+          "player": 316,
+          "enemy": 315
+        },
+        {
+          "name": "zubat-golbat",
+          "player": 41,
+          "enemy": 42
+        },
+        {
+          "name": "golbat-zubat",
+          "player": 42,
+          "enemy": 41
+        }
+      ],
+      "capture_prefix": "cp08h-",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_shiny": true,
+      "audit_dossiers": 72,
+      "movie": {
+        "duration": 212.20366666666666,
+        "decoded_frames": 6363,
+        "sha256": "a911f72c211e9f9193922301549709b190404cd5feb9cf4c31cf38743a369432",
+        "segments": [
+          {
+            "name": "geodude-graveler",
+            "start": 0.0,
+            "end": 25.908333333333335,
+            "frames": 777,
+            "sha256": "e2ab4220e1f79f995e98ca2c3a08a3324631df7dcfb40e05f8511c7a0ff26156"
+          },
+          {
+            "name": "graveler-geodude",
+            "start": 25.908333333333335,
+            "end": 51.86366666666667,
+            "frames": 778,
+            "sha256": "b30a1a847d9c393852dfe5152f23a8f7fb59395e29b19eda16140cd7b8c5e58e"
+          },
+          {
+            "name": "golem-nosepass",
+            "start": 51.86366666666667,
+            "end": 77.366,
+            "frames": 765,
+            "sha256": "0f89ab724790b28e524b9d7b955e8efbab3eef0dc4a1dda6bb10dc5e01711247"
+          },
+          {
+            "name": "nosepass-golem",
+            "start": 77.366,
+            "end": 101.77433333333333,
+            "frames": 732,
+            "sha256": "83b8bdf08dd869d243f1e2d869b16aba4562a7e51f25bea4684048e6ef553e7c"
+          },
+          {
+            "name": "skitty-delcatty",
+            "start": 101.77433333333333,
+            "end": 136.85366666666667,
+            "frames": 1052,
+            "sha256": "c51b3837a848c03b0351a9222e3cfaecf1bfc723201eae037ee5b0bc67af1e4a"
+          },
+          {
+            "name": "delcatty-skitty",
+            "start": 136.85366666666667,
+            "end": 172.137,
+            "frames": 1058,
+            "sha256": "ee4a7fd1b6d1ee3404a77ea978165b29fe5d35b69224f742de00575ed9d3a8ea"
+          },
+          {
+            "name": "zubat-golbat",
+            "start": 172.137,
+            "end": 193.04533333333333,
+            "frames": 627,
+            "sha256": "cd3a559dd215107f6a75d6a0e3da2d47de3c099b1b094b160d17ff9ee8ab3cb2"
+          },
+          {
+            "name": "golbat-zubat",
+            "start": 193.04533333333333,
+            "end": 212.20366666666666,
+            "frames": 574,
+            "sha256": "021c9c3554b85a6a7f90654a18e2622fd4ce0374c18c820c769b4be17126e406"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 8: eight Pokemon"
+    },
+    {
+      "number": 9,
+      "ordinal": 5,
+      "status": "complete",
+      "national_ids": [
+        169,
+        72,
+        73,
+        302,
+        303,
+        304,
+        305,
+        306
+      ],
+      "names": [
+        "Crobat",
+        "Tentacool",
+        "Tentacruel",
+        "Sableye",
+        "Mawile",
+        "Aron",
+        "Lairon",
+        "Aggron"
+      ],
+      "cases": [
+        {
+          "name": "crobat-tentacool",
+          "player": 169,
+          "enemy": 72
+        },
+        {
+          "name": "tentacool-crobat",
+          "player": 72,
+          "enemy": 169
+        },
+        {
+          "name": "tentacruel-sableye",
+          "player": 73,
+          "enemy": 322
+        },
+        {
+          "name": "sableye-tentacruel",
+          "player": 322,
+          "enemy": 73
+        },
+        {
+          "name": "mawile-aron",
+          "player": 355,
+          "enemy": 382
+        },
+        {
+          "name": "aron-mawile",
+          "player": 382,
+          "enemy": 355
+        },
+        {
+          "name": "lairon-aggron",
+          "player": 383,
+          "enemy": 384
+        },
+        {
+          "name": "aggron-lairon",
+          "player": 384,
+          "enemy": 383
+        }
+      ],
+      "capture_prefix": "cp09h-",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_shiny": true,
+      "audit_dossiers": 80,
+      "movie": {
+        "duration": 255.93966666666665,
+        "decoded_frames": 7675,
+        "sha256": "ccda9ca3b332cfb4e61de57c7f89389cd9002a4daa5f476bc90867670e45affa",
+        "segments": [
+          {
+            "name": "crobat-tentacool",
+            "start": 0.0,
+            "end": 23.971333333333334,
+            "frames": 719,
+            "sha256": "17d1c2e5cd26a3af034b32bfa5e9d88fa9a5d74e2ced23605227046b1af6e019"
+          },
+          {
+            "name": "tentacool-crobat",
+            "start": 23.971333333333334,
+            "end": 47.785666666666664,
+            "frames": 714,
+            "sha256": "4ae36f9b656bedaf5647bcd39a26e86b593f0eef3c2bced60d03c4549032d6bc"
+          },
+          {
+            "name": "tentacruel-sableye",
+            "start": 47.785666666666664,
+            "end": 78.101,
+            "frames": 909,
+            "sha256": "deb8d791859bdd0b78a05313bcf5f7f361d71de48fd5bd5d0d17a32188cb5285"
+          },
+          {
+            "name": "sableye-tentacruel",
+            "start": 78.101,
+            "end": 107.91533333333334,
+            "frames": 894,
+            "sha256": "4308ba466dd2369423f2432705bf5d3b9678b422661a95f3ad88f73e8d987b60"
+          },
+          {
+            "name": "mawile-aron",
+            "start": 107.91533333333334,
+            "end": 143.72966666666667,
+            "frames": 1074,
+            "sha256": "4f1728d9a35167818c590b2b61f979b6b8da490e12f61b940f79218032bd2b90"
+          },
+          {
+            "name": "aron-mawile",
+            "start": 143.72966666666667,
+            "end": 177.951,
+            "frames": 1026,
+            "sha256": "9c0cc12492342bbab00c4077ca93077ecd6b3b680ee088a4e1fce6392108cced"
+          },
+          {
+            "name": "lairon-aggron",
+            "start": 177.951,
+            "end": 216.76533333333333,
+            "frames": 1164,
+            "sha256": "9c7bfa6e1b79f922a252080ef1b267461e2ef950d634c0bd8d8d9acca131f372"
+          },
+          {
+            "name": "aggron-lairon",
+            "start": 216.76533333333333,
+            "end": 255.93966666666665,
+            "frames": 1175,
+            "sha256": "5dd07c1109d8d6cab604b95348f7edf09b069052d1ec2797cf9fd9c93b4ba032"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 9: eight Pokemon"
+    }
+  ],
+  "runtime": {
+    "capture_script": "build/bw2-auto5-capture.ps1",
+    "capture_log": "build/bw2-auto5-headroom-captures.log",
+    "validation_build_id": "ab9b0891e3970829",
+    "production_log": "build/bw2-auto5-headroom-production-build.log",
+    "helper": "build/bw2-auto5.py",
+    "production_session_completed": true,
+    "builds": {
+      "validation.3dsx": {
+        "build_id": "ab9b0891e3970829",
+        "sha256": "6a48c0fdee8fbab7096fbdb29433741e077bde265f99113c1a2362fbe206a0a6",
+        "archive": "artifacts/bw2-validation/builds/ab9b0891e3970829_6a48c0fdee8f/validation.3dsx"
+      },
+      "validation.elf": {
+        "build_id": "ab9b0891e3970829",
+        "sha256": "0129c6ca38039f85bc4a5e9ff01074c5ffaba53042e57205e066560d35bddc62",
+        "archive": "artifacts/bw2-validation/builds/ab9b0891e3970829_0129c6ca3803/validation.elf"
+      },
+      "Emerald3DS-BW2.3dsx": {
+        "build_id": "c65648fb2fe7ded3",
+        "sha256": "c7ca71c43aee28d283e43f33ac10761708ec28989e6cdccc7083973257117f3c",
+        "archive": "artifacts/bw2-validation/builds/c65648fb2fe7ded3_c7ca71c43aee/Emerald3DS-BW2.3dsx"
+      }
+    },
+    "initial_builds": {
+      "validation.3dsx": {
+        "build_id": "15dde47674f650ec",
+        "sha256": "54227e749aa5fc2b7ef3fd5a8682ecfbf73cf0f9efdd38412924ca92ed629bb3",
+        "archive": "artifacts/bw2-validation/builds/15dde47674f650ec_54227e749aa5/validation.3dsx"
+      },
+      "validation.elf": {
+        "build_id": "15dde47674f650ec",
+        "sha256": "48c627c086c87ee65349de1cdd509ba38427b4f65f661c4de73e46a0e9b3758f",
+        "archive": "artifacts/bw2-validation/builds/15dde47674f650ec_48c627c086c8/validation.elf"
+      },
+      "Emerald3DS-BW2.3dsx": {
+        "build_id": "2ed791a98434d45b",
+        "sha256": "036f89da901d369a80087f5911adc14843ce003b6ecd09ec275da719b1dde19a",
+        "archive": "artifacts/bw2-validation/builds/2ed791a98434d45b_036f89da901d/Emerald3DS-BW2.3dsx"
+      }
+    },
+    "headroom_test_log": "build/bw2-auto5-headroom-test.log",
+    "headroom_review": "docs/bw2-plan/FRONT_HEADROOM_REVIEW.json",
+    "initial_capture_session": 61504,
+    "initial_capture_log": "build/bw2-auto5-captures.log",
+    "capture_completed": true,
+    "isolated_emulator_closed": true,
+    "active_jobs": [],
+    "last_audit_dossiers": 80,
+    "capture_interruption_resolved": "Hariyama raised hand reaches top row in30/444frames; add viewport headroom guard",
+    "new_pokemon_views_verified": 80
+  }
+}

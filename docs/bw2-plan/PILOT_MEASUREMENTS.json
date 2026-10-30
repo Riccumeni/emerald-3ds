@@ -1,0 +1,81 @@
+{
+  "units": [
+    {
+      "nome": "Treecko",
+      "bytes": 5898528,
+      "video_durations": [
+        30.298333333333332,
+        30.252333333333333
+      ],
+      "video_fps": [
+        30.00165025578965,
+        30.01421377965336
+      ]
+    },
+    {
+      "nome": "Poochyena",
+      "bytes": 5898512,
+      "video_durations": [
+        30.252333333333333,
+        30.298333333333332
+      ],
+      "video_fps": [
+        30.01421377965336,
+        30.00165025578965
+      ]
+    },
+    {
+      "nome": "Pound",
+      "bytes": 2588862,
+      "video_durations": [
+        14.939333333333334,
+        14.689333333333334
+      ],
+      "video_fps": [
+        29.987951269579188,
+        30.0217845148407
+      ]
+    },
+    {
+      "nome": "Tackle",
+      "bytes": 2500591,
+      "video_durations": [
+        14.955333333333334,
+        14.736333333333333
+      ],
+      "video_fps": [
+        30.02273436455222,
+        29.99389264629374
+      ]
+    },
+    {
+      "nome": "Leer",
+      "bytes": 3242680,
+      "video_durations": [
+        20.033333333333335,
+        19.455333333333332
+      ],
+      "video_fps": [
+        30.0,
+        30.017475927766164
+      ]
+    },
+    {
+      "nome": "Howl",
+      "bytes": 3032357,
+      "video_durations": [
+        19.517333333333333,
+        20.283333333333335
+      ],
+      "video_fps": [
+        30.024593523705423,
+        29.975349219391948
+      ]
+    }
+  ],
+  "normal_binary_bytes": 38135004,
+  "log_memory_lines": [
+    "[VIDEO] GPUMEM stage: vram live=4597K peak=4597K n=10 free=1547K largest=897K fails=0 | linear live=7348K peak=7348K n=28 free=843K fails=0 untracked=0"
+  ],
+  "note": "Emulator measurements only; memory allocator diagnostics are not total free console RAM."
+}

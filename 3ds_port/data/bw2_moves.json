@@ -1,0 +1,1064 @@
+{
+  "1": {
+    "name": "pound"
+  },
+  "33": {
+    "name": "tackle"
+  },
+  "43": {
+    "name": "leer"
+  },
+  "336": {
+    "name": "howl"
+  },
+  "2": {
+    "name": "karate_chop"
+  },
+  "3": {
+    "name": "double_slap"
+  },
+  "4": {
+    "name": "comet_punch"
+  },
+  "5": {
+    "name": "mega_punch"
+  },
+  "6": {
+    "name": "pay_day"
+  },
+  "7": {
+    "name": "fire_punch"
+  },
+  "8": {
+    "name": "ice_punch"
+  },
+  "9": {
+    "name": "thunder_punch"
+  },
+  "10": {
+    "name": "scratch"
+  },
+  "11": {
+    "name": "vice_grip"
+  },
+  "12": {
+    "name": "guillotine"
+  },
+  "13": {
+    "name": "razor_wind"
+  },
+  "14": {
+    "name": "swords_dance"
+  },
+  "15": {
+    "name": "cut"
+  },
+  "16": {
+    "name": "gust"
+  },
+  "17": {
+    "name": "wing_attack"
+  },
+  "18": {
+    "name": "whirlwind"
+  },
+  "19": {
+    "name": "fly"
+  },
+  "20": {
+    "name": "bind"
+  },
+  "21": {
+    "name": "slam"
+  },
+  "22": {
+    "name": "vine_whip"
+  },
+  "23": {
+    "name": "stomp"
+  },
+  "24": {
+    "name": "double_kick"
+  },
+  "25": {
+    "name": "mega_kick"
+  },
+  "26": {
+    "name": "jump_kick"
+  },
+  "27": {
+    "name": "rolling_kick"
+  },
+  "28": {
+    "name": "sand_attack"
+  },
+  "29": {
+    "name": "headbutt"
+  },
+  "30": {
+    "name": "horn_attack"
+  },
+  "31": {
+    "name": "fury_attack"
+  },
+  "32": {
+    "name": "horn_drill"
+  },
+  "34": {
+    "name": "body_slam"
+  },
+  "35": {
+    "name": "wrap"
+  },
+  "36": {
+    "name": "take_down"
+  },
+  "37": {
+    "name": "thrash"
+  },
+  "38": {
+    "name": "double_edge"
+  },
+  "39": {
+    "name": "tail_whip"
+  },
+  "40": {
+    "name": "poison_sting"
+  },
+  "41": {
+    "name": "twineedle"
+  },
+  "42": {
+    "name": "pin_missile"
+  },
+  "44": {
+    "name": "bite"
+  },
+  "45": {
+    "name": "growl"
+  },
+  "46": {
+    "name": "roar"
+  },
+  "47": {
+    "name": "sing"
+  },
+  "48": {
+    "name": "supersonic"
+  },
+  "49": {
+    "name": "sonic_boom"
+  },
+  "50": {
+    "name": "disable"
+  },
+  "51": {
+    "name": "acid"
+  },
+  "52": {
+    "name": "ember"
+  },
+  "53": {
+    "name": "flamethrower"
+  },
+  "54": {
+    "name": "mist"
+  },
+  "55": {
+    "name": "water_gun"
+  },
+  "56": {
+    "name": "hydro_pump"
+  },
+  "57": {
+    "name": "surf"
+  },
+  "58": {
+    "name": "ice_beam"
+  },
+  "59": {
+    "name": "blizzard"
+  },
+  "60": {
+    "name": "psybeam"
+  },
+  "61": {
+    "name": "bubble_beam"
+  },
+  "62": {
+    "name": "aurora_beam"
+  },
+  "63": {
+    "name": "hyper_beam"
+  },
+  "64": {
+    "name": "peck"
+  },
+  "65": {
+    "name": "drill_peck"
+  },
+  "66": {
+    "name": "submission"
+  },
+  "67": {
+    "name": "low_kick"
+  },
+  "68": {
+    "name": "counter"
+  },
+  "69": {
+    "name": "seismic_toss"
+  },
+  "70": {
+    "name": "strength"
+  },
+  "71": {
+    "name": "absorb"
+  },
+  "72": {
+    "name": "mega_drain"
+  },
+  "73": {
+    "name": "leech_seed"
+  },
+  "74": {
+    "name": "growth"
+  },
+  "75": {
+    "name": "razor_leaf"
+  },
+  "76": {
+    "name": "solar_beam"
+  },
+  "77": {
+    "name": "poison_powder"
+  },
+  "78": {
+    "name": "stun_spore"
+  },
+  "79": {
+    "name": "sleep_powder"
+  },
+  "80": {
+    "name": "petal_dance"
+  },
+  "81": {
+    "name": "string_shot"
+  },
+  "82": {
+    "name": "dragon_rage"
+  },
+  "83": {
+    "name": "fire_spin"
+  },
+  "84": {
+    "name": "thunder_shock"
+  },
+  "85": {
+    "name": "thunderbolt"
+  },
+  "86": {
+    "name": "thunder_wave"
+  },
+  "87": {
+    "name": "thunder"
+  },
+  "88": {
+    "name": "rock_throw"
+  },
+  "89": {
+    "name": "earthquake"
+  },
+  "90": {
+    "name": "fissure"
+  },
+  "91": {
+    "name": "dig"
+  },
+  "92": {
+    "name": "toxic"
+  },
+  "93": {
+    "name": "confusion"
+  },
+  "94": {
+    "name": "psychic"
+  },
+  "95": {
+    "name": "hypnosis"
+  },
+  "96": {
+    "name": "meditate"
+  },
+  "97": {
+    "name": "agility"
+  },
+  "98": {
+    "name": "quick_attack"
+  },
+  "99": {
+    "name": "rage"
+  },
+  "100": {
+    "name": "teleport"
+  },
+  "101": {
+    "name": "night_shade"
+  },
+  "102": {
+    "name": "mimic"
+  },
+  "103": {
+    "name": "screech"
+  },
+  "104": {
+    "name": "double_team"
+  },
+  "105": {
+    "name": "recover"
+  },
+  "106": {
+    "name": "harden"
+  },
+  "107": {
+    "name": "minimize"
+  },
+  "108": {
+    "name": "smokescreen"
+  },
+  "109": {
+    "name": "confuse_ray"
+  },
+  "110": {
+    "name": "withdraw"
+  },
+  "111": {
+    "name": "defense_curl"
+  },
+  "112": {
+    "name": "barrier"
+  },
+  "113": {
+    "name": "light_screen"
+  },
+  "114": {
+    "name": "haze"
+  },
+  "115": {
+    "name": "reflect"
+  },
+  "116": {
+    "name": "focus_energy"
+  },
+  "117": {
+    "name": "bide"
+  },
+  "118": {
+    "name": "metronome"
+  },
+  "119": {
+    "name": "mirror_move"
+  },
+  "120": {
+    "name": "self_destruct"
+  },
+  "121": {
+    "name": "egg_bomb"
+  },
+  "122": {
+    "name": "lick"
+  },
+  "123": {
+    "name": "smog"
+  },
+  "124": {
+    "name": "sludge"
+  },
+  "125": {
+    "name": "bone_club"
+  },
+  "126": {
+    "name": "fire_blast"
+  },
+  "127": {
+    "name": "waterfall"
+  },
+  "128": {
+    "name": "clamp"
+  },
+  "129": {
+    "name": "swift"
+  },
+  "130": {
+    "name": "skull_bash"
+  },
+  "131": {
+    "name": "spike_cannon"
+  },
+  "132": {
+    "name": "constrict"
+  },
+  "133": {
+    "name": "amnesia"
+  },
+  "134": {
+    "name": "kinesis"
+  },
+  "135": {
+    "name": "soft_boiled"
+  },
+  "136": {
+    "name": "hi_jump_kick"
+  },
+  "137": {
+    "name": "glare"
+  },
+  "138": {
+    "name": "dream_eater"
+  },
+  "139": {
+    "name": "poison_gas"
+  },
+  "140": {
+    "name": "barrage"
+  },
+  "141": {
+    "name": "leech_life"
+  },
+  "142": {
+    "name": "lovely_kiss"
+  },
+  "143": {
+    "name": "sky_attack"
+  },
+  "144": {
+    "name": "transform"
+  },
+  "145": {
+    "name": "bubble"
+  },
+  "146": {
+    "name": "dizzy_punch"
+  },
+  "147": {
+    "name": "spore"
+  },
+  "148": {
+    "name": "flash"
+  },
+  "149": {
+    "name": "psywave"
+  },
+  "150": {
+    "name": "splash"
+  },
+  "151": {
+    "name": "acid_armor"
+  },
+  "152": {
+    "name": "crabhammer"
+  },
+  "153": {
+    "name": "explosion"
+  },
+  "154": {
+    "name": "fury_swipes"
+  },
+  "155": {
+    "name": "bonemerang"
+  },
+  "156": {
+    "name": "rest"
+  },
+  "157": {
+    "name": "rock_slide"
+  },
+  "158": {
+    "name": "hyper_fang"
+  },
+  "159": {
+    "name": "sharpen"
+  },
+  "160": {
+    "name": "conversion"
+  },
+  "161": {
+    "name": "tri_attack"
+  },
+  "162": {
+    "name": "super_fang"
+  },
+  "163": {
+    "name": "slash"
+  },
+  "164": {
+    "name": "substitute"
+  },
+  "165": {
+    "name": "struggle"
+  },
+  "166": {
+    "name": "sketch"
+  },
+  "167": {
+    "name": "triple_kick"
+  },
+  "168": {
+    "name": "thief"
+  },
+  "169": {
+    "name": "spider_web"
+  },
+  "170": {
+    "name": "mind_reader"
+  },
+  "171": {
+    "name": "nightmare"
+  },
+  "172": {
+    "name": "flame_wheel"
+  },
+  "173": {
+    "name": "snore"
+  },
+  "174": {
+    "name": "curse"
+  },
+  "175": {
+    "name": "flail"
+  },
+  "176": {
+    "name": "conversion_2"
+  },
+  "177": {
+    "name": "aeroblast"
+  },
+  "178": {
+    "name": "cotton_spore"
+  },
+  "179": {
+    "name": "reversal"
+  },
+  "180": {
+    "name": "spite"
+  },
+  "181": {
+    "name": "powder_snow"
+  },
+  "182": {
+    "name": "protect"
+  },
+  "183": {
+    "name": "mach_punch"
+  },
+  "184": {
+    "name": "scary_face"
+  },
+  "185": {
+    "name": "faint_attack"
+  },
+  "186": {
+    "name": "sweet_kiss"
+  },
+  "187": {
+    "name": "belly_drum"
+  },
+  "188": {
+    "name": "sludge_bomb"
+  },
+  "189": {
+    "name": "mud_slap"
+  },
+  "190": {
+    "name": "octazooka"
+  },
+  "191": {
+    "name": "spikes"
+  },
+  "192": {
+    "name": "zap_cannon"
+  },
+  "193": {
+    "name": "foresight"
+  },
+  "194": {
+    "name": "destiny_bond"
+  },
+  "195": {
+    "name": "perish_song"
+  },
+  "196": {
+    "name": "icy_wind"
+  },
+  "197": {
+    "name": "detect"
+  },
+  "198": {
+    "name": "bone_rush"
+  },
+  "199": {
+    "name": "lock_on"
+  },
+  "200": {
+    "name": "outrage"
+  },
+  "201": {
+    "name": "sandstorm"
+  },
+  "202": {
+    "name": "giga_drain"
+  },
+  "203": {
+    "name": "endure"
+  },
+  "204": {
+    "name": "charm"
+  },
+  "205": {
+    "name": "rollout"
+  },
+  "206": {
+    "name": "false_swipe"
+  },
+  "207": {
+    "name": "swagger"
+  },
+  "208": {
+    "name": "milk_drink"
+  },
+  "209": {
+    "name": "spark"
+  },
+  "210": {
+    "name": "fury_cutter"
+  },
+  "211": {
+    "name": "steel_wing"
+  },
+  "212": {
+    "name": "mean_look"
+  },
+  "213": {
+    "name": "attract"
+  },
+  "214": {
+    "name": "sleep_talk"
+  },
+  "215": {
+    "name": "heal_bell"
+  },
+  "216": {
+    "name": "return"
+  },
+  "217": {
+    "name": "present"
+  },
+  "218": {
+    "name": "frustration"
+  },
+  "219": {
+    "name": "safeguard"
+  },
+  "220": {
+    "name": "pain_split"
+  },
+  "221": {
+    "name": "sacred_fire"
+  },
+  "222": {
+    "name": "magnitude"
+  },
+  "223": {
+    "name": "dynamic_punch"
+  },
+  "224": {
+    "name": "megahorn"
+  },
+  "225": {
+    "name": "dragon_breath"
+  },
+  "226": {
+    "name": "baton_pass"
+  },
+  "227": {
+    "name": "encore"
+  },
+  "228": {
+    "name": "pursuit"
+  },
+  "229": {
+    "name": "rapid_spin"
+  },
+  "230": {
+    "name": "sweet_scent"
+  },
+  "231": {
+    "name": "iron_tail"
+  },
+  "232": {
+    "name": "metal_claw"
+  },
+  "233": {
+    "name": "vital_throw"
+  },
+  "234": {
+    "name": "morning_sun"
+  },
+  "235": {
+    "name": "synthesis"
+  },
+  "236": {
+    "name": "moonlight"
+  },
+  "237": {
+    "name": "hidden_power"
+  },
+  "238": {
+    "name": "cross_chop"
+  },
+  "239": {
+    "name": "twister"
+  },
+  "240": {
+    "name": "rain_dance"
+  },
+  "241": {
+    "name": "sunny_day"
+  },
+  "242": {
+    "name": "crunch"
+  },
+  "243": {
+    "name": "mirror_coat"
+  },
+  "244": {
+    "name": "psych_up"
+  },
+  "245": {
+    "name": "extreme_speed"
+  },
+  "246": {
+    "name": "ancient_power"
+  },
+  "247": {
+    "name": "shadow_ball"
+  },
+  "248": {
+    "name": "future_sight"
+  },
+  "249": {
+    "name": "rock_smash"
+  },
+  "250": {
+    "name": "whirlpool"
+  },
+  "251": {
+    "name": "beat_up"
+  },
+  "252": {
+    "name": "fake_out"
+  },
+  "253": {
+    "name": "uproar"
+  },
+  "254": {
+    "name": "stockpile"
+  },
+  "255": {
+    "name": "spit_up"
+  },
+  "256": {
+    "name": "swallow"
+  },
+  "257": {
+    "name": "heat_wave"
+  },
+  "258": {
+    "name": "hail"
+  },
+  "259": {
+    "name": "torment"
+  },
+  "260": {
+    "name": "flatter"
+  },
+  "261": {
+    "name": "will_o_wisp"
+  },
+  "262": {
+    "name": "memento"
+  },
+  "263": {
+    "name": "facade"
+  },
+  "264": {
+    "name": "focus_punch"
+  },
+  "265": {
+    "name": "smelling_salt"
+  },
+  "266": {
+    "name": "follow_me"
+  },
+  "267": {
+    "name": "nature_power"
+  },
+  "268": {
+    "name": "charge"
+  },
+  "269": {
+    "name": "taunt"
+  },
+  "270": {
+    "name": "helping_hand"
+  },
+  "271": {
+    "name": "trick"
+  },
+  "272": {
+    "name": "role_play"
+  },
+  "273": {
+    "name": "wish"
+  },
+  "274": {
+    "name": "assist"
+  },
+  "275": {
+    "name": "ingrain"
+  },
+  "276": {
+    "name": "superpower"
+  },
+  "277": {
+    "name": "magic_coat"
+  },
+  "278": {
+    "name": "recycle"
+  },
+  "279": {
+    "name": "revenge"
+  },
+  "280": {
+    "name": "brick_break"
+  },
+  "281": {
+    "name": "yawn"
+  },
+  "282": {
+    "name": "knock_off"
+  },
+  "283": {
+    "name": "endeavor"
+  },
+  "284": {
+    "name": "eruption"
+  },
+  "285": {
+    "name": "skill_swap"
+  },
+  "286": {
+    "name": "imprison"
+  },
+  "287": {
+    "name": "refresh"
+  },
+  "288": {
+    "name": "grudge"
+  },
+  "289": {
+    "name": "snatch"
+  },
+  "290": {
+    "name": "secret_power"
+  },
+  "291": {
+    "name": "dive"
+  },
+  "292": {
+    "name": "arm_thrust"
+  },
+  "293": {
+    "name": "camouflage"
+  },
+  "294": {
+    "name": "tail_glow"
+  },
+  "295": {
+    "name": "luster_purge"
+  },
+  "296": {
+    "name": "mist_ball"
+  },
+  "297": {
+    "name": "feather_dance"
+  },
+  "298": {
+    "name": "teeter_dance"
+  },
+  "299": {
+    "name": "blaze_kick"
+  },
+  "300": {
+    "name": "mud_sport"
+  },
+  "301": {
+    "name": "ice_ball"
+  },
+  "302": {
+    "name": "needle_arm"
+  },
+  "303": {
+    "name": "slack_off"
+  },
+  "304": {
+    "name": "hyper_voice"
+  },
+  "305": {
+    "name": "poison_fang"
+  },
+  "306": {
+    "name": "crush_claw"
+  },
+  "307": {
+    "name": "blast_burn"
+  },
+  "308": {
+    "name": "hydro_cannon"
+  },
+  "309": {
+    "name": "meteor_mash"
+  },
+  "310": {
+    "name": "astonish"
+  },
+  "311": {
+    "name": "weather_ball"
+  },
+  "312": {
+    "name": "aromatherapy"
+  },
+  "313": {
+    "name": "fake_tears"
+  },
+  "314": {
+    "name": "air_cutter"
+  },
+  "315": {
+    "name": "overheat"
+  },
+  "316": {
+    "name": "odor_sleuth"
+  },
+  "317": {
+    "name": "rock_tomb"
+  },
+  "318": {
+    "name": "silver_wind"
+  },
+  "319": {
+    "name": "metal_sound"
+  },
+  "320": {
+    "name": "grass_whistle"
+  },
+  "321": {
+    "name": "tickle"
+  },
+  "322": {
+    "name": "cosmic_power"
+  },
+  "323": {
+    "name": "water_spout"
+  },
+  "324": {
+    "name": "signal_beam"
+  },
+  "325": {
+    "name": "shadow_punch"
+  },
+  "326": {
+    "name": "extrasensory"
+  },
+  "327": {
+    "name": "sky_uppercut"
+  },
+  "328": {
+    "name": "sand_tomb"
+  },
+  "329": {
+    "name": "sheer_cold"
+  },
+  "330": {
+    "name": "muddy_water"
+  },
+  "331": {
+    "name": "bullet_seed"
+  },
+  "332": {
+    "name": "aerial_ace"
+  },
+  "333": {
+    "name": "icicle_spear"
+  },
+  "334": {
+    "name": "iron_defense"
+  },
+  "335": {
+    "name": "block"
+  },
+  "337": {
+    "name": "dragon_claw"
+  },
+  "338": {
+    "name": "frenzy_plant"
+  },
+  "339": {
+    "name": "bulk_up"
+  },
+  "340": {
+    "name": "bounce"
+  },
+  "341": {
+    "name": "mud_shot"
+  },
+  "342": {
+    "name": "poison_tail"
+  },
+  "343": {
+    "name": "covet"
+  },
+  "344": {
+    "name": "volt_tackle"
+  },
+  "345": {
+    "name": "magical_leaf"
+  },
+  "346": {
+    "name": "water_sport"
+  },
+  "347": {
+    "name": "calm_mind"
+  },
+  "348": {
+    "name": "leaf_blade"
+  },
+  "349": {
+    "name": "dragon_dance"
+  },
+  "350": {
+    "name": "rock_blast"
+  },
+  "351": {
+    "name": "shock_wave"
+  },
+  "352": {
+    "name": "water_pulse"
+  },
+  "353": {
+    "name": "doom_desire"
+  },
+  "354": {
+    "name": "psycho_boost"
+  }
+}

@@ -10,8 +10,8 @@ diff --git a/src/pokemon_summary_screen.c b/src/pokemon_summary_screen.c
  #endif
  #include "main.h"
  #include "battle.h"
-@@ -1151,6 +1153,9 @@
- // code
+@@ -1166,6 +1168,9 @@
+ 
  void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, void (*callback)(void))
  {
 +#ifdef PLATFORM_3DS
@@ -20,15 +20,7 @@ diff --git a/src/pokemon_summary_screen.c b/src/pokemon_summary_screen.c
      sMonSummaryScreen = AllocZeroed(sizeof(*sMonSummaryScreen));
      sMonSummaryScreen->mode = mode;
      sMonSummaryScreen->monList.mons = mons;
-@@ -1807,6 +1812,7 @@
- {
-     FreeAllWindowBuffers();
-     Free(sMonSummaryScreen);
-+    sMonSummaryScreen = NULL;
- }
- 
- static void BeginCloseSummaryScreen(u8 taskId)
-@@ -2026,6 +2032,11 @@
+@@ -2305,6 +2310,11 @@
      if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE && !gPaletteFade.active)
      {
  #ifdef PLATFORM_3DS
@@ -40,7 +32,7 @@ diff --git a/src/pokemon_summary_screen.c b/src/pokemon_summary_screen.c
          if (CtrSummary_TouchInput(taskId))
              return;
  #endif
-@@ -4828,3 +4839,269 @@
+@@ -5186,3 +5196,269 @@
          gSprites[spriteIds[i]].invisible = FALSE;
      }
  }

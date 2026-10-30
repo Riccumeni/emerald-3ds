@@ -83,6 +83,7 @@
 #include "3ds_dex_top.h"
 #include "3ds_pokedex_ui.h"
 #include "3ds_summary_ui.h"
+#include "3ds_bag_ui.h"
 #include "3ds_sprite_ids.h"
 
 #include <stdio.h>
@@ -405,14 +406,10 @@ void CtrCentredTrade_SetVBlankCallback(IntrCallback callback)
                                                                            : CTR_CENTRED_TRADE);
 }
 
-bool8 CtrBag_InWindow(void);
-
-/* The bag from the field, its party menu or a battle goes in the game
- * screen's window (or is drawn natively, 3ds_bottom_game.inc), from anywhere
- * else over the whole bottom screen. */
+/* Native bag canvases own both displays; the hidden GBA menu keeps running. */
 void CtrCentredBag_SetVBlankCallback(IntrCallback callback)
 {
-    SetCentredCallback(callback, CtrBag_InWindow() ? CTR_CENTRED_BAG : CTR_CENTRED_BAG_WHOLE);
+    SetCentredCallback(callback, CTR_CENTRED_PLAIN);
 }
 
 bool8 CtrParty_InWindow(void);
@@ -506,7 +503,7 @@ static void UpdateStage(void)
     CtrVideo_SetStageZoomed(!caughtMonPage && sStage.on && sStage.screen == 2);
     /* The custom roster draws the party selection itself.  Suppress the
      * GBA party compositor before it can copy the old list beneath it. */
-    CtrVideo_SetCentred(CtrSummary_DualShown() ? CTR_CENTRED_PLAIN
+    CtrVideo_SetCentred((CtrSummary_DualShown() || CtrBag_DualShown()) ? CTR_CENTRED_PLAIN
                                     : caughtMonPage ? CTR_CENTRED_POKEDEX_CAUGHT
                                     : (CtrBottom_UsesPartyRoster() || CtrPokedex_ListShown()) ? CTR_CENTRED_NONE
                                     : sCentred.on ? sCentred.screen : CTR_CENTRED_NONE);

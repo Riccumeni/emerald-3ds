@@ -1,0 +1,112 @@
+{
+  "natu-wailord": {
+    "presentation": [
+      {
+        "battler": 0,
+        "scale_q8": 369,
+        "scale_percent": 144.14,
+        "shift_x": 0,
+        "shift_y": -13,
+        "height_dm": 2,
+        "target_span": 62,
+        "silhouette_bounds": [
+          10,
+          25,
+          53,
+          62
+        ],
+        "idle_floor": 61,
+        "body_center_y_q8": 11891
+      },
+      {
+        "battler": 1,
+        "scale_q8": 375,
+        "scale_percent": 146.48,
+        "shift_x": 0,
+        "shift_y": -17,
+        "height_dm": 145,
+        "target_span": 88,
+        "silhouette_bounds": [
+          2,
+          11,
+          62,
+          62
+        ],
+        "idle_floor": 59,
+        "body_center_y_q8": 10218
+      }
+    ],
+    "video": {
+      "codec": "h264",
+      "width": 400,
+      "height": 480,
+      "pixel_format": "yuv420p",
+      "duration": 28.924333333333333,
+      "average_fps": 30.00933470088622,
+      "decoded_frames": 868,
+      "distinct_decoded_frames": 861,
+      "sha256": "48dde73b6d751cb1650a8a60a66f0c61a74014ec6c7b88ea415a09b27cfebd2d"
+    },
+    "actor_steps": {
+      "1": 336,
+      "0": 408
+    },
+    "build_id": "8c0f9eae3f9ed8e0",
+    "binary_sha256": "31058dc7d55b75a38fc99a21c21084cc8cf1df75f6226fe0b6262869ed67dd34"
+  },
+  "wailord-natu": {
+    "presentation": [
+      {
+        "battler": 0,
+        "scale_q8": 477,
+        "scale_percent": 186.33,
+        "shift_x": 0,
+        "shift_y": -16,
+        "height_dm": 145,
+        "target_span": 112,
+        "silhouette_bounds": [
+          2,
+          24,
+          62,
+          62
+        ],
+        "idle_floor": 60,
+        "body_center_y_q8": 10667
+      },
+      {
+        "battler": 1,
+        "scale_q8": 299,
+        "scale_percent": 116.8,
+        "shift_x": 0,
+        "shift_y": -21,
+        "height_dm": 2,
+        "target_span": 48,
+        "silhouette_bounds": [
+          13,
+          21,
+          51,
+          62
+        ],
+        "idle_floor": 61,
+        "body_center_y_q8": 11331
+      }
+    ],
+    "video": {
+      "codec": "h264",
+      "width": 400,
+      "height": 480,
+      "pixel_format": "yuv420p",
+      "duration": 29.158333333333335,
+      "average_fps": 30.008573878250928,
+      "decoded_frames": 875,
+      "distinct_decoded_frames": 869,
+      "sha256": "e8b72a70390e199299524583652343295d058bf0c00160777754de2a1a773da4"
+    },
+    "actor_steps": {
+      "1": 408,
+      "0": 336
+    },
+    "build_id": "8c0f9eae3f9ed8e0",
+    "binary_sha256": "31058dc7d55b75a38fc99a21c21084cc8cf1df75f6226fe0b6262869ed67dd34"
+  }
+}

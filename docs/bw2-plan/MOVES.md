@@ -1,0 +1,362 @@
+# Checklist mosse
+
+Totale: **354**. Fatti con dossier completo: **6**.
+
+Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
+
+[Piano](../BW2_ANIMATION_PLAN.md) · [Registro](stato.json)
+
+- [x] 0001 **Pound** — FATTO; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0001_pound/).
+- [x] 0033 **Tackle** — FATTO; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0033_tackle/).
+- [x] 0043 **Leer** — FATTO; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0043_leer/).
+- [x] 0336 **Howl** — FATTO; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0336_howl/).
+- [ ] 0002 **Karate Chop** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0002_karate_chop/).
+- [ ] 0003 **Double Slap** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0003_double_slap/).
+- [ ] 0004 **Comet Punch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0004_comet_punch/).
+- [ ] 0005 **Mega Punch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0005_mega_punch/).
+- [ ] 0006 **Pay Day** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0006_pay_day/).
+- [ ] 0007 **Fire Punch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0007_fire_punch/).
+- [ ] 0008 **Ice Punch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0008_ice_punch/).
+- [ ] 0009 **Thunder Punch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0009_thunder_punch/).
+- [x] 0010 **Scratch** — FATTO; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0010_scratch/).
+- [ ] 0011 **Vice Grip** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0011_vice_grip/).
+- [ ] 0012 **Guillotine** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0012_guillotine/).
+- [ ] 0013 **Razor Wind** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0013_razor_wind/).
+- [ ] 0014 **Swords Dance** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0014_swords_dance/).
+- [ ] 0015 **Cut** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0015_cut/).
+- [ ] 0016 **Gust** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0016_gust/).
+- [ ] 0017 **Wing Attack** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0017_wing_attack/).
+- [ ] 0018 **Whirlwind** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0018_whirlwind/).
+- [ ] 0019 **Fly** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0019_fly/).
+- [ ] 0020 **Bind** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0020_bind/).
+- [ ] 0021 **Slam** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0021_slam/).
+- [ ] 0022 **Vine Whip** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0022_vine_whip/).
+- [ ] 0023 **Stomp** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0023_stomp/).
+- [ ] 0024 **Double Kick** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0024_double_kick/).
+- [ ] 0025 **Mega Kick** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0025_mega_kick/).
+- [ ] 0026 **Jump Kick** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0026_jump_kick/).
+- [ ] 0027 **Rolling Kick** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0027_rolling_kick/).
+- [ ] 0028 **Sand Attack** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0028_sand_attack/).
+- [ ] 0029 **Headbutt** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0029_headbutt/).
+- [ ] 0030 **Horn Attack** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0030_horn_attack/).
+- [ ] 0031 **Fury Attack** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0031_fury_attack/).
+- [ ] 0032 **Horn Drill** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0032_horn_drill/).
+- [ ] 0034 **Body Slam** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0034_body_slam/).
+- [ ] 0035 **Wrap** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0035_wrap/).
+- [ ] 0036 **Take Down** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0036_take_down/).
+- [ ] 0037 **Thrash** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0037_thrash/).
+- [ ] 0038 **Double Edge** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0038_double_edge/).
+- [ ] 0039 **Tail Whip** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0039_tail_whip/).
+- [ ] 0040 **Poison Sting** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0040_poison_sting/).
+- [ ] 0041 **Twineedle** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0041_twineedle/).
+- [ ] 0042 **Pin Missile** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0042_pin_missile/).
+- [ ] 0044 **Bite** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0044_bite/).
+- [x] 0045 **Growl** — FATTO; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0045_growl/).
+- [ ] 0046 **Roar** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0046_roar/).
+- [ ] 0047 **Sing** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0047_sing/).
+- [ ] 0048 **Supersonic** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0048_supersonic/).
+- [ ] 0049 **Sonic Boom** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0049_sonic_boom/).
+- [ ] 0050 **Disable** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0050_disable/).
+- [ ] 0051 **Acid** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0051_acid/).
+- [ ] 0052 **Ember** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0052_ember/).
+- [ ] 0053 **Flamethrower** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0053_flamethrower/).
+- [ ] 0054 **Mist** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0054_mist/).
+- [ ] 0055 **Water Gun** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0055_water_gun/).
+- [ ] 0056 **Hydro Pump** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0056_hydro_pump/).
+- [ ] 0057 **Surf** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0057_surf/).
+- [ ] 0058 **Ice Beam** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0058_ice_beam/).
+- [ ] 0059 **Blizzard** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0059_blizzard/).
+- [ ] 0060 **Psybeam** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0060_psybeam/).
+- [ ] 0061 **Bubble Beam** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0061_bubble_beam/).
+- [ ] 0062 **Aurora Beam** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0062_aurora_beam/).
+- [ ] 0063 **Hyper Beam** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0063_hyper_beam/).
+- [ ] 0064 **Peck** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0064_peck/).
+- [ ] 0065 **Drill Peck** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0065_drill_peck/).
+- [ ] 0066 **Submission** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0066_submission/).
+- [ ] 0067 **Low Kick** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0067_low_kick/).
+- [ ] 0068 **Counter** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0068_counter/).
+- [ ] 0069 **Seismic Toss** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0069_seismic_toss/).
+- [ ] 0070 **Strength** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0070_strength/).
+- [ ] 0071 **Absorb** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0071_absorb/).
+- [ ] 0072 **Mega Drain** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0072_mega_drain/).
+- [ ] 0073 **Leech Seed** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0073_leech_seed/).
+- [ ] 0074 **Growth** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0074_growth/).
+- [ ] 0075 **Razor Leaf** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0075_razor_leaf/).
+- [ ] 0076 **Solar Beam** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0076_solar_beam/).
+- [ ] 0077 **Poison Powder** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0077_poison_powder/).
+- [ ] 0078 **Stun Spore** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0078_stun_spore/).
+- [ ] 0079 **Sleep Powder** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0079_sleep_powder/).
+- [ ] 0080 **Petal Dance** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0080_petal_dance/).
+- [ ] 0081 **String Shot** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0081_string_shot/).
+- [ ] 0082 **Dragon Rage** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0082_dragon_rage/).
+- [ ] 0083 **Fire Spin** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0083_fire_spin/).
+- [ ] 0084 **Thunder Shock** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0084_thunder_shock/).
+- [ ] 0085 **Thunderbolt** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0085_thunderbolt/).
+- [ ] 0086 **Thunder Wave** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0086_thunder_wave/).
+- [ ] 0087 **Thunder** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0087_thunder/).
+- [ ] 0088 **Rock Throw** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0088_rock_throw/).
+- [ ] 0089 **Earthquake** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0089_earthquake/).
+- [ ] 0090 **Fissure** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0090_fissure/).
+- [ ] 0091 **Dig** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0091_dig/).
+- [ ] 0092 **Toxic** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0092_toxic/).
+- [ ] 0093 **Confusion** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0093_confusion/).
+- [ ] 0094 **Psychic** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0094_psychic/).
+- [ ] 0095 **Hypnosis** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0095_hypnosis/).
+- [ ] 0096 **Meditate** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0096_meditate/).
+- [ ] 0097 **Agility** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0097_agility/).
+- [ ] 0098 **Quick Attack** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0098_quick_attack/).
+- [ ] 0099 **Rage** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0099_rage/).
+- [ ] 0100 **Teleport** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0100_teleport/).
+- [ ] 0101 **Night Shade** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0101_night_shade/).
+- [ ] 0102 **Mimic** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0102_mimic/).
+- [ ] 0103 **Screech** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0103_screech/).
+- [ ] 0104 **Double Team** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0104_double_team/).
+- [ ] 0105 **Recover** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0105_recover/).
+- [ ] 0106 **Harden** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0106_harden/).
+- [ ] 0107 **Minimize** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0107_minimize/).
+- [ ] 0108 **Smokescreen** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0108_smokescreen/).
+- [ ] 0109 **Confuse Ray** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0109_confuse_ray/).
+- [ ] 0110 **Withdraw** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0110_withdraw/).
+- [ ] 0111 **Defense Curl** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0111_defense_curl/).
+- [ ] 0112 **Barrier** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0112_barrier/).
+- [ ] 0113 **Light Screen** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0113_light_screen/).
+- [ ] 0114 **Haze** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0114_haze/).
+- [ ] 0115 **Reflect** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0115_reflect/).
+- [ ] 0116 **Focus Energy** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0116_focus_energy/).
+- [ ] 0117 **Bide** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0117_bide/).
+- [ ] 0118 **Metronome** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0118_metronome/).
+- [ ] 0119 **Mirror Move** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0119_mirror_move/).
+- [ ] 0120 **Self Destruct** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0120_self_destruct/).
+- [ ] 0121 **Egg Bomb** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0121_egg_bomb/).
+- [ ] 0122 **Lick** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0122_lick/).
+- [ ] 0123 **Smog** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0123_smog/).
+- [ ] 0124 **Sludge** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0124_sludge/).
+- [ ] 0125 **Bone Club** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0125_bone_club/).
+- [ ] 0126 **Fire Blast** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0126_fire_blast/).
+- [ ] 0127 **Waterfall** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0127_waterfall/).
+- [ ] 0128 **Clamp** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0128_clamp/).
+- [ ] 0129 **Swift** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0129_swift/).
+- [ ] 0130 **Skull Bash** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0130_skull_bash/).
+- [ ] 0131 **Spike Cannon** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0131_spike_cannon/).
+- [ ] 0132 **Constrict** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0132_constrict/).
+- [ ] 0133 **Amnesia** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0133_amnesia/).
+- [ ] 0134 **Kinesis** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0134_kinesis/).
+- [ ] 0135 **Soft Boiled** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0135_soft_boiled/).
+- [ ] 0136 **Hi Jump Kick** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0136_hi_jump_kick/).
+- [ ] 0137 **Glare** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0137_glare/).
+- [ ] 0138 **Dream Eater** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0138_dream_eater/).
+- [ ] 0139 **Poison Gas** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0139_poison_gas/).
+- [ ] 0140 **Barrage** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0140_barrage/).
+- [ ] 0141 **Leech Life** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0141_leech_life/).
+- [ ] 0142 **Lovely Kiss** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0142_lovely_kiss/).
+- [ ] 0143 **Sky Attack** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0143_sky_attack/).
+- [ ] 0144 **Transform** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0144_transform/).
+- [ ] 0145 **Bubble** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0145_bubble/).
+- [ ] 0146 **Dizzy Punch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0146_dizzy_punch/).
+- [ ] 0147 **Spore** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0147_spore/).
+- [ ] 0148 **Flash** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0148_flash/).
+- [ ] 0149 **Psywave** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0149_psywave/).
+- [ ] 0150 **Splash** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0150_splash/).
+- [ ] 0151 **Acid Armor** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0151_acid_armor/).
+- [ ] 0152 **Crabhammer** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0152_crabhammer/).
+- [ ] 0153 **Explosion** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0153_explosion/).
+- [ ] 0154 **Fury Swipes** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0154_fury_swipes/).
+- [ ] 0155 **Bonemerang** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0155_bonemerang/).
+- [ ] 0156 **Rest** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0156_rest/).
+- [ ] 0157 **Rock Slide** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0157_rock_slide/).
+- [ ] 0158 **Hyper Fang** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0158_hyper_fang/).
+- [ ] 0159 **Sharpen** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0159_sharpen/).
+- [ ] 0160 **Conversion** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0160_conversion/).
+- [ ] 0161 **Tri Attack** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0161_tri_attack/).
+- [ ] 0162 **Super Fang** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0162_super_fang/).
+- [ ] 0163 **Slash** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0163_slash/).
+- [ ] 0164 **Substitute** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0164_substitute/).
+- [ ] 0165 **Struggle** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0165_struggle/).
+- [ ] 0166 **Sketch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0166_sketch/).
+- [ ] 0167 **Triple Kick** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0167_triple_kick/).
+- [ ] 0168 **Thief** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0168_thief/).
+- [ ] 0169 **Spider Web** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0169_spider_web/).
+- [ ] 0170 **Mind Reader** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0170_mind_reader/).
+- [ ] 0171 **Nightmare** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0171_nightmare/).
+- [ ] 0172 **Flame Wheel** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0172_flame_wheel/).
+- [ ] 0173 **Snore** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0173_snore/).
+- [ ] 0174 **Curse** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0174_curse/).
+- [ ] 0175 **Flail** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0175_flail/).
+- [ ] 0176 **Conversion 2** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0176_conversion_2/).
+- [ ] 0177 **Aeroblast** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0177_aeroblast/).
+- [ ] 0178 **Cotton Spore** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0178_cotton_spore/).
+- [ ] 0179 **Reversal** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0179_reversal/).
+- [ ] 0180 **Spite** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0180_spite/).
+- [ ] 0181 **Powder Snow** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0181_powder_snow/).
+- [ ] 0182 **Protect** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0182_protect/).
+- [ ] 0183 **Mach Punch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0183_mach_punch/).
+- [ ] 0184 **Scary Face** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0184_scary_face/).
+- [ ] 0185 **Faint Attack** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0185_faint_attack/).
+- [ ] 0186 **Sweet Kiss** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0186_sweet_kiss/).
+- [ ] 0187 **Belly Drum** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0187_belly_drum/).
+- [ ] 0188 **Sludge Bomb** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0188_sludge_bomb/).
+- [ ] 0189 **Mud Slap** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0189_mud_slap/).
+- [ ] 0190 **Octazooka** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0190_octazooka/).
+- [ ] 0191 **Spikes** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0191_spikes/).
+- [ ] 0192 **Zap Cannon** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0192_zap_cannon/).
+- [ ] 0193 **Foresight** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0193_foresight/).
+- [ ] 0194 **Destiny Bond** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0194_destiny_bond/).
+- [ ] 0195 **Perish Song** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0195_perish_song/).
+- [ ] 0196 **Icy Wind** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0196_icy_wind/).
+- [ ] 0197 **Detect** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0197_detect/).
+- [ ] 0198 **Bone Rush** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0198_bone_rush/).
+- [ ] 0199 **Lock On** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0199_lock_on/).
+- [ ] 0200 **Outrage** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0200_outrage/).
+- [ ] 0201 **Sandstorm** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0201_sandstorm/).
+- [ ] 0202 **Giga Drain** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0202_giga_drain/).
+- [ ] 0203 **Endure** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0203_endure/).
+- [ ] 0204 **Charm** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0204_charm/).
+- [ ] 0205 **Rollout** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0205_rollout/).
+- [ ] 0206 **False Swipe** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0206_false_swipe/).
+- [ ] 0207 **Swagger** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0207_swagger/).
+- [ ] 0208 **Milk Drink** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0208_milk_drink/).
+- [ ] 0209 **Spark** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0209_spark/).
+- [ ] 0210 **Fury Cutter** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0210_fury_cutter/).
+- [ ] 0211 **Steel Wing** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0211_steel_wing/).
+- [ ] 0212 **Mean Look** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0212_mean_look/).
+- [ ] 0213 **Attract** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0213_attract/).
+- [ ] 0214 **Sleep Talk** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0214_sleep_talk/).
+- [ ] 0215 **Heal Bell** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0215_heal_bell/).
+- [ ] 0216 **Return** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0216_return/).
+- [ ] 0217 **Present** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0217_present/).
+- [ ] 0218 **Frustration** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0218_frustration/).
+- [ ] 0219 **Safeguard** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0219_safeguard/).
+- [ ] 0220 **Pain Split** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0220_pain_split/).
+- [ ] 0221 **Sacred Fire** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0221_sacred_fire/).
+- [ ] 0222 **Magnitude** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0222_magnitude/).
+- [ ] 0223 **Dynamic Punch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0223_dynamic_punch/).
+- [ ] 0224 **Megahorn** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0224_megahorn/).
+- [ ] 0225 **Dragon Breath** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0225_dragon_breath/).
+- [ ] 0226 **Baton Pass** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0226_baton_pass/).
+- [ ] 0227 **Encore** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0227_encore/).
+- [ ] 0228 **Pursuit** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0228_pursuit/).
+- [ ] 0229 **Rapid Spin** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0229_rapid_spin/).
+- [ ] 0230 **Sweet Scent** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0230_sweet_scent/).
+- [ ] 0231 **Iron Tail** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0231_iron_tail/).
+- [ ] 0232 **Metal Claw** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0232_metal_claw/).
+- [ ] 0233 **Vital Throw** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0233_vital_throw/).
+- [ ] 0234 **Morning Sun** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0234_morning_sun/).
+- [ ] 0235 **Synthesis** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0235_synthesis/).
+- [ ] 0236 **Moonlight** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0236_moonlight/).
+- [ ] 0237 **Hidden Power** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0237_hidden_power/).
+- [ ] 0238 **Cross Chop** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0238_cross_chop/).
+- [ ] 0239 **Twister** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0239_twister/).
+- [ ] 0240 **Rain Dance** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0240_rain_dance/).
+- [ ] 0241 **Sunny Day** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0241_sunny_day/).
+- [ ] 0242 **Crunch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0242_crunch/).
+- [ ] 0243 **Mirror Coat** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0243_mirror_coat/).
+- [ ] 0244 **Psych Up** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0244_psych_up/).
+- [ ] 0245 **Extreme Speed** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0245_extreme_speed/).
+- [ ] 0246 **Ancient Power** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0246_ancient_power/).
+- [ ] 0247 **Shadow Ball** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0247_shadow_ball/).
+- [ ] 0248 **Future Sight** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0248_future_sight/).
+- [ ] 0249 **Rock Smash** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0249_rock_smash/).
+- [ ] 0250 **Whirlpool** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0250_whirlpool/).
+- [ ] 0251 **Beat Up** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0251_beat_up/).
+- [ ] 0252 **Fake Out** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0252_fake_out/).
+- [ ] 0253 **Uproar** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0253_uproar/).
+- [ ] 0254 **Stockpile** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0254_stockpile/).
+- [ ] 0255 **Spit Up** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0255_spit_up/).
+- [ ] 0256 **Swallow** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0256_swallow/).
+- [ ] 0257 **Heat Wave** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0257_heat_wave/).
+- [ ] 0258 **Hail** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0258_hail/).
+- [ ] 0259 **Torment** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0259_torment/).
+- [ ] 0260 **Flatter** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0260_flatter/).
+- [ ] 0261 **Will O Wisp** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0261_will_o_wisp/).
+- [ ] 0262 **Memento** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0262_memento/).
+- [ ] 0263 **Facade** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0263_facade/).
+- [ ] 0264 **Focus Punch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0264_focus_punch/).
+- [ ] 0265 **Smelling Salt** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0265_smelling_salt/).
+- [ ] 0266 **Follow Me** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0266_follow_me/).
+- [ ] 0267 **Nature Power** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0267_nature_power/).
+- [ ] 0268 **Charge** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0268_charge/).
+- [ ] 0269 **Taunt** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0269_taunt/).
+- [ ] 0270 **Helping Hand** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0270_helping_hand/).
+- [ ] 0271 **Trick** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0271_trick/).
+- [ ] 0272 **Role Play** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0272_role_play/).
+- [ ] 0273 **Wish** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0273_wish/).
+- [ ] 0274 **Assist** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0274_assist/).
+- [ ] 0275 **Ingrain** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0275_ingrain/).
+- [ ] 0276 **Superpower** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0276_superpower/).
+- [ ] 0277 **Magic Coat** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0277_magic_coat/).
+- [ ] 0278 **Recycle** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0278_recycle/).
+- [ ] 0279 **Revenge** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0279_revenge/).
+- [ ] 0280 **Brick Break** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0280_brick_break/).
+- [ ] 0281 **Yawn** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0281_yawn/).
+- [ ] 0282 **Knock Off** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0282_knock_off/).
+- [ ] 0283 **Endeavor** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0283_endeavor/).
+- [ ] 0284 **Eruption** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0284_eruption/).
+- [ ] 0285 **Skill Swap** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0285_skill_swap/).
+- [ ] 0286 **Imprison** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0286_imprison/).
+- [ ] 0287 **Refresh** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0287_refresh/).
+- [ ] 0288 **Grudge** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0288_grudge/).
+- [ ] 0289 **Snatch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0289_snatch/).
+- [ ] 0290 **Secret Power** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0290_secret_power/).
+- [ ] 0291 **Dive** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0291_dive/).
+- [ ] 0292 **Arm Thrust** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0292_arm_thrust/).
+- [ ] 0293 **Camouflage** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0293_camouflage/).
+- [ ] 0294 **Tail Glow** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0294_tail_glow/).
+- [ ] 0295 **Luster Purge** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0295_luster_purge/).
+- [ ] 0296 **Mist Ball** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0296_mist_ball/).
+- [ ] 0297 **Feather Dance** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0297_feather_dance/).
+- [ ] 0298 **Teeter Dance** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0298_teeter_dance/).
+- [ ] 0299 **Blaze Kick** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0299_blaze_kick/).
+- [ ] 0300 **Mud Sport** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0300_mud_sport/).
+- [ ] 0301 **Ice Ball** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0301_ice_ball/).
+- [ ] 0302 **Needle Arm** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0302_needle_arm/).
+- [ ] 0303 **Slack Off** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0303_slack_off/).
+- [ ] 0304 **Hyper Voice** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0304_hyper_voice/).
+- [ ] 0305 **Poison Fang** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0305_poison_fang/).
+- [ ] 0306 **Crush Claw** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0306_crush_claw/).
+- [ ] 0307 **Blast Burn** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0307_blast_burn/).
+- [ ] 0308 **Hydro Cannon** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0308_hydro_cannon/).
+- [ ] 0309 **Meteor Mash** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0309_meteor_mash/).
+- [ ] 0310 **Astonish** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0310_astonish/).
+- [ ] 0311 **Weather Ball** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0311_weather_ball/).
+- [ ] 0312 **Aromatherapy** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0312_aromatherapy/).
+- [ ] 0313 **Fake Tears** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0313_fake_tears/).
+- [ ] 0314 **Air Cutter** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0314_air_cutter/).
+- [ ] 0315 **Overheat** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0315_overheat/).
+- [ ] 0316 **Odor Sleuth** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0316_odor_sleuth/).
+- [ ] 0317 **Rock Tomb** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0317_rock_tomb/).
+- [ ] 0318 **Silver Wind** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0318_silver_wind/).
+- [ ] 0319 **Metal Sound** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0319_metal_sound/).
+- [ ] 0320 **Grass Whistle** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0320_grass_whistle/).
+- [ ] 0321 **Tickle** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0321_tickle/).
+- [ ] 0322 **Cosmic Power** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0322_cosmic_power/).
+- [ ] 0323 **Water Spout** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0323_water_spout/).
+- [ ] 0324 **Signal Beam** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0324_signal_beam/).
+- [ ] 0325 **Shadow Punch** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0325_shadow_punch/).
+- [ ] 0326 **Extrasensory** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0326_extrasensory/).
+- [ ] 0327 **Sky Uppercut** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0327_sky_uppercut/).
+- [ ] 0328 **Sand Tomb** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0328_sand_tomb/).
+- [ ] 0329 **Sheer Cold** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0329_sheer_cold/).
+- [ ] 0330 **Muddy Water** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0330_muddy_water/).
+- [ ] 0331 **Bullet Seed** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0331_bullet_seed/).
+- [ ] 0332 **Aerial Ace** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0332_aerial_ace/).
+- [ ] 0333 **Icicle Spear** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0333_icicle_spear/).
+- [ ] 0334 **Iron Defense** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0334_iron_defense/).
+- [ ] 0335 **Block** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0335_block/).
+- [ ] 0337 **Dragon Claw** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0337_dragon_claw/).
+- [ ] 0338 **Frenzy Plant** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0338_frenzy_plant/).
+- [ ] 0339 **Bulk Up** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0339_bulk_up/).
+- [ ] 0340 **Bounce** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0340_bounce/).
+- [ ] 0341 **Mud Shot** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0341_mud_shot/).
+- [ ] 0342 **Poison Tail** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0342_poison_tail/).
+- [ ] 0343 **Covet** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0343_covet/).
+- [ ] 0344 **Volt Tackle** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0344_volt_tackle/).
+- [ ] 0345 **Magical Leaf** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0345_magical_leaf/).
+- [ ] 0346 **Water Sport** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0346_water_sport/).
+- [ ] 0347 **Calm Mind** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0347_calm_mind/).
+- [ ] 0348 **Leaf Blade** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0348_leaf_blade/).
+- [ ] 0349 **Dragon Dance** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0349_dragon_dance/).
+- [ ] 0350 **Rock Blast** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0350_rock_blast/).
+- [ ] 0351 **Shock Wave** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0351_shock_wave/).
+- [ ] 0352 **Water Pulse** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0352_water_pulse/).
+- [ ] 0353 **Doom Desire** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0353_doom_desire/).
+- [ ] 0354 **Psycho Boost** — da fare; giocatore/avversario; [prove](../../artifacts/bw2-validation/moves/0354_psycho_boost/).

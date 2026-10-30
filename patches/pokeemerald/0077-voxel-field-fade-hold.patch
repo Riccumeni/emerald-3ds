@@ -10,7 +10,7 @@
 +// 3ds_port/src/3ds_game_full.c). A weak FALSE in palette.c otherwise.
 +bool8 Port_HoldPaletteFade(void);
 +#endif
-
+ 
  static inline void SetBackdropFromColor(u16 color)
  {
 --- a/src/palette.c
@@ -30,13 +30,13 @@
 +    return FALSE;
 +}
 +#endif
-
+ 
  static const struct PaletteStructTemplate sDummyPaletteStructTemplate = {
      .id = 0xFFFF,
 @@ -321,7 +332,13 @@
          else
              gPaletteFade.yDec = 1;
-
+ 
 +#ifdef PORT_BRIDGE
 +        sPortFadeStarting = TRUE;
          UpdatePaletteFade();
@@ -44,7 +44,7 @@
 +#else
 +        UpdatePaletteFade();
 +#endif
-
+ 
          temp = gPaletteFade.bufferTransferDisabled;
          gPaletteFade.bufferTransferDisabled = FALSE;
 @@ -557,6 +574,13 @@

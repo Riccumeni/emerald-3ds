@@ -12,6 +12,8 @@
  * are not saved, and the game is never saved.
  */
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "global.h"
 #include "main.h"
 #include "battle.h"
@@ -23,8 +25,151 @@
 #include "trainer_see.h"
 #include "pokemon.h"
 #include "3ds_platform.h"
+#if defined(CTR_BW2_DEMO) || defined(CTR_BW2_VALIDATION)
+#include "pokemon.h"
+#endif
 
-#ifdef CTR_CYCLE_TEST
+#ifdef CTR_BW2_VALIDATION
+#include "battle_controllers.h"
+#include "random.h"
+#include "constants/moves.h"
+
+/* Test-only mailbox, exposed by ELF symbols to the local emulator recorder.
+ * No game-memory patch is needed: command=1 asks the real controller to play
+ * one turn. A normal build contains neither this mailbox nor the encounter. */
+volatile struct
+{
+    u32 magic, frame, phase, command;
+    u32 player, enemy, move, shiny, seed, turn, side;
+} gCtrBw2Validation = {0x32565742, 0, 0, 0, SPECIES_TREECKO, SPECIES_POOCHYENA,
+                       MOVE_POUND, 0, 4660, 0, 2};
+static u32 sValidationField, sValidationReady;
+static bool8 sValidationInitialized;
+static u32 sValidationPersonality;
+static u32 sValidationEnemyPersonality;
+static bool8 sValidationEnemyPersonalitySet;
+volatile u32 gCtrBw2Personality;
+volatile u32 gCtrBw2EnemyPersonality;
+volatile u32 gCtrBw2DeoxysPreview;
+
+static bool8 ValidationActionMenu(void)
+{
+    return (gBattleControllerExecFlags & 1)
+        && gBattleBufferA[0][0] == CONTROLLER_CHOOSEACTION;
+}
+
+static void ValidationInit(void)
+{
+    FILE *file = fopen("sdmc:/3ds/emerald3ds/bw2-validation.txt", "r");
+    char line[96], key[32];
+    unsigned value;
+    if (file)
+    {
+        while (fgets(line, sizeof(line), file))
+        {
+            if (sscanf(line, "%31[^=]=%u", key, &value) != 2)
+                continue;
+            if (!strcmp(key, "player") && value && value < NUM_SPECIES)
+                gCtrBw2Validation.player = value;
+            else if (!strcmp(key, "enemy") && value && value < NUM_SPECIES)
+                gCtrBw2Validation.enemy = value;
+            else if (!strcmp(key, "move") && value && value < MOVES_COUNT)
+                gCtrBw2Validation.move = value;
+            else if (!strcmp(key, "shiny")) gCtrBw2Validation.shiny = value != 0;
+            else if (!strcmp(key, "seed")) gCtrBw2Validation.seed = value;
+            else if (!strcmp(key, "personality")) sValidationPersonality = value;
+            else if (!strcmp(key, "enemy_personality"))
+            {
+                sValidationEnemyPersonality = value;
+                sValidationEnemyPersonalitySet = TRUE;
+            }
+            else if (!strcmp(key, "deoxys_preview") && value <= 2) gCtrBw2DeoxysPreview = value;
+            else if (!strcmp(key, "side") && value <= 2) gCtrBw2Validation.side = value;
+        }
+        fclose(file);
+    }
+    CtrSettings_Freeze();
+    CtrSettings_ApplyLine("speed=1");
+    CtrSettings_ApplyLine("fps=0");
+    CtrSettings_ApplyLine("voxel=1");
+    CtrSettings_ApplyLine("voxel_battle=0");
+    CtrLog_Write(CTR_LOG_GAME, "BW2 VALIDATE player=%lu enemy=%lu move=%lu shiny=%lu seed=%lu",
+                 (unsigned long)gCtrBw2Validation.player, (unsigned long)gCtrBw2Validation.enemy,
+                 (unsigned long)gCtrBw2Validation.move, (unsigned long)gCtrBw2Validation.shiny,
+                 (unsigned long)gCtrBw2Validation.seed);
+}
+
+void CtrCycle_Frame(void)
+{
+    ++gCtrBw2Validation.frame;
+    if (!sValidationInitialized)
+    {
+        ValidationInit();
+        sValidationInitialized = TRUE;
+    }
+    if (!gMain.inBattle)
+    {
+        if (gMain.callback2 != CB2_Overworld || gCtrBw2Validation.phase)
+            return;
+        if (!sValidationField) sValidationField = gCtrBw2Validation.frame;
+        if (gCtrBw2Validation.frame - sValidationField < 90)
+            return;
+        SeedRng(gCtrBw2Validation.seed);
+        SeedRng2(gCtrBw2Validation.seed);
+        ZeroPlayerPartyMons();
+        ZeroEnemyPartyMons();
+        u32 ot = sValidationPersonality ^ (gCtrBw2Validation.shiny ? 0 : 0x12345678);
+        u32 enemyPersonality = sValidationEnemyPersonalitySet ? sValidationEnemyPersonality : sValidationPersonality;
+        u32 enemyOt = enemyPersonality ^ (gCtrBw2Validation.shiny ? 0 : 0x12345678);
+        gCtrBw2Personality = sValidationPersonality;
+        gCtrBw2EnemyPersonality = enemyPersonality;
+        CreateMon(&gPlayerParty[0], gCtrBw2Validation.player, 5, 31, TRUE, sValidationPersonality, OT_ID_PRESET, ot);
+        CreateMon(&gEnemyParty[0], gCtrBw2Validation.enemy, 5, 31, TRUE, enemyPersonality, OT_ID_PRESET, enemyOt);
+        for (unsigned i = 0; i < MAX_MON_MOVES; ++i)
+        {
+            u16 move = !i ? gCtrBw2Validation.move : i == 1 ? MOVE_SPLASH : MOVE_NONE;
+            SetMonMoveSlot(&gPlayerParty[0], !i && gCtrBw2Validation.side == 1 ? MOVE_SPLASH : move, i);
+            SetMonMoveSlot(&gEnemyParty[0], !i && gCtrBw2Validation.side == 0 ? MOVE_SPLASH : move, i);
+        }
+        gPlayerPartyCount = 1;
+        gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
+        gCtrBw2Validation.phase = 1;
+        BattleSetup_StartScriptedWildBattle();
+        return;
+    }
+    if (gCtrBw2Validation.phase == 1 && ValidationActionMenu())
+    {
+        sValidationReady = gCtrBw2Validation.frame;
+        gCtrBw2Validation.phase = 2;
+    }
+    if (gCtrBw2Validation.phase == 2 && gCtrBw2Validation.frame - sValidationReady >= 60)
+        gCtrBw2Validation.phase = 3;
+    if (gCtrBw2Validation.phase == 3 && (gCtrBw2Validation.command == 1 || gCtrBw2Validation.command == 2))
+    {
+        /* Command 2 selects the existing Splash slot through the real menu.
+         * Weather expiry still follows ordinary Emerald turns and Forecast. */
+        gMoveSelectionCursor[0] = gCtrBw2Validation.command == 2 ? 1 : 0;
+        gCtrBw2Validation.command = 0;
+        gCtrBw2Validation.turn = gBattleResults.battleTurnCounter;
+        gCtrBw2Validation.phase = 4;
+    }
+    if (gCtrBw2Validation.phase == 4 && ValidationActionMenu()
+        && gBattleResults.battleTurnCounter != gCtrBw2Validation.turn)
+    {
+        gCtrBw2Validation.turn = gBattleResults.battleTurnCounter;
+        gCtrBw2Validation.phase = 3;
+    }
+}
+
+void CtrCycle_Input(CtrInputSample *sample)
+{
+    if ((!gCtrBw2Validation.phase && gCtrBw2Validation.frame % 40 < 2)
+        || ((gCtrBw2Validation.phase == 1 || gCtrBw2Validation.phase == 4)
+            && gCtrBw2Validation.frame % 30 < 2))
+        sample->buttons |= 1;
+}
+
+#elif defined(CTR_CYCLE_TEST)
 
 extern u8 gActionSelectionCursor[MAX_BATTLERS_COUNT];
 
@@ -210,6 +355,12 @@ void CtrCycle_Frame(void)
         }
         else
         {
+#ifdef CTR_BW2_DEMO
+            /* Demo validation owns this party and never saves it. */
+            ZeroPlayerPartyMons();
+            CreateMon(&gPlayerParty[0], SPECIES_TREECKO, 5, 31, TRUE, 0, OT_ID_PLAYER_ID, 0);
+            gPlayerPartyCount = 1;
+#endif
             CreateScriptedWildMon(sSpecies, sLevel, 0);
             BattleSetup_StartScriptedWildBattle();
         }

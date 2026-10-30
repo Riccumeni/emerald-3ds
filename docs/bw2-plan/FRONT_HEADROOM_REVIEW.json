@@ -1,0 +1,72 @@
+{
+  "issue": "Highest raised hand touches the viewport top in some idle poses",
+  "rule": "Four logical pixels of front headroom; arena floor and elevation preserved",
+  "roi": {
+    "row": 0,
+    "x0": 190,
+    "x1": 355,
+    "channel_threshold": 130
+  },
+  "already_completed_species_changed": 0,
+  "already_completed_species_checked": 50,
+  "results": [
+    {
+      "label": "before",
+      "capture": "build/bw2-validation/cp07-goldeen-hariyama/capture.json",
+      "frames_checked": 444,
+      "frames_touching_top": 30,
+      "build_id": "15dde47674f650ec",
+      "video_sha256": "093d3fbe31d9abcad98a68a13be835ca65744958b0228fde6e3c26127497a081",
+      "presentation": {
+        "battler": 1,
+        "scale_q8": 429,
+        "scale_percent": 167.58,
+        "shift_x": 0,
+        "shift_y": -19,
+        "height_dm": 23,
+        "target_span": 99,
+        "source_factor_q8": 290,
+        "silhouette_bounds": [
+          2,
+          8,
+          61,
+          62
+        ],
+        "idle_floor": 62,
+        "body_center_y_q8": 9106,
+        "source_width": 88,
+        "source_height": 79,
+        "source_footprint_q8": 20776
+      }
+    },
+    {
+      "label": "after",
+      "capture": "build/bw2-validation/cp07h-goldeen-hariyama/capture.json",
+      "frames_checked": 444,
+      "frames_touching_top": 0,
+      "build_id": "ab9b0891e3970829",
+      "video_sha256": "312e8dd682e2c6dccb67b948e42eb90334fdcb6e485b9bd5f65838fce998c157",
+      "presentation": {
+        "battler": 1,
+        "scale_q8": 403,
+        "scale_percent": 157.42,
+        "shift_x": 0,
+        "shift_y": -16,
+        "height_dm": 23,
+        "target_span": 99,
+        "source_factor_q8": 290,
+        "silhouette_bounds": [
+          2,
+          8,
+          61,
+          62
+        ],
+        "idle_floor": 62,
+        "body_center_y_q8": 9106,
+        "source_width": 88,
+        "source_height": 79,
+        "source_footprint_q8": 20776
+      }
+    }
+  ]
+}

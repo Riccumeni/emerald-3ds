@@ -13,6 +13,7 @@
 #include "port_prof.h"
 #include "port_platform.h"
 #include "3ds_video.h"
+#include "3ds_bw2_battle.h"
 
 #define PROF_WRAP_VOID(name, section, params, args)   \
     void __real_##name params;                        \
@@ -24,8 +25,23 @@
     }
 
 PROF_WRAP_VOID(RunTasks, PORT_PROF_TASKS, (void), ())
-PROF_WRAP_VOID(AnimateSprites, PORT_PROF_SPRITES, (void), ())
-PROF_WRAP_VOID(BuildOamBuffer, PORT_PROF_SPRITES, (void), ())
+void __real_AnimateSprites(void);
+void __wrap_AnimateSprites(void)
+{
+    PORT_PROF_BEGIN(call);
+    CtrBW2_BeforeSprites();
+    __real_AnimateSprites();
+    CtrBW2_AfterSprites();
+    PORT_PROF_END(call, PORT_PROF_SPRITES);
+}
+void __real_BuildOamBuffer(void);
+void __wrap_BuildOamBuffer(void)
+{
+    PORT_PROF_BEGIN(call);
+    __real_BuildOamBuffer();
+    CtrBW2_AfterOam();
+    PORT_PROF_END(call, PORT_PROF_SPRITES);
+}
 PROF_WRAP_VOID(ProcessDma3Requests, PORT_PROF_DMA3, (void), ())
 PROF_WRAP_VOID(LZ77UnCompWram, PORT_PROF_LZ, (const u32 *src, void *dest), (src, dest))
 PROF_WRAP_VOID(RLUnCompWram, PORT_PROF_LZ, (const u32 *src, void *dest), (src, dest))
