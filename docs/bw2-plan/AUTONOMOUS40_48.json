@@ -1,7 +1,7 @@
 {
   "start_pokemon": 314,
   "target_pokemon": 386,
-  "completed_checkpoints": 4,
+  "completed_checkpoints": 5,
   "groups": [
     {
       "number": 40,
@@ -574,7 +574,7 @@
     {
       "number": 44,
       "ordinal": 5,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Pineco",
         "Forretress",
@@ -637,7 +637,81 @@
           "enemy": 210
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 360,
+      "movie": {
+        "duration": 235.93767777777776,
+        "decoded_frames": 7077,
+        "sha256": "e5ef15ddef4b8ed2fb6b35bda204c75f56ccf70c70a53a37532fbb50ee6cbe3c",
+        "segments": [
+          {
+            "name": "pineco-forretress",
+            "start": 0.0,
+            "end": 26.767333333333333,
+            "frames": 803,
+            "sha256": "e55d0452441df9942862d453a250950b4e9a1e6e4dfdc896c2f9b4f3a541ab92"
+          },
+          {
+            "name": "forretress-pineco",
+            "start": 26.767333333333333,
+            "end": 54.534666666666666,
+            "frames": 833,
+            "sha256": "69f15d0d58d3bb98927702010c3e08654fa269fa93e2b1a9b93643679e42486f"
+          },
+          {
+            "name": "dunsparce-gligar",
+            "start": 54.534666666666666,
+            "end": 78.38,
+            "frames": 715,
+            "sha256": "ab7580f81e4be77c4f493915b891d3e4304b98d70b28b66ce1be9cfb8038d578"
+          },
+          {
+            "name": "gligar-dunsparce",
+            "start": 78.38,
+            "end": 102.71034444444444,
+            "frames": 730,
+            "sha256": "937482366e6a91e75c3454a6e8339d3d0eca5dd317c033670e88e0395f10c601"
+          },
+          {
+            "name": "steelix-snubbull",
+            "start": 102.71034444444444,
+            "end": 135.41567777777777,
+            "frames": 981,
+            "sha256": "2ad80ed3cf4666ea6015c823aa190b2dd97a71bf7339cf62995ceeb83105b95b"
+          },
+          {
+            "name": "snubbull-steelix",
+            "start": 135.41567777777777,
+            "end": 167.6520111111111,
+            "frames": 967,
+            "sha256": "d395ce4fd81b6cbd7effa7305c0c077a680005e9cdd4373a54ddc30585e43ae9"
+          },
+          {
+            "name": "granbull-qwilfish",
+            "start": 167.6520111111111,
+            "end": 202.76334444444444,
+            "frames": 1053,
+            "sha256": "3636f5b70f3f127f866871a43416e56f6e91c2aa2e3e6f3c76e51366e9d18f9a"
+          },
+          {
+            "name": "qwilfish-granbull",
+            "start": 202.76334444444444,
+            "end": 235.93767777777776,
+            "frames": 995,
+            "sha256": "cfa65a72668e05bd016830ac99eb76940072eb1db4d97eb8cca6c5ee27d2853d"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 44: eight Pokemon"
     },
     {
       "number": 45,
@@ -951,7 +1025,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint43: reviewed, published and audited; commit follows",
+    "phase": "checkpoint44: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -962,9 +1036,9 @@
         "CommandLine": "\"D:\\Emulators\\Azahar\\azahar.exe\" "
       }
     ],
-    "capture_group": 43,
+    "capture_group": 44,
     "exec_session_id": null,
-    "log": "build/bw2-unown40-capture.log",
+    "log": "build/bw2-auto40-cp44-capture.log",
     "build_script": "build/bw2-auto40-build.sh"
   },
   "checks": {

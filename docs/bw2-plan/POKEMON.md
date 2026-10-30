@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **346**.
+Totale: **386**. Fatti con dossier completo: **354**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -352,14 +352,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0199 **Slowking** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0199_slowking/).
 - [x] 0200 **Misdreavus** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0200_misdreavus/).
 - [x] 0201 **Unown** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0201_unown/).
-- [ ] 0204 **Pineco** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0204_pineco/).
-- [ ] 0205 **Forretress** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0205_forretress/).
-- [ ] 0206 **Dunsparce** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0206_dunsparce/).
-- [ ] 0207 **Gligar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0207_gligar/).
-- [ ] 0208 **Steelix** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0208_steelix/).
-- [ ] 0209 **Snubbull** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0209_snubbull/).
-- [ ] 0210 **Granbull** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0210_granbull/).
-- [ ] 0211 **Qwilfish** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0211_qwilfish/).
+- [x] 0204 **Pineco** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0204_pineco/).
+- [x] 0205 **Forretress** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0205_forretress/).
+- [x] 0206 **Dunsparce** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0206_dunsparce/).
+- [x] 0207 **Gligar** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0207_gligar/).
+- [x] 0208 **Steelix** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0208_steelix/).
+- [x] 0209 **Snubbull** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0209_snubbull/).
+- [x] 0210 **Granbull** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0210_granbull/).
+- [x] 0211 **Qwilfish** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0211_qwilfish/).
 - [ ] 0212 **Scizor** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0212_scizor/).
 - [ ] 0213 **Shuckle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0213_shuckle/).
 - [ ] 0215 **Sneasel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0215_sneasel/).
