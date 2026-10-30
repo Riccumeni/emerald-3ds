@@ -1,0 +1,858 @@
+{
+  "start_pokemon": 234,
+  "target_pokemon": 314,
+  "completed_checkpoints": 1,
+  "groups": [
+    {
+      "number": 30,
+      "ordinal": 1,
+      "status": "complete",
+      "names": [
+        "Paras",
+        "Parasect",
+        "Venonat",
+        "Venomoth",
+        "Diglett",
+        "Dugtrio",
+        "Meowth",
+        "Persian"
+      ],
+      "national_ids": [
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "cases": [
+        {
+          "name": "paras-parasect",
+          "player": 46,
+          "enemy": 47
+        },
+        {
+          "name": "parasect-paras",
+          "player": 47,
+          "enemy": 46
+        },
+        {
+          "name": "venonat-venomoth",
+          "player": 48,
+          "enemy": 49
+        },
+        {
+          "name": "venomoth-venonat",
+          "player": 49,
+          "enemy": 48
+        },
+        {
+          "name": "diglett-dugtrio",
+          "player": 50,
+          "enemy": 51
+        },
+        {
+          "name": "dugtrio-diglett",
+          "player": 51,
+          "enemy": 50
+        },
+        {
+          "name": "meowth-persian",
+          "player": 52,
+          "enemy": 53
+        },
+        {
+          "name": "persian-meowth",
+          "player": 53,
+          "enemy": 52
+        }
+      ],
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 248,
+      "movie": {
+        "duration": 226.15766666666667,
+        "decoded_frames": 6783,
+        "sha256": "4076086d085f821fe425ca66b47132fd1de5112d501886dbf3418e73aaf3b933",
+        "segments": [
+          {
+            "name": "paras-parasect",
+            "start": 0.0,
+            "end": 24.674333333333333,
+            "frames": 740,
+            "sha256": "8afa1a52150e086432f3ff23eb269510e512dca6476207c28695b74ba3222eeb"
+          },
+          {
+            "name": "parasect-paras",
+            "start": 24.674333333333333,
+            "end": 49.644666666666666,
+            "frames": 749,
+            "sha256": "41b814bae91f87858e3eb4bc33f6d4ca07734a1579d82c0b8a7279056ebb99eb"
+          },
+          {
+            "name": "venonat-venomoth",
+            "start": 49.644666666666666,
+            "end": 74.382,
+            "frames": 742,
+            "sha256": "7f42975fceb0f30ccc4467394211a7a945a5298eb677c32665e99eec554bcad5"
+          },
+          {
+            "name": "venomoth-venonat",
+            "start": 74.382,
+            "end": 99.66533333333334,
+            "frames": 758,
+            "sha256": "cc0369287605bc1b936dfa8e7130da54800e5e3bd08e990e3cb01b2e8d5ac6df"
+          },
+          {
+            "name": "diglett-dugtrio",
+            "start": 99.66533333333334,
+            "end": 134.80766666666668,
+            "frames": 1054,
+            "sha256": "6ae9997b7f14ea737b67d66fbf819306078d70c3556cba48e46a6292b79882e2"
+          },
+          {
+            "name": "dugtrio-diglett",
+            "start": 134.80766666666668,
+            "end": 168.951,
+            "frames": 1024,
+            "sha256": "d51d9dc888d80da94911368e1fee83272de7eab2d78a35c0407a134e82ee2801"
+          },
+          {
+            "name": "meowth-persian",
+            "start": 168.951,
+            "end": 197.39033333333333,
+            "frames": 853,
+            "sha256": "2b0723acfc8200022d37b09b677de3e313311416eb102c9d2fe149d6049eb6aa"
+          },
+          {
+            "name": "persian-meowth",
+            "start": 197.39033333333333,
+            "end": 226.15766666666667,
+            "frames": 863,
+            "sha256": "413f470c4fdf0176980fe1dacb3c5ac4328401943be39674a94b1301c3f4aff7"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 30: eight Pokemon"
+    },
+    {
+      "number": 31,
+      "ordinal": 2,
+      "status": "pending",
+      "names": [
+        "Mankey",
+        "Primeape",
+        "Growlithe",
+        "Arcanine",
+        "Poliwag",
+        "Poliwhirl",
+        "Poliwrath",
+        "Bellsprout"
+      ],
+      "national_ids": [
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        69
+      ],
+      "cases": [
+        {
+          "name": "mankey-primeape",
+          "player": 56,
+          "enemy": 57
+        },
+        {
+          "name": "primeape-mankey",
+          "player": 57,
+          "enemy": 56
+        },
+        {
+          "name": "growlithe-arcanine",
+          "player": 58,
+          "enemy": 59
+        },
+        {
+          "name": "arcanine-growlithe",
+          "player": 59,
+          "enemy": 58
+        },
+        {
+          "name": "poliwag-poliwhirl",
+          "player": 60,
+          "enemy": 61
+        },
+        {
+          "name": "poliwhirl-poliwag",
+          "player": 61,
+          "enemy": 60
+        },
+        {
+          "name": "poliwrath-bellsprout",
+          "player": 62,
+          "enemy": 69
+        },
+        {
+          "name": "bellsprout-poliwrath",
+          "player": 69,
+          "enemy": 62
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 32,
+      "ordinal": 3,
+      "status": "pending",
+      "names": [
+        "Weepinbell",
+        "Victreebel",
+        "Ponyta",
+        "Rapidash",
+        "Slowpoke",
+        "Slowbro",
+        "Farfetchd",
+        "Seel"
+      ],
+      "national_ids": [
+        70,
+        71,
+        77,
+        78,
+        79,
+        80,
+        83,
+        86
+      ],
+      "cases": [
+        {
+          "name": "weepinbell-victreebel",
+          "player": 70,
+          "enemy": 71
+        },
+        {
+          "name": "victreebel-weepinbell",
+          "player": 71,
+          "enemy": 70
+        },
+        {
+          "name": "ponyta-rapidash",
+          "player": 77,
+          "enemy": 78
+        },
+        {
+          "name": "rapidash-ponyta",
+          "player": 78,
+          "enemy": 77
+        },
+        {
+          "name": "slowpoke-slowbro",
+          "player": 79,
+          "enemy": 80
+        },
+        {
+          "name": "slowbro-slowpoke",
+          "player": 80,
+          "enemy": 79
+        },
+        {
+          "name": "farfetchd-seel",
+          "player": 83,
+          "enemy": 86
+        },
+        {
+          "name": "seel-farfetchd",
+          "player": 86,
+          "enemy": 83
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 33,
+      "ordinal": 4,
+      "status": "pending",
+      "names": [
+        "Dewgong",
+        "Shellder",
+        "Cloyster",
+        "Gastly",
+        "Haunter",
+        "Gengar",
+        "Onix",
+        "Drowzee"
+      ],
+      "national_ids": [
+        87,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96
+      ],
+      "cases": [
+        {
+          "name": "dewgong-shellder",
+          "player": 87,
+          "enemy": 90
+        },
+        {
+          "name": "shellder-dewgong",
+          "player": 90,
+          "enemy": 87
+        },
+        {
+          "name": "cloyster-gastly",
+          "player": 91,
+          "enemy": 92
+        },
+        {
+          "name": "gastly-cloyster",
+          "player": 92,
+          "enemy": 91
+        },
+        {
+          "name": "haunter-gengar",
+          "player": 93,
+          "enemy": 94
+        },
+        {
+          "name": "gengar-haunter",
+          "player": 94,
+          "enemy": 93
+        },
+        {
+          "name": "onix-drowzee",
+          "player": 95,
+          "enemy": 96
+        },
+        {
+          "name": "drowzee-onix",
+          "player": 96,
+          "enemy": 95
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 34,
+      "ordinal": 5,
+      "status": "pending",
+      "names": [
+        "Hypno",
+        "Krabby",
+        "Kingler",
+        "Exeggcute",
+        "Exeggutor",
+        "Cubone",
+        "Marowak",
+        "Hitmonlee"
+      ],
+      "national_ids": [
+        97,
+        98,
+        99,
+        102,
+        103,
+        104,
+        105,
+        106
+      ],
+      "cases": [
+        {
+          "name": "hypno-krabby",
+          "player": 97,
+          "enemy": 98
+        },
+        {
+          "name": "krabby-hypno",
+          "player": 98,
+          "enemy": 97
+        },
+        {
+          "name": "kingler-exeggcute",
+          "player": 99,
+          "enemy": 102
+        },
+        {
+          "name": "exeggcute-kingler",
+          "player": 102,
+          "enemy": 99
+        },
+        {
+          "name": "exeggutor-cubone",
+          "player": 103,
+          "enemy": 104
+        },
+        {
+          "name": "cubone-exeggutor",
+          "player": 104,
+          "enemy": 103
+        },
+        {
+          "name": "marowak-hitmonlee",
+          "player": 105,
+          "enemy": 106
+        },
+        {
+          "name": "hitmonlee-marowak",
+          "player": 106,
+          "enemy": 105
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 35,
+      "ordinal": 6,
+      "status": "pending",
+      "names": [
+        "Hitmonchan",
+        "Lickitung",
+        "Chansey",
+        "Tangela",
+        "Kangaskhan",
+        "Mr Mime",
+        "Scyther",
+        "Jynx"
+      ],
+      "national_ids": [
+        107,
+        108,
+        113,
+        114,
+        115,
+        122,
+        123,
+        124
+      ],
+      "cases": [
+        {
+          "name": "hitmonchan-lickitung",
+          "player": 107,
+          "enemy": 108
+        },
+        {
+          "name": "lickitung-hitmonchan",
+          "player": 108,
+          "enemy": 107
+        },
+        {
+          "name": "chansey-tangela",
+          "player": 113,
+          "enemy": 114
+        },
+        {
+          "name": "tangela-chansey",
+          "player": 114,
+          "enemy": 113
+        },
+        {
+          "name": "kangaskhan-mr-mime",
+          "player": 115,
+          "enemy": 122
+        },
+        {
+          "name": "mr-mime-kangaskhan",
+          "player": 122,
+          "enemy": 115
+        },
+        {
+          "name": "scyther-jynx",
+          "player": 123,
+          "enemy": 124
+        },
+        {
+          "name": "jynx-scyther",
+          "player": 124,
+          "enemy": 123
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 36,
+      "ordinal": 7,
+      "status": "pending",
+      "names": [
+        "Electabuzz",
+        "Magmar",
+        "Tauros",
+        "Lapras",
+        "Ditto",
+        "Eevee",
+        "Vaporeon",
+        "Jolteon"
+      ],
+      "national_ids": [
+        125,
+        126,
+        128,
+        131,
+        132,
+        133,
+        134,
+        135
+      ],
+      "cases": [
+        {
+          "name": "electabuzz-magmar",
+          "player": 125,
+          "enemy": 126
+        },
+        {
+          "name": "magmar-electabuzz",
+          "player": 126,
+          "enemy": 125
+        },
+        {
+          "name": "tauros-lapras",
+          "player": 128,
+          "enemy": 131
+        },
+        {
+          "name": "lapras-tauros",
+          "player": 131,
+          "enemy": 128
+        },
+        {
+          "name": "ditto-eevee",
+          "player": 132,
+          "enemy": 133
+        },
+        {
+          "name": "eevee-ditto",
+          "player": 133,
+          "enemy": 132
+        },
+        {
+          "name": "vaporeon-jolteon",
+          "player": 134,
+          "enemy": 135
+        },
+        {
+          "name": "jolteon-vaporeon",
+          "player": 135,
+          "enemy": 134
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 37,
+      "ordinal": 8,
+      "status": "pending",
+      "names": [
+        "Flareon",
+        "Porygon",
+        "Omanyte",
+        "Omastar",
+        "Kabuto",
+        "Kabutops",
+        "Aerodactyl",
+        "Snorlax"
+      ],
+      "national_ids": [
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143
+      ],
+      "cases": [
+        {
+          "name": "flareon-porygon",
+          "player": 136,
+          "enemy": 137
+        },
+        {
+          "name": "porygon-flareon",
+          "player": 137,
+          "enemy": 136
+        },
+        {
+          "name": "omanyte-omastar",
+          "player": 138,
+          "enemy": 139
+        },
+        {
+          "name": "omastar-omanyte",
+          "player": 139,
+          "enemy": 138
+        },
+        {
+          "name": "kabuto-kabutops",
+          "player": 140,
+          "enemy": 141
+        },
+        {
+          "name": "kabutops-kabuto",
+          "player": 141,
+          "enemy": 140
+        },
+        {
+          "name": "aerodactyl-snorlax",
+          "player": 142,
+          "enemy": 143
+        },
+        {
+          "name": "snorlax-aerodactyl",
+          "player": 143,
+          "enemy": 142
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 38,
+      "ordinal": 9,
+      "status": "pending",
+      "names": [
+        "Articuno",
+        "Zapdos",
+        "Moltres",
+        "Dratini",
+        "Dragonair",
+        "Dragonite",
+        "Mewtwo",
+        "Mew"
+      ],
+      "national_ids": [
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151
+      ],
+      "cases": [
+        {
+          "name": "articuno-zapdos",
+          "player": 144,
+          "enemy": 145
+        },
+        {
+          "name": "zapdos-articuno",
+          "player": 145,
+          "enemy": 144
+        },
+        {
+          "name": "moltres-dratini",
+          "player": 146,
+          "enemy": 147
+        },
+        {
+          "name": "dratini-moltres",
+          "player": 147,
+          "enemy": 146
+        },
+        {
+          "name": "dragonair-dragonite",
+          "player": 148,
+          "enemy": 149
+        },
+        {
+          "name": "dragonite-dragonair",
+          "player": 149,
+          "enemy": 148
+        },
+        {
+          "name": "mewtwo-mew",
+          "player": 150,
+          "enemy": 151
+        },
+        {
+          "name": "mew-mewtwo",
+          "player": 151,
+          "enemy": 150
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    },
+    {
+      "number": 39,
+      "ordinal": 10,
+      "status": "pending",
+      "names": [
+        "Chikorita",
+        "Bayleef",
+        "Meganium",
+        "Cyndaquil",
+        "Quilava",
+        "Typhlosion",
+        "Totodile",
+        "Croconaw"
+      ],
+      "national_ids": [
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159
+      ],
+      "cases": [
+        {
+          "name": "chikorita-bayleef",
+          "player": 152,
+          "enemy": 153
+        },
+        {
+          "name": "bayleef-chikorita",
+          "player": 153,
+          "enemy": 152
+        },
+        {
+          "name": "meganium-cyndaquil",
+          "player": 154,
+          "enemy": 155
+        },
+        {
+          "name": "cyndaquil-meganium",
+          "player": 155,
+          "enemy": 154
+        },
+        {
+          "name": "quilava-typhlosion",
+          "player": 156,
+          "enemy": 157
+        },
+        {
+          "name": "typhlosion-quilava",
+          "player": 157,
+          "enemy": 156
+        },
+        {
+          "name": "totodile-croconaw",
+          "player": 158,
+          "enemy": 159
+        },
+        {
+          "name": "croconaw-totodile",
+          "player": 159,
+          "enemy": 158
+        }
+      ],
+      "artifact_date": "2026-10-30"
+    }
+  ],
+  "builds": {
+    "test": {
+      "build_id": "de509bec1e539760",
+      "sha256": "f2ecde88d6d665029ecfcd7e5c335604e31d8bb3c96c4adc7c04f272636d468c",
+      "path": "artifacts/bw2-validation/builds/de509bec1e539760_f2ecde88d6d6/validation.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/de509bec1e539760_84f94a734784/validation.elf",
+      "elf_sha256": "84f94a7347844328c0c357f3afce36dc68ba17d19035c4d873845056c64048b5",
+      "id_path": "artifacts/bw2-validation/builds/de509bec1e539760_59fb21cf6a34/build_id.bin"
+    },
+    "production": {
+      "build_id": "f65244ae7f660a26",
+      "sha256": "6b27f2290acfcd48b5813237d5c072fd4b3ea48c63825de7177dbff0f28f25f6",
+      "path": "artifacts/bw2-validation/builds/f65244ae7f660a26_6b27f2290acf/Emerald3DS-BW2.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/f65244ae7f660a26_a4ef3f5f2b4c/production.elf",
+      "elf_sha256": "a4ef3f5f2b4caa9f4b0f8d33277c08acedeae13bd719dda348adf03da4df2ada",
+      "id_path": "artifacts/bw2-validation/builds/f65244ae7f660a26_d673eb861184/production-build-id.bin"
+    }
+  },
+  "build_history": [
+    {
+      "test": {
+        "build_id": "1441ec92f9e6b9b6",
+        "sha256": "aab76a7b3322e46be17cb62dbf3366706d1fa2e7e8105615dbccfb6d50a269ca",
+        "path": "artifacts/bw2-validation/builds/1441ec92f9e6b9b6_aab76a7b3322/validation.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/1441ec92f9e6b9b6_f63a7127dbdc/validation.elf",
+        "elf_sha256": "f63a7127dbdc16f70b0da3c3d6bf989b965aeb0b97c11a15826ca37325db18f2",
+        "id_path": "artifacts/bw2-validation/builds/1441ec92f9e6b9b6_94b107ef9eef/build_id.bin"
+      },
+      "production": {
+        "build_id": "3724fc8cdfba9514",
+        "sha256": "31a8bb0a85c2d0f4b69be3129b3c2283c9a759e90485e0d15eda5149aca5319a",
+        "path": "artifacts/bw2-validation/builds/3724fc8cdfba9514_31a8bb0a85c2/Emerald3DS-BW2.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/3724fc8cdfba9514_b1c750266922/production.elf",
+        "elf_sha256": "b1c750266922487a0fe9421f9b0605bbfadfd99850da9b6e3ed8134b76b6c124",
+        "id_path": "artifacts/bw2-validation/builds/3724fc8cdfba9514_fa351ea16457/production-build-id.bin"
+      }
+    }
+  ],
+  "runtime": {
+    "phase": "checkpoint30: serial native captures, review pending",
+    "isolated_executable": "build/bw2-azahar/bw2-test.exe",
+    "active_capture": true,
+    "initial_emulator_processes": [
+      {
+        "ProcessId": 12992,
+        "Name": "azahar.exe",
+        "ExecutablePath": "D:\\Emulators\\Azahar\\azahar.exe"
+      }
+    ],
+    "continuity": "build/BW2_CONTINUITY30.md",
+    "capture_group": 30,
+    "exec_session_id": 72245,
+    "log": "build/bw2-auto30-cp30-capture.log",
+    "build_script": "build/bw2-auto30-build.sh"
+  },
+  "checks": {
+    "synthetic": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-synthetic.log"
+    },
+    "real": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-real.log"
+    },
+    "castform": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-castform.log"
+    },
+    "spinda": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-spinda.log"
+    },
+    "deoxys": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-deoxys.log"
+    },
+    "deoxys-validation": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-deoxys-validation.log"
+    },
+    "export": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-export.log"
+    },
+    "evidence": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-evidence.log"
+    },
+    "variants": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-variants.log"
+    },
+    "production_stubs_bytes": 4,
+    "production_validation_mailbox": false,
+    "presentation_v5_1_unchanged": true,
+    "build_modes_commands_verified": true
+  }
+}

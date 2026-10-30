@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **234**.
+Totale: **386**. Fatti con dossier completo: **242**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -240,14 +240,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0034 **Nidoking** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0034_nidoking/).
 - [x] 0035 **Clefairy** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0035_clefairy/).
 - [x] 0036 **Clefable** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0036_clefable/).
-- [ ] 0046 **Paras** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0046_paras/).
-- [ ] 0047 **Parasect** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0047_parasect/).
-- [ ] 0048 **Venonat** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0048_venonat/).
-- [ ] 0049 **Venomoth** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0049_venomoth/).
-- [ ] 0050 **Diglett** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0050_diglett/).
-- [ ] 0051 **Dugtrio** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0051_dugtrio/).
-- [ ] 0052 **Meowth** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0052_meowth/).
-- [ ] 0053 **Persian** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0053_persian/).
+- [x] 0046 **Paras** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0046_paras/).
+- [x] 0047 **Parasect** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0047_parasect/).
+- [x] 0048 **Venonat** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0048_venonat/).
+- [x] 0049 **Venomoth** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0049_venomoth/).
+- [x] 0050 **Diglett** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0050_diglett/).
+- [x] 0051 **Dugtrio** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0051_dugtrio/).
+- [x] 0052 **Meowth** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0052_meowth/).
+- [x] 0053 **Persian** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0053_persian/).
 - [ ] 0056 **Mankey** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0056_mankey/).
 - [ ] 0057 **Primeape** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0057_primeape/).
 - [ ] 0058 **Growlithe** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0058_growlithe/).

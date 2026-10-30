@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-30T00:47:33",
+  "aggiornato_il": "2026-10-30T08:21:35",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 234,
+    "pokemon_fatti": 242,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,14 +19,14 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 46,
-    "nome": "Paras",
+    "id": 56,
+    "nome": "Mankey",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
     "percorso": "build/bw2-validation/Emerald3DS-BW2.3dsx",
-    "build_id": "3724fc8cdfba9514",
-    "sha256": "31a8bb0a85c2d0f4b69be3129b3c2283c9a759e90485e0d15eda5149aca5319a"
+    "build_id": "f65244ae7f660a26",
+    "sha256": "6b27f2290acfcd48b5813237d5c072fd4b3ea48c63825de7177dbff0f28f25f6"
   },
   "pokemon": [
     {
@@ -8245,28 +8245,34 @@
       "costante": "SPECIES_PARAS",
       "nome": "Paras",
       "ordine": 235,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0046_paras",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0046_paras/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0046_paras/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "921399ccfad0681fd63f7eb8b2df8cde98b144526358c52fd9e13552cfe8106e",
+          "video_sha256": "41b814bae91f87858e3eb4bc33f6d4ca07734a1579d82c0b8a7279056ebb99eb"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0046_paras/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0046_paras/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "174da544feea13c8131698eeb0d9a1d7ec6711d2b4e7e7c726d454c49c509e07",
+          "video_sha256": "8afa1a52150e086432f3ff23eb269510e512dca6476207c28695b74ba3222eeb"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0046_paras/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0046_paras/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T08:21:01",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 47,
@@ -8274,28 +8280,34 @@
       "costante": "SPECIES_PARASECT",
       "nome": "Parasect",
       "ordine": 236,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0047_parasect",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0047_parasect/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0047_parasect/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "174da544feea13c8131698eeb0d9a1d7ec6711d2b4e7e7c726d454c49c509e07",
+          "video_sha256": "8afa1a52150e086432f3ff23eb269510e512dca6476207c28695b74ba3222eeb"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0047_parasect/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0047_parasect/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "921399ccfad0681fd63f7eb8b2df8cde98b144526358c52fd9e13552cfe8106e",
+          "video_sha256": "41b814bae91f87858e3eb4bc33f6d4ca07734a1579d82c0b8a7279056ebb99eb"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0047_parasect/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0047_parasect/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T08:21:02",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 48,
@@ -8303,28 +8315,34 @@
       "costante": "SPECIES_VENONAT",
       "nome": "Venonat",
       "ordine": 237,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0048_venonat",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0048_venonat/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0048_venonat/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "2becab35f668773c4caf669eee041f32c5d33d575538a0a7cceb109e0e170da4",
+          "video_sha256": "cc0369287605bc1b936dfa8e7130da54800e5e3bd08e990e3cb01b2e8d5ac6df"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0048_venonat/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0048_venonat/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "524ee870b21c845518c1468213f8c226d2f1b3c9b01f7d23fed0d8b084a7e9aa",
+          "video_sha256": "7f42975fceb0f30ccc4467394211a7a945a5298eb677c32665e99eec554bcad5"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0048_venonat/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0048_venonat/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T08:21:03",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 49,
@@ -8332,28 +8350,34 @@
       "costante": "SPECIES_VENOMOTH",
       "nome": "Venomoth",
       "ordine": 238,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0049_venomoth",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0049_venomoth/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0049_venomoth/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "524ee870b21c845518c1468213f8c226d2f1b3c9b01f7d23fed0d8b084a7e9aa",
+          "video_sha256": "7f42975fceb0f30ccc4467394211a7a945a5298eb677c32665e99eec554bcad5"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0049_venomoth/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0049_venomoth/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "2becab35f668773c4caf669eee041f32c5d33d575538a0a7cceb109e0e170da4",
+          "video_sha256": "cc0369287605bc1b936dfa8e7130da54800e5e3bd08e990e3cb01b2e8d5ac6df"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0049_venomoth/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0049_venomoth/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T08:21:03",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 50,
@@ -8361,28 +8385,34 @@
       "costante": "SPECIES_DIGLETT",
       "nome": "Diglett",
       "ordine": 239,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0050_diglett",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0050_diglett/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0050_diglett/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "1e3f77b93348aee126d07582bc722ccba25c61f8fdcf10e387f80a6fd1b1364c",
+          "video_sha256": "d51d9dc888d80da94911368e1fee83272de7eab2d78a35c0407a134e82ee2801"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0050_diglett/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0050_diglett/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "e0b5f0705639741b8edbed39d5293e5dbeff8067faf108b3b7e9491aae4b6f2d",
+          "video_sha256": "6ae9997b7f14ea737b67d66fbf819306078d70c3556cba48e46a6292b79882e2"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0050_diglett/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0050_diglett/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T08:21:04",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 51,
@@ -8390,28 +8420,34 @@
       "costante": "SPECIES_DUGTRIO",
       "nome": "Dugtrio",
       "ordine": 240,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0051_dugtrio",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0051_dugtrio/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0051_dugtrio/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "e0b5f0705639741b8edbed39d5293e5dbeff8067faf108b3b7e9491aae4b6f2d",
+          "video_sha256": "6ae9997b7f14ea737b67d66fbf819306078d70c3556cba48e46a6292b79882e2"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0051_dugtrio/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0051_dugtrio/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "1e3f77b93348aee126d07582bc722ccba25c61f8fdcf10e387f80a6fd1b1364c",
+          "video_sha256": "d51d9dc888d80da94911368e1fee83272de7eab2d78a35c0407a134e82ee2801"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0051_dugtrio/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0051_dugtrio/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T08:21:05",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 52,
@@ -8419,28 +8455,34 @@
       "costante": "SPECIES_MEOWTH",
       "nome": "Meowth",
       "ordine": 241,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0052_meowth",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0052_meowth/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0052_meowth/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "523ca018c7769f55ae691998c1fdeca6cfecdc0d182afcdc1e8e273361738802",
+          "video_sha256": "413f470c4fdf0176980fe1dacb3c5ac4328401943be39674a94b1301c3f4aff7"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0052_meowth/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0052_meowth/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "2716db984da31af301e04ac653c890623f8692d7b37352dbc21cebaf1fa960e3",
+          "video_sha256": "2b0723acfc8200022d37b09b677de3e313311416eb102c9d2fe149d6049eb6aa"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0052_meowth/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0052_meowth/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T08:21:06",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 53,
@@ -8448,28 +8490,34 @@
       "costante": "SPECIES_PERSIAN",
       "nome": "Persian",
       "ordine": 242,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0053_persian",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0053_persian/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0053_persian/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "2716db984da31af301e04ac653c890623f8692d7b37352dbc21cebaf1fa960e3",
+          "video_sha256": "2b0723acfc8200022d37b09b677de3e313311416eb102c9d2fe149d6049eb6aa"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0053_persian/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0053_persian/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "523ca018c7769f55ae691998c1fdeca6cfecdc0d182afcdc1e8e273361738802",
+          "video_sha256": "413f470c4fdf0176980fe1dacb3c5ac4328401943be39674a94b1301c3f4aff7"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0053_persian/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0053_persian/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T08:21:07",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 56,
@@ -22987,8 +23035,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 36,
-    "nome": "Clefable"
+    "id": 53,
+    "nome": "Persian"
   },
-  "checkpoint_note": "Richiesta conclusa: 10/10 checkpoint 20–29, 80 nuove specie; 234/386 Pokémon e 6/354 mosse. Nessuna unità in corso. Audit indipendente AUTONOMOUS20_29_AUDIT.json: 240 dossier, 650 file asset precedenti e 330 file locali estranei invariati; repository BW2 e ROM solo letti. Algoritmo v5 e margine v5.1 invariati. Deoxys Normale/Velocità e shiny verificati; Trasformazione reale normale/shiny e regressione Spinda superate, correzione generale del riaggancio attore inclusa. Le mosse di supporto restano Emerald e non aumentano i completamenti BW2. Build normali e di prova con binario/ELF/ID e SHA archiviati in AUTONOMOUS20_29.json e nei dossier. Emulatore isolato chiuso dopo uscita effettiva; nessuna cattura attiva. Azahar personale preservato (PID 2460 ancora presente nel controllo finale). Dieci commit dedicati; nessun push. Prossima unità: Paras, nazionale/Emerald 46. Prove Azahar a 1×; console, audio/DSP, stereo, doppi, link reale e integrazione completa delle interazioni speciali restano da validare. Suite generale bottom-map con problemi preesistenti, non dichiarata superata. Riepilogo e prove: AUTONOMOUS20_29_REVIEW.md; riprendere dal registro autorevole senza riaprire gruppi conclusi."
+  "checkpoint_note": "Richiesta: checkpoint 30–39, 1/10 conclusi; partenza 234 Pokémon, obiettivo 314; mosse 6/354. Registro AUTONOMOUS30_39.json; helper build/bw2-auto30.py, catture build/bw2-auto30-capture.ps1. Gruppo30 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 31. Build e processi in AUTONOMOUS30_39.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
 }
