@@ -1,0 +1,124 @@
+{
+  "rom_sha256": "2ad60a931c2a17deed4596d23605e10048bf3ccb8f2e012eb9d13c37fb2ac509",
+  "personal_hex": "3048303048300d0de1020401000000000000ff2846000f0f1a000000000000001c44760005003200000000000000000000000000000000000000000000000000000000000000000000000000",
+  "personal_sprite_offset": 0,
+  "form_count": 28,
+  "palette_only": false,
+  "bw2_source": "D:/Projects/pokebw2/src/system/pokegra.c:GetPokemonDataIDBase",
+  "source_sha256": "9c6deb75e0223d0054a76f963582100ecfafc410bfd0de999bab1caa0478da41",
+  "emerald_selector": "build/upstream/include/pokemon.h:GET_UNOWN_LETTER",
+  "mapping": {
+    "0": {
+      "name": "A",
+      "resource_base": 4020
+    },
+    "1": {
+      "name": "B",
+      "resource_base": 13700
+    },
+    "2": {
+      "name": "C",
+      "resource_base": 13720
+    },
+    "3": {
+      "name": "D",
+      "resource_base": 13740
+    },
+    "4": {
+      "name": "E",
+      "resource_base": 13760
+    },
+    "5": {
+      "name": "F",
+      "resource_base": 13780
+    },
+    "6": {
+      "name": "G",
+      "resource_base": 13800
+    },
+    "7": {
+      "name": "H",
+      "resource_base": 13820
+    },
+    "8": {
+      "name": "I",
+      "resource_base": 13840
+    },
+    "9": {
+      "name": "J",
+      "resource_base": 13860
+    },
+    "10": {
+      "name": "K",
+      "resource_base": 13880
+    },
+    "11": {
+      "name": "L",
+      "resource_base": 13900
+    },
+    "12": {
+      "name": "M",
+      "resource_base": 13920
+    },
+    "13": {
+      "name": "N",
+      "resource_base": 13940
+    },
+    "14": {
+      "name": "O",
+      "resource_base": 13960
+    },
+    "15": {
+      "name": "P",
+      "resource_base": 13980
+    },
+    "16": {
+      "name": "Q",
+      "resource_base": 14000
+    },
+    "17": {
+      "name": "R",
+      "resource_base": 14020
+    },
+    "18": {
+      "name": "S",
+      "resource_base": 14040
+    },
+    "19": {
+      "name": "T",
+      "resource_base": 14060
+    },
+    "20": {
+      "name": "U",
+      "resource_base": 14080
+    },
+    "21": {
+      "name": "V",
+      "resource_base": 14100
+    },
+    "22": {
+      "name": "W",
+      "resource_base": 14120
+    },
+    "23": {
+      "name": "X",
+      "resource_base": 14140
+    },
+    "24": {
+      "name": "Y",
+      "resource_base": 14160
+    },
+    "25": {
+      "name": "Z",
+      "resource_base": 14180
+    },
+    "26": {
+      "name": "exclamation",
+      "resource_base": 14200
+    },
+    "27": {
+      "name": "question",
+      "resource_base": 14220
+    }
+  }
+}

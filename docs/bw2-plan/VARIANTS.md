@@ -3,9 +3,9 @@
 Le prove aggiuntive sono obbligatorie per chiudere la specie interessata.
 Lo stato di questo registro viene aggiornato insieme a `stato.json`.
 
-- [ ] **Unown (#201)**: censire e importare tutte le 28 forme (A-Z, !, ?).
+- [x] **Unown (#201)**: censire e importare tutte le 28 forme (A-Z, !, ?).
   La forma A usa il dossier principale; le altre hanno `forms/<forma>/`
-  con screenshot e video front/back. Verificare la selezione da personality.
+  con screenshot e video front/back. Selezione nativa da personality, 28 forme normali/shiny nelle due viste e più attori distinti verificati. [Prove e mappatura](UNOWN_REVIEW.md).
 - [x] **Castform (#351)**: dossier della forma normale più `sunny`, `rainy`,
   `snowy`. Provare anche la transizione in battaglia e le palette.
 - [x] **Deoxys (#386)**: forme Normale e Velocità censite e verificate front/back e shiny; selezione ordinaria e due turni reali di Trasformazione. Predicati link/multi verificati sul host; esecuzione link e copie temporanee delle mosse restano nella fase di integrazione. [Prove e limiti](DEOXYS_REVIEW.md).

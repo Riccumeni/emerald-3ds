@@ -1,7 +1,7 @@
 {
   "start_pokemon": 314,
   "target_pokemon": 386,
-  "completed_checkpoints": 3,
+  "completed_checkpoints": 4,
   "groups": [
     {
       "number": 40,
@@ -432,7 +432,7 @@
     {
       "number": 43,
       "ordinal": 4,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Wooper",
         "Quagsire",
@@ -495,7 +495,81 @@
           "enemy": 200
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 352,
+      "movie": {
+        "duration": 214.17466666666667,
+        "decoded_frames": 6423,
+        "sha256": "342ba713fb94ae53c1db80bcfe6bb9e0c3b98a40692fafff27642c49d228bb58",
+        "segments": [
+          {
+            "name": "wooper-quagsire",
+            "start": 0.0,
+            "end": 24.455333333333332,
+            "frames": 733,
+            "sha256": "2e79759ef87c4ce84d50f74926fc0475186781f9e035cff885afef82a5d1b3e9"
+          },
+          {
+            "name": "quagsire-wooper",
+            "start": 24.455333333333332,
+            "end": 48.925666666666665,
+            "frames": 734,
+            "sha256": "a0332c1e953daa8926106879e13a5a67d787964bee24ca4df742007d659c4169"
+          },
+          {
+            "name": "espeon-umbreon",
+            "start": 48.925666666666665,
+            "end": 78.803,
+            "frames": 896,
+            "sha256": "b657f4e80ae7841d9ad4f69a41ab77864dd4bc22a4c99635ecd6bcf567e9cd39"
+          },
+          {
+            "name": "umbreon-espeon",
+            "start": 78.803,
+            "end": 108.74333333333334,
+            "frames": 898,
+            "sha256": "daad89fb77cac2c90a6857f9e42a676187aa44bcc949a669bafb174c7eb734a7"
+          },
+          {
+            "name": "murkrow-slowking",
+            "start": 108.74333333333334,
+            "end": 136.88666666666666,
+            "frames": 844,
+            "sha256": "c5ffc12ef216dd6cc67fa5bab01fe3dd8f811a3714d5bd47fb1cb0073bba29ec"
+          },
+          {
+            "name": "slowking-murkrow",
+            "start": 136.88666666666666,
+            "end": 165.092,
+            "frames": 846,
+            "sha256": "fa16de70d03bb6e1600e0f406651f7687c7c7287f937dbeae84470308ac5ceaa"
+          },
+          {
+            "name": "misdreavus-unown",
+            "start": 165.092,
+            "end": 188.93833333333333,
+            "frames": 715,
+            "sha256": "bf22d03654c945657b788f3fbb34f6bacf5d845f692659dd496ed7fb56f2ce68"
+          },
+          {
+            "name": "unown-misdreavus",
+            "start": 188.93833333333333,
+            "end": 214.17466666666667,
+            "frames": 757,
+            "sha256": "c2c0b898975cfaf8a0a2e94d61bc9df347f6e5b2e9e285c0b4e9833e9ed13985"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 43: eight Pokemon"
     },
     {
       "number": 44,
@@ -877,7 +951,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint42: reviewed, published and audited; commit follows",
+    "phase": "checkpoint43: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -888,9 +962,9 @@
         "CommandLine": "\"D:\\Emulators\\Azahar\\azahar.exe\" "
       }
     ],
-    "capture_group": 42,
+    "capture_group": 43,
     "exec_session_id": null,
-    "log": "build/bw2-auto40-cp42-capture.log",
+    "log": "build/bw2-unown40-capture.log",
     "build_script": "build/bw2-auto40-build.sh"
   },
   "checks": {
@@ -948,5 +1022,14 @@
     "foreign_files": 345,
     "source_files": 129660,
     "head": "e0de71817608872388149a2abe21a8a7a091a1e8"
+  },
+  "unown": {
+    "forms": 28,
+    "normal_shiny_front_back": true,
+    "native_selection": true,
+    "additional_videos": 56,
+    "review_images": 28,
+    "independent_gate_passed": true,
+    "review": "docs/bw2-plan/UNOWN_REVIEW.md"
   }
 }

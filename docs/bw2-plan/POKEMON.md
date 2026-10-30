@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **338**.
+Totale: **386**. Fatti con dossier completo: **346**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -344,14 +344,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0191 **Sunkern** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0191_sunkern/).
 - [x] 0192 **Sunflora** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0192_sunflora/).
 - [x] 0193 **Yanma** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0193_yanma/).
-- [ ] 0194 **Wooper** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0194_wooper/).
-- [ ] 0195 **Quagsire** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0195_quagsire/).
-- [ ] 0196 **Espeon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0196_espeon/).
-- [ ] 0197 **Umbreon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0197_umbreon/).
-- [ ] 0198 **Murkrow** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0198_murkrow/).
-- [ ] 0199 **Slowking** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0199_slowking/).
-- [ ] 0200 **Misdreavus** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0200_misdreavus/).
-- [ ] 0201 **Unown** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0201_unown/).
+- [x] 0194 **Wooper** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0194_wooper/).
+- [x] 0195 **Quagsire** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0195_quagsire/).
+- [x] 0196 **Espeon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0196_espeon/).
+- [x] 0197 **Umbreon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0197_umbreon/).
+- [x] 0198 **Murkrow** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0198_murkrow/).
+- [x] 0199 **Slowking** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0199_slowking/).
+- [x] 0200 **Misdreavus** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0200_misdreavus/).
+- [x] 0201 **Unown** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0201_unown/).
 - [ ] 0204 **Pineco** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0204_pineco/).
 - [ ] 0205 **Forretress** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0205_forretress/).
 - [ ] 0206 **Dunsparce** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0206_dunsparce/).
