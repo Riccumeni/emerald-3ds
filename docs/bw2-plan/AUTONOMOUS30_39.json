@@ -1,7 +1,7 @@
 {
   "start_pokemon": 234,
   "target_pokemon": 314,
-  "completed_checkpoints": 7,
+  "completed_checkpoints": 8,
   "groups": [
     {
       "number": 30,
@@ -1000,7 +1000,7 @@
     {
       "number": 37,
       "ordinal": 8,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Flareon",
         "Porygon",
@@ -1063,7 +1063,81 @@
           "enemy": 142
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 304,
+      "movie": {
+        "duration": 232.54666666666665,
+        "decoded_frames": 6974,
+        "sha256": "503c0a57dfce736a4950bc8a206e027f9beb129e3bc555d03d5710d7a849f3c3",
+        "segments": [
+          {
+            "name": "flareon-porygon",
+            "start": 0.0,
+            "end": 32.00233333333333,
+            "frames": 960,
+            "sha256": "41268ca6bf5084ac9821f29c1d29772112afe2cefbbc0f9e73ef3a0e6c60046e"
+          },
+          {
+            "name": "porygon-flareon",
+            "start": 32.00233333333333,
+            "end": 63.144666666666666,
+            "frames": 934,
+            "sha256": "5c3182468a0e30c4f7ef1d2e007b9daa9c454bc1eb07425e247d5d1b47298e69"
+          },
+          {
+            "name": "omanyte-omastar",
+            "start": 63.144666666666666,
+            "end": 92.709,
+            "frames": 886,
+            "sha256": "434060c4449eb8fba123d710e18bcaaf5493b52dfc0f97c3da436a8e8d884a57"
+          },
+          {
+            "name": "omastar-omanyte",
+            "start": 92.709,
+            "end": 123.25733333333334,
+            "frames": 916,
+            "sha256": "a79867da5b6a7df673b7bbb421a136607f6e5c4e841e3cb4ebf81d5f528dc77f"
+          },
+          {
+            "name": "kabuto-kabutops",
+            "start": 123.25733333333334,
+            "end": 144.46266666666668,
+            "frames": 636,
+            "sha256": "a76d1cef9a57f4ce52977f414628563832fdce748989cc21ce7c4967dd7c4d5c"
+          },
+          {
+            "name": "kabutops-kabuto",
+            "start": 144.46266666666668,
+            "end": 165.902,
+            "frames": 643,
+            "sha256": "d285a9476f2a1689ca5c076d78ca43f98ec12bfe6c8b1a8427221efdab9eb547"
+          },
+          {
+            "name": "aerodactyl-snorlax",
+            "start": 165.902,
+            "end": 199.57533333333333,
+            "frames": 1010,
+            "sha256": "a1f751028fe793471b9db400419a499b9f92cef4a47758306aadf9abff20eb28"
+          },
+          {
+            "name": "snorlax-aerodactyl",
+            "start": 199.57533333333333,
+            "end": 232.54666666666665,
+            "frames": 989,
+            "sha256": "68f65e7e05731597bc9b3706d0719eb541b6d2117680cf6e548f5eb490c65916"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 37: eight Pokemon"
     },
     {
       "number": 38,
@@ -1241,7 +1315,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint36: reviewed, published and audited; commit follows",
+    "phase": "checkpoint37: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -1252,9 +1326,9 @@
       }
     ],
     "continuity": "build/BW2_CONTINUITY30.md",
-    "capture_group": 36,
+    "capture_group": 37,
     "exec_session_id": null,
-    "log": "build/bw2-auto30-cp36-capture.log",
+    "log": "build/bw2-auto30-cp37-capture.log",
     "build_script": "build/bw2-auto30-build.sh"
   },
   "checks": {

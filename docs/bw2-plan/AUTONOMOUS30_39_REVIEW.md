@@ -1,6 +1,6 @@
 # Dieci checkpoint autonomi — 30–39
 
-Completati **7/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 234 Pokémon. Obiettivo: 314. Totale corrente: **290/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
+Completati **8/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 234 Pokémon. Obiettivo: 314. Totale corrente: **298/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
 
 | Checkpoint | Specie | Stato | Prove |
 |---|---|---|---|
@@ -11,7 +11,7 @@ Completati **7/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 234
 | 5/10 (gruppo 34) | Hypno, Krabby, Kingler, Exeggcute, Exeggutor, Cubone, Marowak, Hitmonlee | complete | [Dossier, screenshot e video](CHECKPOINT34_REVIEW.md) |
 | 6/10 (gruppo 35) | Hitmonchan, Lickitung, Chansey, Tangela, Kangaskhan, Mr Mime, Scyther, Jynx | complete | [Dossier, screenshot e video](CHECKPOINT35_REVIEW.md) |
 | 7/10 (gruppo 36) | Electabuzz, Magmar, Tauros, Lapras, Ditto, Eevee, Vaporeon, Jolteon | complete | [Dossier, screenshot e video](CHECKPOINT36_REVIEW.md) |
-| 8/10 (gruppo 37) | Flareon, Porygon, Omanyte, Omastar, Kabuto, Kabutops, Aerodactyl, Snorlax | pending | In preparazione/verifica |
+| 8/10 (gruppo 37) | Flareon, Porygon, Omanyte, Omastar, Kabuto, Kabutops, Aerodactyl, Snorlax | complete | [Dossier, screenshot e video](CHECKPOINT37_REVIEW.md) |
 | 9/10 (gruppo 38) | Articuno, Zapdos, Moltres, Dratini, Dragonair, Dragonite, Mewtwo, Mew | pending | In preparazione/verifica |
 | 10/10 (gruppo 39) | Chikorita, Bayleef, Meganium, Cyndaquil, Quilava, Typhlosion, Totodile, Croconaw | pending | In preparazione/verifica |
 

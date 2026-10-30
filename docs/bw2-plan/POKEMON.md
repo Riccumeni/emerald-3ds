@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **290**.
+Totale: **386**. Fatti con dossier completo: **298**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -296,14 +296,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0133 **Eevee** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0133_eevee/).
 - [x] 0134 **Vaporeon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0134_vaporeon/).
 - [x] 0135 **Jolteon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0135_jolteon/).
-- [ ] 0136 **Flareon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0136_flareon/).
-- [ ] 0137 **Porygon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0137_porygon/).
-- [ ] 0138 **Omanyte** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0138_omanyte/).
-- [ ] 0139 **Omastar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0139_omastar/).
-- [ ] 0140 **Kabuto** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0140_kabuto/).
-- [ ] 0141 **Kabutops** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0141_kabutops/).
-- [ ] 0142 **Aerodactyl** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0142_aerodactyl/).
-- [ ] 0143 **Snorlax** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0143_snorlax/).
+- [x] 0136 **Flareon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0136_flareon/).
+- [x] 0137 **Porygon** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0137_porygon/).
+- [x] 0138 **Omanyte** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0138_omanyte/).
+- [x] 0139 **Omastar** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0139_omastar/).
+- [x] 0140 **Kabuto** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0140_kabuto/).
+- [x] 0141 **Kabutops** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0141_kabutops/).
+- [x] 0142 **Aerodactyl** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0142_aerodactyl/).
+- [x] 0143 **Snorlax** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0143_snorlax/).
 - [ ] 0144 **Articuno** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0144_articuno/).
 - [ ] 0145 **Zapdos** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0145_zapdos/).
 - [ ] 0146 **Moltres** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0146_moltres/).
