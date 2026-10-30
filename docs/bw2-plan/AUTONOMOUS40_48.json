@@ -1,7 +1,7 @@
 {
   "start_pokemon": 314,
   "target_pokemon": 386,
-  "completed_checkpoints": 2,
+  "completed_checkpoints": 3,
   "groups": [
     {
       "number": 40,
@@ -290,7 +290,7 @@
     {
       "number": 42,
       "ordinal": 3,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Politoed",
         "Hoppip",
@@ -353,7 +353,81 @@
           "enemy": 192
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 344,
+      "movie": {
+        "duration": 193.11066666666667,
+        "decoded_frames": 5791,
+        "sha256": "4db4ccb15b4cac4a649de08a9baec8d5b5941e924f53cfe13686944ba58a34c0",
+        "segments": [
+          {
+            "name": "politoed-hoppip",
+            "start": 0.0,
+            "end": 24.674333333333333,
+            "frames": 740,
+            "sha256": "4c4c7f9f10662930f248080d23fc2cd908c66f0a0d113b5e2cd715af5a9ba45e"
+          },
+          {
+            "name": "hoppip-politoed",
+            "start": 24.674333333333333,
+            "end": 50.34866666666667,
+            "frames": 770,
+            "sha256": "f0b7dea1c0382e67ca6974b54b5ec85e476c11341a7afb95606e418b709318f0"
+          },
+          {
+            "name": "skiploom-jumpluff",
+            "start": 50.34866666666667,
+            "end": 76.179,
+            "frames": 774,
+            "sha256": "41f09a1b2adfc046375706866b2ec977352bd4899e271cb40bb18dfc9255bdcf"
+          },
+          {
+            "name": "jumpluff-skiploom",
+            "start": 76.179,
+            "end": 101.99333333333334,
+            "frames": 774,
+            "sha256": "edf3c51ccb0e833a3277cfb31963c3f2fba77ccaca5700ab59a26b082c305e8d"
+          },
+          {
+            "name": "aipom-sunkern",
+            "start": 101.99333333333334,
+            "end": 123.66666666666667,
+            "frames": 650,
+            "sha256": "62a77b28c0908bad037c9c49f811f14424eb3abf64c9101b6be86523635aa77b"
+          },
+          {
+            "name": "sunkern-aipom",
+            "start": 123.66666666666667,
+            "end": 145.903,
+            "frames": 667,
+            "sha256": "2ccc6f51c4a7be9ba9701d28de5aa91561d93caf4107a7563577ce449a3fa851"
+          },
+          {
+            "name": "sunflora-yanma",
+            "start": 145.903,
+            "end": 169.10833333333332,
+            "frames": 696,
+            "sha256": "48deaadc2121f9026acb163ac121151cb6ac2834c12524f06e54d7dcf7f69529"
+          },
+          {
+            "name": "yanma-sunflora",
+            "start": 169.10833333333332,
+            "end": 193.11066666666667,
+            "frames": 720,
+            "sha256": "4036cc8b4c05a40d2e3d62fb4c364b91862021dec0eb04196785b116f9716cf2"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 42: eight Pokemon"
     },
     {
       "number": 43,
@@ -803,7 +877,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint41: reviewed, published and audited; commit follows",
+    "phase": "checkpoint42: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -814,9 +888,9 @@
         "CommandLine": "\"D:\\Emulators\\Azahar\\azahar.exe\" "
       }
     ],
-    "capture_group": 41,
+    "capture_group": 42,
     "exec_session_id": null,
-    "log": "build/bw2-auto40-cp41-capture.log",
+    "log": "build/bw2-auto40-cp42-capture.log",
     "build_script": "build/bw2-auto40-build.sh"
   },
   "checks": {

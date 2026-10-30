@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **330**.
+Totale: **386**. Fatti con dossier completo: **338**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -336,14 +336,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0180 **Flaaffy** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0180_flaaffy/).
 - [x] 0181 **Ampharos** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0181_ampharos/).
 - [x] 0185 **Sudowoodo** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0185_sudowoodo/).
-- [ ] 0186 **Politoed** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0186_politoed/).
-- [ ] 0187 **Hoppip** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0187_hoppip/).
-- [ ] 0188 **Skiploom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0188_skiploom/).
-- [ ] 0189 **Jumpluff** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0189_jumpluff/).
-- [ ] 0190 **Aipom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0190_aipom/).
-- [ ] 0191 **Sunkern** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0191_sunkern/).
-- [ ] 0192 **Sunflora** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0192_sunflora/).
-- [ ] 0193 **Yanma** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0193_yanma/).
+- [x] 0186 **Politoed** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0186_politoed/).
+- [x] 0187 **Hoppip** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0187_hoppip/).
+- [x] 0188 **Skiploom** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0188_skiploom/).
+- [x] 0189 **Jumpluff** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0189_jumpluff/).
+- [x] 0190 **Aipom** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0190_aipom/).
+- [x] 0191 **Sunkern** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0191_sunkern/).
+- [x] 0192 **Sunflora** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0192_sunflora/).
+- [x] 0193 **Yanma** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0193_yanma/).
 - [ ] 0194 **Wooper** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0194_wooper/).
 - [ ] 0195 **Quagsire** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0195_quagsire/).
 - [ ] 0196 **Espeon** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0196_espeon/).
