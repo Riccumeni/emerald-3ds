@@ -1,7 +1,7 @@
 {
   "start_pokemon": 234,
   "target_pokemon": 314,
-  "completed_checkpoints": 1,
+  "completed_checkpoints": 2,
   "groups": [
     {
       "number": 30,
@@ -148,7 +148,7 @@
     {
       "number": 31,
       "ordinal": 2,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Mankey",
         "Primeape",
@@ -211,7 +211,81 @@
           "enemy": 62
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 256,
+      "movie": {
+        "duration": 237.34466666666665,
+        "decoded_frames": 7117,
+        "sha256": "1773a2fd52bfdd127f999eea2a15e8e281252a5a3cf981bbf520d58e51ec5101",
+        "segments": [
+          {
+            "name": "mankey-primeape",
+            "start": 0.0,
+            "end": 26.940333333333335,
+            "frames": 808,
+            "sha256": "2bfef89e6cd2b8cbce1947924e2bdf90a257b16a986c3aec33606986e78ee8b5"
+          },
+          {
+            "name": "primeape-mankey",
+            "start": 26.940333333333335,
+            "end": 54.02066666666666,
+            "frames": 812,
+            "sha256": "68a7034447456cb97eac98ddc265e8f1bf0458ccb9038a6bba86e70323e9381f"
+          },
+          {
+            "name": "growlithe-arcanine",
+            "start": 54.02066666666666,
+            "end": 95.663,
+            "frames": 1249,
+            "sha256": "74a8e54c05d08f364fb158de58a1244d80e33827c5e2e62333396c58d283c47b"
+          },
+          {
+            "name": "arcanine-growlithe",
+            "start": 95.663,
+            "end": 137.13333333333333,
+            "frames": 1244,
+            "sha256": "e5faaaab39dee2a455ea977a0290f64eecacdd9aaab8bfb43a4ac84ef7632885"
+          },
+          {
+            "name": "poliwag-poliwhirl",
+            "start": 137.13333333333333,
+            "end": 162.94766666666666,
+            "frames": 774,
+            "sha256": "20662c0055afbb59bdbb29875f68a92ee083995e4189d349d770ce186c162127"
+          },
+          {
+            "name": "poliwhirl-poliwag",
+            "start": 162.94766666666666,
+            "end": 187.841,
+            "frames": 746,
+            "sha256": "ed873306f8e6052c93ececbed9d7d7d8f52a423b57cc24dc9aad4428f230b393"
+          },
+          {
+            "name": "poliwrath-bellsprout",
+            "start": 187.841,
+            "end": 212.63933333333333,
+            "frames": 743,
+            "sha256": "799172de1d8111a67302ee7ac0103745817670d8171fd8d6a0d99c6482908f64"
+          },
+          {
+            "name": "bellsprout-poliwrath",
+            "start": 212.63933333333333,
+            "end": 237.34466666666665,
+            "frames": 741,
+            "sha256": "69c444e0d3e05b88973c1160929a7d4a976f0ad47428e73c0c43bb88a6bbe730"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 31: eight Pokemon"
     },
     {
       "number": 32,
@@ -797,9 +871,9 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint30: serial native captures, review pending",
+    "phase": "checkpoint31: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
-    "active_capture": true,
+    "active_capture": false,
     "initial_emulator_processes": [
       {
         "ProcessId": 12992,
@@ -808,9 +882,9 @@
       }
     ],
     "continuity": "build/BW2_CONTINUITY30.md",
-    "capture_group": 30,
-    "exec_session_id": 72245,
-    "log": "build/bw2-auto30-cp30-capture.log",
+    "capture_group": 31,
+    "exec_session_id": null,
+    "log": "build/bw2-auto30-cp31-capture.log",
     "build_script": "build/bw2-auto30-build.sh"
   },
   "checks": {

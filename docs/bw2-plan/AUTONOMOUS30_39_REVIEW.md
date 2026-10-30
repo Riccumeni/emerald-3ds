@@ -1,11 +1,11 @@
 # Dieci checkpoint autonomi — 30–39
 
-Completati **1/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 234 Pokémon. Obiettivo: 314. Totale corrente: **242/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
+Completati **2/10 checkpoint** richiesti, nell’ordine del piano. Partenza: 234 Pokémon. Obiettivo: 314. Totale corrente: **250/386 Pokémon, 6/354 mosse**. Criterio v5 conservato; guardia verticale v5.1 per tutti i gruppi.
 
 | Checkpoint | Specie | Stato | Prove |
 |---|---|---|---|
 | 1/10 (gruppo 30) | Paras, Parasect, Venonat, Venomoth, Diglett, Dugtrio, Meowth, Persian | complete | [Dossier, screenshot e video](CHECKPOINT30_REVIEW.md) |
-| 2/10 (gruppo 31) | Mankey, Primeape, Growlithe, Arcanine, Poliwag, Poliwhirl, Poliwrath, Bellsprout | pending | In preparazione/verifica |
+| 2/10 (gruppo 31) | Mankey, Primeape, Growlithe, Arcanine, Poliwag, Poliwhirl, Poliwrath, Bellsprout | complete | [Dossier, screenshot e video](CHECKPOINT31_REVIEW.md) |
 | 3/10 (gruppo 32) | Weepinbell, Victreebel, Ponyta, Rapidash, Slowpoke, Slowbro, Farfetchd, Seel | pending | In preparazione/verifica |
 | 4/10 (gruppo 33) | Dewgong, Shellder, Cloyster, Gastly, Haunter, Gengar, Onix, Drowzee | pending | In preparazione/verifica |
 | 5/10 (gruppo 34) | Hypno, Krabby, Kingler, Exeggcute, Exeggutor, Cubone, Marowak, Hitmonlee | pending | In preparazione/verifica |

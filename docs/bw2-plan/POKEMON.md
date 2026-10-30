@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **242**.
+Totale: **386**. Fatti con dossier completo: **250**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -248,14 +248,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0051 **Dugtrio** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0051_dugtrio/).
 - [x] 0052 **Meowth** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0052_meowth/).
 - [x] 0053 **Persian** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0053_persian/).
-- [ ] 0056 **Mankey** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0056_mankey/).
-- [ ] 0057 **Primeape** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0057_primeape/).
-- [ ] 0058 **Growlithe** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0058_growlithe/).
-- [ ] 0059 **Arcanine** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0059_arcanine/).
-- [ ] 0060 **Poliwag** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0060_poliwag/).
-- [ ] 0061 **Poliwhirl** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0061_poliwhirl/).
-- [ ] 0062 **Poliwrath** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0062_poliwrath/).
-- [ ] 0069 **Bellsprout** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0069_bellsprout/).
+- [x] 0056 **Mankey** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0056_mankey/).
+- [x] 0057 **Primeape** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0057_primeape/).
+- [x] 0058 **Growlithe** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0058_growlithe/).
+- [x] 0059 **Arcanine** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0059_arcanine/).
+- [x] 0060 **Poliwag** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0060_poliwag/).
+- [x] 0061 **Poliwhirl** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0061_poliwhirl/).
+- [x] 0062 **Poliwrath** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0062_poliwrath/).
+- [x] 0069 **Bellsprout** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0069_bellsprout/).
 - [ ] 0070 **Weepinbell** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0070_weepinbell/).
 - [ ] 0071 **Victreebel** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0071_victreebel/).
 - [ ] 0077 **Ponyta** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0077_ponyta/).
