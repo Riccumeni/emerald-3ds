@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **362**.
+Totale: **386**. Fatti con dossier completo: **370**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -368,14 +368,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0220 **Swinub** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0220_swinub/).
 - [x] 0221 **Piloswine** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0221_piloswine/).
 - [x] 0223 **Remoraid** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0223_remoraid/).
-- [ ] 0224 **Octillery** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0224_octillery/).
-- [ ] 0225 **Delibird** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0225_delibird/).
-- [ ] 0226 **Mantine** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0226_mantine/).
-- [ ] 0228 **Houndour** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0228_houndour/).
-- [ ] 0229 **Houndoom** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0229_houndoom/).
-- [ ] 0233 **Porygon2** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0233_porygon2/).
-- [ ] 0234 **Stantler** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0234_stantler/).
-- [ ] 0235 **Smeargle** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0235_smeargle/).
+- [x] 0224 **Octillery** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0224_octillery/).
+- [x] 0225 **Delibird** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0225_delibird/).
+- [x] 0226 **Mantine** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0226_mantine/).
+- [x] 0228 **Houndour** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0228_houndour/).
+- [x] 0229 **Houndoom** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0229_houndoom/).
+- [x] 0233 **Porygon2** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0233_porygon2/).
+- [x] 0234 **Stantler** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0234_stantler/).
+- [x] 0235 **Smeargle** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0235_smeargle/).
 - [ ] 0236 **Tyrogue** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0236_tyrogue/).
 - [ ] 0237 **Hitmontop** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0237_hitmontop/).
 - [ ] 0238 **Smoochum** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0238_smoochum/).

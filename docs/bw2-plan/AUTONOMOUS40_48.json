@@ -1,7 +1,7 @@
 {
   "start_pokemon": 314,
   "target_pokemon": 386,
-  "completed_checkpoints": 6,
+  "completed_checkpoints": 7,
   "groups": [
     {
       "number": 40,
@@ -858,7 +858,7 @@
     {
       "number": 46,
       "ordinal": 7,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Octillery",
         "Delibird",
@@ -921,7 +921,81 @@
           "enemy": 234
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 376,
+      "movie": {
+        "duration": 247.06366666666668,
+        "decoded_frames": 7409,
+        "sha256": "be2dfaa3a81ece79ff4ef53892ff0a9e0ff93f61ed89cfb1f9389225cdd6b180",
+        "segments": [
+          {
+            "name": "octillery-delibird",
+            "start": 0.0,
+            "end": 26.486333333333334,
+            "frames": 794,
+            "sha256": "723780620af2ebb45a447df98249e8decc0379734bfdda03d7249a80fbbd1304"
+          },
+          {
+            "name": "delibird-octillery",
+            "start": 26.486333333333334,
+            "end": 52.86366666666667,
+            "frames": 791,
+            "sha256": "9148409910fec20bf13163c103d4d97e391eca832a9865e70377cdc60e5443c4"
+          },
+          {
+            "name": "mantine-houndour",
+            "start": 52.86366666666667,
+            "end": 83.772,
+            "frames": 927,
+            "sha256": "e5c6aa8df02bdaa1712837f147d972472f73b995b40c10674d585f0ea9784663"
+          },
+          {
+            "name": "houndour-mantine",
+            "start": 83.772,
+            "end": 115.64933333333333,
+            "frames": 956,
+            "sha256": "cc151f636e0a26b4cb77dfacf07366747f1a26f02d008d01e84b0d98dd47d4bc"
+          },
+          {
+            "name": "houndoom-porygon2",
+            "start": 115.64933333333333,
+            "end": 148.02666666666667,
+            "frames": 971,
+            "sha256": "0788b14a798d5c2def13669cf4f1297c02a777b4cfee3162938b30de14246265"
+          },
+          {
+            "name": "porygon2-houndoom",
+            "start": 148.02666666666667,
+            "end": 180.013,
+            "frames": 959,
+            "sha256": "674427e1f31ed36e604a6b6e490d5f7831a52c1ecc0378b9c2a651b5896e91cc"
+          },
+          {
+            "name": "stantler-smeargle",
+            "start": 180.013,
+            "end": 213.78033333333335,
+            "frames": 1013,
+            "sha256": "08c9df49b70b8bd3620edb14c0f96728c59deb106cba4d79f33d07cb0024f81f"
+          },
+          {
+            "name": "smeargle-stantler",
+            "start": 213.78033333333335,
+            "end": 247.06366666666668,
+            "frames": 998,
+            "sha256": "87dc13749e6b4a940fb9fb1f237f8698e48319f8145f23123c9036068472707f"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 46: eight Pokemon"
     },
     {
       "number": 47,
@@ -1099,7 +1173,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint45: reviewed, published and audited; commit follows",
+    "phase": "checkpoint46: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -1110,9 +1184,9 @@
         "CommandLine": "\"D:\\Emulators\\Azahar\\azahar.exe\" "
       }
     ],
-    "capture_group": 45,
+    "capture_group": 46,
     "exec_session_id": null,
-    "log": "build/bw2-auto40-cp45-capture.log",
+    "log": "build/bw2-auto40-cp46-capture.log",
     "build_script": "build/bw2-auto40-build.sh"
   },
   "checks": {
