@@ -1,7 +1,7 @@
 {
   "start_pokemon": 314,
   "target_pokemon": 386,
-  "completed_checkpoints": 7,
+  "completed_checkpoints": 8,
   "groups": [
     {
       "number": 40,
@@ -1000,7 +1000,7 @@
     {
       "number": 47,
       "ordinal": 8,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Tyrogue",
         "Hitmontop",
@@ -1063,7 +1063,81 @@
           "enemy": 242
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 384,
+      "movie": {
+        "duration": 230.47066666666666,
+        "decoded_frames": 6912,
+        "sha256": "ab170254ed46df4bcf849586713d06de9c75d5d38fb832c7660d7c3e0340f8bf",
+        "segments": [
+          {
+            "name": "tyrogue-hitmontop",
+            "start": 0.0,
+            "end": 33.580333333333336,
+            "frames": 1007,
+            "sha256": "bc306d4f9b125c34e322b91d17f3fbf189a89acac79b7ed1f39b3cae271abec9"
+          },
+          {
+            "name": "hitmontop-tyrogue",
+            "start": 33.580333333333336,
+            "end": 67.19166666666666,
+            "frames": 1008,
+            "sha256": "d050d1b03443ed599dc25fa0bea8ee9ff5c8c18519433a87b986aa23e16306f8"
+          },
+          {
+            "name": "smoochum-elekid",
+            "start": 67.19166666666666,
+            "end": 91.194,
+            "frames": 720,
+            "sha256": "48fb8e0af2c5b7f31c97476ba6ed51d6b4b2752bee8db505406d60d07e7738ae"
+          },
+          {
+            "name": "elekid-smoochum",
+            "start": 91.194,
+            "end": 115.60233333333333,
+            "frames": 732,
+            "sha256": "4863ded0411c5e4f1a3ac378f00a0ad2fa866cb9e4a9022d9c224d9f7ff28b22"
+          },
+          {
+            "name": "magby-miltank",
+            "start": 115.60233333333333,
+            "end": 141.10466666666667,
+            "frames": 765,
+            "sha256": "1e476ac90a93a47d4979022e7b26b5d1d5f7f762e441c9489b3b6a275ba159da"
+          },
+          {
+            "name": "miltank-magby",
+            "start": 141.10466666666667,
+            "end": 165.31,
+            "frames": 726,
+            "sha256": "0370af31742191a0a12a07f7f36f18d465e1a843d06b2f04deda7884f75fc503"
+          },
+          {
+            "name": "blissey-raikou",
+            "start": 165.31,
+            "end": 197.79633333333334,
+            "frames": 974,
+            "sha256": "c7c74711c6f3f17dd0ec185eaa18a156c88d45577152a6fca569eeff820e68a5"
+          },
+          {
+            "name": "raikou-blissey",
+            "start": 197.79633333333334,
+            "end": 230.47066666666666,
+            "frames": 980,
+            "sha256": "f37c542251b93893dc5a83490054c32bbf4182d73444e4d28420b9fdddcbe476"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 47: eight Pokemon"
     },
     {
       "number": 48,
@@ -1173,7 +1247,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint46: reviewed, published and audited; commit follows",
+    "phase": "checkpoint47: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -1184,9 +1258,9 @@
         "CommandLine": "\"D:\\Emulators\\Azahar\\azahar.exe\" "
       }
     ],
-    "capture_group": 46,
+    "capture_group": 47,
     "exec_session_id": null,
-    "log": "build/bw2-auto40-cp46-capture.log",
+    "log": "build/bw2-auto40-cp47-capture.log",
     "build_script": "build/bw2-auto40-build.sh"
   },
   "checks": {

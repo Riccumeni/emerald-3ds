@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **370**.
+Totale: **386**. Fatti con dossier completo: **378**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -376,14 +376,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0233 **Porygon2** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0233_porygon2/).
 - [x] 0234 **Stantler** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0234_stantler/).
 - [x] 0235 **Smeargle** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0235_smeargle/).
-- [ ] 0236 **Tyrogue** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0236_tyrogue/).
-- [ ] 0237 **Hitmontop** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0237_hitmontop/).
-- [ ] 0238 **Smoochum** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0238_smoochum/).
-- [ ] 0239 **Elekid** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0239_elekid/).
-- [ ] 0240 **Magby** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0240_magby/).
-- [ ] 0241 **Miltank** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0241_miltank/).
-- [ ] 0242 **Blissey** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0242_blissey/).
-- [ ] 0243 **Raikou** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0243_raikou/).
+- [x] 0236 **Tyrogue** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0236_tyrogue/).
+- [x] 0237 **Hitmontop** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0237_hitmontop/).
+- [x] 0238 **Smoochum** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0238_smoochum/).
+- [x] 0239 **Elekid** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0239_elekid/).
+- [x] 0240 **Magby** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0240_magby/).
+- [x] 0241 **Miltank** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0241_miltank/).
+- [x] 0242 **Blissey** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0242_blissey/).
+- [x] 0243 **Raikou** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0243_raikou/).
 - [ ] 0244 **Entei** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0244_entei/).
 - [ ] 0245 **Suicune** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0245_suicune/).
 - [ ] 0246 **Larvitar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0246_larvitar/).
