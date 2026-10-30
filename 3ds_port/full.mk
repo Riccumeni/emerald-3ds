@@ -493,6 +493,12 @@ romfs/voxel/trees.rgba5551: scripts/gen_voxel_trees.py \
 # verify-voxel-buildings runs the proofs alone, even when the file is
 # up to date: the release build asks for it.
 romfs/voxel/buildings.bin: scripts/gen_voxel_buildings.py scripts/voxel_building.py scripts/voxel_night.py \
+		scripts/voxel_custom_props.py assets/voxel/props/yellow_table.vox \
+		assets/voxel/props/green_bookshelf.vox \
+		assets/voxel/props/purple_display_cabinet.vox assets/voxel/props/white_console.vox \
+		assets/voxel/props/potted_plant.vox \
+		assets/voxel/props/kitchen_fridge.vox assets/voxel/props/kitchen_sink.vox \
+		assets/voxel/props/striped_kitchen_table.vox \
 		scripts/voxel_building_specs.py scripts/voxel_bridge.py scripts/dump_region_art.py scripts/voxel_props.py \
 		scripts/voxel_relief_fixes.py assets/voxel/relief_fixes.json \
 		scripts/voxel_defect_scan.py assets/voxel/interior_lint_allow.toml \
@@ -503,6 +509,11 @@ romfs/voxel/buildings.bin: scripts/gen_voxel_buildings.py scripts/voxel_building
 .PHONY: verify-voxel-buildings
 verify-voxel-buildings:
 	"$(PYTHON)" scripts/gen_voxel_buildings.py --verify
+
+.PHONY: verify-voxel-custom-props
+verify: verify-voxel-custom-props
+verify-voxel-custom-props:
+	"$(PYTHON)" -B tests/voxel_custom_props_test.py
 
 # Terrain relief read off the drawing: gen_voxel_relief.py explains it.
 romfs/voxel/relief.bin: scripts/gen_voxel_relief.py scripts/voxel_cells.py scripts/voxel_props.py \

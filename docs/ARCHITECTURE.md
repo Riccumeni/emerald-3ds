@@ -100,6 +100,9 @@ purple B/return button; tapping it injects B into the original party task.
 The message well joins the game's line breaks with spaces and uses a single
 vertically centred line, choosing between the normal and small native fonts.
 Card taps, action rows and animation dirty rectangles share the new layout.
+Party snapshots are selected by menu mode, independently of whether the
+layout covers the column, so battle switching and item targeting receive
+the same live Pokémon data and action state as the field roster.
 The PokéNav is the game's own, run as it is:
 its screens are composed as a centred GBA screen and drawn into the 240x240
 area left of the column instead of the top screen, laid out for its 240 lines
@@ -119,13 +122,31 @@ separators and the blue experience gauge are native geometry, with no skin
 images or scaled text. The original summary task handles Pokémon selection, IV/EV modes and
 move swaps, including PP bonuses. The top eye buffers are saved in RAM and
 restored when returning to the party or PC. The move-forgetting selector
-retains the original bottom-screen summary and touch handling. The bag is the game's own as well
-(`item_menu.c`): opened from the field it sits left of the column, opened
-from a battle, a shop or the PC it takes the whole screen, its stripes carried
-on around it, and taps act on it directly too. So is the Pokédex
+retains the original bottom-screen summary and touch handling.
+The bag uses `3ds_bag_ui.h` snapshots and queued commands over the original
+`item_menu.c` task. Its native 400x240 top canvas draws Emerald chrome and
+word-wrapped descriptions around the live 64x64 GBA backpack, sampled at 2x
+from OBJ VRAM with its original palette, pocket animation and affine shake.
+The 320x240 lower screen draws five category symbols (items, balls, TM/HM,
+berries, key items), six inventory tiles in two columns, page controls and
+native action, quantity, yes/no and message dialogs. Item icons, names,
+encrypted quantities and registered-item markers come from the real bag.
+D-pad directions move through the grid, L/R switch pockets, tapping a new
+tile selects it and tapping it again confirms. Swiping or page buttons move
+six entries. Use/give/toss, sale, deposit and reordering still run the
+original callbacks. The shared native top renderer saves and restores the
+world/battle eye buffers when entering and leaving the bag or summary.
+The Pokédex remains the game's own
 (`pokedex.c`), left of the column, the tile behind each of its screens carried
 out to its edges. In battle the column gives way
-to the action and move menus.
+to the action and move menus. Target selection uses four native beveled
+cards in field order: orange opponents above grey allies, disabled user or
+absent slots darkened, with red/white selection brackets and a wide blue
+Cancel button. Names, genders and the game's icon sprites are read from the
+live battlers; icons are prefetched while choosing a move. Touch confirms a
+legal battler directly, while D-pad navigation follows the grid and skips
+invalid targets. The controller still confirms the move and target; its
+sprite highlighting is transferred when changing the native selection.
 
 ## Voxel overworld
 

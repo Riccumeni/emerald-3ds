@@ -10,8 +10,8 @@
  * tap on them becomes the buttons the PokéNav reads. The PC's boxes are
  * drawn there too, and a tap on them acts in the game directly
  * (pokemon_storage_system.c, CtrStorage_Tap). So is the bag (item_menu.c,
- * CtrBag_Touch): BAG opens the game's own, left of the column; opened from a
- * battle, a shop or the PC it has the whole screen. And the Pokédex
+ * CtrBag_Touch). The bag now exposes snapshots and queued commands to native
+ * canvases on both displays (3ds_bag_ui.h). And the Pokédex
  * (pokedex.c, CtrPokedex_Touch), left of the column.
  *
  * Map, trainer card, save, options and the party roster are drawn here
@@ -83,6 +83,7 @@
 #include "pokemon_summary_screen.h"
 #include "contest_effect.h"
 #include "3ds_summary_ui.h"
+#include "3ds_bag_ui.h"
 #include "pokenav.h"
 #include "region_map.h"
 #include "safari_zone.h"
@@ -2370,6 +2371,7 @@ typedef struct
     u8 dexNative;
     CtrDexList dexList;
     CtrSummaryView summary;
+    CtrBagView bag;
     /* The keyboard focus (X): the column item, or FOCUS_NONE; inside the
      * options, the option; the ring's blink frame. */
     u8 focus, optFocus, blink;
@@ -2378,6 +2380,8 @@ typedef struct
     u16 quickBall, quickBallCount;    /* the ball a quick throw would use, ITEM_NONE if none */
     u8 safariBalls;
     u8 partyBalls[PARTY_SIZE];        /* PARTY_BALL_*, as the game's party indicator */
+    MonView targets[MAX_BATTLERS_COUNT];
+    u8 targetValid;
     struct ChooseMoveStruct moves4;
     u8 text[256];
 } ViewState;
@@ -2616,6 +2620,7 @@ enum
     HIT_SUMMARY_NEXT,
     HIT_SUMMARY_CLOSE,
     HIT_SUMMARY_SWAP,
+    HIT_TARGET_CARD = 0xB0, /* + field position: two opponents, two allies */
     HIT_OPTION = 0xC0,     /* + option row; +HIT_OPTION_BACK for the left arrow */
     HIT_PAGE = 0xE0,       /* + OPTIONS page tab */
 };
@@ -2682,6 +2687,7 @@ typedef struct
 static BattleAsk sAsk, sAsked;
 static u8 sBattleTap = 0xFF;   /* a tap for the controller to take */
 static bool8 sMoveCancel;      /* the move menu's cursor is on CANCEL */
+static bool8 sTargetCancel;    /* target selection's full-width CANCEL */
 static bool8 sQuickBallTap;    /* the ball button was tapped */
 static bool8 sQuickBallFocus;  /* the D-pad is on the ball button (A throws) */
 
@@ -2845,6 +2851,7 @@ void CtrBattleMenu_Begin(void)
 {
     sBattleTap = HIT_NONE;
     sMoveCancel = FALSE;
+    sTargetCancel = FALSE;
     sQuickBallTap = FALSE;
     sQuickBallFocus = FALSE;
 }
@@ -2894,6 +2901,8 @@ static u8 TakeBattleTap(u8 kind)
 {
     u8 tap = sBattleTap;
 
+    if (kind != ASK_TARGET)
+        sTargetCancel = FALSE;
     sBattleTap = HIT_NONE;
     sAsk.kind = kind;
     sAsk.battler = gActiveBattler;
@@ -3025,14 +3034,111 @@ void CtrBattleMenu_MoveInput(u8 *cursor, const u16 *moves)
         gMain.newKeys = (gMain.newKeys & ~A_BUTTON) | B_BUTTON;
 }
 
+static const u8 sTargetPositions[MAX_BATTLERS_COUNT] = {
+    B_POSITION_OPPONENT_LEFT, B_POSITION_OPPONENT_RIGHT,
+    B_POSITION_PLAYER_LEFT, B_POSITION_PLAYER_RIGHT,
+};
+
+/* Match the controller's targeting rules: any present opponent/partner,
+ * with the user available only for a user-or-selected move. */
+static bool8 TargetBattlerAllowed(u8 actor, u8 target)
+{
+    const struct ChooseMoveStruct *moves;
+    u16 move;
+    if (actor >= gBattlersCount || target >= gBattlersCount
+     || (gAbsentBattlerFlags & gBitTable[target]) || !gBattleMons[target].hp)
+        return FALSE;
+    if (target != actor) return TRUE;
+    if (gMoveSelectionCursor[actor] >= MAX_MON_MOVES) return FALSE;
+    moves = (const void *)&gBattleBufferA[actor][4];
+    move = moves->moves[gMoveSelectionCursor[actor]];
+    return move < MOVES_COUNT && (gBattleMoves[move].target & MOVE_TARGET_USER_OR_SELECTED) != 0;
+}
+
+static int TargetCardForBattler(u8 battler)
+{
+    if (battler >= gBattlersCount) return MAX_BATTLERS_COUNT;
+    for (int card = 0; card < MAX_BATTLERS_COUNT; ++card)
+        if (GetBattlerAtPosition(sTargetPositions[card]) == battler)
+            return card;
+    return MAX_BATTLERS_COUNT;
+}
+
+static bool8 TargetCardAllowed(u8 actor, int card)
+{
+    return card >= 0 && card < MAX_BATTLERS_COUNT
+        && TargetBattlerAllowed(actor, GetBattlerAtPosition(sTargetPositions[card]));
+}
+
+static int TargetInRow(u8 actor, int row, int column)
+{
+    int preferred = row * 2 + column;
+    if (TargetCardAllowed(actor, preferred)) return preferred;
+    if (TargetCardAllowed(actor, preferred ^ 1)) return preferred ^ 1;
+    return MAX_BATTLERS_COUNT;
+}
+
+static void SelectNativeBattleTarget(u8 battler)
+{
+    u8 old = gMultiUsePlayerCursor;
+    if (old == battler) return;
+    if (old < gBattlersCount)
+    {
+        EndBounceEffect(old, BOUNCE_HEALTHBOX);
+        if (gBattlerSpriteIds[old] < MAX_SPRITES)
+            gSprites[gBattlerSpriteIds[old]].callback = SpriteCB_HideAsMoveTarget;
+    }
+    gMultiUsePlayerCursor = battler;
+    if (gBattlerSpriteIds[battler] < MAX_SPRITES)
+        gSprites[gBattlerSpriteIds[battler]].callback = SpriteCB_ShowAsMoveTarget;
+}
+
 void CtrBattleMenu_TargetInput(void)
 {
     u8 tap = TakeBattleTap(ASK_TARGET);
+    u16 dpad = gMain.newKeys & DPAD_ANY;
+    int current = sTargetCancel ? MAX_BATTLERS_COUNT : TargetCardForBattler(gMultiUsePlayerCursor);
+    int next = current;
 
-    if (tap == HIT_TARGET_LEFT) gMain.newKeys |= DPAD_LEFT;
-    else if (tap == HIT_TARGET_RIGHT) gMain.newKeys |= DPAD_RIGHT;
-    else if (tap == HIT_TARGET_OK) gMain.newKeys |= A_BUTTON;
-    else if (tap == HIT_CANCEL) gMain.newKeys |= B_BUTTON;
+    gMain.newKeys &= ~DPAD_ANY;
+    if (tap >= HIT_TARGET_CARD && tap < HIT_TARGET_CARD + MAX_BATTLERS_COUNT)
+    {
+        int card = tap - HIT_TARGET_CARD;
+        if (TargetCardAllowed(gActiveBattler, card))
+        {
+            sTargetCancel = FALSE;
+            SelectNativeBattleTarget(GetBattlerAtPosition(sTargetPositions[card]));
+            gMain.newKeys |= A_BUTTON;
+        }
+        return;
+    }
+
+    if (dpad & DPAD_UP)
+    {
+        if (current == MAX_BATTLERS_COUNT)
+        {
+            next = TargetInRow(gActiveBattler, 1, 0);
+            if (next == MAX_BATTLERS_COUNT) next = TargetInRow(gActiveBattler, 0, 0);
+        }
+        else if (current >= 2)
+            next = TargetInRow(gActiveBattler, 0, current & 1);
+    }
+    else if (dpad & DPAD_DOWN)
+        next = current < 2 ? TargetInRow(gActiveBattler, 1, current & 1) : MAX_BATTLERS_COUNT;
+    else if ((dpad & DPAD_LEFT) && current < MAX_BATTLERS_COUNT && (current & 1)
+          && TargetCardAllowed(gActiveBattler, current ^ 1))
+        next = current ^ 1;
+    else if ((dpad & DPAD_RIGHT) && current < MAX_BATTLERS_COUNT && !(current & 1)
+          && TargetCardAllowed(gActiveBattler, current ^ 1))
+        next = current ^ 1;
+    if (next != current)
+    {
+        sTargetCancel = next == MAX_BATTLERS_COUNT;
+        if (!sTargetCancel) SelectNativeBattleTarget(GetBattlerAtPosition(sTargetPositions[next]));
+        PlaySE(SE_SELECT);
+    }
+    if (tap == HIT_CANCEL || (sTargetCancel && (gMain.newKeys & A_BUTTON)))
+        gMain.newKeys = (gMain.newKeys & ~A_BUTTON) | B_BUTTON;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -3228,7 +3334,30 @@ static void SnapshotBattle(ViewState *s)
     s->safari = (gBattleTypeFlags & BATTLE_TYPE_SAFARI) != 0;
     if (s->mode == MODE_BATTLE_INFO)
         return;
-    s->blink = (sFrames >> 4) & 1;
+    s->blink = s->mode == MODE_BATTLE_TARGET ? 0 : (sFrames >> 4) & 1;
+}
+
+static void SnapshotBattleTargets(ViewState *s)
+{
+    for (int card = 0; card < MAX_BATTLERS_COUNT; ++card)
+    {
+        u8 battler = GetBattlerAtPosition(sTargetPositions[card]);
+        MonView *view = &s->targets[card];
+        const struct BattlePokemon *mon;
+        if (battler >= gBattlersCount || (gAbsentBattlerFlags & gBitTable[battler]))
+            continue;
+        mon = &gBattleMons[battler];
+        if (mon->species == SPECIES_NONE || !mon->hp) continue;
+        view->species = mon->species;
+        view->iconSpecies = GetIconSpecies(mon->species, mon->personality);
+        view->deoxys = mon->species == SPECIES_DEOXYS;
+        view->gender = GetGenderFromSpeciesAndPersonality(mon->species, mon->personality);
+        CopyText(view->nick, sizeof(view->nick), mon->nickname);
+        if (TargetBattlerAllowed(s->battler, battler))
+            s->targetValid |= 1u << card;
+    }
+    if (s->mode == MODE_BATTLE_TARGET)
+        s->cursor = sTargetCancel ? MAX_BATTLERS_COUNT : TargetCardForBattler(gMultiUsePlayerCursor);
 }
 
 /* The six party balls: the mons in party order, then the empty places (an
@@ -3314,12 +3443,9 @@ static void Snapshot(ViewState *s, u8 mode, u8 pressed)
     }
     else if (mode == MODE_BAG_MENU)
     {
-        s->screen = SCR_BAG;
-        /* The bag from the field is left of the column; from anything else
-         * it covers the column. */
-        s->bagView = gBagPosition.location == ITEMMENULOCATION_FIELD ? BAG_VIEW_SECTION : BAG_VIEW_WHOLE;
-        if (s->bagView == BAG_VIEW_WHOLE)
-            s->screen = SCR_COUNT;
+        s->screen = SCR_COUNT;
+        s->bagView = BAG_VIEW_WHOLE;
+        CtrBag_ReadView(&s->bag);
     }
     else if (mode == MODE_POKENAV)
         s->screen = SCR_POKENAV;
@@ -3349,8 +3475,12 @@ static void Snapshot(ViewState *s, u8 mode, u8 pressed)
 
     switch (s->mode)
     {
-    case MODE_FIELD:
     case MODE_PARTY_MENU:
+        /* Battle, contest and facility menus use SCR_COUNT to cover the
+         * column. Their roster still needs the same live party snapshot. */
+        SnapshotParty(s);
+        break;
+    case MODE_FIELD:
     case MODE_BAG_MENU:
         switch (s->screen)
         {
@@ -3431,6 +3561,7 @@ static void Snapshot(ViewState *s, u8 mode, u8 pressed)
         s->battler = b;
         s->cursor = sMoveCancel ? MAX_MON_MOVES : gMoveSelectionCursor[b];
         memcpy(&s->moves4, &gBattleBufferA[b][4], sizeof(s->moves4));
+        SnapshotBattleTargets(s);
         break;
     }
     case MODE_BATTLE_INFO:
@@ -3475,6 +3606,14 @@ static bool8 Prefetch(const ViewState *s)
             return TRUE;
         }
     }
+    if (s->mode == MODE_BAG_MENU)
+        for (int i = 0; i < CTR_BAG_ROWS && sIconBudget; ++i)
+            if (s->bag.items[i] != ITEM_NONE)
+                ItemIcon(s->bag.items[i]);
+    if (s->mode == MODE_BATTLE_MOVE || s->mode == MODE_BATTLE_TARGET)
+        for (int i = 0; i < MAX_BATTLERS_COUNT && sIconBudget; ++i)
+            if (s->targets[i].species != SPECIES_NONE)
+                MonIcon(s->targets[i].iconSpecies, s->targets[i].deoxys);
     for (int i = 0; i < PARTY_SIZE && sIconBudget; ++i)
         if (s->party[i].species)
         {
@@ -6083,6 +6222,265 @@ const uint16_t *CtrSummary_ProfileCanvas(uint32_t *version)
     return canvas;
 }
 
+/* Native Emerald bag chrome. Only the backpack and item pictures are live
+ * game sprites; every frame, category symbol and selection is geometry. */
+static void BagDisk(int x, int y, int radius, u16 colour)
+{
+    for (int dy = -radius; dy <= radius; ++dy)
+        for (int dx = -radius; dx <= radius; ++dx)
+            if (dx * dx + dy * dy <= radius * radius)
+                Put(x + dx, y + dy, colour);
+}
+
+static const u8 *BagPocketLabel(unsigned pocket)
+{
+    switch (pocket)
+    {
+    case 1: return Ascii(CTR_TEXT("POKÉ BALLS", "POKÉ BALLS", "POKÉ BALLS", "POKÉ BALL"));
+    case 2: return Ascii(CTR_TEXT("TMs & HMs", "MT & MO", "CT & CS", "MT & MN"));
+    case 3: return Ascii(CTR_TEXT("BERRIES", "BAYAS", "BAIES", "BACCHE"));
+    case 4: return Ascii(CTR_TEXT("KEY ITEMS", "OBJETOS CLAVE", "OBJETS RARES", "STRUMENTI CHIAVE"));
+    default: return Ascii(CTR_TEXT("ITEMS", "OBJETOS", "OBJETS", "STRUMENTI"));
+    }
+}
+
+static void DrawBagStripes(int width)
+{
+    for (int y = 0; y < H; ++y)
+        FillRect(0, y, width, 1, y % 4 < 2 ? PackRgb(0, 209, 104) : PackRgb(0, 176, 78));
+}
+
+static void DrawBagCategoryIcon(int pocket, int x, int y)
+{
+    u16 blue = PackRgb(0, 78, 243), light = PackRgb(243, 255, 251);
+    if (pocket == 0)
+    {
+        BagDisk(x, y + 5, 8, blue);
+        FillRect(x - 5, y - 3, 10, 9, blue);
+        FillRect(x - 5, y - 8, 10, 3, blue);
+        FillRect(x - 7, y - 11, 14, 4, blue);
+        FillRect(x - 4, y - 5, 8, 1, light);
+    }
+    else if (pocket == 1)
+    {
+        BagDisk(x, y, 11, blue);
+        FillRect(x - 11, y, 23, 1, light);
+        BagDisk(x, y, 4, light);
+        BagDisk(x, y, 3, blue);
+    }
+    else if (pocket == 2)
+    {
+        BagDisk(x, y, 11, blue);
+        BagDisk(x, y, 10, PackRgb(219, 245, 255));
+        for (int row = -8; row <= 8; ++row)
+            FillRect(x + row / 2 - 2, y + row, 4, 1, PackRgb(131, 205, 255));
+        BagDisk(x, y, 4, blue);
+        BagDisk(x, y, 2, light);
+    }
+    else if (pocket == 3)
+    {
+        /* Blue berry with a curved stalk, following the supplied symbol. */
+        BagDisk(x - 2, y + 5, 8, blue);
+        for (int dy = -9; dy <= 0; ++dy)
+            for (int dx = -4; dx <= 9; ++dx)
+            {
+                int distance = (dx - 3) * (dx - 3) + (dy + 1) * (dy + 1);
+                if (distance >= 25 && distance <= 64 && dy < -1)
+                    Put(x + dx, y + dy, blue);
+            }
+        FillRect(x - 4, y - 4, 3, 7, blue);
+        FillRect(x - 5, y + 1, 3, 1, light);
+        FillRect(x - 4, y, 1, 3, light);
+    }
+    else
+    {
+        BagDisk(x - 5, y + 6, 6, blue);
+        BagDisk(x - 5, y + 6, 2, light);
+        for (int i = 0; i < 14; ++i)
+            FillRect(x - 3 + i, y + 1 - i, 4, 4, blue);
+        FillRect(x + 5, y - 9, 8, 3, blue);
+        FillRect(x + 3, y - 5, 7, 3, blue);
+    }
+}
+
+static void BagButton(const ViewState *s, int x, int y, int w, int h, const u8 *label, u8 hit, bool8 selected)
+{
+    DrawMenuBezel(x, y, w, h, selected, FALSE);
+    DrawStrIn(&sSmall, label, x + 3, x + w - 3, y + 2, y + h - 2,
+              selected ? TXT_WHITE : TXT_DARK, selected ? PackRgb(0, 91, 65) : TXT_LIGHT);
+    if (s->pressed == hit) ShadeRect(x + 3, y + 3, w - 6, h - 6);
+    AddHit(x, y, w, h, hit);
+}
+
+static void DrawBagDialog(const ViewState *s)
+{
+    const CtrBagView *bag = &s->bag;
+    u8 message[384];
+    if (bag->mode < CTR_BAG_CONTEXT || bag->mode == CTR_BAG_BUSY) return;
+    ShadeRect(0, 0, W, H);
+    DrawSummaryPanel(24, 76, 272, 138, 0);
+    if (bag->mode == CTR_BAG_CONTEXT)
+    {
+        DrawStrIn(&sNormal, Ascii(CTR_TEXT("CHOOSE AN ACTION", "ELIGE UNA OPCIÓN", "CHOISIR UNE ACTION", "SCEGLI UN'AZIONE")), 30, 290, 81, 99, TXT_DARK, TXT_LIGHT);
+        for (int i = 0; i < bag->actionCount; ++i)
+        {
+            if (!bag->actionValid[i]) continue;
+            bool8 grid = bag->actionCount > 2;
+            int x = grid ? 34 + (i & 1) * 128 : 44;
+            int y = 104 + (grid ? i / 2 : i) * 34;
+            BagButton(s, x, y, grid ? 122 : 232, 29, bag->actions[i], HIT_ACTION + i, i == bag->cursor);
+        }
+    }
+    else
+    {
+        CopyPartyMessageLine(message, sizeof(message), bag->message);
+        DrawSummaryProfileText(&sSmall, message, 35, 86, 285, bag->mode == CTR_BAG_QUANTITY ? 123 : 165);
+        if (bag->mode == CTR_BAG_QUANTITY)
+        {
+            BagButton(s, 47, 129, 45, 30, Ascii("-"), HIT_TARGET_LEFT, FALSE);
+            DrawStrIn(&sNormal, Number(bag->quantity, 3, STR_CONV_MODE_LEFT_ALIGN), 99, 221, 130, 159, TXT_BLUE, TXT_LIGHT);
+            BagButton(s, 228, 129, 45, 30, Ascii("+"), HIT_TARGET_RIGHT, FALSE);
+        }
+        if (bag->mode == CTR_BAG_YESNO)
+        {
+            BagButton(s, 44, 174, 110, 29, gText_Yes, HIT_ACTION, bag->cursor == 0);
+            BagButton(s, 166, 174, 110, 29, gText_No, HIT_ACTION + 1, bag->cursor == 1);
+        }
+        else
+        {
+            BagButton(s, 44, 174, 110, 29, Ascii("A: OK"), HIT_OK, TRUE);
+            BagButton(s, 166, 174, 110, 29, Ascii(CTR_TEXT("B: BACK", "B: ATRÁS", "B: RETOUR", "B: INDIETRO")), HIT_CANCEL, FALSE);
+        }
+    }
+}
+
+static void DrawNativeBag(const ViewState *s)
+{
+    const CtrBagView *bag = &s->bag;
+    static const Rgb colours[] = {{66, 172, 219}, {238, 172, 30}, {145, 220, 57}, {31, 191, 122}, {158, 72, 220}};
+    bool8 list = bag->mode == CTR_BAG_LIST || bag->mode == CTR_BAG_SWAP;
+    u16 edge = PackRgb(0, 60, 54), white = PackRgb(255, 255, 249);
+    DrawBagStripes(W);
+    DrawSummaryPanel(7, 6, 306, 49, 0);
+    for (int pocket = 0; pocket < 5; ++pocket)
+    {
+        int x = 17 + pocket * 59;
+        Rgb tint = colours[pocket];
+        PartyCardShape(x, 12, 40, 36, PackRgb(tint.r, tint.g, tint.b));
+        PartyGradient(x + 2, 14, 36, 32, (Rgb){250, 255, 249}, (Rgb){213, 240, 227});
+        FillRect(x + 2, 31, 36, 15, PackRgb(202, 226, 207));
+        DrawBagCategoryIcon(pocket, x + 20, 30);
+        if (pocket == bag->pocket)
+        {
+            Hit button = {x - 2, 10, 44, 40, 0};
+            DrawMenuSelection(&button);
+        }
+        if (list && !bag->locked) AddHit(x - 2, 10, 44, 40, HIT_PAGE + pocket);
+    }
+    DrawStr(&sSmall, BagPocketLabel(bag->pocket), 12, 55, PackRgb(251, 255, 240), PackRgb(0, 84, 57));
+    DrawMenuBezel(7, 69, 306, 153, TRUE, FALSE);
+    for (int row = 0; row < CTR_BAG_ROWS; ++row)
+    {
+        u16 item = bag->items[row];
+        int x = 12 + (row & 1) * 151, y = 74 + row / 2 * 48;
+        if (!item) continue;
+        bool8 selected = bag->selected == bag->first + row;
+        PartyCardShape(x, y, 145, 43, selected ? PackRgb(255, 50, 31) : edge);
+        PartyCardShape(x + 1, y + 1, 143, 41, selected ? white : edge);
+        PartyCardShape(x + 2, y + 2, 141, 39, PackRgb(245, 246, 238));
+        FillRect(x + 3, y + 25, 139, 14, PackRgb(207, 215, 190));
+        if (selected)
+        {
+            PartyBevel(x + 2, y + 2, 141, 39, white, white);
+            PartyBevel(x + 3, y + 3, 139, 37, PackRgb(255, 57, 36), PackRgb(255, 57, 36));
+        }
+        DrawItemIcon(item, x + 4, y + 9);
+        int clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+        sClipX0 = x + 33; sClipX1 = x + 139; sClipY0 = y + 3; sClipY1 = y + 25;
+        DrawStr(&sSmall, bag->names[row], x + 34, y + 6, PackRgb(9, 40, 48), TXT_LIGHT);
+        RestoreClip(clip);
+        if (bag->pocket != KEYITEMS_POCKET)
+        {
+            u8 quantity[16] = {CHAR_MULT_SIGN};
+            StringCopy(quantity + 1, Number(bag->quantities[row], 3, STR_CONV_MODE_LEFT_ALIGN));
+            DrawStrRight(&sSmall, quantity, x + 136, y + 26, PackRgb(9, 40, 48), TXT_LIGHT);
+        }
+        if (bag->registered == item) DrawStr(&sSmall, Ascii("Y"), x + 36, y + 26, TXT_BLUE, TXT_LIGHT);
+        if (list) AddHit(x, y, 145, 43, HIT_ROW + row);
+    }
+    if (!bag->count)
+        DrawStrIn(&sNormal, Ascii(CTR_TEXT("This pocket is empty.", "Este bolsillo está vacío.", "Cette poche est vide.", "Questa tasca è vuota.")), 17, 303, 116, 167, TXT_WHITE, PackRgb(0, 95, 62));
+    if (list)
+    {
+        char page[32];
+        snprintf(page, sizeof(page), "%u/%u", bag->count ? bag->first / CTR_BAG_ROWS + 1 : 1,
+                 bag->count ? (bag->count + CTR_BAG_ROWS - 1) / CTR_BAG_ROWS : 1);
+        DrawStr(&sSmall, Ascii(page), 14, 225, white, edge);
+        BagButton(s, 189, 225, 31, 14, Ascii("<"), HIT_OPT_SCROLL_UP, FALSE);
+        BagButton(s, 224, 225, 31, 14, Ascii(">"), HIT_OPT_SCROLL_DOWN, FALSE);
+    }
+    if (bag->mode != CTR_BAG_BUSY)
+        BagButton(s, 270, 225, 42, 14, Ascii("B"), HIT_CANCEL, FALSE);
+    DrawBagDialog(s);
+}
+
+static void DrawBagTop(const CtrBagTop *bag)
+{
+    u8 description[384];
+    DrawBagStripes(400);
+    PartyCardShape(12, 4, 159, 24, PackRgb(0, 69, 56));
+    FillRect(21, 24, 366, 4, PackRgb(0, 69, 56));
+    BagDisk(30, 15, 9, PackRgb(101, 218, 151));
+    FillRect(21, 14, 19, 2, PackRgb(0, 85, 65));
+    BagDisk(30, 15, 4, PackRgb(0, 85, 65));
+    BagDisk(30, 15, 2, PackRgb(101, 218, 151));
+    DrawStr(&sNormal, Ascii(CTR_TEXT("BAG", "MOCHILA", "SAC", "BORSA")), 50, 7, PackRgb(238, 255, 248), PackRgb(0, 115, 98));
+    DrawStrRight(&sSmall, BagPocketLabel(bag->pocket), 383, 9, PackRgb(238, 255, 248), PackRgb(0, 115, 98));
+    DrawSummaryPanel(12, 32, 376, 135, 0);
+    for (int row = 0; row < 14; ++row)
+    {
+        int half = 51 - abs(row - 7) * 3;
+        FillRect(200 - half, 145 + row, half * 2, 1, PackRgb(118, 213, 163));
+    }
+    if (bag->ready)
+        for (int dy = -64; dy < 64; ++dy)
+            for (int dx = -64; dx < 64; ++dx)
+            {
+                int sx = 32 + ((bag->pa * dx + bag->pb * dy) >> 9);
+                int sy = 32 + ((bag->pc * dx + bag->pd * dy) >> 9);
+                if (sx < 0 || sx >= 64 || sy < 0 || sy >= 64) continue;
+                unsigned offset = ((sy / 8) * 8 + sx / 8) * 32 + (sy & 7) * 4 + (sx & 7) / 2;
+                unsigned colour = (bag->tiles[offset] >> ((sx & 1) * 4)) & 15;
+                if (colour) Put(200 + dx + bag->x * 2, 99 + dy + bag->y * 2, Rgb565(bag->palette[colour]));
+            }
+    DrawSummaryPanel(12, 173, 376, 62, 0);
+    CopyPartyMessageLine(description, sizeof(description), bag->description);
+    DrawSummaryProfileText(&sNormal, description, 23, 181, 377, 230);
+}
+
+const uint16_t *CtrBag_TopCanvas(uint32_t *version)
+{
+    static u16 canvas[400 * H];
+    static CtrBagTop previous, current;
+    static u32 revision;
+    static bool8 painted;
+    CtrBag_ReadTop(&current);
+    if (!painted || memcmp(&previous, &current, sizeof(current)))
+    {
+        u16 *destination = sDst;
+        int offset = sOX, clip[4] = {sClipX0, sClipY0, sClipX1, sClipY1};
+        sDst = canvas; sOX = 0;
+        sClipX0 = sClipY0 = 0; sClipX1 = 400; sClipY1 = H;
+        ResolveFonts();
+        DrawBagTop(&current);
+        sDst = destination; sOX = offset; RestoreClip(clip);
+        previous = current; painted = TRUE;
+        ++revision;
+    }
+    *version = revision;
+    return canvas;
+}
+
 static u8 PlateState(const ViewState *s, u8 hit, bool8 focused)
 {
     if ((s->pressed == hit || (hit == HIT_QUICK_BALL
@@ -6743,26 +7141,105 @@ static void DrawBattleMoves(const ViewState *s)
                HIT_CANCEL, CancelBody, s, 0);
 }
 
-/* Left and right move the game's target cursor; OK is what A does. */
+static void DrawTargetBackground(void)
+{
+    for (int y = 0; y < H; ++y)
+    {
+        FillRect(0, y, W, 1, y < 14 ? PackRgb(168, 172, 151) : PackRgb(204, 249, 238));
+        if (y >= 14)
+        {
+            int diagonal = 205 - y / 3;
+            FillRect(diagonal, y, 37, 1, PackRgb(246, 222, 248));
+            if (y > 65 && y < 166)
+                FillRect(147, y, 28, 1, PackRgb(248, 224, 181));
+        }
+    }
+    BagDisk(160, 115, 43, PackRgb(170, 219, 199));
+    BagDisk(160, 115, 35, PackRgb(207, 249, 235));
+    FillRect(117, 112, 87, 7, PackRgb(170, 219, 199));
+    BagDisk(160, 115, 15, PackRgb(170, 219, 199));
+    BagDisk(160, 115, 9, PackRgb(207, 249, 235));
+}
+
+/* Layered black/purple rims, a pale upper glint and straight inset sides.
+ * All dimensions stay on the native framebuffer's pixel grid. */
+static void DrawTargetPanel(int x, int y, int w, int h, Rgb face, Rgb glint, Rgb side)
+{
+    PartyCardShape(x + 1, y + 2, w, h, PackRgb(134, 127, 156));
+    PartyCardShape(x, y, w, h, PackRgb(16, 17, 18));
+    PartyCardShape(x + 1, y + 1, w - 2, h - 2, PackRgb(52, 43, 65));
+    PartyCardShape(x + 2, y + 2, w - 4, h - 4, PackRgb(174, 156, 192));
+    PartyCardShape(x + 3, y + 3, w - 6, h - 6, PackRgb(25, 23, 25));
+    FillRect(x + 4, y + 5, w - 8, h - 10, PackRgb(side.r, side.g, side.b));
+    FillRect(x + 9, y + 8, w - 18, h - 17, PackRgb(face.r, face.g, face.b));
+    FillRect(x + 5, y + 4, w - 10, 2, PackRgb(glint.r, glint.g, glint.b));
+    FillRect(x + 4, y + 6, w - 8, 1,
+             PackRgb((glint.r + face.r) / 2, (glint.g + face.g) / 2, (glint.b + face.b) / 2));
+    FillRect(x + 5, y + h - 5, w - 10, 1, PackRgb(side.r * 3 / 4, side.g * 3 / 4, side.b * 3 / 4));
+    FillRect(x + 8, y + 8, 1, h - 17,
+             PackRgb((side.r + face.r) / 2, (side.g + face.g) / 2, (side.b + face.b) / 2));
+}
+
+static void DrawTargetBrackets(int x, int y, int w, int h)
+{
+    for (int corner = 0; corner < 4; ++corner)
+    {
+        int dx = corner & 1 ? -1 : 1, dy = corner & 2 ? -1 : 1;
+        int cx = corner & 1 ? x + w : x - 1, cy = corner & 2 ? y + h : y - 1;
+        for (int length = 0; length < 10; ++length)
+            for (int thick = 0; thick < 4; ++thick)
+            {
+                u16 colour = thick == 0 || thick == 3 || length == 9
+                           ? PackRgb(255, 255, 250) : PackRgb(227, 0, 0);
+                Put(cx + length * dx, cy + thick * dy, colour);
+                Put(cx + thick * dx, cy + length * dy, colour);
+            }
+    }
+}
+
 static void DrawBattleTarget(const ViewState *s)
 {
-    static const u8 left[] = {CHAR_LEFT_ARROW, EOS}, right[] = {CHAR_RIGHT_ARROW, EOS}, ok[] = {CHAR_O, CHAR_K, EOS};
-    const struct { s16 x, y; Rgb hue; const u8 *label; u8 hit; } plates[4] = {
-        {6, ACT_Y, sHueRun, left, HIT_TARGET_LEFT},
-        {164, ACT_Y, sHueRun, right, HIT_TARGET_RIGHT},
-        {6, ROW_Y, sHueFight, ok, HIT_TARGET_OK},
-        {164, ROW_Y, sHueCancel, gText_Cancel2, HIT_CANCEL},
-    };
-
-    for (int i = 0; i < 4; ++i)
+    DrawTargetBackground();
+    for (int card = 0; card < MAX_BATTLERS_COUNT; ++card)
     {
-        Rgb dark = PLATE_DARK(plates[i].hue), shadow = PLATE_SHADOW(plates[i].hue);
-        int oy = DrawBattlePlate(BTA_TARGET, plates[i].x, plates[i].y, MOVE_W, ROW_H, plates[i].hue,
-                                 PlateState(s, plates[i].hit, plates[i].hit == HIT_TARGET_OK), s->blink, plates[i].hit);
+        const MonView *mon = &s->targets[card];
+        int x = 7 + (card & 1) * 158, y = card < 2 ? 7 : 105;
+        int w = 148, h = card < 2 ? 86 : 80;
+        bool8 enabled = (s->targetValid & (1u << card)) != 0;
+        Rgb face = !enabled ? (Rgb){94, 93, 103} : card < 2 ? (Rgb){237, 86, 39} : (Rgb){176, 176, 196};
+        Rgb glint = !enabled ? (Rgb){167, 165, 177} : card < 2 ? (Rgb){255, 202, 174} : (Rgb){232, 231, 243};
+        Rgb side = !enabled ? (Rgb){64, 62, 73} : card < 2 ? (Rgb){137, 82, 58} : (Rgb){109, 105, 133};
 
-        DrawSmoothStr(&sNormal, plates[i].label, plates[i].x + 85 - SmoothInkWidth(&sNormal, plates[i].label, 8) / 2,
-                      oy + 22, 8, sCream, dark, &shadow);
+        DrawTargetPanel(x, y, w, h, face, glint, side);
+        if (enabled)
+        {
+            bool8 gender = mon->gender == MON_MALE || mon->gender == MON_FEMALE;
+            const Font *font = StrWidth(&sNormal, mon->nick) <= 114 ? &sNormal : &sSmall;
+            int nameWidth = StrWidth(font, mon->nick), total = nameWidth + (gender ? 10 : 0);
+            int left = x + (w - total) / 2;
+            u16 shadow = PackRgb(39, 31, 40);
+            DrawStr(font, mon->nick, left, y + 15, PackRgb(255, 255, 249), shadow);
+            if (gender)
+                DrawStr(&sNormal, mon->gender == MON_MALE ? gText_MaleSymbol : gText_FemaleSymbol,
+                        left + nameWidth + 1, y + 15,
+                        mon->gender == MON_MALE ? PackRgb(39, 141, 239) : PackRgb(242, 102, 156), shadow);
+            const u8 *icon = MonIcon(mon->iconSpecies, mon->deoxys);
+            u8 palette = gMonIconPaletteIndices[mon->iconSpecies];
+            if (icon && palette < 3)
+                DrawSprite(icon, 4, 4, x + (w - 32) / 2, y + 40, sRes.monIconPal[palette].c);
+            if (s->pressed == HIT_TARGET_CARD + card)
+                ShadeRect(x + 5, y + 7, w - 10, h - 14);
+            if (s->cursor == card)
+                DrawTargetBrackets(x, y, w, h);
+            AddHit(x, y, w, h, HIT_TARGET_CARD + card);
+        }
     }
+    DrawTargetPanel(9, 201, 302, 34, (Rgb){40, 149, 201}, (Rgb){159, 233, 252}, (Rgb){26, 87, 118});
+    DrawStrIn(&sNormal, Ascii(CTR_TEXT("CANCEL", "CANCELAR", "ANNULER", "ANNULLA")),
+              17, 303, 207, 230, PackRgb(255, 255, 249), PackRgb(29, 39, 62));
+    if (s->pressed == HIT_CANCEL) ShadeRect(13, 207, 294, 22);
+    if (s->cursor == MAX_BATTLERS_COUNT) DrawTargetBrackets(9, 201, 302, 34);
+    AddHit(9, 201, 302, 34, HIT_CANCEL);
 }
 
 /*
@@ -7466,6 +7943,10 @@ static void Render(const ViewState *s)
     {
         DrawDualSummary(s);
     }
+    else if (s->mode == MODE_BAG_MENU && s->bag.ready)
+    {
+        DrawNativeBag(s);
+    }
     else if (FullSaveShown(s))
     {
         DrawFullSave(s);
@@ -7649,7 +8130,7 @@ static u8 BattleCursorHit(const ViewState *s, u8 cursor)
         return cursor == 4 ? HIT_QUICK_BALL : HIT_ACTION + cursor;
     if (s->mode == MODE_BATTLE_MOVE)
         return cursor == MAX_MON_MOVES ? HIT_CANCEL : HIT_MOVE + cursor;
-    return HIT_TARGET_OK;
+    return cursor < MAX_BATTLERS_COUNT ? HIT_TARGET_CARD + cursor : HIT_CANCEL;
 }
 
 /*
@@ -7693,6 +8174,10 @@ static bool8 DirtyRect(const ViewState *now, const ViewState *shown, Rect *r)
     static ViewState probe;
     bool8 battle = now->mode >= MODE_BATTLE_INFO;
 
+    /* Target cards have native bevels and corner brackets outside their
+     * bounds; the old battle-art plate rectangles do not cover them. */
+    if (now->mode == MODE_BATTLE_TARGET || shown->mode == MODE_BATTLE_TARGET)
+        return FALSE;
     if (MainMenuShown(now) || MainMenuShown(shown) || FullSaveShown(now) || FullSaveShown(shown))
         return FALSE;
 
@@ -8551,6 +9036,19 @@ static void Activate(u8 id, u8 mode)
     if (id == HIT_NONE)
         return;
     CtrLog_Write(CTR_LOG_INPUT, "bottom screen: tap %02x (mode %u screen %u)", id, mode, sShown.screen);
+    if (mode == MODE_BAG_MENU && CtrBag_DualShown())
+    {
+        if (id >= HIT_PAGE && id < HIT_PAGE + 5) CtrBag_Command(CTR_BAG_POCKET, id - HIT_PAGE);
+        else if (id >= HIT_ROW && id < HIT_ROW + CTR_BAG_ROWS) CtrBag_Command(CTR_BAG_SELECT, sShown.bag.first + id - HIT_ROW);
+        else if (id >= HIT_ACTION && id < HIT_ACTION + 6) CtrBag_Command(CTR_BAG_ACTION, id - HIT_ACTION);
+        else if (id == HIT_OPT_SCROLL_UP) CtrBag_Command(CTR_BAG_PAGE, -1);
+        else if (id == HIT_OPT_SCROLL_DOWN) CtrBag_Command(CTR_BAG_PAGE, 1);
+        else if (id == HIT_TARGET_LEFT) CtrBag_Command(CTR_BAG_ADJUST, -1);
+        else if (id == HIT_TARGET_RIGHT) CtrBag_Command(CTR_BAG_ADJUST, 1);
+        else if (id == HIT_OK) CtrBag_Command(CTR_BAG_CONFIRM, 0);
+        else if (id == HIT_CANCEL) CtrBag_Command(CTR_BAG_BACK, 0);
+        return;
+    }
     if (mode == MODE_SUMMARY)
     {
         if (id >= HIT_SUMMARY_TAB && id < HIT_SUMMARY_TAB + 3)
@@ -8842,8 +9340,8 @@ static u8 ProcessTouch(u8 mode)
     }
     /* The game's bag: its picture in the middle of its area, the touch in
      * pixels of it, as it goes. */
-    if ((in->touchDown && BagShown(mode) && (sShown.bagView == BAG_VIEW_WHOLE || in->touchX < CW))
-     || (sTouch.bag && sTouch.active && BagShown(mode)))
+    if (!CtrBag_DualShown() && ((in->touchDown && BagShown(mode) && (sShown.bagView == BAG_VIEW_WHOLE || in->touchX < CW))
+     || (sTouch.bag && sTouch.active && BagShown(mode))))
     {
         int ox = sShown.bagView == BAG_VIEW_WHOLE ? (W - 240) / 2 : 0, oy = (H - 160) / 2;
 
@@ -8945,6 +9443,13 @@ static u8 ProcessTouch(u8 mode)
                 PressOnce(A_BUTTON);
             return HIT_NONE;
         }
+        if (mode == MODE_BAG_MENU && sShown.bag.ready && sTouch.dragged
+         && sTouch.startY >= 70 && sTouch.startY < 220 && sShown.bag.mode <= CTR_BAG_SWAP)
+        {
+            int dy = sTouch.lastY - sTouch.startY;
+            if (dy > 20 || dy < -20) CtrBag_Command(CTR_BAG_PAGE, dy < 0 ? 1 : -1);
+            return HIT_NONE;
+        }
         if ((!sTouch.dragged || sTouch.pressed == HIT_MAP) && HitTest(sTouch.lastX, sTouch.lastY) == sTouch.pressed)
             Activate(sTouch.pressed, mode);
         return HIT_NONE;
@@ -8989,7 +9494,7 @@ static bool8 ColumnShown(u8 mode)
     case MODE_PARTY_MENU:
         return gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD;
     case MODE_BAG_MENU:
-        return gBagPosition.location == ITEMMENULOCATION_FIELD;
+        return FALSE;
     }
     return FALSE;
 }
@@ -9586,7 +10091,7 @@ void CtrBottom_Frame(void)
 
     /* The hidden menus: the top screen keeps the world meanwhile. */
     hold = UpdateSession(mode, sPlan.kind != PLAN_NONE);
-    if (mode == MODE_SUMMARY)
+    if (mode == MODE_SUMMARY || mode == MODE_BAG_MENU)
         hold = FALSE;
     if (hold != held)
     {
