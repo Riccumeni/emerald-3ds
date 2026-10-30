@@ -1,11 +1,11 @@
-# Punto di ripresa — 2026-10-30T10:45:43
+# Punto di ripresa — 2026-10-30T11:19:37
 
-Stato: esecuzione in corso. Completati **306/386 Pokemon** e **6/354 mosse**, con dossier verificati.
+Stato: richiesta checkpoint 30–39 conclusa; piano generale da proseguire. Completati **314/386 Pokemon** e **6/354 mosse**, con dossier verificati.
 
 - Piano e registri: `docs/BW2_ANIMATION_PLAN.md`, `docs/bw2-plan/stato.json` e le due checklist.
 - Dossier permanenti: `artifacts/bw2-validation/`; i dati grandi restano locali e ignorati da Git.
-- Unita' in corso: `null`. Ultima chiusa: `{"tipo": "pokemon", "id": 151, "nome": "Mew"}`.
-- Prossima unita' da affrontare: `{"tipo": "pokemon", "id": 152, "nome": "Chikorita", "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"}`.
+- Unita' in corso: `null`. Ultima chiusa: `{"tipo": "pokemon", "id": 159, "nome": "Croconaw"}`.
+- Prossima unita' da affrontare: `{"tipo": "pokemon", "id": 160, "nome": "Feraligatr", "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"}`.
 - Tutti i dossier pilota sono chiusi; continuare dalla prossima unita' indicata sopra.
 - Inventario `docs/bw2-plan/INVENTORY.json`: 772 viste base senza incompatibilita' di formato rilevate; solo 53/354 script accettati dal decoder attuale. Non significa che siano gia' importati/verificati. Forme ancora da censire.
 - `3ds_port/scripts/emu/run_bw2_validation.ps1`: avvia solo l'emulatore isolato; `bw2_capture.py` registra fotogrammi nativi via RPC, a 1x, in MP4/H.264 con timestamp reali e verifica la decodifica.
@@ -21,4 +21,4 @@ Stato: esecuzione in corso. Completati **306/386 Pokemon** e **6/354 mosse**, co
 
 Prima della nuova unita' controllare contesto/budget; salvare processi e sessioni attivi in questo checkpoint se serve interrompere. Non segnare mai completo un dossier parziale.
 
-Nota persistente: Richiesta: checkpoint 30–39, 9/10 conclusi; partenza 234 Pokémon, obiettivo 314; mosse 6/354. Registro AUTONOMOUS30_39.json; helper build/bw2-auto30.py, catture build/bw2-auto30-capture.ps1. Gruppo38 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 39. Build e processi in AUTONOMOUS30_39.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap.
+Nota persistente: Richiesta conclusa: 10/10 checkpoint 30–39, 80 nuove specie; 314/386 Pokémon e 6/354 mosse. Nessuna unità in corso. Audit indipendente AUTONOMOUS30_39_AUDIT.json: 320 dossier; 978 asset precedenti, 345 file locali preesistenti e 129660 file sorgente BW2 invariati; ROM preservata. Bridge e criterio v5/v5.1 invariati, inventario forme Castform/Deoxys e macchie Spinda preservati. Build normale e di prova distinte, con binari/ELF/ID e SHA archiviati nel registro e nei dossier. Emulatore isolato chiuso dopo uscita effettiva; nessuna cattura attiva. Azahar personale preservato. Dieci commit dedicati, nessun push. Prossima unità: Feraligatr, nazionale/Emerald 160. Prove Azahar 1×; audio/DSP, console reale, stereo, doppi, link reale e interazioni speciali restano nella fase d’integrazione. Suite generale bottom-map con problemi preesistenti, non dichiarata superata. Riepilogo e prove: AUTONOMOUS30_39_REVIEW.md.

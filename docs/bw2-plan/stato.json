@@ -1,6 +1,6 @@
 {
   "versione": 1,
-  "aggiornato_il": "2026-10-30T10:45:43",
+  "aggiornato_il": "2026-10-30T11:19:37",
   "ambito": "386 specie di Emerald, forme del motore e 354 mosse; presentazione BW2 adattata",
   "fonte_inventario": [
     "build/upstream/include/constants/species.h",
@@ -10,7 +10,7 @@
   "contatori": {
     "pokemon_totali": 386,
     "pokemon_prototipo": 2,
-    "pokemon_fatti": 306,
+    "pokemon_fatti": 314,
     "mosse_totali": 354,
     "mosse_prototipo": 4,
     "mosse_fatte": 6
@@ -19,8 +19,8 @@
   "unita_in_corso": null,
   "prossima_unita": {
     "tipo": "pokemon",
-    "id": 152,
-    "nome": "Chikorita",
+    "id": 160,
+    "nome": "Feraligatr",
     "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
   },
   "ultima_build_normale": {
@@ -10765,28 +10765,34 @@
       "costante": "SPECIES_CHIKORITA",
       "nome": "Chikorita",
       "ordine": 307,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0152_chikorita",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0152_chikorita/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0152_chikorita/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "68ec7b4ce2a7ef08bed3e85aed8656998448960294f075730d1454e7cea680cb",
+          "video_sha256": "1e3bd90f9192813df205585c1e94060d0e45a3f61a82194fb73d28b1a290a6ee"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0152_chikorita/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0152_chikorita/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "4d648de2d67e58f310ca789feeb67e65fbafd7a3fec14cd6588389f568e8c0e5",
+          "video_sha256": "ab555f264056e16c998b81a2706dedaa7796db3d6654c9b3be19578569611a02"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0152_chikorita/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0152_chikorita/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T11:13:53",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 153,
@@ -10794,28 +10800,34 @@
       "costante": "SPECIES_BAYLEEF",
       "nome": "Bayleef",
       "ordine": 308,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0153_bayleef",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0153_bayleef/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0153_bayleef/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "4d648de2d67e58f310ca789feeb67e65fbafd7a3fec14cd6588389f568e8c0e5",
+          "video_sha256": "ab555f264056e16c998b81a2706dedaa7796db3d6654c9b3be19578569611a02"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0153_bayleef/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0153_bayleef/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "68ec7b4ce2a7ef08bed3e85aed8656998448960294f075730d1454e7cea680cb",
+          "video_sha256": "1e3bd90f9192813df205585c1e94060d0e45a3f61a82194fb73d28b1a290a6ee"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0153_bayleef/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0153_bayleef/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T11:13:53",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 154,
@@ -10823,28 +10835,34 @@
       "costante": "SPECIES_MEGANIUM",
       "nome": "Meganium",
       "ordine": 309,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0154_meganium",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0154_meganium/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0154_meganium/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "b808d889e8c5d73521e0797706d1e74486ebd4ab91d3a12efd7a2cad06eb773e",
+          "video_sha256": "6b4f457f85ffdecac9d73a2c6f7e988543f259d3a75e3ff0333d068153475606"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0154_meganium/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0154_meganium/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "d440b04b6020360bec020e7a85508459290ff3ec0d4971552b97d1d914e9739a",
+          "video_sha256": "18e27a43ef8230356b80896145bbc765ddae17d56a2092b7c583fc30c4bccccf"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0154_meganium/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0154_meganium/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T11:13:54",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 155,
@@ -10852,28 +10870,34 @@
       "costante": "SPECIES_CYNDAQUIL",
       "nome": "Cyndaquil",
       "ordine": 310,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0155_cyndaquil",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0155_cyndaquil/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0155_cyndaquil/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "d440b04b6020360bec020e7a85508459290ff3ec0d4971552b97d1d914e9739a",
+          "video_sha256": "18e27a43ef8230356b80896145bbc765ddae17d56a2092b7c583fc30c4bccccf"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0155_cyndaquil/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0155_cyndaquil/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "b808d889e8c5d73521e0797706d1e74486ebd4ab91d3a12efd7a2cad06eb773e",
+          "video_sha256": "6b4f457f85ffdecac9d73a2c6f7e988543f259d3a75e3ff0333d068153475606"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0155_cyndaquil/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0155_cyndaquil/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T11:13:55",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 156,
@@ -10881,28 +10905,34 @@
       "costante": "SPECIES_QUILAVA",
       "nome": "Quilava",
       "ordine": 311,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0156_quilava",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0156_quilava/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0156_quilava/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "9dc411d485951924e9497004edfe76f11980dd8d61786997e86e1dfc0d8e685c",
+          "video_sha256": "d0c5594a1c0ec4423a70a303cfbbee534cf05616ad7eb2be35c0b3081ad6ea3d"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0156_quilava/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0156_quilava/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "71f28c7eff3e1a057dbb415573d4ec7ec2ab31d2689e27e2de794d0e98609deb",
+          "video_sha256": "748858be252528086709b6843e0d0f696cb4409bfc5b024672f6699c3a33c946"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0156_quilava/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0156_quilava/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T11:13:56",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 157,
@@ -10910,28 +10940,34 @@
       "costante": "SPECIES_TYPHLOSION",
       "nome": "Typhlosion",
       "ordine": 312,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0157_typhlosion",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0157_typhlosion/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0157_typhlosion/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "71f28c7eff3e1a057dbb415573d4ec7ec2ab31d2689e27e2de794d0e98609deb",
+          "video_sha256": "748858be252528086709b6843e0d0f696cb4409bfc5b024672f6699c3a33c946"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0157_typhlosion/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0157_typhlosion/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "9dc411d485951924e9497004edfe76f11980dd8d61786997e86e1dfc0d8e685c",
+          "video_sha256": "d0c5594a1c0ec4423a70a303cfbbee534cf05616ad7eb2be35c0b3081ad6ea3d"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0157_typhlosion/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0157_typhlosion/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T11:13:57",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 158,
@@ -10939,28 +10975,34 @@
       "costante": "SPECIES_TOTODILE",
       "nome": "Totodile",
       "ordine": 313,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0158_totodile",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0158_totodile/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0158_totodile/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "3a152df803687f412b673fe93bc1370f425f3a65b6fb93727fa89dcd5e472e13",
+          "video_sha256": "08b7db3571e0b2efcf20403278652da9c5495d4c010f3898cdb3f2d5a5e038cf"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0158_totodile/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0158_totodile/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "cd078f54427c88c784a9ce5124c863e589befb38a40db6527f2beabaab0839b0",
+          "video_sha256": "ebd28e48fad50455d8320f2b9ac8ce4326594ccd476298e9454b745f0e468ff6"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0158_totodile/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0158_totodile/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T11:13:57",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 159,
@@ -10968,28 +11010,34 @@
       "costante": "SPECIES_CROCONAW",
       "nome": "Croconaw",
       "ordine": 314,
-      "stato": "da_fare",
-      "fatto": false,
+      "stato": "fatto",
+      "fatto": true,
       "implementazione_prototipo": false,
       "cartella": "artifacts/bw2-validation/pokemon/0159_croconaw",
       "prove": {
         "front": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0159_croconaw/front/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0159_croconaw/front/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "cd078f54427c88c784a9ce5124c863e589befb38a40db6527f2beabaab0839b0",
+          "video_sha256": "ebd28e48fad50455d8320f2b9ac8ce4326594ccd476298e9454b745f0e468ff6"
         },
         "back": {
-          "stato": "da_acquisire",
+          "stato": "verificato",
           "screenshot": "artifacts/bw2-validation/pokemon/0159_croconaw/back/screenshot.png",
           "video": "artifacts/bw2-validation/pokemon/0159_croconaw/back/demo.mp4",
-          "build_verificata": null
+          "build_verificata": "de509bec1e539760",
+          "screenshot_sha256": "3a152df803687f412b673fe93bc1370f425f3a65b6fb93727fa89dcd5e472e13",
+          "video_sha256": "08b7db3571e0b2efcf20403278652da9c5495d4c010f3898cdb3f2d5a5e038cf"
         }
       },
       "metadata": "artifacts/bw2-validation/pokemon/0159_croconaw/metadata.json",
       "verifica": "artifacts/bw2-validation/pokemon/0159_croconaw/verifica.md",
       "forme_da_verificare": false,
-      "note": ""
+      "note": "",
+      "completato_il": "2026-10-30T11:13:58",
+      "build_verificata": "de509bec1e539760"
     },
     {
       "numero_nazionale": 160,
@@ -23419,8 +23467,8 @@
   ],
   "ultimo_completato": {
     "tipo": "pokemon",
-    "id": 151,
-    "nome": "Mew"
+    "id": 159,
+    "nome": "Croconaw"
   },
-  "checkpoint_note": "Richiesta: checkpoint 30–39, 9/10 conclusi; partenza 234 Pokémon, obiettivo 314; mosse 6/354. Registro AUTONOMOUS30_39.json; helper build/bw2-auto30.py, catture build/bw2-auto30-capture.ps1. Gruppo38 concluso con prove e audit; commit dedicato identificabile da git log. Prossimo gruppo: 39. Build e processi in AUTONOMOUS30_39.json. Criterio v5.1 invariato; build/ELF/ID e SHA archiviati, asset precedenti preservati. Prove seriali sull'emulatore isolato; non arrestare Azahar personale. Non push/reset/bootstrap."
+  "checkpoint_note": "Richiesta conclusa: 10/10 checkpoint 30–39, 80 nuove specie; 314/386 Pokémon e 6/354 mosse. Nessuna unità in corso. Audit indipendente AUTONOMOUS30_39_AUDIT.json: 320 dossier; 978 asset precedenti, 345 file locali preesistenti e 129660 file sorgente BW2 invariati; ROM preservata. Bridge e criterio v5/v5.1 invariati, inventario forme Castform/Deoxys e macchie Spinda preservati. Build normale e di prova distinte, con binari/ELF/ID e SHA archiviati nel registro e nei dossier. Emulatore isolato chiuso dopo uscita effettiva; nessuna cattura attiva. Azahar personale preservato. Dieci commit dedicati, nessun push. Prossima unità: Feraligatr, nazionale/Emerald 160. Prove Azahar 1×; audio/DSP, console reale, stereo, doppi, link reale e interazioni speciali restano nella fase d’integrazione. Suite generale bottom-map con problemi preesistenti, non dichiarata superata. Riepilogo e prove: AUTONOMOUS30_39_REVIEW.md."
 }

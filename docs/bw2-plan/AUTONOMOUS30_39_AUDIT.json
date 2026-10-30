@@ -1,0 +1,2117 @@
+{
+  "date": "2026-10-30T11:18:16",
+  "pokemon_completed": 314,
+  "moves_completed": 6,
+  "audited_dossiers": 320,
+  "new_pokemon": 80,
+  "normal_scenarios": 80,
+  "shiny_scenarios": 80,
+  "source_rom_sha256": "2ad60a931c2a17deed4596d23605e10048bf3ccb8f2e012eb9d13c37fb2ac509",
+  "source_repository_status_unchanged": true,
+  "source_files_preserved": 129660,
+  "previous_assets_preserved": 978,
+  "foreign_files_preserved": 345,
+  "recording_seconds": 2251.8566666666666,
+  "decoded_frames": 67572,
+  "capture_fps_range": [
+    29.978054133138258,
+    30.037437966160724
+  ],
+  "builds": {
+    "test": {
+      "build_id": "de509bec1e539760",
+      "sha256": "f2ecde88d6d665029ecfcd7e5c335604e31d8bb3c96c4adc7c04f272636d468c",
+      "path": "artifacts/bw2-validation/builds/de509bec1e539760_f2ecde88d6d6/validation.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/de509bec1e539760_84f94a734784/validation.elf",
+      "elf_sha256": "84f94a7347844328c0c357f3afce36dc68ba17d19035c4d873845056c64048b5",
+      "id_path": "artifacts/bw2-validation/builds/de509bec1e539760_59fb21cf6a34/build_id.bin"
+    },
+    "production": {
+      "build_id": "f65244ae7f660a26",
+      "sha256": "6b27f2290acfcd48b5813237d5c072fd4b3ea48c63825de7177dbff0f28f25f6",
+      "path": "artifacts/bw2-validation/builds/f65244ae7f660a26_6b27f2290acf/Emerald3DS-BW2.3dsx",
+      "elf_path": "artifacts/bw2-validation/builds/f65244ae7f660a26_a4ef3f5f2b4c/production.elf",
+      "elf_sha256": "a4ef3f5f2b4caa9f4b0f8d33277c08acedeae13bd719dda348adf03da4df2ada",
+      "id_path": "artifacts/bw2-validation/builds/f65244ae7f660a26_d673eb861184/production-build-id.bin"
+    }
+  },
+  "build_history": [
+    {
+      "test": {
+        "build_id": "1441ec92f9e6b9b6",
+        "sha256": "aab76a7b3322e46be17cb62dbf3366706d1fa2e7e8105615dbccfb6d50a269ca",
+        "path": "artifacts/bw2-validation/builds/1441ec92f9e6b9b6_aab76a7b3322/validation.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/1441ec92f9e6b9b6_f63a7127dbdc/validation.elf",
+        "elf_sha256": "f63a7127dbdc16f70b0da3c3d6bf989b965aeb0b97c11a15826ca37325db18f2",
+        "id_path": "artifacts/bw2-validation/builds/1441ec92f9e6b9b6_94b107ef9eef/build_id.bin"
+      },
+      "production": {
+        "build_id": "3724fc8cdfba9514",
+        "sha256": "31a8bb0a85c2d0f4b69be3129b3c2283c9a759e90485e0d15eda5149aca5319a",
+        "path": "artifacts/bw2-validation/builds/3724fc8cdfba9514_31a8bb0a85c2/Emerald3DS-BW2.3dsx",
+        "elf_path": "artifacts/bw2-validation/builds/3724fc8cdfba9514_b1c750266922/production.elf",
+        "elf_sha256": "b1c750266922487a0fe9421f9b0605bbfadfd99850da9b6e3ed8134b76b6c124",
+        "id_path": "artifacts/bw2-validation/builds/3724fc8cdfba9514_fa351ea16457/production-build-id.bin"
+      }
+    }
+  ],
+  "checks": {
+    "synthetic": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-synthetic.log"
+    },
+    "real": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-real.log"
+    },
+    "castform": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-castform.log"
+    },
+    "spinda": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-spinda.log"
+    },
+    "deoxys": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-deoxys.log"
+    },
+    "deoxys-validation": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-deoxys-validation.log"
+    },
+    "export": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-export.log"
+    },
+    "evidence": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-evidence.log"
+    },
+    "variants": {
+      "passed": true,
+      "log": "build/bw2-auto30-test-variants.log"
+    },
+    "production_stubs_bytes": 4,
+    "production_validation_mailbox": false,
+    "presentation_v5_1_unchanged": true,
+    "build_modes_commands_verified": true
+  },
+  "presentation_v5_1_unchanged": true,
+  "bridge_unchanged": true,
+  "production_stubs_bytes": 4,
+  "production_validation_mailbox": false,
+  "isolated_emulator_closed": true,
+  "personal_emulator_processes": [
+    {
+      "ProcessId": 12992,
+      "Name": "azahar.exe",
+      "ExecutablePath": "D:\\Emulators\\Azahar\\azahar.exe"
+    }
+  ],
+  "next_unit": {
+    "tipo": "pokemon",
+    "id": 160,
+    "nome": "Feraligatr",
+    "azione": "Implementare/verificare e chiudere il dossier nelle due direzioni"
+  },
+  "limitations": [
+    "Azahar 1x; audio not captured without DSP firmware",
+    "Hardware console, stereo, double battles, real link and special interactions pending",
+    "General bottom-map tests have pre-existing failures; not claimed as passed"
+  ],
+  "review_image_hashes": {
+    "artifacts/bw2-validation/checkpoint30-2026-10-30/cp30-entry-review.png": "39c3ca5a8d10e1563fff14c488bccaa93dacecaeb8eb1febab06b0c345cbc784",
+    "artifacts/bw2-validation/checkpoint30-2026-10-30/cp30-review-pair0.png": "dffbece8ff637f9058d28a96eee526763e541dc1876a1669c482a8343f377c50",
+    "artifacts/bw2-validation/checkpoint30-2026-10-30/cp30-review-pair1.png": "2e7bf44cc4db2992adae4bc2aed5e80ec61917821b78fa90c5c5c7a92cd74970",
+    "artifacts/bw2-validation/checkpoint30-2026-10-30/cp30-review-pair2.png": "857fee0f0ce046b3e3821c538fb48e0e35578285c43d80741801dbc981cd163a",
+    "artifacts/bw2-validation/checkpoint30-2026-10-30/cp30-review-pair3.png": "43774501c26b85f9832a8b97f8af90905d97cae7772b942841452b0d3e501004",
+    "artifacts/bw2-validation/checkpoint30-2026-10-30/cp30-shiny-review.png": "c755c613cb5d7d68755ce6d446cbfd809c0370169070ce4676e9cab96c73de3f",
+    "artifacts/bw2-validation/checkpoint30-2026-10-30/pokemon.png": "6d02bf6c33bf6dc46ca25ec9a8db0de35df48a892bbf68c812d637139d7230b6",
+    "artifacts/bw2-validation/checkpoint31-2026-10-30/cp31-entry-review.png": "f4e60aa750337c5cbb915a34aacbb325e541da1bf7850d36e5b9b795b1366cec",
+    "artifacts/bw2-validation/checkpoint31-2026-10-30/cp31-review-pair0.png": "c1f73f39d881a0f368974dec1ffcbe2964cb2e573ca23ab6204e7a4bbf1153c8",
+    "artifacts/bw2-validation/checkpoint31-2026-10-30/cp31-review-pair1.png": "38edf44b647ebc1aa35ef1c6025fec2df99f4aa0ed6a40fdcf9f257c7d665a2e",
+    "artifacts/bw2-validation/checkpoint31-2026-10-30/cp31-review-pair2.png": "4240338c3413b71278e0518b76e272fbf7c78af0afc08b254e37a8941d3034fd",
+    "artifacts/bw2-validation/checkpoint31-2026-10-30/cp31-review-pair3.png": "2e9db8479d8b89387e06e4291115effbf69c057a0857aaccfa3d849cfeec6476",
+    "artifacts/bw2-validation/checkpoint31-2026-10-30/cp31-shiny-review.png": "731b271cb85c5de67081f3c2bb34b8708dc7f7793c40ecab65f947606ab57009",
+    "artifacts/bw2-validation/checkpoint31-2026-10-30/pokemon.png": "6492c13fa2fea280da6da7c64faf76b85dda73fe0b85fd061320b483579b113a",
+    "artifacts/bw2-validation/checkpoint32-2026-10-30/cp32-entry-review.png": "db15ae547b71b58f52c514cc7bed9c3650ab523badc54ab88e205753791ced8c",
+    "artifacts/bw2-validation/checkpoint32-2026-10-30/cp32-review-pair0.png": "81f7fa4de2c40a2fc8b80adad692dd5331f393c2dd1b59e232d50015946bcc3f",
+    "artifacts/bw2-validation/checkpoint32-2026-10-30/cp32-review-pair1.png": "01937b6362896eb127a74dc250baec6cf95fd8b5870648a457d6f96eeef10011",
+    "artifacts/bw2-validation/checkpoint32-2026-10-30/cp32-review-pair2.png": "227190c93044303e4dd9e1ad905aa9422728a6f72aed71aee13e9c5b2801d6e3",
+    "artifacts/bw2-validation/checkpoint32-2026-10-30/cp32-review-pair3.png": "4eb8a408c5fca3cd02b8ea20d76e680cb6376b1d576c1bbcdea5743745637ee7",
+    "artifacts/bw2-validation/checkpoint32-2026-10-30/cp32-shiny-review.png": "6fdb0c70ef755144963226f5d93f448c9f33173c3b1ad3c82820cab60dd1a201",
+    "artifacts/bw2-validation/checkpoint32-2026-10-30/pokemon.png": "3c3d420b191ddefaa5d3ae6bfb7b13b9e864c72ab473477c80779776bac15f24",
+    "artifacts/bw2-validation/checkpoint33-2026-10-30/cp33-entry-review.png": "c6f8b8512607cc624aecbcbd442156a504a76206e9cc216d704b619c94629f40",
+    "artifacts/bw2-validation/checkpoint33-2026-10-30/cp33-review-pair0.png": "9d4f361077df05a07ccd332f8ba19c3dfae938251cfcd09044b8f1b918b6b44e",
+    "artifacts/bw2-validation/checkpoint33-2026-10-30/cp33-review-pair1.png": "6b1be07ef6d47810f41073886591f1df24ab5d106528df3529d72a16e3d9053d",
+    "artifacts/bw2-validation/checkpoint33-2026-10-30/cp33-review-pair2.png": "ef67b43e7c110e242f3515f6b457fc76da687bedee091eefd349e697189e667d",
+    "artifacts/bw2-validation/checkpoint33-2026-10-30/cp33-review-pair3.png": "4f14f7c1ad0dfe354d532fe29ec9b761beb3d6ce2b159d6e3bf111fc3eb0af80",
+    "artifacts/bw2-validation/checkpoint33-2026-10-30/cp33-shiny-review.png": "0fb95901ad458b559670ad37a081baaa2a18dad35894cf90b3f205ae1335124e",
+    "artifacts/bw2-validation/checkpoint33-2026-10-30/pokemon.png": "7a46a19bd54225b72ee6d2b11ef68c3cbd9b32a79ffe692e66e4d26bbb2335b7",
+    "artifacts/bw2-validation/checkpoint34-2026-10-30/cp34-entry-review.png": "bfc1c05fa695b735da761bc6614ef6b7453ca258e1dfbfc0a172f24c82d4344a",
+    "artifacts/bw2-validation/checkpoint34-2026-10-30/cp34-review-pair0.png": "d2ad126ec03c4d2e6a53fdfa9a426c5024bfcae449817700f94f3ed64f3fdee2",
+    "artifacts/bw2-validation/checkpoint34-2026-10-30/cp34-review-pair1.png": "c2cb19ca12e189f1676d531f9c66f3a2accd32aeda0d5f9edc01cf99fd592a7d",
+    "artifacts/bw2-validation/checkpoint34-2026-10-30/cp34-review-pair2.png": "961423b1991493afd828bd7d73a68a359227ba656fc87644b356362ac2b63e0d",
+    "artifacts/bw2-validation/checkpoint34-2026-10-30/cp34-review-pair3.png": "ae5b1c64bc45121b60cb71883fe646cccd51b88bdaf7d7f6868157eb6137727a",
+    "artifacts/bw2-validation/checkpoint34-2026-10-30/cp34-shiny-review.png": "628c5450e8bb0b485bd755ae403931c0cd72625d289ecb3a93408e8d128e4264",
+    "artifacts/bw2-validation/checkpoint34-2026-10-30/pokemon.png": "d25cf0f3016b7afeaeadcbf81c3a692bda9b13bb852c823abb91926610de592b",
+    "artifacts/bw2-validation/checkpoint35-2026-10-30/cp35-entry-review.png": "d7f83346f22242d5666150308db5f6b8fb7165c56ff85f769ccb9514c1c6f979",
+    "artifacts/bw2-validation/checkpoint35-2026-10-30/cp35-review-pair0.png": "5eafa18a8d65a42e7bf8385579b8753b2407263b8e1b17706934d21309b18d8e",
+    "artifacts/bw2-validation/checkpoint35-2026-10-30/cp35-review-pair1.png": "bf2fd8086b9990da470e2c18eabd7fb0d4d624d56d72815267d0820718375bd9",
+    "artifacts/bw2-validation/checkpoint35-2026-10-30/cp35-review-pair2.png": "95ea432b7b3b99a585492864007c25a64b6df667f4e9f8b9481f2761adc9515e",
+    "artifacts/bw2-validation/checkpoint35-2026-10-30/cp35-review-pair3.png": "7cef9d18e2b9da6d2da6d79c1266a80987e72beb5ae76db8fec1e2d897df90b8",
+    "artifacts/bw2-validation/checkpoint35-2026-10-30/cp35-shiny-review.png": "21d05069ce68fb3c0c3ad610e6e9bb9b3bed5c8542037f3dc8e0fd40dbee74a0",
+    "artifacts/bw2-validation/checkpoint35-2026-10-30/pokemon.png": "6259707fcd03d92206f1a9fbc1bff9a7abcb41d6331ce99c2c1ab669a7359c8e",
+    "artifacts/bw2-validation/checkpoint36-2026-10-30/cp36-entry-review.png": "0ac1410bc2a8ad0aed3fc12e7f357b060d7423f3e04b239203ef24bb2265ab53",
+    "artifacts/bw2-validation/checkpoint36-2026-10-30/cp36-review-pair0.png": "0f92542fed35a494a573e85d58b85b483cf21ccca03b7b6c470ce249f4a8f8d1",
+    "artifacts/bw2-validation/checkpoint36-2026-10-30/cp36-review-pair1.png": "b20aa9e2181c9b949e112316538162571d1e36b7971fab1c78374bb201fdfb9f",
+    "artifacts/bw2-validation/checkpoint36-2026-10-30/cp36-review-pair2.png": "b1f3a53069e7cb25e3f4a21c847061b3e2d4f47db2a3d5b2b343de31678a618a",
+    "artifacts/bw2-validation/checkpoint36-2026-10-30/cp36-review-pair3.png": "9f5a189b58908f0ad53823fa9010226e0f2d1ed86fd66feead3158ed7ae79591",
+    "artifacts/bw2-validation/checkpoint36-2026-10-30/cp36-shiny-review.png": "b54ce48c79f00ab6296617cd14382852704eb992297e33ad4daa7cf0e6e4a5f1",
+    "artifacts/bw2-validation/checkpoint36-2026-10-30/pokemon.png": "132d37e9f84c26941de0c2caa04a354d690d6792ae2017b782ed7e671085698b",
+    "artifacts/bw2-validation/checkpoint37-2026-10-30/cp37-entry-review.png": "3e2986ae48e6352eb32278a32ca476d0fa0c0df316e119d908abdfba4b8f0dd0",
+    "artifacts/bw2-validation/checkpoint37-2026-10-30/cp37-review-pair0.png": "3844f6dfc2daa0479a4ee322e03ce3c15d0bd7f1785339305ae040961c031956",
+    "artifacts/bw2-validation/checkpoint37-2026-10-30/cp37-review-pair1.png": "14937f7f28d1656cbc19dd6347746631ac7a93d06fe653a96c153d8b34add8f0",
+    "artifacts/bw2-validation/checkpoint37-2026-10-30/cp37-review-pair2.png": "6994be455454f705ec2fe18b9fc8de3fb109e458b58c31b0f23baa22f50c80f7",
+    "artifacts/bw2-validation/checkpoint37-2026-10-30/cp37-review-pair3.png": "9d5c7424390efdcf59674c9f1a70cda20573b6ba170fb8d124239b52d83d582e",
+    "artifacts/bw2-validation/checkpoint37-2026-10-30/cp37-shiny-review.png": "f1e51332422e5834d373d271265e1a4cce3c01819a55501eeaad441ddc60e95a",
+    "artifacts/bw2-validation/checkpoint37-2026-10-30/pokemon.png": "5b5d188b72a8a65b9f8288a20999e62a9bd24ed9e169554f6ed049fbf1f9806c",
+    "artifacts/bw2-validation/checkpoint38-2026-10-30/cp38-entry-review.png": "5b6c574d8b92d12f2273248d7cd416b6dc3c88d44a090d69e102ad155f329a0d",
+    "artifacts/bw2-validation/checkpoint38-2026-10-30/cp38-review-pair0.png": "219f2c9686fce049b194f8e96de9ef44ab5e7d8dd0ce2472cf33e4d2e8ec380b",
+    "artifacts/bw2-validation/checkpoint38-2026-10-30/cp38-review-pair1.png": "ccbce2c53cd46f02b8cdb2378d1388a13c2c74e66a419e8c554e17e30423fb70",
+    "artifacts/bw2-validation/checkpoint38-2026-10-30/cp38-review-pair2.png": "3cd15c727382976446adc4b74b66b4126223cffc92041d84fbdfed581b75a648",
+    "artifacts/bw2-validation/checkpoint38-2026-10-30/cp38-review-pair3.png": "c1428c78cb821dfacf0680e52d3fbe9bb4b747ffc5b73bd8c4dfb16c2342b042",
+    "artifacts/bw2-validation/checkpoint38-2026-10-30/cp38-shiny-review.png": "1dd950e4acd8f4d484542585e0df457b3bb25979cfd3fe47b250b316969c3e9c",
+    "artifacts/bw2-validation/checkpoint38-2026-10-30/pokemon.png": "e98463625fef49ff0431769718b4770b0dd07ac2b09b50dbb3aff9c4db4a43c1",
+    "artifacts/bw2-validation/checkpoint39-2026-10-30/cp39-entry-review.png": "99163f4b1901752c596de7ff1accc75b9e087d070218c5ffd8bbb2ca48a67297",
+    "artifacts/bw2-validation/checkpoint39-2026-10-30/cp39-review-pair0.png": "d678684d99b22ea755d51d5617ba7dcbfba9b889d3e6b5eb9cc04a2ddf6ff483",
+    "artifacts/bw2-validation/checkpoint39-2026-10-30/cp39-review-pair1.png": "53567aab6db8af70cf8dc0f7ab3baa18bc7a6175772fa52e3945a9751ccfc8fe",
+    "artifacts/bw2-validation/checkpoint39-2026-10-30/cp39-review-pair2.png": "7349255c805186569b6c5b0c5c9d07a57c724a3a3e28faa246f6c7e7cb55b79c",
+    "artifacts/bw2-validation/checkpoint39-2026-10-30/cp39-review-pair3.png": "45141a2b57960a036836c5e7d166e2597f0801eab53582f596235937dca59eb1",
+    "artifacts/bw2-validation/checkpoint39-2026-10-30/cp39-shiny-review.png": "e3b4f78c1c62883d07cc50db01e424b09b223f8212be4c271d489973b66d43a4",
+    "artifacts/bw2-validation/checkpoint39-2026-10-30/pokemon.png": "2797ff16f22aaa0552ae6191860952957dd760c7ce2869d554fa0c7315f30434"
+  },
+  "dossiers": [
+    {
+      "kind": "pokemon",
+      "id": 252,
+      "folder": "artifacts/bw2-validation/pokemon/0252_treecko",
+      "metadata_sha256": "7a5237e3463b62bb158df7b9aef5a2f73c4203d4a63025a608fa47ccfcf682b1"
+    },
+    {
+      "kind": "pokemon",
+      "id": 261,
+      "folder": "artifacts/bw2-validation/pokemon/0261_poochyena",
+      "metadata_sha256": "9f803df366feb1f577dd4fcc4722eec968dbc4cdad80904eb19101fa67b33285"
+    },
+    {
+      "kind": "pokemon",
+      "id": 253,
+      "folder": "artifacts/bw2-validation/pokemon/0253_grovyle",
+      "metadata_sha256": "91a83313ebb303ecdf27b6f86e1bcbda8b82f40c37fb0564b10cfd4909873731"
+    },
+    {
+      "kind": "pokemon",
+      "id": 254,
+      "folder": "artifacts/bw2-validation/pokemon/0254_sceptile",
+      "metadata_sha256": "008c5f955b9cf2eb08548a39e4e526e9bf600873c49918ec472187926dbb5525"
+    },
+    {
+      "kind": "pokemon",
+      "id": 255,
+      "folder": "artifacts/bw2-validation/pokemon/0255_torchic",
+      "metadata_sha256": "af9e5b99c82d36e5b6516437ce093c36141f7de0cdac4fcc5c34727584756a8f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 256,
+      "folder": "artifacts/bw2-validation/pokemon/0256_combusken",
+      "metadata_sha256": "fe4249326fd252f277869034f8777a7d6db98985f19d7c077ec9647ae2a4f661"
+    },
+    {
+      "kind": "pokemon",
+      "id": 257,
+      "folder": "artifacts/bw2-validation/pokemon/0257_blaziken",
+      "metadata_sha256": "3e80bb03810e300f6907295e8839ae8395be30268b8fafff82cbb1c4c3de98ba"
+    },
+    {
+      "kind": "pokemon",
+      "id": 258,
+      "folder": "artifacts/bw2-validation/pokemon/0258_mudkip",
+      "metadata_sha256": "c9c5328226314cba443f39e947b906c7cf5617373d9534df566750cf140eca72"
+    },
+    {
+      "kind": "pokemon",
+      "id": 259,
+      "folder": "artifacts/bw2-validation/pokemon/0259_marshtomp",
+      "metadata_sha256": "a3b62d88076fb7237c76e520010f66eeca466ea2ac65dd2d7a409239aa8c0578"
+    },
+    {
+      "kind": "pokemon",
+      "id": 260,
+      "folder": "artifacts/bw2-validation/pokemon/0260_swampert",
+      "metadata_sha256": "2ea021cacb9727a6108b994c990c09c1e45c663f27bb611505bfff2b29044d4b"
+    },
+    {
+      "kind": "pokemon",
+      "id": 262,
+      "folder": "artifacts/bw2-validation/pokemon/0262_mightyena",
+      "metadata_sha256": "e337904e975cb5cfe327f0bd756aadc65ae4321b3a9a615dfb29853b561c2032"
+    },
+    {
+      "kind": "pokemon",
+      "id": 263,
+      "folder": "artifacts/bw2-validation/pokemon/0263_zigzagoon",
+      "metadata_sha256": "99e8c96a83f280e4b378bda7bdcd433490f3a426b553ace3d48b3b59c881d3d6"
+    },
+    {
+      "kind": "pokemon",
+      "id": 264,
+      "folder": "artifacts/bw2-validation/pokemon/0264_linoone",
+      "metadata_sha256": "3f733c18b7da629029c57f2eb39a6e8861ae9715b7ccd3b3dda1932aea88279f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 265,
+      "folder": "artifacts/bw2-validation/pokemon/0265_wurmple",
+      "metadata_sha256": "43afcfcfeaf66009a9edf9e121316b5eb65a6b57e0c5fd38f2c3300fad023feb"
+    },
+    {
+      "kind": "pokemon",
+      "id": 266,
+      "folder": "artifacts/bw2-validation/pokemon/0266_silcoon",
+      "metadata_sha256": "ebc4d5a323ac792baab0c79ce900bcc650b3f1188b9eb0e76cc6b758e5cccd85"
+    },
+    {
+      "kind": "pokemon",
+      "id": 267,
+      "folder": "artifacts/bw2-validation/pokemon/0267_beautifly",
+      "metadata_sha256": "9d2c02cb59f6bf0b2fd32177664b865c11b5da05cd9f67c7328f39d34d9461c8"
+    },
+    {
+      "kind": "pokemon",
+      "id": 268,
+      "folder": "artifacts/bw2-validation/pokemon/0268_cascoon",
+      "metadata_sha256": "a069f61a99988935ce8773383603cc508aef9feebefc0a9bcd2fb38aaa039a82"
+    },
+    {
+      "kind": "pokemon",
+      "id": 269,
+      "folder": "artifacts/bw2-validation/pokemon/0269_dustox",
+      "metadata_sha256": "fedec4edbe56d5d42894a8b6d7b99c543d0906c24ec2c306b29888f37c7a8b69"
+    },
+    {
+      "kind": "pokemon",
+      "id": 270,
+      "folder": "artifacts/bw2-validation/pokemon/0270_lotad",
+      "metadata_sha256": "b0636b5ebf33b6bb1f16c461bd6e2b8e7b3830f1d2e59f2c7a34de57294a0af2"
+    },
+    {
+      "kind": "pokemon",
+      "id": 271,
+      "folder": "artifacts/bw2-validation/pokemon/0271_lombre",
+      "metadata_sha256": "ab57b1c26a6573ac0488d3e167bdb78ad6c3fff11c94540d5d9aab6434c65c60"
+    },
+    {
+      "kind": "pokemon",
+      "id": 272,
+      "folder": "artifacts/bw2-validation/pokemon/0272_ludicolo",
+      "metadata_sha256": "5110334d1f4a836ed73444e041824d0ab1b2d732d7453345480700ac9d87c178"
+    },
+    {
+      "kind": "pokemon",
+      "id": 273,
+      "folder": "artifacts/bw2-validation/pokemon/0273_seedot",
+      "metadata_sha256": "7846ad1763a4cc7442917ba5c4e79cc8dcc6e8db0c9921491615dca5d61b03e6"
+    },
+    {
+      "kind": "pokemon",
+      "id": 274,
+      "folder": "artifacts/bw2-validation/pokemon/0274_nuzleaf",
+      "metadata_sha256": "ac204685717f34ec7920a1b3bec2f102337fd6fce09985a7a6a5c8a501673c91"
+    },
+    {
+      "kind": "pokemon",
+      "id": 275,
+      "folder": "artifacts/bw2-validation/pokemon/0275_shiftry",
+      "metadata_sha256": "097eb66e451e36b19aeb5eabf93032a14dc71b2cd56c64013bbb3707c77f9cc1"
+    },
+    {
+      "kind": "pokemon",
+      "id": 276,
+      "folder": "artifacts/bw2-validation/pokemon/0276_taillow",
+      "metadata_sha256": "679c935d18dfac4b6a8a61be5131858dc2a27b9daefca82d485391cf702c0c05"
+    },
+    {
+      "kind": "pokemon",
+      "id": 277,
+      "folder": "artifacts/bw2-validation/pokemon/0277_swellow",
+      "metadata_sha256": "099f3cdf5a222f87170d347856d8d0e5af070a9778d15445814456facbfa6b68"
+    },
+    {
+      "kind": "pokemon",
+      "id": 278,
+      "folder": "artifacts/bw2-validation/pokemon/0278_wingull",
+      "metadata_sha256": "7ce445d0270ad742e19175ce0c592efd55a04db3145708d38e661c78e0a8a9f8"
+    },
+    {
+      "kind": "pokemon",
+      "id": 279,
+      "folder": "artifacts/bw2-validation/pokemon/0279_pelipper",
+      "metadata_sha256": "a7f73dfcdae568482b028607a990c9472cf464a1c939752fe296dc362166fe91"
+    },
+    {
+      "kind": "pokemon",
+      "id": 280,
+      "folder": "artifacts/bw2-validation/pokemon/0280_ralts",
+      "metadata_sha256": "034c417f32acb618ac538e03dba165619febf4b9c073cd97607b0992fc00d91f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 281,
+      "folder": "artifacts/bw2-validation/pokemon/0281_kirlia",
+      "metadata_sha256": "e19304d7515c1520d9194566310cf1759b9d76628e44f9842d6f692402a9695c"
+    },
+    {
+      "kind": "pokemon",
+      "id": 282,
+      "folder": "artifacts/bw2-validation/pokemon/0282_gardevoir",
+      "metadata_sha256": "4331a1dc8722c00c72e085321c304fa2fb667606cfa2abc5b4e54c990df921b8"
+    },
+    {
+      "kind": "pokemon",
+      "id": 283,
+      "folder": "artifacts/bw2-validation/pokemon/0283_surskit",
+      "metadata_sha256": "32737bfc586d45142ef169ce60b5a725a5ab827b0880a39e80e5cd023925178b"
+    },
+    {
+      "kind": "pokemon",
+      "id": 284,
+      "folder": "artifacts/bw2-validation/pokemon/0284_masquerain",
+      "metadata_sha256": "d16ba052ca123b14d20e875b189ce7a3c58440afd1cb5edb7a8e2545d2bcb8b4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 285,
+      "folder": "artifacts/bw2-validation/pokemon/0285_shroomish",
+      "metadata_sha256": "0f1903d9cac687c1fe76a441d45dc5b1e7d06e020fa12c2bdf545308c0fd72b5"
+    },
+    {
+      "kind": "pokemon",
+      "id": 286,
+      "folder": "artifacts/bw2-validation/pokemon/0286_breloom",
+      "metadata_sha256": "25e1ac909bb5eb71a761f539cdf87566246cc13f4668ec786f8305fe71f7da7f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 287,
+      "folder": "artifacts/bw2-validation/pokemon/0287_slakoth",
+      "metadata_sha256": "eec8334f6cb3cac9097baf18e1001ba7f1ed45b16ba20ecca439cd92b84e9917"
+    },
+    {
+      "kind": "pokemon",
+      "id": 288,
+      "folder": "artifacts/bw2-validation/pokemon/0288_vigoroth",
+      "metadata_sha256": "45c29f0c697788cef7a3f6747420d82325b2df8aa89476dc744e79e08602e571"
+    },
+    {
+      "kind": "pokemon",
+      "id": 289,
+      "folder": "artifacts/bw2-validation/pokemon/0289_slaking",
+      "metadata_sha256": "7ae1519fb9b57864273cebab60ecaea1c7351015cf06b9442f447d5b30c4db9e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 63,
+      "folder": "artifacts/bw2-validation/pokemon/0063_abra",
+      "metadata_sha256": "cbd01ec5ac675975e96f76cc1f2f663fe97f07c7603e29df6420eabc3604e99b"
+    },
+    {
+      "kind": "pokemon",
+      "id": 64,
+      "folder": "artifacts/bw2-validation/pokemon/0064_kadabra",
+      "metadata_sha256": "e045879979fab32d6ca0ec6e8b3f46558cab6f99863ffd7af43d7e5ad53f4744"
+    },
+    {
+      "kind": "pokemon",
+      "id": 65,
+      "folder": "artifacts/bw2-validation/pokemon/0065_alakazam",
+      "metadata_sha256": "9529201b1f10efef1cc445dd1418f62f9b6e4e43f1c6919a94a592caa9af2383"
+    },
+    {
+      "kind": "pokemon",
+      "id": 290,
+      "folder": "artifacts/bw2-validation/pokemon/0290_nincada",
+      "metadata_sha256": "45e3add91714037864ab0ac0abe562eb10d580cbbebcee7c4e61f4ca728a80b9"
+    },
+    {
+      "kind": "pokemon",
+      "id": 291,
+      "folder": "artifacts/bw2-validation/pokemon/0291_ninjask",
+      "metadata_sha256": "6fe2f0c8b8c241fa7ebee7786149df435202d002ff498502f7c2145cd57c722a"
+    },
+    {
+      "kind": "pokemon",
+      "id": 292,
+      "folder": "artifacts/bw2-validation/pokemon/0292_shedinja",
+      "metadata_sha256": "dd28be014ca7ee102ff497eb82f7e82d4da837b594beaa003b034515e62ffc4e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 293,
+      "folder": "artifacts/bw2-validation/pokemon/0293_whismur",
+      "metadata_sha256": "61be9ba2fc5e969b37ab66dd83735d87b6ac25ea809041001282cb9941da15ac"
+    },
+    {
+      "kind": "pokemon",
+      "id": 294,
+      "folder": "artifacts/bw2-validation/pokemon/0294_loudred",
+      "metadata_sha256": "07497c6fe0699cdfc90c582a42f3d0357cc822452a204a82728e721683ce2ca5"
+    },
+    {
+      "kind": "pokemon",
+      "id": 295,
+      "folder": "artifacts/bw2-validation/pokemon/0295_exploud",
+      "metadata_sha256": "993d4ecb947d9a644e52bd5a7684dd1d1f3abe64016c6bfd74da6ed84ae87f9f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 296,
+      "folder": "artifacts/bw2-validation/pokemon/0296_makuhita",
+      "metadata_sha256": "ee6f501b6c2dadee3627dfda65c7a223c6f3e611caf44da9015c83f2b2c849cf"
+    },
+    {
+      "kind": "pokemon",
+      "id": 297,
+      "folder": "artifacts/bw2-validation/pokemon/0297_hariyama",
+      "metadata_sha256": "ac429f41ee494dc1a6fc8fe1546a5927034f35553c3809ccb46de4245115bc11"
+    },
+    {
+      "kind": "pokemon",
+      "id": 118,
+      "folder": "artifacts/bw2-validation/pokemon/0118_goldeen",
+      "metadata_sha256": "c3dd22de305beed0b5ef97a910535334aabd2ee71da0bc0a96c92a423cd36915"
+    },
+    {
+      "kind": "pokemon",
+      "id": 119,
+      "folder": "artifacts/bw2-validation/pokemon/0119_seaking",
+      "metadata_sha256": "74ae282ec4f40f65d8c0cd6fc706b349d1d20c09d93fa64909a0733ffed3ff33"
+    },
+    {
+      "kind": "pokemon",
+      "id": 129,
+      "folder": "artifacts/bw2-validation/pokemon/0129_magikarp",
+      "metadata_sha256": "0e8f6127a31204c1eb55e4dfa70a55f291cd50870a187493a17917c4366cd447"
+    },
+    {
+      "kind": "pokemon",
+      "id": 130,
+      "folder": "artifacts/bw2-validation/pokemon/0130_gyarados",
+      "metadata_sha256": "ea8f0e153f139d0cc6c55ee705ca98fb4ef9f30da16f8159400320db7a50fe7d"
+    },
+    {
+      "kind": "pokemon",
+      "id": 298,
+      "folder": "artifacts/bw2-validation/pokemon/0298_azurill",
+      "metadata_sha256": "7c0b012c7a0c5333871106686a2be2846215dafb23df9febc6314d9d118f4d2b"
+    },
+    {
+      "kind": "pokemon",
+      "id": 183,
+      "folder": "artifacts/bw2-validation/pokemon/0183_marill",
+      "metadata_sha256": "d374a7f66f5ee20bb5d635172243f5d9c4fa08ee5316c7d1075deb5efa19091d"
+    },
+    {
+      "kind": "pokemon",
+      "id": 184,
+      "folder": "artifacts/bw2-validation/pokemon/0184_azumarill",
+      "metadata_sha256": "1ed19580b756d30f50ca717a1a1567bba09d085f521e87674210811daf9a4a49"
+    },
+    {
+      "kind": "pokemon",
+      "id": 74,
+      "folder": "artifacts/bw2-validation/pokemon/0074_geodude",
+      "metadata_sha256": "6d8bad2f4553c1c9a2e7fdf5d4a962260022d2ec9b3aae41ad8bacf7eb32c688"
+    },
+    {
+      "kind": "pokemon",
+      "id": 75,
+      "folder": "artifacts/bw2-validation/pokemon/0075_graveler",
+      "metadata_sha256": "f1048d4ad19884ca1d52726eb81bc54ce4e181b3cd186b425f584f06119a64fa"
+    },
+    {
+      "kind": "pokemon",
+      "id": 76,
+      "folder": "artifacts/bw2-validation/pokemon/0076_golem",
+      "metadata_sha256": "7ffbcfd5f2c74ad8462d162ac761c90daacedc13fb9aa59f6f0672ade7f0ed21"
+    },
+    {
+      "kind": "pokemon",
+      "id": 299,
+      "folder": "artifacts/bw2-validation/pokemon/0299_nosepass",
+      "metadata_sha256": "8b5985e861188cdf4c746f5ee1aab3846aa87db672fec5ba67de17ad0aa5e814"
+    },
+    {
+      "kind": "pokemon",
+      "id": 300,
+      "folder": "artifacts/bw2-validation/pokemon/0300_skitty",
+      "metadata_sha256": "98da8cfc45802f086a6d66084ec3be817a77e02deb2010a0ca6155298c7b00a8"
+    },
+    {
+      "kind": "pokemon",
+      "id": 301,
+      "folder": "artifacts/bw2-validation/pokemon/0301_delcatty",
+      "metadata_sha256": "c3826eccacc0e68c3f1431ff73a9ea0abcf48dc40ca9d600e6e28f9fff5d1637"
+    },
+    {
+      "kind": "pokemon",
+      "id": 41,
+      "folder": "artifacts/bw2-validation/pokemon/0041_zubat",
+      "metadata_sha256": "3cdf535cf7921ba0a9561ac6c48622dff29b978d7a873ed82e95b7f61f02b484"
+    },
+    {
+      "kind": "pokemon",
+      "id": 42,
+      "folder": "artifacts/bw2-validation/pokemon/0042_golbat",
+      "metadata_sha256": "635067195cdeb9385ab17548efa8078e6eb3bc0ba1d7ea357b14006fd92f5765"
+    },
+    {
+      "kind": "pokemon",
+      "id": 169,
+      "folder": "artifacts/bw2-validation/pokemon/0169_crobat",
+      "metadata_sha256": "2a904b4969f4dd492ad059b9534acacea26d66742a7f2f40b73e64b20f006495"
+    },
+    {
+      "kind": "pokemon",
+      "id": 72,
+      "folder": "artifacts/bw2-validation/pokemon/0072_tentacool",
+      "metadata_sha256": "02b8af90619225296a177f243d94d498b2a074244cc48a1788ba9aa89fe42dab"
+    },
+    {
+      "kind": "pokemon",
+      "id": 73,
+      "folder": "artifacts/bw2-validation/pokemon/0073_tentacruel",
+      "metadata_sha256": "43a69edfbf1049973bcded78630f1c007577510f11f244501945e1f3851116c6"
+    },
+    {
+      "kind": "pokemon",
+      "id": 302,
+      "folder": "artifacts/bw2-validation/pokemon/0302_sableye",
+      "metadata_sha256": "d266073882287ac9cac32caaba27dfec27a5a8df7de3d0cc99f8cf2a7eac1abd"
+    },
+    {
+      "kind": "pokemon",
+      "id": 303,
+      "folder": "artifacts/bw2-validation/pokemon/0303_mawile",
+      "metadata_sha256": "8d4b75d0ec77f346964626b77525e49d56a14a8c5291a271cc3feb3fedccc8bb"
+    },
+    {
+      "kind": "pokemon",
+      "id": 304,
+      "folder": "artifacts/bw2-validation/pokemon/0304_aron",
+      "metadata_sha256": "ff11954b76ab09844913ae491f53c4d7a7558ec3a8982f77cfaf9eaf268e38f8"
+    },
+    {
+      "kind": "pokemon",
+      "id": 305,
+      "folder": "artifacts/bw2-validation/pokemon/0305_lairon",
+      "metadata_sha256": "744ee7aef692595919fbceeb8e1f425ebccfbfffb88398c11272b902c83548c9"
+    },
+    {
+      "kind": "pokemon",
+      "id": 306,
+      "folder": "artifacts/bw2-validation/pokemon/0306_aggron",
+      "metadata_sha256": "9a455b93feea9a5cebe9beed3636f039128d9998cb191e7f55a0fa2997ab8c84"
+    },
+    {
+      "kind": "pokemon",
+      "id": 66,
+      "folder": "artifacts/bw2-validation/pokemon/0066_machop",
+      "metadata_sha256": "ab6e94e69eae1290ca0617fb24089a905a7a39966e0b1021fc663b8819b1d672"
+    },
+    {
+      "kind": "pokemon",
+      "id": 67,
+      "folder": "artifacts/bw2-validation/pokemon/0067_machoke",
+      "metadata_sha256": "da48332b93666a92c732a9b6b422a457a47c2b5083d70e8554975fe117e7edb7"
+    },
+    {
+      "kind": "pokemon",
+      "id": 68,
+      "folder": "artifacts/bw2-validation/pokemon/0068_machamp",
+      "metadata_sha256": "e3fedaec78bd5caef4048fdf00d3e4a50ca206c7bb16cc6c83783cd27dd790f4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 307,
+      "folder": "artifacts/bw2-validation/pokemon/0307_meditite",
+      "metadata_sha256": "034798a66f88c3f00acc7c3e8ef83920903152af28728bfd13b90ddf91a68bba"
+    },
+    {
+      "kind": "pokemon",
+      "id": 308,
+      "folder": "artifacts/bw2-validation/pokemon/0308_medicham",
+      "metadata_sha256": "bb170972ad4f6af8e4a761e977bd620d197ecfd793876dc5ed7d812f0e565a3a"
+    },
+    {
+      "kind": "pokemon",
+      "id": 309,
+      "folder": "artifacts/bw2-validation/pokemon/0309_electrike",
+      "metadata_sha256": "b9399bf0f5bbedc4776d03cf17735c806e6dfa58ea331147dd07b3da44ec3bfb"
+    },
+    {
+      "kind": "pokemon",
+      "id": 310,
+      "folder": "artifacts/bw2-validation/pokemon/0310_manectric",
+      "metadata_sha256": "4de89da0c80e0fd083c6ab3d5a13d319a08c735eb0418df88c7ac3e16606516a"
+    },
+    {
+      "kind": "pokemon",
+      "id": 311,
+      "folder": "artifacts/bw2-validation/pokemon/0311_plusle",
+      "metadata_sha256": "750b96b38c9f3f9f6a48405e67b36521a2674f3f8a2b9437d87b33cb9cb89769"
+    },
+    {
+      "kind": "pokemon",
+      "id": 312,
+      "folder": "artifacts/bw2-validation/pokemon/0312_minun",
+      "metadata_sha256": "a33e630b21767e34a432f57b5aac99e45108e2da7ac966129a0ede91f0eedef6"
+    },
+    {
+      "kind": "pokemon",
+      "id": 81,
+      "folder": "artifacts/bw2-validation/pokemon/0081_magnemite",
+      "metadata_sha256": "354d12098e1ca488bc59fe60c39131c3de9903bca2b4dd18d9ce5aa80e60e9a4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 82,
+      "folder": "artifacts/bw2-validation/pokemon/0082_magneton",
+      "metadata_sha256": "e22185c40a7aa9bb379a5f42ea8a52c69359f9bb16a3e49808eb4161efc5f150"
+    },
+    {
+      "kind": "pokemon",
+      "id": 100,
+      "folder": "artifacts/bw2-validation/pokemon/0100_voltorb",
+      "metadata_sha256": "fb967dd36102796696b45213332b7647d73a40c13996aa8318cdddc376886698"
+    },
+    {
+      "kind": "pokemon",
+      "id": 101,
+      "folder": "artifacts/bw2-validation/pokemon/0101_electrode",
+      "metadata_sha256": "37e5a3fa4803acea864626faf1b9f6e3803d941caf18f5fc32f212c68c724ef9"
+    },
+    {
+      "kind": "pokemon",
+      "id": 313,
+      "folder": "artifacts/bw2-validation/pokemon/0313_volbeat",
+      "metadata_sha256": "34f2da1f1b45d57ac163293733fad951f62a1750483af726d9e76dae242fa720"
+    },
+    {
+      "kind": "pokemon",
+      "id": 314,
+      "folder": "artifacts/bw2-validation/pokemon/0314_illumise",
+      "metadata_sha256": "150d74d6deabe8cf6f93e7a50fb7c4777f45e3fe18c412c47e5227832a3ec791"
+    },
+    {
+      "kind": "pokemon",
+      "id": 43,
+      "folder": "artifacts/bw2-validation/pokemon/0043_oddish",
+      "metadata_sha256": "9e521a4f9a4a7a2ab3d81764ffef70aff1a2c52d1c242b2a00583dbf6ed5d90d"
+    },
+    {
+      "kind": "pokemon",
+      "id": 44,
+      "folder": "artifacts/bw2-validation/pokemon/0044_gloom",
+      "metadata_sha256": "99bc79244020b229895e13f1866326dc24460febf65d1fc9a2cc1bd4b791f42a"
+    },
+    {
+      "kind": "pokemon",
+      "id": 45,
+      "folder": "artifacts/bw2-validation/pokemon/0045_vileplume",
+      "metadata_sha256": "b01c002eb10106b8155ebabd2f7979b04bf68e0a81e277d2d2a371777051016e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 182,
+      "folder": "artifacts/bw2-validation/pokemon/0182_bellossom",
+      "metadata_sha256": "f9cad9a23e39be7331670a8339d6dcf1bf8d65a09fcd7e8835a3df9642324def"
+    },
+    {
+      "kind": "pokemon",
+      "id": 84,
+      "folder": "artifacts/bw2-validation/pokemon/0084_doduo",
+      "metadata_sha256": "026d1f38d60c5bbbdae02a2350d8f74340ee875b861241e0a7061d28f5374a9e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 85,
+      "folder": "artifacts/bw2-validation/pokemon/0085_dodrio",
+      "metadata_sha256": "93e148c6e32ecf86334f64b519eb16e1e40edf85e1a7db40ba91bfaffab7094d"
+    },
+    {
+      "kind": "pokemon",
+      "id": 315,
+      "folder": "artifacts/bw2-validation/pokemon/0315_roselia",
+      "metadata_sha256": "e09a370931653df94f8ab740207933ae0e916856e0bc8f05b6239b70805c5115"
+    },
+    {
+      "kind": "pokemon",
+      "id": 316,
+      "folder": "artifacts/bw2-validation/pokemon/0316_gulpin",
+      "metadata_sha256": "650e97406f6c72be45ac3655c204c9207483f6a6777f3af6c9be43626c8081ef"
+    },
+    {
+      "kind": "pokemon",
+      "id": 317,
+      "folder": "artifacts/bw2-validation/pokemon/0317_swalot",
+      "metadata_sha256": "14164278524013055fd8b374edd128d6ec68e8fe3d4e1d815bb6a801b309c8a0"
+    },
+    {
+      "kind": "pokemon",
+      "id": 318,
+      "folder": "artifacts/bw2-validation/pokemon/0318_carvanha",
+      "metadata_sha256": "7f5f39b15573501ebe4dd27407375d92de9137b285b1ad6cc9d3d20702a25bcb"
+    },
+    {
+      "kind": "pokemon",
+      "id": 319,
+      "folder": "artifacts/bw2-validation/pokemon/0319_sharpedo",
+      "metadata_sha256": "e1d0badc14a154107571dae06cd98549969ec9ed009b2db0c370bfc6e83fea35"
+    },
+    {
+      "kind": "pokemon",
+      "id": 320,
+      "folder": "artifacts/bw2-validation/pokemon/0320_wailmer",
+      "metadata_sha256": "5b7547a6fce528ff78ffd86d603aa3a166fa0a7815ec1026ef8ce20b532fefb9"
+    },
+    {
+      "kind": "pokemon",
+      "id": 321,
+      "folder": "artifacts/bw2-validation/pokemon/0321_wailord",
+      "metadata_sha256": "d3529438ac1cfd1942b9f907c31b290fa7d2ca07504bb8ac57ea3a1a059b9710"
+    },
+    {
+      "kind": "pokemon",
+      "id": 322,
+      "folder": "artifacts/bw2-validation/pokemon/0322_numel",
+      "metadata_sha256": "b34bd6e2aed682d158ae3da31c40527cfe4c882e0964db2a0991462b680b6f83"
+    },
+    {
+      "kind": "pokemon",
+      "id": 323,
+      "folder": "artifacts/bw2-validation/pokemon/0323_camerupt",
+      "metadata_sha256": "797f10794a6b0367c788db4803555352652ab55bbc2acdf583a21f21b99519ca"
+    },
+    {
+      "kind": "pokemon",
+      "id": 218,
+      "folder": "artifacts/bw2-validation/pokemon/0218_slugma",
+      "metadata_sha256": "d4e8bc939d2f6923baf050076e07fb018cbcb7f2729b9717e21fb22a95f0a853"
+    },
+    {
+      "kind": "pokemon",
+      "id": 219,
+      "folder": "artifacts/bw2-validation/pokemon/0219_magcargo",
+      "metadata_sha256": "5ef6d98caeeb2afc7538e60760f12f2a48f4494fe0c40b41fdc89b4c5189133e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 324,
+      "folder": "artifacts/bw2-validation/pokemon/0324_torkoal",
+      "metadata_sha256": "e70853c511ef8c459255b118635c4da8080d396738967cbd220e4ca1dc9d1227"
+    },
+    {
+      "kind": "pokemon",
+      "id": 88,
+      "folder": "artifacts/bw2-validation/pokemon/0088_grimer",
+      "metadata_sha256": "606f954eb89d2f9af90e4060a3d0a1862729a421c74d3d0c7af2b1bfd1e5c6ec"
+    },
+    {
+      "kind": "pokemon",
+      "id": 89,
+      "folder": "artifacts/bw2-validation/pokemon/0089_muk",
+      "metadata_sha256": "38a93cf9c66d63f2da0d3924e316aed4276c28d16aa4d45e591cd0c797d47f1a"
+    },
+    {
+      "kind": "pokemon",
+      "id": 109,
+      "folder": "artifacts/bw2-validation/pokemon/0109_koffing",
+      "metadata_sha256": "3f530e7bc79b64d0fc74bb4ece0a701f8d496efecb8e9ee90684fc871381956f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 110,
+      "folder": "artifacts/bw2-validation/pokemon/0110_weezing",
+      "metadata_sha256": "8f692f5f89fa6a3e6cefa797b18376e09c93dfa1dcd32c0793f0b709796110e5"
+    },
+    {
+      "kind": "pokemon",
+      "id": 325,
+      "folder": "artifacts/bw2-validation/pokemon/0325_spoink",
+      "metadata_sha256": "1c4c705d1a38d33679d9c2af75c67fd472aff84edce2183e6dc12e1474a2ec84"
+    },
+    {
+      "kind": "pokemon",
+      "id": 326,
+      "folder": "artifacts/bw2-validation/pokemon/0326_grumpig",
+      "metadata_sha256": "cf4eed6527e74f749981c94fbc5495d5a505a5969fc635345674d43c9931b602"
+    },
+    {
+      "kind": "pokemon",
+      "id": 27,
+      "folder": "artifacts/bw2-validation/pokemon/0027_sandshrew",
+      "metadata_sha256": "44dd7a090a03f17c68fe5ef71bd40d91167d785ebc7c858aeb48c59e647dcab4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 28,
+      "folder": "artifacts/bw2-validation/pokemon/0028_sandslash",
+      "metadata_sha256": "ed0660f70dd266399ab904d1341faec9c60ad5ce5bf00b8c11c0d2c8fa561b39"
+    },
+    {
+      "kind": "pokemon",
+      "id": 327,
+      "folder": "artifacts/bw2-validation/pokemon/0327_spinda",
+      "metadata_sha256": "157124b94df88ca83765b7b8d46a8a2a6588c7c5a2273ca0dba9ca4df391125b"
+    },
+    {
+      "kind": "pokemon",
+      "id": 227,
+      "folder": "artifacts/bw2-validation/pokemon/0227_skarmory",
+      "metadata_sha256": "08e4960c292d8681d29fe4aaa9238380e28e617eaff9b95f22cb7e9b12e909e0"
+    },
+    {
+      "kind": "pokemon",
+      "id": 328,
+      "folder": "artifacts/bw2-validation/pokemon/0328_trapinch",
+      "metadata_sha256": "17d4384a1d904c3a62119a5d7283abfd81149d44c8526a7e44e2ebe1c1788eeb"
+    },
+    {
+      "kind": "pokemon",
+      "id": 329,
+      "folder": "artifacts/bw2-validation/pokemon/0329_vibrava",
+      "metadata_sha256": "d2c6e69e71f3cc839fc9a8cca5e6dc20302b248e123028d868d93038921285d8"
+    },
+    {
+      "kind": "pokemon",
+      "id": 330,
+      "folder": "artifacts/bw2-validation/pokemon/0330_flygon",
+      "metadata_sha256": "e58d12d3e04b42e28431b6b9446504a9c78b36eb8185ca5006c8920dd253c2d2"
+    },
+    {
+      "kind": "pokemon",
+      "id": 331,
+      "folder": "artifacts/bw2-validation/pokemon/0331_cacnea",
+      "metadata_sha256": "d152a897fccf73e988a7a4557b40a850cb5ae8aaeeb831df45a5932070f3b653"
+    },
+    {
+      "kind": "pokemon",
+      "id": 332,
+      "folder": "artifacts/bw2-validation/pokemon/0332_cacturne",
+      "metadata_sha256": "4b328d797512ef8f25e4ce64c38341e3c65ed966cde571f336240387f116b0b8"
+    },
+    {
+      "kind": "pokemon",
+      "id": 333,
+      "folder": "artifacts/bw2-validation/pokemon/0333_swablu",
+      "metadata_sha256": "6669f346d688424ddc06c0532431cd301546930af141a6116b69e7d8be6fa440"
+    },
+    {
+      "kind": "pokemon",
+      "id": 334,
+      "folder": "artifacts/bw2-validation/pokemon/0334_altaria",
+      "metadata_sha256": "16ab2fa078d69aac929ff55f6e3889f0568794663c425e8c5768409930990ec4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 335,
+      "folder": "artifacts/bw2-validation/pokemon/0335_zangoose",
+      "metadata_sha256": "68e537deb1eca2111ebfc5871098888260f44249a20463c07d1f0296f9f77246"
+    },
+    {
+      "kind": "pokemon",
+      "id": 336,
+      "folder": "artifacts/bw2-validation/pokemon/0336_seviper",
+      "metadata_sha256": "69ae9f513a577a5028b75101a7de6524813e967c5ef926447185ad128a0bac86"
+    },
+    {
+      "kind": "pokemon",
+      "id": 337,
+      "folder": "artifacts/bw2-validation/pokemon/0337_lunatone",
+      "metadata_sha256": "82673e0b349cf46422795a3bc6f70d688d6ebaf89802c1b544abfc2a6d160052"
+    },
+    {
+      "kind": "pokemon",
+      "id": 338,
+      "folder": "artifacts/bw2-validation/pokemon/0338_solrock",
+      "metadata_sha256": "eddac96be6fdc15eba44879ae9dd0e7e91676a9293eacfa9fd23263f28a5c6dc"
+    },
+    {
+      "kind": "pokemon",
+      "id": 339,
+      "folder": "artifacts/bw2-validation/pokemon/0339_barboach",
+      "metadata_sha256": "9058be66676040fcd280f06608bd1c14fd7c472a154e50c17e1849a1ba4e7d2a"
+    },
+    {
+      "kind": "pokemon",
+      "id": 340,
+      "folder": "artifacts/bw2-validation/pokemon/0340_whiscash",
+      "metadata_sha256": "9e746ac62bffd2aa54266b5841e6efb9679fcbcb16a9a34513c0261995d828e6"
+    },
+    {
+      "kind": "pokemon",
+      "id": 341,
+      "folder": "artifacts/bw2-validation/pokemon/0341_corphish",
+      "metadata_sha256": "fa68512a6b1afce10b64054a4ef4735924ab1e1cc4821f22390f9fbdbe1ba2e0"
+    },
+    {
+      "kind": "pokemon",
+      "id": 342,
+      "folder": "artifacts/bw2-validation/pokemon/0342_crawdaunt",
+      "metadata_sha256": "1b4670f32e30d9032b8d210579de1a92573c122daba1b688b40bfaa47e24de32"
+    },
+    {
+      "kind": "pokemon",
+      "id": 343,
+      "folder": "artifacts/bw2-validation/pokemon/0343_baltoy",
+      "metadata_sha256": "c2501483c7be9e636876f4bd9b73631c5efba587215692b919bbf1f5ac89ad0e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 344,
+      "folder": "artifacts/bw2-validation/pokemon/0344_claydol",
+      "metadata_sha256": "1af0f5bd8a824ec30debdfb7e4bb891b4a78a1215218bc8f0f87b239e9a7a025"
+    },
+    {
+      "kind": "pokemon",
+      "id": 345,
+      "folder": "artifacts/bw2-validation/pokemon/0345_lileep",
+      "metadata_sha256": "dde79262683ac9f359f287d68a5b07eb80190b5384d269a00467a3029a0153b8"
+    },
+    {
+      "kind": "pokemon",
+      "id": 346,
+      "folder": "artifacts/bw2-validation/pokemon/0346_cradily",
+      "metadata_sha256": "959a6fcc16333333a5fecefc75c96ed4faec67de587b277b23db1d96f44cfe29"
+    },
+    {
+      "kind": "pokemon",
+      "id": 347,
+      "folder": "artifacts/bw2-validation/pokemon/0347_anorith",
+      "metadata_sha256": "fd2a5da6cd36563ba6d810a270da38ff19b9f1c6749bfe20f44e94ae61eae334"
+    },
+    {
+      "kind": "pokemon",
+      "id": 348,
+      "folder": "artifacts/bw2-validation/pokemon/0348_armaldo",
+      "metadata_sha256": "52fa0aa872dfba6359d0d6a0bf45caf11b430a7ec2219a38a6cc2d93c830a027"
+    },
+    {
+      "kind": "pokemon",
+      "id": 174,
+      "folder": "artifacts/bw2-validation/pokemon/0174_igglybuff",
+      "metadata_sha256": "1925845f85e694c8f8c4889b77c7d0b3608e6be0f9f4121e31b02dc6d7d46940"
+    },
+    {
+      "kind": "pokemon",
+      "id": 39,
+      "folder": "artifacts/bw2-validation/pokemon/0039_jigglypuff",
+      "metadata_sha256": "8788ed848a1e922728cc4ae93298d0370a753c8adac911908fafca5d52a5648d"
+    },
+    {
+      "kind": "pokemon",
+      "id": 40,
+      "folder": "artifacts/bw2-validation/pokemon/0040_wigglytuff",
+      "metadata_sha256": "a967c460a22c2be41e01f120b6a5e80875a322529280cdf78543684b88855929"
+    },
+    {
+      "kind": "pokemon",
+      "id": 349,
+      "folder": "artifacts/bw2-validation/pokemon/0349_feebas",
+      "metadata_sha256": "d1a33ad05a57600ed585ec8c54895ab94bf1db82d54a62895bc3a8baa5c5e153"
+    },
+    {
+      "kind": "pokemon",
+      "id": 350,
+      "folder": "artifacts/bw2-validation/pokemon/0350_milotic",
+      "metadata_sha256": "67ab9f791df28b1d59082b3acc543b8dfdecc713d318d7dd23c6ecd572e96cc7"
+    },
+    {
+      "kind": "pokemon",
+      "id": 351,
+      "folder": "artifacts/bw2-validation/pokemon/0351_castform",
+      "metadata_sha256": "81a74e2b6ba607e3d60c67fd096a58495c7f7e54bf6f336bdc5600e0348f9eac"
+    },
+    {
+      "kind": "pokemon",
+      "id": 120,
+      "folder": "artifacts/bw2-validation/pokemon/0120_staryu",
+      "metadata_sha256": "a9549386f5b6bacc91a1ecb17bac72aeb609e5513e333123523ff6a1836a9bcf"
+    },
+    {
+      "kind": "pokemon",
+      "id": 121,
+      "folder": "artifacts/bw2-validation/pokemon/0121_starmie",
+      "metadata_sha256": "bd1d34ab6fba3d9576e1f2aaf6fbd03f451b1ae855c360ff4d3c74ea2fcf8b9e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 352,
+      "folder": "artifacts/bw2-validation/pokemon/0352_kecleon",
+      "metadata_sha256": "d4f594161d495c28d5ebb7185a3fca2a1c1b95fcaff16dd9ffede40793cfd949"
+    },
+    {
+      "kind": "pokemon",
+      "id": 353,
+      "folder": "artifacts/bw2-validation/pokemon/0353_shuppet",
+      "metadata_sha256": "f35e1c81d6788497417dbd617dbc0385e61ef89fe1eb7ccc8b751c982169563c"
+    },
+    {
+      "kind": "pokemon",
+      "id": 354,
+      "folder": "artifacts/bw2-validation/pokemon/0354_banette",
+      "metadata_sha256": "9919e75f7b23f2f47ae11a4cc4a4e94009627c29e94de190f869c78fbf0146eb"
+    },
+    {
+      "kind": "pokemon",
+      "id": 355,
+      "folder": "artifacts/bw2-validation/pokemon/0355_duskull",
+      "metadata_sha256": "de7aabc87fafaadd70685826268a2e127bcc3494c71b6aef95f51c77df46af0f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 356,
+      "folder": "artifacts/bw2-validation/pokemon/0356_dusclops",
+      "metadata_sha256": "2314d17403e2fee6780d26825350c52b74fa37eed680d1fbf710b30fcdc31c7a"
+    },
+    {
+      "kind": "pokemon",
+      "id": 357,
+      "folder": "artifacts/bw2-validation/pokemon/0357_tropius",
+      "metadata_sha256": "36d3e26a047671208e06dc583386458c0671f1a39b7a6062c6ccd6ca31149803"
+    },
+    {
+      "kind": "pokemon",
+      "id": 358,
+      "folder": "artifacts/bw2-validation/pokemon/0358_chimecho",
+      "metadata_sha256": "98c056a7ebebc60f0e8f84df8a55774e6ce0d06023ad0a27e89ced6955c699e3"
+    },
+    {
+      "kind": "pokemon",
+      "id": 359,
+      "folder": "artifacts/bw2-validation/pokemon/0359_absol",
+      "metadata_sha256": "0f3e20f21fa8ca21b1a024fd0dd75a474c2c98c36af07468616d6e20b17344f0"
+    },
+    {
+      "kind": "pokemon",
+      "id": 37,
+      "folder": "artifacts/bw2-validation/pokemon/0037_vulpix",
+      "metadata_sha256": "9dd7d4baca9e06dedfbaa5a1db8656eea97cedf55fee51c1154eaeab7f033d78"
+    },
+    {
+      "kind": "pokemon",
+      "id": 38,
+      "folder": "artifacts/bw2-validation/pokemon/0038_ninetales",
+      "metadata_sha256": "451f477c70eecee68adc437a150d7c16aecc4e349beea94f8cb906ab1fb04817"
+    },
+    {
+      "kind": "pokemon",
+      "id": 172,
+      "folder": "artifacts/bw2-validation/pokemon/0172_pichu",
+      "metadata_sha256": "44773671567f88779664332255ec59a9c65eb9fc326976f60889ca95b9cf8ccc"
+    },
+    {
+      "kind": "pokemon",
+      "id": 25,
+      "folder": "artifacts/bw2-validation/pokemon/0025_pikachu",
+      "metadata_sha256": "2f6a3798f66b31d607e017000836425dafd912b54cddb1e2cc1af042331329ed"
+    },
+    {
+      "kind": "pokemon",
+      "id": 26,
+      "folder": "artifacts/bw2-validation/pokemon/0026_raichu",
+      "metadata_sha256": "cef05754702b8cccb9668d5c5856e5f1e4c3d7f6e271198ed535491752deffbb"
+    },
+    {
+      "kind": "pokemon",
+      "id": 54,
+      "folder": "artifacts/bw2-validation/pokemon/0054_psyduck",
+      "metadata_sha256": "173ea1d8bd29741d816262a659460b04d1687ed783150b3ed36538dfa10294b1"
+    },
+    {
+      "kind": "pokemon",
+      "id": 55,
+      "folder": "artifacts/bw2-validation/pokemon/0055_golduck",
+      "metadata_sha256": "d79e0d0f20d0a285e5c7ac65be5c2101b9a3d7d57bf51be2ad7eedf0712da475"
+    },
+    {
+      "kind": "pokemon",
+      "id": 360,
+      "folder": "artifacts/bw2-validation/pokemon/0360_wynaut",
+      "metadata_sha256": "7c0e2fba56bea166379e9053fec4953ee989a028c92ee36cabb3eaa15c8f791d"
+    },
+    {
+      "kind": "pokemon",
+      "id": 202,
+      "folder": "artifacts/bw2-validation/pokemon/0202_wobbuffet",
+      "metadata_sha256": "0e92df7dde455581f3aeb5c053ab98249b4d5a0c64007cdc51976cf9887238eb"
+    },
+    {
+      "kind": "pokemon",
+      "id": 177,
+      "folder": "artifacts/bw2-validation/pokemon/0177_natu",
+      "metadata_sha256": "63343aad6bf2cea21a6cd23607146191ef86cd7fc6c762e32326eb06d83f26af"
+    },
+    {
+      "kind": "pokemon",
+      "id": 178,
+      "folder": "artifacts/bw2-validation/pokemon/0178_xatu",
+      "metadata_sha256": "ab659d1e9c2066f776607a02fd4f02db17bd62fe989ce2b486a798178b1e2db4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 203,
+      "folder": "artifacts/bw2-validation/pokemon/0203_girafarig",
+      "metadata_sha256": "fe74d76ab319967f18bd9ccaacea9cede8099a5124ece58237a002f2535c320d"
+    },
+    {
+      "kind": "pokemon",
+      "id": 231,
+      "folder": "artifacts/bw2-validation/pokemon/0231_phanpy",
+      "metadata_sha256": "c76b9ab037bf7fb29184019d7ce8de8cdfc90bf6fa5c499c7682fc8de943643f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 232,
+      "folder": "artifacts/bw2-validation/pokemon/0232_donphan",
+      "metadata_sha256": "5f219f3de5533b55e04ee5186a267342c7de2745105bb741e163c6fae484b777"
+    },
+    {
+      "kind": "pokemon",
+      "id": 127,
+      "folder": "artifacts/bw2-validation/pokemon/0127_pinsir",
+      "metadata_sha256": "1c4d5a4ee2846413da453da546d64b9379ff5fccfd8f34fe2717c7c9063b0884"
+    },
+    {
+      "kind": "pokemon",
+      "id": 214,
+      "folder": "artifacts/bw2-validation/pokemon/0214_heracross",
+      "metadata_sha256": "b9106da431151b1a9099587b39c833b0f8b184df1de467ebab9dd7ea322f896e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 111,
+      "folder": "artifacts/bw2-validation/pokemon/0111_rhyhorn",
+      "metadata_sha256": "c5e17ced7f40ec7d8bd9a59386e9f69ae27a16396b1a532a081f138b330ede60"
+    },
+    {
+      "kind": "pokemon",
+      "id": 112,
+      "folder": "artifacts/bw2-validation/pokemon/0112_rhydon",
+      "metadata_sha256": "253a6e114e784292cb206d31b9fee50a1cd4fb2c99fe293add479e31288c8932"
+    },
+    {
+      "kind": "pokemon",
+      "id": 361,
+      "folder": "artifacts/bw2-validation/pokemon/0361_snorunt",
+      "metadata_sha256": "5d0acc161e3eb668083b91761582c9b584157c56e8003fbbc3be7e7fe7d1d272"
+    },
+    {
+      "kind": "pokemon",
+      "id": 362,
+      "folder": "artifacts/bw2-validation/pokemon/0362_glalie",
+      "metadata_sha256": "ddfaf2005d95e1efc8810444d89a559a0ce23d638ee3a88416a2497776ffde28"
+    },
+    {
+      "kind": "pokemon",
+      "id": 363,
+      "folder": "artifacts/bw2-validation/pokemon/0363_spheal",
+      "metadata_sha256": "b11cb9d4033c9e655da428891510398d7c1330b3e492526722debcfc2542ce3c"
+    },
+    {
+      "kind": "pokemon",
+      "id": 364,
+      "folder": "artifacts/bw2-validation/pokemon/0364_sealeo",
+      "metadata_sha256": "02a6463c03c24c3c6990c77bcdb06e456485ed74e312eef4b98ee3b04b1adb9f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 365,
+      "folder": "artifacts/bw2-validation/pokemon/0365_walrein",
+      "metadata_sha256": "bb545ee58bc619558883d72b93949dd5fdc903340396cfb852011bedd0d6a08f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 366,
+      "folder": "artifacts/bw2-validation/pokemon/0366_clamperl",
+      "metadata_sha256": "ee0e9187a19c93f816d7fb96525ade991cd318f508d4fe0641b02c780295d669"
+    },
+    {
+      "kind": "pokemon",
+      "id": 367,
+      "folder": "artifacts/bw2-validation/pokemon/0367_huntail",
+      "metadata_sha256": "d09cc7edf7504bf760495c6123d836f0aa877eb4362c930135c50e60a2a2ec3b"
+    },
+    {
+      "kind": "pokemon",
+      "id": 368,
+      "folder": "artifacts/bw2-validation/pokemon/0368_gorebyss",
+      "metadata_sha256": "1c7bb82662e7e7655e54c59e04b6e9b42b8932316985a30081e011cc451a1f8e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 369,
+      "folder": "artifacts/bw2-validation/pokemon/0369_relicanth",
+      "metadata_sha256": "a18e7ef57da515ed6e0574a32a4898d4af2cc43f34db1065a880bf2c56efd718"
+    },
+    {
+      "kind": "pokemon",
+      "id": 222,
+      "folder": "artifacts/bw2-validation/pokemon/0222_corsola",
+      "metadata_sha256": "0172bf92973314fba1e101cbb1f3c9bec72a4fb73367f7774a9f56f2e677f620"
+    },
+    {
+      "kind": "pokemon",
+      "id": 170,
+      "folder": "artifacts/bw2-validation/pokemon/0170_chinchou",
+      "metadata_sha256": "c8388cd4bacc22bb5f88e3d9b9d0d0c1d4e92b1a3f661b07a228f0e90ace3de5"
+    },
+    {
+      "kind": "pokemon",
+      "id": 171,
+      "folder": "artifacts/bw2-validation/pokemon/0171_lanturn",
+      "metadata_sha256": "df2ae3522cb3c055c3b8928b064b0447a91905cbdb073b29ac148be72c1f8159"
+    },
+    {
+      "kind": "pokemon",
+      "id": 370,
+      "folder": "artifacts/bw2-validation/pokemon/0370_luvdisc",
+      "metadata_sha256": "913c6a5ca54b4aefbf7346f310b176eb716e1fb67de4f6d754806e8af0d8a6d4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 116,
+      "folder": "artifacts/bw2-validation/pokemon/0116_horsea",
+      "metadata_sha256": "c0b5480a971b1f7bfcbeed9f4667f409b7c33264b94f1ad8c4c8f89d00dacb71"
+    },
+    {
+      "kind": "pokemon",
+      "id": 117,
+      "folder": "artifacts/bw2-validation/pokemon/0117_seadra",
+      "metadata_sha256": "3a03245a035a0e71add65a6e019cae281115d1bb2c05f3117e2e7a898cd6ac65"
+    },
+    {
+      "kind": "pokemon",
+      "id": 230,
+      "folder": "artifacts/bw2-validation/pokemon/0230_kingdra",
+      "metadata_sha256": "6968b16f03ba87dd06a417bfd1d503edd4e24e95df8fdc6e862ea3cf2cb45cd0"
+    },
+    {
+      "kind": "pokemon",
+      "id": 371,
+      "folder": "artifacts/bw2-validation/pokemon/0371_bagon",
+      "metadata_sha256": "6f6cea1695e28446a4078adb1433db0c31efc2f5add4c2d5e25d43176fa91616"
+    },
+    {
+      "kind": "pokemon",
+      "id": 372,
+      "folder": "artifacts/bw2-validation/pokemon/0372_shelgon",
+      "metadata_sha256": "1c78cd6531d583406b9ca24ffb014b01b7244edb2f522b547555b344d531bc83"
+    },
+    {
+      "kind": "pokemon",
+      "id": 373,
+      "folder": "artifacts/bw2-validation/pokemon/0373_salamence",
+      "metadata_sha256": "131528bd6cb174346f419bbd36ccb76da76be65dd7714dac45004561e1d26fca"
+    },
+    {
+      "kind": "pokemon",
+      "id": 374,
+      "folder": "artifacts/bw2-validation/pokemon/0374_beldum",
+      "metadata_sha256": "dc81cbde07a1e3cf20401a1a01582e5fb702fe5305230ca340e9bddd248d8b4f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 375,
+      "folder": "artifacts/bw2-validation/pokemon/0375_metang",
+      "metadata_sha256": "ef31184b2bd390334792fd3422a05fdf192591842fba25989b309d514fa7f884"
+    },
+    {
+      "kind": "pokemon",
+      "id": 376,
+      "folder": "artifacts/bw2-validation/pokemon/0376_metagross",
+      "metadata_sha256": "21e2742ab32191dc75aac2f10755fe1a76c5189c3d7a845f48afa19c20c9e424"
+    },
+    {
+      "kind": "pokemon",
+      "id": 377,
+      "folder": "artifacts/bw2-validation/pokemon/0377_regirock",
+      "metadata_sha256": "b904fcca8c0bbbdfc186102762cc9dd4b3a365782cb241ff65cfce1b976195aa"
+    },
+    {
+      "kind": "pokemon",
+      "id": 378,
+      "folder": "artifacts/bw2-validation/pokemon/0378_regice",
+      "metadata_sha256": "2fed009610f2f2e26ab1e1df7bea6b3826e091cc8347a6c48c5e2bcb393c849e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 379,
+      "folder": "artifacts/bw2-validation/pokemon/0379_registeel",
+      "metadata_sha256": "f68ccd63d7659ef7d710ca071e06f122ecb55f0563d56491a89ab3b17beb7e1e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 380,
+      "folder": "artifacts/bw2-validation/pokemon/0380_latias",
+      "metadata_sha256": "7969e61e3120c6e3fde0296649e271bdc4df0b4bb9de20e4d6dc815ac5d9f57c"
+    },
+    {
+      "kind": "pokemon",
+      "id": 381,
+      "folder": "artifacts/bw2-validation/pokemon/0381_latios",
+      "metadata_sha256": "110c24bc9625238f629ae456c4f251ff5faaa90cc9cc8771d6cdcb8367a6a9fe"
+    },
+    {
+      "kind": "pokemon",
+      "id": 382,
+      "folder": "artifacts/bw2-validation/pokemon/0382_kyogre",
+      "metadata_sha256": "6852b1726eb360edf720ae58023e65c63117dae8a3f544b8828ff2799fad6920"
+    },
+    {
+      "kind": "pokemon",
+      "id": 383,
+      "folder": "artifacts/bw2-validation/pokemon/0383_groudon",
+      "metadata_sha256": "eb965fa27d92707c9a74a6788ab9c451fbd42b76ec4506215326926ca358577b"
+    },
+    {
+      "kind": "pokemon",
+      "id": 384,
+      "folder": "artifacts/bw2-validation/pokemon/0384_rayquaza",
+      "metadata_sha256": "d0dda90383c789f6fdd0917ca7382510bd767cd7fbde5055f7eaf68cf46849a4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 385,
+      "folder": "artifacts/bw2-validation/pokemon/0385_jirachi",
+      "metadata_sha256": "04cbd0a336dd2efff820c7d3a0c07eaee0bbbf15845ac9e9ee05fc4d33c0fb40"
+    },
+    {
+      "kind": "pokemon",
+      "id": 386,
+      "folder": "artifacts/bw2-validation/pokemon/0386_deoxys",
+      "metadata_sha256": "d8bbdf44826645be5f52e4b2d3a63c30471a163f8875ec71fc5887d2c7498743"
+    },
+    {
+      "kind": "pokemon",
+      "id": 1,
+      "folder": "artifacts/bw2-validation/pokemon/0001_bulbasaur",
+      "metadata_sha256": "95f4fb3cc00ca5badabc4e04c729d51aa98dc7cb07e7ba100e84a65e7425714c"
+    },
+    {
+      "kind": "pokemon",
+      "id": 2,
+      "folder": "artifacts/bw2-validation/pokemon/0002_ivysaur",
+      "metadata_sha256": "d094c8ca8adf0c908e1cfb5b5f93c7c881386a6a9a82da6a8480da47093888d9"
+    },
+    {
+      "kind": "pokemon",
+      "id": 3,
+      "folder": "artifacts/bw2-validation/pokemon/0003_venusaur",
+      "metadata_sha256": "cff8cf786c4d32ccf84ef12e2bbb86a1c7254cbd8aa18e961e39e064d1759b99"
+    },
+    {
+      "kind": "pokemon",
+      "id": 4,
+      "folder": "artifacts/bw2-validation/pokemon/0004_charmander",
+      "metadata_sha256": "599772ad783f26018d534fda9c38d380fc98672ce6161ef4b4cd7320f7f67f82"
+    },
+    {
+      "kind": "pokemon",
+      "id": 5,
+      "folder": "artifacts/bw2-validation/pokemon/0005_charmeleon",
+      "metadata_sha256": "f82658f1ea5fee000c00e829594e3c487910275642edb01c951c8b9c99e40502"
+    },
+    {
+      "kind": "pokemon",
+      "id": 6,
+      "folder": "artifacts/bw2-validation/pokemon/0006_charizard",
+      "metadata_sha256": "5ae51dc9fa46e830a570bf15649fc42a96174ad32a5193bb1d1f522f0da88fe7"
+    },
+    {
+      "kind": "pokemon",
+      "id": 7,
+      "folder": "artifacts/bw2-validation/pokemon/0007_squirtle",
+      "metadata_sha256": "3b0e5a83432ef1624531fc2e2ec6213a35ff0fe557fe0af545396a2f80c349c7"
+    },
+    {
+      "kind": "pokemon",
+      "id": 8,
+      "folder": "artifacts/bw2-validation/pokemon/0008_wartortle",
+      "metadata_sha256": "c878d200bec2de94fafcbf36fe0f0d3445732a1a8171922e8055ba93e4e49c69"
+    },
+    {
+      "kind": "pokemon",
+      "id": 9,
+      "folder": "artifacts/bw2-validation/pokemon/0009_blastoise",
+      "metadata_sha256": "4768ccac3d3f05a59af443f39371745afbbb1b2379a50867da55e6bb0cd13029"
+    },
+    {
+      "kind": "pokemon",
+      "id": 10,
+      "folder": "artifacts/bw2-validation/pokemon/0010_caterpie",
+      "metadata_sha256": "5d01007342e35539a31ce3e9db49f407afad364b9fbfde463c4f3aef020d798c"
+    },
+    {
+      "kind": "pokemon",
+      "id": 11,
+      "folder": "artifacts/bw2-validation/pokemon/0011_metapod",
+      "metadata_sha256": "42420104d328696ef325a1fd6da820982739290d8f3f0548f545f538c91bd66e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 12,
+      "folder": "artifacts/bw2-validation/pokemon/0012_butterfree",
+      "metadata_sha256": "0dd939b10facb01ac8725ebd520d79c0e063bd3d045422e443d23b4f8cb2f4c1"
+    },
+    {
+      "kind": "pokemon",
+      "id": 13,
+      "folder": "artifacts/bw2-validation/pokemon/0013_weedle",
+      "metadata_sha256": "92bcc79d9cc5aa4f5d029d08d4c0f61d0b8a3a033d691e5820f7c2b3b0bc4880"
+    },
+    {
+      "kind": "pokemon",
+      "id": 14,
+      "folder": "artifacts/bw2-validation/pokemon/0014_kakuna",
+      "metadata_sha256": "18749023dad84a5854f8d7931a93b1d20944e999ddccffc6742ed59f69bdf561"
+    },
+    {
+      "kind": "pokemon",
+      "id": 15,
+      "folder": "artifacts/bw2-validation/pokemon/0015_beedrill",
+      "metadata_sha256": "aace29094cd40334745ebee7e2bd2985c587dd7cbd95043d255b95c358ae2bb0"
+    },
+    {
+      "kind": "pokemon",
+      "id": 16,
+      "folder": "artifacts/bw2-validation/pokemon/0016_pidgey",
+      "metadata_sha256": "87b6ba3a845b55424c2a7d254b800dd210f5757aa4dae8287c9cf975b87d956b"
+    },
+    {
+      "kind": "pokemon",
+      "id": 17,
+      "folder": "artifacts/bw2-validation/pokemon/0017_pidgeotto",
+      "metadata_sha256": "838ddc13ca9aec5c0da60dbbdd785f08bb932d80197f5570bb9571e7551456a4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 18,
+      "folder": "artifacts/bw2-validation/pokemon/0018_pidgeot",
+      "metadata_sha256": "68c22c8263a61aad5b159f42060cf80e37ca5ae46b6b2f21d0c75ae5fe958ae3"
+    },
+    {
+      "kind": "pokemon",
+      "id": 19,
+      "folder": "artifacts/bw2-validation/pokemon/0019_rattata",
+      "metadata_sha256": "940b2f60cb1ab262065a0dd3bd7d7ea154ab232c3c25bdec39646c0208cc4edc"
+    },
+    {
+      "kind": "pokemon",
+      "id": 20,
+      "folder": "artifacts/bw2-validation/pokemon/0020_raticate",
+      "metadata_sha256": "0ecf4faca73f9198d97cb0276ca87ab832234cff68223ee43b7b19d300651221"
+    },
+    {
+      "kind": "pokemon",
+      "id": 21,
+      "folder": "artifacts/bw2-validation/pokemon/0021_spearow",
+      "metadata_sha256": "a03b1f0eb630caa7d0b00cae0dc14c781f7e35409d2eea45477e1d3ede87f8fe"
+    },
+    {
+      "kind": "pokemon",
+      "id": 22,
+      "folder": "artifacts/bw2-validation/pokemon/0022_fearow",
+      "metadata_sha256": "862f25b9dadc0a924bcbd88fefebf37133040d3d560d37e897bcb1e384504850"
+    },
+    {
+      "kind": "pokemon",
+      "id": 23,
+      "folder": "artifacts/bw2-validation/pokemon/0023_ekans",
+      "metadata_sha256": "394c81d6b855626f16a163175c8e2de3bcdbaea4a77b82046e6c6312c3fe3dd3"
+    },
+    {
+      "kind": "pokemon",
+      "id": 24,
+      "folder": "artifacts/bw2-validation/pokemon/0024_arbok",
+      "metadata_sha256": "bb896df35006cda8bbe864bf7347565b30b0571e1db82f9857b15e180ba1d9ec"
+    },
+    {
+      "kind": "pokemon",
+      "id": 29,
+      "folder": "artifacts/bw2-validation/pokemon/0029_nidoran_f",
+      "metadata_sha256": "e682270726caa6010d2e55d360e81191c6394fed8b3a945fee5d304d1ff00a72"
+    },
+    {
+      "kind": "pokemon",
+      "id": 30,
+      "folder": "artifacts/bw2-validation/pokemon/0030_nidorina",
+      "metadata_sha256": "3a4473b619536bc86cbc43675a6156ea5a3626715403d94d85a0e27c2314ea2e"
+    },
+    {
+      "kind": "pokemon",
+      "id": 31,
+      "folder": "artifacts/bw2-validation/pokemon/0031_nidoqueen",
+      "metadata_sha256": "2323f64c965dc94484966167883e528ea64f880a87b14ec83e27f87229ffb3d3"
+    },
+    {
+      "kind": "pokemon",
+      "id": 32,
+      "folder": "artifacts/bw2-validation/pokemon/0032_nidoran_m",
+      "metadata_sha256": "cf6267eff801970d3ebd4dca72d047f49813790e9c679fff848f806e2b3616fa"
+    },
+    {
+      "kind": "pokemon",
+      "id": 33,
+      "folder": "artifacts/bw2-validation/pokemon/0033_nidorino",
+      "metadata_sha256": "031aa26beb1b3065471eb1b5fdc23ac61f39d6935f7bebce271e41d4fc1c1f11"
+    },
+    {
+      "kind": "pokemon",
+      "id": 34,
+      "folder": "artifacts/bw2-validation/pokemon/0034_nidoking",
+      "metadata_sha256": "c69891b4a4b2980b736717dd4c153c8626bcfbd4142b4c8d5f15021d6d502073"
+    },
+    {
+      "kind": "pokemon",
+      "id": 35,
+      "folder": "artifacts/bw2-validation/pokemon/0035_clefairy",
+      "metadata_sha256": "001796107e85f25325a64f0594d8957c0fd28e083def8c9df156c7d7d7070134"
+    },
+    {
+      "kind": "pokemon",
+      "id": 36,
+      "folder": "artifacts/bw2-validation/pokemon/0036_clefable",
+      "metadata_sha256": "46e5f1ab06e62b5fe5d8dc7fda4a5367674b876f79b2173e1c104f84b6f3a658"
+    },
+    {
+      "kind": "pokemon",
+      "id": 46,
+      "folder": "artifacts/bw2-validation/pokemon/0046_paras",
+      "metadata_sha256": "e2ab63fcb8b044bfb3b9374179cb47c4b44c5f8c07cb80a0702ce6d5090cc0f1"
+    },
+    {
+      "kind": "pokemon",
+      "id": 47,
+      "folder": "artifacts/bw2-validation/pokemon/0047_parasect",
+      "metadata_sha256": "aa9218f193c2c5bf4e94edf848725f78733a0acf6f06a6379547d47987a64ea9"
+    },
+    {
+      "kind": "pokemon",
+      "id": 48,
+      "folder": "artifacts/bw2-validation/pokemon/0048_venonat",
+      "metadata_sha256": "e73f853b6522773f834dbe4d83ae49659acb6ddd9d8f1b7d70484591097447a4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 49,
+      "folder": "artifacts/bw2-validation/pokemon/0049_venomoth",
+      "metadata_sha256": "e425fdb8a3e46bbbe4ee6a7c3d5fae1ea372d9d351fc0c74af5ae3a52c8da0c4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 50,
+      "folder": "artifacts/bw2-validation/pokemon/0050_diglett",
+      "metadata_sha256": "32aa17b7501b545de9b605ceae784f156fbac4617acb9197a297fd072cd51638"
+    },
+    {
+      "kind": "pokemon",
+      "id": 51,
+      "folder": "artifacts/bw2-validation/pokemon/0051_dugtrio",
+      "metadata_sha256": "483398e333ffd47a5ff1dcd497d80fe0b74b668d0cb5331fdc8ead49ac616afb"
+    },
+    {
+      "kind": "pokemon",
+      "id": 52,
+      "folder": "artifacts/bw2-validation/pokemon/0052_meowth",
+      "metadata_sha256": "72459a2923b738fafd9c81c21b8d8b0d454a62d356d22249e4c5fb6f069ee7de"
+    },
+    {
+      "kind": "pokemon",
+      "id": 53,
+      "folder": "artifacts/bw2-validation/pokemon/0053_persian",
+      "metadata_sha256": "7e034cadf22561ea06253b81a2cde5d3a281cdb403871c036af3b8e3ac479619"
+    },
+    {
+      "kind": "pokemon",
+      "id": 56,
+      "folder": "artifacts/bw2-validation/pokemon/0056_mankey",
+      "metadata_sha256": "69ad8d56ff3afe955296c0cde433dd1d0b70d4e307ba53a053d2f273491cbdc2"
+    },
+    {
+      "kind": "pokemon",
+      "id": 57,
+      "folder": "artifacts/bw2-validation/pokemon/0057_primeape",
+      "metadata_sha256": "664e319683f8f58145680ce27ef36c1ab27f4110e4f92184868593dd53349ba2"
+    },
+    {
+      "kind": "pokemon",
+      "id": 58,
+      "folder": "artifacts/bw2-validation/pokemon/0058_growlithe",
+      "metadata_sha256": "d02ee314129981d99cf3125f0513586ca3b16c516decd1fa50aa5d2cc91ccf36"
+    },
+    {
+      "kind": "pokemon",
+      "id": 59,
+      "folder": "artifacts/bw2-validation/pokemon/0059_arcanine",
+      "metadata_sha256": "e3419cbe34bb9d1dd8d08b4798b49cc64dc28a6423504c4eebbccb72b9eae07f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 60,
+      "folder": "artifacts/bw2-validation/pokemon/0060_poliwag",
+      "metadata_sha256": "5d968bfac50ac3d82392d1f22516e8a15a01e7fb9592a23fb93112af397f3455"
+    },
+    {
+      "kind": "pokemon",
+      "id": 61,
+      "folder": "artifacts/bw2-validation/pokemon/0061_poliwhirl",
+      "metadata_sha256": "9405acc6ef52e539befae082cd85b25076c39d22025fda2cc20284b679b8df38"
+    },
+    {
+      "kind": "pokemon",
+      "id": 62,
+      "folder": "artifacts/bw2-validation/pokemon/0062_poliwrath",
+      "metadata_sha256": "fab41c3750b9f931190a332f9c1aa9dd5431085f65bd01e2c63c4dfc802f59dd"
+    },
+    {
+      "kind": "pokemon",
+      "id": 69,
+      "folder": "artifacts/bw2-validation/pokemon/0069_bellsprout",
+      "metadata_sha256": "d64981a2d69228e2924a42ca2ff9207fcb548f21605b09db8b054ce597f631a2"
+    },
+    {
+      "kind": "pokemon",
+      "id": 70,
+      "folder": "artifacts/bw2-validation/pokemon/0070_weepinbell",
+      "metadata_sha256": "4549d3615346a08a75c1425ecc95c47f9143f6a39d63bf1b1e9b27f95c5be8ed"
+    },
+    {
+      "kind": "pokemon",
+      "id": 71,
+      "folder": "artifacts/bw2-validation/pokemon/0071_victreebel",
+      "metadata_sha256": "15eda569ba6d0e9294640b5b1815547f4f4dc91445dd2a4e18b1162ae4324ed2"
+    },
+    {
+      "kind": "pokemon",
+      "id": 77,
+      "folder": "artifacts/bw2-validation/pokemon/0077_ponyta",
+      "metadata_sha256": "c04d8c74087a964ff133a05b995c34a908012016dc5d7c555c6beecf37a11ce6"
+    },
+    {
+      "kind": "pokemon",
+      "id": 78,
+      "folder": "artifacts/bw2-validation/pokemon/0078_rapidash",
+      "metadata_sha256": "8044d6b90e06fe8d91f505c02c703fb90bd6ed7cf0ace2151837da9853a2424a"
+    },
+    {
+      "kind": "pokemon",
+      "id": 79,
+      "folder": "artifacts/bw2-validation/pokemon/0079_slowpoke",
+      "metadata_sha256": "45dea552de986076d50c1571967f48f2866a5cb6b11458b4df1f03383c41304f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 80,
+      "folder": "artifacts/bw2-validation/pokemon/0080_slowbro",
+      "metadata_sha256": "e293cc98c28b4cf91a24aee2430ca31cc67852ae3b93cb41a9b43a60fc0fdcaf"
+    },
+    {
+      "kind": "pokemon",
+      "id": 83,
+      "folder": "artifacts/bw2-validation/pokemon/0083_farfetchd",
+      "metadata_sha256": "af6b6f9658792b1e4c44ca610a80ea7a53c10a7ce8380b7b3f2fd6f4a8c5daca"
+    },
+    {
+      "kind": "pokemon",
+      "id": 86,
+      "folder": "artifacts/bw2-validation/pokemon/0086_seel",
+      "metadata_sha256": "9a86abe6cf66f8b0c3c809d5cfba23f12675deefb6c6f42780be12b964117d92"
+    },
+    {
+      "kind": "pokemon",
+      "id": 87,
+      "folder": "artifacts/bw2-validation/pokemon/0087_dewgong",
+      "metadata_sha256": "483b406d121fb0366a035154433362c8fcc366d98276a1d5b395b9366620b359"
+    },
+    {
+      "kind": "pokemon",
+      "id": 90,
+      "folder": "artifacts/bw2-validation/pokemon/0090_shellder",
+      "metadata_sha256": "6c7ebe50bf363633b04839eb053eeba04c35fec30ffd4399d498d84981050300"
+    },
+    {
+      "kind": "pokemon",
+      "id": 91,
+      "folder": "artifacts/bw2-validation/pokemon/0091_cloyster",
+      "metadata_sha256": "0ee6a0355d2b3e7d73683dbad8a9d66c66cbd147a671b8c23923c5b6c7c785d6"
+    },
+    {
+      "kind": "pokemon",
+      "id": 92,
+      "folder": "artifacts/bw2-validation/pokemon/0092_gastly",
+      "metadata_sha256": "7f348b58a249b7311816a2fe785ae40e7ddfb76d50ba642132425ddc9d82a30c"
+    },
+    {
+      "kind": "pokemon",
+      "id": 93,
+      "folder": "artifacts/bw2-validation/pokemon/0093_haunter",
+      "metadata_sha256": "dbfe0e9ce255805abe4e59c3c26905ca0f091d9155552676094872a4341b9f66"
+    },
+    {
+      "kind": "pokemon",
+      "id": 94,
+      "folder": "artifacts/bw2-validation/pokemon/0094_gengar",
+      "metadata_sha256": "2d5ad8d57374b5f7ae6504db3951e7a528ed16489b28e9bf46028f7c2d5bd7fb"
+    },
+    {
+      "kind": "pokemon",
+      "id": 95,
+      "folder": "artifacts/bw2-validation/pokemon/0095_onix",
+      "metadata_sha256": "63d817adf091d2a714c23e5e15b73c59f380174e2ea9fa91b8f15e3bb1d3726d"
+    },
+    {
+      "kind": "pokemon",
+      "id": 96,
+      "folder": "artifacts/bw2-validation/pokemon/0096_drowzee",
+      "metadata_sha256": "7a47cfd980426242306872b231cc32d6c66efb95ae86669970f56b0a201fdc69"
+    },
+    {
+      "kind": "pokemon",
+      "id": 97,
+      "folder": "artifacts/bw2-validation/pokemon/0097_hypno",
+      "metadata_sha256": "2d588da15324af760bf6467de5eda3a922feb7d135b12ffe455b7dc640db5e06"
+    },
+    {
+      "kind": "pokemon",
+      "id": 98,
+      "folder": "artifacts/bw2-validation/pokemon/0098_krabby",
+      "metadata_sha256": "d7cc7c9ac7e910ea2d10b4cf9e6959e86c36daa9476f33c28316a6875adeb9cf"
+    },
+    {
+      "kind": "pokemon",
+      "id": 99,
+      "folder": "artifacts/bw2-validation/pokemon/0099_kingler",
+      "metadata_sha256": "5b8df405a50563d97cef03be5d6d5dfce5b97ed35db02dd75e82caa9581bfdbc"
+    },
+    {
+      "kind": "pokemon",
+      "id": 102,
+      "folder": "artifacts/bw2-validation/pokemon/0102_exeggcute",
+      "metadata_sha256": "c935b0d2f8910fb62792076e463ecdea17c71893682a5d03b034400ab237a1d6"
+    },
+    {
+      "kind": "pokemon",
+      "id": 103,
+      "folder": "artifacts/bw2-validation/pokemon/0103_exeggutor",
+      "metadata_sha256": "1bdca9000d8c7dc828566f8887530f2fec4b86da38dee0bd1d53b91b76cd8a75"
+    },
+    {
+      "kind": "pokemon",
+      "id": 104,
+      "folder": "artifacts/bw2-validation/pokemon/0104_cubone",
+      "metadata_sha256": "3f59d552fe1473fbd6aa2a73bdfeaf4b15b2fedbc8b69af2ac607062cbefb2c6"
+    },
+    {
+      "kind": "pokemon",
+      "id": 105,
+      "folder": "artifacts/bw2-validation/pokemon/0105_marowak",
+      "metadata_sha256": "af807e758cbb30d4f156d2ea6e44f7487c50933e09e8ecb3fc896c3f9f80758f"
+    },
+    {
+      "kind": "pokemon",
+      "id": 106,
+      "folder": "artifacts/bw2-validation/pokemon/0106_hitmonlee",
+      "metadata_sha256": "6d89bfa80d3c1b7b60eb687092a3669a61a6fc8b6b5c1a1bcd4f9931b8df4bcf"
+    },
+    {
+      "kind": "pokemon",
+      "id": 107,
+      "folder": "artifacts/bw2-validation/pokemon/0107_hitmonchan",
+      "metadata_sha256": "482f0c3971b5043e15be3b6f8f5ed755fa1f62bee4a3c9056f33435b47af89f6"
+    },
+    {
+      "kind": "pokemon",
+      "id": 108,
+      "folder": "artifacts/bw2-validation/pokemon/0108_lickitung",
+      "metadata_sha256": "024f67f072c6c992ab61db3706ff31cc257bcd13bb5ad545195a447ff085a9ec"
+    },
+    {
+      "kind": "pokemon",
+      "id": 113,
+      "folder": "artifacts/bw2-validation/pokemon/0113_chansey",
+      "metadata_sha256": "187f1934a7b8bca72645761e9f73445816a0a356f21e252ec309f566b45cfb1c"
+    },
+    {
+      "kind": "pokemon",
+      "id": 114,
+      "folder": "artifacts/bw2-validation/pokemon/0114_tangela",
+      "metadata_sha256": "726d90e72c92a5998e9090c346e75ced577c66db97f1b7474c59d952e6bf6bff"
+    },
+    {
+      "kind": "pokemon",
+      "id": 115,
+      "folder": "artifacts/bw2-validation/pokemon/0115_kangaskhan",
+      "metadata_sha256": "2b30e55546e544f41ac2127c007dee9236c4df8cb0ae407cb9351e9e93b1b2e4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 122,
+      "folder": "artifacts/bw2-validation/pokemon/0122_mr_mime",
+      "metadata_sha256": "be8ae00b2e675b1be8bc18ee7408955f07301ecd396749bdb07a8cd93fd5a11c"
+    },
+    {
+      "kind": "pokemon",
+      "id": 123,
+      "folder": "artifacts/bw2-validation/pokemon/0123_scyther",
+      "metadata_sha256": "ec1017e2b1026e7e8815bd086b1308c0d4da1682561c2257b10c8b967354ee8d"
+    },
+    {
+      "kind": "pokemon",
+      "id": 124,
+      "folder": "artifacts/bw2-validation/pokemon/0124_jynx",
+      "metadata_sha256": "3476bb3837985c253563e5fe2c54bfd21207ac23f11f4c835afcb38a10b9395d"
+    },
+    {
+      "kind": "pokemon",
+      "id": 125,
+      "folder": "artifacts/bw2-validation/pokemon/0125_electabuzz",
+      "metadata_sha256": "51ee22773b7c163dadae1f5c4179205359642aef87df640c667b20671f26f2dd"
+    },
+    {
+      "kind": "pokemon",
+      "id": 126,
+      "folder": "artifacts/bw2-validation/pokemon/0126_magmar",
+      "metadata_sha256": "ed377cdabceb1c047749032a0f387a3d84bd7217e405b09050cf357a30740c83"
+    },
+    {
+      "kind": "pokemon",
+      "id": 128,
+      "folder": "artifacts/bw2-validation/pokemon/0128_tauros",
+      "metadata_sha256": "9d3de25499ee54b9db896ef756a913955a33f455d06fb72590401c53e0835569"
+    },
+    {
+      "kind": "pokemon",
+      "id": 131,
+      "folder": "artifacts/bw2-validation/pokemon/0131_lapras",
+      "metadata_sha256": "92dd93d96cc904aa2b63874d7541ae3b57bf0fe86644d5106918c05d169aa900"
+    },
+    {
+      "kind": "pokemon",
+      "id": 132,
+      "folder": "artifacts/bw2-validation/pokemon/0132_ditto",
+      "metadata_sha256": "e19cd37ad0703561657149d541feb0bbede2d1b1e684ba0832f8f851cd08776a"
+    },
+    {
+      "kind": "pokemon",
+      "id": 133,
+      "folder": "artifacts/bw2-validation/pokemon/0133_eevee",
+      "metadata_sha256": "57d0d319324c2f52b420e9272dc8185423af53fc4037b39a79629eda71e41887"
+    },
+    {
+      "kind": "pokemon",
+      "id": 134,
+      "folder": "artifacts/bw2-validation/pokemon/0134_vaporeon",
+      "metadata_sha256": "dc1732b61fbef37db879601ab38146331c0aa4754b5187cb286f1eb11a43b912"
+    },
+    {
+      "kind": "pokemon",
+      "id": 135,
+      "folder": "artifacts/bw2-validation/pokemon/0135_jolteon",
+      "metadata_sha256": "e2ced3626e3025e7c0a851c49f51b4fa9918b55e2d00fc3216e5da7ae1abcf98"
+    },
+    {
+      "kind": "pokemon",
+      "id": 136,
+      "folder": "artifacts/bw2-validation/pokemon/0136_flareon",
+      "metadata_sha256": "29746ff5b5a62510c1fa2fedc24afac22469ea00a578e9c76f907d9c105008e6"
+    },
+    {
+      "kind": "pokemon",
+      "id": 137,
+      "folder": "artifacts/bw2-validation/pokemon/0137_porygon",
+      "metadata_sha256": "53344233513d85b19cfb8eab16ba9f671a6aa02c1e1c38c34979086eec550703"
+    },
+    {
+      "kind": "pokemon",
+      "id": 138,
+      "folder": "artifacts/bw2-validation/pokemon/0138_omanyte",
+      "metadata_sha256": "0e8f88a230c0efe5395a5b983ab9cbd1fda6e07121b608b97ea800667873751a"
+    },
+    {
+      "kind": "pokemon",
+      "id": 139,
+      "folder": "artifacts/bw2-validation/pokemon/0139_omastar",
+      "metadata_sha256": "202a1ace53b3e88a1651bf7d1d9c26b00f9e6e3a0af18d940949a663b013186a"
+    },
+    {
+      "kind": "pokemon",
+      "id": 140,
+      "folder": "artifacts/bw2-validation/pokemon/0140_kabuto",
+      "metadata_sha256": "eddf5f066f15e4ca262c9d4e540a96d8d49c158570af83fd4cdd761da6ca147a"
+    },
+    {
+      "kind": "pokemon",
+      "id": 141,
+      "folder": "artifacts/bw2-validation/pokemon/0141_kabutops",
+      "metadata_sha256": "492d3817ff570c90b1c6a502e2e5fb1e01c6e7091a7bccdd422334a08d315225"
+    },
+    {
+      "kind": "pokemon",
+      "id": 142,
+      "folder": "artifacts/bw2-validation/pokemon/0142_aerodactyl",
+      "metadata_sha256": "561849615aea63e45771a773d6f004770653c388abfdc4e5f32dc27030e07540"
+    },
+    {
+      "kind": "pokemon",
+      "id": 143,
+      "folder": "artifacts/bw2-validation/pokemon/0143_snorlax",
+      "metadata_sha256": "8cb8aa79f87b181e39dc94f60b7723eaa86d8151d2e47386e6379b3ec3ab01df"
+    },
+    {
+      "kind": "pokemon",
+      "id": 144,
+      "folder": "artifacts/bw2-validation/pokemon/0144_articuno",
+      "metadata_sha256": "c7b156524e4180fd27c63dc39d1afde5a80f5cffa70f7eec0f79d87d01b9adbc"
+    },
+    {
+      "kind": "pokemon",
+      "id": 145,
+      "folder": "artifacts/bw2-validation/pokemon/0145_zapdos",
+      "metadata_sha256": "73777d317b82e3004d2ec146c9eaf535cda04c9e655a7b4ed04a6852cae1359d"
+    },
+    {
+      "kind": "pokemon",
+      "id": 146,
+      "folder": "artifacts/bw2-validation/pokemon/0146_moltres",
+      "metadata_sha256": "ad1f005129178e13992b7a180c47afb08a8902b7543682dae2489b6ba10eca94"
+    },
+    {
+      "kind": "pokemon",
+      "id": 147,
+      "folder": "artifacts/bw2-validation/pokemon/0147_dratini",
+      "metadata_sha256": "dfc30bdf5b953f6fd05d7882847bec4be97e1582ee08249528edb90bda6cd9bd"
+    },
+    {
+      "kind": "pokemon",
+      "id": 148,
+      "folder": "artifacts/bw2-validation/pokemon/0148_dragonair",
+      "metadata_sha256": "ad3ea03856552c07cf713f5ab9620a728be5b3d1c88e7b009b08961dc8d2c238"
+    },
+    {
+      "kind": "pokemon",
+      "id": 149,
+      "folder": "artifacts/bw2-validation/pokemon/0149_dragonite",
+      "metadata_sha256": "116dae91aa6df3c3c934b2aedc42dfe318fc2fe6e66ee407fc261f45f23d84b6"
+    },
+    {
+      "kind": "pokemon",
+      "id": 150,
+      "folder": "artifacts/bw2-validation/pokemon/0150_mewtwo",
+      "metadata_sha256": "80835a905ccaba906b5946eece321b806d55c7ffdcfa6e9615a13b8792c512c8"
+    },
+    {
+      "kind": "pokemon",
+      "id": 151,
+      "folder": "artifacts/bw2-validation/pokemon/0151_mew",
+      "metadata_sha256": "cc7f5f3bb1239fec7b79bde968d4375fe878dfed2924da6efa447719610198c3"
+    },
+    {
+      "kind": "pokemon",
+      "id": 152,
+      "folder": "artifacts/bw2-validation/pokemon/0152_chikorita",
+      "metadata_sha256": "4416cd444f0671fa7a339ec1c291a5fb3f275f40e0d1c0a8ae925ea71c006195"
+    },
+    {
+      "kind": "pokemon",
+      "id": 153,
+      "folder": "artifacts/bw2-validation/pokemon/0153_bayleef",
+      "metadata_sha256": "00e46c0a7e4e064aa1e217372b94a980ccdd53f268b87aae03f0857ca03ad6a4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 154,
+      "folder": "artifacts/bw2-validation/pokemon/0154_meganium",
+      "metadata_sha256": "1f8dd4c823a020869ce3c9fa9e0d2001b074662c0489e9cd5a4bba63194dd601"
+    },
+    {
+      "kind": "pokemon",
+      "id": 155,
+      "folder": "artifacts/bw2-validation/pokemon/0155_cyndaquil",
+      "metadata_sha256": "c7c4c24e18b584a0aa4c98d5110266b3cb9e12c866c571299bac6307055f8158"
+    },
+    {
+      "kind": "pokemon",
+      "id": 156,
+      "folder": "artifacts/bw2-validation/pokemon/0156_quilava",
+      "metadata_sha256": "0d248288ec0a8dc0b742c8a9c577bef41b310dc3591f56f054fc7f872abad8fc"
+    },
+    {
+      "kind": "pokemon",
+      "id": 157,
+      "folder": "artifacts/bw2-validation/pokemon/0157_typhlosion",
+      "metadata_sha256": "cd4b0c7f353808be496462ef64bd2020628136b1ac646c12bc4169e330eeb7c4"
+    },
+    {
+      "kind": "pokemon",
+      "id": 158,
+      "folder": "artifacts/bw2-validation/pokemon/0158_totodile",
+      "metadata_sha256": "bd38899f3c6da02677c67f22354cd8e5dbefef549cea3f74c49394a557753e82"
+    },
+    {
+      "kind": "pokemon",
+      "id": 159,
+      "folder": "artifacts/bw2-validation/pokemon/0159_croconaw",
+      "metadata_sha256": "917369f95785909238e7850aa8fa8d0a7de2e4d46d20c817d99d810b2ba33918"
+    },
+    {
+      "kind": "mosse",
+      "id": 1,
+      "folder": "artifacts/bw2-validation/moves/0001_pound",
+      "metadata_sha256": "ea6ba7a6e0a426b156530b399827150bf23763035d018ba0609973d6137894e1"
+    },
+    {
+      "kind": "mosse",
+      "id": 33,
+      "folder": "artifacts/bw2-validation/moves/0033_tackle",
+      "metadata_sha256": "25bc2dc5c67aaabc95d1e54d025f816b96982df753690337884e5662094d182a"
+    },
+    {
+      "kind": "mosse",
+      "id": 43,
+      "folder": "artifacts/bw2-validation/moves/0043_leer",
+      "metadata_sha256": "a4b93712990a2b41005ba99849cf78cb23624caf0d2371a3b9c5e163e7470438"
+    },
+    {
+      "kind": "mosse",
+      "id": 336,
+      "folder": "artifacts/bw2-validation/moves/0336_howl",
+      "metadata_sha256": "7cd8529c71d1d2cf1ca9ec1f6580f9dece5d0852f0c5fad495f96d3de7734fc3"
+    },
+    {
+      "kind": "mosse",
+      "id": 10,
+      "folder": "artifacts/bw2-validation/moves/0010_scratch",
+      "metadata_sha256": "d8c70c06e805dbcbd9f5899e09130d81512c3e132ec7b83c42a318cbbee33575"
+    },
+    {
+      "kind": "mosse",
+      "id": 45,
+      "folder": "artifacts/bw2-validation/moves/0045_growl",
+      "metadata_sha256": "a7513e74cf426d9e29b303b561d0c2ed9e2165cae6d07dd98b7e9bb43d534a6c"
+    }
+  ]
+}

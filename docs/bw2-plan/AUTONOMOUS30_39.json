@@ -1,7 +1,7 @@
 {
   "start_pokemon": 234,
   "target_pokemon": 314,
-  "completed_checkpoints": 9,
+  "completed_checkpoints": 10,
   "groups": [
     {
       "number": 30,
@@ -1284,7 +1284,7 @@
     {
       "number": 39,
       "ordinal": 10,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Chikorita",
         "Bayleef",
@@ -1347,7 +1347,81 @@
           "enemy": 158
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 320,
+      "movie": {
+        "duration": 223.31266666666667,
+        "decoded_frames": 6697,
+        "sha256": "0feb19f892ca60b7fefc82e524bbeb34a66c6d3ab3a95bb46bd90542e187c91f",
+        "segments": [
+          {
+            "name": "chikorita-bayleef",
+            "start": 0.0,
+            "end": 26.611333333333334,
+            "frames": 798,
+            "sha256": "ab555f264056e16c998b81a2706dedaa7796db3d6654c9b3be19578569611a02"
+          },
+          {
+            "name": "bayleef-chikorita",
+            "start": 26.611333333333334,
+            "end": 52.425666666666665,
+            "frames": 774,
+            "sha256": "1e3bd90f9192813df205585c1e94060d0e45a3f61a82194fb73d28b1a290a6ee"
+          },
+          {
+            "name": "meganium-cyndaquil",
+            "start": 52.425666666666665,
+            "end": 78.974,
+            "frames": 796,
+            "sha256": "18e27a43ef8230356b80896145bbc765ddae17d56a2092b7c583fc30c4bccccf"
+          },
+          {
+            "name": "cyndaquil-meganium",
+            "start": 78.974,
+            "end": 106.38233333333334,
+            "frames": 822,
+            "sha256": "6b4f457f85ffdecac9d73a2c6f7e988543f259d3a75e3ff0333d068153475606"
+          },
+          {
+            "name": "quilava-typhlosion",
+            "start": 106.38233333333334,
+            "end": 131.61866666666666,
+            "frames": 757,
+            "sha256": "748858be252528086709b6843e0d0f696cb4409bfc5b024672f6699c3a33c946"
+          },
+          {
+            "name": "typhlosion-quilava",
+            "start": 131.61866666666666,
+            "end": 158.527,
+            "frames": 807,
+            "sha256": "d0c5594a1c0ec4423a70a303cfbbee534cf05616ad7eb2be35c0b3081ad6ea3d"
+          },
+          {
+            "name": "totodile-croconaw",
+            "start": 158.527,
+            "end": 190.87333333333333,
+            "frames": 970,
+            "sha256": "ebd28e48fad50455d8320f2b9ac8ce4326594ccd476298e9454b745f0e468ff6"
+          },
+          {
+            "name": "croconaw-totodile",
+            "start": 190.87333333333333,
+            "end": 223.31266666666667,
+            "frames": 973,
+            "sha256": "08b7db3571e0b2efcf20403278652da9c5495d4c010f3898cdb3f2d5a5e038cf"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 39: eight Pokemon"
     }
   ],
   "builds": {
@@ -1389,7 +1463,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint38: reviewed, published and audited; commit follows",
+    "phase": "closed: all ten checkpoints completed and independently audited",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -1400,10 +1474,19 @@
       }
     ],
     "continuity": "build/BW2_CONTINUITY30.md",
-    "capture_group": 38,
+    "capture_group": null,
     "exec_session_id": null,
-    "log": "build/bw2-auto30-cp38-capture.log",
-    "build_script": "build/bw2-auto30-build.sh"
+    "log": "build/bw2-auto30-cp39-capture.log",
+    "build_script": "build/bw2-auto30-build.sh",
+    "isolated_emulator_closed": true,
+    "personal_emulator_processes": [
+      {
+        "ProcessId": 12992,
+        "Name": "azahar.exe",
+        "ExecutablePath": "D:\\Emulators\\Azahar\\azahar.exe"
+      }
+    ],
+    "final_process_snapshot": "build/bw2-final30-processes.json"
   },
   "checks": {
     "synthetic": {

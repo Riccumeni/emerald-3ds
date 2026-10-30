@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **306**.
+Totale: **386**. Fatti con dossier completo: **314**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -312,14 +312,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0149 **Dragonite** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0149_dragonite/).
 - [x] 0150 **Mewtwo** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0150_mewtwo/).
 - [x] 0151 **Mew** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0151_mew/).
-- [ ] 0152 **Chikorita** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0152_chikorita/).
-- [ ] 0153 **Bayleef** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0153_bayleef/).
-- [ ] 0154 **Meganium** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0154_meganium/).
-- [ ] 0155 **Cyndaquil** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0155_cyndaquil/).
-- [ ] 0156 **Quilava** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0156_quilava/).
-- [ ] 0157 **Typhlosion** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0157_typhlosion/).
-- [ ] 0158 **Totodile** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0158_totodile/).
-- [ ] 0159 **Croconaw** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0159_croconaw/).
+- [x] 0152 **Chikorita** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0152_chikorita/).
+- [x] 0153 **Bayleef** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0153_bayleef/).
+- [x] 0154 **Meganium** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0154_meganium/).
+- [x] 0155 **Cyndaquil** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0155_cyndaquil/).
+- [x] 0156 **Quilava** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0156_quilava/).
+- [x] 0157 **Typhlosion** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0157_typhlosion/).
+- [x] 0158 **Totodile** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0158_totodile/).
+- [x] 0159 **Croconaw** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0159_croconaw/).
 - [ ] 0160 **Feraligatr** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0160_feraligatr/).
 - [ ] 0161 **Sentret** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0161_sentret/).
 - [ ] 0162 **Furret** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0162_furret/).
