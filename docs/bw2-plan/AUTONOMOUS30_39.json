@@ -1,7 +1,7 @@
 {
   "start_pokemon": 234,
   "target_pokemon": 314,
-  "completed_checkpoints": 5,
+  "completed_checkpoints": 6,
   "groups": [
     {
       "number": 30,
@@ -716,7 +716,7 @@
     {
       "number": 35,
       "ordinal": 6,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Hitmonchan",
         "Lickitung",
@@ -779,7 +779,81 @@
           "enemy": 123
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 288,
+      "movie": {
+        "duration": 246.01766666666666,
+        "decoded_frames": 7377,
+        "sha256": "eb3bf6cceaf7f5aebdee20082157a28bec32b9709f43ad3964de24dcf5c52d7d",
+        "segments": [
+          {
+            "name": "hitmonchan-lickitung",
+            "start": 0.0,
+            "end": 24.315333333333335,
+            "frames": 729,
+            "sha256": "852110553b787d82e90f42207df99eb04e885964e23c6ede805b9a9c0e1b87a2"
+          },
+          {
+            "name": "lickitung-hitmonchan",
+            "start": 24.315333333333335,
+            "end": 47.98866666666667,
+            "frames": 710,
+            "sha256": "13f5dd6d0a41b3bd66f0c17f49ff2799b7648df655807995b23c98209a988431"
+          },
+          {
+            "name": "chansey-tangela",
+            "start": 47.98866666666667,
+            "end": 74.975,
+            "frames": 809,
+            "sha256": "38094e4bcd5d2f979a6cb18b4fcad4c53b976577db5e39a839b70e7a2cb95edc"
+          },
+          {
+            "name": "tangela-chansey",
+            "start": 74.975,
+            "end": 101.60233333333333,
+            "frames": 798,
+            "sha256": "a5faf5b21e533894f3f695e7f5dfdf8879ca7cb6427f64704957c5a13831597f"
+          },
+          {
+            "name": "kangaskhan-mr-mime",
+            "start": 101.60233333333333,
+            "end": 143.71366666666665,
+            "frames": 1263,
+            "sha256": "d5f8a76b67f58d8cacbb2dec805444cba030fc57b86819a3be7c46f384f080c2"
+          },
+          {
+            "name": "mr-mime-kangaskhan",
+            "start": 143.71366666666665,
+            "end": 185.528,
+            "frames": 1254,
+            "sha256": "0a431c38f687e198980ebd77ffd79ddab7bb7a5f1be0724e66e2fceba14943d3"
+          },
+          {
+            "name": "scyther-jynx",
+            "start": 185.528,
+            "end": 215.54633333333334,
+            "frames": 900,
+            "sha256": "f1349e94e5730df42212fe688038b8374837eec085b1a888bd8863a4964368d1"
+          },
+          {
+            "name": "jynx-scyther",
+            "start": 215.54633333333334,
+            "end": 246.01766666666666,
+            "frames": 914,
+            "sha256": "9bfb520ac38b19fd6d8631b947fe28914fab417907e8b535ccdb381dab0cde66"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 35: eight Pokemon"
     },
     {
       "number": 36,
@@ -1093,7 +1167,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint34: reviewed, published and audited; commit follows",
+    "phase": "checkpoint35: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -1104,9 +1178,9 @@
       }
     ],
     "continuity": "build/BW2_CONTINUITY30.md",
-    "capture_group": 34,
+    "capture_group": 35,
     "exec_session_id": null,
-    "log": "build/bw2-auto30-cp34-capture.log",
+    "log": "build/bw2-auto30-cp35-capture.log",
     "build_script": "build/bw2-auto30-build.sh"
   },
   "checks": {

@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **274**.
+Totale: **386**. Fatti con dossier completo: **282**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -280,14 +280,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0104 **Cubone** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0104_cubone/).
 - [x] 0105 **Marowak** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0105_marowak/).
 - [x] 0106 **Hitmonlee** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0106_hitmonlee/).
-- [ ] 0107 **Hitmonchan** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0107_hitmonchan/).
-- [ ] 0108 **Lickitung** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0108_lickitung/).
-- [ ] 0113 **Chansey** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0113_chansey/).
-- [ ] 0114 **Tangela** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0114_tangela/).
-- [ ] 0115 **Kangaskhan** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0115_kangaskhan/).
-- [ ] 0122 **Mr Mime** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0122_mr_mime/).
-- [ ] 0123 **Scyther** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0123_scyther/).
-- [ ] 0124 **Jynx** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0124_jynx/).
+- [x] 0107 **Hitmonchan** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0107_hitmonchan/).
+- [x] 0108 **Lickitung** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0108_lickitung/).
+- [x] 0113 **Chansey** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0113_chansey/).
+- [x] 0114 **Tangela** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0114_tangela/).
+- [x] 0115 **Kangaskhan** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0115_kangaskhan/).
+- [x] 0122 **Mr Mime** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0122_mr_mime/).
+- [x] 0123 **Scyther** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0123_scyther/).
+- [x] 0124 **Jynx** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0124_jynx/).
 - [ ] 0125 **Electabuzz** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0125_electabuzz/).
 - [ ] 0126 **Magmar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0126_magmar/).
 - [ ] 0128 **Tauros** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0128_tauros/).
