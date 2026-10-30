@@ -12331,7 +12331,7 @@ index 7cde1a018c33c86da6ede1b0e7d3259869774cb0..d6720e2e5c86b64f5fd2691f4d19dc00
  static void SlidePartyMenuBoxOneStep(u8);
  static void Task_SlideSelectedSlotsOffscreen(u8);
  static void SwitchPartyMon(void);
-@@ -485,11 +492,52 @@ static bool8 SetUpFieldMove_Dive(void);
+@@ -485,11 +492,54 @@ static bool8 SetUpFieldMove_Dive(void);
  #include "data/pokemon/tutor_learnsets.h"
  #include "data/party_menu.h"
  
@@ -12365,6 +12365,7 @@ index 7cde1a018c33c86da6ede1b0e7d3259869774cb0..d6720e2e5c86b64f5fd2691f4d19dc00
 +static u8 sCtrDesc[PARTY_SIZE];
 +static void CtrParty_CopyText(u8 *dst, const u8 *src, u16 size);
 +s16 CtrText_PrinterPage(u8 windowId, const u8 *str);
++static s8 sCtrChosenAction = -1;
 +#else
 +#define PARTY_AB_NEW() JOY_NEW(A_BUTTON | B_BUTTON)
 +#endif
@@ -12380,6 +12381,7 @@ index 7cde1a018c33c86da6ede1b0e7d3259869774cb0..d6720e2e5c86b64f5fd2691f4d19dc00
 +    sCtrPrompt[0] = sCtrMessage[0] = EOS;
 +    sCtrMessageSrc = NULL;
 +    memset(sCtrDesc, CTR_PARTY_DESC_NONE, sizeof(sCtrDesc));
++    sCtrChosenAction = -1;
 +#endif
      ResetPartyMenu();
      sPartyMenuInternal = Alloc(sizeof(struct PartyMenuInternal));
@@ -12423,7 +12425,7 @@ index 7cde1a018c33c86da6ede1b0e7d3259869774cb0..d6720e2e5c86b64f5fd2691f4d19dc00
  
          ResetSpriteData();
          FreePartyPointers();
-@@ -1256,13 +1318,330 @@ u8 GetPartyMenuType(void)
+@@ -1256,13 +1318,358 @@ u8 GetPartyMenuType(void)
      return gPartyMenu.menuType;
  }
  
@@ -12510,6 +12512,26 @@ index 7cde1a018c33c86da6ede1b0e7d3259869774cb0..d6720e2e5c86b64f5fd2691f4d19dc00
 +    return TRUE;
 +}
 +
++/* The 3DS roster draws the same actions as this menu.  Keep their text and
++ * count here, where the private action list is available. */
++u8 CtrParty_ActionCount(void)
++{
++    return sPartyMenuInternal ? sPartyMenuInternal->numActions : 0;
++}
++
++const u8 *CtrParty_ActionText(u8 entry)
++{
++    if (sPartyMenuInternal == NULL || entry >= sPartyMenuInternal->numActions)
++        return NULL;
++    return sCursorOptions[sPartyMenuInternal->actions[entry]].text;
++}
++
++void CtrParty_ChooseAction(u8 entry)
++{
++    if (sPartyMenuInternal != NULL && entry < sPartyMenuInternal->numActions)
++        sCtrChosenAction = entry;
++}
++
 +// A tap on the open menu of the party menu (the mon's actions, the moves to
 +// choose among): the entry tapped, as A chooses it; anywhere else B.
 +// MENU_NOTHING_CHOSEN without one.
@@ -12517,6 +12539,14 @@ index 7cde1a018c33c86da6ede1b0e7d3259869774cb0..d6720e2e5c86b64f5fd2691f4d19dc00
 +{
 +    s16 x, y;
 +    s8 entry;
++
++    if (sCtrChosenAction >= 0)
++    {
++        entry = sCtrChosenAction;
++        sCtrChosenAction = -1;
++        CtrMenu_Choose(entry, TRUE);
++        return entry;
++    }
 +
 +    if (!CtrMenu_TakeTap(&x, &y))
 +    {

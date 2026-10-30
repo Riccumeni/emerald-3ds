@@ -13,9 +13,9 @@ diff --git a/src/wild_encounter.c b/src/wild_encounter.c
  #include "wild_encounter.h"
  #include "pokemon.h"
 @@ -50,6 +51,17 @@
-
+ 
  #define HEADER_NONE 0xFFFF
-
+ 
 +static const struct WildPokemonInfo *GetLandMonsInfo(u16 headerId)
 +{
 +    const struct WildPokemonHeader *header = &gWildMonHeaders[headerId];
@@ -51,11 +51,11 @@ diff --git a/src/wild_encounter.c b/src/wild_encounter.c
 -            else if (WildEncounterCheck(gWildMonHeaders[headerId].landMonsInfo->encounterRate, FALSE) != TRUE)
 +            else if (WildEncounterCheck(GetLandMonsInfo(headerId)->encounterRate, FALSE) != TRUE)
                  return FALSE;
-
+ 
              if (TryStartRoamerEncounter() == TRUE)
 @@ -1046,7 +1058,7 @@
                  }
-
+ 
                  // try a regular wild land encounter
 -                if (TryGenerateWildMon(gWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
 +                if (TryGenerateWildMon(GetLandMonsInfo(headerId), WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
@@ -69,7 +69,7 @@ diff --git a/src/wild_encounter.c b/src/wild_encounter.c
 -            if (gWildMonHeaders[headerId].landMonsInfo == NULL)
 +            if (GetLandMonsInfo(headerId) == NULL)
                  return FALSE;
-
+ 
              if (TryStartRoamerEncounter() == TRUE)
 @@ -1171,7 +1183,7 @@
              if (DoMassOutbreakEncounterTest() == TRUE)
@@ -77,7 +77,7 @@ diff --git a/src/wild_encounter.c b/src/wild_encounter.c
              else
 -                TryGenerateWildMon(gWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, 0);
 +                TryGenerateWildMon(GetLandMonsInfo(headerId), WILD_AREA_LAND, 0);
-
+ 
              BattleSetup_StartWildBattle();
              return TRUE;
 @@ -1238,7 +1250,7 @@

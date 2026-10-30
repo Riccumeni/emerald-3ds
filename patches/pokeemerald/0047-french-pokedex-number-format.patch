@@ -33,7 +33,7 @@ diff --git a/src/pokedex.c b/src/pokedex.c
      if (owned)
 @@ -4252,5 +4258,9 @@
      u8 *end = ConvertIntToDecimalStringN(buffer, height / 10, STR_CONV_MODE_LEFT_ALIGN, 4);
-
+ 
 +#if GAME_LANGUAGE == LANGUAGE_FRENCH
 +    *end++ = CHAR_COMMA;
 +#else
@@ -43,7 +43,7 @@ diff --git a/src/pokedex.c b/src/pokedex.c
      *end++ = CHAR_SPACE;
 @@ -4297,5 +4307,9 @@
      u8 *end = ConvertIntToDecimalStringN(buffer, weight / 10, STR_CONV_MODE_LEFT_ALIGN, 4);
-
+ 
 +#if GAME_LANGUAGE == LANGUAGE_FRENCH
 +    *end++ = CHAR_COMMA;
 +#else

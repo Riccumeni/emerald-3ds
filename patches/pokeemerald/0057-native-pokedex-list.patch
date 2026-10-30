@@ -1,0 +1,52 @@
+diff --git a/src/pokedex.c b/src/pokedex.c
+--- a/src/pokedex.c
++++ b/src/pokedex.c
+@@ -5873,3 +5873,48 @@
++#include "3ds_pokedex_ui.h"
++
++bool CtrPokedex_ListShown(void)
++{
++    /* The native skin owns the screen from the first initialization frame,
++     * including the game's fade-in. Its palette does not fade this canvas. */
++    if (gMain.callback2 == CB2_OpenPokedex)
++        return true;
++    return CtrPokedex_IsOpen() && !sPokedexView->menuIsOpen
++        && sPokedexView->menuY == 0
++        && (sPokedexView->currentPage == PAGE_MAIN || sPokedexView->currentPage == PAGE_SEARCH_RESULTS);
++}
++
++void CtrPokedex_ReadList(CtrDexList *view)
++{
++    int row;
++    int first;
++
++    memset(view, 0, sizeof(*view));
++    if (!CtrPokedex_ListShown() || sPokedexView == NULL || gMain.callback2 == CB2_OpenPokedex)
++        return;
++    view->selected = sPokedexView->selectedPokemon;
++    view->count = sPokedexView->pokemonListCount;
++    view->seen = sPokedexView->seenCount;
++    view->caught = sPokedexView->ownCount;
++    first = view->selected >= 2 ? view->selected - 2 : 0;
++    if (view->count > CTR_DEX_ROWS && first + CTR_DEX_ROWS > view->count)
++        first = view->count - CTR_DEX_ROWS;
++    view->cursorRow = view->selected - first;
++    for (row = 0; row < CTR_DEX_ROWS; ++row)
++    {
++        int index = first + row;
++        struct PokedexListItem *item;
++
++        if (index < 0 || index >= view->count)
++            continue;
++        item = &sPokedexView->pokedexList[index];
++        view->rows[row].number = sPokedexView->dexMode == DEX_MODE_HOENN
++                               ? NationalToHoennOrder(item->dexNum) : item->dexNum;
++        view->rows[row].species = NationalPokedexNumToSpecies(item->dexNum);
++        view->rows[row].seen = item->seen;
++        view->rows[row].caught = item->owned;
++    }
++}
++
+ // The tile the screen on show carries out past its edges on the bottom
+ // screen (3ds_video.c, CentredFillOf), as bg << 16 | column << 8 | row (or
+ // 1 << 20 | bg << 16 | a tilemap entry): the stripes behind every page, the

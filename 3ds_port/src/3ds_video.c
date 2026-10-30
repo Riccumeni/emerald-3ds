@@ -15,6 +15,7 @@
 #include "3ds_corner_art.h"
 #include "3ds_data.h"
 #include "3ds_bottom.h"
+#include "3ds_summary_ui.h"
 #include "ctr_battle_layout.h"
 #include "3ds_battle_hud.h"
 #include "3ds_local.h"
@@ -12138,6 +12139,52 @@ static void DrawSpeedBadge(C3D_RenderTarget *target, int halves)
  * the frame is only paced to the display.
  */
 static bool sHoldTop;
+/* A dual-screen summary temporarily replaces the world held above the
+ * party/PC menu. Keep the completed eye buffers in ordinary RAM while its
+ * INFO page uses the GPU, then present those same buffers on return. */
+static u8 *sSummaryTopSaved;
+static bool sSummaryTopStereo;
+#define SUMMARY_EYE_BYTES (240u * 400u * 4u)
+static C3D_Tex sSummaryProfileTexture;
+static u32 sSummaryProfileVersion;
+
+static bool DrawNativeSummaryProfile(void)
+{
+    u32 version;
+    const u16 *canvas = CtrSummary_ProfileCanvas(&version);
+    if (!sSummaryProfileTexture.data)
+    {
+        if (!C3D_TexInit(&sSummaryProfileTexture, 512, 256, GPU_RGB565))
+            return false;
+        C3D_TexSetFilter(&sSummaryProfileTexture, GPU_NEAREST, GPU_NEAREST);
+        C3D_TexSetWrap(&sSummaryProfileTexture, GPU_CLAMP_TO_EDGE, GPU_CLAMP_TO_EDGE);
+        memset(sSummaryProfileTexture.data, 0, 512u * 256u * sizeof(u16));
+        sSummaryProfileVersion = version - 1;
+    }
+    if (version != sSummaryProfileVersion)
+    {
+        u16 *data = sSummaryProfileTexture.data;
+        for (unsigned ty = 0; ty < 240; ty += 8)
+            for (unsigned tx = 0; tx < 400; tx += 8)
+            {
+                u16 *tile = data + ((ty / 8) * (512 / 8) + tx / 8) * 64;
+                for (unsigned y = 0; y < 8; ++y)
+                    for (unsigned x = 0; x < 8; ++x)
+                        tile[sMorton[y * 8 + x]] = canvas[(tx + x) * 240 + 239 - ty - y];
+            }
+        C3D_TexFlush(&sSummaryProfileTexture);
+        sSummaryProfileVersion = version;
+    }
+    const Tex3DS_SubTexture profile = {400, 240, 0, 1, 400.0f / 512.0f, 1 - 240.0f / 256.0f};
+    ColourClear(sTop, C2D_Color32(0, 0, 0, 255));
+    SceneOn(sTop);
+    BlendForget();
+    Blend(5, false, false);
+    C2D_ViewReset();
+    C2D_DrawImageAt((C2D_Image){&sSummaryProfileTexture, &profile}, 0, 0, 0, NULL, 1, 1);
+    C2D_Flush();
+    return true;
+}
 
 /*
  * The Pokédex draws its device over the held frame, and a screen chosen from
@@ -12360,7 +12407,8 @@ void CtrVideo_Present(void)
     /* Nor is the shop's BUY screen ever shown on the top screen while its
      * surface down there is not ready yet, nor a screen the bottom one
      * draws natively. */
-    if ((sHoldTop || sCentredRequested == CTR_CENTRED_SHOP || (wanted && native)) && !down)
+    if ((sHoldTop || sCentredRequested == CTR_CENTRED_SHOP || (wanted && native)) && !down
+     && !(sSummaryTopSaved && !CtrSummary_DualShown()))
     {
         sStats.mode = CTR_MODE_OTHER;
         sStats.route = CTR_ROUTE_BLANK;
@@ -12463,6 +12511,42 @@ void CtrVideo_Present(void)
     uint64_t waitStart = svcGetSystemTick();
     CtrVoxel_NoteFrameWait(waitStart);
     if (!C3D_FrameBegin(C3D_FRAME_SYNCDRAW)) return;
+    if (CtrSummary_DualShown() && !sSummaryTopSaved)
+    {
+        sSummaryTopSaved = malloc(SUMMARY_EYE_BYTES * (sTopRight ? 2 : 1));
+        if (sSummaryTopSaved)
+        {
+            memcpy(sSummaryTopSaved, sTop->frameBuf.colorBuf, SUMMARY_EYE_BYTES);
+            if (sTopRight)
+                memcpy(sSummaryTopSaved + SUMMARY_EYE_BYTES, sTopRight->frameBuf.colorBuf, SUMMARY_EYE_BYTES);
+            sSummaryTopStereo = sStereo;
+        }
+    }
+    else if (sSummaryTopSaved && !CtrSummary_DualShown())
+    {
+        memcpy(sTop->frameBuf.colorBuf, sSummaryTopSaved, SUMMARY_EYE_BYTES);
+        GSPGPU_FlushDataCache(sTop->frameBuf.colorBuf, SUMMARY_EYE_BYTES);
+        C3D_FrameDrawOn(sTop);
+        if (sTopRight && sSummaryTopStereo)
+        {
+            memcpy(sTopRight->frameBuf.colorBuf, sSummaryTopSaved + SUMMARY_EYE_BYTES, SUMMARY_EYE_BYTES);
+            GSPGPU_FlushDataCache(sTopRight->frameBuf.colorBuf, SUMMARY_EYE_BYTES);
+            C3D_FrameDrawOn(sTopRight);
+        }
+        gfxSet3D(sSummaryTopStereo);
+        sStereo = sSummaryTopStereo;
+        bool running = GpuFinishEarly();
+        C3D_FrameEnd(running ? GX_CMDLIST_FLUSH : 0);
+        free(sSummaryTopSaved);
+        sSummaryTopSaved = NULL;
+        if (sSummaryProfileTexture.data)
+        {
+            C3D_TexDelete(&sSummaryProfileTexture);
+            memset(&sSummaryProfileTexture, 0, sizeof(sSummaryProfileTexture));
+        }
+        ++sStats.frames;
+        return;
+    }
     /* A late clear wiped the scene surface's kept scenery, if it was that. */
     if (ClearsRun()) sSceneCached = sSceneEmpty = false;
     /* Before anything samples what the CPU wrote since the last frame. */
@@ -12470,6 +12554,16 @@ void CtrVideo_Present(void)
     sUploadCommands = sAnimCommands = 0;
     sRenderReserve = sBattle ? RENDER_RESERVE_MOST : RENDER_RESERVE;
     Flat2D();
+    if (CtrSummary_DualShown() && DrawNativeSummaryProfile())
+    {
+        if (sStereo) { gfxSet3D(false); sStereo = false; }
+        bool running = GpuFinishEarly();
+        C3D_FrameEnd(running ? GX_CMDLIST_FLUSH : 0);
+        sStats.mode = CTR_MODE_CENTRED;
+        sStats.route = CTR_ROUTE_MONO;
+        ++sStats.frames;
+        return;
+    }
     uint64_t start = svcGetSystemTick();
     sStats.waitMs = (start - waitStart) * 1000.0 / SYSCLOCK_ARM11;
     /* FrameBegin waited for the last frame's drawing: this is its time. Read
@@ -12742,6 +12836,7 @@ void CtrVideo_Present(void)
     bool stereo = voxelStereo || battleStereo || worldStereo
                   || (!voxel && !blank && !sBattleWorld && !sTransition && sTopRight && slider > 0.0f
                       && roundf(slider * CTR_STEREO_PIXELS) > 0.0f);
+    if (CtrSummary_DualShown()) stereo = false;
     /* A 2D screen composed per eye walks every layer twice, which on an Old
      * 3DS is 30 fps in a menu. Without its planes it stays flat until they
      * can be made (before the next frame, see sBandsWanted). */
@@ -13121,6 +13216,8 @@ void CtrVideo_SetLineScroll(unsigned reg, bool wide, const void *values, unsigne
 
 void CtrVideo_Shutdown(void)
 {
+    free(sSummaryTopSaved);
+    sSummaryTopSaved = NULL;
     BottomRelease();
     CtrVoxel_Shutdown();
     StereoSurfaceRelease();
@@ -13130,6 +13227,11 @@ void CtrVideo_Shutdown(void)
     if (sLogical) C3D_RenderTargetDelete(sLogical);
     if (sTop) C3D_RenderTargetDelete(sTop);
     if (sTopRight) C3D_RenderTargetDelete(sTopRight);
+    if (sSummaryProfileTexture.data)
+    {
+        C3D_TexDelete(&sSummaryProfileTexture);
+        memset(&sSummaryProfileTexture, 0, sizeof(sSummaryProfileTexture));
+    }
     BandsRelease();
     sBandsFailed = false;
     if (sC2d) C2D_Fini();

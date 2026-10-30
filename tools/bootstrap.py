@@ -166,7 +166,7 @@ def main() -> int:
                             capture_output=True).returncode != 0:
                         created.unlink()
         for patch in patches:
-            run(["git", "apply", "--whitespace=nowarn", patch], cwd=tree)
+            run(["git", "apply", "--ignore-whitespace", "--whitespace=nowarn", patch], cwd=tree)
         marker.write_text(digest + "\n")
     else:
         print("bootstrap: upstream %s with %d patches already in place" % (commit[:12], len(patches)))

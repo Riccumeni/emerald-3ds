@@ -3522,6 +3522,21 @@ PLAIN_ROOMS = [
 ]
 
 
+def cutters_furniture():
+    return [
+        piece("table", [(128, 64, 158, 95)], 9, leave=GENERIC_FLOOR,
+              solid=True, side="plain") | {"alone": True},
+        piece("fridge", [(129, 10, 143, 11), (128, 11, 144, 39), (128, 39, 143, 40)],
+              24, back=32, solid=True) | {"alone": True},
+        piece("tap", [(149, 16, 158, 25)], 8, base=8,
+              leave=GENERIC_WALL[:2] + GENERIC_FLOOR, through=True,
+              side="plain") | {"alone": True},
+        piece("sink", [(144, 21, 176, 40)], 8,
+              leave=GENERIC_WALL + GENERIC_FLOOR, against=32,
+              side="plain") | {"alone": True},
+    ]
+
+
 def plain_room(width, height, plain_x, sides):
     w, h = width * 16, height * 16
     side = (plain_x * 16, 0, plain_x * 16 + 16, 32)
@@ -3530,6 +3545,29 @@ def plain_room(width, height, plain_x, sides):
         pieces += [piece("side_w", [], 32, side=side, walls=[((0, h), (0, 32))]),
                    piece("side_e", [], 32, side=side, walls=[((w, 32), (w, h))])]
     return pieces
+
+
+def flat2_kitchen():
+    """The same kitchen art in Flat2 1F, at its own room coordinates."""
+    pieces = []
+    for pc in cutters_furniture():
+        dx, dy = (16, -16) if pc["name"] == "table" else (48, 0)
+        pieces.append(dict(pc, shape=[(x0 + dx, y0 + dy, x1 + dx, y1 + dy)
+                                      for x0, y0, x1, y1 in pc["shape"]]))
+    return pieces
+
+
+def flat_furniture(layout):
+    if layout == "LAYOUT_RUSTBORO_CITY_FLAT2_1F":
+        return flat2_kitchen()
+    if layout == "LAYOUT_RUSTBORO_CITY_FLAT2_2F":
+        return [piece("table", [(194, 48, 222, 79)], 9,
+                      leave=GENERIC_FLOOR, solid=True) | {"alone": True}]
+    if layout == "LAYOUT_RUSTBORO_CITY_FLAT2_3F":
+        return [piece("green_bookshelf", [(114, 16, 126, 17), (113, 17, 127, 18),
+                                         (112, 18, 128, 39), (112, 39, 127, 40)],
+                      16, back=32, solid=True) | {"alone": True}]
+    return []
 
 
 # ── Mr. Briney's house ────────────────────────────────────────────────────
@@ -7740,7 +7778,22 @@ SPECS = [
     {
         "name": layout[len("LAYOUT_"):].lower(),
         "interior": {"layout": layout, "ground": [ground],
-                     "pieces": own_shell(plain_room(width, height, plain_x, sides))},
+                     "pieces": own_shell(([
+                         piece("table", [(82, 64, 110, 95)], 9,
+                               leave=GENERIC_RUG, solid=True) | {"alone": True},
+                         piece("green_bookshelf", [(34, 16, 46, 17), (33, 17, 47, 18),
+                                                    (32, 18, 48, 39), (32, 39, 47, 40)],
+                               16, back=32, solid=True) | {"alone": True},
+                         piece("display_cabinet", [(161, 12, 191, 13), (160, 13, 192, 39),
+                                                    (160, 39, 191, 40)],
+                               20, back=32, solid=True) | {"alone": True},
+                         piece("white_console", [(96, 17, 127, 38), (98, 38, 102, 39),
+                                                 (98, 39, 101, 40), (121, 38, 125, 39),
+                                                 (122, 39, 125, 40)],
+                               21, back=32, solid=True) | {"alone": True},
+                     ] if layout == "LAYOUT_RUSTBORO_CITY_HOUSE" else
+                         cutters_furniture() if layout == "LAYOUT_RUSTBORO_CITY_CUTTERS_HOUSE" else [])
+                         + plain_room(width, height, plain_x, sides))},
     }
     for layout, width, height, ground, plain_x, sides in PLAIN_ROOMS
 ] + [
@@ -7754,7 +7807,8 @@ SPECS = [
     {
         "name": layout[len("LAYOUT_"):].lower(),
         "interior": {"layout": layout, "ground": [ground],
-                     "pieces": own_shell(stair_room(width, height, plain_x, doors, *extra))},
+                     "pieces": own_shell(flat_furniture(layout)
+                                          + stair_room(width, height, plain_x, doors, *extra))},
     }
     for layout, width, height, ground, plain_x, doors, *extra in STAIR_ROOMS
 ] + [

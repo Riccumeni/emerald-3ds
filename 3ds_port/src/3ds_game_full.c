@@ -81,6 +81,8 @@
 #include "3ds_audio.h"
 #include "3ds_bottom.h"
 #include "3ds_dex_top.h"
+#include "3ds_pokedex_ui.h"
+#include "3ds_summary_ui.h"
 #include "3ds_sprite_ids.h"
 
 #include <stdio.h>
@@ -371,7 +373,7 @@ void CtrCentredStorage_SetVBlankCallback(IntrCallback callback)
 
 void CtrCentredSummary_SetVBlankCallback(IntrCallback callback)
 {
-    SetCentredCallback(callback, CTR_CENTRED_SUMMARY);
+    SetCentredCallback(callback, CtrSummary_DualShown() ? CTR_CENTRED_PLAIN : CTR_CENTRED_SUMMARY);
 }
 
 void CtrCentredShop_SetVBlankCallback(IntrCallback callback)
@@ -502,7 +504,11 @@ static void UpdateStage(void)
     CtrVideo_SetStage(!caughtMonPage && sStage.on);
     CtrVideo_SetStageFaded(!caughtMonPage && sStage.on && sStage.screen == 1);
     CtrVideo_SetStageZoomed(!caughtMonPage && sStage.on && sStage.screen == 2);
-    CtrVideo_SetCentred(caughtMonPage ? CTR_CENTRED_POKEDEX_CAUGHT
+    /* The custom roster draws the party selection itself.  Suppress the
+     * GBA party compositor before it can copy the old list beneath it. */
+    CtrVideo_SetCentred(CtrSummary_DualShown() ? CTR_CENTRED_PLAIN
+                                    : caughtMonPage ? CTR_CENTRED_POKEDEX_CAUGHT
+                                    : (CtrBottom_UsesPartyRoster() || CtrPokedex_ListShown()) ? CTR_CENTRED_NONE
                                     : sCentred.on ? sCentred.screen : CTR_CENTRED_NONE);
     CtrVideo_SetBattle(!caughtMonPage && sBattle.on);
     CtrVideo_SetTransition(!caughtMonPage && TransitionOn());
