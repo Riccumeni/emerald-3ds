@@ -1,7 +1,7 @@
 {
   "start_pokemon": 234,
   "target_pokemon": 314,
-  "completed_checkpoints": 3,
+  "completed_checkpoints": 4,
   "groups": [
     {
       "number": 30,
@@ -432,7 +432,7 @@
     {
       "number": 33,
       "ordinal": 4,
-      "status": "pending",
+      "status": "complete",
       "names": [
         "Dewgong",
         "Shellder",
@@ -495,7 +495,81 @@
           "enemy": 95
         }
       ],
-      "artifact_date": "2026-10-30"
+      "artifact_date": "2026-10-30",
+      "reviewed_normal_pairs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reviewed_entry": true,
+      "reviewed_shiny": true,
+      "audit_dossiers": 272,
+      "movie": {
+        "duration": 223.59466666666665,
+        "decoded_frames": 6706,
+        "sha256": "b59cb637e2cae5596b4dca74229a816822a8b23a68a8a31c7d397a1e50d855bb",
+        "segments": [
+          {
+            "name": "dewgong-shellder",
+            "start": 0.0,
+            "end": 29.767333333333333,
+            "frames": 893,
+            "sha256": "96ff9a2a985415d3ccaae3a36d6e87cdb3e915cfe9cde3591f6f8b62b0798405"
+          },
+          {
+            "name": "shellder-dewgong",
+            "start": 29.767333333333333,
+            "end": 60.20666666666666,
+            "frames": 913,
+            "sha256": "f3ddb26252ed2657c2a4e461c0f880d7b7d4a1c46ea70b90f6894720932e7d36"
+          },
+          {
+            "name": "cloyster-gastly",
+            "start": 60.20666666666666,
+            "end": 86.677,
+            "frames": 794,
+            "sha256": "66cd8c3e3db340191d820b5c7c84f84a40ba2faf5646a9878069cf4f0d4e5af8"
+          },
+          {
+            "name": "gastly-cloyster",
+            "start": 86.677,
+            "end": 113.13233333333334,
+            "frames": 793,
+            "sha256": "b032df6a7d7df00fab653cbae253c0aeaa8a589163819d0ea20893ffc0d4aab4"
+          },
+          {
+            "name": "haunter-gengar",
+            "start": 113.13233333333334,
+            "end": 137.83766666666668,
+            "frames": 741,
+            "sha256": "5bec9c04da4ffcbdb6ab969b1e9ea71985abaae1e7e9539887199135f39e297d"
+          },
+          {
+            "name": "gengar-haunter",
+            "start": 137.83766666666668,
+            "end": 162.246,
+            "frames": 732,
+            "sha256": "29af8efad9c2e93d50612b0ba8da418d9aa36b025d9855ef9810f1fad05307f1"
+          },
+          {
+            "name": "onix-drowzee",
+            "start": 162.246,
+            "end": 192.68633333333332,
+            "frames": 913,
+            "sha256": "46146e52de99a42bf08de7d7c12edb33fae6ebc9dba6776fe82d8f3889c6c06b"
+          },
+          {
+            "name": "drowzee-onix",
+            "start": 192.68633333333332,
+            "end": 223.59466666666665,
+            "frames": 927,
+            "sha256": "55379c36151c776d9a48f3872b949566ea0ac81b2642adad369d5ced85ef8c88"
+          }
+        ],
+        "method": "Native full captures concatenated without cuts, re-encoding or acceleration"
+      },
+      "commit_message": "Complete autonomous BW2 checkpoint 33: eight Pokemon"
     },
     {
       "number": 34,
@@ -945,7 +1019,7 @@
     }
   ],
   "runtime": {
-    "phase": "checkpoint32: reviewed, published and audited; commit follows",
+    "phase": "checkpoint33: reviewed, published and audited; commit follows",
     "isolated_executable": "build/bw2-azahar/bw2-test.exe",
     "active_capture": false,
     "initial_emulator_processes": [
@@ -956,9 +1030,9 @@
       }
     ],
     "continuity": "build/BW2_CONTINUITY30.md",
-    "capture_group": 32,
+    "capture_group": 33,
     "exec_session_id": null,
-    "log": "build/bw2-auto30-cp32-capture.log",
+    "log": "build/bw2-auto30-cp33-capture.log",
     "build_script": "build/bw2-auto30-build.sh"
   },
   "checks": {

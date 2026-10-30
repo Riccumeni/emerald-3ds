@@ -1,6 +1,6 @@
 # Checklist Pokémon
 
-Totale: **386**. Fatti con dossier completo: **258**.
+Totale: **386**. Fatti con dossier completo: **266**.
 
 Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle due direzioni.
 
@@ -264,14 +264,14 @@ Ogni casella richiede implementazione, prova nel gioco e screenshot/video nelle 
 - [x] 0080 **Slowbro** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0080_slowbro/).
 - [x] 0083 **Farfetchd** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0083_farfetchd/).
 - [x] 0086 **Seel** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0086_seel/).
-- [ ] 0087 **Dewgong** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0087_dewgong/).
-- [ ] 0090 **Shellder** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0090_shellder/).
-- [ ] 0091 **Cloyster** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0091_cloyster/).
-- [ ] 0092 **Gastly** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0092_gastly/).
-- [ ] 0093 **Haunter** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0093_haunter/).
-- [ ] 0094 **Gengar** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0094_gengar/).
-- [ ] 0095 **Onix** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0095_onix/).
-- [ ] 0096 **Drowzee** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0096_drowzee/).
+- [x] 0087 **Dewgong** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0087_dewgong/).
+- [x] 0090 **Shellder** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0090_shellder/).
+- [x] 0091 **Cloyster** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0091_cloyster/).
+- [x] 0092 **Gastly** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0092_gastly/).
+- [x] 0093 **Haunter** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0093_haunter/).
+- [x] 0094 **Gengar** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0094_gengar/).
+- [x] 0095 **Onix** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0095_onix/).
+- [x] 0096 **Drowzee** — FATTO; front/back; [prove](../../artifacts/bw2-validation/pokemon/0096_drowzee/).
 - [ ] 0097 **Hypno** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0097_hypno/).
 - [ ] 0098 **Krabby** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0098_krabby/).
 - [ ] 0099 **Kingler** — da fare; front/back; [prove](../../artifacts/bw2-validation/pokemon/0099_kingler/).
